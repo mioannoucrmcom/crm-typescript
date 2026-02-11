@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseResponse } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseResponse } from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseResponse = {

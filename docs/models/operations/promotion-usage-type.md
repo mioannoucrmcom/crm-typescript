@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { PromotionUsageType } from "crm/models/operations";
+import { PromotionUsageType } from "crmcom/models/operations";
 
 let value: PromotionUsageType = "IMAGE";
 ```

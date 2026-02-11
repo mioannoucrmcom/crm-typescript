@@ -5,7 +5,7 @@ Defines on which attribute the results should be sorted by, can be DEFAULT_SORTI
 ## Example Usage
 
 ```typescript
-import { Sort } from "crm/models/operations";
+import { Sort } from "crmcom/models/operations";
 
 let value: Sort = "ORGANISATION_NAME";
 ```

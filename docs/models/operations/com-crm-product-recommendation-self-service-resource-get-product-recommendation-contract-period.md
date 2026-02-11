@@ -7,7 +7,7 @@ The service's contract period (if any)
 ```typescript
 import {
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriod,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriod =

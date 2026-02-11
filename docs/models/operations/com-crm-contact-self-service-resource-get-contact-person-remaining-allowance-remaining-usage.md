@@ -5,7 +5,7 @@ Actual allowed and remaining usage (based on measurement units)
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingUsage } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingUsage } from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingUsage =

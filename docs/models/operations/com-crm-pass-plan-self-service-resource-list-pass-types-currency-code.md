@@ -5,7 +5,7 @@ Currency code based on ISO 4217 standard
 ## Example Usage
 
 ```typescript
-import { ComCrmPassPlanSelfServiceResourceListPassTypesCurrencyCode } from "crm/models/operations";
+import { ComCrmPassPlanSelfServiceResourceListPassTypesCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesCurrencyCode = "EUR";
 ```

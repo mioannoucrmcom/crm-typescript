@@ -5,7 +5,7 @@ Period of time during which the Promotion is available i.e. the promotion is app
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceListAvailability } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceListAvailability } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceListAvailability = {
   fromDate: 1648067185,

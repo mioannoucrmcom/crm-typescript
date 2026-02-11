@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DeviceChangeType } from "crm/models/operations";
+import { DeviceChangeType } from "crmcom/models/operations";
 
 let value: DeviceChangeType = "REMOVED";
 ```

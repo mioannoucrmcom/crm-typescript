@@ -5,7 +5,7 @@ Termed service’s debited/credited period
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSubscriptionSelfServiceResourceEstimateBillingPeriod } from "crm/models/operations";
+import { ComCrmEstimateSubscriptionSelfServiceResourceEstimateBillingPeriod } from "crmcom/models/operations";
 
 let value: ComCrmEstimateSubscriptionSelfServiceResourceEstimateBillingPeriod =
   {};

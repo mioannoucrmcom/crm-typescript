@@ -5,7 +5,7 @@ Type of discount applied
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionType } from "crm/models/operations";
+import { ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionType } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionType =

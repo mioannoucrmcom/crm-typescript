@@ -5,7 +5,7 @@ How the action is updated
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionAction } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionAction } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionAction =
   "TERMINATE";

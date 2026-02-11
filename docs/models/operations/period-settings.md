@@ -5,7 +5,7 @@ Applicable only for Scheduled actions that include period settings such as Pause
 ## Example Usage
 
 ```typescript
-import { PeriodSettings } from "crm/models/operations";
+import { PeriodSettings } from "crmcom/models/operations";
 
 let value: PeriodSettings = {};
 ```

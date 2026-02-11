@@ -5,7 +5,7 @@ The text font style that will be used by the application
 ## Example Usage
 
 ```typescript
-import { FontEnum } from "crm/models/operations";
+import { FontEnum } from "crmcom/models/operations";
 
 let value: FontEnum = "Georgia";
 ```

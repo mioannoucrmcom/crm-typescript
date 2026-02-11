@@ -5,7 +5,7 @@ Contact’s date of birth
 ## Example Usage
 
 ```typescript
-import { UpdateContactSSDateOfBirth } from "crm/models/operations";
+import { UpdateContactSSDateOfBirth } from "crmcom/models/operations";
 
 let value: UpdateContactSSDateOfBirth = {
   year: 1948,

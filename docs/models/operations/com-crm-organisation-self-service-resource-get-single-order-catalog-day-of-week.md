@@ -5,7 +5,7 @@ Days of the week
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceGetSingleOrderCatalogDayOfWeek } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceGetSingleOrderCatalogDayOfWeek } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceGetSingleOrderCatalogDayOfWeek =
   "SATURDAY";

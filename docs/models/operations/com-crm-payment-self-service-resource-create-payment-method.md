@@ -5,7 +5,7 @@ Payment method to be used to collect the money
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentSelfServiceResourceCreatePaymentMethod } from "crm/models/operations";
+import { ComCrmPaymentSelfServiceResourceCreatePaymentMethod } from "crmcom/models/operations";
 
 let value: ComCrmPaymentSelfServiceResourceCreatePaymentMethod = {
   id: "CAD1E31269B76D7A65ACCE45B2E68DFD",

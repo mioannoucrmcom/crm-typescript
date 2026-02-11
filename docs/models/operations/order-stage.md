@@ -5,7 +5,7 @@ The milestone's stage i.e. when the Invoice will be issued.
 ## Example Usage
 
 ```typescript
-import { OrderStage } from "crm/models/operations";
+import { OrderStage } from "crmcom/models/operations";
 
 let value: OrderStage = {
   id: "b82648cb-e5f4-53b2-26b3-edca38e3e34f",

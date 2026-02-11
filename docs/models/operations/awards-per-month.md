@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AwardsPerMonth } from "crm/models/operations";
+import { AwardsPerMonth } from "crmcom/models/operations";
 
 let value: AwardsPerMonth = {
   amount: 2,

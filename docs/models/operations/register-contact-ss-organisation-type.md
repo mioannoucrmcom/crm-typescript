@@ -5,7 +5,7 @@ The organisation type
 ## Example Usage
 
 ```typescript
-import { RegisterContactSSOrganisationType } from "crm/models/operations";
+import { RegisterContactSSOrganisationType } from "crmcom/models/operations";
 
 let value: RegisterContactSSOrganisationType = "ORGANISATION";
 ```

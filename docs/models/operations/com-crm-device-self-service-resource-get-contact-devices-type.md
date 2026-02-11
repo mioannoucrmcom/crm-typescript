@@ -5,7 +5,7 @@ The device meter reading type (one-time or cumulative)
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceGetContactDevicesType } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceGetContactDevicesType } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceGetContactDevicesType = "ONE_TIME";
 ```

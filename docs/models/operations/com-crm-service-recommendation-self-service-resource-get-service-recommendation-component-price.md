@@ -7,7 +7,7 @@ The component's price. Required when the component's price is not inclusive
 ```typescript
 import {
   ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationComponentPrice,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationComponentPrice =

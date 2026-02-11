@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmReferralCustomerEventSelfServiceResourceCreateReferralRequest } from "crm/models/operations";
+import { ComCrmReferralCustomerEventSelfServiceResourceCreateReferralRequest } from "crmcom/models/operations";
 
 let value: ComCrmReferralCustomerEventSelfServiceResourceCreateReferralRequest =
   {

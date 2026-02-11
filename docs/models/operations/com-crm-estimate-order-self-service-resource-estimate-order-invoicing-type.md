@@ -5,7 +5,7 @@ Type of discount applied
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderInvoicingType } from "crm/models/operations";
+import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderInvoicingType } from "crmcom/models/operations";
 
 let value: ComCrmEstimateOrderSelfServiceResourceEstimateOrderInvoicingType =
   "AD_HOC";

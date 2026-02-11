@@ -5,7 +5,7 @@ Defines whether contacts can register & sign-in based on Facebook (including Fac
 ## Example Usage
 
 ```typescript
-import { Facebook } from "crm/models/operations";
+import { Facebook } from "crmcom/models/operations";
 
 let value: Facebook = {
   isSupported: true,

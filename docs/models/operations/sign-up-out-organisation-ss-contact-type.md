@@ -5,7 +5,7 @@ Contact type - can be PERSON or COMPANY
 ## Example Usage
 
 ```typescript
-import { SignUpOutOrganisationSSContactType } from "crm/models/operations";
+import { SignUpOutOrganisationSSContactType } from "crmcom/models/operations";
 
 let value: SignUpOutOrganisationSSContactType = "PERSON";
 ```

@@ -5,7 +5,7 @@ Products that should be included in the basket for the Promotion to be applied. 
 ## Example Usage
 
 ```typescript
-import { Products } from "crm/models/operations";
+import { Products } from "crmcom/models/operations";
 
 let value: Products = {
   groups: [

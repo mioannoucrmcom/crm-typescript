@@ -5,7 +5,7 @@ Product setting. Allow usage to either a specific product or to products of a sp
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceListContactRelationshipItemType } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceListContactRelationshipItemType } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceListContactRelationshipItemType =
   "PRODUCT";

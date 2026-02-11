@@ -5,7 +5,7 @@ Defines the scheme owner organisation from which such transaction is created fro
 ## Example Usage
 
 ```typescript
-import { SchemeOwner } from "crm/models/operations";
+import { SchemeOwner } from "crmcom/models/operations";
 
 let value: SchemeOwner = {
   id: "8720e95e-b22f-ffad-4d3d-d4f6b8e1d6e2",

@@ -5,7 +5,7 @@ The organisation address
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderAddress } from "crm/models/operations";
+import { ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderAddress } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderAddress = {

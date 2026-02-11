@@ -5,7 +5,7 @@ Created
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceRequestSelfServiceResourceCreateServiceRequestFileResponse } from "crm/models/operations";
+import { ComCrmServiceRequestSelfServiceResourceCreateServiceRequestFileResponse } from "crmcom/models/operations";
 
 let value:
   ComCrmServiceRequestSelfServiceResourceCreateServiceRequestFileResponse = {

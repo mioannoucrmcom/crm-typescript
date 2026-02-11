@@ -5,7 +5,7 @@ The billing period mapped to the specified price. Applicable only for termed and
 ## Example Usage
 
 ```typescript
-import { UpsellBillingPeriod } from "crm/models/operations";
+import { UpsellBillingPeriod } from "crmcom/models/operations";
 
 let value: UpsellBillingPeriod = {
   duration: 2,

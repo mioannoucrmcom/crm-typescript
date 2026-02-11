@@ -5,7 +5,7 @@ Applicable only when the device is enabled on a one-time service which extends a
 ## Example Usage
 
 ```typescript
-import { RelatedTermedService } from "crm/models/operations";
+import { RelatedTermedService } from "crmcom/models/operations";
 
 let value: RelatedTermedService = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

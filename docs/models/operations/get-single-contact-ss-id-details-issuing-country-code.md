@@ -5,7 +5,7 @@ Country code where id was issued. 3-letter ISO 3166-1 country code.
 ## Example Usage
 
 ```typescript
-import { GetSingleContactSSIdDetailsIssuingCountryCode } from "crm/models/operations";
+import { GetSingleContactSSIdDetailsIssuingCountryCode } from "crmcom/models/operations";
 
 let value: GetSingleContactSSIdDetailsIssuingCountryCode = "CYP";
 ```

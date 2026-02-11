@@ -32,14 +32,14 @@ Retrieve a list of contact community relations based on search criteria (e.g. al
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSettingSelfServiceResource_listCommunityRelations" method="get" path="/self-service/v2/communities/relations" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSettingSelfServiceResourceListCommunityRelations({
+  const result = await crmcom.communities.comCrmContactSettingSelfServiceResourceListCommunityRelations({
     includeTotal: true,
     name: "Employees",
     sort: "CREATED_DATE, UPDATED_DATE, NAMES, CHEDULED_DATE",
@@ -56,17 +56,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSettingSelfServiceResourceListCommunityRelations } from "crm/funcs/communities-com-crm-contact-setting-self-service-resource-list-community-relations.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSettingSelfServiceResourceListCommunityRelations } from "crmcom/funcs/communities-com-crm-contact-setting-self-service-resource-list-community-relations.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSettingSelfServiceResourceListCommunityRelations(crm, {
+  const res = await communitiesComCrmContactSettingSelfServiceResourceListCommunityRelations(crmcom, {
     includeTotal: true,
     name: "Employees",
     sort: "CREATED_DATE, UPDATED_DATE, NAMES, CHEDULED_DATE",
@@ -109,14 +109,14 @@ Retrieves all the community members (ones who either accepted the invitation or 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactCommunitySummaryResults" method="get" path="/self-service/v2/contacts/community/members" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactCommunitySummaryResults({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactCommunitySummaryResults({
     group: "<value>",
     includeTotal: true,
     ownerId: "<id>",
@@ -134,17 +134,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactCommunitySummaryResults } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-community-summary-results.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactCommunitySummaryResults } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-community-summary-results.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactCommunitySummaryResults(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactCommunitySummaryResults(crmcom, {
     group: "<value>",
     includeTotal: true,
     ownerId: "<id>",
@@ -188,14 +188,14 @@ Lists all communities that a contact is a member to. Only communities to which t
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getCommunities" method="get" path="/self-service/v2/contacts/{id}/communities" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetCommunities({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetCommunities({
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     includeTotal: true,
     sort: "CREATED_DATE,UPDATED_DATE,NAME,SCHEDULED_DATE",
@@ -212,17 +212,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetCommunities } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-communities.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetCommunities } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-communities.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetCommunities(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetCommunities(crmcom, {
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     includeTotal: true,
     sort: "CREATED_DATE,UPDATED_DATE,NAME,SCHEDULED_DATE",
@@ -265,12 +265,12 @@ Leave from a contact community
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_leaveCommunity" method="delete" path="/self-service/v2/contacts/{id}/communities/{community_owner_id}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  await crm.communities.comCrmContactSelfServiceResourceLeaveCommunity({
+  await crmcom.communities.comCrmContactSelfServiceResourceLeaveCommunity({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     communityOwnerId: "ccc945d8-1bda-a11c-d378-23c29947c2a3",
@@ -288,15 +288,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceLeaveCommunity } from "crm/funcs/communities-com-crm-contact-self-service-resource-leave-community.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceLeaveCommunity } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-leave-community.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceLeaveCommunity(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceLeaveCommunity(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     communityOwnerId: "ccc945d8-1bda-a11c-d378-23c29947c2a3",
@@ -341,14 +341,14 @@ Lists all groups that a contact has created
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_listContactGroups" method="get" path="/self-service/v2/contacts/{id}/groups" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceListContactGroups({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceListContactGroups({
     id: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
   });
 
@@ -363,17 +363,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceListContactGroups } from "crm/funcs/communities-com-crm-contact-self-service-resource-list-contact-groups.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceListContactGroups } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-list-contact-groups.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceListContactGroups(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceListContactGroups(crmcom, {
     id: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
   });
   if (res.ok) {
@@ -414,14 +414,14 @@ Update a contact group name
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_updateContactGroupName" method="put" path="/self-service/v2/contacts/{id}/groups/{name}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceUpdateContactGroupName({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceUpdateContactGroupName({
     id: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
     name: "Family",
     body: {
@@ -440,17 +440,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceUpdateContactGroupName } from "crm/funcs/communities-com-crm-contact-self-service-resource-update-contact-group-name.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceUpdateContactGroupName } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-update-contact-group-name.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceUpdateContactGroupName(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceUpdateContactGroupName(crmcom, {
     id: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
     name: "Family",
     body: {
@@ -495,14 +495,14 @@ Lists all people that a contact's community has. The Web API returns only commun
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_listContactRelationship" method="get" path="/self-service/v2/contacts/{id}/people" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceListContactRelationship({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceListContactRelationship({
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     group: "Employees",
     includeTotal: true,
@@ -520,17 +520,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceListContactRelationship } from "crm/funcs/communities-com-crm-contact-self-service-resource-list-contact-relationship.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceListContactRelationship } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-list-contact-relationship.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceListContactRelationship(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceListContactRelationship(crmcom, {
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     group: "Employees",
     includeTotal: true,
@@ -574,14 +574,14 @@ Add a new person to a contact's community. The new community person can either b
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_addContactRelationship" method="post" path="/self-service/v2/contacts/{id}/people" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceAddContactRelationship({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceAddContactRelationship({
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     body: {
       email: "johndoe@crm.com",
@@ -629,17 +629,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceAddContactRelationship } from "crm/funcs/communities-com-crm-contact-self-service-resource-add-contact-relationship.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceAddContactRelationship } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-add-contact-relationship.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceAddContactRelationship(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceAddContactRelationship(crmcom, {
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     body: {
       email: "johndoe@crm.com",
@@ -713,14 +713,14 @@ Retrieve an existing person from a contact's community. Web API returns detailed
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactRelationship" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactRelationship({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactRelationship({
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
   });
@@ -736,17 +736,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactRelationship } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-relationship.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactRelationship } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-relationship.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactRelationship(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactRelationship(crmcom, {
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
   });
@@ -788,14 +788,14 @@ Update an existing person in a contact's community. The Web API is successful on
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_updateContactRelationship" method="put" path="/self-service/v2/contacts/{id}/people/{relationship_id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceUpdateContactRelationship({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceUpdateContactRelationship({
     id: "41531d41-2a77-fc41-5643-d84dfbefc1ff",
     relationshipId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
     body: {
@@ -840,17 +840,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceUpdateContactRelationship } from "crm/funcs/communities-com-crm-contact-self-service-resource-update-contact-relationship.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceUpdateContactRelationship } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-update-contact-relationship.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceUpdateContactRelationship(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceUpdateContactRelationship(crmcom, {
     id: "41531d41-2a77-fc41-5643-d84dfbefc1ff",
     relationshipId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
     body: {
@@ -921,14 +921,14 @@ Delete an existing person from a contact’s community
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_removeContactRelationship" method="delete" path="/self-service/v2/contacts/{id}/people/{relationship_id}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.communities.comCrmContactSelfServiceResourceRemoveContactRelationship({
+  await crmcom.communities.comCrmContactSelfServiceResourceRemoveContactRelationship({
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     relationshipId: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
   });
@@ -944,17 +944,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceRemoveContactRelationship } from "crm/funcs/communities-com-crm-contact-self-service-resource-remove-contact-relationship.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceRemoveContactRelationship } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-remove-contact-relationship.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceRemoveContactRelationship(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceRemoveContactRelationship(crmcom, {
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     relationshipId: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
   });
@@ -996,14 +996,14 @@ Returns a community member’s usage allowance for a set of products (SKUs, type
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactPersonAllowance" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactPersonAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactPersonAllowance({
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1021,17 +1021,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance(crmcom, {
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1051,14 +1051,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactPersonAllowance" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactPersonAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactPersonAllowance({
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1076,17 +1076,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance(crmcom, {
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1106,14 +1106,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactPersonAllowance" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactPersonAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactPersonAllowance({
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1132,17 +1132,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance(crmcom, {
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1163,14 +1163,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactPersonAllowance" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactPersonAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactPersonAllowance({
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1189,17 +1189,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance(crmcom, {
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1220,14 +1220,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactPersonAllowance" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactPersonAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactPersonAllowance({
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1246,17 +1246,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonAllowance(crmcom, {
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1301,14 +1301,14 @@ Add product allowance to a contact's community person.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_addContactRelationshipProductAllowance" method="post" path="/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceAddContactRelationshipProductAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceAddContactRelationshipProductAllowance({
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     relationshipId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
     body: {
@@ -1342,19 +1342,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   communitiesComCrmContactSelfServiceResourceAddContactRelationshipProductAllowance,
-} from "crm/funcs/communities-com-crm-contact-self-service-resource-add-contact-relationship-product-allowance.js";
+} from "crmcom/funcs/communities-com-crm-contact-self-service-resource-add-contact-relationship-product-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceAddContactRelationshipProductAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceAddContactRelationshipProductAllowance(crmcom, {
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     relationshipId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
     body: {
@@ -1414,14 +1414,14 @@ Updates and existing person allowance product
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_updateContactRelationshipProductAllowance" method="put" path="/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance/{product_allowance_id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.communities.comCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowance({
+  await crmcom.communities.comCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowance({
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     productAllowanceId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
     relationshipId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
@@ -1453,19 +1453,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   communitiesComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowance,
-} from "crm/funcs/communities-com-crm-contact-self-service-resource-update-contact-relationship-product-allowance.js";
+} from "crmcom/funcs/communities-com-crm-contact-self-service-resource-update-contact-relationship-product-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowance(crmcom, {
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     productAllowanceId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
     relationshipId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
@@ -1523,14 +1523,14 @@ Delete an existing allowance product from a contact’s community
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_removeContactRelationshipProductAllowance" method="delete" path="/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance/{product_allowance_id}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.communities.comCrmContactSelfServiceResourceRemoveContactRelationshipProductAllowance({
+  await crmcom.communities.comCrmContactSelfServiceResourceRemoveContactRelationshipProductAllowance({
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     productAllowanceId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
     relationshipId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
@@ -1547,19 +1547,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   communitiesComCrmContactSelfServiceResourceRemoveContactRelationshipProductAllowance,
-} from "crm/funcs/communities-com-crm-contact-self-service-resource-remove-contact-relationship-product-allowance.js";
+} from "crmcom/funcs/communities-com-crm-contact-self-service-resource-remove-contact-relationship-product-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceRemoveContactRelationshipProductAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceRemoveContactRelationshipProductAllowance(crmcom, {
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     productAllowanceId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
     relationshipId: "891d84dd-4b3b-84b3-ba87-aa63fed3b88a",
@@ -1602,14 +1602,14 @@ Returns a community member’s remaining usage allowance for a set of products (
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactPersonRemainingAllowance" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}/remaining_products_allowance" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactPersonRemainingAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactPersonRemainingAllowance({
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1627,17 +1627,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-remaining-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-remaining-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance(crmcom, {
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1657,14 +1657,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactPersonRemainingAllowance" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}/remaining_products_allowance" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactPersonRemainingAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactPersonRemainingAllowance({
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1682,17 +1682,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-remaining-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-remaining-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance(crmcom, {
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1712,14 +1712,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactPersonRemainingAllowance" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}/remaining_products_allowance" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactPersonRemainingAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactPersonRemainingAllowance({
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1738,17 +1738,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-remaining-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-remaining-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance(crmcom, {
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1769,14 +1769,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactPersonRemainingAllowance" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}/remaining_products_allowance" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactPersonRemainingAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactPersonRemainingAllowance({
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1795,17 +1795,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-remaining-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-remaining-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance(crmcom, {
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1826,14 +1826,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactPersonRemainingAllowance" method="get" path="/self-service/v2/contacts/{id}/people/{relationship_id}/remaining_products_allowance" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communities.comCrmContactSelfServiceResourceGetContactPersonRemainingAllowance({
+  const result = await crmcom.communities.comCrmContactSelfServiceResourceGetContactPersonRemainingAllowance({
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,
@@ -1852,17 +1852,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance } from "crm/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-remaining-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance } from "crmcom/funcs/communities-com-crm-contact-self-service-resource-get-contact-person-remaining-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance(crm, {
+  const res = await communitiesComCrmContactSelfServiceResourceGetContactPersonRemainingAllowance(crmcom, {
     id: "bfd3cc67-2a4b-2900-6fcc-2ad3341f5495",
     relationshipId: "dc01f65b-a482-48f1-9fda-c163df72f28f",
     includeTotal: true,

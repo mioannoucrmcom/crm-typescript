@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { DeliveryServiceProviderUsageType } from "crm/models/operations";
+import { DeliveryServiceProviderUsageType } from "crmcom/models/operations";
 
 let value: DeliveryServiceProviderUsageType = "APPLE_LOCKSCREEN_ICON";
 ```

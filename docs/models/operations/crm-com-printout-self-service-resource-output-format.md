@@ -9,7 +9,7 @@ Defines the format on which the printout will be created to
 ## Example Usage
 
 ```typescript
-import { CrmComPrintoutSelfServiceResourceOutputFormat } from "crm/models/operations";
+import { CrmComPrintoutSelfServiceResourceOutputFormat } from "crmcom/models/operations";
 
 let value: CrmComPrintoutSelfServiceResourceOutputFormat = "PDF";
 ```

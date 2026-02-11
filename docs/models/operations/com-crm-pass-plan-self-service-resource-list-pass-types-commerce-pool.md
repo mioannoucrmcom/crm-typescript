@@ -5,7 +5,7 @@ Details about commerce pool
 ## Example Usage
 
 ```typescript
-import { ComCrmPassPlanSelfServiceResourceListPassTypesCommercePool } from "crm/models/operations";
+import { ComCrmPassPlanSelfServiceResourceListPassTypesCommercePool } from "crmcom/models/operations";
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesCommercePool = {
   id: "dc01f65b-a482-48f1-9fda-c163df72f28f",

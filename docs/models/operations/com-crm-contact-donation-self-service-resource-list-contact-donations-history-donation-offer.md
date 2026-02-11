@@ -5,7 +5,7 @@ The Donation Offer based on which the contact donated an amount of money.
 ## Example Usage
 
 ```typescript
-import { ComCrmContactDonationSelfServiceResourceListContactDonationsHistoryDonationOffer } from "crm/models/operations";
+import { ComCrmContactDonationSelfServiceResourceListContactDonationsHistoryDonationOffer } from "crmcom/models/operations";
 
 let value:
   ComCrmContactDonationSelfServiceResourceListContactDonationsHistoryDonationOffer =

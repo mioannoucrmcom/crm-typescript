@@ -5,7 +5,7 @@ The purchase event state
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseState } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseState } from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseState =

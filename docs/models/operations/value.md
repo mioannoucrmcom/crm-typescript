@@ -5,7 +5,7 @@ The pass plan value information, applicable only for pass plans with classificat
 ## Example Usage
 
 ```typescript
-import { Value } from "crm/models/operations";
+import { Value } from "crmcom/models/operations";
 
 let value: Value = {
   type: "FIXED",

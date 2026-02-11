@@ -5,7 +5,7 @@ The country related to the account
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceUpdatePaymentMethodAddressCountry } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceUpdatePaymentMethodAddressCountry } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceUpdatePaymentMethodAddressCountry =
   "CYP";

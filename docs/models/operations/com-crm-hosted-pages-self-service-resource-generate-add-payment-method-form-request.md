@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmHostedPagesSelfServiceResourceGenerateAddPaymentMethodFormRequest } from "crm/models/operations";
+import { ComCrmHostedPagesSelfServiceResourceGenerateAddPaymentMethodFormRequest } from "crmcom/models/operations";
 
 let value:
   ComCrmHostedPagesSelfServiceResourceGenerateAddPaymentMethodFormRequest = {

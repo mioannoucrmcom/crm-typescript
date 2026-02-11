@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCallingCode } from "crm/models/operations";
+import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCallingCode } from "crmcom/models/operations";
 
 let value:
   ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCallingCode = {

@@ -5,7 +5,7 @@ Journal account type
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceListAccountJournalsContentType } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceListAccountJournalsContentType } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceListAccountJournalsContentType =
   "CREDIT";

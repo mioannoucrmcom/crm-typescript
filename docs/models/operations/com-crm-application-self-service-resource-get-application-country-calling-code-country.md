@@ -5,7 +5,7 @@ Name of country
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCodeCountry } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCodeCountry } from "crmcom/models/operations";
 
 let value:
   ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCodeCountry =

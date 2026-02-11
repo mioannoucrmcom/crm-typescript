@@ -5,7 +5,7 @@ Details about the address
 ## Example Usage
 
 ```typescript
-import { CurrentLocation } from "crm/models/operations";
+import { CurrentLocation } from "crmcom/models/operations";
 
 let value: CurrentLocation = {
   addressType: "HOME",

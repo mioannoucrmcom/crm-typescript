@@ -5,7 +5,7 @@ The related entity with the custom field
 ## Example Usage
 
 ```typescript
-import { ComCrmCustomFieldSelfServiceResourceListCustomFieldsEntity } from "crm/models/operations";
+import { ComCrmCustomFieldSelfServiceResourceListCustomFieldsEntity } from "crmcom/models/operations";
 
 let value: ComCrmCustomFieldSelfServiceResourceListCustomFieldsEntity =
   "PAYMENTS";

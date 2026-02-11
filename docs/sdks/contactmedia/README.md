@@ -16,14 +16,14 @@ Create a Self Service V2 Media Upload Signature
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceMediaResource_sign" method="post" path="/self-service/v2/media/upload/signature" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactMedia.comCrmContactSelfServiceMediaResourceSign({
+  await crmcom.contactMedia.comCrmContactSelfServiceMediaResourceSign({
     id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
   });
 
@@ -38,17 +38,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactMediaComCrmContactSelfServiceMediaResourceSign } from "crm/funcs/contact-media-com-crm-contact-self-service-media-resource-sign.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactMediaComCrmContactSelfServiceMediaResourceSign } from "crmcom/funcs/contact-media-com-crm-contact-self-service-media-resource-sign.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactMediaComCrmContactSelfServiceMediaResourceSign(crm, {
+  const res = await contactMediaComCrmContactSelfServiceMediaResourceSign(crmcom, {
     id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
   });
   if (res.ok) {

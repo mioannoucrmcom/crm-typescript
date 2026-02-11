@@ -5,7 +5,7 @@ Contact type - can be PERSON or COMPANY
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceValidateOTPContactType } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceValidateOTPContactType } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceValidateOTPContactType = "PERSON";
 ```

@@ -5,7 +5,7 @@ The content type
 ## Example Usage
 
 ```typescript
-import { InformationType } from "crm/models/operations";
+import { InformationType } from "crmcom/models/operations";
 
 let value: InformationType = "ABOUT";
 ```

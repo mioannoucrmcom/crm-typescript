@@ -5,7 +5,7 @@ The landing page type
 ## Example Usage
 
 ```typescript
-import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageType } from "crm/models/operations";
+import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageType } from "crmcom/models/operations";
 
 let value: ComCrmLandingPageSelfServiceResourceGetSingleLandingPageType =
   "REGISTER";

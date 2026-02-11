@@ -5,7 +5,7 @@ Defines the gateway that issued such token
 ## Example Usage
 
 ```typescript
-import { CardGateway } from "crm/models/operations";
+import { CardGateway } from "crmcom/models/operations";
 
 let value: CardGateway = "JCC";
 ```

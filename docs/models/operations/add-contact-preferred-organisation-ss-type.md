@@ -5,7 +5,7 @@ The preferred type
 ## Example Usage
 
 ```typescript
-import { AddContactPreferredOrganisationSSType } from "crm/models/operations";
+import { AddContactPreferredOrganisationSSType } from "crmcom/models/operations";
 
 let value: AddContactPreferredOrganisationSSType = "REWARDS";
 ```

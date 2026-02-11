@@ -5,7 +5,7 @@ Applicable when amending a service bundle. At least one components to be added o
 ## Example Usage
 
 ```typescript
-import { Components } from "crm/models/operations";
+import { Components } from "crmcom/models/operations";
 
 let value: Components = {
   added: [

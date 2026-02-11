@@ -1,13 +1,13 @@
 <!-- Start SDK Example Usage [usage] -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts
+  const result = await crmcom.contactAccounts
     .comCrmAccountSelfServiceResourceGetSingle({
       id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     });

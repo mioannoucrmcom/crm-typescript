@@ -5,7 +5,7 @@ Product families
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductFamily } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductFamily } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductFamily = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

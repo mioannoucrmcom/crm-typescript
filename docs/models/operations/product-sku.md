@@ -5,7 +5,7 @@ Details about product SKU
 ## Example Usage
 
 ```typescript
-import { ProductSku } from "crm/models/operations";
+import { ProductSku } from "crmcom/models/operations";
 
 let value: ProductSku = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

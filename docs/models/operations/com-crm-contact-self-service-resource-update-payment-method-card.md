@@ -5,7 +5,7 @@ Applicable only when updating a payment method of type Card
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceUpdatePaymentMethodCard } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceUpdatePaymentMethodCard } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceUpdatePaymentMethodCard = {
   expMonth: 2,

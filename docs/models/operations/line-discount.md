@@ -5,7 +5,7 @@ The applied discount. If a percentage was applied, then retrieving the line's di
 ## Example Usage
 
 ```typescript
-import { LineDiscount } from "crm/models/operations";
+import { LineDiscount } from "crmcom/models/operations";
 
 let value: LineDiscount = {
   amount: 20.5,

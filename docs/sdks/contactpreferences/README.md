@@ -17,14 +17,14 @@ Retrieves contact’s preferred organisation
 
 <!-- UsageSnippet language="typescript" operationID="getContactPreferredOrganisationSS" method="get" path="/self-service/v2/contacts/{id}/preferences" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactPreferences.getContactPreferredOrganisationSS({
+  const result = await crmcom.contactPreferences.getContactPreferredOrganisationSS({
     id: "<id>",
   });
 
@@ -39,17 +39,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactPreferencesGetContactPreferredOrganisationSS } from "crm/funcs/contact-preferences-get-contact-preferred-organisation-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactPreferencesGetContactPreferredOrganisationSS } from "crmcom/funcs/contact-preferences-get-contact-preferred-organisation-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactPreferencesGetContactPreferredOrganisationSS(crm, {
+  const res = await contactPreferencesGetContactPreferredOrganisationSS(crmcom, {
     id: "<id>",
   });
   if (res.ok) {
@@ -90,14 +90,14 @@ Sets contact’s preferred organisation
 
 <!-- UsageSnippet language="typescript" operationID="addContactPreferredOrganisationSS" method="post" path="/self-service/v2/contacts/{id}/preferences" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactPreferences.addContactPreferredOrganisationSS({
+  const result = await crmcom.contactPreferences.addContactPreferredOrganisationSS({
     id: "49144508-5520-48e7-8e64-6a1907afbb26",
     body: {
       organisationId: "1a6a85ac-aacf-4175-8de2-a7d701186d96",
@@ -116,17 +116,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactPreferencesAddContactPreferredOrganisationSS } from "crm/funcs/contact-preferences-add-contact-preferred-organisation-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactPreferencesAddContactPreferredOrganisationSS } from "crmcom/funcs/contact-preferences-add-contact-preferred-organisation-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactPreferencesAddContactPreferredOrganisationSS(crm, {
+  const res = await contactPreferencesAddContactPreferredOrganisationSS(crmcom, {
     id: "49144508-5520-48e7-8e64-6a1907afbb26",
     body: {
       organisationId: "1a6a85ac-aacf-4175-8de2-a7d701186d96",

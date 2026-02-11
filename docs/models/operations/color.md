@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Color } from "crm/models/operations";
+import { Color } from "crmcom/models/operations";
 
 let value: Color = {
   value: "FDE56F",

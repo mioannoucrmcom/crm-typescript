@@ -5,7 +5,7 @@ The entity type
 ## Example Usage
 
 ```typescript
-import { CrmComPrintoutSelfServiceResourceOutputType } from "crm/models/operations";
+import { CrmComPrintoutSelfServiceResourceOutputType } from "crmcom/models/operations";
 
 let value: CrmComPrintoutSelfServiceResourceOutputType = "INVOICE";
 ```

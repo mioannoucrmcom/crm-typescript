@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Payment } from "crm/models/operations";
+import { Payment } from "crmcom/models/operations";
 
 let value: Payment = {
   paymentMethodType: "CARD",

@@ -5,7 +5,7 @@ The entity (contact, user or API Key) that submitted such reading
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsSubmittedBy } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsSubmittedBy } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsSubmittedBy = {
   id: "da8aaf6a-ac3e-ee44-4760-a3b4084b15f4",

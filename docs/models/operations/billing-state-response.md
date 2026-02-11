@@ -5,7 +5,7 @@ The usage records's billing state, i.e. if it was charged or not.
 ## Example Usage
 
 ```typescript
-import { BillingStateResponse } from "crm/models/operations";
+import { BillingStateResponse } from "crmcom/models/operations";
 
 let value: BillingStateResponse = "PENDING";
 ```

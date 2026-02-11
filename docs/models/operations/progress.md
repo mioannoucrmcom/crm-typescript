@@ -5,7 +5,7 @@ Details about the next tier progression
 ## Example Usage
 
 ```typescript
-import { Progress } from "crm/models/operations";
+import { Progress } from "crmcom/models/operations";
 
 let value: Progress = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

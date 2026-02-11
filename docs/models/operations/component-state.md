@@ -5,7 +5,7 @@ Component Service's State
 ## Example Usage
 
 ```typescript
-import { ComponentState } from "crm/models/operations";
+import { ComponentState } from "crmcom/models/operations";
 
 let value: ComponentState = "EFFECTIVE";
 ```

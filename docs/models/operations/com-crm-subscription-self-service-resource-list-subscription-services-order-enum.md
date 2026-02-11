@@ -5,7 +5,7 @@ Defines how the results will be ordered
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesOrderEnum } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesOrderEnum } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesOrderEnum =

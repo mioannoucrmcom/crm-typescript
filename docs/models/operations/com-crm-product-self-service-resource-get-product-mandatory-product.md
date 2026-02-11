@@ -5,7 +5,7 @@ The mandatory product. Optional and applicable only for flexible bundle products
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductMandatoryProduct } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductMandatoryProduct } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductMandatoryProduct = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

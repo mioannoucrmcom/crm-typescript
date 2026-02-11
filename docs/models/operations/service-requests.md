@@ -5,7 +5,7 @@ Defines the supported service request features
 ## Example Usage
 
 ```typescript
-import { ServiceRequests } from "crm/models/operations";
+import { ServiceRequests } from "crmcom/models/operations";
 
 let value: ServiceRequests = {
   isSupported: true,

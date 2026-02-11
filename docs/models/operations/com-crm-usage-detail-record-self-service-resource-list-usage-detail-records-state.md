@@ -5,7 +5,7 @@ The usage record's state.
 ## Example Usage
 
 ```typescript
-import { ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsState } from "crm/models/operations";
+import { ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsState } from "crmcom/models/operations";
 
 let value:
   ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsState =

@@ -5,7 +5,7 @@ The device's meter reading unit of measurement (as specified on the related prod
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceGetContactDevicesMeasurementUnit } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceGetContactDevicesMeasurementUnit } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceGetContactDevicesMeasurementUnit = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

@@ -5,7 +5,7 @@ Services's price terms
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTerms } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTerms } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTerms =
   {

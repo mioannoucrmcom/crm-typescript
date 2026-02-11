@@ -8,7 +8,7 @@ The message type that a provisioning provider will send (applicable and required
 ## Example Usage
 
 ```typescript
-import { CrmComCommunicationSelfServiceResourceListMessageType } from "crm/models/operations";
+import { CrmComCommunicationSelfServiceResourceListMessageType } from "crmcom/models/operations";
 
 let value: CrmComCommunicationSelfServiceResourceListMessageType = "OSD";
 ```

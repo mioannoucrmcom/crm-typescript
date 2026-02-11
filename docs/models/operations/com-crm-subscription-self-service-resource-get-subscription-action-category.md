@@ -5,7 +5,7 @@ The action's category
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionCategory } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionCategory } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionCategory =
   {

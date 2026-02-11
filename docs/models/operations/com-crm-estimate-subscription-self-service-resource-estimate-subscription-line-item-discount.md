@@ -7,7 +7,7 @@ Details about the applied discount
 ```typescript
 import {
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionLineItemDiscount,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionLineItemDiscount =

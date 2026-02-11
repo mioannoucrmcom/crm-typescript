@@ -5,7 +5,7 @@ Details about the pass redeemed on purchase
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPass } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPass } from "crmcom/models/operations";
 
 let value: ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPass = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

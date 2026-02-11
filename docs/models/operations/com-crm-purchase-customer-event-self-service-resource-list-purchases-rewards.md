@@ -5,7 +5,7 @@ Details about rewards due to purchase
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRewards } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRewards } from "crmcom/models/operations";
 
 let value: ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRewards =
   {

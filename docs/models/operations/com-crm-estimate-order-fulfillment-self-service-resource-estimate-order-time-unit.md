@@ -5,7 +5,7 @@ The order ahead time unit
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderTimeUnit } from "crm/models/operations";
+import { ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderTimeUnit } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderTimeUnit =

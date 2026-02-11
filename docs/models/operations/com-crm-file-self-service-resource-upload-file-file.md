@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmFileSelfServiceResourceUploadFileFile } from "crm/models/operations";
+import { ComCrmFileSelfServiceResourceUploadFileFile } from "crmcom/models/operations";
 
 // No examples available for this model
 ```

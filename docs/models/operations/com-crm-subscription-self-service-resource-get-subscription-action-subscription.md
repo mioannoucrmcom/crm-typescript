@@ -5,7 +5,7 @@ The action's related Subscription
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionSubscription } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionSubscription } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionSubscription = {

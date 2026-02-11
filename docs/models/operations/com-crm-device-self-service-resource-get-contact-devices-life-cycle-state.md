@@ -5,7 +5,7 @@ Subscription Services State
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceGetContactDevicesLifeCycleState } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceGetContactDevicesLifeCycleState } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceGetContactDevicesLifeCycleState =
   "EFFECTIVE";

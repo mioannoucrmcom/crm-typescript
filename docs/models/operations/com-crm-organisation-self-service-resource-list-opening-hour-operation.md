@@ -5,7 +5,7 @@ The opening hours for each organisation’s operation type
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceListOpeningHourOperation } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceListOpeningHourOperation } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceListOpeningHourOperation =
   "DELIVERY";

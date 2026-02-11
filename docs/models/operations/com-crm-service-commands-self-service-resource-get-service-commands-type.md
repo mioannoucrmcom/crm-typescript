@@ -5,7 +5,7 @@ The field's type (how it will be presented in the User Interface)
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsType } from "crm/models/operations";
+import { ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsType } from "crmcom/models/operations";
 
 let value: ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsType =
   "TEXT";

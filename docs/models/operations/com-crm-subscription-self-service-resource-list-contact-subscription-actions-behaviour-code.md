@@ -5,7 +5,7 @@ The action's behaviour code shows how the action affetcs the service for example
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionActionsBehaviourCode } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionActionsBehaviourCode } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListContactSubscriptionActionsBehaviourCode =

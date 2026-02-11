@@ -5,7 +5,7 @@ Details about financial transaction
 ## Example Usage
 
 ```typescript
-import { CreditNote } from "crm/models/operations";
+import { CreditNote } from "crmcom/models/operations";
 
 let value: CreditNote = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

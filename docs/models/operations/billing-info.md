@@ -5,7 +5,7 @@ Detailed billing information of the subscription
 ## Example Usage
 
 ```typescript
-import { BillingInfo } from "crm/models/operations";
+import { BillingInfo } from "crmcom/models/operations";
 
 let value: BillingInfo = {
   billUpDate: 1620981311,

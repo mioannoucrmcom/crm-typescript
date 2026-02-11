@@ -5,7 +5,7 @@ JSON scripts contaning specific mapping of existing settings to particular eleme
 ## Example Usage
 
 ```typescript
-import { AdvancedSettings } from "crm/models/operations";
+import { AdvancedSettings } from "crmcom/models/operations";
 
 let value: AdvancedSettings = {};
 ```

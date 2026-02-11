@@ -27,12 +27,12 @@ Returns a list of services to which the contact is subscribed to
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listSubscriptionServices" method="get" path="/self-service/v2/contacts/{id}/services" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionServices({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionServices({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -51,15 +51,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-services.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-services.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -80,12 +80,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listSubscriptionServices" method="get" path="/self-service/v2/contacts/{id}/services" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionServices({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionServices({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -104,15 +104,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-services.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-services.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -133,12 +133,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listSubscriptionServices" method="get" path="/self-service/v2/contacts/{id}/services" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionServices({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionServices({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -158,15 +158,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-services.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-services.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -188,12 +188,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listSubscriptionServices" method="get" path="/self-service/v2/contacts/{id}/services" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionServices({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionServices({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -213,15 +213,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-services.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-services.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -243,12 +243,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listSubscriptionServices" method="get" path="/self-service/v2/contacts/{id}/services" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionServices({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionServices({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -268,15 +268,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-services.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-services.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionServices(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -323,12 +323,12 @@ Subscribes the customer to new subscription services. A single service can be ad
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_addService" method="post" path="/self-service/v2/contacts/{id}/services" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceAddService({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceAddService({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -367,15 +367,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceAddService } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-add-service.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceAddService } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-add-service.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceAddService(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceAddService(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -441,12 +441,12 @@ Returns a list of subscriptions owned by a specified contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listContactSubscriptions" method="get" path="/self-service/v2/contacts/{id}/subscriptions" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -465,15 +465,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscriptions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscriptions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -494,12 +494,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listContactSubscriptions" method="get" path="/self-service/v2/contacts/{id}/subscriptions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -518,15 +518,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscriptions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscriptions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -547,12 +547,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listContactSubscriptions" method="get" path="/self-service/v2/contacts/{id}/subscriptions" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -572,15 +572,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscriptions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscriptions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -602,12 +602,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listContactSubscriptions" method="get" path="/self-service/v2/contacts/{id}/subscriptions" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -627,15 +627,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscriptions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscriptions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -657,12 +657,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listContactSubscriptions" method="get" path="/self-service/v2/contacts/{id}/subscriptions" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -682,15 +682,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscriptions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscriptions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -737,12 +737,12 @@ Returns a list of subscription actions of a specified contact (and among all of 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listContactSubscriptionActions" method="get" path="/self-service/v2/contacts/{id}/subscriptions/actions" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptionActions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptionActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "9837ee37-a1ab-4a27-9b4b-663c9025a205",
@@ -773,15 +773,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscription-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscription-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "9837ee37-a1ab-4a27-9b4b-663c9025a205",
@@ -814,12 +814,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listContactSubscriptionActions" method="get" path="/self-service/v2/contacts/{id}/subscriptions/actions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptionActions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptionActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "9837ee37-a1ab-4a27-9b4b-663c9025a205",
@@ -850,15 +850,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscription-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscription-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "9837ee37-a1ab-4a27-9b4b-663c9025a205",
@@ -891,12 +891,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listContactSubscriptionActions" method="get" path="/self-service/v2/contacts/{id}/subscriptions/actions" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptionActions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptionActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "9837ee37-a1ab-4a27-9b4b-663c9025a205",
@@ -928,15 +928,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscription-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscription-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "9837ee37-a1ab-4a27-9b4b-663c9025a205",
@@ -970,12 +970,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listContactSubscriptionActions" method="get" path="/self-service/v2/contacts/{id}/subscriptions/actions" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptionActions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptionActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "9837ee37-a1ab-4a27-9b4b-663c9025a205",
@@ -1007,15 +1007,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscription-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscription-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "9837ee37-a1ab-4a27-9b4b-663c9025a205",
@@ -1049,12 +1049,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listContactSubscriptionActions" method="get" path="/self-service/v2/contacts/{id}/subscriptions/actions" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptionActions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListContactSubscriptionActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "9837ee37-a1ab-4a27-9b4b-663c9025a205",
@@ -1086,15 +1086,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscription-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-contact-subscription-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListContactSubscriptionActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "9837ee37-a1ab-4a27-9b4b-663c9025a205",
@@ -1153,12 +1153,12 @@ Returns an estimation of a customer’s upcoming billing
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.EstimateSubscriptionSelfServiceResource_estimateBilling" method="post" path="/self-service/v2/estimates/billing" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmEstimateSubscriptionSelfServiceResourceEstimateBilling({
+  const result = await crmcom.subscriptions.comCrmEstimateSubscriptionSelfServiceResourceEstimateBilling({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     contactId: "",
@@ -1178,15 +1178,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmEstimateSubscriptionSelfServiceResourceEstimateBilling } from "crm/funcs/subscriptions-com-crm-estimate-subscription-self-service-resource-estimate-billing.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmEstimateSubscriptionSelfServiceResourceEstimateBilling } from "crmcom/funcs/subscriptions-com-crm-estimate-subscription-self-service-resource-estimate-billing.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmEstimateSubscriptionSelfServiceResourceEstimateBilling(crm, {
+  const res = await subscriptionsComCrmEstimateSubscriptionSelfServiceResourceEstimateBilling(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     contactId: "",
@@ -1233,14 +1233,14 @@ Returns an estimation of a change perfromed on a subscription service, without m
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.EstimateSubscriptionSelfServiceResource_estimateSubscription" method="post" path="/self-service/v2/estimates/service_delivery" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.subscriptions.comCrmEstimateSubscriptionSelfServiceResourceEstimateSubscription({
+  const result = await crmcom.subscriptions.comCrmEstimateSubscriptionSelfServiceResourceEstimateSubscription({
     action: "CHANGE_TERMS",
     contactId: "",
     accountId: "",
@@ -1323,17 +1323,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscription } from "crm/funcs/subscriptions-com-crm-estimate-subscription-self-service-resource-estimate-subscription.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscription } from "crmcom/funcs/subscriptions-com-crm-estimate-subscription-self-service-resource-estimate-subscription.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await subscriptionsComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscription(crm, {
+  const res = await subscriptionsComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscription(crmcom, {
     action: "CHANGE_TERMS",
     contactId: "",
     accountId: "",
@@ -1448,12 +1448,12 @@ Updates a single suscsription service. A service might change due to various rea
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_changeService" method="put" path="/self-service/v2/services/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceChangeService({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceChangeService({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1498,15 +1498,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceChangeService } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-change-service.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceChangeService } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-change-service.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceChangeService(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceChangeService(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1578,12 +1578,12 @@ Returns a list of Devices to which a service is already enabled on and devices o
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listServiceDevices" method="get" path="/self-service/v2/services/{id}/devices" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListServiceDevices({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListServiceDevices({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1604,15 +1604,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-service-devices.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-service-devices.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1635,12 +1635,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listServiceDevices" method="get" path="/self-service/v2/services/{id}/devices" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListServiceDevices({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListServiceDevices({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1660,15 +1660,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-service-devices.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-service-devices.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1690,12 +1690,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listServiceDevices" method="get" path="/self-service/v2/services/{id}/devices" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListServiceDevices({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListServiceDevices({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1716,15 +1716,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-service-devices.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-service-devices.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1747,12 +1747,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listServiceDevices" method="get" path="/self-service/v2/services/{id}/devices" example="POSTED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListServiceDevices({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListServiceDevices({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1773,15 +1773,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-service-devices.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-service-devices.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1804,12 +1804,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listServiceDevices" method="get" path="/self-service/v2/services/{id}/devices" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListServiceDevices({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListServiceDevices({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1830,15 +1830,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-service-devices.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-service-devices.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListServiceDevices(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1886,12 +1886,12 @@ Retrieves a list of actions submitted for a subscription. This set includes all 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listSubscriptionActions" method="get" path="/self-service/v2/subscriptions/actions" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionActions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     behaviourCode: "ADD_SERVICE",
@@ -1915,15 +1915,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     behaviourCode: "ADD_SERVICE",
@@ -1949,12 +1949,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listSubscriptionActions" method="get" path="/self-service/v2/subscriptions/actions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionActions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     behaviourCode: "ADD_SERVICE",
@@ -1978,15 +1978,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     behaviourCode: "ADD_SERVICE",
@@ -2012,12 +2012,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listSubscriptionActions" method="get" path="/self-service/v2/subscriptions/actions" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionActions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     behaviourCode: "ADD_SERVICE",
@@ -2042,15 +2042,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     behaviourCode: "ADD_SERVICE",
@@ -2077,12 +2077,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listSubscriptionActions" method="get" path="/self-service/v2/subscriptions/actions" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionActions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     behaviourCode: "ADD_SERVICE",
@@ -2107,15 +2107,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     behaviourCode: "ADD_SERVICE",
@@ -2142,12 +2142,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_listSubscriptionActions" method="get" path="/self-service/v2/subscriptions/actions" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionActions({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceListSubscriptionActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     behaviourCode: "ADD_SERVICE",
@@ -2172,15 +2172,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-list-subscription-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceListSubscriptionActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     behaviourCode: "ADD_SERVICE",
@@ -2232,12 +2232,12 @@ Retrieves detailed information of an existing subscription action
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_getSubscriptionAction" method="get" path="/self-service/v2/subscriptions/actions/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceGetSubscriptionAction({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceGetSubscriptionAction({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -2254,15 +2254,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceGetSubscriptionAction } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-get-subscription-action.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceGetSubscriptionAction } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-get-subscription-action.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceGetSubscriptionAction(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceGetSubscriptionAction(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -2306,12 +2306,12 @@ Updates an existing subscripton action.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_updateSubscriptionAction" method="put" path="/self-service/v2/subscriptions/actions/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceUpdateSubscriptionAction({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceUpdateSubscriptionAction({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -2337,15 +2337,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceUpdateSubscriptionAction } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-update-subscription-action.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceUpdateSubscriptionAction } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-update-subscription-action.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceUpdateSubscriptionAction(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceUpdateSubscriptionAction(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -2398,12 +2398,12 @@ Updates subscripion information related to the customer’s billing terms for a 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SubscriptionSelfServiceResource_change" method="put" path="/self-service/v2/subscriptions/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.subscriptions.comCrmSubscriptionSelfServiceResourceChange({
+  const result = await crmcom.subscriptions.comCrmSubscriptionSelfServiceResourceChange({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -2432,15 +2432,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { subscriptionsComCrmSubscriptionSelfServiceResourceChange } from "crm/funcs/subscriptions-com-crm-subscription-self-service-resource-change.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { subscriptionsComCrmSubscriptionSelfServiceResourceChange } from "crmcom/funcs/subscriptions-com-crm-subscription-self-service-resource-change.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceChange(crm, {
+  const res = await subscriptionsComCrmSubscriptionSelfServiceResourceChange(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",

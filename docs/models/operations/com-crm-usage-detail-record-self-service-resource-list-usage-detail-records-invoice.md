@@ -5,7 +5,7 @@ The invoice related to the usage record
 ## Example Usage
 
 ```typescript
-import { ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsInvoice } from "crm/models/operations";
+import { ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsInvoice } from "crmcom/models/operations";
 
 let value:
   ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsInvoice = {

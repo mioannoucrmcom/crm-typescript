@@ -5,7 +5,7 @@ The product variant stock information (returned only if include_stock is set to 
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductVariationsStockInformation } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductVariationsStockInformation } from "crmcom/models/operations";
 
 let value:
   ComCrmProductSelfServiceResourceGetProductVariationsStockInformation = {

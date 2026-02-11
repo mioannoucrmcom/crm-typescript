@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ListContactAddressesSSPaging } from "crm/models/operations";
+import { ListContactAddressesSSPaging } from "crmcom/models/operations";
 
 let value: ListContactAddressesSSPaging = {
   page: 2,

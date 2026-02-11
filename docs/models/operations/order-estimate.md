@@ -5,7 +5,7 @@ An estimation on if the Order can be placed and if yes, then its detailed inform
 ## Example Usage
 
 ```typescript
-import { OrderEstimate } from "crm/models/operations";
+import { OrderEstimate } from "crmcom/models/operations";
 
 let value: OrderEstimate = {
   orderingAllowed: true,

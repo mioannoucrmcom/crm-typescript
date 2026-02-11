@@ -5,7 +5,7 @@ The queue information
 ## Example Usage
 
 ```typescript
-import { OrderQueue } from "crm/models/operations";
+import { OrderQueue } from "crmcom/models/operations";
 
 let value: OrderQueue = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

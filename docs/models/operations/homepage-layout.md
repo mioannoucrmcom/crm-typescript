@@ -5,7 +5,7 @@ The application layout
 ## Example Usage
 
 ```typescript
-import { HomepageLayout } from "crm/models/operations";
+import { HomepageLayout } from "crmcom/models/operations";
 
 let value: HomepageLayout = "LAYOUT5";
 ```

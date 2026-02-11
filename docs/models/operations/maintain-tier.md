@@ -5,7 +5,7 @@ Details on how to maintain the current tier
 ## Example Usage
 
 ```typescript
-import { MaintainTier } from "crm/models/operations";
+import { MaintainTier } from "crmcom/models/operations";
 
 let value: MaintainTier = {
   pointsNeeded: 200,

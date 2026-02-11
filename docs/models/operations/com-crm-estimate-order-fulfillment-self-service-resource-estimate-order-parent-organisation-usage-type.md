@@ -7,7 +7,7 @@ Information about the creative type
 ```typescript
 import {
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderParentOrganisationUsageType,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderParentOrganisationUsageType =

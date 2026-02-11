@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceListProductsSecurity } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceListProductsSecurity } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceListProductsSecurity = {};
 ```

@@ -5,7 +5,7 @@ Details about the product
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSubscriptionSelfServiceResourceEstimateBillingProduct } from "crm/models/operations";
+import { ComCrmEstimateSubscriptionSelfServiceResourceEstimateBillingProduct } from "crmcom/models/operations";
 
 let value: ComCrmEstimateSubscriptionSelfServiceResourceEstimateBillingProduct =
   {

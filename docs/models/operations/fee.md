@@ -5,7 +5,7 @@ The contribution/settlement fee that was applied on the settlement transaction
 ## Example Usage
 
 ```typescript
-import { Fee } from "crm/models/operations";
+import { Fee } from "crmcom/models/operations";
 
 let value: Fee = {
   feeType: "CONTRIBUTION",

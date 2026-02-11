@@ -5,7 +5,7 @@ Details of expired Business Commerce funds
 ## Example Usage
 
 ```typescript
-import { WalletExpiration } from "crm/models/operations";
+import { WalletExpiration } from "crmcom/models/operations";
 
 let value: WalletExpiration = {
   date: 1614954223,

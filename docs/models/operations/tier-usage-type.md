@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { TierUsageType } from "crm/models/operations";
+import { TierUsageType } from "crmcom/models/operations";
 
 let value: TierUsageType = "LANDING_PAGE_LOGO_IMAGE";
 ```

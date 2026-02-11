@@ -5,7 +5,7 @@ Defines the supported business network features
 ## Example Usage
 
 ```typescript
-import { BusinessNetwork } from "crm/models/operations";
+import { BusinessNetwork } from "crmcom/models/operations";
 
 let value: BusinessNetwork = {
   isSupported: true,

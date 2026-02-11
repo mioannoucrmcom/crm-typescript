@@ -5,7 +5,7 @@ Top up the wallet on a frequent basis using one of the payment methods
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopup } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopup } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopup = {
   amount: 50,

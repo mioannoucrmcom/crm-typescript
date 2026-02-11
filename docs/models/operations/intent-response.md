@@ -5,7 +5,7 @@ The intent for which the token was requested
 ## Example Usage
 
 ```typescript
-import { IntentResponse } from "crm/models/operations";
+import { IntentResponse } from "crmcom/models/operations";
 
 let value: IntentResponse = "SPEND";
 ```

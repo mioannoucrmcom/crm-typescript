@@ -5,7 +5,7 @@ Defines the supported OTP spend features
 ## Example Usage
 
 ```typescript
-import { OtpSpend } from "crm/models/operations";
+import { OtpSpend } from "crmcom/models/operations";
 
 let value: OtpSpend = {
   isSupported: true,

@@ -5,7 +5,7 @@ Applicable when the ordered items is bundled with another order item. The bundle
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderBundledItem } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderBundledItem } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderBundledItem = {};
 ```

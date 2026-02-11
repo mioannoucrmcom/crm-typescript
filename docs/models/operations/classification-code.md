@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ClassificationCode } from "crm/models/operations";
+import { ClassificationCode } from "crmcom/models/operations";
 
 let value: ClassificationCode = "OPT_OUT_RENEWALS";
 ```

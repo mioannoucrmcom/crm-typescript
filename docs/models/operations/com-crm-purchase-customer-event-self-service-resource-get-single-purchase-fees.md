@@ -5,7 +5,7 @@ Details about applied fees
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseFees } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseFees } from "crmcom/models/operations";
 
 let value: ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseFees =
   {

@@ -5,7 +5,7 @@ The Order Catalogue Category product
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderCatalogSelfServiceResourceListCategoriesProductProduct } from "crm/models/operations";
+import { ComCrmOrderCatalogSelfServiceResourceListCategoriesProductProduct } from "crmcom/models/operations";
 
 let value: ComCrmOrderCatalogSelfServiceResourceListCategoriesProductProduct = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

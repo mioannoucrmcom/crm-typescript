@@ -17,14 +17,14 @@ List all contact tokens for a specific contact
 
 <!-- UsageSnippet language="typescript" operationID="listContactTokensSS" method="get" path="/self-service/v2/contacts/{id}/tokens" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactTokens.listContactTokensSS({
+  const result = await crmcom.contactTokens.listContactTokensSS({
     id: "33749faa-4ef0-426d-f9f0-83b91bf5ab3f",
     communityId: "c1d2e3f4-5678-90ab-cdef-1234567890ab",
     intent: "SPEND",
@@ -41,17 +41,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactTokensListContactTokensSS } from "crm/funcs/contact-tokens-list-contact-tokens-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactTokensListContactTokensSS } from "crmcom/funcs/contact-tokens-list-contact-tokens-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactTokensListContactTokensSS(crm, {
+  const res = await contactTokensListContactTokensSS(crmcom, {
     id: "33749faa-4ef0-426d-f9f0-83b91bf5ab3f",
     communityId: "c1d2e3f4-5678-90ab-cdef-1234567890ab",
     intent: "SPEND",
@@ -94,14 +94,14 @@ Request to create a contact token
 
 <!-- UsageSnippet language="typescript" operationID="addContactTokenSS" method="post" path="/self-service/v2/contacts/{id}/tokens" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactTokens.addContactTokenSS({
+  const result = await crmcom.contactTokens.addContactTokenSS({
     id: "e18ee2bc-c6f3-49e1-8e05-763386378017",
     body: {
       intent: "SPEND",
@@ -120,17 +120,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactTokensAddContactTokenSS } from "crm/funcs/contact-tokens-add-contact-token-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactTokensAddContactTokenSS } from "crmcom/funcs/contact-tokens-add-contact-token-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactTokensAddContactTokenSS(crm, {
+  const res = await contactTokensAddContactTokenSS(crmcom, {
     id: "e18ee2bc-c6f3-49e1-8e05-763386378017",
     body: {
       intent: "SPEND",

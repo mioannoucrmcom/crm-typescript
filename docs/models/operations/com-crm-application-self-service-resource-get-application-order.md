@@ -5,7 +5,7 @@ Defines the supported ordering features
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationOrder } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationOrder } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationOrder = {
   isSupported: true,

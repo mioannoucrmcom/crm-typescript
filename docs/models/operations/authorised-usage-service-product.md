@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AuthorisedUsageServiceProduct } from "crm/models/operations";
+import { AuthorisedUsageServiceProduct } from "crmcom/models/operations";
 
 let value: AuthorisedUsageServiceProduct = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

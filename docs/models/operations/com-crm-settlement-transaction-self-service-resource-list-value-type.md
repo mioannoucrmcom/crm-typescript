@@ -8,7 +8,7 @@ Defines whether the fee is amount or percentage based
 ## Example Usage
 
 ```typescript
-import { ComCrmSettlementTransactionSelfServiceResourceListValueType } from "crm/models/operations";
+import { ComCrmSettlementTransactionSelfServiceResourceListValueType } from "crmcom/models/operations";
 
 let value: ComCrmSettlementTransactionSelfServiceResourceListValueType =
   "AMOUNT";

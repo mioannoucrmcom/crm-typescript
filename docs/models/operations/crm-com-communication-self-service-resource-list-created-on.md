@@ -5,7 +5,7 @@ Filters communications based on created date
 ## Example Usage
 
 ```typescript
-import { CrmComCommunicationSelfServiceResourceListCreatedOn } from "crm/models/operations";
+import { CrmComCommunicationSelfServiceResourceListCreatedOn } from "crmcom/models/operations";
 
 let value: CrmComCommunicationSelfServiceResourceListCreatedOn =
   "created_on[lte]";

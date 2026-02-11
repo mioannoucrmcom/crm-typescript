@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Group } from "crm/models/operations";
+import { Group } from "crmcom/models/operations";
 
 let value: Group = {
   group: "G1",

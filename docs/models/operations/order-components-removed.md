@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OrderComponentsRemoved } from "crm/models/operations";
+import { OrderComponentsRemoved } from "crmcom/models/operations";
 
 let value: OrderComponentsRemoved = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

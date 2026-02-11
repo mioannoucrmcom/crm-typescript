@@ -5,7 +5,7 @@ The country the bank account is located in.
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddPaymentMethodCountry } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddPaymentMethodCountry } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddPaymentMethodCountry = "CYP";
 ```

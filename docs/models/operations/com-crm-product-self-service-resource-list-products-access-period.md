@@ -5,7 +5,7 @@ The period of time that contacts will have access to the service. Applicable onl
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceListProductsAccessPeriod } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceListProductsAccessPeriod } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceListProductsAccessPeriod = {
   startDate: 1612953199,

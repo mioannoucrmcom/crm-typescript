@@ -5,7 +5,7 @@ Applicable only when the invoiced item was provided as part of a bundle product
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProduct } from "crm/models/operations";
+import { ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProduct } from "crmcom/models/operations";
 
 let value: ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProduct = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

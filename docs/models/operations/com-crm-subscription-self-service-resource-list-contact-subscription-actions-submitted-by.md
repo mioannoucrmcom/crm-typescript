@@ -5,7 +5,7 @@ Details about who submitted the subscription action
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionActionsSubmittedBy } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionActionsSubmittedBy } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListContactSubscriptionActionsSubmittedBy =

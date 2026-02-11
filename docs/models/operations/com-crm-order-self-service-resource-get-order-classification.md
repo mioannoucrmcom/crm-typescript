@@ -5,7 +5,7 @@ Product classification
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderClassification } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderClassification } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderClassification =
   "TRACEABLE_PHYSICAL_GOOD";

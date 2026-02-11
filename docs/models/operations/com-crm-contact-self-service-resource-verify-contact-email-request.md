@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceVerifyContactEmailRequest } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceVerifyContactEmailRequest } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceVerifyContactEmailRequest = {
   token: "ABCTKN123456798VGP2020",

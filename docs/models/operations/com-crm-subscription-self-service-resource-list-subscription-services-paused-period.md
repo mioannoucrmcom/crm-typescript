@@ -5,7 +5,7 @@ Applicable while the service is paused
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPausedPeriod } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPausedPeriod } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPausedPeriod = {

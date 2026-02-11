@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductUsageType } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductUsageType } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductUsageType =
   "GOOGLE_STRIP_IMAGE";

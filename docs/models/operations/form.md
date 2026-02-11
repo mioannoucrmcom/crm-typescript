@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Form } from "crm/models/operations";
+import { Form } from "crmcom/models/operations";
 
 let value: Form = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

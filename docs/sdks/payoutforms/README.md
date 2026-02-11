@@ -21,12 +21,12 @@ Web API used when consumers want to perform a payout. It's vital to study the Pa
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PayoutFormSelfServiceResource_generatePayoutForm" method="get" path="/self-service/v2/payout_forms/payout" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.payoutForms.comCrmPayoutFormSelfServiceResourceGeneratePayoutForm({
+  const result = await crmcom.payoutForms.comCrmPayoutFormSelfServiceResourceGeneratePayoutForm({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     amount: 23.4,
@@ -46,15 +46,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { payoutFormsComCrmPayoutFormSelfServiceResourceGeneratePayoutForm } from "crm/funcs/payout-forms-com-crm-payout-form-self-service-resource-generate-payout-form.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { payoutFormsComCrmPayoutFormSelfServiceResourceGeneratePayoutForm } from "crmcom/funcs/payout-forms-com-crm-payout-form-self-service-resource-generate-payout-form.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await payoutFormsComCrmPayoutFormSelfServiceResourceGeneratePayoutForm(crm, {
+  const res = await payoutFormsComCrmPayoutFormSelfServiceResourceGeneratePayoutForm(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     amount: 23.4,

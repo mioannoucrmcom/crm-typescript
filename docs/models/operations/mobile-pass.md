@@ -5,7 +5,7 @@ Defines the supported mobile pass features
 ## Example Usage
 
 ```typescript
-import { MobilePass } from "crm/models/operations";
+import { MobilePass } from "crmcom/models/operations";
 
 let value: MobilePass = {
   isSupported: true,

@@ -5,7 +5,7 @@ The alternative token code format. This code can be in the form of a barcode or 
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationCodeFormat } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationCodeFormat } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationCodeFormat =
   "BARCODE";

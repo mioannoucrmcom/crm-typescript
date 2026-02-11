@@ -5,7 +5,7 @@ Defines how contacts can sign up to the reward scheme
 ## Example Usage
 
 ```typescript
-import { SignUpOption } from "crm/models/operations";
+import { SignUpOption } from "crmcom/models/operations";
 
 let value: SignUpOption = "SELF_SIGN_UP";
 ```

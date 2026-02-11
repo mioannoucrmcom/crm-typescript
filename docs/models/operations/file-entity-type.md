@@ -5,7 +5,7 @@ The file being uploaded is for this entity. The following types will be automati
 ## Example Usage
 
 ```typescript
-import { FileEntityType } from "crm/models/operations";
+import { FileEntityType } from "crmcom/models/operations";
 
 let value: FileEntityType = "ORDERS";
 ```

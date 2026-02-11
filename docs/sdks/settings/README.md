@@ -19,14 +19,14 @@ Returns a list of name day rules
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.NameDayRulesSelfServiceResource_listNameDayRules" method="get" path="/self-service/v2/name_day_rules" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmNameDayRulesSelfServiceResourceListNameDayRules();
+  const result = await crmcom.settings.comCrmNameDayRulesSelfServiceResourceListNameDayRules();
 
   console.log(result);
 }
@@ -39,17 +39,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmNameDayRulesSelfServiceResourceListNameDayRules } from "crm/funcs/settings-com-crm-name-day-rules-self-service-resource-list-name-day-rules.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmNameDayRulesSelfServiceResourceListNameDayRules } from "crmcom/funcs/settings-com-crm-name-day-rules-self-service-resource-list-name-day-rules.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmNameDayRulesSelfServiceResourceListNameDayRules(crm);
+  const res = await settingsComCrmNameDayRulesSelfServiceResourceListNameDayRules(crmcom);
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -88,14 +88,14 @@ Returns a list of product brands
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductBrandSelfServiceResource_getProductBrands" method="get" path="/self-service/v2/products/brands" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductBrandSelfServiceResourceGetProductBrands({
+  const result = await crmcom.settings.comCrmProductBrandSelfServiceResourceGetProductBrands({
     includeTotal: true,
     size: 100,
   });
@@ -111,17 +111,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductBrandSelfServiceResourceGetProductBrands } from "crm/funcs/settings-com-crm-product-brand-self-service-resource-get-product-brands.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductBrandSelfServiceResourceGetProductBrands } from "crmcom/funcs/settings-com-crm-product-brand-self-service-resource-get-product-brands.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductBrandSelfServiceResourceGetProductBrands(crm, {
+  const res = await settingsComCrmProductBrandSelfServiceResourceGetProductBrands(crmcom, {
     includeTotal: true,
     size: 100,
   });
@@ -139,14 +139,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductBrandSelfServiceResource_getProductBrands" method="get" path="/self-service/v2/products/brands" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductBrandSelfServiceResourceGetProductBrands({
+  const result = await crmcom.settings.comCrmProductBrandSelfServiceResourceGetProductBrands({
     includeTotal: true,
     size: 100,
   });
@@ -162,17 +162,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductBrandSelfServiceResourceGetProductBrands } from "crm/funcs/settings-com-crm-product-brand-self-service-resource-get-product-brands.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductBrandSelfServiceResourceGetProductBrands } from "crmcom/funcs/settings-com-crm-product-brand-self-service-resource-get-product-brands.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductBrandSelfServiceResourceGetProductBrands(crm, {
+  const res = await settingsComCrmProductBrandSelfServiceResourceGetProductBrands(crmcom, {
     includeTotal: true,
     size: 100,
   });
@@ -190,14 +190,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductBrandSelfServiceResource_getProductBrands" method="get" path="/self-service/v2/products/brands" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductBrandSelfServiceResourceGetProductBrands({
+  const result = await crmcom.settings.comCrmProductBrandSelfServiceResourceGetProductBrands({
     includeTotal: true,
     size: 100,
     sort: "NAME",
@@ -214,17 +214,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductBrandSelfServiceResourceGetProductBrands } from "crm/funcs/settings-com-crm-product-brand-self-service-resource-get-product-brands.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductBrandSelfServiceResourceGetProductBrands } from "crmcom/funcs/settings-com-crm-product-brand-self-service-resource-get-product-brands.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductBrandSelfServiceResourceGetProductBrands(crm, {
+  const res = await settingsComCrmProductBrandSelfServiceResourceGetProductBrands(crmcom, {
     includeTotal: true,
     size: 100,
     sort: "NAME",
@@ -243,14 +243,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductBrandSelfServiceResource_getProductBrands" method="get" path="/self-service/v2/products/brands" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductBrandSelfServiceResourceGetProductBrands({
+  const result = await crmcom.settings.comCrmProductBrandSelfServiceResourceGetProductBrands({
     includeTotal: true,
     size: 100,
     sort: "SCHEDULED_DATE",
@@ -267,17 +267,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductBrandSelfServiceResourceGetProductBrands } from "crm/funcs/settings-com-crm-product-brand-self-service-resource-get-product-brands.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductBrandSelfServiceResourceGetProductBrands } from "crmcom/funcs/settings-com-crm-product-brand-self-service-resource-get-product-brands.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductBrandSelfServiceResourceGetProductBrands(crm, {
+  const res = await settingsComCrmProductBrandSelfServiceResourceGetProductBrands(crmcom, {
     includeTotal: true,
     size: 100,
     sort: "SCHEDULED_DATE",
@@ -296,14 +296,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductBrandSelfServiceResource_getProductBrands" method="get" path="/self-service/v2/products/brands" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductBrandSelfServiceResourceGetProductBrands({
+  const result = await crmcom.settings.comCrmProductBrandSelfServiceResourceGetProductBrands({
     includeTotal: true,
     size: 100,
     sort: "UPDATED_DATE",
@@ -320,17 +320,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductBrandSelfServiceResourceGetProductBrands } from "crm/funcs/settings-com-crm-product-brand-self-service-resource-get-product-brands.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductBrandSelfServiceResourceGetProductBrands } from "crmcom/funcs/settings-com-crm-product-brand-self-service-resource-get-product-brands.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductBrandSelfServiceResourceGetProductBrands(crm, {
+  const res = await settingsComCrmProductBrandSelfServiceResourceGetProductBrands(crmcom, {
     includeTotal: true,
     size: 100,
     sort: "UPDATED_DATE",
@@ -373,14 +373,14 @@ Returns a list of product categories
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductCategorySelfServiceResource_listProductCategories" method="get" path="/self-service/v2/products/categories" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductCategorySelfServiceResourceListProductCategories({
+  const result = await crmcom.settings.comCrmProductCategorySelfServiceResourceListProductCategories({
     availableInOrderMenus: false,
     parentId: "9365d945-2c62-be0e-a8dc-45736fdfa5b5",
     returnAll: true,
@@ -399,17 +399,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductCategorySelfServiceResourceListProductCategories } from "crm/funcs/settings-com-crm-product-category-self-service-resource-list-product-categories.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductCategorySelfServiceResourceListProductCategories } from "crmcom/funcs/settings-com-crm-product-category-self-service-resource-list-product-categories.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductCategorySelfServiceResourceListProductCategories(crm, {
+  const res = await settingsComCrmProductCategorySelfServiceResourceListProductCategories(crmcom, {
     availableInOrderMenus: false,
     parentId: "9365d945-2c62-be0e-a8dc-45736fdfa5b5",
     returnAll: true,
@@ -430,14 +430,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductCategorySelfServiceResource_listProductCategories" method="get" path="/self-service/v2/products/categories" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductCategorySelfServiceResourceListProductCategories({
+  const result = await crmcom.settings.comCrmProductCategorySelfServiceResourceListProductCategories({
     availableInOrderMenus: false,
     parentId: "9365d945-2c62-be0e-a8dc-45736fdfa5b5",
     returnAll: true,
@@ -456,17 +456,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductCategorySelfServiceResourceListProductCategories } from "crm/funcs/settings-com-crm-product-category-self-service-resource-list-product-categories.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductCategorySelfServiceResourceListProductCategories } from "crmcom/funcs/settings-com-crm-product-category-self-service-resource-list-product-categories.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductCategorySelfServiceResourceListProductCategories(crm, {
+  const res = await settingsComCrmProductCategorySelfServiceResourceListProductCategories(crmcom, {
     availableInOrderMenus: false,
     parentId: "9365d945-2c62-be0e-a8dc-45736fdfa5b5",
     returnAll: true,
@@ -487,14 +487,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductCategorySelfServiceResource_listProductCategories" method="get" path="/self-service/v2/products/categories" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductCategorySelfServiceResourceListProductCategories({
+  const result = await crmcom.settings.comCrmProductCategorySelfServiceResourceListProductCategories({
     availableInOrderMenus: false,
     parentId: "9365d945-2c62-be0e-a8dc-45736fdfa5b5",
     returnAll: true,
@@ -514,17 +514,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductCategorySelfServiceResourceListProductCategories } from "crm/funcs/settings-com-crm-product-category-self-service-resource-list-product-categories.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductCategorySelfServiceResourceListProductCategories } from "crmcom/funcs/settings-com-crm-product-category-self-service-resource-list-product-categories.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductCategorySelfServiceResourceListProductCategories(crm, {
+  const res = await settingsComCrmProductCategorySelfServiceResourceListProductCategories(crmcom, {
     availableInOrderMenus: false,
     parentId: "9365d945-2c62-be0e-a8dc-45736fdfa5b5",
     returnAll: true,
@@ -546,14 +546,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductCategorySelfServiceResource_listProductCategories" method="get" path="/self-service/v2/products/categories" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductCategorySelfServiceResourceListProductCategories({
+  const result = await crmcom.settings.comCrmProductCategorySelfServiceResourceListProductCategories({
     availableInOrderMenus: false,
     parentId: "9365d945-2c62-be0e-a8dc-45736fdfa5b5",
     returnAll: true,
@@ -573,17 +573,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductCategorySelfServiceResourceListProductCategories } from "crm/funcs/settings-com-crm-product-category-self-service-resource-list-product-categories.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductCategorySelfServiceResourceListProductCategories } from "crmcom/funcs/settings-com-crm-product-category-self-service-resource-list-product-categories.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductCategorySelfServiceResourceListProductCategories(crm, {
+  const res = await settingsComCrmProductCategorySelfServiceResourceListProductCategories(crmcom, {
     availableInOrderMenus: false,
     parentId: "9365d945-2c62-be0e-a8dc-45736fdfa5b5",
     returnAll: true,
@@ -605,14 +605,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductCategorySelfServiceResource_listProductCategories" method="get" path="/self-service/v2/products/categories" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductCategorySelfServiceResourceListProductCategories({
+  const result = await crmcom.settings.comCrmProductCategorySelfServiceResourceListProductCategories({
     availableInOrderMenus: false,
     parentId: "9365d945-2c62-be0e-a8dc-45736fdfa5b5",
     returnAll: true,
@@ -632,17 +632,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductCategorySelfServiceResourceListProductCategories } from "crm/funcs/settings-com-crm-product-category-self-service-resource-list-product-categories.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductCategorySelfServiceResourceListProductCategories } from "crmcom/funcs/settings-com-crm-product-category-self-service-resource-list-product-categories.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductCategorySelfServiceResourceListProductCategories(crm, {
+  const res = await settingsComCrmProductCategorySelfServiceResourceListProductCategories(crmcom, {
     availableInOrderMenus: false,
     parentId: "9365d945-2c62-be0e-a8dc-45736fdfa5b5",
     returnAll: true,
@@ -688,14 +688,14 @@ Returns a list of product types
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductTypeSelfServiceResource_listProductTypes" method="get" path="/self-service/v2/products/types" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductTypeSelfServiceResourceListProductTypes({
+  const result = await crmcom.settings.comCrmProductTypeSelfServiceResourceListProductTypes({
     includeTotal: true,
     size: 100,
   });
@@ -711,17 +711,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductTypeSelfServiceResourceListProductTypes } from "crm/funcs/settings-com-crm-product-type-self-service-resource-list-product-types.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductTypeSelfServiceResourceListProductTypes } from "crmcom/funcs/settings-com-crm-product-type-self-service-resource-list-product-types.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductTypeSelfServiceResourceListProductTypes(crm, {
+  const res = await settingsComCrmProductTypeSelfServiceResourceListProductTypes(crmcom, {
     includeTotal: true,
     size: 100,
   });
@@ -739,14 +739,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductTypeSelfServiceResource_listProductTypes" method="get" path="/self-service/v2/products/types" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductTypeSelfServiceResourceListProductTypes({
+  const result = await crmcom.settings.comCrmProductTypeSelfServiceResourceListProductTypes({
     includeTotal: true,
     size: 100,
   });
@@ -762,17 +762,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductTypeSelfServiceResourceListProductTypes } from "crm/funcs/settings-com-crm-product-type-self-service-resource-list-product-types.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductTypeSelfServiceResourceListProductTypes } from "crmcom/funcs/settings-com-crm-product-type-self-service-resource-list-product-types.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductTypeSelfServiceResourceListProductTypes(crm, {
+  const res = await settingsComCrmProductTypeSelfServiceResourceListProductTypes(crmcom, {
     includeTotal: true,
     size: 100,
   });
@@ -790,14 +790,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductTypeSelfServiceResource_listProductTypes" method="get" path="/self-service/v2/products/types" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductTypeSelfServiceResourceListProductTypes({
+  const result = await crmcom.settings.comCrmProductTypeSelfServiceResourceListProductTypes({
     includeTotal: true,
     size: 100,
     sort: "NAME",
@@ -814,17 +814,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductTypeSelfServiceResourceListProductTypes } from "crm/funcs/settings-com-crm-product-type-self-service-resource-list-product-types.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductTypeSelfServiceResourceListProductTypes } from "crmcom/funcs/settings-com-crm-product-type-self-service-resource-list-product-types.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductTypeSelfServiceResourceListProductTypes(crm, {
+  const res = await settingsComCrmProductTypeSelfServiceResourceListProductTypes(crmcom, {
     includeTotal: true,
     size: 100,
     sort: "NAME",
@@ -843,14 +843,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductTypeSelfServiceResource_listProductTypes" method="get" path="/self-service/v2/products/types" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductTypeSelfServiceResourceListProductTypes({
+  const result = await crmcom.settings.comCrmProductTypeSelfServiceResourceListProductTypes({
     includeTotal: true,
     size: 100,
     sort: "SCHEDULED_DATE",
@@ -867,17 +867,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductTypeSelfServiceResourceListProductTypes } from "crm/funcs/settings-com-crm-product-type-self-service-resource-list-product-types.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductTypeSelfServiceResourceListProductTypes } from "crmcom/funcs/settings-com-crm-product-type-self-service-resource-list-product-types.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductTypeSelfServiceResourceListProductTypes(crm, {
+  const res = await settingsComCrmProductTypeSelfServiceResourceListProductTypes(crmcom, {
     includeTotal: true,
     size: 100,
     sort: "SCHEDULED_DATE",
@@ -896,14 +896,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductTypeSelfServiceResource_listProductTypes" method="get" path="/self-service/v2/products/types" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.settings.comCrmProductTypeSelfServiceResourceListProductTypes({
+  const result = await crmcom.settings.comCrmProductTypeSelfServiceResourceListProductTypes({
     includeTotal: true,
     size: 100,
     sort: "UPDATED_DATE",
@@ -920,17 +920,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { settingsComCrmProductTypeSelfServiceResourceListProductTypes } from "crm/funcs/settings-com-crm-product-type-self-service-resource-list-product-types.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { settingsComCrmProductTypeSelfServiceResourceListProductTypes } from "crmcom/funcs/settings-com-crm-product-type-self-service-resource-list-product-types.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await settingsComCrmProductTypeSelfServiceResourceListProductTypes(crm, {
+  const res = await settingsComCrmProductTypeSelfServiceResourceListProductTypes(crmcom, {
     includeTotal: true,
     size: 100,
     sort: "UPDATED_DATE",

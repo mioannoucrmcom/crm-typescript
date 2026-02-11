@@ -5,7 +5,7 @@ Type of discount applied
 ## Example Usage
 
 ```typescript
-import { InvoiceEstimateType } from "crm/models/operations";
+import { InvoiceEstimateType } from "crmcom/models/operations";
 
 let value: InvoiceEstimateType = "AD_HOC";
 ```

@@ -5,7 +5,7 @@ The account of the Subscription. Account might be owned by a Contact or an Organ
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsAccount } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsAccount } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsAccount = {

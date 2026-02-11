@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmAddressRegistrySelfServiceResourceGetAddressRequest } from "crm/models/operations";
+import { ComCrmAddressRegistrySelfServiceResourceGetAddressRequest } from "crmcom/models/operations";
 
 let value: ComCrmAddressRegistrySelfServiceResourceGetAddressRequest = {
   googlePlaceId: "ChIJLU7jZClu5kcR4PcOOO6p3I0",

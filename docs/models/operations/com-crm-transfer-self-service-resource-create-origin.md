@@ -5,7 +5,7 @@ The origin of the transfer. Can be either an account or a wallet
 ## Example Usage
 
 ```typescript
-import { ComCrmTransferSelfServiceResourceCreateOrigin } from "crm/models/operations";
+import { ComCrmTransferSelfServiceResourceCreateOrigin } from "crmcom/models/operations";
 
 let value: ComCrmTransferSelfServiceResourceCreateOrigin = {
   accountId: "CAD1E31269B76D7A65ACCE45B2E68DFD",

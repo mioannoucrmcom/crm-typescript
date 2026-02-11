@@ -5,7 +5,7 @@ Shortcuts valid types (for front-end applications)
 ## Example Usage
 
 ```typescript
-import { ShortcutType } from "crm/models/operations";
+import { ShortcutType } from "crmcom/models/operations";
 
 let value: ShortcutType = "TOP_UP_WALLET";
 ```

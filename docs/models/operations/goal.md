@@ -5,7 +5,7 @@ The offer goal
 ## Example Usage
 
 ```typescript
-import { Goal } from "crm/models/operations";
+import { Goal } from "crmcom/models/operations";
 
 let value: Goal = "ACHIEVEMENT";
 ```

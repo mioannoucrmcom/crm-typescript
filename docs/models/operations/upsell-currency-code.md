@@ -5,7 +5,7 @@ Currency code based on ISO 4217 standard
 ## Example Usage
 
 ```typescript
-import { UpsellCurrencyCode } from "crm/models/operations";
+import { UpsellCurrencyCode } from "crmcom/models/operations";
 
 let value: UpsellCurrencyCode = "EUR";
 ```

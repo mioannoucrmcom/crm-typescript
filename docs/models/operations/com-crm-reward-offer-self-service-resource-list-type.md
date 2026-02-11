@@ -5,7 +5,7 @@ The offer type (each goal is related with a type)
 ## Example Usage
 
 ```typescript
-import { ComCrmRewardOfferSelfServiceResourceListType } from "crm/models/operations";
+import { ComCrmRewardOfferSelfServiceResourceListType } from "crmcom/models/operations";
 
 let value: ComCrmRewardOfferSelfServiceResourceListType = "LOTTERY";
 ```

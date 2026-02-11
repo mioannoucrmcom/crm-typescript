@@ -5,7 +5,7 @@ Details about reward amounts
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseRewards } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseRewards } from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseRewards = {

@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationUsageType } from "crm/models/operations";
+import { ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationUsageType } from "crmcom/models/operations";
 
 let value:
   ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationUsageType =

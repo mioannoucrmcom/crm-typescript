@@ -7,7 +7,7 @@ The customer event's currency
 ```typescript
 import {
   ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCurrencyCode,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCurrencyCode =

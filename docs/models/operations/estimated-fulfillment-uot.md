@@ -5,7 +5,7 @@ Unit of time to fulfilled time
 ## Example Usage
 
 ```typescript
-import { EstimatedFulfillmentUot } from "crm/models/operations";
+import { EstimatedFulfillmentUot } from "crmcom/models/operations";
 
 let value: EstimatedFulfillmentUot = "MINUTE";
 ```

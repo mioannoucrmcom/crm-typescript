@@ -5,7 +5,7 @@ The date on which such reading was performed (if not specified, current date wil
 ## Example Usage
 
 ```typescript
-import { Dates } from "crm/models/operations";
+import { Dates } from "crmcom/models/operations";
 
 let value: Dates = {
   from: 1683547447,

@@ -5,7 +5,7 @@ Filters orders based on created date
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceListOrdersCreatedOn } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceListOrdersCreatedOn } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceListOrdersCreatedOn =
   "created_on[lte]";

@@ -17,14 +17,14 @@ Returns a list of addresses based on the Google Place Autocomplete API. A retrie
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AddressRegistrySelfServiceResource_list" method="get" path="/self-service/v2/addresses" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.addressLookup.comCrmAddressRegistrySelfServiceResourceList({
+  const result = await crmcom.addressLookup.comCrmAddressRegistrySelfServiceResourceList({
     countries: "FR,US",
     input: "Elia Papakyriakou 21",
     sessionId: "b9a5d80f-f2fa-4f62-b29f-9d288186bdf1",
@@ -41,17 +41,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { addressLookupComCrmAddressRegistrySelfServiceResourceList } from "crm/funcs/address-lookup-com-crm-address-registry-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { addressLookupComCrmAddressRegistrySelfServiceResourceList } from "crmcom/funcs/address-lookup-com-crm-address-registry-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await addressLookupComCrmAddressRegistrySelfServiceResourceList(crm, {
+  const res = await addressLookupComCrmAddressRegistrySelfServiceResourceList(crmcom, {
     countries: "FR,US",
     input: "Elia Papakyriakou 21",
     sessionId: "b9a5d80f-f2fa-4f62-b29f-9d288186bdf1",
@@ -94,12 +94,12 @@ Returns address details based on the Google Place Details API. The google place 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AddressRegistrySelfServiceResource_getAddress" method="get" path="/self-service/v2/get_addresses" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.addressLookup.comCrmAddressRegistrySelfServiceResourceGetAddress({
+  const result = await crmcom.addressLookup.comCrmAddressRegistrySelfServiceResourceGetAddress({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     googlePlaceId: "ChIJLU7jZClu5kcR4PcOOO6p3I0",
@@ -118,15 +118,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { addressLookupComCrmAddressRegistrySelfServiceResourceGetAddress } from "crm/funcs/address-lookup-com-crm-address-registry-self-service-resource-get-address.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { addressLookupComCrmAddressRegistrySelfServiceResourceGetAddress } from "crmcom/funcs/address-lookup-com-crm-address-registry-self-service-resource-get-address.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await addressLookupComCrmAddressRegistrySelfServiceResourceGetAddress(crm, {
+  const res = await addressLookupComCrmAddressRegistrySelfServiceResourceGetAddress(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     googlePlaceId: "ChIJLU7jZClu5kcR4PcOOO6p3I0",

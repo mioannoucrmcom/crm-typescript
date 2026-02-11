@@ -5,7 +5,7 @@ Details about the organisation (w/ creatives) that performed such customer event
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisation } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisation } from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisation = {

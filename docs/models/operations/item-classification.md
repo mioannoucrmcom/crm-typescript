@@ -5,7 +5,7 @@ The item product type classification
 ## Example Usage
 
 ```typescript
-import { ItemClassification } from "crm/models/operations";
+import { ItemClassification } from "crmcom/models/operations";
 
 let value: ItemClassification = "ONE_TIME_SERVICE";
 ```

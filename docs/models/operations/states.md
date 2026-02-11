@@ -5,7 +5,7 @@ Filter according to service request state(s)
 ## Example Usage
 
 ```typescript
-import { States } from "crm/models/operations";
+import { States } from "crmcom/models/operations";
 
 let value: States = "NEW";
 ```

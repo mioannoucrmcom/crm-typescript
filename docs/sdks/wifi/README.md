@@ -16,12 +16,12 @@ Authorize a contact over to a WiFi platform for usage allowance consumption
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SelfServiceWifiAuthorizationResource_authorizeContact" method="post" path="/self-service/v2/contacts/{id}/wifi/authorize" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  await crm.wifi.comCrmSelfServiceWifiAuthorizationResourceAuthorizeContact({
+  await crmcom.wifi.comCrmSelfServiceWifiAuthorizationResourceAuthorizeContact({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "eab82829-b65e-ee5a-b0f8-33b8ad48e04e",
@@ -43,15 +43,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { wifiComCrmSelfServiceWifiAuthorizationResourceAuthorizeContact } from "crm/funcs/wifi-com-crm-self-service-wifi-authorization-resource-authorize-contact.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { wifiComCrmSelfServiceWifiAuthorizationResourceAuthorizeContact } from "crmcom/funcs/wifi-com-crm-self-service-wifi-authorization-resource-authorize-contact.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await wifiComCrmSelfServiceWifiAuthorizationResourceAuthorizeContact(crm, {
+  const res = await wifiComCrmSelfServiceWifiAuthorizationResourceAuthorizeContact(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "eab82829-b65e-ee5a-b0f8-33b8ad48e04e",

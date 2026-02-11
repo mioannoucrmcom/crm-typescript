@@ -5,7 +5,7 @@ Measurement unit. Applicable only when a specific usage product is included in t
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetCommunitiesMeasurementUnit } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetCommunitiesMeasurementUnit } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetCommunitiesMeasurementUnit = {
   name: "Gigabytes",

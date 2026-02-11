@@ -5,7 +5,7 @@ Payment method type
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceUpdateTermedTopupType } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceUpdateTermedTopupType } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceUpdateTermedTopupType = "CARD";
 ```

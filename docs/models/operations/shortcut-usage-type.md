@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ShortcutUsageType } from "crm/models/operations";
+import { ShortcutUsageType } from "crmcom/models/operations";
 
 let value: ShortcutUsageType = "SHORTCUT";
 ```

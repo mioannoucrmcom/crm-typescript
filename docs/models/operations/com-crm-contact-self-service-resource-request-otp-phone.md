@@ -5,7 +5,7 @@ The contact’s phone
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceRequestOTPPhone } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceRequestOTPPhone } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceRequestOTPPhone = {
   number: "99000000",

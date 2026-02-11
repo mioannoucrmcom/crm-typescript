@@ -5,7 +5,7 @@ Details about customer event classification that is used to arrange customer eve
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesClassification } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesClassification } from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesClassification = {

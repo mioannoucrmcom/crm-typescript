@@ -5,7 +5,7 @@ Preview order based on the supply method
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderSupplyMethod } from "crm/models/operations";
+import { ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderSupplyMethod } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderSupplyMethod =

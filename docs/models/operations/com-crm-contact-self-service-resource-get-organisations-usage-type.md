@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetOrganisationsUsageType } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetOrganisationsUsageType } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetOrganisationsUsageType =
   "APPLE_LOCKSCREEN_ICON";

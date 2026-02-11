@@ -5,7 +5,7 @@ Defines the amounts expiring in periods. Available only if the parameter include
 ## Example Usage
 
 ```typescript
-import { Expiration } from "crm/models/operations";
+import { Expiration } from "crmcom/models/operations";
 
 let value: Expiration = {
   zeroToThirty: 30,

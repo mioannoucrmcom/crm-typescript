@@ -5,7 +5,7 @@ The billing cycle of the basket item. Applicable only for termed services. The b
 ## Example Usage
 
 ```typescript
-import { BillingCycle } from "crm/models/operations";
+import { BillingCycle } from "crmcom/models/operations";
 
 let value: BillingCycle = {
   duration: 1,

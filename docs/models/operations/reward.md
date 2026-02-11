@@ -5,7 +5,7 @@ Defines the supported rewards features
 ## Example Usage
 
 ```typescript
-import { Reward } from "crm/models/operations";
+import { Reward } from "crmcom/models/operations";
 
 let value: Reward = {
   tiering: true,

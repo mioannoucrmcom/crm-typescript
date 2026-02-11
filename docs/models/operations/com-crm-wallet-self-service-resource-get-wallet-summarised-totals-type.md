@@ -5,7 +5,7 @@ Type of transaction
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsType } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsType } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsType =
   "TOP_UP";

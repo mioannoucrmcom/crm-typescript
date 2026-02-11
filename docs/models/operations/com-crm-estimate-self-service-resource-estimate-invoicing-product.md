@@ -5,7 +5,7 @@ The credited product
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSelfServiceResourceEstimateInvoicingProduct } from "crm/models/operations";
+import { ComCrmEstimateSelfServiceResourceEstimateInvoicingProduct } from "crmcom/models/operations";
 
 let value: ComCrmEstimateSelfServiceResourceEstimateInvoicingProduct = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

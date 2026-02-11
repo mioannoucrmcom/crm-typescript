@@ -5,7 +5,7 @@ The classification of the pass type
 ## Example Usage
 
 ```typescript
-import { ComCrmPassPlanSelfServiceResourceListPassTypesClassification } from "crm/models/operations";
+import { ComCrmPassPlanSelfServiceResourceListPassTypesClassification } from "crmcom/models/operations";
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesClassification =
   "GIFT";

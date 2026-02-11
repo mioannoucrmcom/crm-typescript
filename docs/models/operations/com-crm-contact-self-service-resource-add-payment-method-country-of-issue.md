@@ -5,7 +5,7 @@ The card issue country (3 char country code)
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddPaymentMethodCountryOfIssue } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddPaymentMethodCountryOfIssue } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddPaymentMethodCountryOfIssue =
   "CYP";

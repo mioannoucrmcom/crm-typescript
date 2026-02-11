@@ -5,7 +5,7 @@ Product Composition
 ## Example Usage
 
 ```typescript
-import { CompositionMethod } from "crm/models/operations";
+import { CompositionMethod } from "crmcom/models/operations";
 
 let value: CompositionMethod = "FIXED_BUNDLE";
 ```

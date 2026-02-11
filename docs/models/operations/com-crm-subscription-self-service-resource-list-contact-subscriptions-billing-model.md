@@ -5,7 +5,7 @@ Subscription's billing model
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsBillingModel } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsBillingModel } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsBillingModel =

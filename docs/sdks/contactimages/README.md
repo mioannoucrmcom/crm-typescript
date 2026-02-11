@@ -17,15 +17,15 @@ Upload image for a contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_uploadImage" method="put" path="/self-service/v2/contacts/{id}/image" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 import { openAsBlob } from "node:fs";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactImages.comCrmContactSelfServiceResourceUploadImage({
+  const result = await crmcom.contactImages.comCrmContactSelfServiceResourceUploadImage({
     id: "<id>",
     body: {
       image: await openAsBlob("example.file"),
@@ -43,18 +43,18 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactImagesComCrmContactSelfServiceResourceUploadImage } from "crm/funcs/contact-images-com-crm-contact-self-service-resource-upload-image.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactImagesComCrmContactSelfServiceResourceUploadImage } from "crmcom/funcs/contact-images-com-crm-contact-self-service-resource-upload-image.js";
 import { openAsBlob } from "node:fs";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactImagesComCrmContactSelfServiceResourceUploadImage(crm, {
+  const res = await contactImagesComCrmContactSelfServiceResourceUploadImage(crmcom, {
     id: "<id>",
     body: {
       image: await openAsBlob("example.file"),
@@ -98,14 +98,14 @@ Delete the contact image
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_deleteImage" method="delete" path="/self-service/v2/contacts/{id}/image" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactImages.comCrmContactSelfServiceResourceDeleteImage({
+  await crmcom.contactImages.comCrmContactSelfServiceResourceDeleteImage({
     id: "<id>",
   });
 
@@ -120,17 +120,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactImagesComCrmContactSelfServiceResourceDeleteImage } from "crm/funcs/contact-images-com-crm-contact-self-service-resource-delete-image.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactImagesComCrmContactSelfServiceResourceDeleteImage } from "crmcom/funcs/contact-images-com-crm-contact-self-service-resource-delete-image.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactImagesComCrmContactSelfServiceResourceDeleteImage(crm, {
+  const res = await contactImagesComCrmContactSelfServiceResourceDeleteImage(crmcom, {
     id: "<id>",
   });
   if (res.ok) {

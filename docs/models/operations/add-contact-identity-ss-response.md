@@ -5,7 +5,7 @@ Created
 ## Example Usage
 
 ```typescript
-import { AddContactIdentitySSResponse } from "crm/models/operations";
+import { AddContactIdentitySSResponse } from "crmcom/models/operations";
 
 let value: AddContactIdentitySSResponse = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Usage } from "crm/models/operations";
+import { Usage } from "crmcom/models/operations";
 
 let value: Usage = {
   product: {

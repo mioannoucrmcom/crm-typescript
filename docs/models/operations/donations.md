@@ -5,7 +5,7 @@ Indicates whether the donations feature is supported
 ## Example Usage
 
 ```typescript
-import { Donations } from "crm/models/operations";
+import { Donations } from "crmcom/models/operations";
 
 let value: Donations = {};
 ```

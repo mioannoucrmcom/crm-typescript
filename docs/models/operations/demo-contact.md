@@ -5,7 +5,7 @@ The contact assigned as demo contact (used for app store verification purposes)
 ## Example Usage
 
 ```typescript
-import { DemoContact } from "crm/models/operations";
+import { DemoContact } from "crmcom/models/operations";
 
 let value: DemoContact = {
   isSupported: true,

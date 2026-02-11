@@ -5,7 +5,7 @@ Fitlers based on the order state
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceListOrdersQueryParamState } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceListOrdersQueryParamState } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceListOrdersQueryParamState = "NEW";
 ```

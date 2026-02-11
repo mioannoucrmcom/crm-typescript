@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageMedia } from "crm/models/operations";
+import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageMedia } from "crmcom/models/operations";
 
 let value: ComCrmLandingPageSelfServiceResourceGetSingleLandingPageMedia = {
   width: 200,

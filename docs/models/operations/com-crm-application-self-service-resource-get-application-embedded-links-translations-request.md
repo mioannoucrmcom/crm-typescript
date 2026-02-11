@@ -5,7 +5,7 @@
 ```typescript
 import {
   ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsRequest,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsRequest =

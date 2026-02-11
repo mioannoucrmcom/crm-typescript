@@ -5,7 +5,7 @@ Support contacts authentication using an Open ID Connect provider (that enables 
 ## Example Usage
 
 ```typescript
-import { Sso } from "crm/models/operations";
+import { Sso } from "crmcom/models/operations";
 
 let value: Sso = {
   isSupported: true,

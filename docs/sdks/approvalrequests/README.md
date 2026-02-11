@@ -21,14 +21,14 @@ Accept a pending approval request
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ApprovalRequestSelfServiceResource_acceptApprovalRequest" method="get" path="/self-service/v2/approval_requests/accept/{token}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.approvalRequests.comCrmApprovalRequestSelfServiceResourceAcceptApprovalRequest({
+  await crmcom.approvalRequests.comCrmApprovalRequestSelfServiceResourceAcceptApprovalRequest({
     token: "2fa42de0-38a0-1e86-b813-d370c35b082c",
   });
 
@@ -43,17 +43,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { approvalRequestsComCrmApprovalRequestSelfServiceResourceAcceptApprovalRequest } from "crm/funcs/approval-requests-com-crm-approval-request-self-service-resource-accept-approval-request.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { approvalRequestsComCrmApprovalRequestSelfServiceResourceAcceptApprovalRequest } from "crmcom/funcs/approval-requests-com-crm-approval-request-self-service-resource-accept-approval-request.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourceAcceptApprovalRequest(crm, {
+  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourceAcceptApprovalRequest(crmcom, {
     token: "2fa42de0-38a0-1e86-b813-d370c35b082c",
   });
   if (res.ok) {
@@ -94,14 +94,14 @@ Accept a pending approval request
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ApprovalRequestSelfServiceResource_acceptApprovalRequestAction" method="post" path="/self-service/v2/approval_requests/accept/{token}/action" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.approvalRequests.comCrmApprovalRequestSelfServiceResourceAcceptApprovalRequestAction({
+  await crmcom.approvalRequests.comCrmApprovalRequestSelfServiceResourceAcceptApprovalRequestAction({
     token: "2fa42de0-38a0-1e86-b813-d370c35b082c",
     body: {},
   });
@@ -117,19 +117,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   approvalRequestsComCrmApprovalRequestSelfServiceResourceAcceptApprovalRequestAction,
-} from "crm/funcs/approval-requests-com-crm-approval-request-self-service-resource-accept-approval-request-action.js";
+} from "crmcom/funcs/approval-requests-com-crm-approval-request-self-service-resource-accept-approval-request-action.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourceAcceptApprovalRequestAction(crm, {
+  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourceAcceptApprovalRequestAction(crmcom, {
     token: "2fa42de0-38a0-1e86-b813-d370c35b082c",
     body: {},
   });
@@ -171,14 +171,14 @@ Reject a pending approval request
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ApprovalRequestSelfServiceResource_rejectApprovalRequest" method="get" path="/self-service/v2/approval_requests/reject/{token}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.approvalRequests.comCrmApprovalRequestSelfServiceResourceRejectApprovalRequest({
+  await crmcom.approvalRequests.comCrmApprovalRequestSelfServiceResourceRejectApprovalRequest({
     token: "2fa42de0-38a0-1e86-b813-d370c35b082c",
   });
 
@@ -193,17 +193,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { approvalRequestsComCrmApprovalRequestSelfServiceResourceRejectApprovalRequest } from "crm/funcs/approval-requests-com-crm-approval-request-self-service-resource-reject-approval-request.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { approvalRequestsComCrmApprovalRequestSelfServiceResourceRejectApprovalRequest } from "crmcom/funcs/approval-requests-com-crm-approval-request-self-service-resource-reject-approval-request.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourceRejectApprovalRequest(crm, {
+  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourceRejectApprovalRequest(crmcom, {
     token: "2fa42de0-38a0-1e86-b813-d370c35b082c",
   });
   if (res.ok) {
@@ -244,14 +244,14 @@ Reject a pending approval request
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ApprovalRequestSelfServiceResource_rejectApprovalRequestAction" method="post" path="/self-service/v2/approval_requests/reject/{token}/action" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.approvalRequests.comCrmApprovalRequestSelfServiceResourceRejectApprovalRequestAction({
+  await crmcom.approvalRequests.comCrmApprovalRequestSelfServiceResourceRejectApprovalRequestAction({
     token: "2fa42de0-38a0-1e86-b813-d370c35b082c",
     body: {},
   });
@@ -267,19 +267,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   approvalRequestsComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestAction,
-} from "crm/funcs/approval-requests-com-crm-approval-request-self-service-resource-reject-approval-request-action.js";
+} from "crmcom/funcs/approval-requests-com-crm-approval-request-self-service-resource-reject-approval-request-action.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestAction(crm, {
+  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestAction(crmcom, {
     token: "2fa42de0-38a0-1e86-b813-d370c35b082c",
     body: {},
   });
@@ -321,14 +321,14 @@ Update an existing approval request
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ApprovalRequestSelfServiceResource_performActions" method="post" path="/self-service/v2/approval_requests/{id}/actions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.approvalRequests.comCrmApprovalRequestSelfServiceResourcePerformActions({
+  const result = await crmcom.approvalRequests.comCrmApprovalRequestSelfServiceResourcePerformActions({
     id: "a6ecbc14-5622-0e30-b629-b1289963f7d2",
     body: {
       action: "REJECT",
@@ -346,17 +346,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { approvalRequestsComCrmApprovalRequestSelfServiceResourcePerformActions } from "crm/funcs/approval-requests-com-crm-approval-request-self-service-resource-perform-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { approvalRequestsComCrmApprovalRequestSelfServiceResourcePerformActions } from "crmcom/funcs/approval-requests-com-crm-approval-request-self-service-resource-perform-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourcePerformActions(crm, {
+  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourcePerformActions(crmcom, {
     id: "a6ecbc14-5622-0e30-b629-b1289963f7d2",
     body: {
       action: "REJECT",
@@ -400,14 +400,14 @@ Retrieve all approval requests for a specific contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ApprovalRequestSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/approval_requests" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.approvalRequests.comCrmApprovalRequestSelfServiceResourceList({
+  const result = await crmcom.approvalRequests.comCrmApprovalRequestSelfServiceResourceList({
     id: "b2157d75-7959-83dc-fdfa-cacba764d4d4",
     sort: "CREATED_DATE,UPDATED_DATE,NAME,SCHEDULED_DATE",
   });
@@ -423,17 +423,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { approvalRequestsComCrmApprovalRequestSelfServiceResourceList } from "crm/funcs/approval-requests-com-crm-approval-request-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { approvalRequestsComCrmApprovalRequestSelfServiceResourceList } from "crmcom/funcs/approval-requests-com-crm-approval-request-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourceList(crm, {
+  const res = await approvalRequestsComCrmApprovalRequestSelfServiceResourceList(crmcom, {
     id: "b2157d75-7959-83dc-fdfa-cacba764d4d4",
     sort: "CREATED_DATE,UPDATED_DATE,NAME,SCHEDULED_DATE",
   });

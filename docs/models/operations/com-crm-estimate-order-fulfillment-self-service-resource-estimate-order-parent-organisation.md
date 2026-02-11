@@ -5,7 +5,7 @@ Details about the parent organisation (business/merchant) of the fulfilled by. N
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderParentOrganisation } from "crm/models/operations";
+import { ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderParentOrganisation } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderParentOrganisation =

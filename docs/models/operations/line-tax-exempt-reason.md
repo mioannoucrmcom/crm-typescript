@@ -5,7 +5,7 @@ Applicable only when a Tax Exempt rate was applied. Shows whether the tax exempt
 ## Example Usage
 
 ```typescript
-import { LineTaxExemptReason } from "crm/models/operations";
+import { LineTaxExemptReason } from "crmcom/models/operations";
 
 let value: LineTaxExemptReason = "PRODUCT";
 ```

@@ -17,12 +17,12 @@ Returns an estimation of how much a customer will pay when purchasing a product.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.EstimateSelfServiceResource_estimateInvoicing" method="post" path="/self-service/v2/estimates/invoicing" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.estimates.comCrmEstimateSelfServiceResourceEstimateInvoicing({
+  const result = await crmcom.estimates.comCrmEstimateSelfServiceResourceEstimateInvoicing({
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     accountId: "be091e01-1842-4a2a-a1ae-e7c2f5343867",
@@ -49,15 +49,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { estimatesComCrmEstimateSelfServiceResourceEstimateInvoicing } from "crm/funcs/estimates-com-crm-estimate-self-service-resource-estimate-invoicing.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { estimatesComCrmEstimateSelfServiceResourceEstimateInvoicing } from "crmcom/funcs/estimates-com-crm-estimate-self-service-resource-estimate-invoicing.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await estimatesComCrmEstimateSelfServiceResourceEstimateInvoicing(crm, {
+  const res = await estimatesComCrmEstimateSelfServiceResourceEstimateInvoicing(crmcom, {
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     accountId: "be091e01-1842-4a2a-a1ae-e7c2f5343867",
@@ -121,12 +121,12 @@ The following APIs should be called in order to make an order</p>
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.EstimateOrderSelfServiceResource_estimateOrder" method="post" path="/self-service/v2/estimates/orders" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.estimates.comCrmEstimateOrderSelfServiceResourceEstimateOrder({
+  const result = await crmcom.estimates.comCrmEstimateOrderSelfServiceResourceEstimateOrder({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     accountId: "1bd3e4d3-5981-209b-787d-352dcd5389a3",
@@ -191,15 +191,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { estimatesComCrmEstimateOrderSelfServiceResourceEstimateOrder } from "crm/funcs/estimates-com-crm-estimate-order-self-service-resource-estimate-order.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { estimatesComCrmEstimateOrderSelfServiceResourceEstimateOrder } from "crmcom/funcs/estimates-com-crm-estimate-order-self-service-resource-estimate-order.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await estimatesComCrmEstimateOrderSelfServiceResourceEstimateOrder(crm, {
+  const res = await estimatesComCrmEstimateOrderSelfServiceResourceEstimateOrder(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     accountId: "1bd3e4d3-5981-209b-787d-352dcd5389a3",

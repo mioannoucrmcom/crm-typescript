@@ -5,7 +5,7 @@ Actions that can be performed per Subscription service
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceChangeServiceAction } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceChangeServiceAction } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceChangeServiceAction =
   "ACTIVATE";

@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { UpsellUsageType } from "crm/models/operations";
+import { UpsellUsageType } from "crmcom/models/operations";
 
 let value: UpsellUsageType = "ATTACHMENT";
 ```

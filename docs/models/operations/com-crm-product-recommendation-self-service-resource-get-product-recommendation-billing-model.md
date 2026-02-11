@@ -7,7 +7,7 @@ Defines whether the service is billed in pre-/post-bill mode
 ```typescript
 import {
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingModel,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingModel =

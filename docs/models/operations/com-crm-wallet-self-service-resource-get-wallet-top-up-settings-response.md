@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsResponse } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsResponse } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsResponse = {
   autoTopup: {

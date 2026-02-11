@@ -5,7 +5,7 @@ Defines the usage allowance
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddContactRelationshipUsageAllowance } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddContactRelationshipUsageAllowance } from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceAddContactRelationshipUsageAllowance = {

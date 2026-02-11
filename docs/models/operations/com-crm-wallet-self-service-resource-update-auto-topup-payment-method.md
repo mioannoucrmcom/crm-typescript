@@ -5,7 +5,7 @@ One of the wallet's payment methods that will be used in top-up
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceUpdateAutoTopupPaymentMethod } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceUpdateAutoTopupPaymentMethod } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceUpdateAutoTopupPaymentMethod = {
   id: "a68cfe78-153d-e7ad-a4b4-4d783f7e6219",

@@ -5,7 +5,7 @@ Defines the supported contact features
 ## Example Usage
 
 ```typescript
-import { FeaturesContactContact } from "crm/models/operations";
+import { FeaturesContactContact } from "crmcom/models/operations";
 
 let value: FeaturesContactContact = {
   walletCodeFormat: "BARCODE",

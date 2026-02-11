@@ -5,7 +5,7 @@
 ```typescript
 import {
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionComponentsRemoved,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionComponentsRemoved =

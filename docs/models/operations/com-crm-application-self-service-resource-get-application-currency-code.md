@@ -5,7 +5,7 @@ Currency code the top up amounts, will be displayed on the Application screen
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationCurrencyCode } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationCurrencyCode =
   "EUR";

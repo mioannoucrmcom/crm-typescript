@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceUploadImageRequest } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceUploadImageRequest } from "crmcom/models/operations";
 
 // No examples available for this model
 ```

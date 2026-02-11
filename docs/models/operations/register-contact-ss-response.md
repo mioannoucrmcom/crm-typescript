@@ -5,7 +5,7 @@ Created
 ## Example Usage
 
 ```typescript
-import { RegisterContactSSResponse } from "crm/models/operations";
+import { RegisterContactSSResponse } from "crmcom/models/operations";
 
 let value: RegisterContactSSResponse = {
   accessToken:

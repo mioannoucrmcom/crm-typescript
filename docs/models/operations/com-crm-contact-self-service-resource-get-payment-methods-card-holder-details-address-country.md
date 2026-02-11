@@ -5,7 +5,7 @@ The country related to the card
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetailsAddressCountry } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetailsAddressCountry } from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetailsAddressCountry =

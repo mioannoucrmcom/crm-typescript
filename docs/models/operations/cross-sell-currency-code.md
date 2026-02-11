@@ -5,7 +5,7 @@ Currency code based on ISO 4217 standard
 ## Example Usage
 
 ```typescript
-import { CrossSellCurrencyCode } from "crm/models/operations";
+import { CrossSellCurrencyCode } from "crmcom/models/operations";
 
 let value: CrossSellCurrencyCode = "EUR";
 ```

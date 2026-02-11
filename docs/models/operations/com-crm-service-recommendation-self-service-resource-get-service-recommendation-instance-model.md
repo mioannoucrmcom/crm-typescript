@@ -7,7 +7,7 @@ Determines whether a service is managed as a single quantity or as separate, ind
 ```typescript
 import {
   ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationInstanceModel,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationInstanceModel =

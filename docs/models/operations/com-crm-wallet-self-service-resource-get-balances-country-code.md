@@ -5,7 +5,7 @@ The country code of the location
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetBalancesCountryCode } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetBalancesCountryCode } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetBalancesCountryCode = "CYP";
 ```

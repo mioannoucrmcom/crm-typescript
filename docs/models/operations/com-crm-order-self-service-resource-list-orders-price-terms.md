@@ -5,7 +5,7 @@ The price terms of the ordered item. Applicable only when ordering termed and on
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceListOrdersPriceTerms } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceListOrdersPriceTerms } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceListOrdersPriceTerms = {
   billingPeriod: {

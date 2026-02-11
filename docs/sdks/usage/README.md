@@ -18,14 +18,14 @@ Retuns a list of Usage Records. Filters can be used to retrieve usage records of
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.UsageDetailRecordSelfServiceResource_listUsageDetailRecords" method="get" path="/self-service/v2/contacts/{id}/usage_records" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.usage.comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords({
+  const result = await crmcom.usage.comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords({
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
     usageTimestamp: "usage_timestamp[gt]",
     size: 100,
@@ -42,17 +42,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords } from "crm/funcs/usage-com-crm-usage-detail-record-self-service-resource-list-usage-detail-records.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords } from "crmcom/funcs/usage-com-crm-usage-detail-record-self-service-resource-list-usage-detail-records.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords(crm, {
+  const res = await usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords(crmcom, {
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
     usageTimestamp: "usage_timestamp[gt]",
     size: 100,
@@ -71,14 +71,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.UsageDetailRecordSelfServiceResource_listUsageDetailRecords" method="get" path="/self-service/v2/contacts/{id}/usage_records" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.usage.comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords({
+  const result = await crmcom.usage.comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords({
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
     usageTimestamp: "usage_timestamp[gt]",
     size: 100,
@@ -95,17 +95,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords } from "crm/funcs/usage-com-crm-usage-detail-record-self-service-resource-list-usage-detail-records.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords } from "crmcom/funcs/usage-com-crm-usage-detail-record-self-service-resource-list-usage-detail-records.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords(crm, {
+  const res = await usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords(crmcom, {
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
     usageTimestamp: "usage_timestamp[gt]",
     size: 100,
@@ -124,14 +124,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.UsageDetailRecordSelfServiceResource_listUsageDetailRecords" method="get" path="/self-service/v2/contacts/{id}/usage_records" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.usage.comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords({
+  const result = await crmcom.usage.comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords({
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
     usageTimestamp: "usage_timestamp[gt]",
     size: 100,
@@ -149,17 +149,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords } from "crm/funcs/usage-com-crm-usage-detail-record-self-service-resource-list-usage-detail-records.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords } from "crmcom/funcs/usage-com-crm-usage-detail-record-self-service-resource-list-usage-detail-records.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords(crm, {
+  const res = await usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords(crmcom, {
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
     usageTimestamp: "usage_timestamp[gt]",
     size: 100,
@@ -179,14 +179,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.UsageDetailRecordSelfServiceResource_listUsageDetailRecords" method="get" path="/self-service/v2/contacts/{id}/usage_records" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.usage.comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords({
+  const result = await crmcom.usage.comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords({
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
     usageTimestamp: "usage_timestamp[gte]",
     size: 100,
@@ -204,17 +204,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords } from "crm/funcs/usage-com-crm-usage-detail-record-self-service-resource-list-usage-detail-records.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords } from "crmcom/funcs/usage-com-crm-usage-detail-record-self-service-resource-list-usage-detail-records.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords(crm, {
+  const res = await usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords(crmcom, {
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
     usageTimestamp: "usage_timestamp[gte]",
     size: 100,
@@ -234,14 +234,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.UsageDetailRecordSelfServiceResource_listUsageDetailRecords" method="get" path="/self-service/v2/contacts/{id}/usage_records" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.usage.comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords({
+  const result = await crmcom.usage.comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords({
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
     usageTimestamp: "usage_timestamp[lt]",
     size: 100,
@@ -259,17 +259,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords } from "crm/funcs/usage-com-crm-usage-detail-record-self-service-resource-list-usage-detail-records.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords } from "crmcom/funcs/usage-com-crm-usage-detail-record-self-service-resource-list-usage-detail-records.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords(crm, {
+  const res = await usageComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecords(crmcom, {
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
     usageTimestamp: "usage_timestamp[lt]",
     size: 100,
@@ -313,14 +313,14 @@ Retrieve some metrics related to the usage records
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.UsageDetailRecordSelfServiceResource_getMetrics" method="get" path="/self-service/v2/contacts/{id}/usage_records/metrics" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.usage.comCrmUsageDetailRecordSelfServiceResourceGetMetrics({
+  const result = await crmcom.usage.comCrmUsageDetailRecordSelfServiceResourceGetMetrics({
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
   });
 
@@ -335,17 +335,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { usageComCrmUsageDetailRecordSelfServiceResourceGetMetrics } from "crm/funcs/usage-com-crm-usage-detail-record-self-service-resource-get-metrics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { usageComCrmUsageDetailRecordSelfServiceResourceGetMetrics } from "crmcom/funcs/usage-com-crm-usage-detail-record-self-service-resource-get-metrics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await usageComCrmUsageDetailRecordSelfServiceResourceGetMetrics(crm, {
+  const res = await usageComCrmUsageDetailRecordSelfServiceResourceGetMetrics(crmcom, {
     id: "13cc9948-3560-e10a-e1e4-a73610054933",
   });
   if (res.ok) {
@@ -386,14 +386,14 @@ Returns an estimation on whether usage consumption is authoised or not based on 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.EstimateAllowanceSelfServiceResource_estimatesAllowance" method="post" path="/self-service/v2/estimates/allowance" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.usage.comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowance({
+  const result = await crmcom.usage.comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowance({
     contactId: "ba48e7d3-d00a-0d28-4f9f-02b1a5b226bc",
     organisationId: "2f2a7993-6bbb-bd77-cbc8-8a2a774ef4f2",
     currencyCode: "EUR",
@@ -424,17 +424,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { usageComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowance } from "crm/funcs/usage-com-crm-estimate-allowance-self-service-resource-estimates-allowance.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { usageComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowance } from "crmcom/funcs/usage-com-crm-estimate-allowance-self-service-resource-estimates-allowance.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await usageComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowance(crm, {
+  const res = await usageComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowance(crmcom, {
     contactId: "ba48e7d3-d00a-0d28-4f9f-02b1a5b226bc",
     organisationId: "2f2a7993-6bbb-bd77-cbc8-8a2a774ef4f2",
     currencyCode: "EUR",

@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { GetSingleContactSSUsageType } from "crm/models/operations";
+import { GetSingleContactSSUsageType } from "crmcom/models/operations";
 
 let value: GetSingleContactSSUsageType = "APP_LOADER_IMAGE";
 ```

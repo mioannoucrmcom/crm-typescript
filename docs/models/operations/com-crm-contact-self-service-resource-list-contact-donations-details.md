@@ -5,7 +5,7 @@ The donation's details that show how/when donations are made by the contact
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceListContactDonationsDetails } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceListContactDonationsDetails } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceListContactDonationsDetails = {
   multiplier: 2,

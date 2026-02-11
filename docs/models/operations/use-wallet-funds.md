@@ -5,7 +5,7 @@ Defines whether contact can pay for order using wallet funds
 ## Example Usage
 
 ```typescript
-import { UseWalletFunds } from "crm/models/operations";
+import { UseWalletFunds } from "crmcom/models/operations";
 
 let value: UseWalletFunds = {
   specificFundsAmount: false,

@@ -18,12 +18,12 @@ Provide product recommendations to contacts/organisations on additional products
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderProductRecommendationSelfServiceResource_getOrderProductRecommendation" method="get" path="/self-service/v2/orders/recommendation" example="Order Product Recommendation Response" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.recommendations.comCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendation({
+  const result = await crmcom.recommendations.comCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendation({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     estimationId: "<id>",
@@ -45,17 +45,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   recommendationsComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendation,
-} from "crm/funcs/recommendations-com-crm-order-product-recommendation-self-service-resource-get-order-product-recommendation.js";
+} from "crmcom/funcs/recommendations-com-crm-order-product-recommendation-self-service-resource-get-order-product-recommendation.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await recommendationsComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendation(crm, {
+  const res = await recommendationsComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendation(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     estimationId: "<id>",
@@ -104,12 +104,12 @@ Provide product recommendations to contacts/organisations on additional products
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductRecommendationSelfServiceResource_getProductRecommendation" method="get" path="/self-service/v2/products/recommendation" example="Product Recommendation Response" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.recommendations.comCrmProductRecommendationSelfServiceResourceGetProductRecommendation({
+  const result = await crmcom.recommendations.comCrmProductRecommendationSelfServiceResourceGetProductRecommendation({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   });
 
@@ -124,17 +124,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   recommendationsComCrmProductRecommendationSelfServiceResourceGetProductRecommendation,
-} from "crm/funcs/recommendations-com-crm-product-recommendation-self-service-resource-get-product-recommendation.js";
+} from "crmcom/funcs/recommendations-com-crm-product-recommendation-self-service-resource-get-product-recommendation.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await recommendationsComCrmProductRecommendationSelfServiceResourceGetProductRecommendation(crm, {
+  const res = await recommendationsComCrmProductRecommendationSelfServiceResourceGetProductRecommendation(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   });
   if (res.ok) {
@@ -180,12 +180,12 @@ Change an existing service (change its price terms or components or change into 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRecommendationSelfServiceResource_getServiceRecommendation" method="get" path="/self-service/v2/services/recommendation" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.recommendations.comCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation({
+  const result = await crmcom.recommendations.comCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     includeComponents: true,
@@ -206,17 +206,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation,
-} from "crm/funcs/recommendations-com-crm-service-recommendation-self-service-resource-get-service-recommendation.js";
+} from "crmcom/funcs/recommendations-com-crm-service-recommendation-self-service-resource-get-service-recommendation.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation(crm, {
+  const res = await recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     includeComponents: true,
@@ -239,12 +239,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRecommendationSelfServiceResource_getServiceRecommendation" method="get" path="/self-service/v2/services/recommendation" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.recommendations.comCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation({
+  const result = await crmcom.recommendations.comCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     includeComponents: true,
@@ -266,17 +266,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation,
-} from "crm/funcs/recommendations-com-crm-service-recommendation-self-service-resource-get-service-recommendation.js";
+} from "crmcom/funcs/recommendations-com-crm-service-recommendation-self-service-resource-get-service-recommendation.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation(crm, {
+  const res = await recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     includeComponents: true,
@@ -300,12 +300,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRecommendationSelfServiceResource_getServiceRecommendation" method="get" path="/self-service/v2/services/recommendation" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.recommendations.comCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation({
+  const result = await crmcom.recommendations.comCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     includeComponents: true,
@@ -327,17 +327,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation,
-} from "crm/funcs/recommendations-com-crm-service-recommendation-self-service-resource-get-service-recommendation.js";
+} from "crmcom/funcs/recommendations-com-crm-service-recommendation-self-service-resource-get-service-recommendation.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation(crm, {
+  const res = await recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     includeComponents: true,
@@ -361,12 +361,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRecommendationSelfServiceResource_getServiceRecommendation" method="get" path="/self-service/v2/services/recommendation" example="Service Recommendation Response" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.recommendations.comCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation({
+  const result = await crmcom.recommendations.comCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     includeComponents: true,
@@ -387,17 +387,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation,
-} from "crm/funcs/recommendations-com-crm-service-recommendation-self-service-resource-get-service-recommendation.js";
+} from "crmcom/funcs/recommendations-com-crm-service-recommendation-self-service-resource-get-service-recommendation.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation(crm, {
+  const res = await recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     includeComponents: true,
@@ -420,12 +420,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRecommendationSelfServiceResource_getServiceRecommendation" method="get" path="/self-service/v2/services/recommendation" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.recommendations.comCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation({
+  const result = await crmcom.recommendations.comCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     includeComponents: true,
@@ -447,17 +447,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation,
-} from "crm/funcs/recommendations-com-crm-service-recommendation-self-service-resource-get-service-recommendation.js";
+} from "crmcom/funcs/recommendations-com-crm-service-recommendation-self-service-resource-get-service-recommendation.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation(crm, {
+  const res = await recommendationsComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendation(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     includeComponents: true,

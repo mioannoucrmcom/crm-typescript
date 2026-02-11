@@ -5,7 +5,7 @@ Product classification
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductClassification } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductClassification } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductClassification =
   "TERMED_SERVICE";

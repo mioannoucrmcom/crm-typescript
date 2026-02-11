@@ -5,7 +5,7 @@ The related order
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsContentOrder } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsContentOrder } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsContentOrder =

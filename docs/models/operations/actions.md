@@ -5,7 +5,7 @@ Subscription and service actions permitted by front-end users
 ## Example Usage
 
 ```typescript
-import { Actions } from "crm/models/operations";
+import { Actions } from "crmcom/models/operations";
 
 let value: Actions = {};
 ```

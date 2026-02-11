@@ -5,7 +5,7 @@ Service currently in trial or not
 ## Example Usage
 
 ```typescript
-import { TrialState } from "crm/models/operations";
+import { TrialState } from "crmcom/models/operations";
 
 let value: TrialState = "IN_TRIAL";
 ```

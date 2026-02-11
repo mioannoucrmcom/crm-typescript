@@ -5,7 +5,7 @@ The default impact level
 ## Example Usage
 
 ```typescript
-import { Impact } from "crm/models/operations";
+import { Impact } from "crmcom/models/operations";
 
 let value: Impact = "MEDIUM";
 ```

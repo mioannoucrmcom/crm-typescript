@@ -5,7 +5,7 @@ The state of the communication
 ## Example Usage
 
 ```typescript
-import { CrmComCommunicationSelfServiceResourceGetSingleState } from "crm/models/operations";
+import { CrmComCommunicationSelfServiceResourceGetSingleState } from "crmcom/models/operations";
 
 let value: CrmComCommunicationSelfServiceResourceGetSingleState = "PENDING";
 ```

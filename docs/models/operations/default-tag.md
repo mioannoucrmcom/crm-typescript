@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DefaultTag } from "crm/models/operations";
+import { DefaultTag } from "crmcom/models/operations";
 
 let value: DefaultTag = {
   tagId: "JKGJHFSDJHGDSJHGA",

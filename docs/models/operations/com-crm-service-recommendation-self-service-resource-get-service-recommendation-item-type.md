@@ -5,7 +5,7 @@ Allowed components can be individual products or products of a specific type, fa
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationItemType } from "crm/models/operations";
+import { ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationItemType } from "crmcom/models/operations";
 
 let value:
   ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationItemType =

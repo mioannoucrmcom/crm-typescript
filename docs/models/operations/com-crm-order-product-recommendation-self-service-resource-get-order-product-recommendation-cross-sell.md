@@ -5,7 +5,7 @@
 ```typescript
 import {
   ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationCrossSell,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationCrossSell =

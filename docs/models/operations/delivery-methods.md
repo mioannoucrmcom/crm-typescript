@@ -5,7 +5,7 @@ Defines how delivery order was/will be provided - comma separated e.g. DIRECT_DE
 ## Example Usage
 
 ```typescript
-import { DeliveryMethods } from "crm/models/operations";
+import { DeliveryMethods } from "crmcom/models/operations";
 
 let value: DeliveryMethods = "DIRECT_DELIVERY";
 ```

@@ -5,7 +5,7 @@ The product related to the Pass Plan. Applicable only for Electronic Gift pass p
 ## Example Usage
 
 ```typescript
-import { ComCrmPassPlanSelfServiceResourceListPassTypesProduct } from "crm/models/operations";
+import { ComCrmPassPlanSelfServiceResourceListPassTypesProduct } from "crmcom/models/operations";
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesProduct = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

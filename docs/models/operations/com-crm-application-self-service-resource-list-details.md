@@ -5,7 +5,7 @@ Required details per supported payment method
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceListDetails } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceListDetails } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceListDetails = {};
 ```

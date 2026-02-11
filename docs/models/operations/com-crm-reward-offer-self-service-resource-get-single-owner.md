@@ -5,7 +5,7 @@ Details about organisation (w/ creatives)
 ## Example Usage
 
 ```typescript
-import { ComCrmRewardOfferSelfServiceResourceGetSingleOwner } from "crm/models/operations";
+import { ComCrmRewardOfferSelfServiceResourceGetSingleOwner } from "crmcom/models/operations";
 
 let value: ComCrmRewardOfferSelfServiceResourceGetSingleOwner = {
   id: "e66d45b4-2673-0a0e-5a06-d6088a324b3f",

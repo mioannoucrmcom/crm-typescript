@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CrmComPrintoutSelfServiceResourceOutputRequest } from "crm/models/operations";
+import { CrmComPrintoutSelfServiceResourceOutputRequest } from "crmcom/models/operations";
 
 let value: CrmComPrintoutSelfServiceResourceOutputRequest = {
   entity: {

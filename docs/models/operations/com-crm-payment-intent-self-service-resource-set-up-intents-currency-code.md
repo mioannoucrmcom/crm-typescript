@@ -5,7 +5,7 @@ The payment's currency. If not specified, then it defaults to the contact's acco
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentIntentSelfServiceResourceSetUpIntentsCurrencyCode } from "crm/models/operations";
+import { ComCrmPaymentIntentSelfServiceResourceSetUpIntentsCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmPaymentIntentSelfServiceResourceSetUpIntentsCurrencyCode =
   "EUR";

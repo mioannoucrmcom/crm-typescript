@@ -23,12 +23,12 @@ Web API used when consumers add a Card from a Landing page. The Web API forwards
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PaymentFormSelfServiceResource_generateAddCardForm" method="get" path="/self-service/v2/payment_forms/card" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.paymentForms.comCrmPaymentFormSelfServiceResourceGenerateAddCardForm({
+  const result = await crmcom.paymentForms.comCrmPaymentFormSelfServiceResourceGenerateAddCardForm({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     currencyCode: "EUR",
@@ -46,15 +46,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { paymentFormsComCrmPaymentFormSelfServiceResourceGenerateAddCardForm } from "crm/funcs/payment-forms-com-crm-payment-form-self-service-resource-generate-add-card-form.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { paymentFormsComCrmPaymentFormSelfServiceResourceGenerateAddCardForm } from "crmcom/funcs/payment-forms-com-crm-payment-form-self-service-resource-generate-add-card-form.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await paymentFormsComCrmPaymentFormSelfServiceResourceGenerateAddCardForm(crm, {
+  const res = await paymentFormsComCrmPaymentFormSelfServiceResourceGenerateAddCardForm(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     currencyCode: "EUR",
@@ -101,12 +101,12 @@ Web API used when consumers purchase Gift Passes from a Landing page. The Web AP
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PaymentFormSelfServiceResource_generatePassPaymentForm" method="post" path="/self-service/v2/payment_forms/pass" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.paymentForms.comCrmPaymentFormSelfServiceResourceGeneratePassPaymentForm({
+  const result = await crmcom.paymentForms.comCrmPaymentFormSelfServiceResourceGeneratePassPaymentForm({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     integrationId: "302fb9b0-d57c-4a07-ae0b-b7cbec934775",
@@ -149,15 +149,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { paymentFormsComCrmPaymentFormSelfServiceResourceGeneratePassPaymentForm } from "crm/funcs/payment-forms-com-crm-payment-form-self-service-resource-generate-pass-payment-form.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { paymentFormsComCrmPaymentFormSelfServiceResourceGeneratePassPaymentForm } from "crmcom/funcs/payment-forms-com-crm-payment-form-self-service-resource-generate-pass-payment-form.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await paymentFormsComCrmPaymentFormSelfServiceResourceGeneratePassPaymentForm(crm, {
+  const res = await paymentFormsComCrmPaymentFormSelfServiceResourceGeneratePassPaymentForm(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     integrationId: "302fb9b0-d57c-4a07-ae0b-b7cbec934775",
@@ -229,12 +229,12 @@ Web API used when consumers want to perform a payment using a card on file. It's
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PaymentFormSelfServiceResource_generatePaymentForm" method="get" path="/self-service/v2/payment_forms/payment" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.paymentForms.comCrmPaymentFormSelfServiceResourceGeneratePaymentForm({
+  const result = await crmcom.paymentForms.comCrmPaymentFormSelfServiceResourceGeneratePaymentForm({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     amount: 23.4,
@@ -256,15 +256,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { paymentFormsComCrmPaymentFormSelfServiceResourceGeneratePaymentForm } from "crm/funcs/payment-forms-com-crm-payment-form-self-service-resource-generate-payment-form.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { paymentFormsComCrmPaymentFormSelfServiceResourceGeneratePaymentForm } from "crmcom/funcs/payment-forms-com-crm-payment-form-self-service-resource-generate-payment-form.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await paymentFormsComCrmPaymentFormSelfServiceResourceGeneratePaymentForm(crm, {
+  const res = await paymentFormsComCrmPaymentFormSelfServiceResourceGeneratePaymentForm(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     amount: 23.4,

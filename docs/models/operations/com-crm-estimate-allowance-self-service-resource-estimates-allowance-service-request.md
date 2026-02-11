@@ -5,7 +5,7 @@ The identifier of the service through which usage is consumed. If not specified,
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceRequest } from "crm/models/operations";
+import { ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceRequest } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceRequest = {

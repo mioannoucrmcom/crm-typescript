@@ -5,7 +5,7 @@ The CRM.COM Wallet's identity
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceRequestOTPIdentity } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceRequestOTPIdentity } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceRequestOTPIdentity = {
   type: "EMAIL",

@@ -5,7 +5,7 @@ Information about the company's profile, applicable only for contacts of type 'C
 ## Example Usage
 
 ```typescript
-import { GetSingleContactSSCompanyProfile } from "crm/models/operations";
+import { GetSingleContactSSCompanyProfile } from "crmcom/models/operations";
 
 let value: GetSingleContactSSCompanyProfile = {
   registrationNumber: "EPM869233102",

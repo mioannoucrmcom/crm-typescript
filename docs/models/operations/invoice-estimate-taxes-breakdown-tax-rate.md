@@ -5,7 +5,7 @@ The applied tax rate
 ## Example Usage
 
 ```typescript
-import { InvoiceEstimateTaxesBreakdownTaxRate } from "crm/models/operations";
+import { InvoiceEstimateTaxesBreakdownTaxRate } from "crmcom/models/operations";
 
 let value: InvoiceEstimateTaxesBreakdownTaxRate = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

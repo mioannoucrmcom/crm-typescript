@@ -5,7 +5,7 @@ The phone country code
 ## Example Usage
 
 ```typescript
-import { AddContactIdentitySSCountryCode } from "crm/models/operations";
+import { AddContactIdentitySSCountryCode } from "crmcom/models/operations";
 
 let value: AddContactIdentitySSCountryCode = "CYP";
 ```

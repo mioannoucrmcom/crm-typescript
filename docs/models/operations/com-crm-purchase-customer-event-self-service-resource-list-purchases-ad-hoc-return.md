@@ -5,7 +5,7 @@ Details about the ad hoc return of goods that is associated with the purchase
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesAdHocReturn } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesAdHocReturn } from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesAdHocReturn = {

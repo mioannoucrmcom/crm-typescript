@@ -5,7 +5,7 @@ A contact's wallet can either be identified across the business network based on
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceRequestOTPType } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceRequestOTPType } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceRequestOTPType = "EMAIL";
 ```

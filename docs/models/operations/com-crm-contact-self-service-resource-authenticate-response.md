@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAuthenticateResponse } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAuthenticateResponse } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAuthenticateResponse = {
   accessToken:

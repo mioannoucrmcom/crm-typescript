@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OrderServicesToAddTrialPeriod } from "crm/models/operations";
+import { OrderServicesToAddTrialPeriod } from "crmcom/models/operations";
 
 let value: OrderServicesToAddTrialPeriod = {
   startsOn: 12345678,

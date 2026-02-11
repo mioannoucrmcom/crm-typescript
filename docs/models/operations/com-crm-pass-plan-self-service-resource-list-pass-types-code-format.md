@@ -5,7 +5,7 @@ Details of the pass code format to be followed when a pass code is created. All 
 ## Example Usage
 
 ```typescript
-import { ComCrmPassPlanSelfServiceResourceListPassTypesCodeFormat } from "crm/models/operations";
+import { ComCrmPassPlanSelfServiceResourceListPassTypesCodeFormat } from "crmcom/models/operations";
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesCodeFormat = {
   type: "ALPHANUMERIC",

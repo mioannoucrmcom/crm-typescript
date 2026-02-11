@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetPaymentMethodsRequest } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetPaymentMethodsRequest } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetPaymentMethodsRequest = {
   id: "<id>",

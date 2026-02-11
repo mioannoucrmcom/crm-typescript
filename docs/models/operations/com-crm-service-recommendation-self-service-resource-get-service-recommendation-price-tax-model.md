@@ -7,7 +7,7 @@ Defines whether the price is tax inclusive or not. Defaults to the system's Taxa
 ```typescript
 import {
   ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationPriceTaxModel,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationPriceTaxModel =

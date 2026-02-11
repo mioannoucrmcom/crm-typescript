@@ -7,7 +7,7 @@ The service's billing cycle
 ```typescript
 import {
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriod,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriod =

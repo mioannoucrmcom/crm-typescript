@@ -5,7 +5,7 @@ The value of the pass in case of GIFT and TOPUP
 ## Example Usage
 
 ```typescript
-import { PassPlanValue } from "crm/models/operations";
+import { PassPlanValue } from "crmcom/models/operations";
 
 let value: PassPlanValue = {
   type: "FIXED",

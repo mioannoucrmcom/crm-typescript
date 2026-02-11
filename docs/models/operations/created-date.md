@@ -5,7 +5,7 @@ Filters orders based on created date
 ## Example Usage
 
 ```typescript
-import { CreatedDate } from "crm/models/operations";
+import { CreatedDate } from "crmcom/models/operations";
 
 let value: CreatedDate = "created_date[gt]";
 ```

@@ -5,7 +5,7 @@ Information about the organisation’s location
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceCreateOrderAddress } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceCreateOrderAddress } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceCreateOrderAddress = {
   addressLine1: "Elia Papakyriakou 21",

@@ -5,7 +5,7 @@ Settings that determine the order’s behaviour and how it will be fulfilled by 
 ## Example Usage
 
 ```typescript
-import { FulfilmentFlows } from "crm/models/operations";
+import { FulfilmentFlows } from "crmcom/models/operations";
 
 let value: FulfilmentFlows = {
   fulfilmentFlow: "SINGLE_MERCHANT",

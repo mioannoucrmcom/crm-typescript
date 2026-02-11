@@ -5,7 +5,7 @@ Details about the address
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceRequestSelfServiceResourceListAddress } from "crm/models/operations";
+import { ComCrmServiceRequestSelfServiceResourceListAddress } from "crmcom/models/operations";
 
 let value: ComCrmServiceRequestSelfServiceResourceListAddress = {
   addressType: "HOME",

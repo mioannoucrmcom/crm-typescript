@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsContent } from "crm/models/operations";
+import { ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsContent } from "crmcom/models/operations";
 
 let value: ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsContent = {
   name: "Reset PIN",

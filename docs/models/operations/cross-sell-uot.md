@@ -5,7 +5,7 @@ Period Cycle unit of time
 ## Example Usage
 
 ```typescript
-import { CrossSellUot } from "crm/models/operations";
+import { CrossSellUot } from "crmcom/models/operations";
 
 let value: CrossSellUot = "MINUTE";
 ```

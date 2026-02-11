@@ -5,7 +5,7 @@ The currency of journal. 3-letter ISO 4217 currency code.
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceListAccountJournalsCurrencyCode } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceListAccountJournalsCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceListAccountJournalsCurrencyCode =
   "EUR";

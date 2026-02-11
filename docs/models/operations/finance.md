@@ -5,7 +5,7 @@ Defines the supported finance features
 ## Example Usage
 
 ```typescript
-import { Finance } from "crm/models/operations";
+import { Finance } from "crmcom/models/operations";
 
 let value: Finance = {
   isSupported: true,

@@ -5,7 +5,7 @@ Information about the organisation’s external references
 ## Example Usage
 
 ```typescript
-import { Tap } from "crm/models/operations";
+import { Tap } from "crmcom/models/operations";
 
 let value: Tap = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

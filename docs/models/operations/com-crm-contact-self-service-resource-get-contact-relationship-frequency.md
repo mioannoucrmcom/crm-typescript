@@ -5,7 +5,7 @@ Transfers can be scheduled either weekly or monthly
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactRelationshipFrequency } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactRelationshipFrequency } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetContactRelationshipFrequency =
   "MONTHLY";

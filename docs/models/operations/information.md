@@ -5,7 +5,7 @@ Defines the app details (about, terms and conditions, privacy policy)
 ## Example Usage
 
 ```typescript
-import { Information } from "crm/models/operations";
+import { Information } from "crmcom/models/operations";
 
 let value: Information = {
   content: [

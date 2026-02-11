@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmCustomFieldSelfServiceResourceListCustomFieldsResponse } from "crm/models/operations";
+import { ComCrmCustomFieldSelfServiceResourceListCustomFieldsResponse } from "crmcom/models/operations";
 
 let value: ComCrmCustomFieldSelfServiceResourceListCustomFieldsResponse = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

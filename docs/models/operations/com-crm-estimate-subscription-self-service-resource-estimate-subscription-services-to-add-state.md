@@ -7,7 +7,7 @@ Service's State
 ```typescript
 import {
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionServicesToAddState,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionServicesToAddState =

@@ -5,7 +5,7 @@ The milestone's stage i.e. when the Invoice will be issued.
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderStage } from "crm/models/operations";
+import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderStage } from "crmcom/models/operations";
 
 let value: ComCrmEstimateOrderSelfServiceResourceEstimateOrderStage = {
   id: "b82648cb-e5f4-53b2-26b3-edca38e3e34f",

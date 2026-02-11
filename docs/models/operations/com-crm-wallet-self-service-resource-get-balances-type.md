@@ -5,7 +5,7 @@ The organisation type
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetBalancesType } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetBalancesType } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetBalancesType = "MERCHANT";
 ```

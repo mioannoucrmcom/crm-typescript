@@ -5,7 +5,7 @@ Defines the operation details of the organisation
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceListOperationDetails } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceListOperationDetails } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceListOperationDetails = {
   openingHours: [

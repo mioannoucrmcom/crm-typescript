@@ -5,7 +5,7 @@ The custom field’s UI field type
 ## Example Usage
 
 ```typescript
-import { Field } from "crm/models/operations";
+import { Field } from "crmcom/models/operations";
 
 let value: Field = "CHECKBOX";
 ```

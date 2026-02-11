@@ -5,7 +5,7 @@ Defines the main product that the line item is component to it (applicable only 
 ## Example Usage
 
 ```typescript
-import { OrderLineItemBundleProduct } from "crm/models/operations";
+import { OrderLineItemBundleProduct } from "crmcom/models/operations";
 
 let value: OrderLineItemBundleProduct = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

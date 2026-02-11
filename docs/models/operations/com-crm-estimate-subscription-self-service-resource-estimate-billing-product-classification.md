@@ -7,7 +7,7 @@ Product type classification
 ```typescript
 import {
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateBillingProductClassification,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateBillingProductClassification =

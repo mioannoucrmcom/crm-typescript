@@ -5,7 +5,7 @@ Defines the operation details of the organisation
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceGetSingleOperationDetails } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceGetSingleOperationDetails } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceGetSingleOperationDetails = {
   openingHours: [

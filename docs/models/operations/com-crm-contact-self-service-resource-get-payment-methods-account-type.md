@@ -5,7 +5,7 @@ The type of the account debit
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType =
   "SAVINGS";

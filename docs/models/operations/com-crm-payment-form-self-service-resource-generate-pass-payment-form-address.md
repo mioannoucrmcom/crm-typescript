@@ -5,7 +5,7 @@ The billing address
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormAddress } from "crm/models/operations";
+import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormAddress } from "crmcom/models/operations";
 
 let value: ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormAddress =
   {};

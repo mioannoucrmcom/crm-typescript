@@ -5,7 +5,7 @@ TDetails about the integration of the WiFi Site
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceGetSingleIntegration } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceGetSingleIntegration } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceGetSingleIntegration = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

@@ -5,7 +5,7 @@
 ```typescript
 import {
   ComCrmContactSelfServiceResourceAddContactRelationshipProductAllowanceUsageLimits,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceAddContactRelationshipProductAllowanceUsageLimits =

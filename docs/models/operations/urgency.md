@@ -5,7 +5,7 @@ The default urgent level
 ## Example Usage
 
 ```typescript
-import { Urgency } from "crm/models/operations";
+import { Urgency } from "crmcom/models/operations";
 
 let value: Urgency = "MEDIUM";
 ```

@@ -5,7 +5,7 @@ Contact wallet information
 ## Example Usage
 
 ```typescript
-import { GetSingleContactSSWallet } from "crm/models/operations";
+import { GetSingleContactSSWallet } from "crmcom/models/operations";
 
 let value: GetSingleContactSSWallet = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

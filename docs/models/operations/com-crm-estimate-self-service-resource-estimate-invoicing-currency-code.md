@@ -5,7 +5,7 @@ The estimated invoice currency. 3-letter ISO 4217 currency code.
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSelfServiceResourceEstimateInvoicingCurrencyCode } from "crm/models/operations";
+import { ComCrmEstimateSelfServiceResourceEstimateInvoicingCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmEstimateSelfServiceResourceEstimateInvoicingCurrencyCode =
   "EUR";

@@ -5,7 +5,7 @@ The recipient information.This is the registered/unregistered contact who will b
 ## Example Usage
 
 ```typescript
-import { Recipient } from "crm/models/operations";
+import { Recipient } from "crmcom/models/operations";
 
 let value: Recipient = {
   name: "John Smith",

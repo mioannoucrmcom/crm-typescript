@@ -5,7 +5,7 @@ The authorised contact details
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceRefreshContact } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceRefreshContact } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceRefreshContact = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

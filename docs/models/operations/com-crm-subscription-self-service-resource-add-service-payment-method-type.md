@@ -5,7 +5,7 @@ The payment method’s type
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceAddServicePaymentMethodType } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceAddServicePaymentMethodType } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceAddServicePaymentMethodType =
   "CARD";

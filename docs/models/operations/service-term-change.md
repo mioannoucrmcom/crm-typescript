@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ServiceTermChange } from "crm/models/operations";
+import { ServiceTermChange } from "crmcom/models/operations";
 
 let value: ServiceTermChange = {
   extendBy: {

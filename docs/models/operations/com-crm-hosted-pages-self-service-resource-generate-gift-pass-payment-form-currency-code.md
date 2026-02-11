@@ -5,7 +5,7 @@ The payment's currency.
 ## Example Usage
 
 ```typescript
-import { ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormCurrencyCode } from "crm/models/operations";
+import { ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormCurrencyCode } from "crmcom/models/operations";
 
 let value:
   ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormCurrencyCode =

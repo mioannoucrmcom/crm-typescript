@@ -5,7 +5,7 @@ Default calling country code for contacts to register and access the front-end a
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationDefaultCountryCallingCode } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationDefaultCountryCallingCode } from "crmcom/models/operations";
 
 let value:
   ComCrmApplicationSelfServiceResourceGetApplicationDefaultCountryCallingCode =

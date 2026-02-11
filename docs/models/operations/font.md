@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Font } from "crm/models/operations";
+import { Font } from "crmcom/models/operations";
 
 let value: Font = {};
 ```

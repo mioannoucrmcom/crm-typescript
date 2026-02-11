@@ -5,7 +5,7 @@ Filter based on the submitted 'from' date, which may fall within a given date ra
 ## Example Usage
 
 ```typescript
-import { DateFrom } from "crm/models/operations";
+import { DateFrom } from "crmcom/models/operations";
 
 let value: DateFrom = "date_from[gte]";
 ```

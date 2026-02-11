@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetBalancesPaging } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetBalancesPaging } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetBalancesPaging = {
   page: 2,

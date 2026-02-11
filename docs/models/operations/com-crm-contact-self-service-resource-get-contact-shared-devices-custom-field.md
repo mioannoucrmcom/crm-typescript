@@ -5,7 +5,7 @@ A list of custom fields whose values can be set when creating or updating entiti
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactSharedDevicesCustomField } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactSharedDevicesCustomField } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetContactSharedDevicesCustomField =
   {

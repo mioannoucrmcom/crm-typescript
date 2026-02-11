@@ -5,7 +5,7 @@ The approval entity type
 ## Example Usage
 
 ```typescript
-import { ComCrmApprovalRequestSelfServiceResourceListType } from "crm/models/operations";
+import { ComCrmApprovalRequestSelfServiceResourceListType } from "crmcom/models/operations";
 
 let value: ComCrmApprovalRequestSelfServiceResourceListType =
   "SERVICE_REQUESTS";

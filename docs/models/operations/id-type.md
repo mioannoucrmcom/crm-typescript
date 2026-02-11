@@ -5,7 +5,7 @@ The type of the ID to be provided
 ## Example Usage
 
 ```typescript
-import { IdType } from "crm/models/operations";
+import { IdType } from "crmcom/models/operations";
 
 let value: IdType = "BRAND";
 ```

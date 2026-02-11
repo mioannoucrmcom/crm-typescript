@@ -5,7 +5,7 @@ Applicable and required only when the offering will be applied for a specific PE
 ## Example Usage
 
 ```typescript
-import { VariableDiscountPeriod } from "crm/models/operations";
+import { VariableDiscountPeriod } from "crmcom/models/operations";
 
 let value: VariableDiscountPeriod = {
   duration: 6,

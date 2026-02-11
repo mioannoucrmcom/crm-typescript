@@ -5,7 +5,7 @@ The contact attribute
 ## Example Usage
 
 ```typescript
-import { ProfileType } from "crm/models/operations";
+import { ProfileType } from "crmcom/models/operations";
 
 let value: ProfileType = "NAMEDAY";
 ```

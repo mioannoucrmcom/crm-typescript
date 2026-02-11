@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { RegisterContactSSRequestBody } from "crm/models/operations";
+import { RegisterContactSSRequestBody } from "crmcom/models/operations";
 
 let value: RegisterContactSSRequestBody = {
   firstName: "John",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceRequestOTPRequestBody } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceRequestOTPRequestBody } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceRequestOTPRequestBody = {
   method: "EMAIL",

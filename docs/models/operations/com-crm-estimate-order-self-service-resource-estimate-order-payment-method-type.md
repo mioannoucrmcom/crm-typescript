@@ -5,7 +5,7 @@ The type of the event
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderPaymentMethodType } from "crm/models/operations";
+import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderPaymentMethodType } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderSelfServiceResourceEstimateOrderPaymentMethodType = "CARD";

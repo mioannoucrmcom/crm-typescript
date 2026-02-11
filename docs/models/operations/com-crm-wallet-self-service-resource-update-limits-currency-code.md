@@ -5,7 +5,7 @@ Currency code based on ISO 4217 standard
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceUpdateLimitsCurrencyCode } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceUpdateLimitsCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceUpdateLimitsCurrencyCode = "EUR";
 ```

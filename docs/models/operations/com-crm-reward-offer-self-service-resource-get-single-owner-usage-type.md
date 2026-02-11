@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmRewardOfferSelfServiceResourceGetSingleOwnerUsageType } from "crm/models/operations";
+import { ComCrmRewardOfferSelfServiceResourceGetSingleOwnerUsageType } from "crmcom/models/operations";
 
 let value: ComCrmRewardOfferSelfServiceResourceGetSingleOwnerUsageType =
   "GOOGLE_STRIP_IMAGE";

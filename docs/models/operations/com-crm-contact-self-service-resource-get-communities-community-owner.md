@@ -5,7 +5,7 @@ The contact that is owner of the community that the related contact is a member 
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetCommunitiesCommunityOwner } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetCommunitiesCommunityOwner } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetCommunitiesCommunityOwner = {
   id: "b22e6e44-2c3c-af17-27ac-bacad6cf7181",

@@ -5,7 +5,7 @@ Product type tax category
 ## Example Usage
 
 ```typescript
-import { TaxCategory } from "crm/models/operations";
+import { TaxCategory } from "crmcom/models/operations";
 
 let value: TaxCategory = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

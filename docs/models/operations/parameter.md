@@ -5,7 +5,7 @@ A list of custom fields whose values can be set when creating or updating entiti
 ## Example Usage
 
 ```typescript
-import { Parameter } from "crm/models/operations";
+import { Parameter } from "crmcom/models/operations";
 
 let value: Parameter = {
   key: "back_office",

@@ -5,7 +5,7 @@ Details about the beneficiary
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormBeneficiary } from "crm/models/operations";
+import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormBeneficiary } from "crmcom/models/operations";
 
 let value:
   ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormBeneficiary = {

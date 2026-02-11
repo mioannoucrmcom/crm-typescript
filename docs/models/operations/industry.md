@@ -5,7 +5,7 @@ The company’s Industry details
 ## Example Usage
 
 ```typescript
-import { Industry } from "crm/models/operations";
+import { Industry } from "crmcom/models/operations";
 
 let value: Industry = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

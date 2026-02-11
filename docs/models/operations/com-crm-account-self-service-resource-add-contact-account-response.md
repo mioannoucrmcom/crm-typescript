@@ -5,7 +5,7 @@ Created
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceAddContactAccountResponse } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceAddContactAccountResponse } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceAddContactAccountResponse = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

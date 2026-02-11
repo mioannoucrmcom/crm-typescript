@@ -5,7 +5,7 @@ The payment integration connector type
 ## Example Usage
 
 ```typescript
-import { Connector } from "crm/models/operations";
+import { Connector } from "crmcom/models/operations";
 
 let value: Connector = "PLUGIN";
 ```

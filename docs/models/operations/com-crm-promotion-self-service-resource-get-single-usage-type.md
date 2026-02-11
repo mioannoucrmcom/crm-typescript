@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceGetSingleUsageType } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceGetSingleUsageType } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceGetSingleUsageType = "HERO";
 ```

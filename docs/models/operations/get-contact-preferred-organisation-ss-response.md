@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { GetContactPreferredOrganisationSSResponse } from "crm/models/operations";
+import { GetContactPreferredOrganisationSSResponse } from "crmcom/models/operations";
 
 let value: GetContactPreferredOrganisationSSResponse = {
   organisations: [

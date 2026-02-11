@@ -5,7 +5,7 @@ Details about reward scheme
 ## Example Usage
 
 ```typescript
-import { ComCrmRewardOfferSelfServiceResourceGetSingleScheme } from "crm/models/operations";
+import { ComCrmRewardOfferSelfServiceResourceGetSingleScheme } from "crmcom/models/operations";
 
 let value: ComCrmRewardOfferSelfServiceResourceGetSingleScheme = {
   id: "58a54215-5d8f-5b40-af91-c62e86b973a9",

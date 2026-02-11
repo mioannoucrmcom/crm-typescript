@@ -5,7 +5,7 @@ The entity
 ## Example Usage
 
 ```typescript
-import { ComCrmTagSelfServiceResourceListTagsContentEntity } from "crm/models/operations";
+import { ComCrmTagSelfServiceResourceListTagsContentEntity } from "crmcom/models/operations";
 
 let value: ComCrmTagSelfServiceResourceListTagsContentEntity =
   "SERVICE_REQUESTS";

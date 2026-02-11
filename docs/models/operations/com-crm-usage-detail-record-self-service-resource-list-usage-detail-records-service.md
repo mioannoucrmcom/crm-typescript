@@ -5,7 +5,7 @@ The termed or one-time service through which usage was consumed.
 ## Example Usage
 
 ```typescript
-import { ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsService } from "crm/models/operations";
+import { ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsService } from "crmcom/models/operations";
 
 let value:
   ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsService = {

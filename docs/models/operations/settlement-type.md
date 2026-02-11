@@ -10,7 +10,7 @@ Defines the settlement transaction type
 ## Example Usage
 
 ```typescript
-import { SettlementType } from "crm/models/operations";
+import { SettlementType } from "crmcom/models/operations";
 
 let value: SettlementType = "AWARD";
 ```

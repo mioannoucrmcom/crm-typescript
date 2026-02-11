@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationPlatform } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationPlatform } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationPlatform = {
   platformId: "1762e052-4805-73eb-36f2-e77d6dc883e8",

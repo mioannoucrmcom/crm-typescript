@@ -5,7 +5,7 @@ The order’s life cycle state
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderState } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderState } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderState = "COMPLETED";
 ```

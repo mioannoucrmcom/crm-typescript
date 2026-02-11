@@ -5,7 +5,7 @@ The Promotion’s target conditions i.e. the required conditions for the contact
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceGetSingleTargets } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceGetSingleTargets } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceGetSingleTargets = {
   contact: {

@@ -9,7 +9,7 @@ The type of the event:
 ## Example Usage
 
 ```typescript
-import { ComCrmLocationSelfServiceResourceListOrderCatalogSupplyMethod } from "crm/models/operations";
+import { ComCrmLocationSelfServiceResourceListOrderCatalogSupplyMethod } from "crmcom/models/operations";
 
 let value: ComCrmLocationSelfServiceResourceListOrderCatalogSupplyMethod =
   "DELIVERY";

@@ -20,14 +20,14 @@ Retrieves a list of a contact’s Orders
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderSelfServiceResource_listOrders" method="get" path="/self-service/v2/contacts/{id}/orders" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.orders.comCrmOrderSelfServiceResourceListOrders({
+  const result = await crmcom.orders.comCrmOrderSelfServiceResourceListOrders({
     id: "067083a5-607c-959e-e62a-3ba8d359bdd6",
     customFields: "key;value;key;value",
     includeCustomFields: true,
@@ -48,17 +48,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { ordersComCrmOrderSelfServiceResourceListOrders } from "crm/funcs/orders-com-crm-order-self-service-resource-list-orders.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { ordersComCrmOrderSelfServiceResourceListOrders } from "crmcom/funcs/orders-com-crm-order-self-service-resource-list-orders.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await ordersComCrmOrderSelfServiceResourceListOrders(crm, {
+  const res = await ordersComCrmOrderSelfServiceResourceListOrders(crmcom, {
     id: "067083a5-607c-959e-e62a-3ba8d359bdd6",
     customFields: "key;value;key;value",
     includeCustomFields: true,
@@ -81,14 +81,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderSelfServiceResource_listOrders" method="get" path="/self-service/v2/contacts/{id}/orders" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.orders.comCrmOrderSelfServiceResourceListOrders({
+  const result = await crmcom.orders.comCrmOrderSelfServiceResourceListOrders({
     id: "067083a5-607c-959e-e62a-3ba8d359bdd6",
     customFields: "key;value;key;value",
     includeCustomFields: true,
@@ -109,17 +109,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { ordersComCrmOrderSelfServiceResourceListOrders } from "crm/funcs/orders-com-crm-order-self-service-resource-list-orders.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { ordersComCrmOrderSelfServiceResourceListOrders } from "crmcom/funcs/orders-com-crm-order-self-service-resource-list-orders.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await ordersComCrmOrderSelfServiceResourceListOrders(crm, {
+  const res = await ordersComCrmOrderSelfServiceResourceListOrders(crmcom, {
     id: "067083a5-607c-959e-e62a-3ba8d359bdd6",
     customFields: "key;value;key;value",
     includeCustomFields: true,
@@ -142,14 +142,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderSelfServiceResource_listOrders" method="get" path="/self-service/v2/contacts/{id}/orders" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.orders.comCrmOrderSelfServiceResourceListOrders({
+  const result = await crmcom.orders.comCrmOrderSelfServiceResourceListOrders({
     id: "067083a5-607c-959e-e62a-3ba8d359bdd6",
     customFields: "key;value;key;value",
     includeCustomFields: true,
@@ -171,17 +171,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { ordersComCrmOrderSelfServiceResourceListOrders } from "crm/funcs/orders-com-crm-order-self-service-resource-list-orders.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { ordersComCrmOrderSelfServiceResourceListOrders } from "crmcom/funcs/orders-com-crm-order-self-service-resource-list-orders.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await ordersComCrmOrderSelfServiceResourceListOrders(crm, {
+  const res = await ordersComCrmOrderSelfServiceResourceListOrders(crmcom, {
     id: "067083a5-607c-959e-e62a-3ba8d359bdd6",
     customFields: "key;value;key;value",
     includeCustomFields: true,
@@ -205,14 +205,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderSelfServiceResource_listOrders" method="get" path="/self-service/v2/contacts/{id}/orders" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.orders.comCrmOrderSelfServiceResourceListOrders({
+  const result = await crmcom.orders.comCrmOrderSelfServiceResourceListOrders({
     id: "067083a5-607c-959e-e62a-3ba8d359bdd6",
     customFields: "key;value;key;value",
     includeCustomFields: true,
@@ -234,17 +234,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { ordersComCrmOrderSelfServiceResourceListOrders } from "crm/funcs/orders-com-crm-order-self-service-resource-list-orders.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { ordersComCrmOrderSelfServiceResourceListOrders } from "crmcom/funcs/orders-com-crm-order-self-service-resource-list-orders.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await ordersComCrmOrderSelfServiceResourceListOrders(crm, {
+  const res = await ordersComCrmOrderSelfServiceResourceListOrders(crmcom, {
     id: "067083a5-607c-959e-e62a-3ba8d359bdd6",
     customFields: "key;value;key;value",
     includeCustomFields: true,
@@ -268,14 +268,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderSelfServiceResource_listOrders" method="get" path="/self-service/v2/contacts/{id}/orders" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.orders.comCrmOrderSelfServiceResourceListOrders({
+  const result = await crmcom.orders.comCrmOrderSelfServiceResourceListOrders({
     id: "067083a5-607c-959e-e62a-3ba8d359bdd6",
     customFields: "key;value;key;value",
     includeCustomFields: true,
@@ -297,17 +297,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { ordersComCrmOrderSelfServiceResourceListOrders } from "crm/funcs/orders-com-crm-order-self-service-resource-list-orders.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { ordersComCrmOrderSelfServiceResourceListOrders } from "crmcom/funcs/orders-com-crm-order-self-service-resource-list-orders.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await ordersComCrmOrderSelfServiceResourceListOrders(crm, {
+  const res = await ordersComCrmOrderSelfServiceResourceListOrders(crmcom, {
     id: "067083a5-607c-959e-e62a-3ba8d359bdd6",
     customFields: "key;value;key;value",
     includeCustomFields: true,
@@ -365,14 +365,14 @@ The following APIs should be called in order to make an order</p>
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.EstimateOrderFulfillmentSelfServiceResource_estimateOrder" method="post" path="/self-service/v2/estimates/order_fulfillment" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.orders.comCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrder({
+  const result = await crmcom.orders.comCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrder({
     supplyMethod: "DIRECT_SALE",
     postalCode: "2415",
     latLot: "35.157204,33.314151",
@@ -397,17 +397,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { ordersComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrder } from "crm/funcs/orders-com-crm-estimate-order-fulfillment-self-service-resource-estimate-order.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { ordersComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrder } from "crmcom/funcs/orders-com-crm-estimate-order-fulfillment-self-service-resource-estimate-order.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await ordersComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrder(crm, {
+  const res = await ordersComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrder(crmcom, {
     supplyMethod: "DIRECT_SALE",
     postalCode: "2415",
     latLot: "35.157204,33.314151",
@@ -468,14 +468,14 @@ The following APIs should be called in order to make an order</p>
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderSelfServiceResource_createOrder" method="post" path="/self-service/v2/orders" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.orders.comCrmOrderSelfServiceResourceCreateOrder({
+  const result = await crmcom.orders.comCrmOrderSelfServiceResourceCreateOrder({
     estimationId: "37b56acf-665c-1112-93fc-163b3639bcbe",
     useWalletFunds: true,
     walletFundsAmount: 11.99,
@@ -508,17 +508,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { ordersComCrmOrderSelfServiceResourceCreateOrder } from "crm/funcs/orders-com-crm-order-self-service-resource-create-order.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { ordersComCrmOrderSelfServiceResourceCreateOrder } from "crmcom/funcs/orders-com-crm-order-self-service-resource-create-order.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await ordersComCrmOrderSelfServiceResourceCreateOrder(crm, {
+  const res = await ordersComCrmOrderSelfServiceResourceCreateOrder(crmcom, {
     estimationId: "37b56acf-665c-1112-93fc-163b3639bcbe",
     useWalletFunds: true,
     walletFundsAmount: 11.99,
@@ -577,14 +577,14 @@ Retrieves detailed information for a specific order
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderSelfServiceResource_getOrder" method="get" path="/self-service/v2/orders/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.orders.comCrmOrderSelfServiceResourceGetOrder({
+  const result = await crmcom.orders.comCrmOrderSelfServiceResourceGetOrder({
     id: "6514df04-9218-d354-9d59-ed9e98882fe6",
   });
 
@@ -599,17 +599,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { ordersComCrmOrderSelfServiceResourceGetOrder } from "crm/funcs/orders-com-crm-order-self-service-resource-get-order.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { ordersComCrmOrderSelfServiceResourceGetOrder } from "crmcom/funcs/orders-com-crm-order-self-service-resource-get-order.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await ordersComCrmOrderSelfServiceResourceGetOrder(crm, {
+  const res = await ordersComCrmOrderSelfServiceResourceGetOrder(crmcom, {
     id: "6514df04-9218-d354-9d59-ed9e98882fe6",
   });
   if (res.ok) {
@@ -626,14 +626,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderSelfServiceResource_getOrder" method="get" path="/self-service/v2/orders/{id}" example="Example 2" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.orders.comCrmOrderSelfServiceResourceGetOrder({
+  const result = await crmcom.orders.comCrmOrderSelfServiceResourceGetOrder({
     id: "6514df04-9218-d354-9d59-ed9e98882fe6",
   });
 
@@ -648,17 +648,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { ordersComCrmOrderSelfServiceResourceGetOrder } from "crm/funcs/orders-com-crm-order-self-service-resource-get-order.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { ordersComCrmOrderSelfServiceResourceGetOrder } from "crmcom/funcs/orders-com-crm-order-self-service-resource-get-order.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await ordersComCrmOrderSelfServiceResourceGetOrder(crm, {
+  const res = await ordersComCrmOrderSelfServiceResourceGetOrder(crmcom, {
     id: "6514df04-9218-d354-9d59-ed9e98882fe6",
   });
   if (res.ok) {
@@ -699,14 +699,14 @@ Updates an existing Order
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderSelfServiceResource_performOrderActions" method="put" path="/self-service/v2/orders/{id}/actions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.orders.comCrmOrderSelfServiceResourcePerformOrderActions({
+  const result = await crmcom.orders.comCrmOrderSelfServiceResourcePerformOrderActions({
     id: "6514df04-9218-d354-9d59-ed9e98882fe6",
     body: {
       action: "CANCEL",
@@ -725,17 +725,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { ordersComCrmOrderSelfServiceResourcePerformOrderActions } from "crm/funcs/orders-com-crm-order-self-service-resource-perform-order-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { ordersComCrmOrderSelfServiceResourcePerformOrderActions } from "crmcom/funcs/orders-com-crm-order-self-service-resource-perform-order-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await ordersComCrmOrderSelfServiceResourcePerformOrderActions(crm, {
+  const res = await ordersComCrmOrderSelfServiceResourcePerformOrderActions(crmcom, {
     id: "6514df04-9218-d354-9d59-ed9e98882fe6",
     body: {
       action: "CANCEL",

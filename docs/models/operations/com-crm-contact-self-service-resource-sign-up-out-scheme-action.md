@@ -5,7 +5,7 @@ The action that should be applied for the reward scheme
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceSignUpOutSchemeAction } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceSignUpOutSchemeAction } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceSignUpOutSchemeAction = "SIGN_UP";
 ```

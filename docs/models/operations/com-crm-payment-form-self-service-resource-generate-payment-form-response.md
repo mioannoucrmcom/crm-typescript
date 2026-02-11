@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormResponse } from "crm/models/operations";
+import { ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormResponse } from "crmcom/models/operations";
 
 let value: ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormResponse = {};
 ```

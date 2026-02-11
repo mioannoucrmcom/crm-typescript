@@ -5,7 +5,7 @@ Determines whether a service is managed as a single quantity or as separate, ind
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductInstanceModel } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductInstanceModel } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductInstanceModel =
   "QUANTITY_BASED";

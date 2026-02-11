@@ -5,7 +5,7 @@ The platform on which the application will be published
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationPlatformEnum } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationPlatformEnum } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationPlatformEnum =
   "GOOGLE";

@@ -5,7 +5,7 @@ Available only Tiered, Volume and Stairstep pricing models. Only the first tier 
 ## Example Usage
 
 ```typescript
-import { CrossSellTiers } from "crm/models/operations";
+import { CrossSellTiers } from "crmcom/models/operations";
 
 let value: CrossSellTiers = {
   upperTier: 1,

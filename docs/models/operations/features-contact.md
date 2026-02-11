@@ -5,7 +5,7 @@ The contact features that will be supported by the application
 ## Example Usage
 
 ```typescript
-import { FeaturesContact } from "crm/models/operations";
+import { FeaturesContact } from "crmcom/models/operations";
 
 let value: FeaturesContact = {
   contact: {

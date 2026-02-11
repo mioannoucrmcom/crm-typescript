@@ -5,7 +5,7 @@ Applicable when the order item is a Termed or One-Time service. Includes detaile
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderPriceTerms } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderPriceTerms } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderPriceTerms = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

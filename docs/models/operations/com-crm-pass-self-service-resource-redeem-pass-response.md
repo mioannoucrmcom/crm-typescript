@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmPassSelfServiceResourceRedeemPassResponse } from "crm/models/operations";
+import { ComCrmPassSelfServiceResourceRedeemPassResponse } from "crmcom/models/operations";
 
 let value: ComCrmPassSelfServiceResourceRedeemPassResponse = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

@@ -5,7 +5,7 @@ Details about the organisation
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceListProductsOwner } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceListProductsOwner } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceListProductsOwner = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

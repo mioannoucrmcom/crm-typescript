@@ -5,7 +5,7 @@ The account's state
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceGetSingleState } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceGetSingleState } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceGetSingleState = "ACTIVE";
 ```

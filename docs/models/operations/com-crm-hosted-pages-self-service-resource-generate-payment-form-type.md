@@ -5,7 +5,7 @@ The type will be utilised by CRM.COM for back-end processes. Payment forms can b
 ## Example Usage
 
 ```typescript
-import { ComCrmHostedPagesSelfServiceResourceGeneratePaymentFormType } from "crm/models/operations";
+import { ComCrmHostedPagesSelfServiceResourceGeneratePaymentFormType } from "crmcom/models/operations";
 
 let value: ComCrmHostedPagesSelfServiceResourceGeneratePaymentFormType =
   "PAYMENT";

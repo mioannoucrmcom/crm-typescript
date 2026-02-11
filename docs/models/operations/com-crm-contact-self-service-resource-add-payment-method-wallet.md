@@ -5,7 +5,7 @@ The phone details (required and applicable if the payment method is set to PHONE
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddPaymentMethodWallet } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddPaymentMethodWallet } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddPaymentMethodWallet = {
   phoneDetails: {

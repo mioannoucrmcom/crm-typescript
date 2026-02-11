@@ -5,7 +5,7 @@ Details about who cancelled the subscription action
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionCancelledBy } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionCancelledBy } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionCancelledBy = {

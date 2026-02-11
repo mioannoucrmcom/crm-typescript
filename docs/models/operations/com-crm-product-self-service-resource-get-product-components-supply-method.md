@@ -5,7 +5,7 @@ Defines the order’ supply method
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductComponentsSupplyMethod } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductComponentsSupplyMethod } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductComponentsSupplyMethod =
   "DELIVERY";

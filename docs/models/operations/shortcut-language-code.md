@@ -5,7 +5,7 @@
 ## Example Usage
 
 ```typescript
-import { ShortcutLanguageCode } from "crm/models/operations";
+import { ShortcutLanguageCode } from "crmcom/models/operations";
 
 let value: ShortcutLanguageCode = "EN";
 ```

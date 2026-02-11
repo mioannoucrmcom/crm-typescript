@@ -5,7 +5,7 @@ Information about the person demographics
 ## Example Usage
 
 ```typescript
-import { UpdateContactSSDemographics } from "crm/models/operations";
+import { UpdateContactSSDemographics } from "crmcom/models/operations";
 
 let value: UpdateContactSSDemographics = {
   gender: "FEMALE",

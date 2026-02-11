@@ -23,12 +23,12 @@ Verify the existence of a contact using either their email or phone. The result 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_verifyContactExists" method="get" path="/self-service/v2/contacts" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contact.comCrmContactSelfServiceResourceVerifyContactExists({
+  const result = await crmcom.contact.comCrmContactSelfServiceResourceVerifyContactExists({
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     emailAddress: "john@gmail.com",
@@ -46,15 +46,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactComCrmContactSelfServiceResourceVerifyContactExists } from "crm/funcs/contact-com-crm-contact-self-service-resource-verify-contact-exists.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactComCrmContactSelfServiceResourceVerifyContactExists } from "crmcom/funcs/contact-com-crm-contact-self-service-resource-verify-contact-exists.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactComCrmContactSelfServiceResourceVerifyContactExists(crm, {
+  const res = await contactComCrmContactSelfServiceResourceVerifyContactExists(crmcom, {
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     emailAddress: "john@gmail.com",
@@ -99,12 +99,12 @@ Authenticate a contact via on OpenID Connect provider. Web API can be used consi
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getOIDCConfiguration" method="get" path="/self-service/v2/contacts/oidc/{type}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contact.comCrmContactSelfServiceResourceGetOIDCConfiguration({
+  const result = await crmcom.contact.comCrmContactSelfServiceResourceGetOIDCConfiguration({
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     type: "<value>",
@@ -121,15 +121,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactComCrmContactSelfServiceResourceGetOIDCConfiguration } from "crm/funcs/contact-com-crm-contact-self-service-resource-get-oidc-configuration.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactComCrmContactSelfServiceResourceGetOIDCConfiguration } from "crmcom/funcs/contact-com-crm-contact-self-service-resource-get-oidc-configuration.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactComCrmContactSelfServiceResourceGetOIDCConfiguration(crm, {
+  const res = await contactComCrmContactSelfServiceResourceGetOIDCConfiguration(crmcom, {
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     type: "<value>",
@@ -148,12 +148,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getOIDCConfiguration" method="get" path="/self-service/v2/contacts/oidc/{type}" example="Example 2" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contact.comCrmContactSelfServiceResourceGetOIDCConfiguration({
+  const result = await crmcom.contact.comCrmContactSelfServiceResourceGetOIDCConfiguration({
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     type: "<value>",
@@ -170,15 +170,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactComCrmContactSelfServiceResourceGetOIDCConfiguration } from "crm/funcs/contact-com-crm-contact-self-service-resource-get-oidc-configuration.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactComCrmContactSelfServiceResourceGetOIDCConfiguration } from "crmcom/funcs/contact-com-crm-contact-self-service-resource-get-oidc-configuration.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactComCrmContactSelfServiceResourceGetOIDCConfiguration(crm, {
+  const res = await contactComCrmContactSelfServiceResourceGetOIDCConfiguration(crmcom, {
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     type: "<value>",
@@ -230,14 +230,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="registerContactSS" method="post" path="/self-service/v2/contacts/register" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contact.registerContactSS({
+  const result = await crmcom.contact.registerContactSS({
     apiKey: "ab5f8b2e-092f-4848-8f46-31df1c014060",
     body: {
       firstName: "John",
@@ -277,17 +277,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactRegisterContactSS } from "crm/funcs/contact-register-contact-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactRegisterContactSS } from "crmcom/funcs/contact-register-contact-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactRegisterContactSS(crm, {
+  const res = await contactRegisterContactSS(crmcom, {
     apiKey: "ab5f8b2e-092f-4848-8f46-31df1c014060",
     body: {
       firstName: "John",
@@ -329,14 +329,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="registerContactSS" method="post" path="/self-service/v2/contacts/register" example="Example 2" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contact.registerContactSS({
+  const result = await crmcom.contact.registerContactSS({
     apiKey: "ab5f8b2e-092f-4848-8f46-31df1c014060",
     body: {
       firstName: "John",
@@ -362,17 +362,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactRegisterContactSS } from "crm/funcs/contact-register-contact-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactRegisterContactSS } from "crmcom/funcs/contact-register-contact-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactRegisterContactSS(crm, {
+  const res = await contactRegisterContactSS(crmcom, {
     apiKey: "ab5f8b2e-092f-4848-8f46-31df1c014060",
     body: {
       firstName: "John",
@@ -424,14 +424,14 @@ Retrieve basic information for a specific contact
 
 <!-- UsageSnippet language="typescript" operationID="getSingleContactSS" method="get" path="/self-service/v2/contacts/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contact.getSingleContactSS({
+  const result = await crmcom.contact.getSingleContactSS({
     id: "6e2f83ca-69e9-4ea4-96c5-73a4c641979d",
   });
 
@@ -446,17 +446,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactGetSingleContactSS } from "crm/funcs/contact-get-single-contact-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactGetSingleContactSS } from "crmcom/funcs/contact-get-single-contact-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactGetSingleContactSS(crm, {
+  const res = await contactGetSingleContactSS(crmcom, {
     id: "6e2f83ca-69e9-4ea4-96c5-73a4c641979d",
   });
   if (res.ok) {
@@ -497,14 +497,14 @@ Update information for an existing contact
 
 <!-- UsageSnippet language="typescript" operationID="updateContactSS" method="put" path="/self-service/v2/contacts/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contact.updateContactSS({
+  const result = await crmcom.contact.updateContactSS({
     id: "e2ade504-9b90-92be-0adb-3258475ff695",
     body: {
       firstName: "John",
@@ -546,17 +546,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactUpdateContactSS } from "crm/funcs/contact-update-contact-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactUpdateContactSS } from "crmcom/funcs/contact-update-contact-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactUpdateContactSS(crm, {
+  const res = await contactUpdateContactSS(crmcom, {
     id: "e2ade504-9b90-92be-0adb-3258475ff695",
     body: {
       firstName: "John",
@@ -624,12 +624,12 @@ Unregisters a contact from a business
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_unregisterContact" method="delete" path="/self-service/v2/contacts/{id}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  await crm.contact.comCrmContactSelfServiceResourceUnregisterContact({
+  await crmcom.contact.comCrmContactSelfServiceResourceUnregisterContact({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "e18ee2bc-c6f3-49e1-8e05-763386378017",
@@ -646,15 +646,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactComCrmContactSelfServiceResourceUnregisterContact } from "crm/funcs/contact-com-crm-contact-self-service-resource-unregister-contact.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactComCrmContactSelfServiceResourceUnregisterContact } from "crmcom/funcs/contact-com-crm-contact-self-service-resource-unregister-contact.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactComCrmContactSelfServiceResourceUnregisterContact(crm, {
+  const res = await contactComCrmContactSelfServiceResourceUnregisterContact(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "e18ee2bc-c6f3-49e1-8e05-763386378017",
@@ -698,14 +698,14 @@ Request (and retrieve) a contact statement
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_exportStatement" method="post" path="/self-service/v2/contacts/{id}/export_statement" example="Export Statement" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contact.comCrmAccountSelfServiceResourceExportStatement({
+  await crmcom.contact.comCrmAccountSelfServiceResourceExportStatement({
     id: "b2490476-fc6b-604c-e3f9-5ddd0777efbe",
     body: {
       accountId: "4c0ea630-2972-7714-a5d1-7576b8dc9c22",
@@ -728,17 +728,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactComCrmAccountSelfServiceResourceExportStatement } from "crm/funcs/contact-com-crm-account-self-service-resource-export-statement.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactComCrmAccountSelfServiceResourceExportStatement } from "crmcom/funcs/contact-com-crm-account-self-service-resource-export-statement.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactComCrmAccountSelfServiceResourceExportStatement(crm, {
+  const res = await contactComCrmAccountSelfServiceResourceExportStatement(crmcom, {
     id: "b2490476-fc6b-604c-e3f9-5ddd0777efbe",
     body: {
       accountId: "4c0ea630-2972-7714-a5d1-7576b8dc9c22",
@@ -787,14 +787,14 @@ This API allows a contact to respond to an invitation to join another contact’
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_action" method="post" path="/self-service/v2/contacts/{id}/people/{relationship_id}/actions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contact.comCrmContactSelfServiceResourceAction({
+  const result = await crmcom.contact.comCrmContactSelfServiceResourceAction({
     id: "d24a32fd-fac8-3bc0-66a1-533ae7c4707f",
     relationshipId: "ccc945d8-1bda-a11c-d378-23c29947c2a3",
     body: {
@@ -813,17 +813,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactComCrmContactSelfServiceResourceAction } from "crm/funcs/contact-com-crm-contact-self-service-resource-action.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactComCrmContactSelfServiceResourceAction } from "crmcom/funcs/contact-com-crm-contact-self-service-resource-action.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactComCrmContactSelfServiceResourceAction(crm, {
+  const res = await contactComCrmContactSelfServiceResourceAction(crmcom, {
     id: "d24a32fd-fac8-3bc0-66a1-533ae7c4707f",
     relationshipId: "ccc945d8-1bda-a11c-d378-23c29947c2a3",
     body: {

@@ -5,7 +5,7 @@ The usage service's measurement unit
 ## Example Usage
 
 ```typescript
-import { AuthorisedUsageMeasurementUnit } from "crm/models/operations";
+import { AuthorisedUsageMeasurementUnit } from "crmcom/models/operations";
 
 let value: AuthorisedUsageMeasurementUnit = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

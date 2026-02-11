@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmSettlementTransactionSelfServiceResourceListRequest } from "crm/models/operations";
+import { ComCrmSettlementTransactionSelfServiceResourceListRequest } from "crmcom/models/operations";
 
 let value: ComCrmSettlementTransactionSelfServiceResourceListRequest = {
   accountJournalEntryId: "4c156688-4d53-d0e4-e483-1809cacaaaca",

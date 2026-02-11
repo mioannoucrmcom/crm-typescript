@@ -5,7 +5,7 @@ Defines the supported purchase event features
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationPurchase } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationPurchase } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationPurchase = {
   manualSpend: true,

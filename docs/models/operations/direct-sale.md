@@ -5,7 +5,7 @@ Defines the details for direct sale as supply method
 ## Example Usage
 
 ```typescript
-import { DirectSale } from "crm/models/operations";
+import { DirectSale } from "crmcom/models/operations";
 
 let value: DirectSale = {
   isSupported: true,

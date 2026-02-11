@@ -5,7 +5,7 @@ Defines the supported refer a friend features
 ## Example Usage
 
 ```typescript
-import { ReferFriend } from "crm/models/operations";
+import { ReferFriend } from "crmcom/models/operations";
 
 let value: ReferFriend = {
   isSupported: true,

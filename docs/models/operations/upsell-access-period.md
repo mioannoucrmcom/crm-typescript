@@ -5,7 +5,7 @@ The period of time that service will be accessible. Applicable only for one-time
 ## Example Usage
 
 ```typescript
-import { UpsellAccessPeriod } from "crm/models/operations";
+import { UpsellAccessPeriod } from "crmcom/models/operations";
 
 let value: UpsellAccessPeriod = {
   startDate: 1612953199,

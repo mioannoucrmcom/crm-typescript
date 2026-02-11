@@ -5,7 +5,7 @@ The account’s currency. 3-letter ISO 4217 currency code.
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceListCurrencyCode } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceListCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceListCurrencyCode = "EUR";
 ```

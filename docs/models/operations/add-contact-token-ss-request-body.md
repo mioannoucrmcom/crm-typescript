@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AddContactTokenSSRequestBody } from "crm/models/operations";
+import { AddContactTokenSSRequestBody } from "crmcom/models/operations";
 
 let value: AddContactTokenSSRequestBody = {
   intent: "SPEND",

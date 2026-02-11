@@ -18,14 +18,14 @@ Retrieves a contact's mobile pass card for an alternative Android wallet.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletPassesSelfServiceResource_getAndroidWalletPass" method="get" path="/self-service/v2/android_wallet_pass/{organisationId}/contacts/{contactId}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.mobilePassCards.comCrmWalletPassesSelfServiceResourceGetAndroidWalletPass({
+  await crmcom.mobilePassCards.comCrmWalletPassesSelfServiceResourceGetAndroidWalletPass({
     contactId: "<id>",
     organisationId: "<id>",
   });
@@ -41,17 +41,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { mobilePassCardsComCrmWalletPassesSelfServiceResourceGetAndroidWalletPass } from "crm/funcs/mobile-pass-cards-com-crm-wallet-passes-self-service-resource-get-android-wallet-pass.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { mobilePassCardsComCrmWalletPassesSelfServiceResourceGetAndroidWalletPass } from "crmcom/funcs/mobile-pass-cards-com-crm-wallet-passes-self-service-resource-get-android-wallet-pass.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await mobilePassCardsComCrmWalletPassesSelfServiceResourceGetAndroidWalletPass(crm, {
+  const res = await mobilePassCardsComCrmWalletPassesSelfServiceResourceGetAndroidWalletPass(crmcom, {
     contactId: "<id>",
     organisationId: "<id>",
   });
@@ -93,14 +93,14 @@ Retrieves a mobile pass card for an Apple wallet.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletPassesSelfServiceResource_getApplePass" method="get" path="/self-service/v2/apple_pass/{organisationId}/contacts/{contactId}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.mobilePassCards.comCrmWalletPassesSelfServiceResourceGetApplePass({
+  await crmcom.mobilePassCards.comCrmWalletPassesSelfServiceResourceGetApplePass({
     contactId: "<id>",
     organisationId: "<id>",
   });
@@ -116,17 +116,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { mobilePassCardsComCrmWalletPassesSelfServiceResourceGetApplePass } from "crm/funcs/mobile-pass-cards-com-crm-wallet-passes-self-service-resource-get-apple-pass.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { mobilePassCardsComCrmWalletPassesSelfServiceResourceGetApplePass } from "crmcom/funcs/mobile-pass-cards-com-crm-wallet-passes-self-service-resource-get-apple-pass.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await mobilePassCardsComCrmWalletPassesSelfServiceResourceGetApplePass(crm, {
+  const res = await mobilePassCardsComCrmWalletPassesSelfServiceResourceGetApplePass(crmcom, {
     contactId: "<id>",
     organisationId: "<id>",
   });
@@ -168,14 +168,14 @@ Retrieves a mobile pass card for a Google wallet.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletPassesSelfServiceResource_getGooglePass" method="get" path="/self-service/v2/google_pass/{organisationId}/contacts/{contactId}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.mobilePassCards.comCrmWalletPassesSelfServiceResourceGetGooglePass({
+  await crmcom.mobilePassCards.comCrmWalletPassesSelfServiceResourceGetGooglePass({
     contactId: "<id>",
     organisationId: "<id>",
   });
@@ -191,17 +191,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { mobilePassCardsComCrmWalletPassesSelfServiceResourceGetGooglePass } from "crm/funcs/mobile-pass-cards-com-crm-wallet-passes-self-service-resource-get-google-pass.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { mobilePassCardsComCrmWalletPassesSelfServiceResourceGetGooglePass } from "crmcom/funcs/mobile-pass-cards-com-crm-wallet-passes-self-service-resource-get-google-pass.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await mobilePassCardsComCrmWalletPassesSelfServiceResourceGetGooglePass(crm, {
+  const res = await mobilePassCardsComCrmWalletPassesSelfServiceResourceGetGooglePass(crmcom, {
     contactId: "<id>",
     organisationId: "<id>",
   });

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { OrderLineItemTaxExemptReason } from "crm/models/operations";
+import { OrderLineItemTaxExemptReason } from "crmcom/models/operations";
 
 let value: OrderLineItemTaxExemptReason = "CONTACT";
 ```

@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { CrossSellUsageType } from "crm/models/operations";
+import { CrossSellUsageType } from "crmcom/models/operations";
 
 let value: CrossSellUsageType = "GOOGLE_LOGO_IMAGE";
 ```

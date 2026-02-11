@@ -5,7 +5,7 @@ The organisation’s operation type
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceListShortTermOperationOperation } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceListShortTermOperationOperation } from "crmcom/models/operations";
 
 let value:
   ComCrmOrganisationSelfServiceResourceListShortTermOperationOperation =

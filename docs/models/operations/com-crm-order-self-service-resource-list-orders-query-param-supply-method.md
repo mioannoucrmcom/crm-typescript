@@ -5,7 +5,7 @@ Defines how order was/will be provided
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceListOrdersQueryParamSupplyMethod } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceListOrdersQueryParamSupplyMethod } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceListOrdersQueryParamSupplyMethod =
   "DELIVERY";

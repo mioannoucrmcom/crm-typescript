@@ -5,7 +5,7 @@ The date on which scheduled Orders were delivered.
 ## Example Usage
 
 ```typescript
-import { ScheduledOn } from "crm/models/operations";
+import { ScheduledOn } from "crmcom/models/operations";
 
 let value: ScheduledOn = "scheduled_on[lte]";
 ```

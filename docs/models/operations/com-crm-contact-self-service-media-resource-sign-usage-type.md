@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceMediaResourceSignUsageType } from "crm/models/operations";
+import { ComCrmContactSelfServiceMediaResourceSignUsageType } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceMediaResourceSignUsageType = "PROFILEIMAGE";
 ```

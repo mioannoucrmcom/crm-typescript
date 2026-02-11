@@ -5,7 +5,7 @@ Contact’s nameday information
 ## Example Usage
 
 ```typescript
-import { UpdateContactSSNameDay } from "crm/models/operations";
+import { UpdateContactSSNameDay } from "crmcom/models/operations";
 
 let value: UpdateContactSSNameDay = {
   month: 6,

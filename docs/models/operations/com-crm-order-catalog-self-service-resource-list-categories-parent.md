@@ -5,7 +5,7 @@ The parent order catalogue cateogry (if applicable)
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderCatalogSelfServiceResourceListCategoriesParent } from "crm/models/operations";
+import { ComCrmOrderCatalogSelfServiceResourceListCategoriesParent } from "crmcom/models/operations";
 
 let value: ComCrmOrderCatalogSelfServiceResourceListCategoriesParent = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

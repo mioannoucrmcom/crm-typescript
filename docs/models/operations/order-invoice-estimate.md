@@ -5,7 +5,7 @@ The outright order’s invoicing information. This invoice estimation includes o
 ## Example Usage
 
 ```typescript
-import { OrderInvoiceEstimate } from "crm/models/operations";
+import { OrderInvoiceEstimate } from "crmcom/models/operations";
 
 let value: OrderInvoiceEstimate = {
   issuedDate: 123456789,

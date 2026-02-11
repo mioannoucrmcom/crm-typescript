@@ -5,7 +5,7 @@ The contact that will be assigned as demo contact (required only if demo contact
 ## Example Usage
 
 ```typescript
-import { DemoContactContact } from "crm/models/operations";
+import { DemoContactContact } from "crmcom/models/operations";
 
 let value: DemoContactContact = {
   id: "76ee374d-cd38-4cde-9fa3-4eaa26e67a06",

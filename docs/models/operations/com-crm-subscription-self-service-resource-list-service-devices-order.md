@@ -6,7 +6,7 @@ Default: DESC
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListServiceDevicesOrder } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListServiceDevicesOrder } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceListServiceDevicesOrder =
   "DESC";

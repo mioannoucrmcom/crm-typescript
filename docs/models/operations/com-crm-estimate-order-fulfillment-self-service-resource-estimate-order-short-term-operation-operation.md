@@ -7,7 +7,7 @@ The organisation’s operation type
 ```typescript
 import {
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderShortTermOperationOperation,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderShortTermOperationOperation =

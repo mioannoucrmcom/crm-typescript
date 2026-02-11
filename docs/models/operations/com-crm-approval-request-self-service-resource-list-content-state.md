@@ -5,7 +5,7 @@ The approval request state
 ## Example Usage
 
 ```typescript
-import { ComCrmApprovalRequestSelfServiceResourceListContentState } from "crm/models/operations";
+import { ComCrmApprovalRequestSelfServiceResourceListContentState } from "crmcom/models/operations";
 
 let value: ComCrmApprovalRequestSelfServiceResourceListContentState = "PENDING";
 ```

@@ -7,7 +7,7 @@ The opening hours for each organisation’s operation type
 ```typescript
 import {
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderOpeningHourOperation,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderOpeningHourOperation =

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceVerifyContactExistsRequest } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceVerifyContactExistsRequest } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceVerifyContactExistsRequest = {
   emailAddress: "john@gmail.com",

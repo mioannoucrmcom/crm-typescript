@@ -5,7 +5,7 @@ The device type that the form will be displayed in
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormDeviceType } from "crm/models/operations";
+import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormDeviceType } from "crmcom/models/operations";
 
 let value:
   ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormDeviceType =

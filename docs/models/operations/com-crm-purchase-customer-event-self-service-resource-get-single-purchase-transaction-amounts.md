@@ -7,7 +7,7 @@ Details about the purchase transaction amounts
 ```typescript
 import {
   ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseTransactionAmounts,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseTransactionAmounts =

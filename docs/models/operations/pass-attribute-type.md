@@ -5,7 +5,7 @@ The pass supplementary attribute type
 ## Example Usage
 
 ```typescript
-import { PassAttributeType } from "crm/models/operations";
+import { PassAttributeType } from "crmcom/models/operations";
 
 let value: PassAttributeType = "CODE";
 ```

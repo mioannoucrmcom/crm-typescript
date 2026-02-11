@@ -24,14 +24,14 @@ Get a Contact Client Token
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getClientToken" method="get" path="/self-service/v2/contacts/{id}/client_token" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactFinancials.comCrmContactSelfServiceResourceGetClientToken({
+  await crmcom.contactFinancials.comCrmContactSelfServiceResourceGetClientToken({
     id: "<id>",
   });
 
@@ -46,17 +46,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmContactSelfServiceResourceGetClientToken } from "crm/funcs/contact-financials-com-crm-contact-self-service-resource-get-client-token.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmContactSelfServiceResourceGetClientToken } from "crmcom/funcs/contact-financials-com-crm-contact-self-service-resource-get-client-token.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactFinancialsComCrmContactSelfServiceResourceGetClientToken(crm, {
+  const res = await contactFinancialsComCrmContactSelfServiceResourceGetClientToken(crmcom, {
     id: "<id>",
   });
   if (res.ok) {
@@ -97,14 +97,14 @@ Set up a new payment intent for a specific contact. A Payment intent represents 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PaymentIntentSelfServiceResource_setUpIntents" method="post" path="/self-service/v2/contacts/{id}/intents" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactFinancials.comCrmPaymentIntentSelfServiceResourceSetUpIntents({
+  const result = await crmcom.contactFinancials.comCrmPaymentIntentSelfServiceResourceSetUpIntents({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     body: {
       integrationId: "2BD9C84FA60F9FE407140E20F707726A",
@@ -127,17 +127,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmPaymentIntentSelfServiceResourceSetUpIntents } from "crm/funcs/contact-financials-com-crm-payment-intent-self-service-resource-set-up-intents.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmPaymentIntentSelfServiceResourceSetUpIntents } from "crmcom/funcs/contact-financials-com-crm-payment-intent-self-service-resource-set-up-intents.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactFinancialsComCrmPaymentIntentSelfServiceResourceSetUpIntents(crm, {
+  const res = await contactFinancialsComCrmPaymentIntentSelfServiceResourceSetUpIntents(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     body: {
       integrationId: "2BD9C84FA60F9FE407140E20F707726A",
@@ -186,12 +186,12 @@ Create a new Payment transaction for a Contact. The Payment will be issued as Po
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PaymentSelfServiceResource_create" method="post" path="/self-service/v2/payments" example="Create Payment" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactFinancials.comCrmPaymentSelfServiceResourceCreate({
+  const result = await crmcom.contactFinancials.comCrmPaymentSelfServiceResourceCreate({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     accountId: "CAD1E31269B76D7A65ACCE45B2E68DFD",
@@ -233,15 +233,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmPaymentSelfServiceResourceCreate } from "crm/funcs/contact-financials-com-crm-payment-self-service-resource-create.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmPaymentSelfServiceResourceCreate } from "crmcom/funcs/contact-financials-com-crm-payment-self-service-resource-create.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactFinancialsComCrmPaymentSelfServiceResourceCreate(crm, {
+  const res = await contactFinancialsComCrmPaymentSelfServiceResourceCreate(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     accountId: "CAD1E31269B76D7A65ACCE45B2E68DFD",
@@ -310,12 +310,12 @@ Create a new payout financial transaction against a wallet
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PayoutSelfServiceResource_create" method="post" path="/self-service/v2/payouts" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactFinancials.comCrmPayoutSelfServiceResourceCreate({
+  const result = await crmcom.contactFinancials.comCrmPayoutSelfServiceResourceCreate({
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     walletId: "55063493-910c-5366-216f-31065832bdb5",
@@ -338,15 +338,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmPayoutSelfServiceResourceCreate } from "crm/funcs/contact-financials-com-crm-payout-self-service-resource-create.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmPayoutSelfServiceResourceCreate } from "crmcom/funcs/contact-financials-com-crm-payout-self-service-resource-create.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactFinancialsComCrmPayoutSelfServiceResourceCreate(crm, {
+  const res = await contactFinancialsComCrmPayoutSelfServiceResourceCreate(crmcom, {
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     walletId: "55063493-910c-5366-216f-31065832bdb5",
@@ -396,14 +396,14 @@ Retrieve the settlement transactions related to B2B Settlement
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SettlementTransactionSelfServiceResource_list" method="get" path="/self-service/v2/settlement_transactions" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactFinancials.comCrmSettlementTransactionSelfServiceResourceList({
+  const result = await crmcom.contactFinancials.comCrmSettlementTransactionSelfServiceResourceList({
     accountJournalEntryId: "4c156688-4d53-d0e4-e483-1809cacaaaca",
     accountingType: "CREDIT",
     currencyCode: "EUR",
@@ -424,17 +424,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmSettlementTransactionSelfServiceResourceList } from "crm/funcs/contact-financials-com-crm-settlement-transaction-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmSettlementTransactionSelfServiceResourceList } from "crmcom/funcs/contact-financials-com-crm-settlement-transaction-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactFinancialsComCrmSettlementTransactionSelfServiceResourceList(crm, {
+  const res = await contactFinancialsComCrmSettlementTransactionSelfServiceResourceList(crmcom, {
     accountJournalEntryId: "4c156688-4d53-d0e4-e483-1809cacaaaca",
     accountingType: "CREDIT",
     currencyCode: "EUR",
@@ -457,14 +457,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SettlementTransactionSelfServiceResource_list" method="get" path="/self-service/v2/settlement_transactions" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactFinancials.comCrmSettlementTransactionSelfServiceResourceList({
+  const result = await crmcom.contactFinancials.comCrmSettlementTransactionSelfServiceResourceList({
     accountJournalEntryId: "4c156688-4d53-d0e4-e483-1809cacaaaca",
     accountingType: "CREDIT",
     currencyCode: "EUR",
@@ -486,17 +486,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmSettlementTransactionSelfServiceResourceList } from "crm/funcs/contact-financials-com-crm-settlement-transaction-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmSettlementTransactionSelfServiceResourceList } from "crmcom/funcs/contact-financials-com-crm-settlement-transaction-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactFinancialsComCrmSettlementTransactionSelfServiceResourceList(crm, {
+  const res = await contactFinancialsComCrmSettlementTransactionSelfServiceResourceList(crmcom, {
     accountJournalEntryId: "4c156688-4d53-d0e4-e483-1809cacaaaca",
     accountingType: "CREDIT",
     currencyCode: "EUR",
@@ -520,14 +520,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SettlementTransactionSelfServiceResource_list" method="get" path="/self-service/v2/settlement_transactions" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactFinancials.comCrmSettlementTransactionSelfServiceResourceList({
+  const result = await crmcom.contactFinancials.comCrmSettlementTransactionSelfServiceResourceList({
     accountJournalEntryId: "4c156688-4d53-d0e4-e483-1809cacaaaca",
     accountingType: "CREDIT",
     currencyCode: "EUR",
@@ -549,17 +549,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmSettlementTransactionSelfServiceResourceList } from "crm/funcs/contact-financials-com-crm-settlement-transaction-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmSettlementTransactionSelfServiceResourceList } from "crmcom/funcs/contact-financials-com-crm-settlement-transaction-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactFinancialsComCrmSettlementTransactionSelfServiceResourceList(crm, {
+  const res = await contactFinancialsComCrmSettlementTransactionSelfServiceResourceList(crmcom, {
     accountJournalEntryId: "4c156688-4d53-d0e4-e483-1809cacaaaca",
     accountingType: "CREDIT",
     currencyCode: "EUR",
@@ -583,14 +583,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SettlementTransactionSelfServiceResource_list" method="get" path="/self-service/v2/settlement_transactions" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactFinancials.comCrmSettlementTransactionSelfServiceResourceList({
+  const result = await crmcom.contactFinancials.comCrmSettlementTransactionSelfServiceResourceList({
     accountJournalEntryId: "4c156688-4d53-d0e4-e483-1809cacaaaca",
     accountingType: "CREDIT",
     currencyCode: "EUR",
@@ -612,17 +612,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmSettlementTransactionSelfServiceResourceList } from "crm/funcs/contact-financials-com-crm-settlement-transaction-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmSettlementTransactionSelfServiceResourceList } from "crmcom/funcs/contact-financials-com-crm-settlement-transaction-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactFinancialsComCrmSettlementTransactionSelfServiceResourceList(crm, {
+  const res = await contactFinancialsComCrmSettlementTransactionSelfServiceResourceList(crmcom, {
     accountJournalEntryId: "4c156688-4d53-d0e4-e483-1809cacaaaca",
     accountingType: "CREDIT",
     currencyCode: "EUR",
@@ -670,14 +670,14 @@ Retrieve some metrics related to the settlement transactions
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.SettlementTransactionSelfServiceResource_getMetrics" method="get" path="/self-service/v2/settlement_transactions/metrics" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactFinancials.comCrmSettlementTransactionSelfServiceResourceGetMetrics();
+  const result = await crmcom.contactFinancials.comCrmSettlementTransactionSelfServiceResourceGetMetrics();
 
   console.log(result);
 }
@@ -690,17 +690,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmSettlementTransactionSelfServiceResourceGetMetrics } from "crm/funcs/contact-financials-com-crm-settlement-transaction-self-service-resource-get-metrics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmSettlementTransactionSelfServiceResourceGetMetrics } from "crmcom/funcs/contact-financials-com-crm-settlement-transaction-self-service-resource-get-metrics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactFinancialsComCrmSettlementTransactionSelfServiceResourceGetMetrics(crm);
+  const res = await contactFinancialsComCrmSettlementTransactionSelfServiceResourceGetMetrics(crmcom);
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -739,12 +739,12 @@ Create a new Topup for a Wallet
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.TopUpSelfServiceResource_create" method="post" path="/self-service/v2/topups" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactFinancials.comCrmTopUpSelfServiceResourceCreate({
+  const result = await crmcom.contactFinancials.comCrmTopUpSelfServiceResourceCreate({
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     topupDate: 14423423,
@@ -775,15 +775,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmTopUpSelfServiceResourceCreate } from "crm/funcs/contact-financials-com-crm-top-up-self-service-resource-create.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmTopUpSelfServiceResourceCreate } from "crmcom/funcs/contact-financials-com-crm-top-up-self-service-resource-create.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactFinancialsComCrmTopUpSelfServiceResourceCreate(crm, {
+  const res = await contactFinancialsComCrmTopUpSelfServiceResourceCreate(crmcom, {
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     topupDate: 14423423,
@@ -841,12 +841,12 @@ Transfers an amount of money from one account or wallet to another account or wa
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.TransferSelfServiceResource_create" method="post" path="/self-service/v2/transfers" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactFinancials.comCrmTransferSelfServiceResourceCreate({
+  const result = await crmcom.contactFinancials.comCrmTransferSelfServiceResourceCreate({
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     origin: {
@@ -873,15 +873,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmTransferSelfServiceResourceCreate } from "crm/funcs/contact-financials-com-crm-transfer-self-service-resource-create.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmTransferSelfServiceResourceCreate } from "crmcom/funcs/contact-financials-com-crm-transfer-self-service-resource-create.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactFinancialsComCrmTransferSelfServiceResourceCreate(crm, {
+  const res = await contactFinancialsComCrmTransferSelfServiceResourceCreate(crmcom, {
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     origin: {
@@ -935,12 +935,12 @@ Transfers an amount of money from one account or wallet to another account or wa
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.TransferSelfServiceResource_createTransferBulk" method="post" path="/self-service/v2/transfers/bulk" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  await crm.contactFinancials.comCrmTransferSelfServiceResourceCreateTransferBulk({
+  await crmcom.contactFinancials.comCrmTransferSelfServiceResourceCreateTransferBulk({
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, [
     {
@@ -970,15 +970,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactFinancialsComCrmTransferSelfServiceResourceCreateTransferBulk } from "crm/funcs/contact-financials-com-crm-transfer-self-service-resource-create-transfer-bulk.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactFinancialsComCrmTransferSelfServiceResourceCreateTransferBulk } from "crmcom/funcs/contact-financials-com-crm-transfer-self-service-resource-create-transfer-bulk.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactFinancialsComCrmTransferSelfServiceResourceCreateTransferBulk(crm, {
+  const res = await contactFinancialsComCrmTransferSelfServiceResourceCreateTransferBulk(crmcom, {
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, [
     {

@@ -5,7 +5,7 @@ Defines the entity based on which the printout will be created
 ## Example Usage
 
 ```typescript
-import { CrmComPrintoutSelfServiceResourceOutputEntity } from "crm/models/operations";
+import { CrmComPrintoutSelfServiceResourceOutputEntity } from "crmcom/models/operations";
 
 let value: CrmComPrintoutSelfServiceResourceOutputEntity = {
   type: "INVOICE",

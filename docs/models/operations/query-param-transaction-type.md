@@ -5,7 +5,7 @@ Filter by journal transaction type
 ## Example Usage
 
 ```typescript
-import { QueryParamTransactionType } from "crm/models/operations";
+import { QueryParamTransactionType } from "crmcom/models/operations";
 
 let value: QueryParamTransactionType = "INVOICE";
 ```

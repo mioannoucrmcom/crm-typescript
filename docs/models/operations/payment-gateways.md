@@ -5,7 +5,7 @@ The supported finance attributes
 ## Example Usage
 
 ```typescript
-import { PaymentGateways } from "crm/models/operations";
+import { PaymentGateways } from "crmcom/models/operations";
 
 let value: PaymentGateways = {
   isRewards: true,

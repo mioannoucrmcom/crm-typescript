@@ -5,7 +5,7 @@ Country code
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormAddressCountryCode } from "crm/models/operations";
+import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormAddressCountryCode } from "crmcom/models/operations";
 
 let value:
   ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormAddressCountryCode =

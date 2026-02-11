@@ -5,7 +5,7 @@
 ```typescript
 import {
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionServicesToAddProduct,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateSubscriptionSelfServiceResourceEstimateSubscriptionServicesToAddProduct =

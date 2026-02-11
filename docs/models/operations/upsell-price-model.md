@@ -9,7 +9,7 @@ The pricing model:
 ## Example Usage
 
 ```typescript
-import { UpsellPriceModel } from "crm/models/operations";
+import { UpsellPriceModel } from "crmcom/models/operations";
 
 let value: UpsellPriceModel = "FLAT";
 ```

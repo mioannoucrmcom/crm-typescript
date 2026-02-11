@@ -16,14 +16,14 @@ Returns all devices which were shared with a contact that is part of a community
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactSharedDevices" method="get" path="/self-service/v2/contacts/{id}/communities/devices" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contacts.comCrmContactSelfServiceResourceGetContactSharedDevices({
+  const result = await crmcom.contacts.comCrmContactSelfServiceResourceGetContactSharedDevices({
     id: "da25d2f1-2ec4-23ec-b6e4-0a3c78721923",
     includeTotal: true,
     size: 100,
@@ -40,17 +40,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactsComCrmContactSelfServiceResourceGetContactSharedDevices } from "crm/funcs/contacts-com-crm-contact-self-service-resource-get-contact-shared-devices.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactsComCrmContactSelfServiceResourceGetContactSharedDevices } from "crmcom/funcs/contacts-com-crm-contact-self-service-resource-get-contact-shared-devices.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactsComCrmContactSelfServiceResourceGetContactSharedDevices(crm, {
+  const res = await contactsComCrmContactSelfServiceResourceGetContactSharedDevices(crmcom, {
     id: "da25d2f1-2ec4-23ec-b6e4-0a3c78721923",
     includeTotal: true,
     size: 100,
@@ -69,14 +69,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactSharedDevices" method="get" path="/self-service/v2/contacts/{id}/communities/devices" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contacts.comCrmContactSelfServiceResourceGetContactSharedDevices({
+  const result = await crmcom.contacts.comCrmContactSelfServiceResourceGetContactSharedDevices({
     id: "da25d2f1-2ec4-23ec-b6e4-0a3c78721923",
     includeTotal: true,
     size: 100,
@@ -94,17 +94,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactsComCrmContactSelfServiceResourceGetContactSharedDevices } from "crm/funcs/contacts-com-crm-contact-self-service-resource-get-contact-shared-devices.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactsComCrmContactSelfServiceResourceGetContactSharedDevices } from "crmcom/funcs/contacts-com-crm-contact-self-service-resource-get-contact-shared-devices.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactsComCrmContactSelfServiceResourceGetContactSharedDevices(crm, {
+  const res = await contactsComCrmContactSelfServiceResourceGetContactSharedDevices(crmcom, {
     id: "da25d2f1-2ec4-23ec-b6e4-0a3c78721923",
     includeTotal: true,
     size: 100,
@@ -124,14 +124,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactSharedDevices" method="get" path="/self-service/v2/contacts/{id}/communities/devices" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contacts.comCrmContactSelfServiceResourceGetContactSharedDevices({
+  const result = await crmcom.contacts.comCrmContactSelfServiceResourceGetContactSharedDevices({
     id: "da25d2f1-2ec4-23ec-b6e4-0a3c78721923",
     includeTotal: true,
     size: 100,
@@ -149,17 +149,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactsComCrmContactSelfServiceResourceGetContactSharedDevices } from "crm/funcs/contacts-com-crm-contact-self-service-resource-get-contact-shared-devices.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactsComCrmContactSelfServiceResourceGetContactSharedDevices } from "crmcom/funcs/contacts-com-crm-contact-self-service-resource-get-contact-shared-devices.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactsComCrmContactSelfServiceResourceGetContactSharedDevices(crm, {
+  const res = await contactsComCrmContactSelfServiceResourceGetContactSharedDevices(crmcom, {
     id: "da25d2f1-2ec4-23ec-b6e4-0a3c78721923",
     includeTotal: true,
     size: 100,
@@ -179,14 +179,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getContactSharedDevices" method="get" path="/self-service/v2/contacts/{id}/communities/devices" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contacts.comCrmContactSelfServiceResourceGetContactSharedDevices({
+  const result = await crmcom.contacts.comCrmContactSelfServiceResourceGetContactSharedDevices({
     id: "da25d2f1-2ec4-23ec-b6e4-0a3c78721923",
     includeTotal: true,
     size: 100,
@@ -204,17 +204,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactsComCrmContactSelfServiceResourceGetContactSharedDevices } from "crm/funcs/contacts-com-crm-contact-self-service-resource-get-contact-shared-devices.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactsComCrmContactSelfServiceResourceGetContactSharedDevices } from "crmcom/funcs/contacts-com-crm-contact-self-service-resource-get-contact-shared-devices.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactsComCrmContactSelfServiceResourceGetContactSharedDevices(crm, {
+  const res = await contactsComCrmContactSelfServiceResourceGetContactSharedDevices(crmcom, {
     id: "da25d2f1-2ec4-23ec-b6e4-0a3c78721923",
     includeTotal: true,
     size: 100,

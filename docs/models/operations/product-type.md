@@ -5,7 +5,7 @@ The awarded product type
 ## Example Usage
 
 ```typescript
-import { ProductType } from "crm/models/operations";
+import { ProductType } from "crmcom/models/operations";
 
 let value: ProductType = "TYPE";
 ```

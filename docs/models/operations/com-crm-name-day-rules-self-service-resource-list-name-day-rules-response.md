@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmNameDayRulesSelfServiceResourceListNameDayRulesResponse } from "crm/models/operations";
+import { ComCrmNameDayRulesSelfServiceResourceListNameDayRulesResponse } from "crmcom/models/operations";
 
 let value: ComCrmNameDayRulesSelfServiceResourceListNameDayRulesResponse = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

@@ -5,7 +5,7 @@ The merchant features that will be supported by the application
 ## Example Usage
 
 ```typescript
-import { Merchant } from "crm/models/operations";
+import { Merchant } from "crmcom/models/operations";
 
 let value: Merchant = {
   purchase: {

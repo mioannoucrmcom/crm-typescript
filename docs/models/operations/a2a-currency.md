@@ -5,7 +5,7 @@ The account currency
 ## Example Usage
 
 ```typescript
-import { A2aCurrency } from "crm/models/operations";
+import { A2aCurrency } from "crmcom/models/operations";
 
 let value: A2aCurrency = "NZD";
 ```

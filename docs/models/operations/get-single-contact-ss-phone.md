@@ -5,7 +5,7 @@ Contact phone information
 ## Example Usage
 
 ```typescript
-import { GetSingleContactSSPhone } from "crm/models/operations";
+import { GetSingleContactSSPhone } from "crmcom/models/operations";
 
 let value: GetSingleContactSSPhone = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

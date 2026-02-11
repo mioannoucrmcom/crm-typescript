@@ -5,7 +5,7 @@ The image type.
 ## Example Usage
 
 ```typescript
-import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageImage } from "crm/models/operations";
+import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageImage } from "crmcom/models/operations";
 
 let value: ComCrmLandingPageSelfServiceResourceGetSingleLandingPageImage =
   "BACKGROUND";

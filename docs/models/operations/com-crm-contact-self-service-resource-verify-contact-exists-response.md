@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceVerifyContactExistsResponse } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceVerifyContactExistsResponse } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceVerifyContactExistsResponse = {
   contactExists: true,

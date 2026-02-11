@@ -5,7 +5,7 @@ The order's delivery method type.
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderType } from "crm/models/operations";
+import { ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderType } from "crmcom/models/operations";
 
 let value: ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderType =
   "COURIER_SERVICE";

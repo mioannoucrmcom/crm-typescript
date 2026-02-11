@@ -5,7 +5,7 @@ Payment method included in Get methods of Payments,Refunds and Payouts
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaymentMethod } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaymentMethod } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaymentMethod = {

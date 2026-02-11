@@ -19,12 +19,12 @@ Web API used when consumers purchase Gift Passes from a Landing page. The Web AP
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.HostedPagesSelfServiceResource_generateGiftPassPaymentForm" method="post" path="/self-service/v2/hosted_pages/gift_passes" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.hostedPages.comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentForm({
+  const result = await crmcom.hostedPages.comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentForm({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     integrationId: "302fb9b0-d57c-4a07-ae0b-b7cbec934775",
@@ -67,15 +67,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { hostedPagesComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentForm } from "crm/funcs/hosted-pages-com-crm-hosted-pages-self-service-resource-generate-gift-pass-payment-form.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { hostedPagesComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentForm } from "crmcom/funcs/hosted-pages-com-crm-hosted-pages-self-service-resource-generate-gift-pass-payment-form.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await hostedPagesComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentForm(crm, {
+  const res = await hostedPagesComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentForm(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     integrationId: "302fb9b0-d57c-4a07-ae0b-b7cbec934775",
@@ -145,12 +145,12 @@ Use this Web API to load the Hosted Payment Page of a Payment Gateway service in
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.HostedPagesSelfServiceResource_generateAddPaymentMethodForm" method="get" path="/self-service/v2/hosted_pages/payment_methods" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.hostedPages.comCrmHostedPagesSelfServiceResourceGenerateAddPaymentMethodForm({
+  const result = await crmcom.hostedPages.comCrmHostedPagesSelfServiceResourceGenerateAddPaymentMethodForm({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     currencyCode: "EUR",
@@ -168,15 +168,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { hostedPagesComCrmHostedPagesSelfServiceResourceGenerateAddPaymentMethodForm } from "crm/funcs/hosted-pages-com-crm-hosted-pages-self-service-resource-generate-add-payment-method-form.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { hostedPagesComCrmHostedPagesSelfServiceResourceGenerateAddPaymentMethodForm } from "crmcom/funcs/hosted-pages-com-crm-hosted-pages-self-service-resource-generate-add-payment-method-form.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await hostedPagesComCrmHostedPagesSelfServiceResourceGenerateAddPaymentMethodForm(crm, {
+  const res = await hostedPagesComCrmHostedPagesSelfServiceResourceGenerateAddPaymentMethodForm(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     currencyCode: "EUR",
@@ -221,12 +221,12 @@ Web API used when consumers want to perform a payment using a card on file. It's
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.HostedPagesSelfServiceResource_generatePaymentForm" method="get" path="/self-service/v2/hosted_pages/payments" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.hostedPages.comCrmHostedPagesSelfServiceResourceGeneratePaymentForm({
+  const result = await crmcom.hostedPages.comCrmHostedPagesSelfServiceResourceGeneratePaymentForm({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     amount: 23.4,
@@ -248,15 +248,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { hostedPagesComCrmHostedPagesSelfServiceResourceGeneratePaymentForm } from "crm/funcs/hosted-pages-com-crm-hosted-pages-self-service-resource-generate-payment-form.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { hostedPagesComCrmHostedPagesSelfServiceResourceGeneratePaymentForm } from "crmcom/funcs/hosted-pages-com-crm-hosted-pages-self-service-resource-generate-payment-form.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await hostedPagesComCrmHostedPagesSelfServiceResourceGeneratePaymentForm(crm, {
+  const res = await hostedPagesComCrmHostedPagesSelfServiceResourceGeneratePaymentForm(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     amount: 23.4,
@@ -305,12 +305,12 @@ Web API used when consumers want to perform a payout. It's vital to study the Pa
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.HostedPagesSelfServiceResource_generatePayoutForm" method="get" path="/self-service/v2/hosted_pages/payouts" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.hostedPages.comCrmHostedPagesSelfServiceResourceGeneratePayoutForm({
+  const result = await crmcom.hostedPages.comCrmHostedPagesSelfServiceResourceGeneratePayoutForm({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     amount: 23.4,
@@ -330,15 +330,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { hostedPagesComCrmHostedPagesSelfServiceResourceGeneratePayoutForm } from "crm/funcs/hosted-pages-com-crm-hosted-pages-self-service-resource-generate-payout-form.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { hostedPagesComCrmHostedPagesSelfServiceResourceGeneratePayoutForm } from "crmcom/funcs/hosted-pages-com-crm-hosted-pages-self-service-resource-generate-payout-form.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await hostedPagesComCrmHostedPagesSelfServiceResourceGeneratePayoutForm(crm, {
+  const res = await hostedPagesComCrmHostedPagesSelfServiceResourceGeneratePayoutForm(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     amount: 23.4,

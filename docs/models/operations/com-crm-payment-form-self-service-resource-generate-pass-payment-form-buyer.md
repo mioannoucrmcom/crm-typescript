@@ -5,7 +5,7 @@ Details about the buyer
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormBuyer } from "crm/models/operations";
+import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormBuyer } from "crmcom/models/operations";
 
 let value: ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormBuyer = {
   name: "<value>",

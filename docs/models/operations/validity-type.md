@@ -5,7 +5,7 @@ The validity type
 ## Example Usage
 
 ```typescript
-import { ValidityType } from "crm/models/operations";
+import { ValidityType } from "crmcom/models/operations";
 
 let value: ValidityType = "ALWAYS";
 ```

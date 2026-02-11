@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceVerifyWalletExistsSecurity } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceVerifyWalletExistsSecurity } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceVerifyWalletExistsSecurity = {
   publicAPIKey: "<value>",

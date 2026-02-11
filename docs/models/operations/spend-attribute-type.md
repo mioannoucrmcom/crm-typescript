@@ -5,7 +5,7 @@ The type of supplementary attribute
 ## Example Usage
 
 ```typescript
-import { SpendAttributeType } from "crm/models/operations";
+import { SpendAttributeType } from "crmcom/models/operations";
 
 let value: SpendAttributeType = "AMOUNT";
 ```

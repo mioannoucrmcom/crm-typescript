@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ToBeAdded } from "crm/models/operations";
+import { ToBeAdded } from "crmcom/models/operations";
 
 let value: ToBeAdded = {
   productId: "2dc0809f-ed91-4b68-b912-5bd6064d901e",

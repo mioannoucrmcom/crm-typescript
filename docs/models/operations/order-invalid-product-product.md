@@ -5,7 +5,7 @@ Product included in the request’s ordered items
 ## Example Usage
 
 ```typescript
-import { OrderInvalidProductProduct } from "crm/models/operations";
+import { OrderInvalidProductProduct } from "crmcom/models/operations";
 
 let value: OrderInvalidProductProduct = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

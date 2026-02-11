@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceRemoveContactDeviceRequest } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceRemoveContactDeviceRequest } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceRemoveContactDeviceRequest = {
   fcmToken: "<value>",

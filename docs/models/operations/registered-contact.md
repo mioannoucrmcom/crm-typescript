@@ -5,7 +5,7 @@ Details required if the pass is being created for a registered contact.
 ## Example Usage
 
 ```typescript
-import { RegisteredContact } from "crm/models/operations";
+import { RegisteredContact } from "crmcom/models/operations";
 
 let value: RegisteredContact = {
   contactId: "acaae121-b4af-4663-8646-47bb541c971d",

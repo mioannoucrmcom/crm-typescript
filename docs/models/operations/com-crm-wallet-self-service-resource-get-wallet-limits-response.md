@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetWalletLimitsResponse } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetWalletLimitsResponse } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetWalletLimitsResponse = {
   limitRules: [

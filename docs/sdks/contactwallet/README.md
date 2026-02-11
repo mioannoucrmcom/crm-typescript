@@ -28,14 +28,14 @@ Set ups the Wallet for the contact by either creating a new one or linking the w
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_setUpWallet" method="post" path="/self-service/v2/contacts/{id}/wallets" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactWallet.comCrmContactSelfServiceResourceSetUpWallet({
+  await crmcom.contactWallet.comCrmContactSelfServiceResourceSetUpWallet({
     id: "<id>",
     body: {
       otp: "146123",
@@ -58,17 +58,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmContactSelfServiceResourceSetUpWallet } from "crm/funcs/contact-wallet-com-crm-contact-self-service-resource-set-up-wallet.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmContactSelfServiceResourceSetUpWallet } from "crmcom/funcs/contact-wallet-com-crm-contact-self-service-resource-set-up-wallet.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmContactSelfServiceResourceSetUpWallet(crm, {
+  const res = await contactWalletComCrmContactSelfServiceResourceSetUpWallet(crmcom, {
     id: "<id>",
     body: {
       otp: "146123",
@@ -117,14 +117,14 @@ Request Wallet One Time Password
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_requestOTP" method="post" path="/self-service/v2/wallets/otp" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactWallet.comCrmWalletSelfServiceResourceRequestOTP({
+  await crmcom.contactWallet.comCrmWalletSelfServiceResourceRequestOTP({
     identity: {
       type: "PHONE",
       value: "some_email@email.com",
@@ -142,17 +142,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceRequestOTP } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-request-otp.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceRequestOTP } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-request-otp.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceRequestOTP(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceRequestOTP(crmcom, {
     identity: {
       type: "PHONE",
       value: "some_email@email.com",
@@ -196,12 +196,12 @@ Verify the existence of a wallet using either their email or phone as wallet ide
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_verifyWalletExists" method="get" path="/self-service/v2/wallets/wallet_exists" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceVerifyWalletExists({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceVerifyWalletExists({
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     type: "EMAIL",
@@ -219,15 +219,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceVerifyWalletExists } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-verify-wallet-exists.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceVerifyWalletExists } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-verify-wallet-exists.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceVerifyWalletExists(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceVerifyWalletExists(crmcom, {
     publicAPIKey: process.env["CRM_PUBLIC_API_KEY"] ?? "",
   }, {
     type: "EMAIL",
@@ -272,12 +272,12 @@ Retrieves detailed information of a single Wallet.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getSingle" method="get" path="/self-service/v2/wallets/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetSingle({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetSingle({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -294,15 +294,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetSingle } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-single.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetSingle } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-single.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetSingle(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetSingle(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -346,12 +346,12 @@ Updates a single Wallet.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_update" method="put" path="/self-service/v2/wallets/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceUpdate({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceUpdate({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "3ac0809f-ed91-4b68-b912-5bd6064d901e",
@@ -385,15 +385,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceUpdate } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-update.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceUpdate } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-update.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceUpdate(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceUpdate(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "3ac0809f-ed91-4b68-b912-5bd6064d901e",
@@ -454,14 +454,14 @@ Depending on the business’s wallet settings, the API returns either a dynamica
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getWalletCode" method="get" path="/self-service/v2/wallets/{id}/code" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetWalletCode({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetWalletCode({
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
   });
 
@@ -476,17 +476,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetWalletCode } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-wallet-code.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetWalletCode } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-wallet-code.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetWalletCode(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetWalletCode(crmcom, {
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
   });
   if (res.ok) {
@@ -527,14 +527,14 @@ Get the wallet’s balances split per commerce pool in descending order based on
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getBalances" method="get" path="/self-service/v2/wallets/{id}/commerce_balances" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetBalances({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetBalances({
     id: "acf8b8ac-a325-a644-c866-a6c9d62ff11b",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     isActive: true,
@@ -551,17 +551,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetBalances } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-balances.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetBalances } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-balances.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetBalances(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetBalances(crmcom, {
     id: "acf8b8ac-a325-a644-c866-a6c9d62ff11b",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     isActive: true,
@@ -604,14 +604,14 @@ Retrieve a list of wallet journals.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_listWalletJournals" method="get" path="/self-service/v2/wallets/{id}/journals" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceListWalletJournals({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceListWalletJournals({
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     includeUnallocatedCredit: true,
@@ -639,17 +639,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceListWalletJournals } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-list-wallet-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceListWalletJournals } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-list-wallet-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceListWalletJournals(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceListWalletJournals(crmcom, {
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     includeUnallocatedCredit: true,
@@ -679,14 +679,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_listWalletJournals" method="get" path="/self-service/v2/wallets/{id}/journals" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceListWalletJournals({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceListWalletJournals({
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     includeUnallocatedCredit: true,
@@ -714,17 +714,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceListWalletJournals } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-list-wallet-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceListWalletJournals } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-list-wallet-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceListWalletJournals(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceListWalletJournals(crmcom, {
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     includeUnallocatedCredit: true,
@@ -754,14 +754,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_listWalletJournals" method="get" path="/self-service/v2/wallets/{id}/journals" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceListWalletJournals({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceListWalletJournals({
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     includeUnallocatedCredit: true,
@@ -790,17 +790,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceListWalletJournals } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-list-wallet-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceListWalletJournals } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-list-wallet-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceListWalletJournals(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceListWalletJournals(crmcom, {
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     includeUnallocatedCredit: true,
@@ -831,14 +831,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_listWalletJournals" method="get" path="/self-service/v2/wallets/{id}/journals" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceListWalletJournals({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceListWalletJournals({
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     includeUnallocatedCredit: true,
@@ -867,17 +867,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceListWalletJournals } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-list-wallet-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceListWalletJournals } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-list-wallet-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceListWalletJournals(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceListWalletJournals(crmcom, {
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     includeUnallocatedCredit: true,
@@ -908,14 +908,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_listWalletJournals" method="get" path="/self-service/v2/wallets/{id}/journals" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceListWalletJournals({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceListWalletJournals({
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     includeUnallocatedCredit: true,
@@ -944,17 +944,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceListWalletJournals } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-list-wallet-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceListWalletJournals } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-list-wallet-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceListWalletJournals(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceListWalletJournals(crmcom, {
     id: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     commercePoolId: "234fbc54-bc32-1990-ce59-76c45e6377a8",
     includeUnallocatedCredit: true,
@@ -1009,12 +1009,12 @@ Returns a list of wallet limit rules as these are specified by the contact. A li
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getWalletLimits" method="get" path="/self-service/v2/wallets/{id}/limits" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetWalletLimits({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetWalletLimits({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1031,15 +1031,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetWalletLimits } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-wallet-limits.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetWalletLimits } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-wallet-limits.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetWalletLimits(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetWalletLimits(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1083,12 +1083,12 @@ Update a wallets limits. Multiple rules can be updated, each one having a unique
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_updateLimits" method="put" path="/self-service/v2/wallets/{id}/limits" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceUpdateLimits({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceUpdateLimits({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "3ac0809f-ed91-4b68-b912-5bd6064d901e",
@@ -1119,15 +1119,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceUpdateLimits } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-update-limits.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceUpdateLimits } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-update-limits.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceUpdateLimits(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceUpdateLimits(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "3ac0809f-ed91-4b68-b912-5bd6064d901e",
@@ -1222,12 +1222,12 @@ Get the summarised totals for wallet transactions, grouped per transaction type 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getWalletSummarisedTotals" method="get" path="/self-service/v2/wallets/{id}/summarised_totals" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetWalletSummarisedTotals({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetWalletSummarisedTotals({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
@@ -1244,15 +1244,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetWalletSummarisedTotals } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-wallet-summarised-totals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetWalletSummarisedTotals } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-wallet-summarised-totals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetWalletSummarisedTotals(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetWalletSummarisedTotals(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
@@ -1296,12 +1296,12 @@ Retrieves the wallet's Auto and Termed Top-up settings, as these are specified b
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getWalletTopUpSettings" method="get" path="/self-service/v2/wallets/{id}/topup_settings" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetWalletTopUpSettings({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetWalletTopUpSettings({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1318,15 +1318,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetWalletTopUpSettings } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-wallet-top-up-settings.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetWalletTopUpSettings } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-wallet-top-up-settings.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetWalletTopUpSettings(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetWalletTopUpSettings(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -1370,14 +1370,14 @@ Get all wallet journal transactions for a specific wallet with amount informatio
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getTransactions" method="get" path="/self-service/v2/wallets/{id}/transactions" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetTransactions({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetTransactions({
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     communityMemberId: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     isWalletFee: true,
@@ -1401,17 +1401,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetTransactions } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-transactions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetTransactions } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-transactions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetTransactions(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetTransactions(crmcom, {
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     communityMemberId: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     isWalletFee: true,
@@ -1437,14 +1437,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getTransactions" method="get" path="/self-service/v2/wallets/{id}/transactions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetTransactions({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetTransactions({
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     communityMemberId: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     isWalletFee: true,
@@ -1468,17 +1468,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetTransactions } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-transactions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetTransactions } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-transactions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetTransactions(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetTransactions(crmcom, {
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     communityMemberId: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     isWalletFee: true,
@@ -1504,14 +1504,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getTransactions" method="get" path="/self-service/v2/wallets/{id}/transactions" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetTransactions({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetTransactions({
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     communityMemberId: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     isWalletFee: true,
@@ -1536,17 +1536,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetTransactions } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-transactions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetTransactions } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-transactions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetTransactions(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetTransactions(crmcom, {
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     communityMemberId: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     isWalletFee: true,
@@ -1573,14 +1573,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getTransactions" method="get" path="/self-service/v2/wallets/{id}/transactions" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetTransactions({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetTransactions({
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     communityMemberId: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     isWalletFee: true,
@@ -1605,17 +1605,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetTransactions } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-transactions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetTransactions } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-transactions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetTransactions(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetTransactions(crmcom, {
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     communityMemberId: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     isWalletFee: true,
@@ -1642,14 +1642,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.WalletSelfServiceResource_getTransactions" method="get" path="/self-service/v2/wallets/{id}/transactions" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactWallet.comCrmWalletSelfServiceResourceGetTransactions({
+  const result = await crmcom.contactWallet.comCrmWalletSelfServiceResourceGetTransactions({
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     communityMemberId: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     isWalletFee: true,
@@ -1674,17 +1674,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactWalletComCrmWalletSelfServiceResourceGetTransactions } from "crm/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-transactions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactWalletComCrmWalletSelfServiceResourceGetTransactions } from "crmcom/funcs/contact-wallet-com-crm-wallet-self-service-resource-get-transactions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactWalletComCrmWalletSelfServiceResourceGetTransactions(crm, {
+  const res = await contactWalletComCrmWalletSelfServiceResourceGetTransactions(crmcom, {
     id: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     communityMemberId: "f76f96fc-22da-4f68-44d2-b9aeffa65d0f",
     isWalletFee: true,

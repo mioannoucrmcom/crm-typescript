@@ -5,7 +5,7 @@ The currency code used in usage allowance cash amount limits
 ## Example Usage
 
 ```typescript
-import { ServiceCurrencyCode } from "crm/models/operations";
+import { ServiceCurrencyCode } from "crmcom/models/operations";
 
 let value: ServiceCurrencyCode = "EUR";
 ```

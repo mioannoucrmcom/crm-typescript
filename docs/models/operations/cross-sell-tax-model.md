@@ -5,7 +5,7 @@ Defines whether the price is tax inclusive or not. Defaults to the system's Taxa
 ## Example Usage
 
 ```typescript
-import { CrossSellTaxModel } from "crm/models/operations";
+import { CrossSellTaxModel } from "crmcom/models/operations";
 
 let value: CrossSellTaxModel = "TAX_INCLUSIVE";
 ```

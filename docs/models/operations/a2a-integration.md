@@ -5,7 +5,7 @@ The gateway integration
 ## Example Usage
 
 ```typescript
-import { A2aIntegration } from "crm/models/operations";
+import { A2aIntegration } from "crmcom/models/operations";
 
 let value: A2aIntegration = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

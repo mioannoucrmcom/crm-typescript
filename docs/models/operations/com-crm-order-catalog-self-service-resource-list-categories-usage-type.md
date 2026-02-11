@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderCatalogSelfServiceResourceListCategoriesUsageType } from "crm/models/operations";
+import { ComCrmOrderCatalogSelfServiceResourceListCategoriesUsageType } from "crmcom/models/operations";
 
 let value: ComCrmOrderCatalogSelfServiceResourceListCategoriesUsageType =
   "SHORTCUT_IMAGE";

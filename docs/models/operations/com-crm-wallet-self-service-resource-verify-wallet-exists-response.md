@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceVerifyWalletExistsResponse } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceVerifyWalletExistsResponse } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceVerifyWalletExistsResponse = {
   walletExists: true,

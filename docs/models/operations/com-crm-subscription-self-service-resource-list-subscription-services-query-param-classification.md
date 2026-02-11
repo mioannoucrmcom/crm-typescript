@@ -7,7 +7,7 @@ The product’s classification
 ```typescript
 import {
   ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesQueryParamClassification,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesQueryParamClassification =

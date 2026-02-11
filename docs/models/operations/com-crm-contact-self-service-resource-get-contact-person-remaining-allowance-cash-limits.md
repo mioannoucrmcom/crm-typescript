@@ -5,7 +5,7 @@ How much rated usage can be consumed
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceCashLimits } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceCashLimits } from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceCashLimits =

@@ -5,7 +5,7 @@ Available payment method types
 ## Example Usage
 
 ```typescript
-import { ComCrmPayoutSelfServiceResourceCreateType } from "crm/models/operations";
+import { ComCrmPayoutSelfServiceResourceCreateType } from "crmcom/models/operations";
 
 let value: ComCrmPayoutSelfServiceResourceCreateType = "CARD";
 ```

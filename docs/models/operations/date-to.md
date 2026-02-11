@@ -5,7 +5,7 @@ Filter based on the submitted 'to' date, which may fall within a given date rang
 ## Example Usage
 
 ```typescript
-import { DateTo } from "crm/models/operations";
+import { DateTo } from "crmcom/models/operations";
 
 let value: DateTo = "date_to[gt]";
 ```

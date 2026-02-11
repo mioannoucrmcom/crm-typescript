@@ -5,7 +5,7 @@ A list of custom fields whose values can be set when creating or updating entiti
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceGetSingleCustomField } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceGetSingleCustomField } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceGetSingleCustomField = {
   key: "back_office",

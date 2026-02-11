@@ -5,7 +5,7 @@ The communication medium to be used to send the pass information to the recipien
 ## Example Usage
 
 ```typescript
-import { MediumType } from "crm/models/operations";
+import { MediumType } from "crmcom/models/operations";
 
 let value: MediumType = "EMAIL";
 ```

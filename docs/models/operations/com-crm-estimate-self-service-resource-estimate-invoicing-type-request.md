@@ -5,7 +5,7 @@ The discount type
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeRequest } from "crm/models/operations";
+import { ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeRequest } from "crmcom/models/operations";
 
 let value: ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeRequest =
   "PERCENTAGE";

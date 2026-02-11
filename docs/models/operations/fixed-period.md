@@ -5,7 +5,7 @@ Promotion is applied if the purchase is performed within the specified period of
 ## Example Usage
 
 ```typescript
-import { FixedPeriod } from "crm/models/operations";
+import { FixedPeriod } from "crmcom/models/operations";
 
 let value: FixedPeriod = {
   startDate: 1648067185,

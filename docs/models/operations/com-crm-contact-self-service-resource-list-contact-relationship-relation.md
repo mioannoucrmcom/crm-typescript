@@ -5,7 +5,7 @@ The community relation that the contact has
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceListContactRelationshipRelation } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceListContactRelationshipRelation } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceListContactRelationshipRelation = {
   id: "9aabba32-82e3-441f-969a-103d81e2f91f",

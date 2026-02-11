@@ -5,7 +5,7 @@ The billing cycle's unit of time
 ## Example Usage
 
 ```typescript
-import { OrderUotTaxCalculation } from "crm/models/operations";
+import { OrderUotTaxCalculation } from "crmcom/models/operations";
 
 let value: OrderUotTaxCalculation = "MONTH";
 ```

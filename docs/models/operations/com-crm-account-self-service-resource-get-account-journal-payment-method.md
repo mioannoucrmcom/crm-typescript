@@ -5,7 +5,7 @@ Payment method details (e.g. for a refund)
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceGetAccountJournalPaymentMethod } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceGetAccountJournalPaymentMethod } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceGetAccountJournalPaymentMethod = {
   identity: {

@@ -5,7 +5,7 @@ The base currency code of the system
 ## Example Usage
 
 ```typescript
-import { ValueCurrencyCode } from "crm/models/operations";
+import { ValueCurrencyCode } from "crmcom/models/operations";
 
 let value: ValueCurrencyCode = "EUR";
 ```

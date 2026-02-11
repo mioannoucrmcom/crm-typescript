@@ -5,7 +5,7 @@ Denotes whether the product is available for ordering at the organisation that w
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceListProductsAvailability } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceListProductsAvailability } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceListProductsAvailability = "ENABLED";
 ```

@@ -5,7 +5,7 @@ The block details if the transaction is blocked
 ## Example Usage
 
 ```typescript
-import { BlockedBy } from "crm/models/operations";
+import { BlockedBy } from "crmcom/models/operations";
 
 let value: BlockedBy = {
   id: "3e3f2941-158f-411f-a0f0-a25d691b5853",

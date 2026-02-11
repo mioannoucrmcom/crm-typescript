@@ -5,7 +5,7 @@ The application "contact us" details
 ## Example Usage
 
 ```typescript
-import { ContactUs } from "crm/models/operations";
+import { ContactUs } from "crmcom/models/operations";
 
 let value: ContactUs = {
   emailAddress: "info@crm.com",

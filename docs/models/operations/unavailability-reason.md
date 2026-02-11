@@ -10,7 +10,7 @@ Details on why the product is considered as invalid and cannot be included in th
 ## Example Usage
 
 ```typescript
-import { UnavailabilityReason } from "crm/models/operations";
+import { UnavailabilityReason } from "crmcom/models/operations";
 
 let value: UnavailabilityReason = "ORDER_CATALOGUE";
 ```

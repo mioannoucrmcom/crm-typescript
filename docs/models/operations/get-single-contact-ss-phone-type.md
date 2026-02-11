@@ -5,7 +5,7 @@ The phone type
 ## Example Usage
 
 ```typescript
-import { GetSingleContactSSPhoneType } from "crm/models/operations";
+import { GetSingleContactSSPhoneType } from "crmcom/models/operations";
 
 let value: GetSingleContactSSPhoneType = "MOBILE";
 ```

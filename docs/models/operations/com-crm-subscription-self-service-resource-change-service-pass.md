@@ -5,7 +5,7 @@ Unlocks a promotion through a (promotion) pass by providing the pass code
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceChangeServicePass } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceChangeServicePass } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceChangeServicePass = {
   code: "SLHY678993109PWE",

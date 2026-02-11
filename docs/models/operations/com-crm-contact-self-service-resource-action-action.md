@@ -8,7 +8,7 @@ The action to be performed on the contact relatioship status
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceActionAction } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceActionAction } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceActionAction = "ACCEPT";
 ```

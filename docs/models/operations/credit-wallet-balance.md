@@ -5,7 +5,7 @@ The wallet balance to be credited when the pass is redeemed. For TOP_UP and GIFT
 ## Example Usage
 
 ```typescript
-import { CreditWalletBalance } from "crm/models/operations";
+import { CreditWalletBalance } from "crmcom/models/operations";
 
 let value: CreditWalletBalance = "COMMERCE";
 ```

@@ -5,7 +5,7 @@ The payment intent state
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentIntentSelfServiceResourceSetUpIntentsState } from "crm/models/operations";
+import { ComCrmPaymentIntentSelfServiceResourceSetUpIntentsState } from "crmcom/models/operations";
 
 let value: ComCrmPaymentIntentSelfServiceResourceSetUpIntentsState = "PENDING";
 ```

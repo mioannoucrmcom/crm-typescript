@@ -5,7 +5,7 @@ Details about the event that initiated such settlement request
 ## Example Usage
 
 ```typescript
-import { SettlementEvent } from "crm/models/operations";
+import { SettlementEvent } from "crmcom/models/operations";
 
 let value: SettlementEvent = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

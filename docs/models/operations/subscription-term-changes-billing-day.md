@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SubscriptionTermChangesBillingDay } from "crm/models/operations";
+import { SubscriptionTermChangesBillingDay } from "crmcom/models/operations";
 
 let value: SubscriptionTermChangesBillingDay = {
   dayOfWeek: "MONDAY",

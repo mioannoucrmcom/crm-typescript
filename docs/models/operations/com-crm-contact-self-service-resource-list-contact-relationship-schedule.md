@@ -5,7 +5,7 @@ How often the transfer will occur
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceListContactRelationshipSchedule } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceListContactRelationshipSchedule } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceListContactRelationshipSchedule = {
   frequency: "MONTHLY",

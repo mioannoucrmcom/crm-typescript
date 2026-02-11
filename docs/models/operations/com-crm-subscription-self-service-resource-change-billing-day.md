@@ -5,7 +5,7 @@ Required when changing the billing day of the subscription's terms. A subscripti
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceChangeBillingDay } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceChangeBillingDay } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceChangeBillingDay = {
   dayOfWeek: "MONDAY",

@@ -5,7 +5,7 @@ The currency code
 ## Example Usage
 
 ```typescript
-import { ComCrmHostedPagesSelfServiceResourceGeneratePayoutFormCurrencyCode } from "crm/models/operations";
+import { ComCrmHostedPagesSelfServiceResourceGeneratePayoutFormCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmHostedPagesSelfServiceResourceGeneratePayoutFormCurrencyCode =
   "EUR";

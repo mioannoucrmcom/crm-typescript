@@ -5,7 +5,7 @@ Defines the details for pick up as supply method
 ## Example Usage
 
 ```typescript
-import { PickUp } from "crm/models/operations";
+import { PickUp } from "crmcom/models/operations";
 
 let value: PickUp = {
   isSupported: true,

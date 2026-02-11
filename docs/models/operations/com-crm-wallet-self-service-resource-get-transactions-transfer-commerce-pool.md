@@ -5,7 +5,7 @@ If the transfer includes spending conditions, then the commerce pool details are
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetTransactionsTransferCommercePool } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetTransactionsTransferCommercePool } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsTransferCommercePool =
   {

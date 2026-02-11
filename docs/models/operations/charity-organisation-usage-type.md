@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { CharityOrganisationUsageType } from "crm/models/operations";
+import { CharityOrganisationUsageType } from "crmcom/models/operations";
 
 let value: CharityOrganisationUsageType = "APP_LOGO";
 ```

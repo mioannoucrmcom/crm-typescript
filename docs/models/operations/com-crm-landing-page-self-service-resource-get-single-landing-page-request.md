@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageRequest } from "crm/models/operations";
+import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageRequest } from "crmcom/models/operations";
 
 let value: ComCrmLandingPageSelfServiceResourceGetSingleLandingPageRequest = {
   id: "JHGDFJHGSF6576GHFDSHG",

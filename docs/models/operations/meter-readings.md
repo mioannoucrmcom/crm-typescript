@@ -5,7 +5,7 @@ Details about the meter readings supported by this device
 ## Example Usage
 
 ```typescript
-import { MeterReadings } from "crm/models/operations";
+import { MeterReadings } from "crmcom/models/operations";
 
 let value: MeterReadings = {
   measurementUnit: {

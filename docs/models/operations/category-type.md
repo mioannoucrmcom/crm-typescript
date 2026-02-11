@@ -5,7 +5,7 @@ The category type.
 ## Example Usage
 
 ```typescript
-import { CategoryType } from "crm/models/operations";
+import { CategoryType } from "crmcom/models/operations";
 
 let value: CategoryType = "REWARD_OFFER_PROMOTION";
 ```

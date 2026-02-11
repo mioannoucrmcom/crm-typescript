@@ -5,7 +5,7 @@ The details of the e-gift pass to be created.
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceCreateOrderPass } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceCreateOrderPass } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceCreateOrderPass = {
   recipient: {

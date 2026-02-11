@@ -5,7 +5,7 @@ State of Subscription action
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsState } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsState } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsState =
   "CANCELLED";

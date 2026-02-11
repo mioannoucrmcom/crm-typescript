@@ -5,7 +5,7 @@ The date on which Orders were completed.
 ## Example Usage
 
 ```typescript
-import { CompletedOn } from "crm/models/operations";
+import { CompletedOn } from "crmcom/models/operations";
 
 let value: CompletedOn = "completed_on[gte]";
 ```

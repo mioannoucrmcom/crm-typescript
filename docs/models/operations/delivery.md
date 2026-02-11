@@ -5,7 +5,7 @@ Defines the details for delivery as supply method
 ## Example Usage
 
 ```typescript
-import { Delivery } from "crm/models/operations";
+import { Delivery } from "crmcom/models/operations";
 
 let value: Delivery = {
   isSupported: true,

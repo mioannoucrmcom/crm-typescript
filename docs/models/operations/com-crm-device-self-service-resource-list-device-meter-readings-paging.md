@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsPaging } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsPaging } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsPaging = {
   page: 2,

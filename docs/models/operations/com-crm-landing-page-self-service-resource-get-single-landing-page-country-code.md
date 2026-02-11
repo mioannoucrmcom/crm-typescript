@@ -5,7 +5,7 @@ The phone country code. 3-letter ISO 3166-1 country code.
 ## Example Usage
 
 ```typescript
-import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCode } from "crm/models/operations";
+import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCode } from "crmcom/models/operations";
 
 let value: ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCode =
   "CYP";

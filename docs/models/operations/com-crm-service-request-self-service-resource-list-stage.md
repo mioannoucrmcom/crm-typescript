@@ -5,7 +5,7 @@ The stage of the service request within the queue
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceRequestSelfServiceResourceListStage } from "crm/models/operations";
+import { ComCrmServiceRequestSelfServiceResourceListStage } from "crmcom/models/operations";
 
 let value: ComCrmServiceRequestSelfServiceResourceListStage = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

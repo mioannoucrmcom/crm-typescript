@@ -5,7 +5,7 @@ Product type classification
 ## Example Usage
 
 ```typescript
-import { OrderLineItemBundleProductClassification } from "crm/models/operations";
+import { OrderLineItemBundleProductClassification } from "crmcom/models/operations";
 
 let value: OrderLineItemBundleProductClassification = "TRACEABLE_PHYSICAL_GOOD";
 ```

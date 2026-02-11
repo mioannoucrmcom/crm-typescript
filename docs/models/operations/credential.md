@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Credential } from "crm/models/operations";
+import { Credential } from "crmcom/models/operations";
 
 let value: Credential = {
   name: "BIRTHDATE",

@@ -5,7 +5,7 @@ family of product varriant
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductVariationsFamily } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductVariationsFamily } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductVariationsFamily = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

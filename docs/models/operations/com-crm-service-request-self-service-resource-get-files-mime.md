@@ -5,7 +5,7 @@ The file mime type
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceRequestSelfServiceResourceGetFilesMime } from "crm/models/operations";
+import { ComCrmServiceRequestSelfServiceResourceGetFilesMime } from "crmcom/models/operations";
 
 let value: ComCrmServiceRequestSelfServiceResourceGetFilesMime = "DOC";
 ```

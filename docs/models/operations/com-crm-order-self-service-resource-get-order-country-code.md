@@ -5,7 +5,7 @@ The address country code
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderCountryCode } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderCountryCode } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderCountryCode = "GRC";
 ```

@@ -5,7 +5,7 @@ The device’s operation platform
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform = "MOBILE";
 ```

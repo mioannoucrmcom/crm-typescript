@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmAddressRegistrySelfServiceResourceListContent } from "crm/models/operations";
+import { ComCrmAddressRegistrySelfServiceResourceListContent } from "crmcom/models/operations";
 
 let value: ComCrmAddressRegistrySelfServiceResourceListContent = {
   addressDescription: "Ilia Papakyriakou 21, Egkomi, Cyprus",

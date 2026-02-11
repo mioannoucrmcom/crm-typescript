@@ -5,7 +5,7 @@ Promotion state
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceGetSingleState } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceGetSingleState } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceGetSingleState = "ACTIVE";
 ```

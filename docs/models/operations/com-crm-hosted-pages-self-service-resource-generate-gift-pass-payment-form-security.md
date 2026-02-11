@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormSecurity } from "crm/models/operations";
+import { ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormSecurity } from "crmcom/models/operations";
 
 let value:
   ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormSecurity = {};

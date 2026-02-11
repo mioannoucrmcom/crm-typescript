@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceChangeRequestBody } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceChangeRequestBody } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceChangeRequestBody = {
   action: "CHANGE_BILLING_DAY",

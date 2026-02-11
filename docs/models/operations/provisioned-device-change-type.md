@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ProvisionedDeviceChangeType } from "crm/models/operations";
+import { ProvisionedDeviceChangeType } from "crmcom/models/operations";
 
 let value: ProvisionedDeviceChangeType = "ENABLE";
 ```

@@ -5,7 +5,7 @@ The billing cycle's unit of time
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsUot } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsUot } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsUot =
   "MONTH";

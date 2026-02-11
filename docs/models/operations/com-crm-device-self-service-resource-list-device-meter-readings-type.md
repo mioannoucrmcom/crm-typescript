@@ -5,7 +5,7 @@ The entity type
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsType } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsType } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsType =
   "CONTACT";

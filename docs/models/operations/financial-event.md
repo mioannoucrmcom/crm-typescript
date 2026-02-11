@@ -5,7 +5,7 @@ Details about the financial event related to the wallet journal transaction
 ## Example Usage
 
 ```typescript
-import { FinancialEvent } from "crm/models/operations";
+import { FinancialEvent } from "crmcom/models/operations";
 
 let value: FinancialEvent = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

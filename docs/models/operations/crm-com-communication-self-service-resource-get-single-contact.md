@@ -5,7 +5,7 @@ Details about the contact, that the communication was delivered to
 ## Example Usage
 
 ```typescript
-import { CrmComCommunicationSelfServiceResourceGetSingleContact } from "crm/models/operations";
+import { CrmComCommunicationSelfServiceResourceGetSingleContact } from "crmcom/models/operations";
 
 let value: CrmComCommunicationSelfServiceResourceGetSingleContact = {
   id: "CAD1E31269B76D7A65ACCE45B2E68DFD",

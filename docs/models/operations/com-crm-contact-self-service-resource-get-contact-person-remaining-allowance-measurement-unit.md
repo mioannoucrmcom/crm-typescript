@@ -7,7 +7,7 @@ Measurement unit. Applicable only when a specific usage product is included in t
 ```typescript
 import {
   ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceMeasurementUnit,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceMeasurementUnit =

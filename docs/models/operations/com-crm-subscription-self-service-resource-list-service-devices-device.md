@@ -5,7 +5,7 @@ The device on which the service is already or could be enabled on. This device i
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListServiceDevicesDevice } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListServiceDevicesDevice } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceListServiceDevicesDevice = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

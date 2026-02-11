@@ -5,7 +5,7 @@ Defines whether multitenancy features will be available
 ## Example Usage
 
 ```typescript
-import { Multitenancy } from "crm/models/operations";
+import { Multitenancy } from "crmcom/models/operations";
 
 let value: Multitenancy = {
   isSupported: true,

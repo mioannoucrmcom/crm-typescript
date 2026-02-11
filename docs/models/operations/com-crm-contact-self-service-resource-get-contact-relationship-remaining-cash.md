@@ -5,7 +5,7 @@ Remaining allowance in amount of money
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactRelationshipRemainingCash } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactRelationshipRemainingCash } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetContactRelationshipRemainingCash =
   {};

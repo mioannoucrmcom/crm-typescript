@@ -5,7 +5,7 @@ The contact’s identity provider
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAuthenticateProvider } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAuthenticateProvider } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAuthenticateProvider = "PHONE";
 ```

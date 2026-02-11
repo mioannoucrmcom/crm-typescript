@@ -5,7 +5,7 @@ Day of the week when the transfer will occur
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactRelationshipDayOfWeek } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactRelationshipDayOfWeek } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetContactRelationshipDayOfWeek =
   "MONDAY";

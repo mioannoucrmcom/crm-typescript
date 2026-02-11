@@ -5,7 +5,7 @@ The intent for which such token is requested
 ## Example Usage
 
 ```typescript
-import { AddContactTokenSSIntent } from "crm/models/operations";
+import { AddContactTokenSSIntent } from "crmcom/models/operations";
 
 let value: AddContactTokenSSIntent = "SPEND";
 ```

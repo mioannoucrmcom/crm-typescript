@@ -5,7 +5,7 @@ Contact type - can be PERSON or COMPANY
 ## Example Usage
 
 ```typescript
-import { RegisterContactSSType } from "crm/models/operations";
+import { RegisterContactSSType } from "crmcom/models/operations";
 
 let value: RegisterContactSSType = "PERSON";
 ```

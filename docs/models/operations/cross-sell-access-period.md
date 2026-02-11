@@ -5,7 +5,7 @@ The period of time that service will be accessible. Applicable only for one-time
 ## Example Usage
 
 ```typescript
-import { CrossSellAccessPeriod } from "crm/models/operations";
+import { CrossSellAccessPeriod } from "crmcom/models/operations";
 
 let value: CrossSellAccessPeriod = {
   startDate: 1612953199,

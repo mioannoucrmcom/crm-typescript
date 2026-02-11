@@ -5,7 +5,7 @@ Available payment method types
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsType } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsType } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsType =
   "CARD";

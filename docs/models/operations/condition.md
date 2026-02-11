@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Condition } from "crm/models/operations";
+import { Condition } from "crmcom/models/operations";
 
 let value: Condition = {
   operator: "OR",

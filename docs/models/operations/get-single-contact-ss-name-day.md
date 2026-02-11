@@ -5,7 +5,7 @@ Contact’s date of birth
 ## Example Usage
 
 ```typescript
-import { GetSingleContactSSNameDay } from "crm/models/operations";
+import { GetSingleContactSSNameDay } from "crmcom/models/operations";
 
 let value: GetSingleContactSSNameDay = {
   month: 10,

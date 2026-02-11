@@ -5,7 +5,7 @@ Available only Tiered, Volume and Stairstep pricing models. Only the first tier 
 ## Example Usage
 
 ```typescript
-import { UpsellTiers } from "crm/models/operations";
+import { UpsellTiers } from "crmcom/models/operations";
 
 let value: UpsellTiers = {
   upperTier: 1,

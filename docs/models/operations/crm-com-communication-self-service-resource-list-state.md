@@ -5,7 +5,7 @@ The state of the communication
 ## Example Usage
 
 ```typescript
-import { CrmComCommunicationSelfServiceResourceListState } from "crm/models/operations";
+import { CrmComCommunicationSelfServiceResourceListState } from "crmcom/models/operations";
 
 let value: CrmComCommunicationSelfServiceResourceListState = "REJECTED";
 ```

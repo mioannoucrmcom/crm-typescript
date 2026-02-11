@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmApprovalRequestSelfServiceResourceAcceptApprovalRequestActionRequest } from "crm/models/operations";
+import { ComCrmApprovalRequestSelfServiceResourceAcceptApprovalRequestActionRequest } from "crmcom/models/operations";
 
 let value:
   ComCrmApprovalRequestSelfServiceResourceAcceptApprovalRequestActionRequest = {

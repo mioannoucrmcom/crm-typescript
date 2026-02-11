@@ -5,7 +5,7 @@ Will passes have a fixed or variable value? FIXED indicates that the pass value 
 ## Example Usage
 
 ```typescript
-import { ValueType } from "crm/models/operations";
+import { ValueType } from "crmcom/models/operations";
 
 let value: ValueType = "FIXED";
 ```

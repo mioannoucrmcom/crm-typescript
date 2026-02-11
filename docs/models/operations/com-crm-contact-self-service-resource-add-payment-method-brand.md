@@ -5,7 +5,7 @@ The card brand
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddPaymentMethodBrand } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddPaymentMethodBrand } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddPaymentMethodBrand = "VISA";
 ```

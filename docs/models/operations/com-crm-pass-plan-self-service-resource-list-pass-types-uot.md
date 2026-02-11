@@ -5,7 +5,7 @@ The period unit of time, applicable only if validity type is PERIOD. Used in con
 ## Example Usage
 
 ```typescript
-import { ComCrmPassPlanSelfServiceResourceListPassTypesUot } from "crm/models/operations";
+import { ComCrmPassPlanSelfServiceResourceListPassTypesUot } from "crmcom/models/operations";
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesUot = "MONTHS";
 ```

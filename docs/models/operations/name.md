@@ -5,7 +5,7 @@ The predetermined information that will be used to identify the contact
 ## Example Usage
 
 ```typescript
-import { Name } from "crm/models/operations";
+import { Name } from "crmcom/models/operations";
 
 let value: Name = "BIRTHDATE";
 ```

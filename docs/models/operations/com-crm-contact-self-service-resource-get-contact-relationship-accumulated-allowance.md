@@ -5,7 +5,7 @@ The community's accumulated cash allowance, i.e. how much can be consumed among 
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactRelationshipAccumulatedAllowance } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactRelationshipAccumulatedAllowance } from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceGetContactRelationshipAccumulatedAllowance = {

@@ -5,7 +5,7 @@ The integration type
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceListContentType } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceListContentType } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceListContentType =
   "PAYMENT_GATEWAYS";

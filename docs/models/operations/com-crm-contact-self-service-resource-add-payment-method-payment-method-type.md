@@ -5,7 +5,7 @@ The payment method that will be related with the account
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddPaymentMethodPaymentMethodType } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddPaymentMethodPaymentMethodType } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddPaymentMethodPaymentMethodType =
   "CASH";

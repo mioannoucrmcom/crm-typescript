@@ -20,14 +20,14 @@ By default returns a list of donations to which the contact is currenlty opt-in.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_listContactDonations" method="get" path="/self-service/v2/contacts/{id}/donations" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactDonations.comCrmContactSelfServiceResourceListContactDonations({
+  const result = await crmcom.contactDonations.comCrmContactSelfServiceResourceListContactDonations({
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     includeOptOut: true,
     includeTotal: true,
@@ -45,17 +45,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactDonationsComCrmContactSelfServiceResourceListContactDonations } from "crm/funcs/contact-donations-com-crm-contact-self-service-resource-list-contact-donations.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactDonationsComCrmContactSelfServiceResourceListContactDonations } from "crmcom/funcs/contact-donations-com-crm-contact-self-service-resource-list-contact-donations.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactDonationsComCrmContactSelfServiceResourceListContactDonations(crm, {
+  const res = await contactDonationsComCrmContactSelfServiceResourceListContactDonations(crmcom, {
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     includeOptOut: true,
     includeTotal: true,
@@ -99,14 +99,14 @@ Use Web API whenever a contact wants to opt-in to a Donation offer. Once opt-in,
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_optInDonations" method="post" path="/self-service/v2/contacts/{id}/donations" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactDonations.comCrmContactSelfServiceResourceOptInDonations({
+  await crmcom.contactDonations.comCrmContactSelfServiceResourceOptInDonations({
     id: "<id>",
     body: {
       donationOfferId: "CAD1E31269B76D7A65ACCE45B2E68DFD",
@@ -125,17 +125,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactDonationsComCrmContactSelfServiceResourceOptInDonations } from "crm/funcs/contact-donations-com-crm-contact-self-service-resource-opt-in-donations.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactDonationsComCrmContactSelfServiceResourceOptInDonations } from "crmcom/funcs/contact-donations-com-crm-contact-self-service-resource-opt-in-donations.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactDonationsComCrmContactSelfServiceResourceOptInDonations(crm, {
+  const res = await contactDonationsComCrmContactSelfServiceResourceOptInDonations(crmcom, {
     id: "<id>",
     body: {
       donationOfferId: "CAD1E31269B76D7A65ACCE45B2E68DFD",
@@ -180,14 +180,14 @@ Returns a list of donations made by the contact so far.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactDonationSelfServiceResource_listContactDonationsHistory" method="get" path="/self-service/v2/contacts/{id}/donations/history" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactDonations.comCrmContactDonationSelfServiceResourceListContactDonationsHistory({
+  const result = await crmcom.contactDonations.comCrmContactDonationSelfServiceResourceListContactDonationsHistory({
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     includeTotal: true,
     organisationId: "3afad71d-e015-4e98-a464-f438c93edcde",
@@ -205,19 +205,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   contactDonationsComCrmContactDonationSelfServiceResourceListContactDonationsHistory,
-} from "crm/funcs/contact-donations-com-crm-contact-donation-self-service-resource-list-contact-donations-history.js";
+} from "crmcom/funcs/contact-donations-com-crm-contact-donation-self-service-resource-list-contact-donations-history.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactDonationsComCrmContactDonationSelfServiceResourceListContactDonationsHistory(crm, {
+  const res = await contactDonationsComCrmContactDonationSelfServiceResourceListContactDonationsHistory(crmcom, {
     id: "3afad71d-e015-4e98-a464-f438c93edcde",
     includeTotal: true,
     organisationId: "3afad71d-e015-4e98-a464-f438c93edcde",
@@ -261,14 +261,14 @@ Update a contact's preferences for the donations to which they opted-in. Only on
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_updateDonations" method="put" path="/self-service/v2/contacts/{id}/donations/{donation_id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactDonations.comCrmContactSelfServiceResourceUpdateDonations({
+  await crmcom.contactDonations.comCrmContactSelfServiceResourceUpdateDonations({
     donationId: "ccc945d8-1bda-a11c-d378-23c29947c2a3",
     id: "5096c4d4-c387-9888-d631-80e74546e2db",
     body: {
@@ -288,17 +288,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactDonationsComCrmContactSelfServiceResourceUpdateDonations } from "crm/funcs/contact-donations-com-crm-contact-self-service-resource-update-donations.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactDonationsComCrmContactSelfServiceResourceUpdateDonations } from "crmcom/funcs/contact-donations-com-crm-contact-self-service-resource-update-donations.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactDonationsComCrmContactSelfServiceResourceUpdateDonations(crm, {
+  const res = await contactDonationsComCrmContactSelfServiceResourceUpdateDonations(crmcom, {
     donationId: "ccc945d8-1bda-a11c-d378-23c29947c2a3",
     id: "5096c4d4-c387-9888-d631-80e74546e2db",
     body: {
@@ -344,14 +344,14 @@ Opts-out a contact from a donation offer. Only donation offers to which the cont
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_optOutDonations" method="delete" path="/self-service/v2/contacts/{id}/donations/{donation_id}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactDonations.comCrmContactSelfServiceResourceOptOutDonations({
+  await crmcom.contactDonations.comCrmContactSelfServiceResourceOptOutDonations({
     donationId: "ccc945d8-1bda-a11c-d378-23c29947c2a3",
     id: "5096c4d4-c387-9888-d631-80e74546e2db",
   });
@@ -367,17 +367,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactDonationsComCrmContactSelfServiceResourceOptOutDonations } from "crm/funcs/contact-donations-com-crm-contact-self-service-resource-opt-out-donations.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactDonationsComCrmContactSelfServiceResourceOptOutDonations } from "crmcom/funcs/contact-donations-com-crm-contact-self-service-resource-opt-out-donations.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactDonationsComCrmContactSelfServiceResourceOptOutDonations(crm, {
+  const res = await contactDonationsComCrmContactSelfServiceResourceOptOutDonations(crmcom, {
     donationId: "ccc945d8-1bda-a11c-d378-23c29947c2a3",
     id: "5096c4d4-c387-9888-d631-80e74546e2db",
   });

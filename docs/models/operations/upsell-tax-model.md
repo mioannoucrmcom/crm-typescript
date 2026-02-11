@@ -5,7 +5,7 @@ Defines whether the price is tax inclusive or not. Defaults to the system's Taxa
 ## Example Usage
 
 ```typescript
-import { UpsellTaxModel } from "crm/models/operations";
+import { UpsellTaxModel } from "crmcom/models/operations";
 
 let value: UpsellTaxModel = "TAX_INCLUSIVE";
 ```

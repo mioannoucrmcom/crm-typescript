@@ -5,7 +5,7 @@ The country code of the location
 ## Example Usage
 
 ```typescript
-import { FulfilledByCountryCode } from "crm/models/operations";
+import { FulfilledByCountryCode } from "crmcom/models/operations";
 
 let value: FulfilledByCountryCode = "CYP";
 ```

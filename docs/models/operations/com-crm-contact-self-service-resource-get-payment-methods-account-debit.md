@@ -5,7 +5,7 @@ The bank details.Required and applicable if the payment method is set to BANK
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebit } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebit } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebit = {
   accountName: "debit",

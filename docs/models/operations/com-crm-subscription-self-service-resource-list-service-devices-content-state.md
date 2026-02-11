@@ -5,7 +5,7 @@ Defines whether the service is already enabled on the device or not. If disabled
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListServiceDevicesContentState } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListServiceDevicesContentState } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceListServiceDevicesContentState =
   "ENABLED";

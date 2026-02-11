@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { DeleteContactAddressSSRequest } from "crm/models/operations";
+import { DeleteContactAddressSSRequest } from "crmcom/models/operations";
 
 let value: DeleteContactAddressSSRequest = {
   addressId: "cadbf723-fdc6-4598-8156-f6288e61f356",

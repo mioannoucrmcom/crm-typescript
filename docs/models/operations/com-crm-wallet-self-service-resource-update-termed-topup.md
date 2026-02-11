@@ -5,7 +5,7 @@ Contacts define how often their wallet will be automatically topped-up.
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceUpdateTermedTopup } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceUpdateTermedTopup } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceUpdateTermedTopup = {
   amount: 50,

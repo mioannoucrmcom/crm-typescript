@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentFormSelfServiceResourceGenerateAddCardFormRequest } from "crm/models/operations";
+import { ComCrmPaymentFormSelfServiceResourceGenerateAddCardFormRequest } from "crmcom/models/operations";
 
 let value: ComCrmPaymentFormSelfServiceResourceGenerateAddCardFormRequest = {
   currencyCode: "EUR",

@@ -5,7 +5,7 @@ Logical operator used amount the product conditions
 ## Example Usage
 
 ```typescript
-import { Operator } from "crm/models/operations";
+import { Operator } from "crmcom/models/operations";
 
 let value: Operator = "AND";
 ```

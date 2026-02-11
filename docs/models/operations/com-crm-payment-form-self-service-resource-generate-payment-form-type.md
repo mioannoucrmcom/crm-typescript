@@ -5,7 +5,7 @@ The type will be utilised by CRM.COM for back-end processes. Payment forms can b
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormType } from "crm/models/operations";
+import { ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormType } from "crmcom/models/operations";
 
 let value: ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormType =
   "TOP_UP";

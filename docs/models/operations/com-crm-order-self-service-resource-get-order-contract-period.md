@@ -5,7 +5,7 @@ The service's termed period
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderContractPeriod } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderContractPeriod } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderContractPeriod = {
   duration: 1,

@@ -5,7 +5,7 @@ Information about the card holder
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddPaymentMethodCardHolderDetails } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddPaymentMethodCardHolderDetails } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddPaymentMethodCardHolderDetails = {
   cardHolderName: "John Alias Doe",

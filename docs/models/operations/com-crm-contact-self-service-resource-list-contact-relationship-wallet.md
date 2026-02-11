@@ -5,7 +5,7 @@ The contact's wallet details
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceListContactRelationshipWallet } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceListContactRelationshipWallet } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceListContactRelationshipWallet = {
   id: "dccc7b0d-0626-dd0e-88e3-67a1cc0bf610",

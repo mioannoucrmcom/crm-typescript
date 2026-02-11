@@ -5,7 +5,7 @@ The state of the entity and the tags
 ## Example Usage
 
 ```typescript
-import { ComCrmTagSelfServiceResourceListTagsState } from "crm/models/operations";
+import { ComCrmTagSelfServiceResourceListTagsState } from "crmcom/models/operations";
 
 let value: ComCrmTagSelfServiceResourceListTagsState = "ACTIVE";
 ```

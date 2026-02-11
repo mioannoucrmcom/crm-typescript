@@ -5,7 +5,7 @@ Ad-hoc discount applied including tax
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderDiscountRequest } from "crm/models/operations";
+import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderDiscountRequest } from "crmcom/models/operations";
 
 let value: ComCrmEstimateOrderSelfServiceResourceEstimateOrderDiscountRequest =
   {};

@@ -5,7 +5,7 @@ The type of preferred organisation
 ## Example Usage
 
 ```typescript
-import { GetContactPreferredOrganisationSSType } from "crm/models/operations";
+import { GetContactPreferredOrganisationSSType } from "crmcom/models/operations";
 
 let value: GetContactPreferredOrganisationSSType = "REWARDS";
 ```

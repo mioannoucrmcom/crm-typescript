@@ -5,7 +5,7 @@ Trial period of the service
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderTrialPeriod } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderTrialPeriod } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderTrialPeriod = {
   duration: 1,

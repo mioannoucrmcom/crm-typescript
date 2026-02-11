@@ -5,7 +5,7 @@ The amount's currency
 ## Example Usage
 
 ```typescript
-import { AutoTopupCurrencyCode } from "crm/models/operations";
+import { AutoTopupCurrencyCode } from "crmcom/models/operations";
 
 let value: AutoTopupCurrencyCode = "EUR";
 ```

@@ -5,7 +5,7 @@ Filter based on the posted date, which may fall within a given date range. The v
 ## Example Usage
 
 ```typescript
-import { PostedOn } from "crm/models/operations";
+import { PostedOn } from "crmcom/models/operations";
 
 let value: PostedOn = "posted_on[gte]";
 ```

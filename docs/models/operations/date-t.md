@@ -5,7 +5,7 @@ The date that the meter reading was captured
 ## Example Usage
 
 ```typescript
-import { DateT } from "crm/models/operations";
+import { DateT } from "crmcom/models/operations";
 
 let value: DateT = {
   from: 1683547447,

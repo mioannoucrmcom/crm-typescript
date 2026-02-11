@@ -5,7 +5,7 @@ Created
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceCreateOrderResponse } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceCreateOrderResponse } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceCreateOrderResponse = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

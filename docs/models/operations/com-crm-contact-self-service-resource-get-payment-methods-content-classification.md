@@ -5,7 +5,7 @@ Defines whether the payment method is related to a contact and/or wallet
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetPaymentMethodsContentClassification } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetPaymentMethodsContentClassification } from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceGetPaymentMethodsContentClassification =

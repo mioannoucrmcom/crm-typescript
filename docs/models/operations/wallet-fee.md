@@ -5,7 +5,7 @@ Details about the wallet fee related to the wallet journal transaction
 ## Example Usage
 
 ```typescript
-import { WalletFee } from "crm/models/operations";
+import { WalletFee } from "crmcom/models/operations";
 
 let value: WalletFee = {
   name: "1% on all wallet transactions",

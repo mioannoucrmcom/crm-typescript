@@ -5,7 +5,7 @@ The sales model unique identifier which will enable the user to choose one of th
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductSalesModel } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductSalesModel } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductSalesModel = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

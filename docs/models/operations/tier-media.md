@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TierMedia } from "crm/models/operations";
+import { TierMedia } from "crmcom/models/operations";
 
 let value: TierMedia = {
   width: 200,

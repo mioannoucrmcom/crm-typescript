@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationCreativeUsageType } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationCreativeUsageType } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationCreativeUsageType =
   "APP_LOGO";

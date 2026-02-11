@@ -5,7 +5,7 @@ Applicable and required only when the offering will be applied for a specific PE
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceGetSinglePeriod } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceGetSinglePeriod } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceGetSinglePeriod = {
   duration: 6,

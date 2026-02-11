@@ -5,7 +5,7 @@ The usage record's billing directive; TO BE BILLED, NOT TO BE BILLED, TO BE CRED
 ## Example Usage
 
 ```typescript
-import { QueryParamBillingDirective } from "crm/models/operations";
+import { QueryParamBillingDirective } from "crmcom/models/operations";
 
 let value: QueryParamBillingDirective = "NOT_TO_BE_BILLED";
 ```

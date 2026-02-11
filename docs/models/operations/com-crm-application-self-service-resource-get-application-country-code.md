@@ -5,7 +5,7 @@ The contact us phone number country code
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationCountryCode } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationCountryCode } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationCountryCode =
   "CYP";

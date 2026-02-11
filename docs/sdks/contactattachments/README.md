@@ -18,12 +18,12 @@ Retrieve all attachment files for a specific contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getFiles" method="get" path="/self-service/v2/contacts/{id}/attachments" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactAttachments.comCrmContactSelfServiceResourceGetFiles({
+  const result = await crmcom.contactAttachments.comCrmContactSelfServiceResourceGetFiles({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -41,15 +41,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAttachmentsComCrmContactSelfServiceResourceGetFiles } from "crm/funcs/contact-attachments-com-crm-contact-self-service-resource-get-files.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAttachmentsComCrmContactSelfServiceResourceGetFiles } from "crmcom/funcs/contact-attachments-com-crm-contact-self-service-resource-get-files.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactAttachmentsComCrmContactSelfServiceResourceGetFiles(crm, {
+  const res = await contactAttachmentsComCrmContactSelfServiceResourceGetFiles(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -69,12 +69,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getFiles" method="get" path="/self-service/v2/contacts/{id}/attachments" example="List Contact Files" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactAttachments.comCrmContactSelfServiceResourceGetFiles({
+  const result = await crmcom.contactAttachments.comCrmContactSelfServiceResourceGetFiles({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -92,15 +92,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAttachmentsComCrmContactSelfServiceResourceGetFiles } from "crm/funcs/contact-attachments-com-crm-contact-self-service-resource-get-files.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAttachmentsComCrmContactSelfServiceResourceGetFiles } from "crmcom/funcs/contact-attachments-com-crm-contact-self-service-resource-get-files.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactAttachmentsComCrmContactSelfServiceResourceGetFiles(crm, {
+  const res = await contactAttachmentsComCrmContactSelfServiceResourceGetFiles(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -120,12 +120,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getFiles" method="get" path="/self-service/v2/contacts/{id}/attachments" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactAttachments.comCrmContactSelfServiceResourceGetFiles({
+  const result = await crmcom.contactAttachments.comCrmContactSelfServiceResourceGetFiles({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -144,15 +144,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAttachmentsComCrmContactSelfServiceResourceGetFiles } from "crm/funcs/contact-attachments-com-crm-contact-self-service-resource-get-files.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAttachmentsComCrmContactSelfServiceResourceGetFiles } from "crmcom/funcs/contact-attachments-com-crm-contact-self-service-resource-get-files.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactAttachmentsComCrmContactSelfServiceResourceGetFiles(crm, {
+  const res = await contactAttachmentsComCrmContactSelfServiceResourceGetFiles(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -173,12 +173,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getFiles" method="get" path="/self-service/v2/contacts/{id}/attachments" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactAttachments.comCrmContactSelfServiceResourceGetFiles({
+  const result = await crmcom.contactAttachments.comCrmContactSelfServiceResourceGetFiles({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -197,15 +197,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAttachmentsComCrmContactSelfServiceResourceGetFiles } from "crm/funcs/contact-attachments-com-crm-contact-self-service-resource-get-files.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAttachmentsComCrmContactSelfServiceResourceGetFiles } from "crmcom/funcs/contact-attachments-com-crm-contact-self-service-resource-get-files.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactAttachmentsComCrmContactSelfServiceResourceGetFiles(crm, {
+  const res = await contactAttachmentsComCrmContactSelfServiceResourceGetFiles(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -226,12 +226,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getFiles" method="get" path="/self-service/v2/contacts/{id}/attachments" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactAttachments.comCrmContactSelfServiceResourceGetFiles({
+  const result = await crmcom.contactAttachments.comCrmContactSelfServiceResourceGetFiles({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -250,15 +250,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAttachmentsComCrmContactSelfServiceResourceGetFiles } from "crm/funcs/contact-attachments-com-crm-contact-self-service-resource-get-files.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAttachmentsComCrmContactSelfServiceResourceGetFiles } from "crmcom/funcs/contact-attachments-com-crm-contact-self-service-resource-get-files.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactAttachmentsComCrmContactSelfServiceResourceGetFiles(crm, {
+  const res = await contactAttachmentsComCrmContactSelfServiceResourceGetFiles(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -304,12 +304,12 @@ Add an attachment (file or link) to an existing contact. Adding a file attachmen
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_createFile" method="post" path="/self-service/v2/contacts/{id}/attachments" example="Add Contact File" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.contactAttachments.comCrmContactSelfServiceResourceCreateFile({
+  const result = await crmcom.contactAttachments.comCrmContactSelfServiceResourceCreateFile({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -331,15 +331,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAttachmentsComCrmContactSelfServiceResourceCreateFile } from "crm/funcs/contact-attachments-com-crm-contact-self-service-resource-create-file.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAttachmentsComCrmContactSelfServiceResourceCreateFile } from "crmcom/funcs/contact-attachments-com-crm-contact-self-service-resource-create-file.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactAttachmentsComCrmContactSelfServiceResourceCreateFile(crm, {
+  const res = await contactAttachmentsComCrmContactSelfServiceResourceCreateFile(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -388,12 +388,12 @@ Delete a specific contact's attachment
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_removeFile" method="delete" path="/self-service/v2/contacts/{id}/attachments/{attachment_id}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  await crm.contactAttachments.comCrmContactSelfServiceResourceRemoveFile({
+  await crmcom.contactAttachments.comCrmContactSelfServiceResourceRemoveFile({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     attachmentId: "<id>",
@@ -411,15 +411,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAttachmentsComCrmContactSelfServiceResourceRemoveFile } from "crm/funcs/contact-attachments-com-crm-contact-self-service-resource-remove-file.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAttachmentsComCrmContactSelfServiceResourceRemoveFile } from "crmcom/funcs/contact-attachments-com-crm-contact-self-service-resource-remove-file.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await contactAttachmentsComCrmContactSelfServiceResourceRemoveFile(crm, {
+  const res = await contactAttachmentsComCrmContactSelfServiceResourceRemoveFile(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     attachmentId: "<id>",

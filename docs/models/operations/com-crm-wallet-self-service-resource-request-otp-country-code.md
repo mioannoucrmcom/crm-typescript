@@ -5,7 +5,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceRequestOTPCountryCode } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceRequestOTPCountryCode } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceRequestOTPCountryCode = "CYP";
 ```

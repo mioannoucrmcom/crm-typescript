@@ -5,7 +5,7 @@ The contact's wallet code is used to uniquely identify them on front-end devices
 ## Example Usage
 
 ```typescript
-import { WalletCodeFormat } from "crm/models/operations";
+import { WalletCodeFormat } from "crmcom/models/operations";
 
 let value: WalletCodeFormat = "BARCODE";
 ```

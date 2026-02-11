@@ -5,7 +5,7 @@ These attributes are applicable only if the pass plan classification is PROMOTIO
 ## Example Usage
 
 ```typescript
-import { PromotionPasses } from "crm/models/operations";
+import { PromotionPasses } from "crmcom/models/operations";
 
 let value: PromotionPasses = {
   promotionId: "e2ade504-9b90-92be-0adb-3258475ff695",

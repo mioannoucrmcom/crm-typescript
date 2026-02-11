@@ -5,7 +5,7 @@ Defines how closed loop (controlled) sign ups will be validated against, like sp
 ## Example Usage
 
 ```typescript
-import { SignUpMethod } from "crm/models/operations";
+import { SignUpMethod } from "crmcom/models/operations";
 
 let value: SignUpMethod = "CODE";
 ```

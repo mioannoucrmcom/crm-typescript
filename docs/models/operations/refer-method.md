@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ReferMethod } from "crm/models/operations";
+import { ReferMethod } from "crmcom/models/operations";
 
 let value: ReferMethod = "EMAIL";
 ```

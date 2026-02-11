@@ -5,7 +5,7 @@ How long the offering will be applied. Applicable only when the offerring’s pr
 ## Example Usage
 
 ```typescript
-import { Duration } from "crm/models/operations";
+import { Duration } from "crmcom/models/operations";
 
 let value: Duration = {
   type: "PERIOD",

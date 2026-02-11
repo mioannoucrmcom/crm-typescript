@@ -5,7 +5,7 @@ The discount provided to the ordered item
 ## Example Usage
 
 ```typescript
-import { ProductDiscount } from "crm/models/operations";
+import { ProductDiscount } from "crmcom/models/operations";
 
 let value: ProductDiscount = {};
 ```

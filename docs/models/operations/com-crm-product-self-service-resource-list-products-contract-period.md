@@ -5,7 +5,7 @@ The service's contract period (if any)
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceListProductsContractPeriod } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceListProductsContractPeriod } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceListProductsContractPeriod = {
   duration: 2,

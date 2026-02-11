@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmLanguageSelfServiceResourceGetSupportedLanguagesResponse } from "crm/models/operations";
+import { ComCrmLanguageSelfServiceResourceGetSupportedLanguagesResponse } from "crmcom/models/operations";
 
 let value: ComCrmLanguageSelfServiceResourceGetSupportedLanguagesResponse = {
   content: [

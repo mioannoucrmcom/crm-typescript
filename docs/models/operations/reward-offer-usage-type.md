@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { RewardOfferUsageType } from "crm/models/operations";
+import { RewardOfferUsageType } from "crmcom/models/operations";
 
 let value: RewardOfferUsageType = "LANDING_PAGE_HEADER_IMAGE";
 ```

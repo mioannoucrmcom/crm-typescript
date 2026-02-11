@@ -5,7 +5,7 @@ The state of the landing page
 ## Example Usage
 
 ```typescript
-import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageState } from "crm/models/operations";
+import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageState } from "crmcom/models/operations";
 
 let value: ComCrmLandingPageSelfServiceResourceGetSingleLandingPageState =
   "ACTIVE";

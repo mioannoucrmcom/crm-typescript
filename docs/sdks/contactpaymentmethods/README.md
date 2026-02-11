@@ -19,14 +19,14 @@ List of Payment methods allocated to contact.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getPaymentMethods" method="get" path="/self-service/v2/contacts/{id}/payment_methods" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactPaymentMethods.comCrmContactSelfServiceResourceGetPaymentMethods({
+  const result = await crmcom.contactPaymentMethods.comCrmContactSelfServiceResourceGetPaymentMethods({
     id: "<id>",
     classification: "WALLET",
     financialTypes: "Allowed values:\r\nPAYMENTS\r\nPAYOUTS\r\nREFUNDS\r\nTOP_UPS",
@@ -43,17 +43,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactPaymentMethodsComCrmContactSelfServiceResourceGetPaymentMethods } from "crm/funcs/contact-payment-methods-com-crm-contact-self-service-resource-get-payment-methods.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactPaymentMethodsComCrmContactSelfServiceResourceGetPaymentMethods } from "crmcom/funcs/contact-payment-methods-com-crm-contact-self-service-resource-get-payment-methods.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactPaymentMethodsComCrmContactSelfServiceResourceGetPaymentMethods(crm, {
+  const res = await contactPaymentMethodsComCrmContactSelfServiceResourceGetPaymentMethods(crmcom, {
     id: "<id>",
     classification: "WALLET",
     financialTypes: "Allowed values:\r\nPAYMENTS\r\nPAYOUTS\r\nREFUNDS\r\nTOP_UPS",
@@ -105,14 +105,14 @@ Add a new payment method for a contact supports Card, Account Debits and Wallet 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_addPaymentMethod" method="post" path="/self-service/v2/contacts/{id}/payment_methods" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactPaymentMethods.comCrmContactSelfServiceResourceAddPaymentMethod({
+  const result = await crmcom.contactPaymentMethods.comCrmContactSelfServiceResourceAddPaymentMethod({
     id: "<id>",
     body: {
       name: "PayPal",
@@ -206,17 +206,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactPaymentMethodsComCrmContactSelfServiceResourceAddPaymentMethod } from "crm/funcs/contact-payment-methods-com-crm-contact-self-service-resource-add-payment-method.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactPaymentMethodsComCrmContactSelfServiceResourceAddPaymentMethod } from "crmcom/funcs/contact-payment-methods-com-crm-contact-self-service-resource-add-payment-method.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactPaymentMethodsComCrmContactSelfServiceResourceAddPaymentMethod(crm, {
+  const res = await contactPaymentMethodsComCrmContactSelfServiceResourceAddPaymentMethod(crmcom, {
     id: "<id>",
     body: {
       name: "PayPal",
@@ -336,14 +336,14 @@ Update an existing payment method for a contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_updatePaymentMethod" method="put" path="/self-service/v2/contacts/{id}/payment_methods/{payment_method_id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactPaymentMethods.comCrmContactSelfServiceResourceUpdatePaymentMethod({
+  const result = await crmcom.contactPaymentMethods.comCrmContactSelfServiceResourceUpdatePaymentMethod({
     id: "<id>",
     paymentMethodId: "<id>",
     body: {
@@ -364,17 +364,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactPaymentMethodsComCrmContactSelfServiceResourceUpdatePaymentMethod } from "crm/funcs/contact-payment-methods-com-crm-contact-self-service-resource-update-payment-method.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactPaymentMethodsComCrmContactSelfServiceResourceUpdatePaymentMethod } from "crmcom/funcs/contact-payment-methods-com-crm-contact-self-service-resource-update-payment-method.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactPaymentMethodsComCrmContactSelfServiceResourceUpdatePaymentMethod(crm, {
+  const res = await contactPaymentMethodsComCrmContactSelfServiceResourceUpdatePaymentMethod(crmcom, {
     id: "<id>",
     paymentMethodId: "<id>",
     body: {
@@ -421,14 +421,14 @@ Remove an existing payment method from a specific contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_deletePaymentMethod" method="delete" path="/self-service/v2/contacts/{id}/payment_methods/{payment_method_id}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactPaymentMethods.comCrmContactSelfServiceResourceDeletePaymentMethod({
+  await crmcom.contactPaymentMethods.comCrmContactSelfServiceResourceDeletePaymentMethod({
     id: "<id>",
     paymentMethodId: "<id>",
   });
@@ -444,17 +444,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactPaymentMethodsComCrmContactSelfServiceResourceDeletePaymentMethod } from "crm/funcs/contact-payment-methods-com-crm-contact-self-service-resource-delete-payment-method.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactPaymentMethodsComCrmContactSelfServiceResourceDeletePaymentMethod } from "crmcom/funcs/contact-payment-methods-com-crm-contact-self-service-resource-delete-payment-method.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactPaymentMethodsComCrmContactSelfServiceResourceDeletePaymentMethod(crm, {
+  const res = await contactPaymentMethodsComCrmContactSelfServiceResourceDeletePaymentMethod(crmcom, {
     id: "<id>",
     paymentMethodId: "<id>",
   });

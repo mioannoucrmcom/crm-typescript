@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceListTag } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceListTag } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceListTag = {
   tagId: "JKGJHFSDJHGDSJHGA",

@@ -17,12 +17,12 @@ Returns a list of active order catalogues. By default all Order Catalogues are i
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderCatalogSelfServiceResource_list" method="get" path="/self-service/v2/order_catalogues" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.orderCatalogues.comCrmOrderCatalogSelfServiceResourceList({
+  const result = await crmcom.orderCatalogues.comCrmOrderCatalogSelfServiceResourceList({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     fulfilledBy: "ab5f8b2e-092f-4848-8f46-31df1c014060",
@@ -44,15 +44,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { orderCataloguesComCrmOrderCatalogSelfServiceResourceList } from "crm/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { orderCataloguesComCrmOrderCatalogSelfServiceResourceList } from "crmcom/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceList(crm, {
+  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceList(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     fulfilledBy: "ab5f8b2e-092f-4848-8f46-31df1c014060",
@@ -76,12 +76,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderCatalogSelfServiceResource_list" method="get" path="/self-service/v2/order_catalogues" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.orderCatalogues.comCrmOrderCatalogSelfServiceResourceList({
+  const result = await crmcom.orderCatalogues.comCrmOrderCatalogSelfServiceResourceList({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     fulfilledBy: "ab5f8b2e-092f-4848-8f46-31df1c014060",
@@ -103,15 +103,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { orderCataloguesComCrmOrderCatalogSelfServiceResourceList } from "crm/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { orderCataloguesComCrmOrderCatalogSelfServiceResourceList } from "crmcom/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceList(crm, {
+  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceList(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     fulfilledBy: "ab5f8b2e-092f-4848-8f46-31df1c014060",
@@ -135,12 +135,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderCatalogSelfServiceResource_list" method="get" path="/self-service/v2/order_catalogues" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.orderCatalogues.comCrmOrderCatalogSelfServiceResourceList({
+  const result = await crmcom.orderCatalogues.comCrmOrderCatalogSelfServiceResourceList({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     fulfilledBy: "ab5f8b2e-092f-4848-8f46-31df1c014060",
@@ -163,15 +163,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { orderCataloguesComCrmOrderCatalogSelfServiceResourceList } from "crm/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { orderCataloguesComCrmOrderCatalogSelfServiceResourceList } from "crmcom/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceList(crm, {
+  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceList(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     fulfilledBy: "ab5f8b2e-092f-4848-8f46-31df1c014060",
@@ -196,12 +196,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderCatalogSelfServiceResource_list" method="get" path="/self-service/v2/order_catalogues" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.orderCatalogues.comCrmOrderCatalogSelfServiceResourceList({
+  const result = await crmcom.orderCatalogues.comCrmOrderCatalogSelfServiceResourceList({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     fulfilledBy: "ab5f8b2e-092f-4848-8f46-31df1c014060",
@@ -224,15 +224,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { orderCataloguesComCrmOrderCatalogSelfServiceResourceList } from "crm/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { orderCataloguesComCrmOrderCatalogSelfServiceResourceList } from "crmcom/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceList(crm, {
+  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceList(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     fulfilledBy: "ab5f8b2e-092f-4848-8f46-31df1c014060",
@@ -257,12 +257,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderCatalogSelfServiceResource_list" method="get" path="/self-service/v2/order_catalogues" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.orderCatalogues.comCrmOrderCatalogSelfServiceResourceList({
+  const result = await crmcom.orderCatalogues.comCrmOrderCatalogSelfServiceResourceList({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     fulfilledBy: "ab5f8b2e-092f-4848-8f46-31df1c014060",
@@ -285,15 +285,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { orderCataloguesComCrmOrderCatalogSelfServiceResourceList } from "crm/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { orderCataloguesComCrmOrderCatalogSelfServiceResourceList } from "crmcom/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceList(crm, {
+  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceList(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     fulfilledBy: "ab5f8b2e-092f-4848-8f46-31df1c014060",
@@ -343,12 +343,12 @@ Returns a list of order catalogue categories and the products under each one of 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderCatalogSelfServiceResource_listCategories" method="get" path="/self-service/v2/order_catalogues/{id}/categories" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.orderCatalogues.comCrmOrderCatalogSelfServiceResourceListCategories({
+  const result = await crmcom.orderCatalogues.comCrmOrderCatalogSelfServiceResourceListCategories({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -369,15 +369,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories } from "crm/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list-categories.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories } from "crmcom/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list-categories.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories(crm, {
+  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -400,12 +400,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderCatalogSelfServiceResource_listCategories" method="get" path="/self-service/v2/order_catalogues/{id}/categories" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.orderCatalogues.comCrmOrderCatalogSelfServiceResourceListCategories({
+  const result = await crmcom.orderCatalogues.comCrmOrderCatalogSelfServiceResourceListCategories({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -426,15 +426,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories } from "crm/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list-categories.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories } from "crmcom/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list-categories.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories(crm, {
+  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -457,12 +457,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderCatalogSelfServiceResource_listCategories" method="get" path="/self-service/v2/order_catalogues/{id}/categories" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.orderCatalogues.comCrmOrderCatalogSelfServiceResourceListCategories({
+  const result = await crmcom.orderCatalogues.comCrmOrderCatalogSelfServiceResourceListCategories({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -484,15 +484,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories } from "crm/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list-categories.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories } from "crmcom/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list-categories.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories(crm, {
+  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -516,12 +516,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderCatalogSelfServiceResource_listCategories" method="get" path="/self-service/v2/order_catalogues/{id}/categories" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.orderCatalogues.comCrmOrderCatalogSelfServiceResourceListCategories({
+  const result = await crmcom.orderCatalogues.comCrmOrderCatalogSelfServiceResourceListCategories({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -543,15 +543,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories } from "crm/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list-categories.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories } from "crmcom/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list-categories.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories(crm, {
+  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -575,12 +575,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrderCatalogSelfServiceResource_listCategories" method="get" path="/self-service/v2/order_catalogues/{id}/categories" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.orderCatalogues.comCrmOrderCatalogSelfServiceResourceListCategories({
+  const result = await crmcom.orderCatalogues.comCrmOrderCatalogSelfServiceResourceListCategories({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",
@@ -602,15 +602,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories } from "crm/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list-categories.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories } from "crmcom/funcs/order-catalogues-com-crm-order-catalog-self-service-resource-list-categories.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories(crm, {
+  const res = await orderCataloguesComCrmOrderCatalogSelfServiceResourceListCategories(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "<id>",

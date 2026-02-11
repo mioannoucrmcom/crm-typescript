@@ -5,7 +5,7 @@ The contact that the settlement transaction is posted against
 ## Example Usage
 
 ```typescript
-import { ComCrmSettlementTransactionSelfServiceResourceListContact } from "crm/models/operations";
+import { ComCrmSettlementTransactionSelfServiceResourceListContact } from "crmcom/models/operations";
 
 let value: ComCrmSettlementTransactionSelfServiceResourceListContact = {
   id: "f2c2d9ea-5a94-729d-0c45-7fdd1d540e7b",

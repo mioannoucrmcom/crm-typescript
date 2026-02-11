@@ -5,7 +5,7 @@ The settlement transaction state
 ## Example Usage
 
 ```typescript
-import { ComCrmSettlementTransactionSelfServiceResourceListContentState } from "crm/models/operations";
+import { ComCrmSettlementTransactionSelfServiceResourceListContentState } from "crmcom/models/operations";
 
 let value: ComCrmSettlementTransactionSelfServiceResourceListContentState =
   "POSTED";

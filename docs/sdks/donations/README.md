@@ -18,14 +18,14 @@ Retrieve a list of Donation offers to which a contact can opt in and start makin
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="BUNDLE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     searchValue: "Increase Visits",
     types: "BUNDLE",
     includeTotal: true,
@@ -43,17 +43,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     searchValue: "Increase Visits",
     types: "BUNDLE",
     includeTotal: true,
@@ -73,14 +73,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     searchValue: "Increase Visits",
     includeTotal: true,
     size: 100,
@@ -97,17 +97,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     searchValue: "Increase Visits",
     includeTotal: true,
     size: 100,
@@ -126,14 +126,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="DISCOUNT" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     searchValue: "Increase Visits",
     types: "DISCOUNT",
     includeTotal: true,
@@ -151,17 +151,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     searchValue: "Increase Visits",
     types: "DISCOUNT",
     includeTotal: true,
@@ -181,14 +181,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     searchValue: "Increase Visits",
     includeTotal: true,
     size: 100,
@@ -205,17 +205,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     searchValue: "Increase Visits",
     includeTotal: true,
     size: 100,
@@ -234,14 +234,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="GIFT" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     searchValue: "Increase Visits",
     types: "GIFT",
     includeTotal: true,
@@ -259,17 +259,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     searchValue: "Increase Visits",
     types: "GIFT",
     includeTotal: true,
@@ -289,14 +289,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     searchValue: "Increase Visits",
     includeTotal: true,
     size: 100,
@@ -314,17 +314,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     searchValue: "Increase Visits",
     includeTotal: true,
     size: 100,
@@ -344,14 +344,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="ONE_OFF" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     searchValue: "Increase Visits",
     types: "ONE_OFF",
     includeTotal: true,
@@ -369,17 +369,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     searchValue: "Increase Visits",
     types: "ONE_OFF",
     includeTotal: true,
@@ -399,14 +399,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="PER_TRANSACTION" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     donationTypes: "PER_TRANSACTION",
     searchValue: "Increase Visits",
     includeTotal: true,
@@ -424,17 +424,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     donationTypes: "PER_TRANSACTION",
     searchValue: "Increase Visits",
     includeTotal: true,
@@ -454,14 +454,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     searchValue: "Increase Visits",
     includeTotal: true,
     size: 100,
@@ -479,17 +479,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     searchValue: "Increase Visits",
     includeTotal: true,
     size: 100,
@@ -509,14 +509,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="TERMED" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     donationTypes: "TERMED",
     searchValue: "Increase Visits",
     includeTotal: true,
@@ -534,17 +534,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     donationTypes: "TERMED",
     searchValue: "Increase Visits",
     includeTotal: true,
@@ -564,14 +564,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     searchValue: "Increase Visits",
     includeTotal: true,
     size: 100,
@@ -589,17 +589,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     searchValue: "Increase Visits",
     includeTotal: true,
     size: 100,
@@ -619,14 +619,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_list" method="get" path="/self-service/v2/donation_offers" example="VARIABLE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceList({
     donationTypes: "VARIABLE",
     searchValue: "Increase Visits",
     includeTotal: true,
@@ -644,17 +644,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceList } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceList(crmcom, {
     donationTypes: "VARIABLE",
     searchValue: "Increase Visits",
     includeTotal: true,
@@ -698,14 +698,14 @@ Returns a list of Organisations (B2B Merchants of the Business) for which a Dona
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_listCharityOrgs" method="get" path="/self-service/v2/donation_offers/organisations" example="BUNDLE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs({
     includeCreatives: true,
     type: "BUNDLE",
   });
@@ -721,17 +721,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list-charity-orgs.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list-charity-orgs.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs(crmcom, {
     includeCreatives: true,
     type: "BUNDLE",
   });
@@ -749,14 +749,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_listCharityOrgs" method="get" path="/self-service/v2/donation_offers/organisations" example="DISCOUNT" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs({
     includeCreatives: true,
     type: "DISCOUNT",
   });
@@ -772,17 +772,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list-charity-orgs.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list-charity-orgs.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs(crmcom, {
     includeCreatives: true,
     type: "DISCOUNT",
   });
@@ -800,14 +800,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_listCharityOrgs" method="get" path="/self-service/v2/donation_offers/organisations" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs({
     includeCreatives: true,
   });
 
@@ -822,17 +822,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list-charity-orgs.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list-charity-orgs.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs(crmcom, {
     includeCreatives: true,
   });
   if (res.ok) {
@@ -849,14 +849,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_listCharityOrgs" method="get" path="/self-service/v2/donation_offers/organisations" example="GIFT" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs({
     includeCreatives: true,
     type: "GIFT",
   });
@@ -872,17 +872,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list-charity-orgs.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list-charity-orgs.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs(crmcom, {
     includeCreatives: true,
     type: "GIFT",
   });
@@ -900,14 +900,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_listCharityOrgs" method="get" path="/self-service/v2/donation_offers/organisations" example="ONE_OFF" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs({
     includeCreatives: true,
     type: "ONE_OFF",
   });
@@ -923,17 +923,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list-charity-orgs.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-list-charity-orgs.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgs(crmcom, {
     includeCreatives: true,
     type: "ONE_OFF",
   });
@@ -975,14 +975,14 @@ Retrieve detailed information for a donation offer
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.RewardOfferDonationsSelfServiceResource_getSingle" method="get" path="/self-service/v2/donation_offers/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.donations.comCrmRewardOfferDonationsSelfServiceResourceGetSingle({
+  const result = await crmcom.donations.comCrmRewardOfferDonationsSelfServiceResourceGetSingle({
     id: "6883441e-194a-b92b-c6c0-2f0e869e4c65",
   });
 
@@ -997,17 +997,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { donationsComCrmRewardOfferDonationsSelfServiceResourceGetSingle } from "crm/funcs/donations-com-crm-reward-offer-donations-self-service-resource-get-single.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { donationsComCrmRewardOfferDonationsSelfServiceResourceGetSingle } from "crmcom/funcs/donations-com-crm-reward-offer-donations-self-service-resource-get-single.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceGetSingle(crm, {
+  const res = await donationsComCrmRewardOfferDonationsSelfServiceResourceGetSingle(crmcom, {
     id: "6883441e-194a-b92b-c6c0-2f0e869e4c65",
   });
   if (res.ok) {

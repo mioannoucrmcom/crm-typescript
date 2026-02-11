@@ -5,7 +5,7 @@ Contact’s gender information
 ## Example Usage
 
 ```typescript
-import { GetSingleContactSSGender } from "crm/models/operations";
+import { GetSingleContactSSGender } from "crmcom/models/operations";
 
 let value: GetSingleContactSSGender = "MALE";
 ```

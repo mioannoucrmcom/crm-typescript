@@ -5,7 +5,7 @@ Defines the supported contact self-submit purchase events features
 ## Example Usage
 
 ```typescript
-import { SelfSubmitPurchases } from "crm/models/operations";
+import { SelfSubmitPurchases } from "crmcom/models/operations";
 
 let value: SelfSubmitPurchases = {
   isSupported: true,

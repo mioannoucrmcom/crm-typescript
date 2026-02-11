@@ -5,7 +5,7 @@ Details about the app appearance
 ## Example Usage
 
 ```typescript
-import { Appearance } from "crm/models/operations";
+import { Appearance } from "crmcom/models/operations";
 
 let value: Appearance = {
   colours: [

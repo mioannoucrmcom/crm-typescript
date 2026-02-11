@@ -5,7 +5,7 @@ The account’s Payment Terms
 ## Example Usage
 
 ```typescript
-import { PaymentTerms } from "crm/models/operations";
+import { PaymentTerms } from "crmcom/models/operations";
 
 let value: PaymentTerms = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

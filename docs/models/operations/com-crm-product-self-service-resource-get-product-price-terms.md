@@ -5,7 +5,7 @@ price terms
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductPriceTerms } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductPriceTerms } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductPriceTerms = {
   billingPeriod: {

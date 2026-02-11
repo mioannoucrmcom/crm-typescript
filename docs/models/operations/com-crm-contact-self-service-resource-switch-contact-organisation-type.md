@@ -5,7 +5,7 @@ The organisation type
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceSwitchContactOrganisationType } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceSwitchContactOrganisationType } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceSwitchContactOrganisationType =
   "ORGANISATION";

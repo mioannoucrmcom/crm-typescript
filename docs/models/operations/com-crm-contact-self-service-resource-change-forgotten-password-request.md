@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceChangeForgottenPasswordRequest } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceChangeForgottenPasswordRequest } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceChangeForgottenPasswordRequest = {
   token: "j677enty-23sfsfsf23456798vgp",

@@ -7,7 +7,7 @@ Subscription Funding Source
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceChangeFundingSource } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceChangeFundingSource } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceChangeFundingSource = "WALLET";
 ```

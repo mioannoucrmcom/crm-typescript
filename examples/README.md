@@ -1,6 +1,6 @@
-# crm Examples
+# crmcom Examples
 
-This directory contains example scripts demonstrating how to use the crm SDK.
+This directory contains example scripts demonstrating how to use the crmcom SDK.
 
 ## Prerequisites
 

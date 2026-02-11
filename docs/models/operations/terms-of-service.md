@@ -5,7 +5,7 @@ Details of terms & conditions and privacy policy
 ## Example Usage
 
 ```typescript
-import { TermsOfService } from "crm/models/operations";
+import { TermsOfService } from "crmcom/models/operations";
 
 let value: TermsOfService = {
   acceptanceMessage: "I accept the #terms_conditions and #privacy_policy",

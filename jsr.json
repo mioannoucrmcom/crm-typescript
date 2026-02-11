@@ -1,8 +1,8 @@
 
 
 {
-  "name": "crm",
-  "version": "0.0.4",
+  "name": "crmcom",
+  "version": "1.0.6",
   "exports": {
     ".": "./src/index.ts",    
     "./models/errors": "./src/models/errors/index.ts",    

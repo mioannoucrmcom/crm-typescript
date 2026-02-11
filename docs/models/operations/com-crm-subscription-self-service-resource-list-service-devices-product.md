@@ -5,7 +5,7 @@ Device product which is of traceable physical good classification
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListServiceDevicesProduct } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListServiceDevicesProduct } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceListServiceDevicesProduct = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

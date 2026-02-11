@@ -5,7 +5,7 @@ The organisation that receives the donation
 ## Example Usage
 
 ```typescript
-import { ComCrmContactDonationSelfServiceResourceListContactDonationsHistoryOrganisation } from "crm/models/operations";
+import { ComCrmContactDonationSelfServiceResourceListContactDonationsHistoryOrganisation } from "crmcom/models/operations";
 
 let value:
   ComCrmContactDonationSelfServiceResourceListContactDonationsHistoryOrganisation =

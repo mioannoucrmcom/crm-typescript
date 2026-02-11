@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequest } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequest } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequest = {
   devId: "0b8e03c1-01e4-9c44-533a-d55b9ab0821e",

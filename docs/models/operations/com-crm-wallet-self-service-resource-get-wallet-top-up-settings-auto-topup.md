@@ -5,7 +5,7 @@ Automatically top up the wallet with an amount once a minimum threshold is reach
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopup } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopup } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopup = {
   threshold: 0.01,

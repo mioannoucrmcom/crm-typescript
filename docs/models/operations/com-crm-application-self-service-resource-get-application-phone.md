@@ -5,7 +5,7 @@ The contact us phone
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationPhone } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationPhone } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationPhone = {
   countryCode: "CYP",

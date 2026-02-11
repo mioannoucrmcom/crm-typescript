@@ -19,14 +19,14 @@ Retrieve a list of contact's purchase events based on search criteria (e.g. all 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PurchaseCustomerEventSelfServiceResource_listPurchases" method="get" path="/self-service/v2/contacts/{id}/purchases" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceListPurchases({
+  const result = await crmcom.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceListPurchases({
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -43,19 +43,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases,
-} from "crm/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-list-purchases.js";
+} from "crmcom/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-list-purchases.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases(crm, {
+  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases(crmcom, {
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -74,14 +74,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PurchaseCustomerEventSelfServiceResource_listPurchases" method="get" path="/self-service/v2/contacts/{id}/purchases" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceListPurchases({
+  const result = await crmcom.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceListPurchases({
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -98,19 +98,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases,
-} from "crm/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-list-purchases.js";
+} from "crmcom/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-list-purchases.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases(crm, {
+  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases(crmcom, {
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -129,14 +129,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PurchaseCustomerEventSelfServiceResource_listPurchases" method="get" path="/self-service/v2/contacts/{id}/purchases" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceListPurchases({
+  const result = await crmcom.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceListPurchases({
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -154,19 +154,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases,
-} from "crm/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-list-purchases.js";
+} from "crmcom/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-list-purchases.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases(crm, {
+  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases(crmcom, {
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -186,14 +186,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PurchaseCustomerEventSelfServiceResource_listPurchases" method="get" path="/self-service/v2/contacts/{id}/purchases" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceListPurchases({
+  const result = await crmcom.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceListPurchases({
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -211,19 +211,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases,
-} from "crm/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-list-purchases.js";
+} from "crmcom/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-list-purchases.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases(crm, {
+  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases(crmcom, {
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -243,14 +243,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PurchaseCustomerEventSelfServiceResource_listPurchases" method="get" path="/self-service/v2/contacts/{id}/purchases" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceListPurchases({
+  const result = await crmcom.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceListPurchases({
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -268,19 +268,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases,
-} from "crm/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-list-purchases.js";
+} from "crmcom/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-list-purchases.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases(crm, {
+  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceListPurchases(crmcom, {
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -324,14 +324,14 @@ Reclaim a purchase customer event to a contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PurchaseCustomerEventSelfServiceResource_reclaimPurchase" method="post" path="/self-service/v2/purchases/reclaim" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchase({
+  const result = await crmcom.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchase({
     id: "sdfsdfsdf4-43-r-few-f-wf-r3443;1234",
     organisation: {
       merchantTap: {
@@ -354,19 +354,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchase,
-} from "crm/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-reclaim-purchase.js";
+} from "crmcom/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-reclaim-purchase.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchase(crm, {
+  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchase(crmcom, {
     id: "sdfsdfsdf4-43-r-few-f-wf-r3443;1234",
     organisation: {
       merchantTap: {
@@ -415,14 +415,14 @@ Retrieve detailed information for a purchase event
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PurchaseCustomerEventSelfServiceResource_getSinglePurchase" method="get" path="/self-service/v2/purchases/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchase({
+  const result = await crmcom.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchase({
     id: "a0003f83-32c8-da03-200d-d6af0386cb3a",
   });
 
@@ -437,19 +437,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchase,
-} from "crm/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-get-single-purchase.js";
+} from "crmcom/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-get-single-purchase.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchase(crm, {
+  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchase(crmcom, {
     id: "a0003f83-32c8-da03-200d-d6af0386cb3a",
   });
   if (res.ok) {
@@ -490,12 +490,12 @@ Get reward details for a specific purchase customer event
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PurchaseCustomerEventSelfServiceResource_getPurchaseRewardTransactions" method="get" path="/self-service/v2/purchases/{id}/rewards" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactions({
+  const result = await crmcom.purchaseCustomerEvents.comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactions({
     authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
   }, {
     id: "cd953fe3-e2f6-2ae2-8a40-1bd8154c0f29",
@@ -512,17 +512,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactions,
-} from "crm/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-get-purchase-reward-transactions.js";
+} from "crmcom/funcs/purchase-customer-events-com-crm-purchase-customer-event-self-service-resource-get-purchase-reward-transactions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactions(crm, {
+  const res = await purchaseCustomerEventsComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactions(crmcom, {
     authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
   }, {
     id: "cd953fe3-e2f6-2ae2-8a40-1bd8154c0f29",

@@ -5,7 +5,7 @@ The command (unique) code. Its value varies according to the implemented IRD com
 ## Example Usage
 
 ```typescript
-import { Code } from "crm/models/operations";
+import { Code } from "crmcom/models/operations";
 
 let value: Code = "REFRESH";
 ```

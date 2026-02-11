@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ShortcutMedia } from "crm/models/operations";
+import { ShortcutMedia } from "crmcom/models/operations";
 
 let value: ShortcutMedia = {
   width: 200,

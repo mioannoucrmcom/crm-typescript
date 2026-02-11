@@ -5,7 +5,7 @@ The payment method that will be used to return back money to the contact
 ## Example Usage
 
 ```typescript
-import { ComCrmPayoutSelfServiceResourceCreatePaymentMethod } from "crm/models/operations";
+import { ComCrmPayoutSelfServiceResourceCreatePaymentMethod } from "crmcom/models/operations";
 
 let value: ComCrmPayoutSelfServiceResourceCreatePaymentMethod = {
   id: "CAD1E31269B76D7A65ACCE45B2E68DFD",

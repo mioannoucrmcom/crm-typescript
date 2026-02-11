@@ -5,7 +5,7 @@ State of the Promotion. Only Active Promotions are applied on purchasing product
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceListState } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceListState } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceListState = "INACTIVE";
 ```

@@ -5,7 +5,7 @@ Invoiced period applicable only when invoicing a termed service.
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSelfServiceResourceEstimateInvoicingPeriod } from "crm/models/operations";
+import { ComCrmEstimateSelfServiceResourceEstimateInvoicingPeriod } from "crmcom/models/operations";
 
 let value: ComCrmEstimateSelfServiceResourceEstimateInvoicingPeriod = {
   from: 1651172405,

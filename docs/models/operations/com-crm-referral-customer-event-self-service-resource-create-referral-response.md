@@ -5,7 +5,7 @@ Created
 ## Example Usage
 
 ```typescript
-import { ComCrmReferralCustomerEventSelfServiceResourceCreateReferralResponse } from "crm/models/operations";
+import { ComCrmReferralCustomerEventSelfServiceResourceCreateReferralResponse } from "crmcom/models/operations";
 
 let value:
   ComCrmReferralCustomerEventSelfServiceResourceCreateReferralResponse = {

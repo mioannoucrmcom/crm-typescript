@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { VariantAttribute } from "crm/models/operations";
+import { VariantAttribute } from "crmcom/models/operations";
 
 let value: VariantAttribute = {
   key: "size",

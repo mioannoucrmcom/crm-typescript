@@ -5,7 +5,7 @@ The billing address
 ## Example Usage
 
 ```typescript
-import { ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddress } from "crm/models/operations";
+import { ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddress } from "crmcom/models/operations";
 
 let value:
   ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddress = {};

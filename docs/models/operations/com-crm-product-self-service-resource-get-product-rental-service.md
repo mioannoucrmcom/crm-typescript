@@ -5,7 +5,7 @@ Applicable only for traceable physical goods given to contacts as Rentals
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductRentalService } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductRentalService } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductRentalService = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

@@ -5,7 +5,7 @@ A company’s profile (applicable only if contact type is COMPANY)
 ## Example Usage
 
 ```typescript
-import { UpdateContactSSCompanyProfile } from "crm/models/operations";
+import { UpdateContactSSCompanyProfile } from "crmcom/models/operations";
 
 let value: UpdateContactSSCompanyProfile = {
   registrationNumber: "EPM869233102",

@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsUsageType } from "crm/models/operations";
+import { ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsUsageType } from "crmcom/models/operations";
 
 let value:
   ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsUsageType =

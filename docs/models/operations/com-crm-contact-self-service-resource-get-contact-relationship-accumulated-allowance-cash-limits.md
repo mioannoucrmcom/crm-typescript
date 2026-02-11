@@ -7,7 +7,7 @@ How much can be consumed
 ```typescript
 import {
   ComCrmContactSelfServiceResourceGetContactRelationshipAccumulatedAllowanceCashLimits,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceGetContactRelationshipAccumulatedAllowanceCashLimits =

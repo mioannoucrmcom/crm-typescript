@@ -9,7 +9,7 @@ Define how awards can be/were spent (for SPEND transactions only)
 ## Example Usage
 
 ```typescript
-import { SpendMethod } from "crm/models/operations";
+import { SpendMethod } from "crmcom/models/operations";
 
 let value: SpendMethod = "INSTANT";
 ```

@@ -5,7 +5,7 @@ Details about the product that defines such device
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceGetContactDevicesProduct } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceGetContactDevicesProduct } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceGetContactDevicesProduct = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

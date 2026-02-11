@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { CrossSellMedia } from "crm/models/operations";
+import { CrossSellMedia } from "crmcom/models/operations";
 
 let value: CrossSellMedia = {
   width: 200,

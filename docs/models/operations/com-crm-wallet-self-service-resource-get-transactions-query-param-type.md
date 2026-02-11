@@ -5,7 +5,7 @@ Filters wallet transactions based on the transaction type
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetTransactionsQueryParamType } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetTransactionsQueryParamType } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsQueryParamType =
   "CREDIT";

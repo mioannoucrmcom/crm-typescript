@@ -5,7 +5,7 @@ Details about spend request for a specific amount (as requested by contact)
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesSpendRequest } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesSpendRequest } from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesSpendRequest = {

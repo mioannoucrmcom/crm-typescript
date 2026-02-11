@@ -5,7 +5,7 @@ Shows the reason why the order cannot be placed
 ## Example Usage
 
 ```typescript
-import { OrderFailureReason } from "crm/models/operations";
+import { OrderFailureReason } from "crmcom/models/operations";
 
 let value: OrderFailureReason = "MINIMUM_COST";
 ```

@@ -5,7 +5,7 @@ Tax rate code
 ## Example Usage
 
 ```typescript
-import { OrderInvoiceEstimateTaxesBreakdownTaxCode } from "crm/models/operations";
+import { OrderInvoiceEstimateTaxesBreakdownTaxCode } from "crmcom/models/operations";
 
 let value: OrderInvoiceEstimateTaxesBreakdownTaxCode = "VAT";
 ```

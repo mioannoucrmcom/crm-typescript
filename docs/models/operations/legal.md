@@ -5,7 +5,7 @@ Legal configuration for Landing Pages of type 'REGISTER'
 ## Example Usage
 
 ```typescript
-import { Legal } from "crm/models/operations";
+import { Legal } from "crmcom/models/operations";
 
 let value: Legal = {
   termsOfService: {

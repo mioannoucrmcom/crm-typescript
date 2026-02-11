@@ -1,11 +1,11 @@
 {
-  "name": "crm",
-  "version": "0.0.4",
+  "name": "crmcom",
+  "version": "1.0.6",
   "author": "Speakeasy",
   "type": "module",
   "tshy": {
     "sourceDialects": [
-      "crm/source"
+      "crmcom/source"
     ],
     "exports": {
       ".": "./src/index.ts",
@@ -39,7 +39,7 @@
   "exports": {
     ".": {
       "import": {
-        "crm/source": "./src/index.ts",
+        "crmcom/source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
       },
@@ -51,7 +51,7 @@
     "./package.json": "./package.json",
     "./types": {
       "import": {
-        "crm/source": "./src/types/index.ts",
+        "crmcom/source": "./src/types/index.ts",
         "types": "./dist/esm/types/index.d.ts",
         "default": "./dist/esm/types/index.js"
       },
@@ -62,7 +62,7 @@
     },
     "./models/errors": {
       "import": {
-        "crm/source": "./src/models/errors/index.ts",
+        "crmcom/source": "./src/models/errors/index.ts",
         "types": "./dist/esm/models/errors/index.d.ts",
         "default": "./dist/esm/models/errors/index.js"
       },
@@ -73,7 +73,7 @@
     },
     "./models": {
       "import": {
-        "crm/source": "./src/models/index.ts",
+        "crmcom/source": "./src/models/index.ts",
         "types": "./dist/esm/models/index.d.ts",
         "default": "./dist/esm/models/index.js"
       },
@@ -84,7 +84,7 @@
     },
     "./models/operations": {
       "import": {
-        "crm/source": "./src/models/operations/index.ts",
+        "crmcom/source": "./src/models/operations/index.ts",
         "types": "./dist/esm/models/operations/index.d.ts",
         "default": "./dist/esm/models/operations/index.js"
       },
@@ -95,7 +95,7 @@
     },
     "./*.js": {
       "import": {
-        "crm/source": "./src/*.ts",
+        "crmcom/source": "./src/*.ts",
         "types": "./dist/esm/*.d.ts",
         "default": "./dist/esm/*.js"
       },
@@ -106,7 +106,7 @@
     },
     "./*": {
       "import": {
-        "crm/source": "./src/*.ts",
+        "crmcom/source": "./src/*.ts",
         "types": "./dist/esm/*.d.ts",
         "default": "./dist/esm/*.js"
       },

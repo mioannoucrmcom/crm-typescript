@@ -5,7 +5,7 @@ Promotion timings
 ## Example Usage
 
 ```typescript
-import { Timings } from "crm/models/operations";
+import { Timings } from "crmcom/models/operations";
 
 let value: Timings = {
   fixedPeriod: {

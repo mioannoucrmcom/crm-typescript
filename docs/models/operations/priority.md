@@ -5,7 +5,7 @@ The default priority level
 ## Example Usage
 
 ```typescript
-import { Priority } from "crm/models/operations";
+import { Priority } from "crmcom/models/operations";
 
 let value: Priority = "MEDIUM";
 ```

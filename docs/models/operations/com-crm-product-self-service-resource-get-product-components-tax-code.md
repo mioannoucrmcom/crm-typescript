@@ -5,7 +5,7 @@ price tax code
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductComponentsTaxCode } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductComponentsTaxCode } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductComponentsTaxCode = "VAT";
 ```

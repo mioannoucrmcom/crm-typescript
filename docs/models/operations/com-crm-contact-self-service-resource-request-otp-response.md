@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceRequestOTPResponse } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceRequestOTPResponse } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceRequestOTPResponse = {
   obfuscatedValue: "+35799***834",

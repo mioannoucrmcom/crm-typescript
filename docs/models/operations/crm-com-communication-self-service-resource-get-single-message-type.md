@@ -8,7 +8,7 @@ The message type that a provisioning provider will send (applicable and required
 ## Example Usage
 
 ```typescript
-import { CrmComCommunicationSelfServiceResourceGetSingleMessageType } from "crm/models/operations";
+import { CrmComCommunicationSelfServiceResourceGetSingleMessageType } from "crmcom/models/operations";
 
 let value: CrmComCommunicationSelfServiceResourceGetSingleMessageType = "MAIL";
 ```

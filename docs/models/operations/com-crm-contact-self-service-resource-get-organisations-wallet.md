@@ -5,7 +5,7 @@ Contact wallet information for the organisation
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetOrganisationsWallet } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetOrganisationsWallet } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetOrganisationsWallet = {
   walletId: "038af54e-282c-40ad-ae5d-cc74f2c80f40",

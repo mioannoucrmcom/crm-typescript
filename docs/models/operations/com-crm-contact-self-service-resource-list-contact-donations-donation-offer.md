@@ -5,7 +5,7 @@ The donation offer the contact is opt-in to.
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceListContactDonationsDonationOffer } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceListContactDonationsDonationOffer } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceListContactDonationsDonationOffer = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

@@ -5,7 +5,7 @@ A list of custom fields whose values can be set when creating or updating entiti
 ## Example Usage
 
 ```typescript
-import { ComCrmPassPlanSelfServiceResourceListPassTypesCustomField } from "crm/models/operations";
+import { ComCrmPassPlanSelfServiceResourceListPassTypesCustomField } from "crmcom/models/operations";
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesCustomField = {
   key: "back_office",

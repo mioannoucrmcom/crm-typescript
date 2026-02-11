@@ -5,7 +5,7 @@ Applicable when the service was added as part of a bundled service
 ## Example Usage
 
 ```typescript
-import { BundledService } from "crm/models/operations";
+import { BundledService } from "crmcom/models/operations";
 
 let value: BundledService = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

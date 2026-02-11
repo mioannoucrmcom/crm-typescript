@@ -5,7 +5,7 @@ The organisation that the settlement transaction is posted against
 ## Example Usage
 
 ```typescript
-import { ComCrmSettlementTransactionSelfServiceResourceListOrganisation } from "crm/models/operations";
+import { ComCrmSettlementTransactionSelfServiceResourceListOrganisation } from "crmcom/models/operations";
 
 let value: ComCrmSettlementTransactionSelfServiceResourceListOrganisation = {
   id: "f2c2d9ea-5a94-729d-0c45-7fdd1d540e7b",

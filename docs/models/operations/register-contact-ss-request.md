@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { RegisterContactSSRequest } from "crm/models/operations";
+import { RegisterContactSSRequest } from "crmcom/models/operations";
 
 let value: RegisterContactSSRequest = {
   apiKey: "ab5f8b2e-092f-4848-8f46-31df1c014060",

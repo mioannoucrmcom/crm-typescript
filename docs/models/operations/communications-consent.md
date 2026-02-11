@@ -5,7 +5,7 @@ Messages of consent to receive marketing material
 ## Example Usage
 
 ```typescript
-import { CommunicationsConsent } from "crm/models/operations";
+import { CommunicationsConsent } from "crmcom/models/operations";
 
 let value: CommunicationsConsent = {
   emailConsent:

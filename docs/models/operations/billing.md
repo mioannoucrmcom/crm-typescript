@@ -5,7 +5,7 @@ Latest billing information of the service
 ## Example Usage
 
 ```typescript
-import { Billing } from "crm/models/operations";
+import { Billing } from "crmcom/models/operations";
 
 let value: Billing = {
   billedFrom: 1625555027,

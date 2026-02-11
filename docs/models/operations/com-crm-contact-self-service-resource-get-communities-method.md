@@ -5,7 +5,7 @@ Defines whether money requests will require an acceptance from the community own
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetCommunitiesMethod } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetCommunitiesMethod } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetCommunitiesMethod = "AUTO";
 ```

@@ -7,7 +7,7 @@ How often services are billed
 ```typescript
 import {
   ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingPeriod,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingPeriod =

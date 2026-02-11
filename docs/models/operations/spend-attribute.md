@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SpendAttribute } from "crm/models/operations";
+import { SpendAttribute } from "crmcom/models/operations";
 
 let value: SpendAttribute = {
   type: "AMOUNT",

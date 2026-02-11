@@ -5,7 +5,7 @@ Defines the consumer ordering model
 ## Example Usage
 
 ```typescript
-import { Model } from "crm/models/operations";
+import { Model } from "crmcom/models/operations";
 
 let value: Model = "SINGLE_BUSINESS";
 ```

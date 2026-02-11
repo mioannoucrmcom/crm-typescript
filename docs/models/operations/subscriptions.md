@@ -5,7 +5,7 @@ Subscription settings for application
 ## Example Usage
 
 ```typescript
-import { Subscriptions } from "crm/models/operations";
+import { Subscriptions } from "crmcom/models/operations";
 
 let value: Subscriptions = {};
 ```

@@ -5,7 +5,7 @@ Defines the supported marketing content features
 ## Example Usage
 
 ```typescript
-import { Marketing } from "crm/models/operations";
+import { Marketing } from "crmcom/models/operations";
 
 let value: Marketing = {
   isSupported: true,

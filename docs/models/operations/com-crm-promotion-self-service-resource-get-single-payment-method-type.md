@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceGetSinglePaymentMethodType } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceGetSinglePaymentMethodType } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceGetSinglePaymentMethodType =
   "WALLET";

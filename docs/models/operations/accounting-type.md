@@ -5,7 +5,7 @@ Defines the accounting type of the settlement transaction
 ## Example Usage
 
 ```typescript
-import { AccountingType } from "crm/models/operations";
+import { AccountingType } from "crmcom/models/operations";
 
 let value: AccountingType = "DEBIT";
 ```

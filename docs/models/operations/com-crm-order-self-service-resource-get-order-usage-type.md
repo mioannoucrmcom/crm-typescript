@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderUsageType } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderUsageType } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderUsageType = "ATTACHMENT";
 ```

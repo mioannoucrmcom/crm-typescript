@@ -5,7 +5,7 @@ One of the wallet's payment methods that will be used in top-up
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupPaymentMethod } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupPaymentMethod } from "crmcom/models/operations";
 
 let value:
   ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupPaymentMethod =

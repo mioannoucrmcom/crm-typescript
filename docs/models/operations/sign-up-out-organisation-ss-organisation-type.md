@@ -5,7 +5,7 @@ The organisation type
 ## Example Usage
 
 ```typescript
-import { SignUpOutOrganisationSSOrganisationType } from "crm/models/operations";
+import { SignUpOutOrganisationSSOrganisationType } from "crmcom/models/operations";
 
 let value: SignUpOutOrganisationSSOrganisationType = "ORGANISATION";
 ```

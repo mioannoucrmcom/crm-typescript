@@ -5,7 +5,7 @@ The amount's currency
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceUpdateCurrencyCode } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceUpdateCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceUpdateCurrencyCode = "EUR";
 ```

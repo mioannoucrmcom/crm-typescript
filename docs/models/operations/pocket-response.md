@@ -5,7 +5,7 @@ Specifies which pocket the transaction was logged against. CRMCOM = CRM.COM pock
 ## Example Usage
 
 ```typescript
-import { PocketResponse } from "crm/models/operations";
+import { PocketResponse } from "crmcom/models/operations";
 
 let value: PocketResponse = "BUSINESS_COMMERCE";
 ```

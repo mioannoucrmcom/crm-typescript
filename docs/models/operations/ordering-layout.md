@@ -5,7 +5,7 @@ The application ordering layout
 ## Example Usage
 
 ```typescript
-import { OrderingLayout } from "crm/models/operations";
+import { OrderingLayout } from "crmcom/models/operations";
 
 let value: OrderingLayout = "LAYOUT5";
 ```

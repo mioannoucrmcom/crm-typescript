@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmPassPlanSelfServiceResourceListPassTypesRequest } from "crm/models/operations";
+import { ComCrmPassPlanSelfServiceResourceListPassTypesRequest } from "crmcom/models/operations";
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesRequest = {
   currencyCode: "\"EUR\"",

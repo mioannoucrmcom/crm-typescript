@@ -5,7 +5,7 @@ Defines how the results will be ordered</br>Default:DESC
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetCommunitiesOrder } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetCommunitiesOrder } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetCommunitiesOrder = "ASC";
 ```

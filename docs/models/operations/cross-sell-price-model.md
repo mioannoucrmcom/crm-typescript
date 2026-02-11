@@ -9,7 +9,7 @@ The pricing model:
 ## Example Usage
 
 ```typescript
-import { CrossSellPriceModel } from "crm/models/operations";
+import { CrossSellPriceModel } from "crmcom/models/operations";
 
 let value: CrossSellPriceModel = "VOLUME";
 ```

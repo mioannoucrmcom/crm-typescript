@@ -5,7 +5,7 @@ The attached file details
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceRequestSelfServiceResourceGetFilesFile } from "crm/models/operations";
+import { ComCrmServiceRequestSelfServiceResourceGetFilesFile } from "crmcom/models/operations";
 
 let value: ComCrmServiceRequestSelfServiceResourceGetFilesFile = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

@@ -5,7 +5,7 @@ The account’s billing address details
 ## Example Usage
 
 ```typescript
-import { BillingAddress } from "crm/models/operations";
+import { BillingAddress } from "crmcom/models/operations";
 
 let value: BillingAddress = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

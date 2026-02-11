@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceGetSingleOrderCatalogUsageType } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceGetSingleOrderCatalogUsageType } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceGetSingleOrderCatalogUsageType =
   "AVATAR";

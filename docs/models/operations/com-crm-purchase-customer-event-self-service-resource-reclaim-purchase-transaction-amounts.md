@@ -5,7 +5,7 @@ Details about purchase amounts
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransactionAmounts } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransactionAmounts } from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransactionAmounts =

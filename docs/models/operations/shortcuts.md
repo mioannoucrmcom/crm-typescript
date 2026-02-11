@@ -5,7 +5,7 @@ Defines the supported shortcuts features
 ## Example Usage
 
 ```typescript
-import { Shortcuts } from "crm/models/operations";
+import { Shortcuts } from "crmcom/models/operations";
 
 let value: Shortcuts = {
   shortcuts: [

@@ -5,7 +5,7 @@ The card’s main information. Required and applicable if the payment method typ
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetPaymentMethodsCard } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetPaymentMethodsCard } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetPaymentMethodsCard = {
   name: "Default Card",

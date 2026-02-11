@@ -5,7 +5,7 @@ The contact (parent or member in the respective community)
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactRelationshipContact } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactRelationshipContact } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetContactRelationshipContact = {
   id: "19e631ac-4123-1099-d207-2a70fb126186",

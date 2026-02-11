@@ -5,7 +5,7 @@ Defines the performance type of the offer, whether it’s based on transaction a
 ## Example Usage
 
 ```typescript
-import { ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceType } from "crm/models/operations";
+import { ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceType } from "crmcom/models/operations";
 
 let value: ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceType =
   "AMOUNT";

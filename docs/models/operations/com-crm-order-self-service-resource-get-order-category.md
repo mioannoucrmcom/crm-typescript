@@ -5,7 +5,7 @@ Details about the category
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderCategory } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderCategory } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderCategory = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

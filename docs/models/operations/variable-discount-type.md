@@ -5,7 +5,7 @@ Defines whether the offering is an actual discount amount or a discount percenta
 ## Example Usage
 
 ```typescript
-import { VariableDiscountType } from "crm/models/operations";
+import { VariableDiscountType } from "crmcom/models/operations";
 
 let value: VariableDiscountType = "PERCENT";
 ```

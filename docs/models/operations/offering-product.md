@@ -5,7 +5,7 @@ The product on which the discount will be applied
 ## Example Usage
 
 ```typescript
-import { OfferingProduct } from "crm/models/operations";
+import { OfferingProduct } from "crmcom/models/operations";
 
 let value: OfferingProduct = {
   itemId: "4dc0809f-ed91-4b68-b912-5bd6064d901e",

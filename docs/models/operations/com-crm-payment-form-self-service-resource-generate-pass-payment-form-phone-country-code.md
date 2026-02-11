@@ -5,7 +5,7 @@ The buyers' phone number country code
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormPhoneCountryCode } from "crm/models/operations";
+import { ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormPhoneCountryCode } from "crmcom/models/operations";
 
 let value:
   ComCrmPaymentFormSelfServiceResourceGeneratePassPaymentFormPhoneCountryCode =

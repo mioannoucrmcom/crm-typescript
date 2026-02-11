@@ -5,7 +5,7 @@ Required if a price is specified as input
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxModel } from "crm/models/operations";
+import { ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxModel } from "crmcom/models/operations";
 
 let value: ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxModel =
   "TAX_INCLUSIVE";

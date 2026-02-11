@@ -7,7 +7,7 @@ Shows if the service will get a trial period
 ```typescript
 import {
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriod,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriod =

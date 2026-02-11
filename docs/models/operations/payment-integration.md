@@ -5,7 +5,7 @@ The payment integration type=PURCHASE_PASS
 ## Example Usage
 
 ```typescript
-import { PaymentIntegration } from "crm/models/operations";
+import { PaymentIntegration } from "crmcom/models/operations";
 
 let value: PaymentIntegration = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

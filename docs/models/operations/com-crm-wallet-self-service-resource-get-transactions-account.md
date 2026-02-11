@@ -5,7 +5,7 @@ Details of the contact's account involved in the transfer transaction. If it's a
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetTransactionsAccount } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetTransactionsAccount } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsAccount = {};
 ```

@@ -18,14 +18,14 @@ Verify a contact's request to sign up to a closed loop reward scheme
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_verifySignUp" method="get" path="/self-service/v2/contacts/reward_schemes/verification/{sign_up_code}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactRewards.comCrmContactSelfServiceResourceVerifySignUp({
+  await crmcom.contactRewards.comCrmContactSelfServiceResourceVerifySignUp({
     signUpCode: "SUC1234",
   });
 
@@ -40,17 +40,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactRewardsComCrmContactSelfServiceResourceVerifySignUp } from "crm/funcs/contact-rewards-com-crm-contact-self-service-resource-verify-sign-up.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactRewardsComCrmContactSelfServiceResourceVerifySignUp } from "crmcom/funcs/contact-rewards-com-crm-contact-self-service-resource-verify-sign-up.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactRewardsComCrmContactSelfServiceResourceVerifySignUp(crm, {
+  const res = await contactRewardsComCrmContactSelfServiceResourceVerifySignUp(crmcom, {
     signUpCode: "SUC1234",
   });
   if (res.ok) {
@@ -91,14 +91,14 @@ Sign up/out a contact from/to a reward scheme
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_signUpOutScheme" method="post" path="/self-service/v2/contacts/{id}/reward_schemes" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactRewards.comCrmContactSelfServiceResourceSignUpOutScheme({
+  await crmcom.contactRewards.comCrmContactSelfServiceResourceSignUpOutScheme({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     body: {
       action: "SIGN_UP",
@@ -117,17 +117,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme } from "crm/funcs/contact-rewards-com-crm-contact-self-service-resource-sign-up-out-scheme.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme } from "crmcom/funcs/contact-rewards-com-crm-contact-self-service-resource-sign-up-out-scheme.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme(crm, {
+  const res = await contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     body: {
       action: "SIGN_UP",
@@ -148,14 +148,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_signUpOutScheme" method="post" path="/self-service/v2/contacts/{id}/reward_schemes" example="Example 2" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactRewards.comCrmContactSelfServiceResourceSignUpOutScheme({
+  await crmcom.contactRewards.comCrmContactSelfServiceResourceSignUpOutScheme({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     body: {
       action: "SIGN_OUT",
@@ -174,17 +174,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme } from "crm/funcs/contact-rewards-com-crm-contact-self-service-resource-sign-up-out-scheme.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme } from "crmcom/funcs/contact-rewards-com-crm-contact-self-service-resource-sign-up-out-scheme.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme(crm, {
+  const res = await contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     body: {
       action: "SIGN_OUT",
@@ -205,14 +205,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_signUpOutScheme" method="post" path="/self-service/v2/contacts/{id}/reward_schemes" example="Example 3" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactRewards.comCrmContactSelfServiceResourceSignUpOutScheme({
+  await crmcom.contactRewards.comCrmContactSelfServiceResourceSignUpOutScheme({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     body: {
       action: "SIGN_UP",
@@ -232,17 +232,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme } from "crm/funcs/contact-rewards-com-crm-contact-self-service-resource-sign-up-out-scheme.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme } from "crmcom/funcs/contact-rewards-com-crm-contact-self-service-resource-sign-up-out-scheme.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme(crm, {
+  const res = await contactRewardsComCrmContactSelfServiceResourceSignUpOutScheme(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     body: {
       action: "SIGN_UP",
@@ -288,14 +288,14 @@ Retrieve a contact's reward details
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceResource_getSingleWithRewards" method="get" path="/self-service/v2/contacts/{id}/rewards" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactRewards.comCrmContactSelfServiceResourceGetSingleWithRewards({
+  const result = await crmcom.contactRewards.comCrmContactSelfServiceResourceGetSingleWithRewards({
     id: "a12b282f-e6ce-e618-0a72-becb3ad78033",
   });
 
@@ -310,17 +310,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactRewardsComCrmContactSelfServiceResourceGetSingleWithRewards } from "crm/funcs/contact-rewards-com-crm-contact-self-service-resource-get-single-with-rewards.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactRewardsComCrmContactSelfServiceResourceGetSingleWithRewards } from "crmcom/funcs/contact-rewards-com-crm-contact-self-service-resource-get-single-with-rewards.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactRewardsComCrmContactSelfServiceResourceGetSingleWithRewards(crm, {
+  const res = await contactRewardsComCrmContactSelfServiceResourceGetSingleWithRewards(crmcom, {
     id: "a12b282f-e6ce-e618-0a72-becb3ad78033",
   });
   if (res.ok) {

@@ -5,7 +5,7 @@ The type of the event
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountType } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountType } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountType =
   "SAVINGS";

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderTag } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderTag } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderTag = {
   tagId: "JKGJHFSDJHGDSJHGA",

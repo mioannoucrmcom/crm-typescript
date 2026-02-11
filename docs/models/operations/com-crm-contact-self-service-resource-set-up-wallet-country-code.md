@@ -5,7 +5,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceSetUpWalletCountryCode } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceSetUpWalletCountryCode } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceSetUpWalletCountryCode = "CYP";
 ```

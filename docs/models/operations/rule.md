@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Rule } from "crm/models/operations";
+import { Rule } from "crmcom/models/operations";
 
 let value: Rule = {
   supplyMethods: [

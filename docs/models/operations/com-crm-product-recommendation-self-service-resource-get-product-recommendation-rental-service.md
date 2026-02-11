@@ -7,7 +7,7 @@ Applicable only for traceable physical goods given to contacts as Rentals
 ```typescript
 import {
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationRentalService,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationRentalService =

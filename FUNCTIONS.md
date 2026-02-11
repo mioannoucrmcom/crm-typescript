@@ -19,17 +19,17 @@ specific category of applications.
 ## Example
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceGetSingle } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-get-single.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceGetSingle } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-get-single.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceGetSingle(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceGetSingle(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
   });
   if (res.ok) {

@@ -5,7 +5,7 @@ Details about the applied discount
 ## Example Usage
 
 ```typescript
-import { OrderLineItemDiscount } from "crm/models/operations";
+import { OrderLineItemDiscount } from "crmcom/models/operations";
 
 let value: OrderLineItemDiscount = {
   discountAmount: 0.96,

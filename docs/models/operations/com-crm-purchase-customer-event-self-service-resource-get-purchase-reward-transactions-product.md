@@ -7,7 +7,7 @@ The awarded product (free product)
 ```typescript
 import {
   ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsProduct,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsProduct =

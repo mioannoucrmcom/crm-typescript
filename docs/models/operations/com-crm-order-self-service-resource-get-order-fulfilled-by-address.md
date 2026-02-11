@@ -5,7 +5,7 @@ Information about the organisation’s location
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderFulfilledByAddress } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderFulfilledByAddress } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderFulfilledByAddress = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

@@ -5,7 +5,7 @@ Measurement unit. Applicable only when a specific usage product is included in t
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceListContactRelationshipMeasurementUnit } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceListContactRelationshipMeasurementUnit } from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceListContactRelationshipMeasurementUnit = {

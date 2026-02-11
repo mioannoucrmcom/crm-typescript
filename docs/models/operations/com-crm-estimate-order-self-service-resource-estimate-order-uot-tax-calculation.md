@@ -5,7 +5,7 @@ The billing cycle's unit of time
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderUotTaxCalculation } from "crm/models/operations";
+import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderUotTaxCalculation } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderSelfServiceResourceEstimateOrderUotTaxCalculation =

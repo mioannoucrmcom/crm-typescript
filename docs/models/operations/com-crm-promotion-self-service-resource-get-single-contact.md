@@ -5,7 +5,7 @@ The contact for which the Promotion is applied. Either a Contact or a Segment ca
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceGetSingleContact } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceGetSingleContact } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceGetSingleContact = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

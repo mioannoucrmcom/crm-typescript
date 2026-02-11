@@ -5,7 +5,7 @@ type of payment method
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceGetAccountJournalType } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceGetAccountJournalType } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceGetAccountJournalType = "CASH";
 ```

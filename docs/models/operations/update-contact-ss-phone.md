@@ -5,7 +5,7 @@ The contact’s phone
 ## Example Usage
 
 ```typescript
-import { UpdateContactSSPhone } from "crm/models/operations";
+import { UpdateContactSSPhone } from "crmcom/models/operations";
 
 let value: UpdateContactSSPhone = {
   type: "MOBILE",

@@ -7,7 +7,7 @@ The one-time/termed service through which usage is consumed
 ```typescript
 import {
   ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceServiceResponse,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceServiceResponse =

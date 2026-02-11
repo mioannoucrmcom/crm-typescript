@@ -5,7 +5,7 @@ Filter based on the intent that tokens were requested
 ## Example Usage
 
 ```typescript
-import { QueryParamIntent } from "crm/models/operations";
+import { QueryParamIntent } from "crmcom/models/operations";
 
 let value: QueryParamIntent = "SPEND";
 ```

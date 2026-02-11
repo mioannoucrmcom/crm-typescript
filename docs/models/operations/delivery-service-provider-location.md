@@ -5,7 +5,7 @@ The Order’s Delivery service provider location id. Applicable only for Orders 
 ## Example Usage
 
 ```typescript
-import { DeliveryServiceProviderLocation } from "crm/models/operations";
+import { DeliveryServiceProviderLocation } from "crmcom/models/operations";
 
 let value: DeliveryServiceProviderLocation = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

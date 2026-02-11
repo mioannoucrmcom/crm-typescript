@@ -5,7 +5,7 @@ The device type mobile or browser
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentFormSelfServiceResourceGenerateAddCardFormDeviceType } from "crm/models/operations";
+import { ComCrmPaymentFormSelfServiceResourceGenerateAddCardFormDeviceType } from "crmcom/models/operations";
 
 let value: ComCrmPaymentFormSelfServiceResourceGenerateAddCardFormDeviceType =
   "BROWSER";

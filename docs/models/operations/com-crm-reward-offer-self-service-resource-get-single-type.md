@@ -5,7 +5,7 @@ The organisation type
 ## Example Usage
 
 ```typescript
-import { ComCrmRewardOfferSelfServiceResourceGetSingleType } from "crm/models/operations";
+import { ComCrmRewardOfferSelfServiceResourceGetSingleType } from "crmcom/models/operations";
 
 let value: ComCrmRewardOfferSelfServiceResourceGetSingleType = "MERCHANT";
 ```

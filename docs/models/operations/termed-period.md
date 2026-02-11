@@ -5,7 +5,7 @@ Service's termed period
 ## Example Usage
 
 ```typescript
-import { TermedPeriod } from "crm/models/operations";
+import { TermedPeriod } from "crmcom/models/operations";
 
 let value: TermedPeriod = {
   billingCycles: 1,

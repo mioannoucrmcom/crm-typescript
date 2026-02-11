@@ -5,7 +5,7 @@ Component item type
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductVariationsItemType } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductVariationsItemType } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductVariationsItemType =
   "PRODUCT";

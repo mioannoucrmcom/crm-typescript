@@ -5,7 +5,7 @@ The currency code used for the transfer
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactRelationshipCurrencyCode } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactRelationshipCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetContactRelationshipCurrencyCode =
   "EUR";

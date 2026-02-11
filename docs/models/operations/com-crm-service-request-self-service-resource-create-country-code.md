@@ -5,7 +5,7 @@ Country code based on ISO 3166-1 standard
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceRequestSelfServiceResourceCreateCountryCode } from "crm/models/operations";
+import { ComCrmServiceRequestSelfServiceResourceCreateCountryCode } from "crmcom/models/operations";
 
 let value: ComCrmServiceRequestSelfServiceResourceCreateCountryCode = "CYP";
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ContractPreference } from "crm/models/operations";
+import { ContractPreference } from "crmcom/models/operations";
 
 let value: ContractPreference = "RENEW";
 ```

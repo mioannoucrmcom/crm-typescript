@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { BillingPeriodUot } from "crm/models/operations";
+import { BillingPeriodUot } from "crmcom/models/operations";
 
 let value: BillingPeriodUot = "MINUTE";
 ```

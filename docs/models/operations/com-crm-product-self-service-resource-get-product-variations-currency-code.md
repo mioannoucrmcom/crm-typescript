@@ -5,7 +5,7 @@ Currency code
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductVariationsCurrencyCode } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductVariationsCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductVariationsCurrencyCode =
   "EUR";

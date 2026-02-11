@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsMetadataAttribute } from "crm/models/operations";
+import { ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsMetadataAttribute } from "crmcom/models/operations";
 
 let value:
   ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsMetadataAttribute =

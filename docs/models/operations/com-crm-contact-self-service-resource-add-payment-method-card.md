@@ -5,7 +5,7 @@ The card details (required and applicable if the payment method is set to CARD)
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddPaymentMethodCard } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddPaymentMethodCard } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddPaymentMethodCard = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

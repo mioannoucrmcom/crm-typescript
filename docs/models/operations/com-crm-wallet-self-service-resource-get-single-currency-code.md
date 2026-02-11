@@ -5,7 +5,7 @@ The wallet balance currency
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetSingleCurrencyCode } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetSingleCurrencyCode } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetSingleCurrencyCode = "EUR";
 ```

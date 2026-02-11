@@ -23,14 +23,14 @@ Retrieve all details relating to service requests created by or for a specific c
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/service_requests" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceList({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceList({
     id: "<id>",
     queueId: "bf58e2a0-f73b-4ebb-8425-92ff4253d6be",
     searchValue: "SR0001ABC",
@@ -50,17 +50,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceList } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceList } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceList(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceList(crmcom, {
     id: "<id>",
     queueId: "bf58e2a0-f73b-4ebb-8425-92ff4253d6be",
     searchValue: "SR0001ABC",
@@ -82,14 +82,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/service_requests" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceList({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceList({
     id: "<id>",
     queueId: "bf58e2a0-f73b-4ebb-8425-92ff4253d6be",
     searchValue: "SR0001ABC",
@@ -109,17 +109,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceList } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceList } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceList(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceList(crmcom, {
     id: "<id>",
     queueId: "bf58e2a0-f73b-4ebb-8425-92ff4253d6be",
     searchValue: "SR0001ABC",
@@ -141,14 +141,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/service_requests" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceList({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceList({
     id: "<id>",
     queueId: "bf58e2a0-f73b-4ebb-8425-92ff4253d6be",
     searchValue: "SR0001ABC",
@@ -169,17 +169,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceList } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceList } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceList(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceList(crmcom, {
     id: "<id>",
     queueId: "bf58e2a0-f73b-4ebb-8425-92ff4253d6be",
     searchValue: "SR0001ABC",
@@ -202,14 +202,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/service_requests" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceList({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceList({
     id: "<id>",
     queueId: "bf58e2a0-f73b-4ebb-8425-92ff4253d6be",
     searchValue: "SR0001ABC",
@@ -230,17 +230,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceList } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceList } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceList(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceList(crmcom, {
     id: "<id>",
     queueId: "bf58e2a0-f73b-4ebb-8425-92ff4253d6be",
     searchValue: "SR0001ABC",
@@ -263,14 +263,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/service_requests" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceList({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceList({
     id: "<id>",
     queueId: "bf58e2a0-f73b-4ebb-8425-92ff4253d6be",
     searchValue: "SR0001ABC",
@@ -291,17 +291,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceList } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceList } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceList(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceList(crmcom, {
     id: "<id>",
     queueId: "bf58e2a0-f73b-4ebb-8425-92ff4253d6be",
     searchValue: "SR0001ABC",
@@ -348,14 +348,14 @@ Create a service request for a specific contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_create" method="post" path="/self-service/v2/contacts/{id}/service_requests" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceCreate({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceCreate({
     id: "<id>",
     body: {
       description: "I have a query about the potholes in Nicosia Main Road",
@@ -389,17 +389,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceCreate } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-create.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceCreate } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-create.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceCreate(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceCreate(crmcom, {
     id: "<id>",
     body: {
       description: "I have a query about the potholes in Nicosia Main Road",
@@ -459,14 +459,14 @@ Retreieves the configuration of queue settings for service requests
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.QueueSelfServiceResource_list" method="get" path="/self-service/v2/queues" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmQueueSelfServiceResourceList();
+  const result = await crmcom.serviceRequests.comCrmQueueSelfServiceResourceList();
 
   console.log(result);
 }
@@ -479,17 +479,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmQueueSelfServiceResourceList } from "crm/funcs/service-requests-com-crm-queue-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmQueueSelfServiceResourceList } from "crmcom/funcs/service-requests-com-crm-queue-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmQueueSelfServiceResourceList(crm);
+  const res = await serviceRequestsComCrmQueueSelfServiceResourceList(crmcom);
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -528,14 +528,14 @@ Retrieve all attachments for a specific service request
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_getFiles" method="get" path="/self-service/v2/service_requests/{id}/attachments" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceGetFiles({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceGetFiles({
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     includeTotal: true,
     size: 100,
@@ -552,17 +552,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-get-files.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-get-files.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles(crmcom, {
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     includeTotal: true,
     size: 100,
@@ -581,14 +581,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_getFiles" method="get" path="/self-service/v2/service_requests/{id}/attachments" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceGetFiles({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceGetFiles({
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     includeTotal: true,
     size: 100,
@@ -605,17 +605,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-get-files.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-get-files.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles(crmcom, {
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     includeTotal: true,
     size: 100,
@@ -634,14 +634,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_getFiles" method="get" path="/self-service/v2/service_requests/{id}/attachments" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceGetFiles({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceGetFiles({
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     includeTotal: true,
     size: 100,
@@ -659,17 +659,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-get-files.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-get-files.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles(crmcom, {
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     includeTotal: true,
     size: 100,
@@ -689,14 +689,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_getFiles" method="get" path="/self-service/v2/service_requests/{id}/attachments" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceGetFiles({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceGetFiles({
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     includeTotal: true,
     size: 100,
@@ -714,17 +714,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-get-files.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-get-files.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles(crmcom, {
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     includeTotal: true,
     size: 100,
@@ -744,14 +744,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_getFiles" method="get" path="/self-service/v2/service_requests/{id}/attachments" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceGetFiles({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceGetFiles({
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     includeTotal: true,
     size: 100,
@@ -769,17 +769,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-get-files.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-get-files.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetFiles(crmcom, {
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     includeTotal: true,
     size: 100,
@@ -823,14 +823,14 @@ Add an attachment (file or link) to an existing service request. Adding a file a
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_createServiceRequestFile" method="post" path="/self-service/v2/service_requests/{id}/attachments" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceCreateServiceRequestFile({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceCreateServiceRequestFile({
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     body: {
       fileId: "30526723-24a3-e4e3-1a75-b26b1b41f05c",
@@ -850,17 +850,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceCreateServiceRequestFile } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-create-service-request-file.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceCreateServiceRequestFile } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-create-service-request-file.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceCreateServiceRequestFile(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceCreateServiceRequestFile(crmcom, {
     id: "6b888b83-b418-752f-604d-0653cf65885d",
     body: {
       fileId: "30526723-24a3-e4e3-1a75-b26b1b41f05c",
@@ -906,14 +906,14 @@ Delete an attachment file for a service request
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_removeFile" method="delete" path="/self-service/v2/service_requests/{id}/attachments/{attachment_id}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceRemoveFile({
+  await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceRemoveFile({
     attachmentId: "8dfc2223-edca-f05d-820b-dc96ba9df2c2",
     id: "6b888b83-b418-752f-604d-0653cf65885d",
   });
@@ -929,17 +929,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceRemoveFile } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-remove-file.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceRemoveFile } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-remove-file.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceRemoveFile(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceRemoveFile(crmcom, {
     attachmentId: "8dfc2223-edca-f05d-820b-dc96ba9df2c2",
     id: "6b888b83-b418-752f-604d-0653cf65885d",
   });
@@ -981,14 +981,14 @@ Retrieve all notes created by the contact for a single service request. Notes cr
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_getNotes" method="get" path="/self-service/v2/service_requests/{id}/notes" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceGetNotes({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceGetNotes({
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -1005,17 +1005,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-get-notes.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-get-notes.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes(crmcom, {
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -1034,14 +1034,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_getNotes" method="get" path="/self-service/v2/service_requests/{id}/notes" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceGetNotes({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceGetNotes({
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -1058,17 +1058,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-get-notes.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-get-notes.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes(crmcom, {
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -1087,14 +1087,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_getNotes" method="get" path="/self-service/v2/service_requests/{id}/notes" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceGetNotes({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceGetNotes({
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -1112,17 +1112,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-get-notes.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-get-notes.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes(crmcom, {
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -1142,14 +1142,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_getNotes" method="get" path="/self-service/v2/service_requests/{id}/notes" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceGetNotes({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceGetNotes({
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -1167,17 +1167,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-get-notes.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-get-notes.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes(crmcom, {
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -1197,14 +1197,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_getNotes" method="get" path="/self-service/v2/service_requests/{id}/notes" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceGetNotes({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceGetNotes({
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -1222,17 +1222,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-get-notes.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-get-notes.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceGetNotes(crmcom, {
     id: "<id>",
     includeTotal: true,
     size: 100,
@@ -1276,14 +1276,14 @@ Create a note for a service request raised by a contact via a front-end app.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceRequestSelfServiceResource_createNote" method="post" path="/self-service/v2/service_requests/{id}/notes" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.serviceRequests.comCrmServiceRequestSelfServiceResourceCreateNote({
+  const result = await crmcom.serviceRequests.comCrmServiceRequestSelfServiceResourceCreateNote({
     id: "<id>",
     body: {
       note: "After my telephone conversation with Zack this morning, it was decided that....",
@@ -1301,17 +1301,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { serviceRequestsComCrmServiceRequestSelfServiceResourceCreateNote } from "crm/funcs/service-requests-com-crm-service-request-self-service-resource-create-note.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { serviceRequestsComCrmServiceRequestSelfServiceResourceCreateNote } from "crmcom/funcs/service-requests-com-crm-service-request-self-service-resource-create-note.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceCreateNote(crm, {
+  const res = await serviceRequestsComCrmServiceRequestSelfServiceResourceCreateNote(crmcom, {
     id: "<id>",
     body: {
       note: "After my telephone conversation with Zack this morning, it was decided that....",

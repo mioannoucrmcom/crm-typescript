@@ -5,7 +5,7 @@ Details about the ordered product
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceListOrdersProduct } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceListOrdersProduct } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceListOrdersProduct = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

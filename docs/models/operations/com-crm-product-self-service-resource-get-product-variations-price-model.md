@@ -5,7 +5,7 @@ The price model of price
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductVariationsPriceModel } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductVariationsPriceModel } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductVariationsPriceModel =
   "FLAT";

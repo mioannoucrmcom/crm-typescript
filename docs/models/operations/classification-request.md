@@ -5,7 +5,7 @@ The contact (identifier) that will be authorised
 ## Example Usage
 
 ```typescript
-import { ClassificationRequest } from "crm/models/operations";
+import { ClassificationRequest } from "crmcom/models/operations";
 
 let value: ClassificationRequest = "TRACEABLE_PHYSICAL_GOOD";
 ```

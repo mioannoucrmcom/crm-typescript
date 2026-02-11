@@ -5,7 +5,7 @@ The termed transfers set up by the community owner for the community member
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactRelationshipTermedTransfer } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactRelationshipTermedTransfer } from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceGetContactRelationshipTermedTransfer = {

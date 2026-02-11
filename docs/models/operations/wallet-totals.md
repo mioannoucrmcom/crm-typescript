@@ -5,7 +5,7 @@ The total amounts for wallet transactions performed by the contact
 ## Example Usage
 
 ```typescript
-import { WalletTotals } from "crm/models/operations";
+import { WalletTotals } from "crmcom/models/operations";
 
 let value: WalletTotals = {
   totalTopUps: 3.2,

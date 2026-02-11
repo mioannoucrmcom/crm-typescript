@@ -5,7 +5,7 @@ Details about the organisation
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceListOrdersFulfilledBy } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceListOrdersFulfilledBy } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceListOrdersFulfilledBy = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

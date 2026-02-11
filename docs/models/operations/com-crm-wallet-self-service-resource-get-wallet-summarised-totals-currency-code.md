@@ -5,7 +5,7 @@ Currency code for sum amount
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsCurrencyCode } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsCurrencyCode } from "crmcom/models/operations";
 
 let value:
   ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsCurrencyCode = "EUR";

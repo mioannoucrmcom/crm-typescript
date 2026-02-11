@@ -5,7 +5,7 @@ Details about the account owner
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolderDetails } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolderDetails } from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolderDetails = {

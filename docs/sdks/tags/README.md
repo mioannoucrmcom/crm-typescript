@@ -17,14 +17,14 @@ Search through all organisation tags
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.OrganisationTagSelfServiceResource_listOrganisationTags" method="get" path="/self-service/v2/organisations/tags" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.tags.comCrmOrganisationTagSelfServiceResourceListOrganisationTags();
+  const result = await crmcom.tags.comCrmOrganisationTagSelfServiceResourceListOrganisationTags();
 
   console.log(result);
 }
@@ -37,17 +37,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { tagsComCrmOrganisationTagSelfServiceResourceListOrganisationTags } from "crm/funcs/tags-com-crm-organisation-tag-self-service-resource-list-organisation-tags.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { tagsComCrmOrganisationTagSelfServiceResourceListOrganisationTags } from "crmcom/funcs/tags-com-crm-organisation-tag-self-service-resource-list-organisation-tags.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await tagsComCrmOrganisationTagSelfServiceResourceListOrganisationTags(crm);
+  const res = await tagsComCrmOrganisationTagSelfServiceResourceListOrganisationTags(crmcom);
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
@@ -86,12 +86,12 @@ Retrieve a list of tags based on search criteria (e.g. all contact tags)
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.TagSelfServiceResource_listTags" method="get" path="/self-service/v2/tags" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.tags.comCrmTagSelfServiceResourceListTags({
+  const result = await crmcom.tags.comCrmTagSelfServiceResourceListTags({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     entity: "CONTACTS",
@@ -110,15 +110,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { tagsComCrmTagSelfServiceResourceListTags } from "crm/funcs/tags-com-crm-tag-self-service-resource-list-tags.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { tagsComCrmTagSelfServiceResourceListTags } from "crmcom/funcs/tags-com-crm-tag-self-service-resource-list-tags.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await tagsComCrmTagSelfServiceResourceListTags(crm, {
+  const res = await tagsComCrmTagSelfServiceResourceListTags(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     entity: "CONTACTS",
@@ -139,12 +139,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.TagSelfServiceResource_listTags" method="get" path="/self-service/v2/tags" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.tags.comCrmTagSelfServiceResourceListTags({
+  const result = await crmcom.tags.comCrmTagSelfServiceResourceListTags({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     entity: "LEADS",
@@ -163,15 +163,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { tagsComCrmTagSelfServiceResourceListTags } from "crm/funcs/tags-com-crm-tag-self-service-resource-list-tags.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { tagsComCrmTagSelfServiceResourceListTags } from "crmcom/funcs/tags-com-crm-tag-self-service-resource-list-tags.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await tagsComCrmTagSelfServiceResourceListTags(crm, {
+  const res = await tagsComCrmTagSelfServiceResourceListTags(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     entity: "LEADS",
@@ -192,12 +192,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.TagSelfServiceResource_listTags" method="get" path="/self-service/v2/tags" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.tags.comCrmTagSelfServiceResourceListTags({
+  const result = await crmcom.tags.comCrmTagSelfServiceResourceListTags({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     entity: "ORGANISATIONS",
@@ -217,15 +217,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { tagsComCrmTagSelfServiceResourceListTags } from "crm/funcs/tags-com-crm-tag-self-service-resource-list-tags.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { tagsComCrmTagSelfServiceResourceListTags } from "crmcom/funcs/tags-com-crm-tag-self-service-resource-list-tags.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await tagsComCrmTagSelfServiceResourceListTags(crm, {
+  const res = await tagsComCrmTagSelfServiceResourceListTags(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     entity: "ORGANISATIONS",
@@ -247,12 +247,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.TagSelfServiceResource_listTags" method="get" path="/self-service/v2/tags" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.tags.comCrmTagSelfServiceResourceListTags({
+  const result = await crmcom.tags.comCrmTagSelfServiceResourceListTags({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     entity: "PRODUCTS",
@@ -272,15 +272,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { tagsComCrmTagSelfServiceResourceListTags } from "crm/funcs/tags-com-crm-tag-self-service-resource-list-tags.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { tagsComCrmTagSelfServiceResourceListTags } from "crmcom/funcs/tags-com-crm-tag-self-service-resource-list-tags.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await tagsComCrmTagSelfServiceResourceListTags(crm, {
+  const res = await tagsComCrmTagSelfServiceResourceListTags(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     entity: "PRODUCTS",
@@ -302,12 +302,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.TagSelfServiceResource_listTags" method="get" path="/self-service/v2/tags" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.tags.comCrmTagSelfServiceResourceListTags({
+  const result = await crmcom.tags.comCrmTagSelfServiceResourceListTags({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     entity: "ORGANISATIONS",
@@ -327,15 +327,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { tagsComCrmTagSelfServiceResourceListTags } from "crm/funcs/tags-com-crm-tag-self-service-resource-list-tags.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { tagsComCrmTagSelfServiceResourceListTags } from "crmcom/funcs/tags-com-crm-tag-self-service-resource-list-tags.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await tagsComCrmTagSelfServiceResourceListTags(crm, {
+  const res = await tagsComCrmTagSelfServiceResourceListTags(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     entity: "ORGANISATIONS",

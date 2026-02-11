@@ -5,7 +5,7 @@ Allows contacts to specify their preferred billing day at the time of ordering. 
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderPreferredBillingDay } from "crm/models/operations";
+import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderPreferredBillingDay } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderSelfServiceResourceEstimateOrderPreferredBillingDay = {

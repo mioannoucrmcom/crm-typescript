@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceSetUpWalletRequestBody } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceSetUpWalletRequestBody } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceSetUpWalletRequestBody = {
   otp: "<value>",

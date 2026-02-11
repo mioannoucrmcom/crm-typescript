@@ -5,7 +5,7 @@ Contract period unit of time
 ## Example Usage
 
 ```typescript
-import { ConditionContractPeriodUot } from "crm/models/operations";
+import { ConditionContractPeriodUot } from "crmcom/models/operations";
 
 let value: ConditionContractPeriodUot = "MONTH";
 ```

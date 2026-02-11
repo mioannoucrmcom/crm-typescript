@@ -5,7 +5,7 @@ The queue’s default priority
 ## Example Usage
 
 ```typescript
-import { DefaultPriority } from "crm/models/operations";
+import { DefaultPriority } from "crmcom/models/operations";
 
 let value: DefaultPriority = {
   urgency: "MEDIUM",

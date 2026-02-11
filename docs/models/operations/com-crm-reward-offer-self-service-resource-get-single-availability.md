@@ -5,7 +5,7 @@ The offer availability (from-to) dates (whithin this period customers will be aw
 ## Example Usage
 
 ```typescript
-import { ComCrmRewardOfferSelfServiceResourceGetSingleAvailability } from "crm/models/operations";
+import { ComCrmRewardOfferSelfServiceResourceGetSingleAvailability } from "crmcom/models/operations";
 
 let value: ComCrmRewardOfferSelfServiceResourceGetSingleAvailability = {
   from: 1606819297,

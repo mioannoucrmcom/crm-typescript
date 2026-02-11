@@ -5,7 +5,7 @@ Defines how the results will be ordered</br>Default:DESC
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceListContactDonationsOrder } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceListContactDonationsOrder } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceListContactDonationsOrder = "ASC";
 ```

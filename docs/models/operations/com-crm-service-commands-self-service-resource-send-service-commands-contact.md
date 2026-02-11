@@ -5,7 +5,7 @@ Contact who subscribed to the service
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsContact } from "crm/models/operations";
+import { ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsContact } from "crmcom/models/operations";
 
 let value: ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsContact =
   {

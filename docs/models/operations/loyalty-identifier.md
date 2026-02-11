@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { LoyaltyIdentifier } from "crm/models/operations";
+import { LoyaltyIdentifier } from "crmcom/models/operations";
 
 let value: LoyaltyIdentifier = {
   identifier: "100000001908",

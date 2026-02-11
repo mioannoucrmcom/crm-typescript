@@ -5,7 +5,7 @@ Invoiced period applicable only when invoicing a termed service.
 ## Example Usage
 
 ```typescript
-import { ItemPeriod } from "crm/models/operations";
+import { ItemPeriod } from "crmcom/models/operations";
 
 let value: ItemPeriod = {
   from: 1651172405,

@@ -5,7 +5,7 @@ The organisation that such integration is provided from
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceListOrganisation } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceListOrganisation } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceListOrganisation = {
   id: "d40a5bdf-2077-8c22-ea8e-8a0709f15fe0",

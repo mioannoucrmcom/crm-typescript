@@ -5,7 +5,7 @@ Details about the order related to the wallet journal transaction
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetTransactionsContentOrder } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetTransactionsContentOrder } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsContentOrder = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

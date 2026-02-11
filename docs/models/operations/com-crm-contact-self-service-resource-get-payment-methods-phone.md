@@ -5,7 +5,7 @@ The phone used when registering to the walled-based payment method
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetPaymentMethodsPhone } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetPaymentMethodsPhone } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetPaymentMethodsPhone = {
   countryCode: "CYP",

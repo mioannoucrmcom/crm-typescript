@@ -5,7 +5,7 @@ Shows the reason for failing to calculating taxes for the invoice, typically bec
 ## Example Usage
 
 ```typescript
-import { OrderInvoiceEstimateTaxFailureReason } from "crm/models/operations";
+import { OrderInvoiceEstimateTaxFailureReason } from "crmcom/models/operations";
 
 let value: OrderInvoiceEstimateTaxFailureReason = "INVALID_ADDRESS";
 ```

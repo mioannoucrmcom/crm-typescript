@@ -5,7 +5,7 @@ The country code of the location
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceListAddressCountryCode } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceListAddressCountryCode } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceListAddressCountryCode = "CYP";
 ```

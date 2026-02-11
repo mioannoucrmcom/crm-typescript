@@ -5,7 +5,7 @@ Details about the organisation from where such event was posted
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderFulfilledBy } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderFulfilledBy } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderFulfilledBy = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

@@ -5,7 +5,7 @@ The applied Promotion. Applicable when discount type is Promotion
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderInvoicingPromotion } from "crm/models/operations";
+import { ComCrmEstimateOrderSelfServiceResourceEstimateOrderInvoicingPromotion } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderSelfServiceResourceEstimateOrderInvoicingPromotion = {

@@ -5,7 +5,7 @@ The wallet's main information. Required and applicable if the payment method typ
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetPaymentMethodsWallet } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetPaymentMethodsWallet } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetPaymentMethodsWallet = {
   phone: {

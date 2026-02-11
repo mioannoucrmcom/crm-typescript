@@ -19,12 +19,12 @@ Retrieves a list of products that can be purchased by customers through an order
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -61,15 +61,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -108,12 +108,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="EXPENSE_SERVICE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -151,15 +151,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -199,12 +199,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -241,15 +241,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -288,12 +288,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -331,15 +331,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -379,12 +379,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="NON_TRACEABLE_PHYSCAL_GOOD" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -422,15 +422,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -470,12 +470,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="ONE_TME_SERVICE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -513,15 +513,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -561,12 +561,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -604,15 +604,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -652,12 +652,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="TERMED_SERVICE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -695,15 +695,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -743,12 +743,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="TRACEABLE_PHYSICAL_GOOD" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -786,15 +786,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -834,12 +834,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -877,15 +877,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -925,12 +925,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="USAGE_SERVICE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -968,15 +968,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -1016,12 +1016,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="validity_date[gt]" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -1058,15 +1058,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -1105,12 +1105,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="validity_date[gte]" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -1147,15 +1147,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -1194,12 +1194,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="validity_date[lt]" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -1236,15 +1236,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -1283,12 +1283,12 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_listProducts" method="get" path="/self-service/v2/products" example="validity_date[lte]" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceListProducts({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceListProducts({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -1325,15 +1325,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceListProducts } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-list-products.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceListProducts(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     brandId: "dccb219b-1304-95de-61f8-03b4b824a428",
@@ -1397,12 +1397,12 @@ Get detailed information of the product, its prices and taxes
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_getProduct" method="get" path="/self-service/v2/products/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceGetProduct({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceGetProduct({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "8c939607-2262-544d-99ef-4634c6e8836d",
@@ -1419,15 +1419,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceGetProduct } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-get-product.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceGetProduct } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-get-product.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceGetProduct(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceGetProduct(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "8c939607-2262-544d-99ef-4634c6e8836d",
@@ -1471,12 +1471,12 @@ Returns a list of products that could be added as components of a flexible bundl
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_getProductComponents" method="get" path="/self-service/v2/products/{id}/components" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceGetProductComponents({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceGetProductComponents({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "2f6a70b6-84d4-2859-d230-093cb7e95c62",
@@ -1499,15 +1499,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceGetProductComponents } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-get-product-components.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceGetProductComponents } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-get-product-components.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceGetProductComponents(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceGetProductComponents(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "2f6a70b6-84d4-2859-d230-093cb7e95c62",
@@ -1557,12 +1557,12 @@ Get the detailed information of a composite product’s characteristics, their p
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ProductSelfServiceResource_getProductVariations" method="get" path="/self-service/v2/products/{id}/variants" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.productCatalogue.comCrmProductSelfServiceResourceGetProductVariations({
+  const result = await crmcom.productCatalogue.comCrmProductSelfServiceResourceGetProductVariations({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "2f6a70b6-84d4-2859-d230-093cb7e95c62",
@@ -1584,15 +1584,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { productCatalogueComCrmProductSelfServiceResourceGetProductVariations } from "crm/funcs/product-catalogue-com-crm-product-self-service-resource-get-product-variations.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { productCatalogueComCrmProductSelfServiceResourceGetProductVariations } from "crmcom/funcs/product-catalogue-com-crm-product-self-service-resource-get-product-variations.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await productCatalogueComCrmProductSelfServiceResourceGetProductVariations(crm, {
+  const res = await productCatalogueComCrmProductSelfServiceResourceGetProductVariations(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     id: "2f6a70b6-84d4-2859-d230-093cb7e95c62",

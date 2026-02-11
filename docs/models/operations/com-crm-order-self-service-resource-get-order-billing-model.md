@@ -5,7 +5,7 @@ Indicates whether the service is billed on a pre- or post-bill basis.
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderBillingModel } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderBillingModel } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderBillingModel = "POST_BILL";
 ```

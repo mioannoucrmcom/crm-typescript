@@ -5,7 +5,7 @@ Invoice related details, applicable for invoice only
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceGetAccountJournalInvoice } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceGetAccountJournalInvoice } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceGetAccountJournalInvoice = {
   dueDate: 1232412,

@@ -5,7 +5,7 @@ Defines whether the organisation supports contact registry
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceListContactRegistry } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceListContactRegistry } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceListContactRegistry = {};
 ```

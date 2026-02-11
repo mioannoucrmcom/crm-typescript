@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactRelationshipResponse } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactRelationshipResponse } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetContactRelationshipResponse = {
   id: "323a12a6-90e4-fa30-caa4-63e9552ffb10",

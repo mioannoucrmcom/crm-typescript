@@ -18,14 +18,14 @@ Retrieve all pass plans with GIFT classifcation that issue electronic passes. On
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PassPlanSelfServiceResource_listPassTypes" method="get" path="/self-service/v2/pass_plans" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.passes.comCrmPassPlanSelfServiceResourceListPassTypes({
+  const result = await crmcom.passes.comCrmPassPlanSelfServiceResourceListPassTypes({
     currencyCode: "\"EUR\"",
     productId: "99869C84FA60F9FE407140E20F707726",
     searchValue: "Xmas Plans",
@@ -44,17 +44,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { passesComCrmPassPlanSelfServiceResourceListPassTypes } from "crm/funcs/passes-com-crm-pass-plan-self-service-resource-list-pass-types.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { passesComCrmPassPlanSelfServiceResourceListPassTypes } from "crmcom/funcs/passes-com-crm-pass-plan-self-service-resource-list-pass-types.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await passesComCrmPassPlanSelfServiceResourceListPassTypes(crm, {
+  const res = await passesComCrmPassPlanSelfServiceResourceListPassTypes(crmcom, {
     currencyCode: "\"EUR\"",
     productId: "99869C84FA60F9FE407140E20F707726",
     searchValue: "Xmas Plans",
@@ -75,14 +75,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PassPlanSelfServiceResource_listPassTypes" method="get" path="/self-service/v2/pass_plans" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.passes.comCrmPassPlanSelfServiceResourceListPassTypes({
+  const result = await crmcom.passes.comCrmPassPlanSelfServiceResourceListPassTypes({
     currencyCode: "\"EUR\"",
     productId: "99869C84FA60F9FE407140E20F707726",
     searchValue: "Xmas Plans",
@@ -101,17 +101,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { passesComCrmPassPlanSelfServiceResourceListPassTypes } from "crm/funcs/passes-com-crm-pass-plan-self-service-resource-list-pass-types.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { passesComCrmPassPlanSelfServiceResourceListPassTypes } from "crmcom/funcs/passes-com-crm-pass-plan-self-service-resource-list-pass-types.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await passesComCrmPassPlanSelfServiceResourceListPassTypes(crm, {
+  const res = await passesComCrmPassPlanSelfServiceResourceListPassTypes(crmcom, {
     currencyCode: "\"EUR\"",
     productId: "99869C84FA60F9FE407140E20F707726",
     searchValue: "Xmas Plans",
@@ -132,14 +132,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PassPlanSelfServiceResource_listPassTypes" method="get" path="/self-service/v2/pass_plans" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.passes.comCrmPassPlanSelfServiceResourceListPassTypes({
+  const result = await crmcom.passes.comCrmPassPlanSelfServiceResourceListPassTypes({
     currencyCode: "\"EUR\"",
     productId: "99869C84FA60F9FE407140E20F707726",
     searchValue: "Xmas Plans",
@@ -159,17 +159,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { passesComCrmPassPlanSelfServiceResourceListPassTypes } from "crm/funcs/passes-com-crm-pass-plan-self-service-resource-list-pass-types.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { passesComCrmPassPlanSelfServiceResourceListPassTypes } from "crmcom/funcs/passes-com-crm-pass-plan-self-service-resource-list-pass-types.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await passesComCrmPassPlanSelfServiceResourceListPassTypes(crm, {
+  const res = await passesComCrmPassPlanSelfServiceResourceListPassTypes(crmcom, {
     currencyCode: "\"EUR\"",
     productId: "99869C84FA60F9FE407140E20F707726",
     searchValue: "Xmas Plans",
@@ -191,14 +191,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PassPlanSelfServiceResource_listPassTypes" method="get" path="/self-service/v2/pass_plans" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.passes.comCrmPassPlanSelfServiceResourceListPassTypes({
+  const result = await crmcom.passes.comCrmPassPlanSelfServiceResourceListPassTypes({
     currencyCode: "\"EUR\"",
     productId: "99869C84FA60F9FE407140E20F707726",
     searchValue: "Xmas Plans",
@@ -218,17 +218,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { passesComCrmPassPlanSelfServiceResourceListPassTypes } from "crm/funcs/passes-com-crm-pass-plan-self-service-resource-list-pass-types.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { passesComCrmPassPlanSelfServiceResourceListPassTypes } from "crmcom/funcs/passes-com-crm-pass-plan-self-service-resource-list-pass-types.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await passesComCrmPassPlanSelfServiceResourceListPassTypes(crm, {
+  const res = await passesComCrmPassPlanSelfServiceResourceListPassTypes(crmcom, {
     currencyCode: "\"EUR\"",
     productId: "99869C84FA60F9FE407140E20F707726",
     searchValue: "Xmas Plans",
@@ -250,14 +250,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PassPlanSelfServiceResource_listPassTypes" method="get" path="/self-service/v2/pass_plans" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.passes.comCrmPassPlanSelfServiceResourceListPassTypes({
+  const result = await crmcom.passes.comCrmPassPlanSelfServiceResourceListPassTypes({
     currencyCode: "\"EUR\"",
     productId: "99869C84FA60F9FE407140E20F707726",
     searchValue: "Xmas Plans",
@@ -277,17 +277,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { passesComCrmPassPlanSelfServiceResourceListPassTypes } from "crm/funcs/passes-com-crm-pass-plan-self-service-resource-list-pass-types.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { passesComCrmPassPlanSelfServiceResourceListPassTypes } from "crmcom/funcs/passes-com-crm-pass-plan-self-service-resource-list-pass-types.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await passesComCrmPassPlanSelfServiceResourceListPassTypes(crm, {
+  const res = await passesComCrmPassPlanSelfServiceResourceListPassTypes(crmcom, {
     currencyCode: "\"EUR\"",
     productId: "99869C84FA60F9FE407140E20F707726",
     searchValue: "Xmas Plans",
@@ -333,14 +333,14 @@ Redeems a single pass by a contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PassSelfServiceResource_redeemPass" method="post" path="/self-service/v2/passes/redeem" example="Redeem Pass" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.passes.comCrmPassSelfServiceResourceRedeemPass({
+  const result = await crmcom.passes.comCrmPassSelfServiceResourceRedeemPass({
     code: "CRM59934377COM",
     contactId: "00dc6a3d-2c90-4953-b1db-92c81d004406",
     walletId: "228568ea-ab6f-471e-bae7-7adb7e913ff6",
@@ -369,17 +369,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { passesComCrmPassSelfServiceResourceRedeemPass } from "crm/funcs/passes-com-crm-pass-self-service-resource-redeem-pass.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { passesComCrmPassSelfServiceResourceRedeemPass } from "crmcom/funcs/passes-com-crm-pass-self-service-resource-redeem-pass.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await passesComCrmPassSelfServiceResourceRedeemPass(crm, {
+  const res = await passesComCrmPassSelfServiceResourceRedeemPass(crmcom, {
     code: "CRM59934377COM",
     contactId: "00dc6a3d-2c90-4953-b1db-92c81d004406",
     walletId: "228568ea-ab6f-471e-bae7-7adb7e913ff6",
@@ -434,14 +434,14 @@ View promo pass - An HTML based landing page is returned and rendered
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PassSelfServiceResource_viewPromoPass" method="get" path="/self-service/v2/passes/view_promo_pass" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.passes.comCrmPassSelfServiceResourceViewPromoPass();
+  await crmcom.passes.comCrmPassSelfServiceResourceViewPromoPass();
 
 
 }
@@ -454,17 +454,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { passesComCrmPassSelfServiceResourceViewPromoPass } from "crm/funcs/passes-com-crm-pass-self-service-resource-view-promo-pass.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { passesComCrmPassSelfServiceResourceViewPromoPass } from "crmcom/funcs/passes-com-crm-pass-self-service-resource-view-promo-pass.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await passesComCrmPassSelfServiceResourceViewPromoPass(crm);
+  const res = await passesComCrmPassSelfServiceResourceViewPromoPass(crmcom);
   if (res.ok) {
     const { value: result } = res;
     

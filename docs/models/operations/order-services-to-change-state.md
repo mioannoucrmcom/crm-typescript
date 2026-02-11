@@ -5,7 +5,7 @@ Service's State
 ## Example Usage
 
 ```typescript
-import { OrderServicesToChangeState } from "crm/models/operations";
+import { OrderServicesToChangeState } from "crmcom/models/operations";
 
 let value: OrderServicesToChangeState = "EFFECTIVE";
 ```

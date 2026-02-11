@@ -5,7 +5,7 @@ The supported glossary language code
 ## Example Usage
 
 ```typescript
-import { LanguageEnum } from "crm/models/operations";
+import { LanguageEnum } from "crmcom/models/operations";
 
 let value: LanguageEnum = "ENG";
 ```

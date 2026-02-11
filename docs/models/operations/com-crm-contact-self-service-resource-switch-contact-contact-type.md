@@ -5,7 +5,7 @@ Contact type - can be PERSON or COMPANY
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceSwitchContactContactType } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceSwitchContactContactType } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceSwitchContactContactType = "COMPANY";
 ```

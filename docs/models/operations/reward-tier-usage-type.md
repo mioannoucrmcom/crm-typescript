@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { RewardTierUsageType } from "crm/models/operations";
+import { RewardTierUsageType } from "crmcom/models/operations";
 
 let value: RewardTierUsageType = "BACKGROUND";
 ```

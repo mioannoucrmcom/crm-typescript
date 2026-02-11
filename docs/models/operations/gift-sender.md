@@ -5,7 +5,7 @@ Gift sender information
 ## Example Usage
 
 ```typescript
-import { GiftSender } from "crm/models/operations";
+import { GiftSender } from "crmcom/models/operations";
 
 let value: GiftSender = {
   name: "Kelly Smith",

@@ -5,7 +5,7 @@ Subscription State
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsState } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsState } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsState =
   "ACTIVE";

@@ -5,7 +5,7 @@ The product that should be included in the basket
 ## Example Usage
 
 ```typescript
-import { ConditionProduct } from "crm/models/operations";
+import { ConditionProduct } from "crmcom/models/operations";
 
 let value: ConditionProduct = {
   itemType: "SKU",

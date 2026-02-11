@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmCustomFieldSelfServiceResourceListCustomFieldsRequest } from "crm/models/operations";
+import { ComCrmCustomFieldSelfServiceResourceListCustomFieldsRequest } from "crmcom/models/operations";
 
 let value: ComCrmCustomFieldSelfServiceResourceListCustomFieldsRequest = {
   entity: "<value>",

@@ -5,7 +5,7 @@ The order item state
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceListOrdersLifeCycleState } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceListOrdersLifeCycleState } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceListOrdersLifeCycleState =
   "PENDING_DELIVERY";

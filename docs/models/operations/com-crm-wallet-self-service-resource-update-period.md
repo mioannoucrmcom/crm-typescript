@@ -5,7 +5,7 @@ Frequecy period
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceUpdatePeriod } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceUpdatePeriod } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceUpdatePeriod = "MONTHLY";
 ```

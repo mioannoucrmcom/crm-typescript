@@ -5,7 +5,7 @@ Invite a contact using a phone (email or phone should be specified). Applicable 
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddContactRelationshipPhone } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddContactRelationshipPhone } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddContactRelationshipPhone = {
   countryCode: "CYP",

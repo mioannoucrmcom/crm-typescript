@@ -5,7 +5,7 @@ The day of the week that the organisation is open
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceListOperationDetailsDayOfWeek } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceListOperationDetailsDayOfWeek } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceListOperationDetailsDayOfWeek =
   "MONDAY";

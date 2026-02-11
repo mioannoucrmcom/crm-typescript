@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceAddServiceSecurity } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceAddServiceSecurity } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceAddServiceSecurity = {
   secretAPIKey: "<value>",

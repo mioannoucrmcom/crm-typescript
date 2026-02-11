@@ -5,7 +5,7 @@ The gift pass information to check (applicable only if type is “GIFT_PASS”)
 ## Example Usage
 
 ```typescript
-import { GiftPass } from "crm/models/operations";
+import { GiftPass } from "crmcom/models/operations";
 
 let value: GiftPass = {
   email: "jonf.doe@gmail.com",

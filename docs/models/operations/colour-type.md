@@ -5,7 +5,7 @@ Defines the component on which the color will be applied
 ## Example Usage
 
 ```typescript
-import { ColourType } from "crm/models/operations";
+import { ColourType } from "crmcom/models/operations";
 
 let value: ColourType = "PRIMARY_COLOUR";
 ```

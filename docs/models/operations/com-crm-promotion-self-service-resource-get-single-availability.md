@@ -5,7 +5,7 @@ Determines when the Promotion is available and will be applied. A Promotion is a
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceGetSingleAvailability } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceGetSingleAvailability } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceGetSingleAvailability = {
   fromDate: 1648067185,

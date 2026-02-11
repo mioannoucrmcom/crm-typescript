@@ -17,12 +17,12 @@ Retrieve a list of service commands as implemented in a provisioning adapter. Th
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceCommandsSelfServiceResource_getServiceCommands" method="get" path="/self-service/v2/provisioning/service_commands" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.provisioningProviders.comCrmServiceCommandsSelfServiceResourceGetServiceCommands({
+  const result = await crmcom.provisioningProviders.comCrmServiceCommandsSelfServiceResourceGetServiceCommands({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   });
 
@@ -37,15 +37,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { provisioningProvidersComCrmServiceCommandsSelfServiceResourceGetServiceCommands } from "crm/funcs/provisioning-providers-com-crm-service-commands-self-service-resource-get-service-commands.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { provisioningProvidersComCrmServiceCommandsSelfServiceResourceGetServiceCommands } from "crmcom/funcs/provisioning-providers-com-crm-service-commands-self-service-resource-get-service-commands.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await provisioningProvidersComCrmServiceCommandsSelfServiceResourceGetServiceCommands(crm, {
+  const res = await provisioningProvidersComCrmServiceCommandsSelfServiceResourceGetServiceCommands(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   });
   if (res.ok) {
@@ -87,12 +87,12 @@ Send an command for a service over to the provisioning adapter. The supported co
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ServiceCommandsSelfServiceResource_sendServiceCommands" method="post" path="/self-service/v2/provisioning/service_commands" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  const result = await crm.provisioningProviders.comCrmServiceCommandsSelfServiceResourceSendServiceCommands({
+  const result = await crmcom.provisioningProviders.comCrmServiceCommandsSelfServiceResourceSendServiceCommands({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     integrationId: "",
@@ -122,15 +122,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { provisioningProvidersComCrmServiceCommandsSelfServiceResourceSendServiceCommands } from "crm/funcs/provisioning-providers-com-crm-service-commands-self-service-resource-send-service-commands.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { provisioningProvidersComCrmServiceCommandsSelfServiceResourceSendServiceCommands } from "crmcom/funcs/provisioning-providers-com-crm-service-commands-self-service-resource-send-service-commands.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await provisioningProvidersComCrmServiceCommandsSelfServiceResourceSendServiceCommands(crm, {
+  const res = await provisioningProvidersComCrmServiceCommandsSelfServiceResourceSendServiceCommands(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     integrationId: "",

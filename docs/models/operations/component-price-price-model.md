@@ -5,7 +5,7 @@ Price model
 ## Example Usage
 
 ```typescript
-import { ComponentPricePriceModel } from "crm/models/operations";
+import { ComponentPricePriceModel } from "crmcom/models/operations";
 
 let value: ComponentPricePriceModel = "FLAT";
 ```

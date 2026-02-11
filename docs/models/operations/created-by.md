@@ -5,7 +5,7 @@ Details of the user who created the note
 ## Example Usage
 
 ```typescript
-import { CreatedBy } from "crm/models/operations";
+import { CreatedBy } from "crmcom/models/operations";
 
 let value: CreatedBy = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

@@ -5,7 +5,7 @@ Applied discounton the ordered item
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderItemDiscount } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderItemDiscount } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderItemDiscount = {};
 ```

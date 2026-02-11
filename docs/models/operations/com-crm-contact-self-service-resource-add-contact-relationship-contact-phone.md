@@ -5,7 +5,7 @@ The contact phone
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddContactRelationshipContactPhone } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddContactRelationshipContactPhone } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddContactRelationshipContactPhone =
   {

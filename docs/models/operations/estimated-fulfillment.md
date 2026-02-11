@@ -5,7 +5,7 @@ When the order is estimated to be fulfilled
 ## Example Usage
 
 ```typescript
-import { EstimatedFulfillment } from "crm/models/operations";
+import { EstimatedFulfillment } from "crmcom/models/operations";
 
 let value: EstimatedFulfillment = {
   date: 1592809457,

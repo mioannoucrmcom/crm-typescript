@@ -5,7 +5,7 @@ The contact assigned as guest contact (used for continuing as guest in app)
 ## Example Usage
 
 ```typescript
-import { GuestContact } from "crm/models/operations";
+import { GuestContact } from "crmcom/models/operations";
 
 let value: GuestContact = {
   isSupported: true,

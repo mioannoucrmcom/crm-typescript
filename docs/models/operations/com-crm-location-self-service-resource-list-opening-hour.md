@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmLocationSelfServiceResourceListOpeningHour } from "crm/models/operations";
+import { ComCrmLocationSelfServiceResourceListOpeningHour } from "crmcom/models/operations";
 
 let value: ComCrmLocationSelfServiceResourceListOpeningHour = {
   open: "12:45",

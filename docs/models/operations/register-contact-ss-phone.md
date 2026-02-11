@@ -5,7 +5,7 @@ The contact’s phone (required for phone/password or phone/OTP verification). P
 ## Example Usage
 
 ```typescript
-import { RegisterContactSSPhone } from "crm/models/operations";
+import { RegisterContactSSPhone } from "crmcom/models/operations";
 
 let value: RegisterContactSSPhone = {
   number: "99123456",

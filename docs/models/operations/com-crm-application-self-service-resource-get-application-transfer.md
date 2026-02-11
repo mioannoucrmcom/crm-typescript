@@ -5,7 +5,7 @@ Defines the supported transfer features
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationTransfer } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationTransfer } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationTransfer = {
   commercePools: [

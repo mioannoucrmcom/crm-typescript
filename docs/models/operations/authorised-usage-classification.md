@@ -5,7 +5,7 @@ Product type classification
 ## Example Usage
 
 ```typescript
-import { AuthorisedUsageClassification } from "crm/models/operations";
+import { AuthorisedUsageClassification } from "crmcom/models/operations";
 
 let value: AuthorisedUsageClassification = "TRACEABLE_PHYSICAL_GOOD";
 ```

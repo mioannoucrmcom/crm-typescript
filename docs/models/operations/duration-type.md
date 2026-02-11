@@ -5,7 +5,7 @@ Indicates whether the offering will be applied once, for a period of time or for
 ## Example Usage
 
 ```typescript
-import { DurationType } from "crm/models/operations";
+import { DurationType } from "crmcom/models/operations";
 
 let value: DurationType = "PERIOD";
 ```

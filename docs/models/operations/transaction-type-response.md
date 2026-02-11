@@ -5,7 +5,7 @@ Types of financial transactions which can be performed against a contact's accou
 ## Example Usage
 
 ```typescript
-import { TransactionTypeResponse } from "crm/models/operations";
+import { TransactionTypeResponse } from "crmcom/models/operations";
 
 let value: TransactionTypeResponse = "INVOICE";
 ```

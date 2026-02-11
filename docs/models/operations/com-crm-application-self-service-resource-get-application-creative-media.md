@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationCreativeMedia } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationCreativeMedia } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationCreativeMedia = {
   width: 200,

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Basket } from "crm/models/operations";
+import { Basket } from "crmcom/models/operations";
 
 let value: Basket = {
   products: {

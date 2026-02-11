@@ -5,7 +5,7 @@ The contact phone number
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetContactRelationshipPhone } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetContactRelationshipPhone } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetContactRelationshipPhone = {
   countryCode: "CYP",

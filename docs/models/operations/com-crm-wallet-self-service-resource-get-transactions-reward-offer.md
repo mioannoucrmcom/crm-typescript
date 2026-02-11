@@ -5,7 +5,7 @@ Details of reward offer that triggered the award/spend (spend is related to an o
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetTransactionsRewardOffer } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetTransactionsRewardOffer } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsRewardOffer = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

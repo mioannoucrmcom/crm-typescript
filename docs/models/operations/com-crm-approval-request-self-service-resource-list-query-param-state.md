@@ -5,7 +5,7 @@ Filter based on approval request state
 ## Example Usage
 
 ```typescript
-import { ComCrmApprovalRequestSelfServiceResourceListQueryParamState } from "crm/models/operations";
+import { ComCrmApprovalRequestSelfServiceResourceListQueryParamState } from "crmcom/models/operations";
 
 let value: ComCrmApprovalRequestSelfServiceResourceListQueryParamState =
   "APPROVED";

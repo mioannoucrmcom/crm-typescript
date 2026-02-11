@@ -5,7 +5,7 @@ Defines the supported crm features
 ## Example Usage
 
 ```typescript
-import { Crm } from "crm/models/operations";
+import { Crm } from "crmcom/models/operations";
 
 let value: Crm = {
   isSupported: true,

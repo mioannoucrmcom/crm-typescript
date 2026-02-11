@@ -5,7 +5,7 @@ The destination of the transfer. Can be either an account or a wallet
 ## Example Usage
 
 ```typescript
-import { ComCrmTransferSelfServiceResourceCreateDestination } from "crm/models/operations";
+import { ComCrmTransferSelfServiceResourceCreateDestination } from "crmcom/models/operations";
 
 let value: ComCrmTransferSelfServiceResourceCreateDestination = {
   accountId: "CAD1E31269B76D7A65ACCE45B2E68DFD",

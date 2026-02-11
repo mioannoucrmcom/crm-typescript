@@ -5,7 +5,7 @@ Determines on which product the discount will be applied.
 ## Example Usage
 
 ```typescript
-import { OfferingItemType } from "crm/models/operations";
+import { OfferingItemType } from "crmcom/models/operations";
 
 let value: OfferingItemType = "TYPE";
 ```

@@ -5,7 +5,7 @@ Positioning of the logo image
 ## Example Usage
 
 ```typescript
-import { LogoImgPosition } from "crm/models/operations";
+import { LogoImgPosition } from "crmcom/models/operations";
 
 let value: LogoImgPosition = "RIGHT";
 ```

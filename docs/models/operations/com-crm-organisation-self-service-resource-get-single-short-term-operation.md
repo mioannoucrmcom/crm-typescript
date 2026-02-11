@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceGetSingleShortTermOperation } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceGetSingleShortTermOperation } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceGetSingleShortTermOperation = {
   isClosed: false,

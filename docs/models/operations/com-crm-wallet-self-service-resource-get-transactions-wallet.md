@@ -5,7 +5,7 @@ Details of the contact's wallet involved in the transfer transaction. If it's a 
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetTransactionsWallet } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetTransactionsWallet } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsWallet = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

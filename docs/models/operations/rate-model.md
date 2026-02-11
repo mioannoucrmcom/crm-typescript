@@ -5,7 +5,7 @@ the rate model of price
 ## Example Usage
 
 ```typescript
-import { RateModel } from "crm/models/operations";
+import { RateModel } from "crmcom/models/operations";
 
 let value: RateModel = "FLAT";
 ```

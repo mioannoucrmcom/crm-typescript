@@ -5,7 +5,7 @@ The account details.Required and applicable if the payment method is set to A2A
 ## Example Usage
 
 ```typescript
-import { A2a } from "crm/models/operations";
+import { A2a } from "crmcom/models/operations";
 
 let value: A2a = {
   schemeName: "BECSElectronicCredit",

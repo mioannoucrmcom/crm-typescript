@@ -5,7 +5,7 @@ Defines the gateway that issued such token
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddPaymentMethodAccountDebitGateway } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddPaymentMethodAccountDebitGateway } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddPaymentMethodAccountDebitGateway =
   "JCC";

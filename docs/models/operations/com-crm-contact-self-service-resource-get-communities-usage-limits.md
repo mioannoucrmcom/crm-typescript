@@ -5,7 +5,7 @@ Actual allowed and remaining usage (based on measurement units)
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetCommunitiesUsageLimits } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetCommunitiesUsageLimits } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetCommunitiesUsageLimits = {};
 ```

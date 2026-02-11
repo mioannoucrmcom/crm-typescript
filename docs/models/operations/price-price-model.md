@@ -5,7 +5,7 @@ Price model of the price
 ## Example Usage
 
 ```typescript
-import { PricePriceModel } from "crm/models/operations";
+import { PricePriceModel } from "crmcom/models/operations";
 
 let value: PricePriceModel = "TIERED";
 ```

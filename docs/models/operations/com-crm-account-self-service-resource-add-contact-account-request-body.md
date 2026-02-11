@@ -5,7 +5,7 @@ Create Account Request.
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceAddContactAccountRequestBody } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceAddContactAccountRequestBody } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceAddContactAccountRequestBody = {
   name: "John Doe AR001",

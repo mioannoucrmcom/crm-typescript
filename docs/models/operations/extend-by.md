@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ExtendBy } from "crm/models/operations";
+import { ExtendBy } from "crmcom/models/operations";
 
 let value: ExtendBy = {
   uot: "MINUTE",

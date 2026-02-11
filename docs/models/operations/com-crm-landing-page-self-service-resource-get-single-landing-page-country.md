@@ -5,7 +5,7 @@ Name of country
 ## Example Usage
 
 ```typescript
-import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountry } from "crm/models/operations";
+import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountry } from "crmcom/models/operations";
 
 let value: ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountry =
   "CYP";

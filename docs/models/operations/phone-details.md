@@ -5,7 +5,7 @@ The phone used when registering to the walled-based payment method
 ## Example Usage
 
 ```typescript
-import { PhoneDetails } from "crm/models/operations";
+import { PhoneDetails } from "crmcom/models/operations";
 
 let value: PhoneDetails = {
   countryCode: "CYP",

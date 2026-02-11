@@ -5,7 +5,7 @@ Applicable and required when upgrading or downgrading a service
 ## Example Usage
 
 ```typescript
-import { ChangeToService } from "crm/models/operations";
+import { ChangeToService } from "crmcom/models/operations";
 
 let value: ChangeToService = {
   productId: "4dc0809f-ed91-4b68-b912-5bd6064d901e",

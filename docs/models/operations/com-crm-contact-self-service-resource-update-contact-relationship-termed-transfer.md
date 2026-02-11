@@ -5,7 +5,7 @@ A termed transfer is a scheduled recurring transfer of funds from the community 
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceUpdateContactRelationshipTermedTransfer } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceUpdateContactRelationshipTermedTransfer } from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceUpdateContactRelationshipTermedTransfer = {

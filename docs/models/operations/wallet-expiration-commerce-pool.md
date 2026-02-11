@@ -5,7 +5,7 @@ Details of Commerce Pool
 ## Example Usage
 
 ```typescript
-import { WalletExpirationCommercePool } from "crm/models/operations";
+import { WalletExpirationCommercePool } from "crmcom/models/operations";
 
 let value: WalletExpirationCommercePool = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

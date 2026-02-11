@@ -5,7 +5,7 @@ Details on how customers can auth by the app
 ## Example Usage
 
 ```typescript
-import { Authentication } from "crm/models/operations";
+import { Authentication } from "crmcom/models/operations";
 
 let value: Authentication = {
   emailPassword: true,

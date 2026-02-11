@@ -5,7 +5,7 @@ Applicable only when the line item includes a termed service and denotes the inv
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceGetAccountJournalPeriod } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceGetAccountJournalPeriod } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceGetAccountJournalPeriod = {
   from: 1344242,

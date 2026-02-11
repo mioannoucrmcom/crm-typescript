@@ -5,7 +5,7 @@ The wallet journal type
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetTransactionsContentType } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetTransactionsContentType } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsContentType = "CREDIT";
 ```

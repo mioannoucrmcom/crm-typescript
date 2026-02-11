@@ -19,14 +19,14 @@ Get a specific contact’s communication
 
 <!-- UsageSnippet language="typescript" operationID="crm.com.CommunicationSelfServiceResource_getSingle" method="get" path="/self-service/v2/communications/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communications.crmComCommunicationSelfServiceResourceGetSingle({
+  const result = await crmcom.communications.crmComCommunicationSelfServiceResourceGetSingle({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
   });
 
@@ -41,17 +41,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communicationsCrmComCommunicationSelfServiceResourceGetSingle } from "crm/funcs/communications-crm-com-communication-self-service-resource-get-single.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communicationsCrmComCommunicationSelfServiceResourceGetSingle } from "crmcom/funcs/communications-crm-com-communication-self-service-resource-get-single.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communicationsCrmComCommunicationSelfServiceResourceGetSingle(crm, {
+  const res = await communicationsCrmComCommunicationSelfServiceResourceGetSingle(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
   });
   if (res.ok) {
@@ -92,14 +92,14 @@ Mark an existing communication as viewed and/or archived
 
 <!-- UsageSnippet language="typescript" operationID="crm.com.CommunicationSelfServiceResource_communicationActions" method="put" path="/self-service/v2/communications/{id}/actions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communications.crmComCommunicationSelfServiceResourceCommunicationActions({
+  const result = await crmcom.communications.crmComCommunicationSelfServiceResourceCommunicationActions({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     body: {
       viewed: true,
@@ -118,17 +118,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communicationsCrmComCommunicationSelfServiceResourceCommunicationActions } from "crm/funcs/communications-crm-com-communication-self-service-resource-communication-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communicationsCrmComCommunicationSelfServiceResourceCommunicationActions } from "crmcom/funcs/communications-crm-com-communication-self-service-resource-communication-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communicationsCrmComCommunicationSelfServiceResourceCommunicationActions(crm, {
+  const res = await communicationsCrmComCommunicationSelfServiceResourceCommunicationActions(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     body: {
       viewed: true,
@@ -173,14 +173,14 @@ Get a list of a contact’s communications
 
 <!-- UsageSnippet language="typescript" operationID="crm.com.CommunicationSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/communications" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communications.crmComCommunicationSelfServiceResourceList({
+  const result = await crmcom.communications.crmComCommunicationSelfServiceResourceList({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     archived: true,
     page: 20,
@@ -200,17 +200,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communicationsCrmComCommunicationSelfServiceResourceList } from "crm/funcs/communications-crm-com-communication-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communicationsCrmComCommunicationSelfServiceResourceList } from "crmcom/funcs/communications-crm-com-communication-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communicationsCrmComCommunicationSelfServiceResourceList(crm, {
+  const res = await communicationsCrmComCommunicationSelfServiceResourceList(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     archived: true,
     page: 20,
@@ -232,14 +232,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="crm.com.CommunicationSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/communications" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communications.crmComCommunicationSelfServiceResourceList({
+  const result = await crmcom.communications.crmComCommunicationSelfServiceResourceList({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     archived: true,
     page: 20,
@@ -258,17 +258,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communicationsCrmComCommunicationSelfServiceResourceList } from "crm/funcs/communications-crm-com-communication-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communicationsCrmComCommunicationSelfServiceResourceList } from "crmcom/funcs/communications-crm-com-communication-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communicationsCrmComCommunicationSelfServiceResourceList(crm, {
+  const res = await communicationsCrmComCommunicationSelfServiceResourceList(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     archived: true,
     page: 20,
@@ -289,14 +289,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="crm.com.CommunicationSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/communications" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communications.crmComCommunicationSelfServiceResourceList({
+  const result = await crmcom.communications.crmComCommunicationSelfServiceResourceList({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     archived: true,
     page: 20,
@@ -316,17 +316,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communicationsCrmComCommunicationSelfServiceResourceList } from "crm/funcs/communications-crm-com-communication-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communicationsCrmComCommunicationSelfServiceResourceList } from "crmcom/funcs/communications-crm-com-communication-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communicationsCrmComCommunicationSelfServiceResourceList(crm, {
+  const res = await communicationsCrmComCommunicationSelfServiceResourceList(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     archived: true,
     page: 20,
@@ -348,14 +348,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="crm.com.CommunicationSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/communications" example="POSTED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communications.crmComCommunicationSelfServiceResourceList({
+  const result = await crmcom.communications.crmComCommunicationSelfServiceResourceList({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     archived: true,
     page: 20,
@@ -375,17 +375,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communicationsCrmComCommunicationSelfServiceResourceList } from "crm/funcs/communications-crm-com-communication-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communicationsCrmComCommunicationSelfServiceResourceList } from "crmcom/funcs/communications-crm-com-communication-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communicationsCrmComCommunicationSelfServiceResourceList(crm, {
+  const res = await communicationsCrmComCommunicationSelfServiceResourceList(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     archived: true,
     page: 20,
@@ -407,14 +407,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="crm.com.CommunicationSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/communications" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.communications.crmComCommunicationSelfServiceResourceList({
+  const result = await crmcom.communications.crmComCommunicationSelfServiceResourceList({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     archived: true,
     page: 20,
@@ -434,17 +434,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communicationsCrmComCommunicationSelfServiceResourceList } from "crm/funcs/communications-crm-com-communication-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communicationsCrmComCommunicationSelfServiceResourceList } from "crmcom/funcs/communications-crm-com-communication-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communicationsCrmComCommunicationSelfServiceResourceList(crm, {
+  const res = await communicationsCrmComCommunicationSelfServiceResourceList(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     archived: true,
     page: 20,
@@ -498,14 +498,14 @@ Request (and retrieve) a printout for an invoice or order
 
 <!-- UsageSnippet language="typescript" operationID="crm.com.PrintoutSelfServiceResource_output" method="post" path="/self-service/v2/printout" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.communications.crmComPrintoutSelfServiceResourceOutput({
+  await crmcom.communications.crmComPrintoutSelfServiceResourceOutput({
     entity: {
       type: "ORDERS",
       id: "1d014e8e-4e13-20e9-3727-071f0cef5cb6",
@@ -524,17 +524,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { communicationsCrmComPrintoutSelfServiceResourceOutput } from "crm/funcs/communications-crm-com-printout-self-service-resource-output.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { communicationsCrmComPrintoutSelfServiceResourceOutput } from "crmcom/funcs/communications-crm-com-printout-self-service-resource-output.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await communicationsCrmComPrintoutSelfServiceResourceOutput(crm, {
+  const res = await communicationsCrmComPrintoutSelfServiceResourceOutput(crmcom, {
     entity: {
       type: "ORDERS",
       id: "1d014e8e-4e13-20e9-3727-071f0cef5cb6",

@@ -16,14 +16,14 @@ Retrieves Contact’s analytics
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceAnalyticsResource_getAnalytics" method="get" path="/self-service/v2/contacts/{id}/analytics" example="Awards Per Month" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
+  const result = await crmcom.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "<value>",
     metrics: "AWARDS_PER_MONTH",
@@ -40,17 +40,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crm/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crmcom/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crm, {
+  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crmcom, {
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "<value>",
     metrics: "AWARDS_PER_MONTH",
@@ -69,14 +69,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceAnalyticsResource_getAnalytics" method="get" path="/self-service/v2/contacts/{id}/analytics" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
+  const result = await crmcom.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "<value>",
     metrics: "<value>",
@@ -93,17 +93,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crm/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crmcom/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crm, {
+  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crmcom, {
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "<value>",
     metrics: "<value>",
@@ -122,14 +122,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceAnalyticsResource_getAnalytics" method="get" path="/self-service/v2/contacts/{id}/analytics" example="Last month" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
+  const result = await crmcom.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "LAST_MONTH",
     metrics: "<value>",
@@ -146,17 +146,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crm/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crmcom/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crm, {
+  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crmcom, {
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "LAST_MONTH",
     metrics: "<value>",
@@ -175,14 +175,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceAnalyticsResource_getAnalytics" method="get" path="/self-service/v2/contacts/{id}/analytics" example="Last quarter" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
+  const result = await crmcom.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "LAST_QUARTER",
     metrics: "<value>",
@@ -199,17 +199,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crm/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crmcom/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crm, {
+  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crmcom, {
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "LAST_QUARTER",
     metrics: "<value>",
@@ -228,14 +228,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceAnalyticsResource_getAnalytics" method="get" path="/self-service/v2/contacts/{id}/analytics" example="Last six months" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
+  const result = await crmcom.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "LAST_SIX_MONTHS",
     metrics: "<value>",
@@ -252,17 +252,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crm/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crmcom/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crm, {
+  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crmcom, {
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "LAST_SIX_MONTHS",
     metrics: "<value>",
@@ -281,14 +281,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceAnalyticsResource_getAnalytics" method="get" path="/self-service/v2/contacts/{id}/analytics" example="Order Totals" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
+  const result = await crmcom.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "<value>",
     metrics: "ORDER_TOTALS",
@@ -305,17 +305,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crm/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crmcom/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crm, {
+  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crmcom, {
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "<value>",
     metrics: "ORDER_TOTALS",
@@ -334,14 +334,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceAnalyticsResource_getAnalytics" method="get" path="/self-service/v2/contacts/{id}/analytics" example="Redeems Per Month" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
+  const result = await crmcom.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "<value>",
     metrics: "REDEEMS_PER_MONTH",
@@ -358,17 +358,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crm/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crmcom/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crm, {
+  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crmcom, {
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "<value>",
     metrics: "REDEEMS_PER_MONTH",
@@ -387,14 +387,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceAnalyticsResource_getAnalytics" method="get" path="/self-service/v2/contacts/{id}/analytics" example="This month" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
+  const result = await crmcom.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "THIS_MONTH",
     metrics: "<value>",
@@ -411,17 +411,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crm/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crmcom/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crm, {
+  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crmcom, {
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "THIS_MONTH",
     metrics: "<value>",
@@ -440,14 +440,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ContactSelfServiceAnalyticsResource_getAnalytics" method="get" path="/self-service/v2/contacts/{id}/analytics" example="Wallet Totals" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
+  const result = await crmcom.contactAnalytics.comCrmContactSelfServiceAnalyticsResourceGetAnalytics({
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "<value>",
     metrics: "WALLET_TOTALS",
@@ -464,17 +464,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crm/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics } from "crmcom/funcs/contact-analytics-com-crm-contact-self-service-analytics-resource-get-analytics.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crm, {
+  const res = await contactAnalyticsComCrmContactSelfServiceAnalyticsResourceGetAnalytics(crmcom, {
     id: "02b0fb6c-cdb1-4a7d-a938-53ea2c01e253",
     frequency: "<value>",
     metrics: "WALLET_TOTALS",

@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductComponentsUsageType } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductComponentsUsageType } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductComponentsUsageType =
   "LANDING_PAGE_LOGO_IMAGE";

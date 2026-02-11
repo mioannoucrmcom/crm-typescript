@@ -5,7 +5,7 @@ Contact’s passport information
 ## Example Usage
 
 ```typescript
-import { UpdateContactSSPassport } from "crm/models/operations";
+import { UpdateContactSSPassport } from "crmcom/models/operations";
 
 let value: UpdateContactSSPassport = {
   number: "AK123456",

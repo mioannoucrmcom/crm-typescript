@@ -21,14 +21,14 @@ Retrieve details and financial information for an account
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_getSingle" method="get" path="/self-service/v2/accounts/{id}" example="Get Account response" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceGetSingle({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceGetSingle({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
   });
 
@@ -43,17 +43,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceGetSingle } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-get-single.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceGetSingle } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-get-single.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceGetSingle(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceGetSingle(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
   });
   if (res.ok) {
@@ -94,14 +94,14 @@ Update an existing account of a contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_updateAccount" method="put" path="/self-service/v2/accounts/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceUpdateAccount({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceUpdateAccount({
     id: "AF1D8C778F6540E29EECEABCD8711C3A",
     body: {
       classificationId: "8F95E1B6FEC1487E88A9AAF3C214A870",
@@ -121,17 +121,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceUpdateAccount } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-update-account.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceUpdateAccount } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-update-account.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceUpdateAccount(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceUpdateAccount(crmcom, {
     id: "AF1D8C778F6540E29EECEABCD8711C3A",
     body: {
       classificationId: "8F95E1B6FEC1487E88A9AAF3C214A870",
@@ -177,14 +177,14 @@ Retrieve a list of account journals. Only journals with Posted transactions are 
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_listAccountJournals" method="get" path="/self-service/v2/accounts/{id}/journals" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -203,17 +203,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -234,14 +234,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_listAccountJournals" method="get" path="/self-service/v2/accounts/{id}/journals" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -260,17 +260,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -291,14 +291,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_listAccountJournals" method="get" path="/self-service/v2/accounts/{id}/journals" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -318,17 +318,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -350,14 +350,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_listAccountJournals" method="get" path="/self-service/v2/accounts/{id}/journals" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -377,17 +377,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -409,14 +409,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_listAccountJournals" method="get" path="/self-service/v2/accounts/{id}/journals" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -436,17 +436,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -468,14 +468,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_listAccountJournals" method="get" path="/self-service/v2/accounts/{id}/journals" example="posted_on[gt]" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -494,17 +494,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -525,14 +525,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_listAccountJournals" method="get" path="/self-service/v2/accounts/{id}/journals" example="posted_on[gte]" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -551,17 +551,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -582,14 +582,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_listAccountJournals" method="get" path="/self-service/v2/accounts/{id}/journals" example="posted_on[lt]" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -608,17 +608,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -639,14 +639,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_listAccountJournals" method="get" path="/self-service/v2/accounts/{id}/journals" example="posted_on[lte]" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceListAccountJournals({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -665,17 +665,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceListAccountJournals } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list-account-journals.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceListAccountJournals(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     transactionType: "INVOICE",
     type: "CREDIT",
@@ -720,14 +720,14 @@ Get a list of Contact Accounts. Normally a contact will have a single account bu
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/accounts" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceList({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceList({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     currencyCode: "EUR",
     includeTotal: true,
@@ -745,17 +745,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceList } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceList } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceList(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceList(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     currencyCode: "EUR",
     includeTotal: true,
@@ -775,14 +775,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/accounts" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceList({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceList({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     currencyCode: "EUR",
     includeTotal: true,
@@ -800,17 +800,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceList } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceList } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceList(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceList(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     currencyCode: "EUR",
     includeTotal: true,
@@ -830,14 +830,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/accounts" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceList({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceList({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     currencyCode: "EUR",
     includeTotal: true,
@@ -856,17 +856,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceList } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceList } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceList(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceList(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     currencyCode: "EUR",
     includeTotal: true,
@@ -887,14 +887,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/accounts" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceList({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceList({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     currencyCode: "EUR",
     includeTotal: true,
@@ -913,17 +913,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceList } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceList } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceList(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceList(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     currencyCode: "EUR",
     includeTotal: true,
@@ -944,14 +944,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_list" method="get" path="/self-service/v2/contacts/{id}/accounts" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceList({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceList({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     currencyCode: "EUR",
     includeTotal: true,
@@ -970,17 +970,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceList } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceList } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceList(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceList(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     currencyCode: "EUR",
     includeTotal: true,
@@ -1025,14 +1025,14 @@ Add a new customer account to an existing contact
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_addContactAccount" method="post" path="/self-service/v2/contacts/{id}/accounts" example="Add Account for Contact" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceAddContactAccount({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceAddContactAccount({
     id: "<id>",
     body: {
       classificationId: "dfa582fa-9c68-4f6c-ae78-52a51098155e",
@@ -1053,17 +1053,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceAddContactAccount } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-add-contact-account.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceAddContactAccount } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-add-contact-account.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceAddContactAccount(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceAddContactAccount(crmcom, {
     id: "<id>",
     body: {
       classificationId: "dfa582fa-9c68-4f6c-ae78-52a51098155e",
@@ -1110,14 +1110,14 @@ Retrieve information and details lines for a single account journal.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.AccountSelfServiceResource_getAccountJournal" method="get" path="/self-service/v2/journals/{id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAccounts.comCrmAccountSelfServiceResourceGetAccountJournal({
+  const result = await crmcom.contactAccounts.comCrmAccountSelfServiceResourceGetAccountJournal({
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     includeLines: false,
   });
@@ -1133,17 +1133,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAccountsComCrmAccountSelfServiceResourceGetAccountJournal } from "crm/funcs/contact-accounts-com-crm-account-self-service-resource-get-account-journal.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAccountsComCrmAccountSelfServiceResourceGetAccountJournal } from "crmcom/funcs/contact-accounts-com-crm-account-self-service-resource-get-account-journal.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAccountsComCrmAccountSelfServiceResourceGetAccountJournal(crm, {
+  const res = await contactAccountsComCrmAccountSelfServiceResourceGetAccountJournal(crmcom, {
     id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
     includeLines: false,
   });

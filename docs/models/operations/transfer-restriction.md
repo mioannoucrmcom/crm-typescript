@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { TransferRestriction } from "crm/models/operations";
+import { TransferRestriction } from "crmcom/models/operations";
 
 let value: TransferRestriction = "OPEN";
 ```

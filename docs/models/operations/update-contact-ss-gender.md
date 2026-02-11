@@ -5,7 +5,7 @@ Contact’s gender information
 ## Example Usage
 
 ```typescript
-import { UpdateContactSSGender } from "crm/models/operations";
+import { UpdateContactSSGender } from "crmcom/models/operations";
 
 let value: UpdateContactSSGender = "FEMALE";
 ```

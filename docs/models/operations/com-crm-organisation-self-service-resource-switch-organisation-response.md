@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceSwitchOrganisationResponse } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceSwitchOrganisationResponse } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceSwitchOrganisationResponse = {
   expirationDate: new Date("1572530655"),

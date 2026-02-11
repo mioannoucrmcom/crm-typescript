@@ -5,7 +5,7 @@ The bundle product
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceGetOrderBundledItemProduct } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceGetOrderBundledItemProduct } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceGetOrderBundledItemProduct = {};
 ```

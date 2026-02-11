@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Profile } from "crm/models/operations";
+import { Profile } from "crmcom/models/operations";
 
 let value: Profile = {
   isSupported: true,

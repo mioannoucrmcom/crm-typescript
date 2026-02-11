@@ -5,7 +5,7 @@ If not specified, then return all devices regardless of service being enabled on
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListServiceDevicesQueryParamState } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListServiceDevicesQueryParamState } from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListServiceDevicesQueryParamState =

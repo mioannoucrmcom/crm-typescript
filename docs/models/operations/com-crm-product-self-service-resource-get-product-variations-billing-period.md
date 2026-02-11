@@ -5,7 +5,7 @@ The service's billing cycle
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriod } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriod } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriod = {
   duration: 2,

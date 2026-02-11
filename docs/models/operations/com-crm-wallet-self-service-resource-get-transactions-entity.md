@@ -5,7 +5,7 @@ The type of the entity that blocked the item
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetTransactionsEntity } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetTransactionsEntity } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsEntity = "PURCHASE";
 ```

@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { GetContactPreferredOrganisationSSUsageType } from "crm/models/operations";
+import { GetContactPreferredOrganisationSSUsageType } from "crmcom/models/operations";
 
 let value: GetContactPreferredOrganisationSSUsageType = "PARTNER_LOGO";
 ```

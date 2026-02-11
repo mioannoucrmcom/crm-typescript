@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { MilestonePlanEstimate } from "crm/models/operations";
+import { MilestonePlanEstimate } from "crmcom/models/operations";
 
 let value: MilestonePlanEstimate = {
   stage: {

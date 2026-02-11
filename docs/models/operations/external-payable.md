@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ExternalPayable } from "crm/models/operations";
+import { ExternalPayable } from "crmcom/models/operations";
 
 let value: ExternalPayable = {};
 ```

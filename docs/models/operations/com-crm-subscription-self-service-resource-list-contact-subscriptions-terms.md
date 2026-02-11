@@ -5,7 +5,7 @@ The subscription's billing terms
 ## Example Usage
 
 ```typescript
-import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsTerms } from "crm/models/operations";
+import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsTerms } from "crmcom/models/operations";
 
 let value: ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsTerms =
   {

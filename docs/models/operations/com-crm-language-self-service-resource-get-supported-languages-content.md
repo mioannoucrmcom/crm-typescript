@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmLanguageSelfServiceResourceGetSupportedLanguagesContent } from "crm/models/operations";
+import { ComCrmLanguageSelfServiceResourceGetSupportedLanguagesContent } from "crmcom/models/operations";
 
 let value: ComCrmLanguageSelfServiceResourceGetSupportedLanguagesContent = {
   languageCode: "ENG",

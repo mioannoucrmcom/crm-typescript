@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { GetSingleContactSSDemographics } from "crm/models/operations";
+import { GetSingleContactSSDemographics } from "crmcom/models/operations";
 
 let value: GetSingleContactSSDemographics = {
   gender: "MALE",

@@ -17,14 +17,14 @@ Returns a list of Promotions.
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PromotionSelfServiceResource_list" method="get" path="/self-service/v2/promotions" example="CREATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.promotions.comCrmPromotionSelfServiceResourceList({
+  const result = await crmcom.promotions.comCrmPromotionSelfServiceResourceList({
     organisations: "49c9554f-f1af-4d41-becf-7a2094cffd29,7223c237-f857-4140-a150-13ceef960f6e",
     searchValue: "Happy Hour",
     size: 100,
@@ -41,17 +41,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { promotionsComCrmPromotionSelfServiceResourceList } from "crm/funcs/promotions-com-crm-promotion-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { promotionsComCrmPromotionSelfServiceResourceList } from "crmcom/funcs/promotions-com-crm-promotion-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await promotionsComCrmPromotionSelfServiceResourceList(crm, {
+  const res = await promotionsComCrmPromotionSelfServiceResourceList(crmcom, {
     organisations: "49c9554f-f1af-4d41-becf-7a2094cffd29,7223c237-f857-4140-a150-13ceef960f6e",
     searchValue: "Happy Hour",
     size: 100,
@@ -70,14 +70,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PromotionSelfServiceResource_list" method="get" path="/self-service/v2/promotions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.promotions.comCrmPromotionSelfServiceResourceList({
+  const result = await crmcom.promotions.comCrmPromotionSelfServiceResourceList({
     organisations: "49c9554f-f1af-4d41-becf-7a2094cffd29,7223c237-f857-4140-a150-13ceef960f6e",
     searchValue: "Happy Hour",
     size: 100,
@@ -94,17 +94,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { promotionsComCrmPromotionSelfServiceResourceList } from "crm/funcs/promotions-com-crm-promotion-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { promotionsComCrmPromotionSelfServiceResourceList } from "crmcom/funcs/promotions-com-crm-promotion-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await promotionsComCrmPromotionSelfServiceResourceList(crm, {
+  const res = await promotionsComCrmPromotionSelfServiceResourceList(crmcom, {
     organisations: "49c9554f-f1af-4d41-becf-7a2094cffd29,7223c237-f857-4140-a150-13ceef960f6e",
     searchValue: "Happy Hour",
     size: 100,
@@ -123,14 +123,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PromotionSelfServiceResource_list" method="get" path="/self-service/v2/promotions" example="NAME" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.promotions.comCrmPromotionSelfServiceResourceList({
+  const result = await crmcom.promotions.comCrmPromotionSelfServiceResourceList({
     organisations: "49c9554f-f1af-4d41-becf-7a2094cffd29,7223c237-f857-4140-a150-13ceef960f6e",
     searchValue: "Happy Hour",
     size: 100,
@@ -148,17 +148,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { promotionsComCrmPromotionSelfServiceResourceList } from "crm/funcs/promotions-com-crm-promotion-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { promotionsComCrmPromotionSelfServiceResourceList } from "crmcom/funcs/promotions-com-crm-promotion-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await promotionsComCrmPromotionSelfServiceResourceList(crm, {
+  const res = await promotionsComCrmPromotionSelfServiceResourceList(crmcom, {
     organisations: "49c9554f-f1af-4d41-becf-7a2094cffd29,7223c237-f857-4140-a150-13ceef960f6e",
     searchValue: "Happy Hour",
     size: 100,
@@ -178,14 +178,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PromotionSelfServiceResource_list" method="get" path="/self-service/v2/promotions" example="SCHEDULED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.promotions.comCrmPromotionSelfServiceResourceList({
+  const result = await crmcom.promotions.comCrmPromotionSelfServiceResourceList({
     organisations: "49c9554f-f1af-4d41-becf-7a2094cffd29,7223c237-f857-4140-a150-13ceef960f6e",
     searchValue: "Happy Hour",
     size: 100,
@@ -203,17 +203,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { promotionsComCrmPromotionSelfServiceResourceList } from "crm/funcs/promotions-com-crm-promotion-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { promotionsComCrmPromotionSelfServiceResourceList } from "crmcom/funcs/promotions-com-crm-promotion-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await promotionsComCrmPromotionSelfServiceResourceList(crm, {
+  const res = await promotionsComCrmPromotionSelfServiceResourceList(crmcom, {
     organisations: "49c9554f-f1af-4d41-becf-7a2094cffd29,7223c237-f857-4140-a150-13ceef960f6e",
     searchValue: "Happy Hour",
     size: 100,
@@ -233,14 +233,14 @@ run();
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PromotionSelfServiceResource_list" method="get" path="/self-service/v2/promotions" example="UPDATED_DATE" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.promotions.comCrmPromotionSelfServiceResourceList({
+  const result = await crmcom.promotions.comCrmPromotionSelfServiceResourceList({
     organisations: "49c9554f-f1af-4d41-becf-7a2094cffd29,7223c237-f857-4140-a150-13ceef960f6e",
     searchValue: "Happy Hour",
     size: 100,
@@ -258,17 +258,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { promotionsComCrmPromotionSelfServiceResourceList } from "crm/funcs/promotions-com-crm-promotion-self-service-resource-list.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { promotionsComCrmPromotionSelfServiceResourceList } from "crmcom/funcs/promotions-com-crm-promotion-self-service-resource-list.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await promotionsComCrmPromotionSelfServiceResourceList(crm, {
+  const res = await promotionsComCrmPromotionSelfServiceResourceList(crmcom, {
     organisations: "49c9554f-f1af-4d41-becf-7a2094cffd29,7223c237-f857-4140-a150-13ceef960f6e",
     searchValue: "Happy Hour",
     size: 100,
@@ -312,14 +312,14 @@ Retrieve detailed information for a specific promotion
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.PromotionSelfServiceResource_getSingle" method="get" path="/self-service/v2/promotions/{id}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.promotions.comCrmPromotionSelfServiceResourceGetSingle({
+  const result = await crmcom.promotions.comCrmPromotionSelfServiceResourceGetSingle({
     id: "6eeec3be-be1b-3eae-ca11-779d932d97fc",
   });
 
@@ -334,17 +334,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { promotionsComCrmPromotionSelfServiceResourceGetSingle } from "crm/funcs/promotions-com-crm-promotion-self-service-resource-get-single.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { promotionsComCrmPromotionSelfServiceResourceGetSingle } from "crmcom/funcs/promotions-com-crm-promotion-self-service-resource-get-single.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await promotionsComCrmPromotionSelfServiceResourceGetSingle(crm, {
+  const res = await promotionsComCrmPromotionSelfServiceResourceGetSingle(crmcom, {
     id: "6eeec3be-be1b-3eae-ca11-779d932d97fc",
   });
   if (res.ok) {

@@ -5,7 +5,7 @@ Billing cycle unit of time
 ## Example Usage
 
 ```typescript
-import { BillingCycleUot } from "crm/models/operations";
+import { BillingCycleUot } from "crmcom/models/operations";
 
 let value: BillingCycleUot = "DAY";
 ```

@@ -5,7 +5,7 @@ The Organisation at which the Pass was redeemed. If not specified, then the Pass
 ## Example Usage
 
 ```typescript
-import { ComCrmPassSelfServiceResourceRedeemPassOrganisation } from "crm/models/operations";
+import { ComCrmPassSelfServiceResourceRedeemPassOrganisation } from "crmcom/models/operations";
 
 let value: ComCrmPassSelfServiceResourceRedeemPassOrganisation = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

@@ -5,7 +5,7 @@ Defines how the donated amount will be calculated on each donation made by the c
 ## Example Usage
 
 ```typescript
-import { ComCrmRewardOfferDonationsSelfServiceResourceGetSingleDonationType } from "crm/models/operations";
+import { ComCrmRewardOfferDonationsSelfServiceResourceGetSingleDonationType } from "crmcom/models/operations";
 
 let value: ComCrmRewardOfferDonationsSelfServiceResourceGetSingleDonationType =
   "TERMED";

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AutoRenewalPreference } from "crm/models/operations";
+import { AutoRenewalPreference } from "crmcom/models/operations";
 
 let value: AutoRenewalPreference = "OPT_IN";
 ```

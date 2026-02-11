@@ -5,7 +5,7 @@ The order’s life cycle state
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceListOrdersContentState } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceListOrdersContentState } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceListOrdersContentState = "IN_PROGRESS";
 ```

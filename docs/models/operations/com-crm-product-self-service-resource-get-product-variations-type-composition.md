@@ -5,7 +5,7 @@ Product type composition
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition =
   "FLAT";

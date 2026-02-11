@@ -8,7 +8,7 @@ Defines the fee type
 ## Example Usage
 
 ```typescript
-import { FeeType } from "crm/models/operations";
+import { FeeType } from "crmcom/models/operations";
 
 let value: FeeType = "CONTRIBUTION";
 ```

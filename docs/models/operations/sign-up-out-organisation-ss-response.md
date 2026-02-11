@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { SignUpOutOrganisationSSResponse } from "crm/models/operations";
+import { SignUpOutOrganisationSSResponse } from "crmcom/models/operations";
 
 let value: SignUpOutOrganisationSSResponse = {
   exp: new Date("2022-03-10"),

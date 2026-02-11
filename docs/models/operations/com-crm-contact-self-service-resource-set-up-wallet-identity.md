@@ -5,7 +5,7 @@ The wallet’s identity. Applicable if the contact does not have a wallet and a 
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceSetUpWalletIdentity } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceSetUpWalletIdentity } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceSetUpWalletIdentity = {
   type: "EMAIL",

@@ -7,7 +7,7 @@ Preview order based on the date and time at which the customer requests the orde
 ```typescript
 import {
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderRequestedDeliveryAt,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderRequestedDeliveryAt =

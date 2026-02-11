@@ -5,7 +5,7 @@ Shows if the service will get a trial period
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceListProductsTrialPeriod } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceListProductsTrialPeriod } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceListProductsTrialPeriod = {
   duration: 2,

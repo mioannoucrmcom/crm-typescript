@@ -5,7 +5,7 @@ Product type classification
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceListProductsClassification } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceListProductsClassification } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceListProductsClassification =
   "TRACEABLE_PHYSICAL_GOOD";

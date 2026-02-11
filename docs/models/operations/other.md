@@ -5,7 +5,7 @@ Details about the address
 ## Example Usage
 
 ```typescript
-import { Other } from "crm/models/operations";
+import { Other } from "crmcom/models/operations";
 
 let value: Other = {
   name: "Engomi office",

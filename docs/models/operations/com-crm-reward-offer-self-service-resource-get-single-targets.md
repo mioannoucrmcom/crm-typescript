@@ -5,7 +5,7 @@ The targerted organisations that events performed on should be located at
 ## Example Usage
 
 ```typescript
-import { ComCrmRewardOfferSelfServiceResourceGetSingleTargets } from "crm/models/operations";
+import { ComCrmRewardOfferSelfServiceResourceGetSingleTargets } from "crmcom/models/operations";
 
 let value: ComCrmRewardOfferSelfServiceResourceGetSingleTargets = {
   organisations: [

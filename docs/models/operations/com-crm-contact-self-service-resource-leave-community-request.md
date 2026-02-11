@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceLeaveCommunityRequest } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceLeaveCommunityRequest } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceLeaveCommunityRequest = {
   communityOwnerId: "ccc945d8-1bda-a11c-d378-23c29947c2a3",

@@ -5,7 +5,7 @@ Details about the organisation. Valid only in B2B connect scennarios
 ## Example Usage
 
 ```typescript
-import { ComCrmProductTypeSelfServiceResourceListProductTypesOwner } from "crm/models/operations";
+import { ComCrmProductTypeSelfServiceResourceListProductTypesOwner } from "crmcom/models/operations";
 
 let value: ComCrmProductTypeSelfServiceResourceListProductTypesOwner = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

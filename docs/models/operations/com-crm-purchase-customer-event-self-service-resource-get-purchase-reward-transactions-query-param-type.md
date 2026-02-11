@@ -7,7 +7,7 @@ Filter based on reward type
 ```typescript
 import {
   ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsQueryParamType,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsQueryParamType =

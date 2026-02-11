@@ -5,7 +5,7 @@ The product category parent
 ## Example Usage
 
 ```typescript
-import { ComCrmProductCategorySelfServiceResourceListProductCategoriesParent } from "crm/models/operations";
+import { ComCrmProductCategorySelfServiceResourceListProductCategoriesParent } from "crmcom/models/operations";
 
 let value: ComCrmProductCategorySelfServiceResourceListProductCategoriesParent =
   {

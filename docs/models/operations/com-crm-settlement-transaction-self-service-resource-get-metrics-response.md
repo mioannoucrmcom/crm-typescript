@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmSettlementTransactionSelfServiceResourceGetMetricsResponse } from "crm/models/operations";
+import { ComCrmSettlementTransactionSelfServiceResourceGetMetricsResponse } from "crmcom/models/operations";
 
 let value: ComCrmSettlementTransactionSelfServiceResourceGetMetricsResponse = {
   totalPayouts: 1000,

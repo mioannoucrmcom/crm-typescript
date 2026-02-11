@@ -5,7 +5,7 @@ The transaction acquiring point that the event was submitted from (id or code mu
 ## Example Usage
 
 ```typescript
-import { ComCrmPassSelfServiceResourceRedeemPassVenueTap } from "crm/models/operations";
+import { ComCrmPassSelfServiceResourceRedeemPassVenueTap } from "crmcom/models/operations";
 
 let value: ComCrmPassSelfServiceResourceRedeemPassVenueTap = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Milestone } from "crm/models/operations";
+import { Milestone } from "crmcom/models/operations";
 
 let value: Milestone = {
   stageId: "271671a0-4bb3-9c2e-a9c7-6490dbfe5939",

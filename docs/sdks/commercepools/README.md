@@ -16,14 +16,14 @@ Perform actions on existing commerce pool (e.g. activate commerce pool)
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.CommercePoolSelfServiceResource_actions" method="put" path="/self-service/v2/commerce_pools/{id}/actions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.commercePools.comCrmCommercePoolSelfServiceResourceActions({
+  const result = await crmcom.commercePools.comCrmCommercePoolSelfServiceResourceActions({
     id: "c0d4712e-6688-4604-b3d6-d084e4d2dc05",
     body: {
       action: "ACTIVATE",
@@ -41,17 +41,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { commercePoolsComCrmCommercePoolSelfServiceResourceActions } from "crm/funcs/commerce-pools-com-crm-commerce-pool-self-service-resource-actions.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { commercePoolsComCrmCommercePoolSelfServiceResourceActions } from "crmcom/funcs/commerce-pools-com-crm-commerce-pool-self-service-resource-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await commercePoolsComCrmCommercePoolSelfServiceResourceActions(crm, {
+  const res = await commercePoolsComCrmCommercePoolSelfServiceResourceActions(crmcom, {
     id: "c0d4712e-6688-4604-b3d6-d084e4d2dc05",
     body: {
       action: "ACTIVATE",

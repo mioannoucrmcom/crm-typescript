@@ -5,7 +5,7 @@
 ## Example Usage
 
 ```typescript
-import { GetSingleContactSSPassportIssuingCountryCode } from "crm/models/operations";
+import { GetSingleContactSSPassportIssuingCountryCode } from "crmcom/models/operations";
 
 let value: GetSingleContactSSPassportIssuingCountryCode = "CYP";
 ```

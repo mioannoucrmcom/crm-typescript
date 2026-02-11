@@ -5,7 +5,7 @@ Details about how the contact will be identified based on app/portal configurati
 ## Example Usage
 
 ```typescript
-import { Identification } from "crm/models/operations";
+import { Identification } from "crmcom/models/operations";
 
 let value: Identification = {
   provider: "EMAIL",

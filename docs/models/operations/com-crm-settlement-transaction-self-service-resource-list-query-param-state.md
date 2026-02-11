@@ -5,7 +5,7 @@ Filter based on settlement transaction state
 ## Example Usage
 
 ```typescript
-import { ComCrmSettlementTransactionSelfServiceResourceListQueryParamState } from "crm/models/operations";
+import { ComCrmSettlementTransactionSelfServiceResourceListQueryParamState } from "crmcom/models/operations";
 
 let value: ComCrmSettlementTransactionSelfServiceResourceListQueryParamState =
   "POSTED";

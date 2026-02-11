@@ -5,7 +5,7 @@ Defines the supported redeem pass features
 ## Example Usage
 
 ```typescript
-import { RedeemPass } from "crm/models/operations";
+import { RedeemPass } from "crmcom/models/operations";
 
 let value: RedeemPass = {
   isSupported: true,

@@ -5,7 +5,7 @@ Period Cycle unit of time
 ## Example Usage
 
 ```typescript
-import { UpsellUot } from "crm/models/operations";
+import { UpsellUot } from "crmcom/models/operations";
 
 let value: UpsellUot = "WEEK";
 ```

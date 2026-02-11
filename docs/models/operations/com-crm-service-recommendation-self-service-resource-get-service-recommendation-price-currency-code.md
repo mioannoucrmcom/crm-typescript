@@ -7,7 +7,7 @@ Currency code based on ISO 4217 standard
 ```typescript
 import {
   ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationPriceCurrencyCode,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationPriceCurrencyCode =

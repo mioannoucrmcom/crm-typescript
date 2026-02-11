@@ -5,7 +5,7 @@ Applicable only for Usage service to show the unit per which the price is applie
 ## Example Usage
 
 ```typescript
-import { CrossSellMeasurementUnit } from "crm/models/operations";
+import { CrossSellMeasurementUnit } from "crmcom/models/operations";
 
 let value: CrossSellMeasurementUnit = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

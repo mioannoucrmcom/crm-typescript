@@ -5,7 +5,7 @@ Details about whether the contact can spend or not
 ## Example Usage
 
 ```typescript
-import { SpendBlocked } from "crm/models/operations";
+import { SpendBlocked } from "crmcom/models/operations";
 
 let value: SpendBlocked = {
   date: 1583846865,

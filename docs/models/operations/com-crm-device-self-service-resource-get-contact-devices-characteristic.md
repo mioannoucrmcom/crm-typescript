@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceGetContactDevicesCharacteristic } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceGetContactDevicesCharacteristic } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceGetContactDevicesCharacteristic = {
   key: "static-ip",

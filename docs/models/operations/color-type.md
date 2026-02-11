@@ -5,7 +5,7 @@ The color
 ## Example Usage
 
 ```typescript
-import { ColorType } from "crm/models/operations";
+import { ColorType } from "crmcom/models/operations";
 
 let value: ColorType = "BACKGROUND";
 ```

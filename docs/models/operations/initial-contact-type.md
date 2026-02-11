@@ -5,7 +5,7 @@ Contact type - can be PERSON or COMPANY
 ## Example Usage
 
 ```typescript
-import { InitialContactType } from "crm/models/operations";
+import { InitialContactType } from "crmcom/models/operations";
 
 let value: InitialContactType = "PERSON";
 ```

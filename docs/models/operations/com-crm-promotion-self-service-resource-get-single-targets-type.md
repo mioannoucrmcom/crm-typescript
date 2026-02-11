@@ -5,7 +5,7 @@ The type of the Organisation
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceGetSingleTargetsType } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceGetSingleTargetsType } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceGetSingleTargetsType = "MERCHANT";
 ```

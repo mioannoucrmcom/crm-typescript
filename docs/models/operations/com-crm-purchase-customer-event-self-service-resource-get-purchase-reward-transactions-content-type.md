@@ -7,7 +7,7 @@ The reward type
 ```typescript
 import {
   ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsContentType,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsContentType =

@@ -5,7 +5,7 @@ The type of the contact information
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceGetSingleType } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceGetSingleType } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceGetSingleType = "PHONE";
 ```

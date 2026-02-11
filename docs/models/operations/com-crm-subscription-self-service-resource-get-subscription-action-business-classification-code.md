@@ -7,7 +7,7 @@ The business classification code shows additional information about the action a
 ```typescript
 import {
   ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionBusinessClassificationCode,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionBusinessClassificationCode =

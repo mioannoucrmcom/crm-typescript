@@ -5,7 +5,7 @@ Filter transactions by pocket: CRM.COM = CRM.COM pocket, BUSINESS = business ope
 ## Example Usage
 
 ```typescript
-import { QueryParamPocket } from "crm/models/operations";
+import { QueryParamPocket } from "crmcom/models/operations";
 
 let value: QueryParamPocket = "CRMCOM";
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceCreateOrderPaymentMethodType } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceCreateOrderPaymentMethodType } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceCreateOrderPaymentMethodType =
   "CHEQUE";

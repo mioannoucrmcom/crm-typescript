@@ -5,7 +5,7 @@ The entity
 ## Example Usage
 
 ```typescript
-import { QueryParamEntity } from "crm/models/operations";
+import { QueryParamEntity } from "crmcom/models/operations";
 
 let value: QueryParamEntity = "SERVICE_REQUESTS";
 ```

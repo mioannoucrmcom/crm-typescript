@@ -5,7 +5,7 @@ The contact’s identity provider
 ## Example Usage
 
 ```typescript
-import { AddContactIdentitySSProvider } from "crm/models/operations";
+import { AddContactIdentitySSProvider } from "crmcom/models/operations";
 
 let value: AddContactIdentitySSProvider = "EMAIL";
 ```

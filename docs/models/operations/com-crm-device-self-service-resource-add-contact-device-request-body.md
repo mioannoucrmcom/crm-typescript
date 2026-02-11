@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmDeviceSelfServiceResourceAddContactDeviceRequestBody } from "crm/models/operations";
+import { ComCrmDeviceSelfServiceResourceAddContactDeviceRequestBody } from "crmcom/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceAddContactDeviceRequestBody = {
   macAddress: "01-23-45-67-89-AB",

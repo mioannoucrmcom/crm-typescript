@@ -5,7 +5,7 @@ Defines whether communities (relationships between contacts) features will be av
 ## Example Usage
 
 ```typescript
-import { Communities } from "crm/models/operations";
+import { Communities } from "crmcom/models/operations";
 
 let value: Communities = {
   isSupported: true,

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmLocationSelfServiceResourceListRequest } from "crm/models/operations";
+import { ComCrmLocationSelfServiceResourceListRequest } from "crmcom/models/operations";
 
 let value: ComCrmLocationSelfServiceResourceListRequest = {
   includeCustomFields: true,

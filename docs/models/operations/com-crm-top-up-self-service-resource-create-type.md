@@ -5,7 +5,7 @@ The payment method
 ## Example Usage
 
 ```typescript
-import { ComCrmTopUpSelfServiceResourceCreateType } from "crm/models/operations";
+import { ComCrmTopUpSelfServiceResourceCreateType } from "crmcom/models/operations";
 
 let value: ComCrmTopUpSelfServiceResourceCreateType = "CARD";
 ```

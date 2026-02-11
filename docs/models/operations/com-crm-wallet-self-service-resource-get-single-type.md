@@ -5,7 +5,7 @@ The wallet balance type
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetSingleType } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetSingleType } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetSingleType = "BUSINESS";
 ```

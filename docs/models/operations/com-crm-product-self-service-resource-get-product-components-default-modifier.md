@@ -5,7 +5,7 @@ The default modifier of this composition. Applicable only if the item is additio
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductComponentsDefaultModifier } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductComponentsDefaultModifier } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductComponentsDefaultModifier =
   {

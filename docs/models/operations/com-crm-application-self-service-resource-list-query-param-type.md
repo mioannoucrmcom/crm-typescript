@@ -5,7 +5,7 @@ Filter integrations based on type
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceListQueryParamType } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceListQueryParamType } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceListQueryParamType =
   "PAYMENT_GATEWAYS";

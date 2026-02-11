@@ -5,7 +5,7 @@ The usage product consumed. Can either be a usage service or a non-traceable phy
 ## Example Usage
 
 ```typescript
-import { UsageProduct } from "crm/models/operations";
+import { UsageProduct } from "crmcom/models/operations";
 
 let value: UsageProduct = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

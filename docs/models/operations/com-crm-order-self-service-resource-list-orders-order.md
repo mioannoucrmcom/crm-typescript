@@ -5,7 +5,7 @@ Defines how the results will be ordered
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceListOrdersOrder } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceListOrdersOrder } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceListOrdersOrder = "DESC";
 ```

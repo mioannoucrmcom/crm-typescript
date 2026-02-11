@@ -5,7 +5,7 @@ Bundle service product
 ## Example Usage
 
 ```typescript
-import { BundledServiceProduct } from "crm/models/operations";
+import { BundledServiceProduct } from "crmcom/models/operations";
 
 let value: BundledServiceProduct = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

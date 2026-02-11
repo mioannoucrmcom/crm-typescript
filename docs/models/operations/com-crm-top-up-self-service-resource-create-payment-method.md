@@ -5,7 +5,7 @@ The top up’s payment method
 ## Example Usage
 
 ```typescript
-import { ComCrmTopUpSelfServiceResourceCreatePaymentMethod } from "crm/models/operations";
+import { ComCrmTopUpSelfServiceResourceCreatePaymentMethod } from "crmcom/models/operations";
 
 let value: ComCrmTopUpSelfServiceResourceCreatePaymentMethod = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

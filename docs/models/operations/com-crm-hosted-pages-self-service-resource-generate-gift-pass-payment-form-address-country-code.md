@@ -7,7 +7,7 @@ Country code
 ```typescript
 import {
   ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddressCountryCode,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddressCountryCode =

@@ -5,7 +5,7 @@ The transaction acquiring point that the event was submitted from (id or code mu
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseMerchantTap } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseMerchantTap } from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseMerchantTap = {

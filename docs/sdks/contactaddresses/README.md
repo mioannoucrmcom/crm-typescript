@@ -19,14 +19,14 @@ Retrieve all the addresses of a specific contact
 
 <!-- UsageSnippet language="typescript" operationID="listContactAddressesSS" method="get" path="/self-service/v2/contacts/{id}/addresses" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAddresses.listContactAddressesSS({
+  const result = await crmcom.contactAddresses.listContactAddressesSS({
     id: "<id>",
   });
 
@@ -41,17 +41,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAddressesListContactAddressesSS } from "crm/funcs/contact-addresses-list-contact-addresses-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAddressesListContactAddressesSS } from "crmcom/funcs/contact-addresses-list-contact-addresses-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAddressesListContactAddressesSS(crm, {
+  const res = await contactAddressesListContactAddressesSS(crmcom, {
     id: "<id>",
   });
   if (res.ok) {
@@ -92,14 +92,14 @@ Add a new address to an existing contact. A contact can have multiple addresses.
 
 <!-- UsageSnippet language="typescript" operationID="addContactAddessSS" method="post" path="/self-service/v2/contacts/{id}/addresses" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAddresses.addContactAddessSS({
+  const result = await crmcom.contactAddresses.addContactAddessSS({
     id: "<id>",
     body: {
       type: "BUSINESS",
@@ -124,17 +124,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAddressesAddContactAddessSS } from "crm/funcs/contact-addresses-add-contact-addess-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAddressesAddContactAddessSS } from "crmcom/funcs/contact-addresses-add-contact-addess-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAddressesAddContactAddessSS(crm, {
+  const res = await contactAddressesAddContactAddessSS(crmcom, {
     id: "<id>",
     body: {
       type: "BUSINESS",
@@ -185,14 +185,14 @@ Update one of the contact’s existing addresses
 
 <!-- UsageSnippet language="typescript" operationID="updateContactAddressSS" method="put" path="/self-service/v2/contacts/{id}/addresses/{address_id}" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.contactAddresses.updateContactAddressSS({
+  const result = await crmcom.contactAddresses.updateContactAddressSS({
     addressId: "cadbf723-fdc6-4598-8156-f6288e61f356",
     id: "1a6a85ac-aacf-4175-8de2-a7d701186d96",
     body: {
@@ -218,17 +218,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAddressesUpdateContactAddressSS } from "crm/funcs/contact-addresses-update-contact-address-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAddressesUpdateContactAddressSS } from "crmcom/funcs/contact-addresses-update-contact-address-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAddressesUpdateContactAddressSS(crm, {
+  const res = await contactAddressesUpdateContactAddressSS(crmcom, {
     addressId: "cadbf723-fdc6-4598-8156-f6288e61f356",
     id: "1a6a85ac-aacf-4175-8de2-a7d701186d96",
     body: {
@@ -280,14 +280,14 @@ Remove an existing address from a specific contact
 
 <!-- UsageSnippet language="typescript" operationID="deleteContactAddressSS" method="delete" path="/self-service/v2/contacts/{id}/addresses/{address_id}" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  await crm.contactAddresses.deleteContactAddressSS({
+  await crmcom.contactAddresses.deleteContactAddressSS({
     addressId: "cadbf723-fdc6-4598-8156-f6288e61f356",
     id: "1a6a85ac-aacf-4175-8de2-a7d701186d96",
   });
@@ -303,17 +303,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
-import { contactAddressesDeleteContactAddressSS } from "crm/funcs/contact-addresses-delete-contact-address-ss.js";
+import { CrmcomCore } from "crmcom/core.js";
+import { contactAddressesDeleteContactAddressSS } from "crmcom/funcs/contact-addresses-delete-contact-address-ss.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await contactAddressesDeleteContactAddressSS(crm, {
+  const res = await contactAddressesDeleteContactAddressSS(crmcom, {
     addressId: "cadbf723-fdc6-4598-8156-f6288e61f356",
     id: "1a6a85ac-aacf-4175-8de2-a7d701186d96",
   });

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { Tax } from "crm/models/operations";
+import { Tax } from "crmcom/models/operations";
 
 let value: Tax = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

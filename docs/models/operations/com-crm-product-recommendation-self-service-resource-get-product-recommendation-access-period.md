@@ -7,7 +7,7 @@ The period of time that contacts will have access to the service. Applicable onl
 ```typescript
 import {
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationAccessPeriod,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationAccessPeriod =

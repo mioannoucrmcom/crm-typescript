@@ -5,7 +5,7 @@ Created
 ## Example Usage
 
 ```typescript
-import { ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody2 } from "crm/models/operations";
+import { ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody2 } from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody2 = {

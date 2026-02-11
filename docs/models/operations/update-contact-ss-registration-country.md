@@ -5,7 +5,7 @@
 ## Example Usage
 
 ```typescript
-import { UpdateContactSSRegistrationCountry } from "crm/models/operations";
+import { UpdateContactSSRegistrationCountry } from "crmcom/models/operations";
 
 let value: UpdateContactSSRegistrationCountry = "CYP";
 ```

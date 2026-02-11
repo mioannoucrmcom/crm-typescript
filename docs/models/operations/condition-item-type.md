@@ -5,7 +5,7 @@ The type of the product condition
 ## Example Usage
 
 ```typescript
-import { ConditionItemType } from "crm/models/operations";
+import { ConditionItemType } from "crmcom/models/operations";
 
 let value: ConditionItemType = "SKU";
 ```

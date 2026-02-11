@@ -5,7 +5,7 @@ Defines whether the community person will be able to use/request money from comm
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddContactRelationshipWalletSharing } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddContactRelationshipWalletSharing } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddContactRelationshipWalletSharing =
   {

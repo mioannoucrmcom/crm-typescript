@@ -5,7 +5,7 @@ the tax model of price
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductComponentsTaxModel } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductComponentsTaxModel } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductComponentsTaxModel =
   "TAX_INCLUSIVE";

@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceRequestSelfServiceResourceListResponse } from "crm/models/operations";
+import { ComCrmServiceRequestSelfServiceResourceListResponse } from "crmcom/models/operations";
 
 let value: ComCrmServiceRequestSelfServiceResourceListResponse = {
   paging: {

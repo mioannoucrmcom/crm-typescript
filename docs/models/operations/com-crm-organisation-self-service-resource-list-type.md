@@ -5,7 +5,7 @@ The type of the contact information
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceListType } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceListType } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceListType = "EMAIL";
 ```

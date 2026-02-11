@@ -5,7 +5,7 @@ Details about the reward event related to the wallet journal transaction
 ## Example Usage
 
 ```typescript
-import { RewardEvent } from "crm/models/operations";
+import { RewardEvent } from "crmcom/models/operations";
 
 let value: RewardEvent = {
   code: "123234342342432342324r43",

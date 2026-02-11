@@ -5,7 +5,7 @@ The contact's payment method type, Mandatory if payment_method_id not specified
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentIntentSelfServiceResourceSetUpIntentsPaymentMethodType } from "crm/models/operations";
+import { ComCrmPaymentIntentSelfServiceResourceSetUpIntentsPaymentMethodType } from "crmcom/models/operations";
 
 let value: ComCrmPaymentIntentSelfServiceResourceSetUpIntentsPaymentMethodType =
   "ONE_TIME_CARD_PAYMENT";

@@ -5,7 +5,7 @@ The address type. There can be multiple addresses of the same type
 ## Example Usage
 
 ```typescript
-import { AddContactAddessSSType } from "crm/models/operations";
+import { AddContactAddessSSType } from "crmcom/models/operations";
 
 let value: AddContactAddessSSType = "HOME";
 ```

@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { PromotionMedia } from "crm/models/operations";
+import { PromotionMedia } from "crmcom/models/operations";
 
 let value: PromotionMedia = {
   width: 200,

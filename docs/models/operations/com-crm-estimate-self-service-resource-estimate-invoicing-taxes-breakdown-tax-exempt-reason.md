@@ -5,7 +5,7 @@ Applicable only when a Tax Exempt rate was applied. Shows whether the tax exempt
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxExemptReason } from "crm/models/operations";
+import { ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxExemptReason } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxExemptReason =

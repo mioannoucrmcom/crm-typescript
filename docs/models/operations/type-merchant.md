@@ -5,7 +5,7 @@ The organisation type
 ## Example Usage
 
 ```typescript
-import { TypeMerchant } from "crm/models/operations";
+import { TypeMerchant } from "crmcom/models/operations";
 
 let value: TypeMerchant = "MERCHANT";
 ```

@@ -5,7 +5,7 @@ The queue’s owner
 ## Example Usage
 
 ```typescript
-import { ComCrmQueueSelfServiceResourceListOwner } from "crm/models/operations";
+import { ComCrmQueueSelfServiceResourceListOwner } from "crmcom/models/operations";
 
 let value: ComCrmQueueSelfServiceResourceListOwner = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

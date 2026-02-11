@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetOIDCConfigurationSecurity } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetOIDCConfigurationSecurity } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetOIDCConfigurationSecurity = {
   publicAPIKey: "<value>",

@@ -5,7 +5,7 @@ The community people person's relation state. A person is considered as a valid 
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetCommunitiesState } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetCommunitiesState } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetCommunitiesState = "ACCEPTED";
 ```

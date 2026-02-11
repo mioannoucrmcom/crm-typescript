@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { A2aGatewayToken } from "crm/models/operations";
+import { A2aGatewayToken } from "crmcom/models/operations";
 
 let value: A2aGatewayToken = {
   gateway: "JCC",

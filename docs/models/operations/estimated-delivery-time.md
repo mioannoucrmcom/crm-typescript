@@ -5,7 +5,7 @@ An estimation of the delivery time
 ## Example Usage
 
 ```typescript
-import { EstimatedDeliveryTime } from "crm/models/operations";
+import { EstimatedDeliveryTime } from "crmcom/models/operations";
 
 let value: EstimatedDeliveryTime = {
   timeToDelivery: 20,

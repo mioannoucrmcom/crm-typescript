@@ -5,7 +5,7 @@ Defines the integration on which the order has been provisioned (applicable only
 ## Example Usage
 
 ```typescript
-import { Provisioner } from "crm/models/operations";
+import { Provisioner } from "crmcom/models/operations";
 
 let value: Provisioner = "ALOHA";
 ```

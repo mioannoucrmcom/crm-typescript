@@ -5,7 +5,7 @@ Details about commerce pool promote & join information
 ## Example Usage
 
 ```typescript
-import { B2bDetails } from "crm/models/operations";
+import { B2bDetails } from "crmcom/models/operations";
 
 let value: B2bDetails = {
   isPublished: true,

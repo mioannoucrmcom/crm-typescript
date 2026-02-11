@@ -5,7 +5,7 @@ Required when the new member of the community is not a registered contact so bas
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceAddContactRelationshipContact } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceAddContactRelationshipContact } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAddContactRelationshipContact = {
   firstName: "Constantin",

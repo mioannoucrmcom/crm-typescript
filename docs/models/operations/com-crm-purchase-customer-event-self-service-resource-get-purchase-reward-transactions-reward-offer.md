@@ -7,7 +7,7 @@ Details about reward offer
 ```typescript
 import {
   ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsRewardOffer,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsRewardOffer =

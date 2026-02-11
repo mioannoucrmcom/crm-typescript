@@ -5,7 +5,7 @@ Details of the contact involved in the transfer transaction. If it's a 'debit' t
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetTransactionsContact } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetTransactionsContact } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsContact = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

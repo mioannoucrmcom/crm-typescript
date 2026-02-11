@@ -5,7 +5,7 @@ The product’s classification
 ## Example Usage
 
 ```typescript
-import { ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductClassification } from "crm/models/operations";
+import { ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductClassification } from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductClassification =

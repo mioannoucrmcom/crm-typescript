@@ -5,7 +5,7 @@ The base currency code of the system
 ## Example Usage
 
 ```typescript
-import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCurrencyCode } from "crm/models/operations";
+import { ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCurrencyCode } from "crmcom/models/operations";
 
 let value:
   ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCurrencyCode = "EUR";

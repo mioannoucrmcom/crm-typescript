@@ -5,7 +5,7 @@ The organisation address
 ## Example Usage
 
 ```typescript
-import { ComCrmLocationSelfServiceResourceListAddress } from "crm/models/operations";
+import { ComCrmLocationSelfServiceResourceListAddress } from "crmcom/models/operations";
 
 let value: ComCrmLocationSelfServiceResourceListAddress = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

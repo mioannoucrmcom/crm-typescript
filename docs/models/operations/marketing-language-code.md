@@ -5,7 +5,7 @@
 ## Example Usage
 
 ```typescript
-import { MarketingLanguageCode } from "crm/models/operations";
+import { MarketingLanguageCode } from "crmcom/models/operations";
 
 let value: MarketingLanguageCode = "EN";
 ```

@@ -5,7 +5,7 @@ Bundle device product
 ## Example Usage
 
 ```typescript
-import { BundledDeviceProduct } from "crm/models/operations";
+import { BundledDeviceProduct } from "crmcom/models/operations";
 
 let value: BundledDeviceProduct = {
   id: "e283a863-18e1-7cae-48c4-7433bf28cf97",

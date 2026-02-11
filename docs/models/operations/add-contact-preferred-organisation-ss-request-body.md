@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { AddContactPreferredOrganisationSSRequestBody } from "crm/models/operations";
+import { AddContactPreferredOrganisationSSRequestBody } from "crmcom/models/operations";
 
 let value: AddContactPreferredOrganisationSSRequestBody = {
   organisationId: "1a6a85ac-aacf-4175-8de2-a7d701186d96",

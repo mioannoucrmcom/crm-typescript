@@ -5,7 +5,7 @@ Information about the organisation’s location
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetBalancesLocation } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetBalancesLocation } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetBalancesLocation = {
   name: "Head Office",

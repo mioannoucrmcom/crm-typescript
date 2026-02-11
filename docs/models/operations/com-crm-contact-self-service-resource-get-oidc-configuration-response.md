@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmContactSelfServiceResourceGetOIDCConfigurationResponse } from "crm/models/operations";
+import { ComCrmContactSelfServiceResourceGetOIDCConfigurationResponse } from "crmcom/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetOIDCConfigurationResponse = {};
 ```

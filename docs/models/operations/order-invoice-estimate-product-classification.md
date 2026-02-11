@@ -5,7 +5,7 @@ The product’s classification
 ## Example Usage
 
 ```typescript
-import { OrderInvoiceEstimateProductClassification } from "crm/models/operations";
+import { OrderInvoiceEstimateProductClassification } from "crmcom/models/operations";
 
 let value: OrderInvoiceEstimateProductClassification =
   "TRACEABLE_PHYSICAL_GOOD";

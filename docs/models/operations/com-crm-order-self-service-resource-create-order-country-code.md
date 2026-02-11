@@ -5,7 +5,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmOrderSelfServiceResourceCreateOrderCountryCode } from "crm/models/operations";
+import { ComCrmOrderSelfServiceResourceCreateOrderCountryCode } from "crmcom/models/operations";
 
 let value: ComCrmOrderSelfServiceResourceCreateOrderCountryCode = "SYR";
 ```

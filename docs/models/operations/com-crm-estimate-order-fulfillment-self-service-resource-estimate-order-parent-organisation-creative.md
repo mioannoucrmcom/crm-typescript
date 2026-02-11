@@ -5,7 +5,7 @@
 ```typescript
 import {
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderParentOrganisationCreative,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderParentOrganisationCreative =

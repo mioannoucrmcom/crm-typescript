@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetWalletLimitsAppliesFor } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetWalletLimitsAppliesFor } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetWalletLimitsAppliesFor =
   "TRANSFER";

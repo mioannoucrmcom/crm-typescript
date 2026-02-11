@@ -5,7 +5,7 @@ Payment method details
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupIdentity } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupIdentity } from "crmcom/models/operations";
 
 let value:
   ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupIdentity = {

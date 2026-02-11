@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequestBody } from "crm/models/operations";
+import { ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequestBody } from "crmcom/models/operations";
 
 let value: ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequestBody = {
   integrationId: "2BD9C84FA60F9FE407140E20F707726A",

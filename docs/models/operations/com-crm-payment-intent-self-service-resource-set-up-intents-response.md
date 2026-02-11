@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmPaymentIntentSelfServiceResourceSetUpIntentsResponse } from "crm/models/operations";
+import { ComCrmPaymentIntentSelfServiceResourceSetUpIntentsResponse } from "crmcom/models/operations";
 
 let value: ComCrmPaymentIntentSelfServiceResourceSetUpIntentsResponse = {
   clientSecret: "2BD9C84FA60F9FE407140E20F707726A",

@@ -5,7 +5,7 @@ Termed service’s debited/credited period
 ## Example Usage
 
 ```typescript
-import { OrderLineItemPeriod } from "crm/models/operations";
+import { OrderLineItemPeriod } from "crmcom/models/operations";
 
 let value: OrderLineItemPeriod = {};
 ```

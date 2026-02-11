@@ -17,14 +17,14 @@ Create a referral customer event. Such event is created by the front-end applica
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ReferralCustomerEventSelfServiceResource_createReferral" method="post" path="/self-service/v2/referrals" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm({
+const crmcom = new Crmcom({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const result = await crm.referralCustomerEvents.comCrmReferralCustomerEventSelfServiceResourceCreateReferral({
+  const result = await crmcom.referralCustomerEvents.comCrmReferralCustomerEventSelfServiceResourceCreateReferral({
     code: "REF123",
   });
 
@@ -39,19 +39,19 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   referralCustomerEventsComCrmReferralCustomerEventSelfServiceResourceCreateReferral,
-} from "crm/funcs/referral-customer-events-com-crm-referral-customer-event-self-service-resource-create-referral.js";
+} from "crmcom/funcs/referral-customer-events-com-crm-referral-customer-event-self-service-resource-create-referral.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore({
+const crmcom = new CrmcomCore({
   authorizationSelfService: process.env["CRM_AUTHORIZATION_SELF_SERVICE"] ?? "",
 });
 
 async function run() {
-  const res = await referralCustomerEventsComCrmReferralCustomerEventSelfServiceResourceCreateReferral(crm, {
+  const res = await referralCustomerEventsComCrmReferralCustomerEventSelfServiceResourceCreateReferral(crmcom, {
     code: "REF123",
   });
   if (res.ok) {
@@ -92,12 +92,12 @@ Perform referral actions, such as send referrals to contacts inviting them to si
 
 <!-- UsageSnippet language="typescript" operationID="com.crm.ReferralCustomerEventSelfServiceResource_referralActions" method="post" path="/self-service/v2/referrals/actions" example="Example 1" -->
 ```typescript
-import { Crm } from "crm";
+import { Crmcom } from "crmcom";
 
-const crm = new Crm();
+const crmcom = new Crmcom();
 
 async function run() {
-  await crm.referralCustomerEvents.comCrmReferralCustomerEventSelfServiceResourceReferralActions({
+  await crmcom.referralCustomerEvents.comCrmReferralCustomerEventSelfServiceResourceReferralActions({
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     action: "SEND",
@@ -117,17 +117,17 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { CrmCore } from "crm/core.js";
+import { CrmcomCore } from "crmcom/core.js";
 import {
   referralCustomerEventsComCrmReferralCustomerEventSelfServiceResourceReferralActions,
-} from "crm/funcs/referral-customer-events-com-crm-referral-customer-event-self-service-resource-referral-actions.js";
+} from "crmcom/funcs/referral-customer-events-com-crm-referral-customer-event-self-service-resource-referral-actions.js";
 
-// Use `CrmCore` for best tree-shaking performance.
+// Use `CrmcomCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const crm = new CrmCore();
+const crmcom = new CrmcomCore();
 
 async function run() {
-  const res = await referralCustomerEventsComCrmReferralCustomerEventSelfServiceResourceReferralActions(crm, {
+  const res = await referralCustomerEventsComCrmReferralCustomerEventSelfServiceResourceReferralActions(crmcom, {
     secretAPIKey: process.env["CRM_SECRET_API_KEY"] ?? "",
   }, {
     action: "SEND",

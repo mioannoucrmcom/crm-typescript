@@ -7,7 +7,7 @@ Subscription's billing model
 ```typescript
 import {
   ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingModel,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingModel =

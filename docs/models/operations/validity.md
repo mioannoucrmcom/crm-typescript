@@ -5,7 +5,7 @@ Pass plan validity setting - this relates to the date whereby the pass can be re
 ## Example Usage
 
 ```typescript
-import { Validity } from "crm/models/operations";
+import { Validity } from "crmcom/models/operations";
 
 let value: Validity = {
   type: "ALWAYS",

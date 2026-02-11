@@ -11,7 +11,7 @@ The application type:
 ## Example Usage
 
 ```typescript
-import { ComCrmApplicationSelfServiceResourceGetApplicationType } from "crm/models/operations";
+import { ComCrmApplicationSelfServiceResourceGetApplicationType } from "crmcom/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationType = "CAPTIVE";
 ```

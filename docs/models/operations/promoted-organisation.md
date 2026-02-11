@@ -5,7 +5,7 @@ The organisation from which the commerce pool was published
 ## Example Usage
 
 ```typescript
-import { PromotedOrganisation } from "crm/models/operations";
+import { PromotedOrganisation } from "crmcom/models/operations";
 
 let value: PromotedOrganisation = {
   id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",

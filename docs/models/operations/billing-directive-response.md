@@ -5,7 +5,7 @@ The usage record's billing directive shows if the usage will be billed or not
 ## Example Usage
 
 ```typescript
-import { BillingDirectiveResponse } from "crm/models/operations";
+import { BillingDirectiveResponse } from "crmcom/models/operations";
 
 let value: BillingDirectiveResponse = "TO_BE_BILLED";
 ```

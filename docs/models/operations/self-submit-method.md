@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { SelfSubmitMethod } from "crm/models/operations";
+import { SelfSubmitMethod } from "crmcom/models/operations";
 
 let value: SelfSubmitMethod = "BARCODE";
 ```

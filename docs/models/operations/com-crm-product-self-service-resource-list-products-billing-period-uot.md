@@ -5,7 +5,7 @@ Period Cycle unit of time
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceListProductsBillingPeriodUot } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceListProductsBillingPeriodUot } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceListProductsBillingPeriodUot =
   "YEAR";

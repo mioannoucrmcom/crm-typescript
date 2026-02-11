@@ -5,7 +5,7 @@ The period’s unit of time
 ## Example Usage
 
 ```typescript
-import { PeriodUot } from "crm/models/operations";
+import { PeriodUot } from "crmcom/models/operations";
 
 let value: PeriodUot = "MONTH";
 ```

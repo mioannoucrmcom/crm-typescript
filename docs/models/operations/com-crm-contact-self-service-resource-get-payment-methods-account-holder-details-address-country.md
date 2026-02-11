@@ -7,7 +7,7 @@ The country related to the account
 ```typescript
 import {
   ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetailsAddressCountry,
-} from "crm/models/operations";
+} from "crmcom/models/operations";
 
 let value:
   ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetailsAddressCountry =

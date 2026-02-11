@@ -5,7 +5,7 @@ Information about the account’s reward tier
 ## Example Usage
 
 ```typescript
-import { RewardTiers } from "crm/models/operations";
+import { RewardTiers } from "crmcom/models/operations";
 
 let value: RewardTiers = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

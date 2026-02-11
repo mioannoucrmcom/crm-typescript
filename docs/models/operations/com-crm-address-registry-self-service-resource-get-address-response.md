@@ -5,7 +5,7 @@ OK
 ## Example Usage
 
 ```typescript
-import { ComCrmAddressRegistrySelfServiceResourceGetAddressResponse } from "crm/models/operations";
+import { ComCrmAddressRegistrySelfServiceResourceGetAddressResponse } from "crmcom/models/operations";
 
 let value: ComCrmAddressRegistrySelfServiceResourceGetAddressResponse = {
   address: "Elia Papakyriakou, Egkomi, 2415, Nicosia, Cyprus",

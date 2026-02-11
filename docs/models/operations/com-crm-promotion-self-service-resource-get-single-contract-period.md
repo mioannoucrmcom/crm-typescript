@@ -5,7 +5,7 @@ The contract period of the basket item. Applicable only for termed services. The
 ## Example Usage
 
 ```typescript
-import { ComCrmPromotionSelfServiceResourceGetSingleContractPeriod } from "crm/models/operations";
+import { ComCrmPromotionSelfServiceResourceGetSingleContractPeriod } from "crmcom/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceGetSingleContractPeriod = {
   duration: 12,

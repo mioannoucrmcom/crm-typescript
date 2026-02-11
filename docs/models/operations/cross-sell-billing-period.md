@@ -5,7 +5,7 @@ The billing period mapped to the specified price. Applicable only for termed and
 ## Example Usage
 
 ```typescript
-import { CrossSellBillingPeriod } from "crm/models/operations";
+import { CrossSellBillingPeriod } from "crmcom/models/operations";
 
 let value: CrossSellBillingPeriod = {
   duration: 2,

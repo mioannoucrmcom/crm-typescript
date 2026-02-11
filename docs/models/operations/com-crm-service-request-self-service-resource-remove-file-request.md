@@ -3,7 +3,7 @@
 ## Example Usage
 
 ```typescript
-import { ComCrmServiceRequestSelfServiceResourceRemoveFileRequest } from "crm/models/operations";
+import { ComCrmServiceRequestSelfServiceResourceRemoveFileRequest } from "crmcom/models/operations";
 
 let value: ComCrmServiceRequestSelfServiceResourceRemoveFileRequest = {
   attachmentId: "8dfc2223-edca-f05d-820b-dc96ba9df2c2",

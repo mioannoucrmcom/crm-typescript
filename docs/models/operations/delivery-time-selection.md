@@ -5,7 +5,7 @@ Defines how the contact selects the delivery time for their order: explicit_deli
 ## Example Usage
 
 ```typescript
-import { DeliveryTimeSelection } from "crm/models/operations";
+import { DeliveryTimeSelection } from "crmcom/models/operations";
 
 let value: DeliveryTimeSelection = "NO_TIME";
 ```

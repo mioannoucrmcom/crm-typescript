@@ -5,7 +5,7 @@ Transfer transaction details
 ## Example Usage
 
 ```typescript
-import { ComCrmWalletSelfServiceResourceGetTransactionsTransfer } from "crm/models/operations";
+import { ComCrmWalletSelfServiceResourceGetTransactionsTransfer } from "crmcom/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsTransfer = {
   contact: {

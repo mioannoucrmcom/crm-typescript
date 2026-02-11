@@ -5,7 +5,7 @@ Filter based on the usage date, which may fall within a given date range. The va
 ## Example Usage
 
 ```typescript
-import { UsageTimestamp } from "crm/models/operations";
+import { UsageTimestamp } from "crmcom/models/operations";
 
 let value: UsageTimestamp = "usage_timestamp[lte]";
 ```

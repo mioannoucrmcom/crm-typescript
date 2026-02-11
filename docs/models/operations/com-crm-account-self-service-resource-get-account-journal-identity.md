@@ -5,7 +5,7 @@ An identifier that briefly describes the contact’s payment method (The last 4 
 ## Example Usage
 
 ```typescript
-import { ComCrmAccountSelfServiceResourceGetAccountJournalIdentity } from "crm/models/operations";
+import { ComCrmAccountSelfServiceResourceGetAccountJournalIdentity } from "crmcom/models/operations";
 
 let value: ComCrmAccountSelfServiceResourceGetAccountJournalIdentity = {
   id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",

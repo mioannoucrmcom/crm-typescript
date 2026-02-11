@@ -5,7 +5,7 @@ Information about the creative type
 ## Example Usage
 
 ```typescript
-import { ComCrmOrganisationSelfServiceResourceGetSingleUsageType } from "crm/models/operations";
+import { ComCrmOrganisationSelfServiceResourceGetSingleUsageType } from "crmcom/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceGetSingleUsageType =
   "LANDING_PAGE_IMAGE";

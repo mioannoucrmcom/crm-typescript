@@ -5,7 +5,7 @@ Defines whether the service is billed in pre-/post-bill mode
 ## Example Usage
 
 ```typescript
-import { ComCrmProductSelfServiceResourceGetProductVariationsBillingModel } from "crm/models/operations";
+import { ComCrmProductSelfServiceResourceGetProductVariationsBillingModel } from "crmcom/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductVariationsBillingModel =
   "PRE_BILL";

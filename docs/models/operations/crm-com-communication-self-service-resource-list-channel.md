@@ -5,7 +5,7 @@ The name of the communication plan in case the communication was created from a 
 ## Example Usage
 
 ```typescript
-import { CrmComCommunicationSelfServiceResourceListChannel } from "crm/models/operations";
+import { CrmComCommunicationSelfServiceResourceListChannel } from "crmcom/models/operations";
 
 let value: CrmComCommunicationSelfServiceResourceListChannel = "EMAIL";
 ```
