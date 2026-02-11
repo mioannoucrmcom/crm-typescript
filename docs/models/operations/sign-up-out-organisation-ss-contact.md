@@ -1,0 +1,26 @@
+# SignUpOutOrganisationSSContact
+
+## Example Usage
+
+```typescript
+import { SignUpOutOrganisationSSContact } from "crm/models/operations";
+
+let value: SignUpOutOrganisationSSContact = {
+  id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+  firstName: "John",
+  lastName: "Doe",
+  isVerified: false,
+  companyName: "Smith & Sons Ltd.",
+};
+```
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          | Example                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                 | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | The entity identifier                                                                                                | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                                 |
+| `type`                                                                                                               | [operations.SignUpOutOrganisationSSContactType](../../models/operations/sign-up-out-organisation-ss-contact-type.md) | :heavy_minus_sign:                                                                                                   | Contact type - can be PERSON or COMPANY                                                                              |                                                                                                                      |
+| `firstName`                                                                                                          | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | The contact’s first name                                                                                             | John                                                                                                                 |
+| `lastName`                                                                                                           | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | The contact’s last name                                                                                              | Doe                                                                                                                  |
+| `isVerified`                                                                                                         | *boolean*                                                                                                            | :heavy_minus_sign:                                                                                                   | Defines whether the used identity is verified                                                                        | false                                                                                                                |
+| `companyName`                                                                                                        | *string*                                                                                                             | :heavy_minus_sign:                                                                                                   | The company name if the contact type is 'COMPANY'                                                                    | Smith & Sons Ltd.                                                                                                    |

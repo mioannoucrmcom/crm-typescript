@@ -1,0 +1,26 @@
+# ComCrmPayoutSelfServiceResourceCreateRequest
+
+## Example Usage
+
+```typescript
+import { ComCrmPayoutSelfServiceResourceCreateRequest } from "crm/models/operations";
+
+let value: ComCrmPayoutSelfServiceResourceCreateRequest = {
+  walletId: "CAD1E31269B76D7A65ACCE45B2E68DFD",
+  amount: 200,
+  paymentMethod: {
+    id: "CAD1E31269B76D7A65ACCE45B2E68DFD",
+    type: "CARD",
+  },
+  notes: "Payout due to wrong payment amount",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                  | Type                                                                                                                                                   | Required                                                                                                                                               | Description                                                                                                                                            | Example                                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `walletId`                                                                                                                                             | *string*                                                                                                                                               | :heavy_minus_sign:                                                                                                                                     | The wallet on which the financial transaction will be posted against to                                                                                | CAD1E31269B76D7A65ACCE45B2E68DFD                                                                                                                       |
+| `amount`                                                                                                                                               | *number*                                                                                                                                               | :heavy_check_mark:                                                                                                                                     | The amount of the payout. The amount is in the account/wallet's currency                                                                               | 200                                                                                                                                                    |
+| `paymentMethod`                                                                                                                                        | [operations.ComCrmPayoutSelfServiceResourceCreatePaymentMethod](../../models/operations/com-crm-payout-self-service-resource-create-payment-method.md) | :heavy_check_mark:                                                                                                                                     | The payment method that will be used to return back money to the contact                                                                               |                                                                                                                                                        |
+| `notes`                                                                                                                                                | *string*                                                                                                                                               | :heavy_minus_sign:                                                                                                                                     | Any notes related to the financial transaction                                                                                                         | Payout due to wrong payment amount                                                                                                                     |

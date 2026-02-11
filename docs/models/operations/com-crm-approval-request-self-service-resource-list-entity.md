@@ -1,0 +1,24 @@
+# ComCrmApprovalRequestSelfServiceResourceListEntity
+
+Details about the entity that such approval request was applied to
+
+## Example Usage
+
+```typescript
+import { ComCrmApprovalRequestSelfServiceResourceListEntity } from "crm/models/operations";
+
+let value: ComCrmApprovalRequestSelfServiceResourceListEntity = {
+  id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+  reference: "O10214",
+  stageId: "O10214",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                              | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        | Example                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                               | *string*                                                                                                                                           | :heavy_minus_sign:                                                                                                                                 | The entity identifier                                                                                                                              | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                                                               |
+| `type`                                                                                                                                             | [operations.ComCrmApprovalRequestSelfServiceResourceListType](../../models/operations/com-crm-approval-request-self-service-resource-list-type.md) | :heavy_minus_sign:                                                                                                                                 | The approval entity type                                                                                                                           |                                                                                                                                                    |
+| `reference`                                                                                                                                        | *string*                                                                                                                                           | :heavy_minus_sign:                                                                                                                                 | The entity reference name/code/number                                                                                                              | O10214                                                                                                                                             |
+| `stageId`                                                                                                                                          | *string*                                                                                                                                           | :heavy_minus_sign:                                                                                                                                 | The stage id of the entity                                                                                                                         | O10214                                                                                                                                             |

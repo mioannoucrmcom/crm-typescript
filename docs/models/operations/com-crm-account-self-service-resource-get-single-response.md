@@ -1,0 +1,67 @@
+# ComCrmAccountSelfServiceResourceGetSingleResponse
+
+OK
+
+## Example Usage
+
+```typescript
+import { ComCrmAccountSelfServiceResourceGetSingleResponse } from "crm/models/operations";
+
+let value: ComCrmAccountSelfServiceResourceGetSingleResponse = {
+  id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+  isPrimary: true,
+  name: "Default",
+  number: "AC123456",
+  state: "ACTIVE",
+  currencyCode: "EUR",
+  classification: {
+    id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",
+    name: "Universal Name",
+  },
+  customFields: [
+    {
+      key: "back_office",
+      value: "0001-12345",
+    },
+  ],
+  balance: 200,
+  overdueAmount: 50,
+  creditLimit: 100,
+  paymentTerms: {
+    id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",
+    name: "Universal Name",
+  },
+  billingAddress: {
+    id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+    type: "HOME",
+    name: "Mum's house",
+    addressLine1: "Elia Papakyriakou 21",
+    addressLine2: "7 Stars Tower",
+    stateProvinceCounty: "Egkomi",
+    townCity: "Nicosia",
+    postalCode: "2415",
+    countryCode: "CYP",
+    lat: 32.15,
+    lon: 35.15,
+    googlePlaceId: "ChIJrTLr-GyuEmsRBfy61i59si0",
+  },
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                            | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      | Example                                                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                             | *string*                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                               | The entity identifier                                                                                                                                            | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                                                                             |
+| `isPrimary`                                                                                                                                                      | *boolean*                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                               | Defines whether the account is the primary one of the contact/organisation                                                                                       | true                                                                                                                                                             |
+| `name`                                                                                                                                                           | *string*                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                               | The account's name                                                                                                                                               | Default                                                                                                                                                          |
+| `number`                                                                                                                                                         | *string*                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                               | The account's number                                                                                                                                             | AC123456                                                                                                                                                         |
+| `state`                                                                                                                                                          | [operations.ComCrmAccountSelfServiceResourceGetSingleState](../../models/operations/com-crm-account-self-service-resource-get-single-state.md)                   | :heavy_minus_sign:                                                                                                                                               | The account's state                                                                                                                                              | ACTIVE                                                                                                                                                           |
+| `currencyCode`                                                                                                                                                   | *string*                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                               | Currency code based on ISO 4217 standard                                                                                                                         | EUR                                                                                                                                                              |
+| `classification`                                                                                                                                                 | [operations.ComCrmAccountSelfServiceResourceGetSingleClassification](../../models/operations/com-crm-account-self-service-resource-get-single-classification.md) | :heavy_minus_sign:                                                                                                                                               | The account classification                                                                                                                                       |                                                                                                                                                                  |
+| `customFields`                                                                                                                                                   | [operations.ComCrmAccountSelfServiceResourceGetSingleCustomField](../../models/operations/com-crm-account-self-service-resource-get-single-custom-field.md)[]    | :heavy_minus_sign:                                                                                                                                               | A list of custom fields whose values can be set when creating or updating entities                                                                               |                                                                                                                                                                  |
+| `balance`                                                                                                                                                        | *number*                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                               | The account’s running balance                                                                                                                                    | 200                                                                                                                                                              |
+| `overdueAmount`                                                                                                                                                  | *number*                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                               | The unpaid amount that is passed its due date                                                                                                                    | 50                                                                                                                                                               |
+| `creditLimit`                                                                                                                                                    | *number*                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                               | The account’s credit limit                                                                                                                                       | 100                                                                                                                                                              |
+| `paymentTerms`                                                                                                                                                   | [operations.PaymentTerms](../../models/operations/payment-terms.md)                                                                                              | :heavy_minus_sign:                                                                                                                                               | The account’s Payment Terms                                                                                                                                      |                                                                                                                                                                  |
+| `billingAddress`                                                                                                                                                 | [operations.BillingAddress](../../models/operations/billing-address.md)                                                                                          | :heavy_minus_sign:                                                                                                                                               | The account’s billing address details                                                                                                                            |                                                                                                                                                                  |

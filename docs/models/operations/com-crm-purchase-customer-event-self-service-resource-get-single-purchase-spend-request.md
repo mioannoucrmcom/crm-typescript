@@ -1,0 +1,21 @@
+# ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseSpendRequest
+
+Details about spend request for a specific amount (as requested by contact)
+
+## Example Usage
+
+```typescript
+import { ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseSpendRequest } from "crm/models/operations";
+
+let value:
+  ComCrmPurchaseCustomerEventSelfServiceResourceGetSinglePurchaseSpendRequest =
+    {
+      amount: 2.96,
+    };
+```
+
+## Fields
+
+| Field                      | Type                       | Required                   | Description                | Example                    |
+| -------------------------- | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
+| `amount`                   | *number*                   | :heavy_minus_sign:         | The requested spend amount | 2.96                       |

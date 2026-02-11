@@ -1,0 +1,20 @@
+# ComCrmContactSelfServiceResourceActionRequest
+
+## Example Usage
+
+```typescript
+import { ComCrmContactSelfServiceResourceActionRequest } from "crm/models/operations";
+
+let value: ComCrmContactSelfServiceResourceActionRequest = {
+  id: "d24a32fd-fac8-3bc0-66a1-533ae7c4707f",
+  relationshipId: "ccc945d8-1bda-a11c-d378-23c29947c2a3",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          | Example                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                 | *string*                                                                                                                                             | :heavy_check_mark:                                                                                                                                   | The identifier of the contact who is responding to the invitation                                                                                    | d24a32fd-fac8-3bc0-66a1-533ae7c4707f                                                                                                                 |
+| `relationshipId`                                                                                                                                     | *string*                                                                                                                                             | :heavy_check_mark:                                                                                                                                   | The identifier of the community relationship                                                                                                         | ccc945d8-1bda-a11c-d378-23c29947c2a3                                                                                                                 |
+| `body`                                                                                                                                               | [operations.ComCrmContactSelfServiceResourceActionRequestBody](../../models/operations/com-crm-contact-self-service-resource-action-request-body.md) | :heavy_minus_sign:                                                                                                                                   | N/A                                                                                                                                                  |                                                                                                                                                      |

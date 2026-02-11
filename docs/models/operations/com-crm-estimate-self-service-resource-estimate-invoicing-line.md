@@ -1,0 +1,69 @@
+# ComCrmEstimateSelfServiceResourceEstimateInvoicingLine
+
+## Example Usage
+
+```typescript
+import { ComCrmEstimateSelfServiceResourceEstimateInvoicingLine } from "crm/models/operations";
+
+let value: ComCrmEstimateSelfServiceResourceEstimateInvoicingLine = {
+  id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+  quantity: 2,
+  unitPrice: 10,
+  net: 20.5,
+  tax: 10,
+  subTotal: 200.5,
+  period: {
+    from: 1651172405,
+    to: 1653764405,
+  },
+  discount: {
+    amount: 20.5,
+    percentage: 10,
+    amountInclTax: 15.5,
+  },
+  product: {
+    id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+    sku: "CBL-54455",
+    name: "Cable",
+    classification: "TRACEABLE_PHYSICAL_GOOD",
+    isStockable: false,
+  },
+  bundleProduct: {
+    id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+    sku: "CBL-54455",
+    name: "Cable",
+    classification: "TRACEABLE_PHYSICAL_GOOD",
+    isStockable: false,
+  },
+  appliedTaxes: [
+    {
+      id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+      taxRate: {
+        id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+        name: "VAT",
+        taxCode: "VAT",
+      },
+      taxAmount: 1.5,
+      taxExemptReason: "PRODUCT",
+    },
+  ],
+  pricing: 9.99,
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                             | Type                                                                                                                                                                              | Required                                                                                                                                                                          | Description                                                                                                                                                                       | Example                                                                                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                              | *string*                                                                                                                                                                          | :heavy_minus_sign:                                                                                                                                                                | The entity identifier                                                                                                                                                             | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                                                                                              |
+| `quantity`                                                                                                                                                                        | *number*                                                                                                                                                                          | :heavy_minus_sign:                                                                                                                                                                | The quantity of the product                                                                                                                                                       | 2                                                                                                                                                                                 |
+| `unitPrice`                                                                                                                                                                       | *number*                                                                                                                                                                          | :heavy_minus_sign:                                                                                                                                                                | The price per unit of the product                                                                                                                                                 | 10                                                                                                                                                                                |
+| `net`                                                                                                                                                                             | *number*                                                                                                                                                                          | :heavy_minus_sign:                                                                                                                                                                | Total net amount credited                                                                                                                                                         | 20.5                                                                                                                                                                              |
+| `tax`                                                                                                                                                                             | *number*                                                                                                                                                                          | :heavy_minus_sign:                                                                                                                                                                | Total taxed amount for the product                                                                                                                                                | 10                                                                                                                                                                                |
+| `subTotal`                                                                                                                                                                        | *number*                                                                                                                                                                          | :heavy_minus_sign:                                                                                                                                                                | The total amount of the financial transaction line, excluding discounts                                                                                                           | 200.5                                                                                                                                                                             |
+| `period`                                                                                                                                                                          | [operations.ComCrmEstimateSelfServiceResourceEstimateInvoicingPeriod](../../models/operations/com-crm-estimate-self-service-resource-estimate-invoicing-period.md)                | :heavy_minus_sign:                                                                                                                                                                | Invoiced period applicable only when invoicing a termed service.                                                                                                                  |                                                                                                                                                                                   |
+| `discount`                                                                                                                                                                        | [operations.LineDiscount](../../models/operations/line-discount.md)                                                                                                               | :heavy_minus_sign:                                                                                                                                                                | The applied discount. If a percentage was applied, then retrieving the line's discount will return both the discount amount and the percentage                                    |                                                                                                                                                                                   |
+| `product`                                                                                                                                                                         | [operations.ComCrmEstimateSelfServiceResourceEstimateInvoicingProduct](../../models/operations/com-crm-estimate-self-service-resource-estimate-invoicing-product.md)              | :heavy_minus_sign:                                                                                                                                                                | The credited product                                                                                                                                                              |                                                                                                                                                                                   |
+| `bundleProduct`                                                                                                                                                                   | [operations.ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProduct](../../models/operations/com-crm-estimate-self-service-resource-estimate-invoicing-bundle-product.md) | :heavy_minus_sign:                                                                                                                                                                | Applicable only when the invoiced item was provided as part of a bundle product                                                                                                   |                                                                                                                                                                                   |
+| `appliedTaxes`                                                                                                                                                                    | [operations.ComCrmEstimateSelfServiceResourceEstimateInvoicingAppliedTax](../../models/operations/com-crm-estimate-self-service-resource-estimate-invoicing-applied-tax.md)[]     | :heavy_minus_sign:                                                                                                                                                                | N/A                                                                                                                                                                               |                                                                                                                                                                                   |
+| `pricing`                                                                                                                                                                         | *number*                                                                                                                                                                          | :heavy_minus_sign:                                                                                                                                                                | The price of the product as this is configured in the product catalog (including tax or not depending on the tax model)                                                           | 9.99                                                                                                                                                                              |

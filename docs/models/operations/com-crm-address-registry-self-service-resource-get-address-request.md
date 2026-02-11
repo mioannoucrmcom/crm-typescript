@@ -1,0 +1,21 @@
+# ComCrmAddressRegistrySelfServiceResourceGetAddressRequest
+
+## Example Usage
+
+```typescript
+import { ComCrmAddressRegistrySelfServiceResourceGetAddressRequest } from "crm/models/operations";
+
+let value: ComCrmAddressRegistrySelfServiceResourceGetAddressRequest = {
+  googlePlaceId: "ChIJLU7jZClu5kcR4PcOOO6p3I0",
+  latlng: "<value>",
+  sessionId: "b9a5d80f-f2fa-4f62-b29f-9d288186bdf1",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                           | Type                                                                                                                                            | Required                                                                                                                                        | Description                                                                                                                                     | Example                                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `googlePlaceId`                                                                                                                                 | *string*                                                                                                                                        | :heavy_check_mark:                                                                                                                              | The Google textual identifier that uniquely identifies a location                                                                               | ChIJLU7jZClu5kcR4PcOOO6p3I0                                                                                                                     |
+| `latlng`                                                                                                                                        | *string*                                                                                                                                        | :heavy_check_mark:                                                                                                                              | The lat and lng coordinates that lookup will be performed against. if latlng is passed the google_place_id and session_id should not be passed. |                                                                                                                                                 |
+| `sessionId`                                                                                                                                     | *string*                                                                                                                                        | :heavy_check_mark:                                                                                                                              | The session identifier. Must be a version 4 UUID                                                                                                | b9a5d80f-f2fa-4f62-b29f-9d288186bdf1                                                                                                            |

@@ -1,0 +1,19 @@
+# Actions
+
+Subscription and service actions permitted by front-end users
+
+## Example Usage
+
+```typescript
+import { Actions } from "crm/models/operations";
+
+let value: Actions = {};
+```
+
+## Fields
+
+| Field                                                                                                                                                                            | Type                                                                                                                                                                             | Required                                                                                                                                                                         | Description                                                                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `subscriptions`                                                                                                                                                                  | [operations.ComCrmApplicationSelfServiceResourceGetApplicationSubscription](../../models/operations/com-crm-application-self-service-resource-get-application-subscription.md)[] | :heavy_minus_sign:                                                                                                                                                               | Subscription actions permitted via the front-end                                                                                                                                 |
+| `subscriptionsScheduledActions`                                                                                                                                                  | [operations.SubscriptionsScheduledAction](../../models/operations/subscriptions-scheduled-action.md)[]                                                                           | :heavy_minus_sign:                                                                                                                                                               | Allowed amendments on scheduled subscription actions                                                                                                                             |
+| `services`                                                                                                                                                                       | [operations.ComCrmApplicationSelfServiceResourceGetApplicationService](../../models/operations/com-crm-application-self-service-resource-get-application-service.md)[]           | :heavy_minus_sign:                                                                                                                                                               | Actions permitted against subscription services                                                                                                                                  |

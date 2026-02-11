@@ -1,0 +1,31 @@
+# ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceServiceResponse
+
+The one-time/termed service through which usage is consumed
+
+## Example Usage
+
+```typescript
+import {
+  ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceServiceResponse,
+} from "crm/models/operations";
+
+let value:
+  ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceServiceResponse =
+    {
+      id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+      classification: "TRACEABLE_PHYSICAL_GOOD",
+      product: {
+        id: "e283a863-18e1-7cae-48c4-7433bf28cf97",
+        name: "Universal Name",
+        sku: "S0001",
+      },
+    };
+```
+
+## Fields
+
+| Field                                                                                                                                                                                                                    | Type                                                                                                                                                                                                                     | Required                                                                                                                                                                                                                 | Description                                                                                                                                                                                                              | Example                                                                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                                                                     | *string*                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                       | The entity identifier                                                                                                                                                                                                    | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                                                                                                                                     |
+| `classification`                                                                                                                                                                                                         | [operations.ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceClassificationResponse](../../models/operations/com-crm-estimate-allowance-self-service-resource-estimates-allowance-classification-response.md) | :heavy_minus_sign:                                                                                                                                                                                                       | Product type classification                                                                                                                                                                                              | TRACEABLE_PHYSICAL_GOOD                                                                                                                                                                                                  |
+| `product`                                                                                                                                                                                                                | [operations.ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceProduct](../../models/operations/com-crm-estimate-allowance-self-service-resource-estimates-allowance-service-product.md)                 | :heavy_minus_sign:                                                                                                                                                                                                       | N/A                                                                                                                                                                                                                      |                                                                                                                                                                                                                          |

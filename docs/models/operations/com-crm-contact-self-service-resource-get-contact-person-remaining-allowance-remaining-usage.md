@@ -1,0 +1,21 @@
+# ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingUsage
+
+Actual allowed and remaining usage (based on measurement units)
+
+## Example Usage
+
+```typescript
+import { ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingUsage } from "crm/models/operations";
+
+let value:
+  ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingUsage =
+    {};
+```
+
+## Fields
+
+| Field                       | Type                        | Required                    | Description                 |
+| --------------------------- | --------------------------- | --------------------------- | --------------------------- |
+| `perTransaction`            | *number*                    | :heavy_minus_sign:          | Allowance per transaction   |
+| `perDay`                    | *number*                    | :heavy_minus_sign:          | Allowance per day           |
+| `perBillingCycle`           | *number*                    | :heavy_minus_sign:          | Allowance per billing cycle |

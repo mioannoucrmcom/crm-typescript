@@ -1,0 +1,19 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Self Service API:
+        inputs:
+            - location: ..\Downloads\selfservice.json
+        output: .speakeasy/out.openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/marios/self-service/self-service-api
+targets:
+    crm:
+        target: typescript
+        source: Self Service API
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/marios/self-service/self-service-api-typescript-code-samples
+            labelOverride:
+                fixedValue: Typescript (SDK)
+            blocking: false

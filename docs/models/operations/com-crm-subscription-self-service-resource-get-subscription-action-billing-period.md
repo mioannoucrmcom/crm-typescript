@@ -1,0 +1,20 @@
+# ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionBillingPeriod
+
+## Example Usage
+
+```typescript
+import { ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionBillingPeriod } from "crm/models/operations";
+
+let value:
+  ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionBillingPeriod = {
+    duration: 1,
+    uot: "MONTH",
+  };
+```
+
+## Fields
+
+| Field                                                                                                                                                                         | Type                                                                                                                                                                          | Required                                                                                                                                                                      | Description                                                                                                                                                                   | Example                                                                                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `duration`                                                                                                                                                                    | *number*                                                                                                                                                                      | :heavy_minus_sign:                                                                                                                                                            | The billing cycle's duration                                                                                                                                                  | 1                                                                                                                                                                             |
+| `uot`                                                                                                                                                                         | [operations.ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionUot](../../models/operations/com-crm-subscription-self-service-resource-get-subscription-action-uot.md) | :heavy_minus_sign:                                                                                                                                                            | The billing cycle's unit of time                                                                                                                                              | MONTH                                                                                                                                                                         |

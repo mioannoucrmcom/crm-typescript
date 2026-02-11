@@ -1,0 +1,18 @@
+# ComCrmContactSelfServiceResourceChangePasswordRequest
+
+## Example Usage
+
+```typescript
+import { ComCrmContactSelfServiceResourceChangePasswordRequest } from "crm/models/operations";
+
+let value: ComCrmContactSelfServiceResourceChangePasswordRequest = {
+  id: "a417df7f-d957-c365-fdf9-6093b3eb116c",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                 | Type                                                                                                                                                                  | Required                                                                                                                                                              | Description                                                                                                                                                           | Example                                                                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                  | *string*                                                                                                                                                              | :heavy_check_mark:                                                                                                                                                    | The contact (identifier) that will change his/her password                                                                                                            | a417df7f-d957-c365-fdf9-6093b3eb116c                                                                                                                                  |
+| `body`                                                                                                                                                                | [operations.ComCrmContactSelfServiceResourceChangePasswordRequestBody](../../models/operations/com-crm-contact-self-service-resource-change-password-request-body.md) | :heavy_minus_sign:                                                                                                                                                    | N/A                                                                                                                                                                   |                                                                                                                                                                       |

@@ -1,0 +1,18 @@
+# ComCrmAccountSelfServiceResourceExportStatementRequest
+
+## Example Usage
+
+```typescript
+import { ComCrmAccountSelfServiceResourceExportStatementRequest } from "crm/models/operations";
+
+let value: ComCrmAccountSelfServiceResourceExportStatementRequest = {
+  id: "b2490476-fc6b-604c-e3f9-5ddd0777efbe",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                   | Type                                                                                                                                                                    | Required                                                                                                                                                                | Description                                                                                                                                                             | Example                                                                                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                    | *string*                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                      | The contact (identifier) that statement actions will be applied                                                                                                         | b2490476-fc6b-604c-e3f9-5ddd0777efbe                                                                                                                                    |
+| `body`                                                                                                                                                                  | [operations.ComCrmAccountSelfServiceResourceExportStatementRequestBody](../../models/operations/com-crm-account-self-service-resource-export-statement-request-body.md) | :heavy_minus_sign:                                                                                                                                                      | N/A                                                                                                                                                                     |                                                                                                                                                                         |

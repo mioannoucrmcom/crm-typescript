@@ -1,0 +1,41 @@
+# ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseRequest
+
+## Example Usage
+
+```typescript
+import { ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseRequest } from "crm/models/operations";
+
+let value:
+  ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseRequest = {
+    id: "sdfsdfsdf4-43-r-few-f-wf-r3443;1234",
+    organisation: {
+      id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+      merchantTap: {
+        id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+        code: "2131424123",
+      },
+      venueTap: {
+        id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+        code: "2131424123",
+      },
+    },
+    transactionAmounts: {
+      net: 12.11,
+      tax: 0.11,
+      discount: 1,
+      total: 11,
+    },
+    transactionCode: "789321129",
+    currencyCode: "EUR",
+  };
+```
+
+## Fields
+
+| Field                                                                                                                                                                                                               | Type                                                                                                                                                                                                                | Required                                                                                                                                                                                                            | Description                                                                                                                                                                                                         | Example                                                                                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                                                                | *string*                                                                                                                                                                                                            | :heavy_check_mark:                                                                                                                                                                                                  | The receipt code (receipt number) that identifies the purchase (purchase id)                                                                                                                                        | sdfsdfsdf4-43-r-few-f-wf-r3443;1234                                                                                                                                                                                 |
+| `organisation`                                                                                                                                                                                                      | [operations.ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseOrganisation](../../models/operations/com-crm-purchase-customer-event-self-service-resource-reclaim-purchase-organisation.md)              | :heavy_minus_sign:                                                                                                                                                                                                  | Details about the organisation that submitted such purchase                                                                                                                                                         |                                                                                                                                                                                                                     |
+| `transactionAmounts`                                                                                                                                                                                                | [operations.ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransactionAmounts](../../models/operations/com-crm-purchase-customer-event-self-service-resource-reclaim-purchase-transaction-amounts.md) | :heavy_minus_sign:                                                                                                                                                                                                  | Details about purchase amounts                                                                                                                                                                                      |                                                                                                                                                                                                                     |
+| `transactionCode`                                                                                                                                                                                                   | *string*                                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                                  | The human readable code that a contact can reclaim a purchase event                                                                                                                                                 | 789321129                                                                                                                                                                                                           |
+| `currencyCode`                                                                                                                                                                                                      | *string*                                                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                                  | The currency code of the customer event based on ISO 4217 standard (if not provided, the currency of the customer's wallet will be used)                                                                            | EUR                                                                                                                                                                                                                 |

@@ -1,0 +1,23 @@
+# Fee
+
+The contribution/settlement fee that was applied on the settlement transaction
+
+## Example Usage
+
+```typescript
+import { Fee } from "crm/models/operations";
+
+let value: Fee = {
+  feeType: "CONTRIBUTION",
+  valueType: "AMOUNT",
+  number: 2.84,
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                     | Type                                                                                                                                                                      | Required                                                                                                                                                                  | Description                                                                                                                                                               | Example                                                                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `feeType`                                                                                                                                                                 | [operations.FeeType](../../models/operations/fee-type.md)                                                                                                                 | :heavy_minus_sign:                                                                                                                                                        | Defines the fee type<br/> * `CONTRIBUTION` - Contribution fee, applied on award transactions<br/> * `SETTLEMENT` - Settlement fee, applied on award/spend transactions<br/> | CONTRIBUTION                                                                                                                                                              |
+| `valueType`                                                                                                                                                               | [operations.ComCrmSettlementTransactionSelfServiceResourceListValueType](../../models/operations/com-crm-settlement-transaction-self-service-resource-list-value-type.md) | :heavy_minus_sign:                                                                                                                                                        | Defines whether the fee is amount or percentage based<br/> * `AMOUNT` - Fee will be amount based<br/> * `PERCENTAGE` - Fee will be percentage based<br/>               | AMOUNT                                                                                                                                                                    |
+| `number`                                                                                                                                                                  | *number*                                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                        | The fee value                                                                                                                                                             | 2.84                                                                                                                                                                      |

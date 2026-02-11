@@ -1,0 +1,44 @@
+# ComCrmPassSelfServiceResourceRedeemPassRequest
+
+## Example Usage
+
+```typescript
+import { ComCrmPassSelfServiceResourceRedeemPassRequest } from "crm/models/operations";
+
+let value: ComCrmPassSelfServiceResourceRedeemPassRequest = {
+  code: "SLHY678993109PWE",
+  contactId: "CEEE83D6E0804A30966F684B0269AD91",
+  walletId: "CAD1E31269B76D7A65ACCE45B2E68DFD",
+  pin: "1245",
+  customFields: [
+    {
+      key: "back_office",
+      value: "0001-12345",
+    },
+  ],
+  organisation: {
+    id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+    merchantTap: {
+      id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+      code: "2131424123",
+    },
+    venueTap: {
+      id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+      code: "2131424123",
+    },
+  },
+  date: 1572423477,
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                              | Type                                                                                                                                                                               | Required                                                                                                                                                                           | Description                                                                                                                                                                        | Example                                                                                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `code`                                                                                                                                                                             | *string*                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                 | The pass code to be redeemed. (either pass code or code_hash must be specified)                                                                                                    | SLHY678993109PWE                                                                                                                                                                   |
+| `contactId`                                                                                                                                                                        | *string*                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                 | Unique id of the contact who is redeeming the pass. If no contact_id is provided then a new Contact will be created using the pass code as the contact name (i.e. unnamed contact) | CEEE83D6E0804A30966F684B0269AD91                                                                                                                                                   |
+| `walletId`                                                                                                                                                                         | *string*                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                 | The id of the contact’s wallet which will be credited with the pass value                                                                                                          | CAD1E31269B76D7A65ACCE45B2E68DFD                                                                                                                                                   |
+| `pin`                                                                                                                                                                              | *string*                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                 | The pass PIN (if applicable)                                                                                                                                                       | 1245                                                                                                                                                                               |
+| `customFields`                                                                                                                                                                     | [operations.ComCrmPassSelfServiceResourceRedeemPassCustomField](../../models/operations/com-crm-pass-self-service-resource-redeem-pass-custom-field.md)[]                          | :heavy_minus_sign:                                                                                                                                                                 | Custom fields relevant to this pass                                                                                                                                                |                                                                                                                                                                                    |
+| `organisation`                                                                                                                                                                     | [operations.ComCrmPassSelfServiceResourceRedeemPassOrganisation](../../models/operations/com-crm-pass-self-service-resource-redeem-pass-organisation.md)                           | :heavy_check_mark:                                                                                                                                                                 | The Organisation at which the Pass was redeemed. If not specified, then the Pass is considered as redeemed at the business                                                         |                                                                                                                                                                                    |
+| `date`                                                                                                                                                                             | *number*                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                 | The date that the redemption was performed (if not provided, the current date will be used)                                                                                        | 1572423477                                                                                                                                                                         |

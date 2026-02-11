@@ -1,0 +1,26 @@
+# MilestonePlanEstimate
+
+## Example Usage
+
+```typescript
+import { MilestonePlanEstimate } from "crm/models/operations";
+
+let value: MilestonePlanEstimate = {
+  stage: {
+    id: "b82648cb-e5f4-53b2-26b3-edca38e3e34f",
+    name: "new",
+    colour: "FADS876",
+  },
+  queuePercentage: 10,
+  percentage: 5,
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                               | Type                                                                                                                                                                | Required                                                                                                                                                            | Description                                                                                                                                                         | Example                                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `stage`                                                                                                                                                             | [operations.ComCrmEstimateOrderSelfServiceResourceEstimateOrderStage](../../models/operations/com-crm-estimate-order-self-service-resource-estimate-order-stage.md) | :heavy_minus_sign:                                                                                                                                                  | The milestone's stage i.e. when the Invoice will be issued.                                                                                                         |                                                                                                                                                                     |
+| `queuePercentage`                                                                                                                                                   | *number*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                  | The milestone’s percentage amount as this is configured in the Order queue                                                                                          | 10                                                                                                                                                                  |
+| `percentage`                                                                                                                                                        | *number*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                  | the milestone’s percentage for this specified queue.                                                                                                                | 5                                                                                                                                                                   |
+| `amount`                                                                                                                                                            | *number*                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                  | calculated amount based on order quotation amount x by the percentage. If percentage = null then this amount = order quotation amount x queue percentage.           |                                                                                                                                                                     |

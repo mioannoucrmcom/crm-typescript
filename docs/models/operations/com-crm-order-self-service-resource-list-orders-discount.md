@@ -1,0 +1,19 @@
+# ComCrmOrderSelfServiceResourceListOrdersDiscount
+
+## Example Usage
+
+```typescript
+import { ComCrmOrderSelfServiceResourceListOrdersDiscount } from "crm/models/operations";
+
+let value: ComCrmOrderSelfServiceResourceListOrdersDiscount = {
+  amount: 0.96,
+  amountInclTax: 0.98,
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                           | Type                                                                                                                                                                            | Required                                                                                                                                                                        | Description                                                                                                                                                                     | Example                                                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `amount`                                                                                                                                                                        | *number*                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                              | Total discount amount excluding taxes. This amount equals to the sum of all discount amounts among all invoiced items. Note that this amount does not include the taxed amount. | 0.96                                                                                                                                                                            |
+| `amountInclTax`                                                                                                                                                                 | *number*                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                              | The total discount amount including taxes                                                                                                                                       | 0.98                                                                                                                                                                            |

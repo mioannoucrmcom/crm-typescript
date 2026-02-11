@@ -1,0 +1,25 @@
+# ItemBundleProduct
+
+## Example Usage
+
+```typescript
+import { ItemBundleProduct } from "crm/models/operations";
+
+let value: ItemBundleProduct = {
+  id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+  sku: "CBL-54455",
+  name: "Cable",
+  classification: "TRACEABLE_PHYSICAL_GOOD",
+  isStockable: false,
+};
+```
+
+## Fields
+
+| Field                                                                                                                              | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        | Example                                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                               | *string*                                                                                                                           | :heavy_minus_sign:                                                                                                                 | The entity identifier                                                                                                              | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                                               |
+| `sku`                                                                                                                              | *string*                                                                                                                           | :heavy_minus_sign:                                                                                                                 | Product’s SKU                                                                                                                      | CBL-54455                                                                                                                          |
+| `name`                                                                                                                             | *string*                                                                                                                           | :heavy_minus_sign:                                                                                                                 | Product’s name                                                                                                                     | Cable                                                                                                                              |
+| `classification`                                                                                                                   | [operations.InvoiceEstimateBundleProductClassification](../../models/operations/invoice-estimate-bundle-product-classification.md) | :heavy_minus_sign:                                                                                                                 | The product’s classification                                                                                                       | TRACEABLE_PHYSICAL_GOOD                                                                                                            |
+| `isStockable`                                                                                                                      | *boolean*                                                                                                                          | :heavy_minus_sign:                                                                                                                 | Indicates if the product is stockable                                                                                              | false                                                                                                                              |

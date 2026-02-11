@@ -1,0 +1,1790 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Speakeasy Modifications
+  version: 0.0.12
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/self-service/v2/industries"]["get"]
+    update:
+      x-speakeasy-name-override: listIndustries
+    x-speakeasy-metadata:
+      after: sdk.platform.listIndustries()
+      before: sdk.Platform.com.crm.IndustrySelfServiceResource_listIndustries()
+      created_at: 1770797633272
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people"]["post"]
+    update:
+      x-speakeasy-name-override: addPerson
+    x-speakeasy-metadata:
+      after: sdk.communities.addPerson()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_addContactRelationship()
+      created_at: 1770797633272
+      type: method-name
+  - target: $["paths"]["/self-service/v2/communities/relations"]["get"]
+    update:
+      x-speakeasy-name-override: listRelations
+    x-speakeasy-metadata:
+      after: sdk.communities.listRelations()
+      before: sdk.Communities.com.crm.ContactSettingSelfServiceResource_listCommunityRelations()
+      created_at: 1770797633272
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/{id}/code"]["get"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: getCode
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.getCode()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_getWalletCode()
+      created_at: 1770797633272
+      type: method-name
+  - target: $["paths"]["/self-service/v2/provisioning/service_commands"]["post"]
+    update:
+      x-speakeasy-group: provisioningProviders
+      x-speakeasy-name-override: sendCommand
+    x-speakeasy-metadata:
+      after: sdk.provisioningProviders.sendCommand()
+      before: sdk.Provisioning Providers.com.crm.ServiceCommandsSelfServiceResource_sendServiceCommands()
+      created_at: 1770797633272
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people"]["get"]
+    update:
+      x-speakeasy-name-override: listPeople
+    x-speakeasy-metadata:
+      after: sdk.communities.listPeople()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_listContactRelationship()
+      created_at: 1770797633272
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/payment_methods"]["get"]
+    update:
+      x-speakeasy-group: contactPaymentMethods
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.contactPaymentMethods.get()
+      before: sdk.Contact Payment Methods.com.crm.ContactSelfServiceResource_getPaymentMethods()
+      created_at: 1770797633272
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/{id}/summarised_totals"]["get"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: getSummarisedTotals
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.getSummarisedTotals()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_getWalletSummarisedTotals()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/rewards/merchants"]["get"]
+    update:
+      x-speakeasy-name-override: listParticipatingMerchants
+    x-speakeasy-metadata:
+      after: sdk.organisations.listParticipatingMerchants()
+      before: sdk.Organisations.com.crm.MerchantSelfServiceResource_list()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/estimates/allowance"]["post"]
+    update:
+      x-speakeasy-name-override: estimateAllowance
+    x-speakeasy-metadata:
+      after: sdk.usage.estimateAllowance()
+      before: sdk.Usage.com.crm.EstimateAllowanceSelfServiceResource_estimatesAllowance()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/referrals"]["post"]
+    update:
+      x-speakeasy-group: referralCustomerEvents
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.referralCustomerEvents.create()
+      before: sdk.Referral Customer Events.com.crm.ReferralCustomerEventSelfServiceResource_createReferral()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/estimates/service_delivery"]["post"]
+    update:
+      x-speakeasy-name-override: estimateServiceDelivery
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.estimateServiceDelivery()
+      before: sdk.Subscriptions.com.crm.EstimateSubscriptionSelfServiceResource_estimateSubscription()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/usage_records"]["get"]
+    update:
+      x-speakeasy-name-override: listRecords
+    x-speakeasy-metadata:
+      after: sdk.usage.listRecords()
+      before: sdk.Usage.com.crm.UsageDetailRecordSelfServiceResource_listUsageDetailRecords()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/reward_schemes"]["get"]
+    update:
+      x-speakeasy-group: rewardSchemes
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.rewardSchemes.list()
+      before: sdk.Reward Schemes.com.crm.RewardSchemeSelfServiceResource_list()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/languages"]["get"]
+    update:
+      x-speakeasy-name-override: getSupportedLanguages
+    x-speakeasy-metadata:
+      after: sdk.platform.getSupportedLanguages()
+      before: sdk.Platform.com.crm.LanguageSelfServiceResource_getSupportedLanguages()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/approval_requests/{id}/actions"]["post"]
+    update:
+      x-speakeasy-group: approvalRequests
+      x-speakeasy-name-override: performActions
+    x-speakeasy-metadata:
+      after: sdk.approvalRequests.performActions()
+      before: sdk.Approval Requests.com.crm.ApprovalRequestSelfServiceResource_performActions()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/analytics"]["get"]
+    update:
+      x-speakeasy-group: contactAnalytics
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.contactAnalytics.get()
+      before: sdk.Contact Analytics.com.crm.ContactSelfServiceAnalyticsResource_getAnalytics()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/wallet_exists"]["get"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: verifyExists
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.verifyExists()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_verifyWalletExists()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}"]["delete"]
+    update:
+      x-speakeasy-name-override: unregister
+    x-speakeasy-metadata:
+      after: sdk.contact.unregister()
+      before: sdk.Contact.com.crm.ContactSelfServiceResource_unregisterContact()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/orders"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.orders.list()
+      before: sdk.Orders.com.crm.OrderSelfServiceResource_listOrders()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/switch"]["post"]
+    update:
+      x-speakeasy-name-override: switch
+    x-speakeasy-metadata:
+      after: sdk.authentication.switch()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_switchContact()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/products/types"]["get"]
+    update:
+      x-speakeasy-name-override: listProductTypes
+    x-speakeasy-metadata:
+      after: sdk.settings.listProductTypes()
+      before: sdk.Settings.com.crm.ProductTypeSelfServiceResource_listProductTypes()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/donation_offers/organisations"]["get"]
+    update:
+      x-speakeasy-name-override: listOrganisations
+    x-speakeasy-metadata:
+      after: sdk.donations.listOrganisations()
+      before: sdk.Donations.com.crm.RewardOfferDonationsSelfServiceResource_listCharityOrgs()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/register"]["post"]
+    update:
+      x-speakeasy-group: contacts
+      x-speakeasy-name-override: register
+    x-speakeasy-metadata:
+      after: sdk.contacts.register()
+      before: sdk.Contact.registerContactSS()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/donations/{donation_id}"]["delete"]
+    update:
+      x-speakeasy-group: contactDonations
+      x-speakeasy-name-override: optOut
+    x-speakeasy-metadata:
+      after: sdk.contactDonations.optOut()
+      before: sdk.Contact Donations.com.crm.ContactSelfServiceResource_optOutDonations()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/donations/history"]["get"]
+    update:
+      x-speakeasy-group: contactDonations
+      x-speakeasy-name-override: listHistory
+    x-speakeasy-metadata:
+      after: sdk.contactDonations.listHistory()
+      before: sdk.Contact Donations.com.crm.ContactDonationSelfServiceResource_listContactDonationsHistory()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/approval_requests/reject/{token}/action"]["post"]
+    update:
+      x-speakeasy-group: approvalRequests
+      x-speakeasy-name-override: reject
+    x-speakeasy-metadata:
+      after: sdk.approvalRequests.reject()
+      before: sdk.Approval Requests.com.crm.ApprovalRequestSelfServiceResource_rejectApprovalRequestAction()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/approval_requests/accept/{token}"]["get"]
+    update:
+      x-speakeasy-group: approvalRequests
+      x-speakeasy-name-override: accept
+    x-speakeasy-metadata:
+      after: sdk.approvalRequests.accept()
+      before: sdk.Approval Requests.com.crm.ApprovalRequestSelfServiceResource_acceptApprovalRequest()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/tokens"]["get"]
+    update:
+      x-speakeasy-group: contactTokens
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.contactTokens.list()
+      before: sdk.Contact Tokens.listContactTokensSS()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/organisations/{id}/switch"]["post"]
+    update:
+      x-speakeasy-name-override: switch
+    x-speakeasy-metadata:
+      after: sdk.organisations.switch()
+      before: sdk.Organisations.com.crm.OrganisationSelfServiceResource_switchOrganisation()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/{id}"]["put"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.update()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_update()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/custom_fields"]["get"]
+    update:
+      x-speakeasy-name-override: listCustomFields
+    x-speakeasy-metadata:
+      after: sdk.platform.listCustomFields()
+      before: sdk.Platform.com.crm.CustomFieldSelfServiceResource_listCustomFields()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/service_requests/{id}/notes"]["post"]
+    update:
+      x-speakeasy-group: serviceRequests
+      x-speakeasy-name-override: createNote
+    x-speakeasy-metadata:
+      after: sdk.serviceRequests.createNote()
+      before: sdk.Service Requests.com.crm.ServiceRequestSelfServiceResource_createNote()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/products/{id}/variants"]["get"]
+    update:
+      x-speakeasy-group: productCatalogue
+      x-speakeasy-name-override: getVariants
+    x-speakeasy-metadata:
+      after: sdk.productCatalogue.getVariants()
+      before: sdk.Product Catalogue.com.crm.ProductSelfServiceResource_getProductVariations()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/rewards"]["get"]
+    update:
+      x-speakeasy-group: contactRewards
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.contactRewards.get()
+      before: sdk.Contact Rewards.com.crm.ContactSelfServiceResource_getSingleWithRewards()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/organisations"]["get"]
+    update:
+      x-speakeasy-group: contactOrganisations
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.contactOrganisations.get()
+      before: sdk.Contact Organisations.com.crm.ContactSelfServiceResource_getOrganisations()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/intents"]["post"]
+    update:
+      x-speakeasy-group: contactFinancials
+      x-speakeasy-name-override: setUpPaymentIntent
+    x-speakeasy-metadata:
+      after: sdk.contactFinancials.setUpPaymentIntent()
+      before: sdk.Contact Financials.com.crm.PaymentIntentSelfServiceResource_setUpIntents()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/otp"]["post"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: requestOtp
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.requestOtp()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_requestOTP()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people/{relationship_id}/actions"]["post"]
+    update:
+      x-speakeasy-name-override: communityInvitationActions
+    x-speakeasy-metadata:
+      after: sdk.contact.communityInvitationActions()
+      before: sdk.Contact.com.crm.ContactSelfServiceResource_action()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/subscriptions/actions"]["get"]
+    update:
+      x-speakeasy-name-override: listAllActions
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.listAllActions()
+      before: sdk.Subscriptions.com.crm.SubscriptionSelfServiceResource_listSubscriptionActions()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/communities/{community_owner_id}"]["delete"]
+    update:
+      x-speakeasy-name-override: leave
+    x-speakeasy-metadata:
+      after: sdk.communities.leave()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_leaveCommunity()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/provisioning/service_commands"]["get"]
+    update:
+      x-speakeasy-group: provisioningProviders
+      x-speakeasy-name-override: getServiceCommands
+    x-speakeasy-metadata:
+      after: sdk.provisioningProviders.getServiceCommands()
+      before: sdk.Provisioning Providers.com.crm.ServiceCommandsSelfServiceResource_getServiceCommands()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/settlement_transactions"]["get"]
+    update:
+      x-speakeasy-group: contactFinancials
+      x-speakeasy-name-override: listSettlementTransactions
+    x-speakeasy-metadata:
+      after: sdk.contactFinancials.listSettlementTransactions()
+      before: sdk.Contact Financials.com.crm.SettlementTransactionSelfServiceResource_list()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/payment_forms/payment"]["get"]
+    update:
+      x-speakeasy-group: paymentForms
+      x-speakeasy-name-override: generate
+    x-speakeasy-metadata:
+      after: sdk.paymentForms.generate()
+      before: sdk.Payment Forms.com.crm.PaymentFormSelfServiceResource_generatePaymentForm()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/communications/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.communications.get()
+      before: sdk.Communications.crm.com.CommunicationSelfServiceResource_getSingle()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/validate_otp"]["post"]
+    update:
+      x-speakeasy-name-override: validateOtp
+    x-speakeasy-metadata:
+      after: sdk.authentication.validateOtp()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_validateOTP()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/addresses/{address_id}"]["delete"]
+    update:
+      x-speakeasy-group: contactAddresses
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.contactAddresses.delete()
+      before: sdk.Contact Addresses.deleteContactAddressSS()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/{id}"]["get"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.get()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_getSingle()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/{id}/topup_settings"]["get"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: getTopUpSettings
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.getTopUpSettings()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_getWalletTopUpSettings()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/payout_forms/payout"]["get"]
+    update:
+      x-speakeasy-group: payoutForms
+      x-speakeasy-name-override: generate
+    x-speakeasy-metadata:
+      after: sdk.payoutForms.generate()
+      before: sdk.Payout Forms.com.crm.PayoutFormSelfServiceResource_generatePayoutForm()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/passes/redeem"]["post"]
+    update:
+      x-speakeasy-name-override: redeem
+    x-speakeasy-metadata:
+      after: sdk.passes.redeem()
+      before: sdk.Passes.com.crm.PassSelfServiceResource_redeemPass()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/order_catalogues"]["get"]
+    update:
+      x-speakeasy-group: orderCatalogues
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.orderCatalogues.list()
+      before: sdk.Order Catalogues.com.crm.OrderCatalogSelfServiceResource_list()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/google_pass/{organisationId}/contacts/{contactId}"]["get"]
+    update:
+      x-speakeasy-group: mobilePassCards
+      x-speakeasy-name-override: getGooglePass
+    x-speakeasy-metadata:
+      after: sdk.mobilePassCards.getGooglePass()
+      before: sdk.Mobile Pass Cards.com.crm.WalletPassesSelfServiceResource_getGooglePass()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/payment_methods/{payment_method_id}"]["put"]
+    update:
+      x-speakeasy-group: contactPaymentMethods
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.contactPaymentMethods.update()
+      before: sdk.Contact Payment Methods.com.crm.ContactSelfServiceResource_updatePaymentMethod()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/devices/{dev_id}/meter_readings"]["get"]
+    update:
+      x-speakeasy-group: contactDevices
+      x-speakeasy-name-override: listMeterReadings
+    x-speakeasy-metadata:
+      after: sdk.contactDevices.listMeterReadings()
+      before: sdk.Contact Devices.com.crm.DeviceSelfServiceResource_listDeviceMeterReadings()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/communications/{id}/actions"]["put"]
+    update:
+      x-speakeasy-name-override: updateActions
+    x-speakeasy-metadata:
+      after: sdk.communications.updateActions()
+      before: sdk.Communications.crm.com.CommunicationSelfServiceResource_communicationActions()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/hosted_pages/payments"]["get"]
+    update:
+      x-speakeasy-group: hostedPages
+      x-speakeasy-name-override: getPaymentForm
+    x-speakeasy-metadata:
+      after: sdk.hostedPages.getPaymentForm()
+      before: sdk.Hosted Pages.com.crm.HostedPagesSelfServiceResource_generatePaymentForm()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/{id}/journals"]["get"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: getJournals
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.getJournals()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_listWalletJournals()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/subscriptions/{id}"]["put"]
+    update:
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.update()
+      before: sdk.Subscriptions.com.crm.SubscriptionSelfServiceResource_change()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/attachments/{attachment_id}"]["delete"]
+    update:
+      x-speakeasy-group: contactAttachments
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.contactAttachments.delete()
+      before: sdk.Contact Attachments.com.crm.ContactSelfServiceResource_removeFile()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/orders/{id}/actions"]["put"]
+    update:
+      x-speakeasy-name-override: updateActions
+    x-speakeasy-metadata:
+      after: sdk.orders.updateActions()
+      before: sdk.Orders.com.crm.OrderSelfServiceResource_performOrderActions()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/communities"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.communities.list()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_getCommunities()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/addresses"]["get"]
+    update:
+      x-speakeasy-group: contactAddresses
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.contactAddresses.list()
+      before: sdk.Contact Addresses.listContactAddressesSS()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/image"]["delete"]
+    update:
+      x-speakeasy-group: contactImages
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.contactImages.delete()
+      before: sdk.Contact Images.com.crm.ContactSelfServiceResource_deleteImage()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/identities"]["post"]
+    update:
+      x-speakeasy-name-override: addIdentity
+    x-speakeasy-metadata:
+      after: sdk.authentication.addIdentity()
+      before: sdk.Authentication.addContactIdentitySS()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/locations"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.organisations.list()
+      before: sdk.Organisations.com.crm.LocationSelfServiceResource_list()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/sub_industries"]["get"]
+    update:
+      x-speakeasy-name-override: listSubIndustries
+    x-speakeasy-metadata:
+      after: sdk.platform.listSubIndustries()
+      before: sdk.Platform.com.crm.SubIndustrySelfServiceResource_listSubIndustrySectors()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts"]["get"]
+    update:
+      x-speakeasy-name-override: verifyExists
+    x-speakeasy-metadata:
+      after: sdk.contact.verifyExists()
+      before: sdk.Contact.com.crm.ContactSelfServiceResource_verifyContactExists()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/change_password"]["post"]
+    update:
+      x-speakeasy-name-override: changeForgottenPassword
+    x-speakeasy-metadata:
+      after: sdk.authentication.changeForgottenPassword()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_changeForgottenPassword()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/approval_requests/reject/{token}"]["get"]
+    update:
+      x-speakeasy-group: approvalRequests
+      x-speakeasy-name-override: showRejectForm
+    x-speakeasy-metadata:
+      after: sdk.approvalRequests.showRejectForm()
+      before: sdk.Approval Requests.com.crm.ApprovalRequestSelfServiceResource_rejectApprovalRequest()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/name_day_rules"]["get"]
+    update:
+      x-speakeasy-name-override: listNameDayRules
+    x-speakeasy-metadata:
+      after: sdk.settings.listNameDayRules()
+      before: sdk.Settings.com.crm.NameDayRulesSelfServiceResource_listNameDayRules()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/payment_forms/pass"]["post"]
+    update:
+      x-speakeasy-group: paymentForms
+      x-speakeasy-name-override: generatePass
+    x-speakeasy-metadata:
+      after: sdk.paymentForms.generatePass()
+      before: sdk.Payment Forms.com.crm.PaymentFormSelfServiceResource_generatePassPaymentForm()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/service_requests"]["post"]
+    update:
+      x-speakeasy-group: serviceRequests
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.serviceRequests.create()
+      before: sdk.Service Requests.com.crm.ServiceRequestSelfServiceResource_create()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/estimates/orders"]["post"]
+    update:
+      x-speakeasy-name-override: order
+    x-speakeasy-metadata:
+      after: sdk.estimates.order()
+      before: sdk.Estimates.com.crm.EstimateOrderSelfServiceResource_estimateOrder()
+      created_at: 1770797633273
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/reward_schemes/verification/{sign_up_code}"]["get"]
+    update:
+      x-speakeasy-group: contactRewards
+      x-speakeasy-name-override: verifySignUp
+    x-speakeasy-metadata:
+      after: sdk.contactRewards.verifySignUp()
+      before: sdk.Contact Rewards.com.crm.ContactSelfServiceResource_verifySignUp()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/devices"]["get"]
+    update:
+      x-speakeasy-group: contactDevices
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.contactDevices.get()
+      before: sdk.Contact Devices.com.crm.DeviceSelfServiceResource_getContactDevices()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people/{relationship_id}/remaining_products_allowance"]["get"]
+    update:
+      x-speakeasy-name-override: getRemainingAllowance
+    x-speakeasy-metadata:
+      after: sdk.communities.getRemainingAllowance()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_getContactPersonRemainingAllowance()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/reward_schemes"]["post"]
+    update:
+      x-speakeasy-group: contactRewards
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.contactRewards.update()
+      before: sdk.Contact Rewards.com.crm.ContactSelfServiceResource_signUpOutScheme()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/export_statement"]["post"]
+    update:
+      x-speakeasy-group: contacts
+      x-speakeasy-name-override: exportStatement
+    x-speakeasy-metadata:
+      after: sdk.contacts.exportStatement()
+      before: sdk.Contact.com.crm.AccountSelfServiceResource_exportStatement()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance"]["get"]
+    update:
+      x-speakeasy-name-override: getPersonAllowance
+    x-speakeasy-metadata:
+      after: sdk.communities.getPersonAllowance()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_getContactPersonAllowance()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/promotions"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.promotions.list()
+      before: sdk.Promotions.com.crm.PromotionSelfServiceResource_list()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/transfers/bulk"]["post"]
+    update:
+      x-speakeasy-group: contactFinancials
+      x-speakeasy-name-override: createBulkTransfer
+    x-speakeasy-metadata:
+      after: sdk.contactFinancials.createBulkTransfer()
+      before: sdk.Contact Financials.com.crm.TransferSelfServiceResource_createTransferBulk()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/reward_offers"]["get"]
+    update:
+      x-speakeasy-group: rewardOffers
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.rewardOffers.list()
+      before: sdk.Reward Offers.com.crm.RewardOfferSelfServiceResource_list()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/products/categories"]["get"]
+    update:
+      x-speakeasy-name-override: listProductCategories
+    x-speakeasy-metadata:
+      after: sdk.settings.listProductCategories()
+      before: sdk.Settings.com.crm.ProductCategorySelfServiceResource_listProductCategories()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/services/recommendation"]["get"]
+    update:
+      x-speakeasy-name-override: getService
+    x-speakeasy-metadata:
+      after: sdk.recommendations.getService()
+      before: sdk.Recommendations.com.crm.ServiceRecommendationSelfServiceResource_getServiceRecommendation()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/accounts/{id}"]["put"]
+    update:
+      x-speakeasy-group: contactAccounts
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.contactAccounts.update()
+      before: sdk.Contact Accounts.com.crm.AccountSelfServiceResource_updateAccount()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/organisations/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.organisations.get()
+      before: sdk.Organisations.com.crm.OrganisationSelfServiceResource_getSingle()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/referrals/actions"]["post"]
+    update:
+      x-speakeasy-group: referralCustomerEvents
+      x-speakeasy-name-override: postActions
+    x-speakeasy-metadata:
+      after: sdk.referralCustomerEvents.postActions()
+      before: sdk.Referral Customer Events.com.crm.ReferralCustomerEventSelfServiceResource_referralActions()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people/{relationship_id}"]["get"]
+    update:
+      x-speakeasy-name-override: getRelationship
+    x-speakeasy-metadata:
+      after: sdk.communities.getRelationship()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_getContactRelationship()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/donations/{donation_id}"]["put"]
+    update:
+      x-speakeasy-group: contactDonations
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.contactDonations.update()
+      before: sdk.Contact Donations.com.crm.ContactSelfServiceResource_updateDonations()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/purchases"]["get"]
+    update:
+      x-speakeasy-group: purchaseCustomerEvents
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.purchaseCustomerEvents.list()
+      before: sdk.Purchase Customer Events.com.crm.PurchaseCustomerEventSelfServiceResource_listPurchases()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/services"]["post"]
+    update:
+      x-speakeasy-name-override: add
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.add()
+      before: sdk.Subscriptions.com.crm.SubscriptionSelfServiceResource_addService()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/payment_methods"]["post"]
+    update:
+      x-speakeasy-group: contactPaymentMethods
+      x-speakeasy-name-override: add
+    x-speakeasy-metadata:
+      after: sdk.contactPaymentMethods.add()
+      before: sdk.Contact Payment Methods.com.crm.ContactSelfServiceResource_addPaymentMethod()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/groups/{name}"]["put"]
+    update:
+      x-speakeasy-name-override: updateGroupName
+    x-speakeasy-metadata:
+      after: sdk.communities.updateGroupName()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_updateContactGroupName()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/accounts/{id}/journals"]["get"]
+    update:
+      x-speakeasy-group: contactAccounts
+      x-speakeasy-name-override: getJournals
+    x-speakeasy-metadata:
+      after: sdk.contactAccounts.getJournals()
+      before: sdk.Contact Accounts.com.crm.AccountSelfServiceResource_listAccountJournals()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/accounts/{id}"]["get"]
+    update:
+      x-speakeasy-group: contactAccounts
+      x-speakeasy-name-override: getAccount
+    x-speakeasy-metadata:
+      after: sdk.contactAccounts.getAccount()
+      before: sdk.Contact Accounts.com.crm.AccountSelfServiceResource_getSingle()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/topups"]["post"]
+    update:
+      x-speakeasy-group: contactFinancials
+      x-speakeasy-name-override: createTopup
+    x-speakeasy-metadata:
+      after: sdk.contactFinancials.createTopup()
+      before: sdk.Contact Financials.com.crm.TopUpSelfServiceResource_create()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/approval_requests/accept/{token}/action"]["post"]
+    update:
+      x-speakeasy-group: approvalRequests
+      x-speakeasy-name-override: approveAction
+    x-speakeasy-metadata:
+      after: sdk.approvalRequests.approveAction()
+      before: sdk.Approval Requests.com.crm.ApprovalRequestSelfServiceResource_acceptApprovalRequestAction()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/printout"]["post"]
+    update:
+      x-speakeasy-name-override: requestPrintout
+    x-speakeasy-metadata:
+      after: sdk.communications.requestPrintout()
+      before: sdk.Communications.crm.com.PrintoutSelfServiceResource_output()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/files/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getFile
+    x-speakeasy-metadata:
+      after: sdk.platform.getFile()
+      before: sdk.Platform.com.crm.FileSelfServiceResource_getFile()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/sign_out"]["post"]
+    update:
+      x-speakeasy-name-override: signOut
+    x-speakeasy-metadata:
+      after: sdk.authentication.signOut()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_signOut()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/reward_offers/{id}/performance"]["get"]
+    update:
+      x-speakeasy-group: rewardOffers
+      x-speakeasy-name-override: getPerformance
+    x-speakeasy-metadata:
+      after: sdk.rewardOffers.getPerformance()
+      before: sdk.Reward Offers.com.crm.RewardOfferSelfServiceResource_getRewardOfferPerformance()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/preferences"]["get"]
+    update:
+      x-speakeasy-group: contactPreferences
+      x-speakeasy-name-override: getPreferredOrganisation
+    x-speakeasy-metadata:
+      after: sdk.contactPreferences.getPreferredOrganisation()
+      before: sdk.Contact Preferences.getContactPreferredOrganisationSS()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/change_password"]["post"]
+    update:
+      x-speakeasy-name-override: changePassword
+    x-speakeasy-metadata:
+      after: sdk.authentication.changePassword()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_changePassword()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/reward_offers/{id}"]["get"]
+    update:
+      x-speakeasy-group: rewardOffers
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.rewardOffers.get()
+      before: sdk.Reward Offers.com.crm.RewardOfferSelfServiceResource_getSingle()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/{id}/limits"]["put"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: updateLimits
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.updateLimits()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_updateLimits()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/subscriptions"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.list()
+      before: sdk.Subscriptions.com.crm.SubscriptionSelfServiceResource_listContactSubscriptions()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/products/recommendation"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.recommendations.get()
+      before: sdk.Recommendations.com.crm.ProductRecommendationSelfServiceResource_getProductRecommendation()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/applications/{id}/translations"]["get"]
+    update:
+      x-speakeasy-name-override: getTranslations
+    x-speakeasy-metadata:
+      after: sdk.platform.getTranslations()
+      before: sdk.Platform.com.crm.ApplicationSelfServiceResource_getApplicationEmbeddedLinksTranslations()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/donations"]["post"]
+    update:
+      x-speakeasy-group: contactDonations
+      x-speakeasy-name-override: optIn
+    x-speakeasy-metadata:
+      after: sdk.contactDonations.optIn()
+      before: sdk.Contact Donations.com.crm.ContactSelfServiceResource_optInDonations()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/service_requests/{id}/attachments"]["get"]
+    update:
+      x-speakeasy-group: serviceRequests
+      x-speakeasy-name-override: listAttachments
+    x-speakeasy-metadata:
+      after: sdk.serviceRequests.listAttachments()
+      before: sdk.Service Requests.com.crm.ServiceRequestSelfServiceResource_getFiles()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/tokens"]["post"]
+    update:
+      x-speakeasy-group: contactTokens
+      x-speakeasy-name-override: request
+    x-speakeasy-metadata:
+      after: sdk.contactTokens.request()
+      before: sdk.Contact Tokens.addContactTokenSS()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/subscriptions/actions/{id}"]["put"]
+    update:
+      x-speakeasy-name-override: updateAction
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.updateAction()
+      before: sdk.Subscriptions.com.crm.SubscriptionSelfServiceResource_updateSubscriptionAction()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/services/{id}/devices"]["get"]
+    update:
+      x-speakeasy-name-override: getServiceDevices
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.getServiceDevices()
+      before: sdk.Subscriptions.com.crm.SubscriptionSelfServiceResource_listServiceDevices()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/communications"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.communications.list()
+      before: sdk.Communications.crm.com.CommunicationSelfServiceResource_list()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/tags"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.tags.list()
+      before: sdk.Tags.com.crm.TagSelfServiceResource_listTags()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/files/{id}"]["delete"]
+    update:
+      x-speakeasy-name-override: deleteFile
+    x-speakeasy-metadata:
+      after: sdk.platform.deleteFile()
+      before: sdk.Platform.com.crm.FileSelfServiceResource_deleteFile()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/get_addresses"]["get"]
+    update:
+      x-speakeasy-group: addressLookup
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.addressLookup.get()
+      before: sdk.Address Lookup.com.crm.AddressRegistrySelfServiceResource_getAddress()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/service_requests/{id}/attachments"]["post"]
+    update:
+      x-speakeasy-group: serviceRequests
+      x-speakeasy-name-override: createAttachment
+    x-speakeasy-metadata:
+      after: sdk.serviceRequests.createAttachment()
+      before: sdk.Service Requests.com.crm.ServiceRequestSelfServiceResource_createServiceRequestFile()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/applications/{id}/integrations"]["get"]
+    update:
+      x-speakeasy-name-override: listIntegrations
+    x-speakeasy-metadata:
+      after: sdk.platform.listIntegrations()
+      before: sdk.Platform.com.crm.ApplicationSelfServiceResource_list()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/queues"]["get"]
+    update:
+      x-speakeasy-group: serviceRequests
+      x-speakeasy-name-override: listQueues
+    x-speakeasy-metadata:
+      after: sdk.serviceRequests.listQueues()
+      before: sdk.Service Requests.com.crm.QueueSelfServiceResource_list()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/products/{id}/components"]["get"]
+    update:
+      x-speakeasy-group: productCatalogue
+      x-speakeasy-name-override: getComponents
+    x-speakeasy-metadata:
+      after: sdk.productCatalogue.getComponents()
+      before: sdk.Product Catalogue.com.crm.ProductSelfServiceResource_getProductComponents()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/addresses"]["get"]
+    update:
+      x-speakeasy-group: addressLookup
+      x-speakeasy-name-override: search
+    x-speakeasy-metadata:
+      after: sdk.addressLookup.search()
+      before: sdk.Address Lookup.com.crm.AddressRegistrySelfServiceResource_list()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/hosted_pages/payouts"]["get"]
+    update:
+      x-speakeasy-group: hostedPages
+      x-speakeasy-name-override: getPayoutForm
+    x-speakeasy-metadata:
+      after: sdk.hostedPages.getPayoutForm()
+      before: sdk.Hosted Pages.com.crm.HostedPagesSelfServiceResource_generatePayoutForm()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/products"]["get"]
+    update:
+      x-speakeasy-group: productCatalogue
+      x-speakeasy-name-override: search
+    x-speakeasy-metadata:
+      after: sdk.productCatalogue.search()
+      before: sdk.Product Catalogue.com.crm.ProductSelfServiceResource_listProducts()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/authenticate"]["post"]
+    update:
+      x-speakeasy-name-override: authenticate
+    x-speakeasy-metadata:
+      after: sdk.authentication.authenticate()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_authenticate()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/usage_records/metrics"]["get"]
+    update:
+      x-speakeasy-name-override: getMetrics
+    x-speakeasy-metadata:
+      after: sdk.usage.getMetrics()
+      before: sdk.Usage.com.crm.UsageDetailRecordSelfServiceResource_getMetrics()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/services/{id}"]["put"]
+    update:
+      x-speakeasy-name-override: updateService
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.updateService()
+      before: sdk.Subscriptions.com.crm.SubscriptionSelfServiceResource_changeService()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/devices/{fcm_token}"]["delete"]
+    update:
+      x-speakeasy-group: contactDevices
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.contactDevices.delete()
+      before: sdk.Contact Devices.com.crm.DeviceSelfServiceResource_removeContactDevice()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/passes/view_promo_pass"]["get"]
+    update:
+      x-speakeasy-name-override: viewPromo
+    x-speakeasy-metadata:
+      after: sdk.passes.viewPromo()
+      before: sdk.Passes.com.crm.PassSelfServiceResource_viewPromoPass()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/products/brands"]["get"]
+    update:
+      x-speakeasy-name-override: getProductBrands
+    x-speakeasy-metadata:
+      after: sdk.settings.getProductBrands()
+      before: sdk.Settings.com.crm.ProductBrandSelfServiceResource_getProductBrands()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/attachments"]["get"]
+    update:
+      x-speakeasy-group: contactAttachments
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.contactAttachments.list()
+      before: sdk.Contact Attachments.com.crm.ContactSelfServiceResource_getFiles()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance"]["post"]
+    update:
+      x-speakeasy-name-override: addProductAllowance
+    x-speakeasy-metadata:
+      after: sdk.communities.addProductAllowance()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_addContactRelationshipProductAllowance()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance/{product_allowance_id}"]["put"]
+    update:
+      x-speakeasy-name-override: updateProductAllowance
+    x-speakeasy-metadata:
+      after: sdk.communities.updateProductAllowance()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_updateContactRelationshipProductAllowance()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/service_requests/{id}/notes"]["get"]
+    update:
+      x-speakeasy-group: serviceRequests
+      x-speakeasy-name-override: getNotes
+    x-speakeasy-metadata:
+      after: sdk.serviceRequests.getNotes()
+      before: sdk.Service Requests.com.crm.ServiceRequestSelfServiceResource_getNotes()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/donation_offers/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.donations.get()
+      before: sdk.Donations.com.crm.RewardOfferDonationsSelfServiceResource_getSingle()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/image"]["put"]
+    update:
+      x-speakeasy-group: contactImages
+      x-speakeasy-name-override: upload
+    x-speakeasy-metadata:
+      after: sdk.contactImages.upload()
+      before: sdk.Contact Images.com.crm.ContactSelfServiceResource_uploadImage()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/accounts"]["post"]
+    update:
+      x-speakeasy-group: contactAccounts
+      x-speakeasy-name-override: add
+    x-speakeasy-metadata:
+      after: sdk.contactAccounts.add()
+      before: sdk.Contact Accounts.com.crm.AccountSelfServiceResource_addContactAccount()
+      created_at: 1770797633274
+      type: method-name
+  - target: $["paths"]["/self-service/v2/payouts"]["post"]
+    update:
+      x-speakeasy-group: contactFinancials
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.contactFinancials.create()
+      before: sdk.Contact Financials.com.crm.PayoutSelfServiceResource_create()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/promotions/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.promotions.get()
+      before: sdk.Promotions.com.crm.PromotionSelfServiceResource_getSingle()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/orders"]["post"]
+    update:
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.orders.create()
+      before: sdk.Orders.com.crm.OrderSelfServiceResource_createOrder()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/devices/{dev_id}/meter_readings"]["post"]
+    update:
+      x-speakeasy-group: contactDevices
+      x-speakeasy-name-override: createMeterReading
+    x-speakeasy-metadata:
+      after: sdk.contactDevices.createMeterReading()
+      before: sdk.Contact Devices.com.crm.DeviceSelfServiceResource_createDeviceMeterReading()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/verify_email"]["get"]
+    update:
+      x-speakeasy-name-override: verifyEmail
+    x-speakeasy-metadata:
+      after: sdk.authentication.verifyEmail()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_verifyContactEmail()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/{id}/transactions"]["get"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: getTransactions
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.getTransactions()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_getTransactions()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/media/upload/signature"]["post"]
+    update:
+      x-speakeasy-group: contactMedia
+      x-speakeasy-name-override: createUploadSignature
+    x-speakeasy-metadata:
+      after: sdk.contactMedia.createUploadSignature()
+      before: sdk.Contact Media.com.crm.ContactSelfServiceMediaResource_sign()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/{id}/limits"]["get"]
+    update:
+      x-speakeasy-group: contactWallets
+      x-speakeasy-name-override: getLimits
+    x-speakeasy-metadata:
+      after: sdk.contactWallets.getLimits()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_getWalletLimits()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/upload/files"]["post"]
+    update:
+      x-speakeasy-name-override: uploadFile
+    x-speakeasy-metadata:
+      after: sdk.platform.uploadFile()
+      before: sdk.Platform.com.crm.FileSelfServiceResource_uploadFile()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/payment_methods/{payment_method_id}"]["delete"]
+    update:
+      x-speakeasy-group: contactPaymentMethods
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.contactPaymentMethods.delete()
+      before: sdk.Contact Payment Methods.com.crm.ContactSelfServiceResource_deletePaymentMethod()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/accounts"]["get"]
+    update:
+      x-speakeasy-group: contactAccounts
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.contactAccounts.list()
+      before: sdk.Contact Accounts.com.crm.AccountSelfServiceResource_list()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/hosted_pages/payment_methods"]["get"]
+    update:
+      x-speakeasy-group: hostedPages
+      x-speakeasy-name-override: addPaymentMethod
+    x-speakeasy-metadata:
+      after: sdk.hostedPages.addPaymentMethod()
+      before: sdk.Hosted Pages.com.crm.HostedPagesSelfServiceResource_generateAddPaymentMethodForm()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/locations/towns"]["get"]
+    update:
+      x-speakeasy-name-override: listTowns
+    x-speakeasy-metadata:
+      after: sdk.organisations.listTowns()
+      before: sdk.Organisations.com.crm.LocationSelfServiceResource_listTowns()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/transfers"]["post"]
+    update:
+      x-speakeasy-group: contactFinancials
+      x-speakeasy-name-override: createTransfer
+    x-speakeasy-metadata:
+      after: sdk.contactFinancials.createTransfer()
+      before: sdk.Contact Financials.com.crm.TransferSelfServiceResource_create()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/payment_forms/card"]["get"]
+    update:
+      x-speakeasy-group: paymentForms
+      x-speakeasy-name-override: getAddCardForm
+    x-speakeasy-metadata:
+      after: sdk.paymentForms.getAddCardForm()
+      before: sdk.Payment Forms.com.crm.PaymentFormSelfServiceResource_generateAddCardForm()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}"]["get"]
+    update:
+      x-speakeasy-group: contacts
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.contacts.get()
+      before: sdk.Contact.getSingleContactSS()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/groups"]["get"]
+    update:
+      x-speakeasy-name-override: listContactGroups
+    x-speakeasy-metadata:
+      after: sdk.communities.listContactGroups()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_listContactGroups()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/estimates/order_fulfillment"]["post"]
+    update:
+      x-speakeasy-name-override: fulfillEstimate
+    x-speakeasy-metadata:
+      after: sdk.orders.fulfillEstimate()
+      before: sdk.Orders.com.crm.EstimateOrderFulfillmentSelfServiceResource_estimateOrder()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people/{relationship_id}"]["delete"]
+    update:
+      x-speakeasy-name-override: deletePerson
+    x-speakeasy-metadata:
+      after: sdk.communities.deletePerson()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_removeContactRelationship()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/devices/{id}"]["put"]
+    update:
+      x-speakeasy-group: contactDevices
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.contactDevices.update()
+      before: sdk.Contact Devices.com.crm.DeviceSelfServiceResource_updateDevice()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/purchases/{id}"]["get"]
+    update:
+      x-speakeasy-group: purchaseCustomerEvents
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.purchaseCustomerEvents.get()
+      before: sdk.Purchase Customer Events.com.crm.PurchaseCustomerEventSelfServiceResource_getSinglePurchase()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/order_catalogues/{id}/categories"]["get"]
+    update:
+      x-speakeasy-group: orderCatalogues
+      x-speakeasy-name-override: listCategories
+    x-speakeasy-metadata:
+      after: sdk.orderCatalogues.listCategories()
+      before: sdk.Order Catalogues.com.crm.OrderCatalogSelfServiceResource_listCategories()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people/{relationship_id}/products_allowance/{product_allowance_id}"]["delete"]
+    update:
+      x-speakeasy-name-override: deleteProductAllowance
+    x-speakeasy-metadata:
+      after: sdk.communities.deleteProductAllowance()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_removeContactRelationshipProductAllowance()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/pass_plans"]["get"]
+    update:
+      x-speakeasy-name-override: listPlans
+    x-speakeasy-metadata:
+      after: sdk.passes.listPlans()
+      before: sdk.Passes.com.crm.PassPlanSelfServiceResource_listPassTypes()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/donation_offers"]["get"]
+    update:
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.donations.list()
+      before: sdk.Donations.com.crm.RewardOfferDonationsSelfServiceResource_list()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/wallets/{id}/commerce_balances"]["get"]
+    update:
+      x-speakeasy-group: contactWallets
+      x-speakeasy-name-override: listCommerceBalances
+    x-speakeasy-metadata:
+      after: sdk.contactWallets.listCommerceBalances()
+      before: sdk.Contact Wallet.com.crm.WalletSelfServiceResource_getBalances()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/service_requests"]["get"]
+    update:
+      x-speakeasy-group: serviceRequests
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.serviceRequests.list()
+      before: sdk.Service Requests.com.crm.ServiceRequestSelfServiceResource_list()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/journals/{id}"]["get"]
+    update:
+      x-speakeasy-group: contactAccounts
+      x-speakeasy-name-override: getJournal
+    x-speakeasy-metadata:
+      after: sdk.contactAccounts.getJournal()
+      before: sdk.Contact Accounts.com.crm.AccountSelfServiceResource_getAccountJournal()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/communities/devices"]["get"]
+    update:
+      x-speakeasy-name-override: listSharedDevices
+    x-speakeasy-metadata:
+      after: sdk.contacts.listSharedDevices()
+      before: sdk.Contacts.com.crm.ContactSelfServiceResource_getContactSharedDevices()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/commerce_pools/{id}/actions"]["put"]
+    update:
+      x-speakeasy-group: commercePools
+      x-speakeasy-name-override: updateActions
+    x-speakeasy-metadata:
+      after: sdk.commercePools.updateActions()
+      before: sdk.Commerce Pools.com.crm.CommercePoolSelfServiceResource_actions()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/apple_pass/{organisationId}/contacts/{contactId}"]["get"]
+    update:
+      x-speakeasy-group: mobilePassCards
+      x-speakeasy-name-override: getApplePass
+    x-speakeasy-metadata:
+      after: sdk.mobilePassCards.getApplePass()
+      before: sdk.Mobile Pass Cards.com.crm.WalletPassesSelfServiceResource_getApplePass()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/services"]["get"]
+    update:
+      x-speakeasy-group: services
+      x-speakeasy-name-override: listForContact
+    x-speakeasy-metadata:
+      after: sdk.services.listForContact()
+      before: sdk.Subscriptions.com.crm.SubscriptionSelfServiceResource_listSubscriptionServices()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/addresses/{address_id}"]["put"]
+    update:
+      x-speakeasy-group: contactAddresses
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.contactAddresses.update()
+      before: sdk.Contact Addresses.updateContactAddressSS()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/products/{id}"]["get"]
+    update:
+      x-speakeasy-group: productCatalogue
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.productCatalogue.get()
+      before: sdk.Product Catalogue.com.crm.ProductSelfServiceResource_getProduct()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/community/members"]["get"]
+    update:
+      x-speakeasy-name-override: listMembers
+    x-speakeasy-metadata:
+      after: sdk.communities.listMembers()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_getContactCommunitySummaryResults()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/organisations"]["post"]
+    update:
+      x-speakeasy-group: contactOrganisations
+      x-speakeasy-name-override: signUpOrOut
+    x-speakeasy-metadata:
+      after: sdk.contactOrganisations.signUpOrOut()
+      before: sdk.Contact Organisations.signUpOutOrganisationSS()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/refresh"]["post"]
+    update:
+      x-speakeasy-name-override: refreshContactToken
+    x-speakeasy-metadata:
+      after: sdk.authentication.refreshContactToken()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_refresh()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/request_email_verification"]["post"]
+    update:
+      x-speakeasy-name-override: requestEmailVerification
+    x-speakeasy-metadata:
+      after: sdk.authentication.requestEmailVerification()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_emailVerification()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/preferences"]["post"]
+    update:
+      x-speakeasy-group: contactPreferences
+      x-speakeasy-name-override: addPreferredOrganisation
+    x-speakeasy-metadata:
+      after: sdk.contactPreferences.addPreferredOrganisation()
+      before: sdk.Contact Preferences.addContactPreferredOrganisationSS()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/attachments"]["post"]
+    update:
+      x-speakeasy-group: contactAttachments
+      x-speakeasy-name-override: add
+    x-speakeasy-metadata:
+      after: sdk.contactAttachments.add()
+      before: sdk.Contact Attachments.com.crm.ContactSelfServiceResource_createFile()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/payments"]["post"]
+    update:
+      x-speakeasy-group: contactFinancials
+      x-speakeasy-name-override: createPayment
+    x-speakeasy-metadata:
+      after: sdk.contactFinancials.createPayment()
+      before: sdk.Contact Financials.com.crm.PaymentSelfServiceResource_create()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/people/{relationship_id}"]["put"]
+    update:
+      x-speakeasy-name-override: updatePerson
+    x-speakeasy-metadata:
+      after: sdk.communities.updatePerson()
+      before: sdk.Communities.com.crm.ContactSelfServiceResource_updateContactRelationship()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/organisations/{id}/network"]["get"]
+    update:
+      x-speakeasy-name-override: getNetworks
+    x-speakeasy-metadata:
+      after: sdk.organisations.getNetworks()
+      before: sdk.Organisations.com.crm.OrganisationSelfServiceResource_list()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/purchases/reclaim"]["post"]
+    update:
+      x-speakeasy-group: purchaseCustomerEvents
+      x-speakeasy-name-override: reclaim
+    x-speakeasy-metadata:
+      after: sdk.purchaseCustomerEvents.reclaim()
+      before: sdk.Purchase Customer Events.com.crm.PurchaseCustomerEventSelfServiceResource_reclaimPurchase()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/client_token"]["get"]
+    update:
+      x-speakeasy-group: contactFinancials
+      x-speakeasy-name-override: getClientToken
+    x-speakeasy-metadata:
+      after: sdk.contactFinancials.getClientToken()
+      before: sdk.Contact Financials.com.crm.ContactSelfServiceResource_getClientToken()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/otp"]["post"]
+    update:
+      x-speakeasy-name-override: requestOtp
+    x-speakeasy-metadata:
+      after: sdk.authentication.requestOtp()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_requestOTP()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/android_wallet_pass/{organisationId}/contacts/{contactId}"]["get"]
+    update:
+      x-speakeasy-group: mobilePassCards
+      x-speakeasy-name-override: getAndroidWalletPass
+    x-speakeasy-metadata:
+      after: sdk.mobilePassCards.getAndroidWalletPass()
+      before: sdk.Mobile Pass Cards.com.crm.WalletPassesSelfServiceResource_getAndroidWalletPass()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}"]["put"]
+    update:
+      x-speakeasy-group: contacts
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.contacts.update()
+      before: sdk.Contact.updateContactSS()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/addresses"]["post"]
+    update:
+      x-speakeasy-group: contactAddresses
+      x-speakeasy-name-override: add
+    x-speakeasy-metadata:
+      after: sdk.contactAddresses.add()
+      before: sdk.Contact Addresses.addContactAddessSS()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/orders/recommendation"]["get"]
+    update:
+      x-speakeasy-group: orders
+      x-speakeasy-name-override: recommend
+    x-speakeasy-metadata:
+      after: sdk.orders.recommend()
+      before: sdk.Recommendations.com.crm.OrderProductRecommendationSelfServiceResource_getOrderProductRecommendation()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/estimates/invoicing"]["post"]
+    update:
+      x-speakeasy-name-override: invoicing
+    x-speakeasy-metadata:
+      after: sdk.estimates.invoicing()
+      before: sdk.Estimates.com.crm.EstimateSelfServiceResource_estimateInvoicing()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/business_activities"]["get"]
+    update:
+      x-speakeasy-name-override: listActivities
+    x-speakeasy-metadata:
+      after: sdk.organisations.listActivities()
+      before: sdk.Organisations.com.crm.BusinessActivitySelfServiceResource_listBusinessActivities()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/purchases/{id}/rewards"]["get"]
+    update:
+      x-speakeasy-group: purchaseCustomerEvents
+      x-speakeasy-name-override: getRewards
+    x-speakeasy-metadata:
+      after: sdk.purchaseCustomerEvents.getRewards()
+      before: sdk.Purchase Customer Events.com.crm.PurchaseCustomerEventSelfServiceResource_getPurchaseRewardTransactions()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/service_requests/{id}/attachments/{attachment_id}"]["delete"]
+    update:
+      x-speakeasy-group: serviceRequests
+      x-speakeasy-name-override: deleteAttachment
+    x-speakeasy-metadata:
+      after: sdk.serviceRequests.deleteAttachment()
+      before: sdk.Service Requests.com.crm.ServiceRequestSelfServiceResource_removeFile()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/settlement_transactions/metrics"]["get"]
+    update:
+      x-speakeasy-group: contactFinancials
+      x-speakeasy-name-override: getMetrics
+    x-speakeasy-metadata:
+      after: sdk.contactFinancials.getMetrics()
+      before: sdk.Contact Financials.com.crm.SettlementTransactionSelfServiceResource_getMetrics()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/orders/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.orders.get()
+      before: sdk.Orders.com.crm.OrderSelfServiceResource_getOrder()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/applications"]["get"]
+    update:
+      x-speakeasy-name-override: get
+    x-speakeasy-metadata:
+      after: sdk.platform.get()
+      before: sdk.Platform.com.crm.ApplicationSelfServiceResource_getApplication()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/organisations/tags"]["get"]
+    update:
+      x-speakeasy-name-override: listOrganisationTags
+    x-speakeasy-metadata:
+      after: sdk.tags.listOrganisationTags()
+      before: sdk.Tags.com.crm.OrganisationTagSelfServiceResource_listOrganisationTags()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/hosted_pages/gift_passes"]["post"]
+    update:
+      x-speakeasy-group: hostedPages
+      x-speakeasy-name-override: generateGiftPassPaymentForm
+    x-speakeasy-metadata:
+      after: sdk.hostedPages.generateGiftPassPaymentForm()
+      before: sdk.Hosted Pages.com.crm.HostedPagesSelfServiceResource_generateGiftPassPaymentForm()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/devices"]["post"]
+    update:
+      x-speakeasy-group: contactDevices
+      x-speakeasy-name-override: register
+    x-speakeasy-metadata:
+      after: sdk.contactDevices.register()
+      before: sdk.Contact Devices.com.crm.DeviceSelfServiceResource_addContactDevice()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/forgot_password"]["post"]
+    update:
+      x-speakeasy-name-override: forgotPassword
+    x-speakeasy-metadata:
+      after: sdk.authentication.forgotPassword()
+      before: sdk.Authentication.com.crm.ContactSelfServiceResource_forgotPassword()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/oidc/{type}"]["get"]
+    update:
+      x-speakeasy-group: contacts
+      x-speakeasy-name-override: getOidcConfiguration
+    x-speakeasy-metadata:
+      after: sdk.contacts.getOidcConfiguration()
+      before: sdk.Contact.com.crm.ContactSelfServiceResource_getOIDCConfiguration()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/wallets"]["post"]
+    update:
+      x-speakeasy-group: contactWallet
+      x-speakeasy-name-override: setUp
+    x-speakeasy-metadata:
+      after: sdk.contactWallet.setUp()
+      before: sdk.Contact Wallet.com.crm.ContactSelfServiceResource_setUpWallet()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/subscriptions/actions"]["get"]
+    update:
+      x-speakeasy-name-override: listActions
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.listActions()
+      before: sdk.Subscriptions.com.crm.SubscriptionSelfServiceResource_listContactSubscriptionActions()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/approval_requests"]["get"]
+    update:
+      x-speakeasy-group: approvalRequests
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.approvalRequests.list()
+      before: sdk.Approval Requests.com.crm.ApprovalRequestSelfServiceResource_list()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/estimates/billing"]["post"]
+    update:
+      x-speakeasy-name-override: estimateBilling
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.estimateBilling()
+      before: sdk.Subscriptions.com.crm.EstimateSubscriptionSelfServiceResource_estimateBilling()
+      created_at: 1770797633275
+      type: method-name
+  - target: $["paths"]["/self-service/v2/subscriptions/actions/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getAction
+    x-speakeasy-metadata:
+      after: sdk.subscriptions.getAction()
+      before: sdk.Subscriptions.com.crm.SubscriptionSelfServiceResource_getSubscriptionAction()
+      created_at: 1770797633276
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/wifi/authorize"]["post"]
+    update:
+      x-speakeasy-name-override: authorize
+    x-speakeasy-metadata:
+      after: sdk.wifi.authorize()
+      before: sdk.Wifi.com.crm.SelfServiceWifiAuthorizationResource_authorizeContact()
+      created_at: 1770797633276
+      type: method-name
+  - target: $["paths"]["/self-service/v2/landing_pages/{id}"]["get"]
+    update:
+      x-speakeasy-name-override: getLandingPage
+    x-speakeasy-metadata:
+      after: sdk.platform.getLandingPage()
+      before: sdk.Platform.com.crm.LandingPageSelfServiceResource_getSingleLandingPage()
+      created_at: 1770797633276
+      type: method-name
+  - target: $["paths"]["/self-service/v2/contacts/{id}/donations"]["get"]
+    update:
+      x-speakeasy-group: contactDonations
+      x-speakeasy-name-override: list
+    x-speakeasy-metadata:
+      after: sdk.contactDonations.list()
+      before: sdk.Contact Donations.com.crm.ContactSelfServiceResource_listContactDonations()
+      created_at: 1770797633276
+      type: method-name

@@ -1,0 +1,37 @@
+speakeasyVersion: 1.709.1
+sources:
+    Self Service API:
+        sourceNamespace: self-service-api
+        sourceRevisionDigest: sha256:23bcf6706ee2639db5cadd9db9a0a917e85e7bdbe9295816328512cd9b7b71cb
+        sourceBlobDigest: sha256:61cd039a0827fbfd88bbf1c244ec7cfec7d6fd35572abaf93663f3b488e81048
+        tags:
+            - latest
+            - v2
+targets:
+    crm:
+        source: Self Service API
+        sourceNamespace: self-service-api
+        sourceRevisionDigest: sha256:23bcf6706ee2639db5cadd9db9a0a917e85e7bdbe9295816328512cd9b7b71cb
+        sourceBlobDigest: sha256:61cd039a0827fbfd88bbf1c244ec7cfec7d6fd35572abaf93663f3b488e81048
+        codeSamplesNamespace: self-service-api-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:53e0b759695c26839e4cf10bce7d19bcf6b4fe313e7c3ed0c902bb689a688c63
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Self Service API:
+            inputs:
+                - location: ..\Downloads\selfservice.json
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/marios/self-service/self-service-api
+    targets:
+        crm:
+            target: typescript
+            source: Self Service API
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/marios/self-service/self-service-api-typescript-code-samples
+                labelOverride:
+                    fixedValue: Typescript (SDK)
+                blocking: false

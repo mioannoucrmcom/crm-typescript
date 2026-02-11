@@ -1,0 +1,16 @@
+# ComCrmOrderSelfServiceResourceListOrdersBundledItem
+
+## Example Usage
+
+```typescript
+import { ComCrmOrderSelfServiceResourceListOrdersBundledItem } from "crm/models/operations";
+
+let value: ComCrmOrderSelfServiceResourceListOrdersBundledItem = {};
+```
+
+## Fields
+
+| Field                                                                                                                                                                    | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                     | *string*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                       | The bundled order item's identifier                                                                                                                                      |
+| `product`                                                                                                                                                                | [operations.ComCrmOrderSelfServiceResourceListOrdersBundledItemProduct](../../models/operations/com-crm-order-self-service-resource-list-orders-bundled-item-product.md) | :heavy_minus_sign:                                                                                                                                                       | The bundle product                                                                                                                                                       |

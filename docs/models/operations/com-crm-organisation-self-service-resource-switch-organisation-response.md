@@ -1,0 +1,37 @@
+# ComCrmOrganisationSelfServiceResourceSwitchOrganisationResponse
+
+OK
+
+## Example Usage
+
+```typescript
+import { ComCrmOrganisationSelfServiceResourceSwitchOrganisationResponse } from "crm/models/operations";
+
+let value: ComCrmOrganisationSelfServiceResourceSwitchOrganisationResponse = {
+  expirationDate: new Date("1572530655"),
+  contact: {
+    id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+    firstName: "John",
+    lastName: "Doe",
+    isVerified: false,
+    companyName: "Smith & Sons Ltd.",
+  },
+  organisations: [
+    {
+      id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+      type: "ORGANISATION",
+      name: "CRMdotCOM",
+    },
+  ],
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                      | Type                                                                                                                                                                                       | Required                                                                                                                                                                                   | Description                                                                                                                                                                                | Example                                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `accessToken`                                                                                                                                                                              | *string*                                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                         | The token that can be used in subsequent API calls                                                                                                                                         |                                                                                                                                                                                            |
+| `refreshToken`                                                                                                                                                                             | *string*                                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                         | Used when access token gets expired in order to refresh                                                                                                                                    |                                                                                                                                                                                            |
+| `expirationDate`                                                                                                                                                                           | [Date](../../types/rfcdate.md)                                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                         | The token expiration date                                                                                                                                                                  | 1572530655                                                                                                                                                                                 |
+| `contact`                                                                                                                                                                                  | [operations.ComCrmOrganisationSelfServiceResourceSwitchOrganisationContact](../../models/operations/com-crm-organisation-self-service-resource-switch-organisation-contact.md)             | :heavy_minus_sign:                                                                                                                                                                         | Details about the authorised contact                                                                                                                                                       |                                                                                                                                                                                            |
+| `organisations`                                                                                                                                                                            | [operations.ComCrmOrganisationSelfServiceResourceSwitchOrganisationOrganisation](../../models/operations/com-crm-organisation-self-service-resource-switch-organisation-organisation.md)[] | :heavy_minus_sign:                                                                                                                                                                         | Details about the organisations that the contact has joined                                                                                                                                |                                                                                                                                                                                            |

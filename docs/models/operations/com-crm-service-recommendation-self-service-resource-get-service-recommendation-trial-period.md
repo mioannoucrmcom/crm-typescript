@@ -1,0 +1,25 @@
+# ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationTrialPeriod
+
+Shows if the service will get a trial period
+
+## Example Usage
+
+```typescript
+import {
+  ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationTrialPeriod,
+} from "crm/models/operations";
+
+let value:
+  ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationTrialPeriod =
+    {
+      duration: 2,
+      uot: "MINUTE",
+    };
+```
+
+## Fields
+
+| Field                                                                                                                                                                                                                          | Type                                                                                                                                                                                                                           | Required                                                                                                                                                                                                                       | Description                                                                                                                                                                                                                    | Example                                                                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `duration`                                                                                                                                                                                                                     | *number*                                                                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                                             | Period Cycle duration                                                                                                                                                                                                          | 2                                                                                                                                                                                                                              |
+| `uot`                                                                                                                                                                                                                          | [operations.ComCrmServiceRecommendationSelfServiceResourceGetServiceRecommendationTrialPeriodUot](../../models/operations/com-crm-service-recommendation-self-service-resource-get-service-recommendation-trial-period-uot.md) | :heavy_minus_sign:                                                                                                                                                                                                             | Period Cycle unit of time                                                                                                                                                                                                      | MONTHS                                                                                                                                                                                                                         |
