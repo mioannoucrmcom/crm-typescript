@@ -3,7 +3,7 @@ speakeasyVersion: latest
 sources:
     Self Service API:
         inputs:
-            - location: ..\Downloads\selfservice.json
+            - location: ..\selfservice.json
         output: .speakeasy/out.openapi.yaml
         registry:
             location: registry.speakeasyapi.dev/marios/self-service/self-service-api
