@@ -2,8 +2,8 @@ speakeasyVersion: 1.709.4
 sources:
     Self Service API:
         sourceNamespace: self-service-api
-        sourceRevisionDigest: sha256:47afbdb288cfd55a19d4ba2d9db76dfffbf5ff2a816273da446100b645b47913
-        sourceBlobDigest: sha256:ad45de33aa3c4764e0b9919b6c7d27067d171bd9f095896a95555a2cd9198de7
+        sourceRevisionDigest: sha256:e4a011a2425d3bbc3701dcc59f6d77622f5611dfc0e98df3b57c3e5f27ed1e2e
+        sourceBlobDigest: sha256:141d417cbe81fd0b528b3ec25c6f0a75da88b9df5e3749cf0673dc5e58d55fd9
         tags:
             - latest
             - v2
@@ -11,17 +11,17 @@ targets:
     crm:
         source: Self Service API
         sourceNamespace: self-service-api
-        sourceRevisionDigest: sha256:47afbdb288cfd55a19d4ba2d9db76dfffbf5ff2a816273da446100b645b47913
-        sourceBlobDigest: sha256:ad45de33aa3c4764e0b9919b6c7d27067d171bd9f095896a95555a2cd9198de7
+        sourceRevisionDigest: sha256:e4a011a2425d3bbc3701dcc59f6d77622f5611dfc0e98df3b57c3e5f27ed1e2e
+        sourceBlobDigest: sha256:141d417cbe81fd0b528b3ec25c6f0a75da88b9df5e3749cf0673dc5e58d55fd9
         codeSamplesNamespace: self-service-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:ac7098128a9b6efb6b26ab56d8929b026105145d8f148684cb39076122288454
+        codeSamplesRevisionDigest: sha256:4c9f5484bd9900e108f30c060f9bc1141485303d615a124daff76f41d829c350
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
         Self Service API:
             inputs:
-                - location: ..\Downloads\selfservice.json
+                - location: ./selfservice.json
             output: .speakeasy/out.openapi.yaml
             registry:
                 location: registry.speakeasyapi.dev/marios/self-service/self-service-api
