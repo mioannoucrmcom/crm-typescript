@@ -13,7 +13,6 @@
     "tsx": "^4.19.2"
   },
   "dependencies": {
-    "crmcom": "file:..",
-    "crmcom-examples": "file:"
+    "crmcom": "file:.."
   }
 }
