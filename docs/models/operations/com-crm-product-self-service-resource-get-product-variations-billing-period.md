@@ -1,0 +1,21 @@
+# ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriod
+
+The service's billing cycle
+
+## Example Usage
+
+```typescript
+import { ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriod } from "crm/models/operations";
+
+let value: ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriod = {
+  duration: 2,
+  uot: "SECOND",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                         | Type                                                                                                                                                                                          | Required                                                                                                                                                                                      | Description                                                                                                                                                                                   | Example                                                                                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `duration`                                                                                                                                                                                    | *number*                                                                                                                                                                                      | :heavy_minus_sign:                                                                                                                                                                            | Period Cycle duration                                                                                                                                                                         | 2                                                                                                                                                                                             |
+| `uot`                                                                                                                                                                                         | [operations.ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriodUot](../../models/operations/com-crm-product-self-service-resource-get-product-variations-billing-period-uot.md) | :heavy_minus_sign:                                                                                                                                                                            | Period Cycle unit of time                                                                                                                                                                     | MONTHS                                                                                                                                                                                        |

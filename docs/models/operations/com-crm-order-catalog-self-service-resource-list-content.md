@@ -1,0 +1,53 @@
+# ComCrmOrderCatalogSelfServiceResourceListContent
+
+## Example Usage
+
+```typescript
+import { ComCrmOrderCatalogSelfServiceResourceListContent } from "crm/models/operations";
+
+let value: ComCrmOrderCatalogSelfServiceResourceListContent = {
+  id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+  name: "Monday menu",
+  description: "A list of dishes available every Monday",
+  displayName: "Monday",
+  creatives: [
+    {
+      id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+      width: 2159,
+      height: 3075,
+      format: "jpg",
+      url: "https://assets.crm.com/image/offer.jpg",
+      publicId: "crm-com/image",
+      media: [
+        {
+          width: 200,
+          height: 300,
+          url: "https://asset.crm.com/image/offer/c_scale,w_200/offer.jpg",
+        },
+      ],
+    },
+  ],
+  supplyMethods: [
+    "DELIVERY",
+  ],
+  timeAvailability: [
+    {
+      startTime: "09:00",
+      endTime: "17:00",
+    },
+  ],
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                         | Type                                                                                                                                                                                          | Required                                                                                                                                                                                      | Description                                                                                                                                                                                   | Example                                                                                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                                          | *string*                                                                                                                                                                                      | :heavy_minus_sign:                                                                                                                                                                            | The entity identifier                                                                                                                                                                         | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                                                                                                          |
+| `name`                                                                                                                                                                                        | *string*                                                                                                                                                                                      | :heavy_minus_sign:                                                                                                                                                                            | The order catalogue name                                                                                                                                                                      | Monday menu                                                                                                                                                                                   |
+| `description`                                                                                                                                                                                 | *string*                                                                                                                                                                                      | :heavy_minus_sign:                                                                                                                                                                            | The order catalogue name description                                                                                                                                                          | A list of dishes available every Monday                                                                                                                                                       |
+| `displayName`                                                                                                                                                                                 | *string*                                                                                                                                                                                      | :heavy_minus_sign:                                                                                                                                                                            | The order catalogue display name                                                                                                                                                              | Monday                                                                                                                                                                                        |
+| `creatives`                                                                                                                                                                                   | [operations.ComCrmOrderCatalogSelfServiceResourceListCreative](../../models/operations/com-crm-order-catalog-self-service-resource-list-creative.md)[]                                        | :heavy_minus_sign:                                                                                                                                                                            | A creative is an object that contains all the data required for visually rendering an image responsively. The object contains the initial image and a number of scale versions of it (srcset) |                                                                                                                                                                                               |
+| `supplyMethods`                                                                                                                                                                               | [operations.ComCrmOrderCatalogSelfServiceResourceListContentSupplyMethod](../../models/operations/com-crm-order-catalog-self-service-resource-list-content-supply-method.md)[]                | :heavy_minus_sign:                                                                                                                                                                            | N/A                                                                                                                                                                                           |                                                                                                                                                                                               |
+| `timeAvailability`                                                                                                                                                                            | [operations.ComCrmOrderCatalogSelfServiceResourceListTimeAvailability](../../models/operations/com-crm-order-catalog-self-service-resource-list-time-availability.md)[]                       | :heavy_minus_sign:                                                                                                                                                                            | N/A                                                                                                                                                                                           |                                                                                                                                                                                               |
+| `isPricingTable`                                                                                                                                                                              | *boolean*                                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                            | Determines whether the order’s catalogue set up will be presented as a pricing table in front-end apps or not.                                                                                |                                                                                                                                                                                               |

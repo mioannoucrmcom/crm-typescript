@@ -1,0 +1,25 @@
+# ComCrmOrderCatalogSelfServiceResourceListCategoriesProduct
+
+## Example Usage
+
+```typescript
+import { ComCrmOrderCatalogSelfServiceResourceListCategoriesProduct } from "crm/models/operations";
+
+let value: ComCrmOrderCatalogSelfServiceResourceListCategoriesProduct = {
+  id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+  product: {
+    id: "e283a863-18e1-7cae-48c4-7433bf28cf97",
+    name: "Universal Name",
+    sku: "S0001",
+  },
+  priority: 2,
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                  | Type                                                                                                                                                                                   | Required                                                                                                                                                                               | Description                                                                                                                                                                            | Example                                                                                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                                   | *string*                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                     | The entity identifier                                                                                                                                                                  | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                                                                                                   |
+| `product`                                                                                                                                                                              | [operations.ComCrmOrderCatalogSelfServiceResourceListCategoriesProductProduct](../../models/operations/com-crm-order-catalog-self-service-resource-list-categories-product-product.md) | :heavy_minus_sign:                                                                                                                                                                     | The Order Catalogue Category product                                                                                                                                                   |                                                                                                                                                                                        |
+| `priority`                                                                                                                                                                             | *number*                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                     | The priority of the product                                                                                                                                                            | 2                                                                                                                                                                                      |

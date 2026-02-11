@@ -1,0 +1,21 @@
+# ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriod
+
+Shows if the service will get a trial period
+
+## Example Usage
+
+```typescript
+import { ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriod } from "crm/models/operations";
+
+let value: ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriod = {
+  duration: 2,
+  uot: "OVERALL",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                     | Type                                                                                                                                                                                      | Required                                                                                                                                                                                  | Description                                                                                                                                                                               | Example                                                                                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `duration`                                                                                                                                                                                | *number*                                                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                                        | Period Cycle duration                                                                                                                                                                     | 2                                                                                                                                                                                         |
+| `uot`                                                                                                                                                                                     | [operations.ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriodUot](../../models/operations/com-crm-product-self-service-resource-get-product-variations-trial-period-uot.md) | :heavy_minus_sign:                                                                                                                                                                        | Period Cycle unit of time                                                                                                                                                                 | MONTHS                                                                                                                                                                                    |

@@ -1,0 +1,25 @@
+# ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountResponse
+
+## Example Usage
+
+```typescript
+import { ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountResponse } from "crm/models/operations";
+
+let value: ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountResponse =
+  {
+    amount: 2,
+    type: "AD_HOC",
+    promotion: {
+      id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",
+      name: "Universal Name",
+    },
+  };
+```
+
+## Fields
+
+| Field                                                                                                                                                                           | Type                                                                                                                                                                            | Required                                                                                                                                                                        | Description                                                                                                                                                                     | Example                                                                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `amount`                                                                                                                                                                        | *number*                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                              | The deducted amount                                                                                                                                                             | 2                                                                                                                                                                               |
+| `type`                                                                                                                                                                          | [operations.ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeResponse](../../models/operations/com-crm-estimate-self-service-resource-estimate-invoicing-type-response.md) | :heavy_minus_sign:                                                                                                                                                              | Type of discount applied                                                                                                                                                        | AD_HOC                                                                                                                                                                          |
+| `promotion`                                                                                                                                                                     | [operations.ComCrmEstimateSelfServiceResourceEstimateInvoicingPromotion](../../models/operations/com-crm-estimate-self-service-resource-estimate-invoicing-promotion.md)        | :heavy_minus_sign:                                                                                                                                                              | The applied Promotion. Applicable when discount type is Promotion                                                                                                               |                                                                                                                                                                                 |

@@ -1,0 +1,22 @@
+# ComCrmContactSelfServiceResourceAddContactRelationshipContactPhone
+
+The contact phone
+
+## Example Usage
+
+```typescript
+import { ComCrmContactSelfServiceResourceAddContactRelationshipContactPhone } from "crm/models/operations";
+
+let value: ComCrmContactSelfServiceResourceAddContactRelationshipContactPhone =
+  {
+    countryCode: "CYP",
+    number: "744444121",
+  };
+```
+
+## Fields
+
+| Field                                                                                                                                                                                                 | Type                                                                                                                                                                                                  | Required                                                                                                                                                                                              | Description                                                                                                                                                                                           | Example                                                                                                                                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `countryCode`                                                                                                                                                                                         | [operations.ComCrmContactSelfServiceResourceAddContactRelationshipContactCountryCode](../../models/operations/com-crm-contact-self-service-resource-add-contact-relationship-contact-country-code.md) | :heavy_minus_sign:                                                                                                                                                                                    | The phone country code                                                                                                                                                                                | CYP                                                                                                                                                                                                   |
+| `number`                                                                                                                                                                                              | *string*                                                                                                                                                                                              | :heavy_minus_sign:                                                                                                                                                                                    | The phone number.                                                                                                                                                                                     | 744444121                                                                                                                                                                                             |

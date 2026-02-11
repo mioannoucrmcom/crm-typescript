@@ -1,0 +1,39 @@
+# ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsTerms
+
+The subscription's billing terms
+
+## Example Usage
+
+```typescript
+import { ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsTerms } from "crm/models/operations";
+
+let value: ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsTerms =
+  {
+    billingPeriod: {
+      duration: 1,
+      uot: "MONTH",
+    },
+    billingDay: {
+      dayOfWeek: "MONDAY",
+      dayOfMonth: 5,
+      monthOfYear: "JANUARY",
+    },
+    billingModel: "PRE_BILL",
+    paymentMethod: {
+      type: "CARD",
+      identity: {
+        id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+        identifier: "Visa *****1234 03/25",
+      },
+    },
+  };
+```
+
+## Fields
+
+| Field                                                                                                                                                                                                                                    | Type                                                                                                                                                                                                                                     | Required                                                                                                                                                                                                                                 | Description                                                                                                                                                                                                                              | Example                                                                                                                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `billingPeriod`                                                                                                                                                                                                                          | [operations.ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsBillingPeriod](../../models/operations/com-crm-subscription-self-service-resource-list-contact-subscriptions-billing-period.md)                                 | :heavy_minus_sign:                                                                                                                                                                                                                       | The subscription's billing cycle duration                                                                                                                                                                                                |                                                                                                                                                                                                                                          |
+| `billingDay`                                                                                                                                                                                                                             | [operations.ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsBillingDay](../../models/operations/com-crm-subscription-self-service-resource-list-contact-subscriptions-billing-day.md)                                       | :heavy_minus_sign:                                                                                                                                                                                                                       | The day of month/week until which the subscripton's services will be billed. Either a day of month or day of week is returned, depnding on the subscription's billing cycle (if it is less than a month, then a day of week is returned) |                                                                                                                                                                                                                                          |
+| `billingModel`                                                                                                                                                                                                                           | [operations.ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsBillingModel](../../models/operations/com-crm-subscription-self-service-resource-list-contact-subscriptions-billing-model.md)                                   | :heavy_minus_sign:                                                                                                                                                                                                                       | Subscription's billing model                                                                                                                                                                                                             | PRE_BILL                                                                                                                                                                                                                                 |
+| `paymentMethod`                                                                                                                                                                                                                          | [operations.ComCrmSubscriptionSelfServiceResourceListContactSubscriptionsPaymentMethod](../../models/operations/com-crm-subscription-self-service-resource-list-contact-subscriptions-payment-method.md)                                 | :heavy_minus_sign:                                                                                                                                                                                                                       | The subscription's payment method                                                                                                                                                                                                        |                                                                                                                                                                                                                                          |

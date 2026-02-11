@@ -1,0 +1,22 @@
+# ComCrmProductSelfServiceResourceGetProductVariationsContractPeriod
+
+The service's contract period (if any)
+
+## Example Usage
+
+```typescript
+import { ComCrmProductSelfServiceResourceGetProductVariationsContractPeriod } from "crm/models/operations";
+
+let value: ComCrmProductSelfServiceResourceGetProductVariationsContractPeriod =
+  {
+    duration: 2,
+    uot: "SECOND",
+  };
+```
+
+## Fields
+
+| Field                                                                                                                                                                                           | Type                                                                                                                                                                                            | Required                                                                                                                                                                                        | Description                                                                                                                                                                                     | Example                                                                                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `duration`                                                                                                                                                                                      | *number*                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                              | Period Cycle duration                                                                                                                                                                           | 2                                                                                                                                                                                               |
+| `uot`                                                                                                                                                                                           | [operations.ComCrmProductSelfServiceResourceGetProductVariationsContractPeriodUot](../../models/operations/com-crm-product-self-service-resource-get-product-variations-contract-period-uot.md) | :heavy_minus_sign:                                                                                                                                                                              | Period Cycle unit of time                                                                                                                                                                       | MONTHS                                                                                                                                                                                          |

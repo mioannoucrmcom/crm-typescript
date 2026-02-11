@@ -1,0 +1,22 @@
+# ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionPrice
+
+## Example Usage
+
+```typescript
+import { ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionPrice } from "crm/models/operations";
+
+let value: ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionPrice = {
+  billingPeriod: {
+    duration: 1,
+    uot: "MONTH",
+  },
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                              | Type                                                                                                                                                                                               | Required                                                                                                                                                                                           | Description                                                                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `priceTermsId`                                                                                                                                                                                     | *string*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |
+| `price`                                                                                                                                                                                            | *number*                                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |
+| `billingPeriod`                                                                                                                                                                                    | [operations.ComCrmSubscriptionSelfServiceResourceGetSubscriptionActionBillingPeriod](../../models/operations/com-crm-subscription-self-service-resource-get-subscription-action-billing-period.md) | :heavy_minus_sign:                                                                                                                                                                                 | N/A                                                                                                                                                                                                |

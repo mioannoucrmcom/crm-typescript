@@ -1,0 +1,19 @@
+# ComCrmCommercePoolSelfServiceResourceActionsRequest
+
+## Example Usage
+
+```typescript
+import { ComCrmCommercePoolSelfServiceResourceActionsRequest } from "crm/models/operations";
+
+let value: ComCrmCommercePoolSelfServiceResourceActionsRequest = {
+  id: "c0d4712e-6688-4604-b3d6-d084e4d2dc05",
+  body: {},
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                             | Type                                                                                                                                                              | Required                                                                                                                                                          | Description                                                                                                                                                       | Example                                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                              | *string*                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                | The commerce pool (identifer) that an action will be applied                                                                                                      | c0d4712e-6688-4604-b3d6-d084e4d2dc05                                                                                                                              |
+| `body`                                                                                                                                                            | [operations.ComCrmCommercePoolSelfServiceResourceActionsRequestBody](../../models/operations/com-crm-commerce-pool-self-service-resource-actions-request-body.md) | :heavy_check_mark:                                                                                                                                                | N/A                                                                                                                                                               |                                                                                                                                                                   |

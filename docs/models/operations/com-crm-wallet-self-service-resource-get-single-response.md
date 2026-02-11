@@ -1,0 +1,43 @@
+# ComCrmWalletSelfServiceResourceGetSingleResponse
+
+OK
+
+## Example Usage
+
+```typescript
+import { ComCrmWalletSelfServiceResourceGetSingleResponse } from "crm/models/operations";
+
+let value: ComCrmWalletSelfServiceResourceGetSingleResponse = {
+  id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+  code: "5132546254324233",
+  balances: [
+    {
+      type: "BUSINESS",
+      currencyCode: "EUR",
+      total: 10,
+      open: 4,
+      commerce: 6,
+      organisation: {
+        id: "34b059a3-2aa7-b2c2-4191-a966168e97d7",
+        name: "Universal Name",
+      },
+    },
+  ],
+  totalBalance: 12,
+  totalOpen: 6,
+  totalCommerce: 6,
+  activatedCommercePools: 2,
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                          | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    | Example                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                           | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The entity identifier                                                                                                                                                          | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                                                                                           |
+| `code`                                                                                                                                                                         | *string*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The wallet code                                                                                                                                                                | 5132546254324233                                                                                                                                                               |
+| `balances`                                                                                                                                                                     | [operations.Balance](../../models/operations/balance.md)[]                                                                                                                     | :heavy_minus_sign:                                                                                                                                                             | CRM.COM Wallet Balances. When triggering the Web API as a business user, then only the wallet balances related to that business are retrieved plus the CRM.COm's open balance. |                                                                                                                                                                                |
+| `totalBalance`                                                                                                                                                                 | *number*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The total wallet balance                                                                                                                                                       | 12                                                                                                                                                                             |
+| `totalOpen`                                                                                                                                                                    | *number*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The total wallet open balance (CRM.COM + Business)                                                                                                                             | 6                                                                                                                                                                              |
+| `totalCommerce`                                                                                                                                                                | *number*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The total wallet commerce balance                                                                                                                                              | 6                                                                                                                                                                              |
+| `activatedCommercePools`                                                                                                                                                       | *number*                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                             | The number of activated commerce pools                                                                                                                                         | 2                                                                                                                                                                              |

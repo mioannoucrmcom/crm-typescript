@@ -1,0 +1,21 @@
+# ComCrmContactSelfServiceResourceGetContactRelationshipPhone
+
+The contact phone number
+
+## Example Usage
+
+```typescript
+import { ComCrmContactSelfServiceResourceGetContactRelationshipPhone } from "crm/models/operations";
+
+let value: ComCrmContactSelfServiceResourceGetContactRelationshipPhone = {
+  countryCode: "CYP",
+  number: "744444121",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                                  | Type                                                                                                                                                                                   | Required                                                                                                                                                                               | Description                                                                                                                                                                            | Example                                                                                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `countryCode`                                                                                                                                                                          | [operations.ComCrmContactSelfServiceResourceGetContactRelationshipCountryCode](../../models/operations/com-crm-contact-self-service-resource-get-contact-relationship-country-code.md) | :heavy_minus_sign:                                                                                                                                                                     | The phone country code                                                                                                                                                                 | CYP                                                                                                                                                                                    |
+| `number`                                                                                                                                                                               | *string*                                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                     | The phone number.                                                                                                                                                                      | 744444121                                                                                                                                                                              |

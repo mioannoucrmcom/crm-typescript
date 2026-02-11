@@ -1,0 +1,40 @@
+# CharityOrganisationCreative
+
+## Example Usage
+
+```typescript
+import { CharityOrganisationCreative } from "crm/models/operations";
+
+let value: CharityOrganisationCreative = {
+  id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+  width: 2159,
+  height: 3075,
+  format: "jpg",
+  url: "https://assets.crm.com/image/offer.jpg",
+  publicId: "crm-com/image",
+  media: [
+    {
+      width: 200,
+      height: 300,
+      url: "https://asset.crm.com/image/offer/c_scale,w_200/offer.jpg",
+    },
+  ],
+};
+```
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           | Example                                                                                               |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                  | *string*                                                                                              | :heavy_minus_sign:                                                                                    | The entity identifier                                                                                 | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                  |
+| `mediaGroupId`                                                                                        | *string*                                                                                              | :heavy_minus_sign:                                                                                    | the identifier of media                                                                               |                                                                                                       |
+| `usageType`                                                                                           | [operations.CharityOrganisationUsageType](../../models/operations/charity-organisation-usage-type.md) | :heavy_minus_sign:                                                                                    | Information about the creative type                                                                   |                                                                                                       |
+| `width`                                                                                               | *number*                                                                                              | :heavy_minus_sign:                                                                                    | The creative width                                                                                    | 2159                                                                                                  |
+| `height`                                                                                              | *number*                                                                                              | :heavy_minus_sign:                                                                                    | The creative height                                                                                   | 3075                                                                                                  |
+| `format`                                                                                              | *string*                                                                                              | :heavy_minus_sign:                                                                                    | The creative format                                                                                   | jpg                                                                                                   |
+| `url`                                                                                                 | *string*                                                                                              | :heavy_minus_sign:                                                                                    | The creative content URL                                                                              | https://assets.crm.com/image/offer.jpg                                                                |
+| `publicId`                                                                                            | *string*                                                                                              | :heavy_minus_sign:                                                                                    | The creative public identifier                                                                        | crm-com/image                                                                                         |
+| `mediaId`                                                                                             | *string*                                                                                              | :heavy_minus_sign:                                                                                    | The media identifier                                                                                  |                                                                                                       |
+| `caption`                                                                                             | *string*                                                                                              | :heavy_minus_sign:                                                                                    | The creative caption used in cases where usage_type=CAROUSEL                                          |                                                                                                       |
+| `sortOrder`                                                                                           | *number*                                                                                              | :heavy_minus_sign:                                                                                    | The creative sort order used in cases where usage_type=CAROUSEL                                       |                                                                                                       |
+| `media`                                                                                               | [operations.CharityOrganisationMedia](../../models/operations/charity-organisation-media.md)[]        | :heavy_minus_sign:                                                                                    | Information about the creative transformations                                                        |                                                                                                       |

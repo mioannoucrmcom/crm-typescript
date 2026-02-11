@@ -1,0 +1,33 @@
+# ComCrmContactSelfServiceResourceGetCommunitiesWalletSharing
+
+Defines whether the community person will be able to use/request money from community owner wallet
+
+## Example Usage
+
+```typescript
+import { ComCrmContactSelfServiceResourceGetCommunitiesWalletSharing } from "crm/models/operations";
+
+let value: ComCrmContactSelfServiceResourceGetCommunitiesWalletSharing = {
+  isEnabled: true,
+  commercePools: [
+    {
+      id: "dc01f65b-a482-48f1-9fda-c163df72f28f",
+      name: "Redeem Anywhere",
+      description: "Ability to redeem on any organisation/day/product",
+    },
+  ],
+  method: "AUTO",
+  maxAmount: 50,
+  remainingAmount: 1.99,
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                     | Type                                                                                                                                                                      | Required                                                                                                                                                                  | Description                                                                                                                                                               | Example                                                                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `isEnabled`                                                                                                                                                               | *boolean*                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                        | Defines if wallet sharing is enabled                                                                                                                                      | true                                                                                                                                                                      |
+| `commercePools`                                                                                                                                                           | [operations.ComCrmContactSelfServiceResourceGetCommunitiesCommercePool](../../models/operations/com-crm-contact-self-service-resource-get-communities-commerce-pool.md)[] | :heavy_minus_sign:                                                                                                                                                        | Defines the commerce pools that the community person is allowed to use/transfer wallet money                                                                              |                                                                                                                                                                           |
+| `method`                                                                                                                                                                  | [operations.ComCrmContactSelfServiceResourceGetCommunitiesMethod](../../models/operations/com-crm-contact-self-service-resource-get-communities-method.md)                | :heavy_minus_sign:                                                                                                                                                        | Defines whether money requests will require an acceptance from the community owner or will be automatically applied                                                       | AUTO                                                                                                                                                                      |
+| `maxAmount`                                                                                                                                                               | *number*                                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                        | Defines the maximum amount that can be transferred per calendar month                                                                                                     | 50                                                                                                                                                                        |
+| `remainingAmount`                                                                                                                                                         | *number*                                                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                        | Defines the remaining amount that can be transferred per calendar month                                                                                                   | 1.99                                                                                                                                                                      |

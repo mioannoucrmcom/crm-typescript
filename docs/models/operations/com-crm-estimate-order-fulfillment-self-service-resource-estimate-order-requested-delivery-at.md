@@ -1,0 +1,27 @@
+# ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderRequestedDeliveryAt
+
+Preview order based on the date and time at which the customer requests the ordered items to be delivered/picked-up (Applicable only for ordering ahead/scheduling an order)
+
+## Example Usage
+
+```typescript
+import {
+  ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderRequestedDeliveryAt,
+} from "crm/models/operations";
+
+let value:
+  ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderRequestedDeliveryAt =
+    {
+      time: 30,
+      timeUnit: "MINUTE",
+      date: 12312323123,
+    };
+```
+
+## Fields
+
+| Field                                                                                                                                                                                             | Type                                                                                                                                                                                              | Required                                                                                                                                                                                          | Description                                                                                                                                                                                       | Example                                                                                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `time`                                                                                                                                                                                            | *number*                                                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                                                | The order ahead time                                                                                                                                                                              | 30                                                                                                                                                                                                |
+| `timeUnit`                                                                                                                                                                                        | [operations.ComCrmEstimateOrderFulfillmentSelfServiceResourceEstimateOrderTimeUnit](../../models/operations/com-crm-estimate-order-fulfillment-self-service-resource-estimate-order-time-unit.md) | :heavy_check_mark:                                                                                                                                                                                | The order ahead time unit                                                                                                                                                                         | MINUTE                                                                                                                                                                                            |
+| `date`                                                                                                                                                                                            | *number*                                                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                                                | The order ahead date                                                                                                                                                                              | 12312323123                                                                                                                                                                                       |

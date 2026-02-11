@@ -1,0 +1,20 @@
+# ComCrmContactSelfServiceResourceUpdatePaymentMethodRequest
+
+## Example Usage
+
+```typescript
+import { ComCrmContactSelfServiceResourceUpdatePaymentMethodRequest } from "crm/models/operations";
+
+let value: ComCrmContactSelfServiceResourceUpdatePaymentMethodRequest = {
+  id: "<id>",
+  paymentMethodId: "<id>",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                                                            | Type                                                                                                                                                                             | Required                                                                                                                                                                         | Description                                                                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                             | *string*                                                                                                                                                                         | :heavy_check_mark:                                                                                                                                                               | N/A                                                                                                                                                                              |
+| `paymentMethodId`                                                                                                                                                                | *string*                                                                                                                                                                         | :heavy_check_mark:                                                                                                                                                               | N/A                                                                                                                                                                              |
+| `body`                                                                                                                                                                           | [operations.ComCrmContactSelfServiceResourceUpdatePaymentMethodRequestBody](../../models/operations/com-crm-contact-self-service-resource-update-payment-method-request-body.md) | :heavy_minus_sign:                                                                                                                                                               | N/A                                                                                                                                                                              |

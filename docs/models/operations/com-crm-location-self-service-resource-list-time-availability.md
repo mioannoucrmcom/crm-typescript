@@ -1,0 +1,20 @@
+# ComCrmLocationSelfServiceResourceListTimeAvailability
+
+## Example Usage
+
+```typescript
+import { ComCrmLocationSelfServiceResourceListTimeAvailability } from "crm/models/operations";
+
+let value: ComCrmLocationSelfServiceResourceListTimeAvailability = {
+  startTime: "09:00",
+  endTime: "17:00",
+};
+```
+
+## Fields
+
+| Field                                                                                                                                           | Type                                                                                                                                            | Required                                                                                                                                        | Description                                                                                                                                     | Example                                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dayOfWeek`                                                                                                                                     | [operations.ComCrmLocationSelfServiceResourceListDayOfWeek](../../models/operations/com-crm-location-self-service-resource-list-day-of-week.md) | :heavy_minus_sign:                                                                                                                              | Days of the week                                                                                                                                |                                                                                                                                                 |
+| `startTime`                                                                                                                                     | *string*                                                                                                                                        | :heavy_minus_sign:                                                                                                                              | Order Catalogue available from this time                                                                                                        | 09:00                                                                                                                                           |
+| `endTime`                                                                                                                                       | *string*                                                                                                                                        | :heavy_minus_sign:                                                                                                                              | Order Catalogue available up until this time                                                                                                    | 17:00                                                                                                                                           |

@@ -1,0 +1,25 @@
+# OrderLineItemBundleProduct
+
+Defines the main product that the line item is component to it (applicable only when the line item is invoiced as a component of another product)
+
+## Example Usage
+
+```typescript
+import { OrderLineItemBundleProduct } from "crm/models/operations";
+
+let value: OrderLineItemBundleProduct = {
+  id: "4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0",
+  name: "Decoder",
+  sku: "DEC1234",
+  classification: "TRACEABLE_PHYSICAL_GOOD",
+};
+```
+
+## Fields
+
+| Field                                                                                                                           | Type                                                                                                                            | Required                                                                                                                        | Description                                                                                                                     | Example                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                            | *string*                                                                                                                        | :heavy_minus_sign:                                                                                                              | The entity identifier                                                                                                           | 4c01d5e4-02c9-ae89-4a3c-eaeb3174fcf0                                                                                            |
+| `name`                                                                                                                          | *string*                                                                                                                        | :heavy_minus_sign:                                                                                                              | The product name                                                                                                                | Decoder                                                                                                                         |
+| `sku`                                                                                                                           | *string*                                                                                                                        | :heavy_minus_sign:                                                                                                              | The product SKU                                                                                                                 | DEC1234                                                                                                                         |
+| `classification`                                                                                                                | [operations.OrderLineItemBundleProductClassification](../../models/operations/order-line-item-bundle-product-classification.md) | :heavy_minus_sign:                                                                                                              | Product type classification                                                                                                     | TRACEABLE_PHYSICAL_GOOD                                                                                                         |

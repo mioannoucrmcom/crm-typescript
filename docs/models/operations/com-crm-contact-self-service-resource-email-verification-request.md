@@ -1,0 +1,16 @@
+# ComCrmContactSelfServiceResourceEmailVerificationRequest
+
+## Example Usage
+
+```typescript
+import { ComCrmContactSelfServiceResourceEmailVerificationRequest } from "crm/models/operations";
+
+let value: ComCrmContactSelfServiceResourceEmailVerificationRequest = {};
+```
+
+## Fields
+
+| Field                                                                                                                                                                       | Type                                                                                                                                                                        | Required                                                                                                                                                                    | Description                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`                                                                                                                                                                    | *string*                                                                                                                                                                    | :heavy_minus_sign:                                                                                                                                                          | N/A                                                                                                                                                                         |
+| `body`                                                                                                                                                                      | [operations.ComCrmContactSelfServiceResourceEmailVerificationRequestBody](../../models/operations/com-crm-contact-self-service-resource-email-verification-request-body.md) | :heavy_minus_sign:                                                                                                                                                          | N/A                                                                                                                                                                         |

@@ -1,0 +1,29 @@
+# ComCrmPassPlanSelfServiceResourceListPassTypesCodeFormat
+
+Details of the pass code format to be followed when a pass code is created. All the following are applicable for GIFT & TOP_UP pass plans, or PROMOTION pass plans with a pass_code_type of MULTIPLE, unless otherwise stated
+
+## Example Usage
+
+```typescript
+import { ComCrmPassPlanSelfServiceResourceListPassTypesCodeFormat } from "crm/models/operations";
+
+let value: ComCrmPassPlanSelfServiceResourceListPassTypesCodeFormat = {
+  type: "ALPHANUMERIC",
+  prefix: "CRM",
+  suffix: "2020",
+  length: 10,
+  pinRequired: true,
+  singleCode: "\"123456\"",
+};
+```
+
+## Fields
+
+| Field                                                                                                                      | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                | Example                                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `type`                                                                                                                     | [operations.CodeFormatType](../../models/operations/code-format-type.md)                                                   | :heavy_check_mark:                                                                                                         | The pass code type to be used                                                                                              | ALPHANUMERIC                                                                                                               |
+| `prefix`                                                                                                                   | *string*                                                                                                                   | :heavy_minus_sign:                                                                                                         | Optional pass code prefix (appears at the beginning of the pass code)                                                      | CRM                                                                                                                        |
+| `suffix`                                                                                                                   | *string*                                                                                                                   | :heavy_minus_sign:                                                                                                         | Optional pass code suffix (appears at the end of the pass code)                                                            | 2020                                                                                                                       |
+| `length`                                                                                                                   | *number*                                                                                                                   | :heavy_minus_sign:                                                                                                         | Pass code length (min.7, max.16), not inlcuding prefix and suffix                                                          | 10                                                                                                                         |
+| `pinRequired`                                                                                                              | *boolean*                                                                                                                  | :heavy_minus_sign:                                                                                                         | Defines whether the passes will be associated with a pin (not for PROMOTION type pass plans)                               | true                                                                                                                       |
+| `singleCode`                                                                                                               | *string*                                                                                                                   | :heavy_minus_sign:                                                                                                         | The single pass code to be used for all passes. Applicable only for PROMOTION type pass plans with pass_code_type = SINGLE | "123456"                                                                                                                   |

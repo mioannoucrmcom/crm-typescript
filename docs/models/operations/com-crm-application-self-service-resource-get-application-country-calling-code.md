@@ -1,0 +1,18 @@
+# ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCode
+
+## Example Usage
+
+```typescript
+import { ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCode } from "crm/models/operations";
+
+let value:
+  ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCode = {
+    country: "CYP",
+  };
+```
+
+## Fields
+
+| Field                                                                                                                                                                                                       | Type                                                                                                                                                                                                        | Required                                                                                                                                                                                                    | Description                                                                                                                                                                                                 | Example                                                                                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `country`                                                                                                                                                                                                   | [operations.ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCodeCountry](../../models/operations/com-crm-application-self-service-resource-get-application-country-calling-code-country.md) | :heavy_minus_sign:                                                                                                                                                                                          | Name of country                                                                                                                                                                                             | CYP                                                                                                                                                                                                         |
