@@ -11,6 +11,9 @@ targets:
     crm:
         target: typescript
         source: Self Service API
+        publish:
+            npm:
+                token: $npm_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/marios/self-service/self-service-api-typescript-code-samples

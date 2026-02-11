@@ -1,9 +1,9 @@
-speakeasyVersion: 1.709.1
+speakeasyVersion: 1.709.4
 sources:
     Self Service API:
         sourceNamespace: self-service-api
-        sourceRevisionDigest: sha256:23bcf6706ee2639db5cadd9db9a0a917e85e7bdbe9295816328512cd9b7b71cb
-        sourceBlobDigest: sha256:61cd039a0827fbfd88bbf1c244ec7cfec7d6fd35572abaf93663f3b488e81048
+        sourceRevisionDigest: sha256:47afbdb288cfd55a19d4ba2d9db76dfffbf5ff2a816273da446100b645b47913
+        sourceBlobDigest: sha256:ad45de33aa3c4764e0b9919b6c7d27067d171bd9f095896a95555a2cd9198de7
         tags:
             - latest
             - v2
@@ -11,10 +11,10 @@ targets:
     crm:
         source: Self Service API
         sourceNamespace: self-service-api
-        sourceRevisionDigest: sha256:23bcf6706ee2639db5cadd9db9a0a917e85e7bdbe9295816328512cd9b7b71cb
-        sourceBlobDigest: sha256:61cd039a0827fbfd88bbf1c244ec7cfec7d6fd35572abaf93663f3b488e81048
+        sourceRevisionDigest: sha256:47afbdb288cfd55a19d4ba2d9db76dfffbf5ff2a816273da446100b645b47913
+        sourceBlobDigest: sha256:ad45de33aa3c4764e0b9919b6c7d27067d171bd9f095896a95555a2cd9198de7
         codeSamplesNamespace: self-service-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:53e0b759695c26839e4cf10bce7d19bcf6b4fe313e7c3ed0c902bb689a688c63
+        codeSamplesRevisionDigest: sha256:ac7098128a9b6efb6b26ab56d8929b026105145d8f148684cb39076122288454
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -29,6 +29,9 @@ workflow:
         crm:
             target: typescript
             source: Self Service API
+            publish:
+                npm:
+                    token: $npm_token
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/marios/self-service/self-service-api-typescript-code-samples
