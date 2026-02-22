@@ -1,20 +1,21 @@
-speakeasyVersion: 1.709.4
+speakeasyVersion: 1.723.0
 sources:
     Self Service API:
         sourceNamespace: self-service-api
-        sourceRevisionDigest: sha256:e4a011a2425d3bbc3701dcc59f6d77622f5611dfc0e98df3b57c3e5f27ed1e2e
+        sourceRevisionDigest: sha256:e92cbeb65819687ca763ddeab58b64ed0089b21b895451c5b75991b4975011d1
         sourceBlobDigest: sha256:141d417cbe81fd0b528b3ec25c6f0a75da88b9df5e3749cf0673dc5e58d55fd9
         tags:
             - latest
+            - speakeasy-sdk-regen-1770805061
             - v2
 targets:
     crm:
         source: Self Service API
         sourceNamespace: self-service-api
-        sourceRevisionDigest: sha256:e4a011a2425d3bbc3701dcc59f6d77622f5611dfc0e98df3b57c3e5f27ed1e2e
+        sourceRevisionDigest: sha256:e92cbeb65819687ca763ddeab58b64ed0089b21b895451c5b75991b4975011d1
         sourceBlobDigest: sha256:141d417cbe81fd0b528b3ec25c6f0a75da88b9df5e3749cf0673dc5e58d55fd9
         codeSamplesNamespace: self-service-api-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:4c9f5484bd9900e108f30c060f9bc1141485303d615a124daff76f41d829c350
+        codeSamplesRevisionDigest: sha256:58c167a297bac15c09d9f22c7edaa12fd2cee59906c41a575c322e527f01ad93
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
