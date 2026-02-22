@@ -3,20 +3,22 @@ id: 36ad1ba8-9dca-47e7-a772-6e04b7774c7c
 management:
   docChecksum: 12fd1a885832b3016714f4b21baa5d90
   docVersion: v2
-  speakeasyVersion: 1.709.4
-  generationVersion: 2.816.0
-  releaseVersion: 0.0.4
-  configChecksum: d2b7ec93a1244df32d2340cb2995c207
+  speakeasyVersion: 1.723.0
+  generationVersion: 2.835.2
+  releaseVersion: 0.0.5
+  configChecksum: 76f9c34b3870ff4379023922af334240
+  repoURL: https://github.com/mioannoucrmcom/crm-typescript.git
+  installationURL: https://github.com/mioannoucrmcom/crm-typescript
   published: true
 persistentEdits:
-  generation_id: 1da1e2d6-228f-46e7-abe0-402fbf2e2de1
-  pristine_commit_hash: 7ca61f15348fdd5887841cba8e716410ae45ee9b
-  pristine_tree_hash: 3372b90c7616f439f431fcfcdf5ddf41f232e7ea
+  generation_id: b18e691a-8b3e-4280-b014-1b9e916dd2e5
+  pristine_commit_hash: 98be74fa935fa2f4a40c725c556fef3f76551ceb
+  pristine_tree_hash: 7cf56f8fc100f2639b8876d450d884d5b42c489d
 features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.13
-    core: 3.26.27
+    core: 3.26.31
     defaultEnabledRetries: 0.1.0
     deprecations: 2.81.1
     devContainers: 2.90.1
@@ -36,8 +38,8 @@ features:
 trackedFiles:
   .devcontainer/README.md:
     id: b170c0f184ac
-    last_write_checksum: sha1:b6564d2a7c8ae764fff6d1b4666dcd787210a000
-    pristine_git_object: cdef18c30e383534a868742e1b9148f2670606f9
+    last_write_checksum: sha1:08c029952a520b327d995ebff61a5b649e6cc07e
+    pristine_git_object: 44ecc5672046cc32466521ae18d1fe62194bdf0a
   .devcontainer/devcontainer.json:
     id: b34062a34eb1
     last_write_checksum: sha1:d0b15193202c961e7d1875864ddb15f9d17c84dd
@@ -9940,16 +9942,16 @@ trackedFiles:
     pristine_git_object: 466d77216951a4f3273847bee79aea636071e7d2
   examples/package.json:
     id: c1d7b0ec8e7e
-    last_write_checksum: sha1:a408cf54096289b8b173295b9d7981e345b238c7
-    pristine_git_object: a4e7b963159e3e7c669b1963d84be8a57162f4c7
+    last_write_checksum: sha1:b12521f551203ceb9e31ad4b17473cf048e46ab7
+    pristine_git_object: 14bd288d2ae229b24084a28a9304e670bf0272f6
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:77a50d107becb7508fa9294becec4b9074cffe5f
-    pristine_git_object: d2c2e1d915be09fb6e5525d6962ab4885e94ed15
+    last_write_checksum: sha1:1ebad6e9d9819ef9858147266a35e7a3929b95e1
+    pristine_git_object: bb21a29281752799308ea3b5f813811e7aab8e73
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:b3d3142ed880951c3e73b254bb1f67c34d5f8d14
-    pristine_git_object: 5052b91c6a804ee44827d4a891eb9f55e0a879b0
+    last_write_checksum: sha1:d9f77d62c7e24442a94fd6ab76ba2c3df35930de
+    pristine_git_object: 1cd171faf336c759f14f2cccf2d3b79ac06dc987
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:eb2b4d5c932e6c7c63ee2f7fa4a22e0f9c9307d8
@@ -10808,8 +10810,8 @@ trackedFiles:
     pristine_git_object: 44be0eae8246521b230e8e711a88eff738fc015d
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:0417d7d6b85f4aa9fac2d346f7ad22f14b5499b0
-    pristine_git_object: b4b2814a18e443b1ab80e2af998e2837f9887287
+    last_write_checksum: sha1:e3682dd113eddff59e858bd10bddc4ea553b3bbd
+    pristine_git_object: c7b6702b6ea39376cd88410db91327960d75f369
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -11242,10 +11244,10 @@ trackedFiles:
     id: 02991c60639c
     last_write_checksum: sha1:2d2c0f51e3be3566b95dd2cb7525177752ade0b5
     pristine_git_object: 6876677b51c54dbada02f548db023907ab845b83
-  src/models/operations/com-crm-estimate-order-self-service-resource-estimate-order.ts:
-    id: a64a83a35ef5
-    last_write_checksum: sha1:d0030203d5f541ec2c48d81a9af12df04fa76353
-    pristine_git_object: 7ece1f10cc4f930767882786a34c4fe977e4c2de
+  src/models/operations/com-crm-estimate-order-self-service-resource-estimate-order-response.ts:
+    id: 9c4d44416e20
+    last_write_checksum: sha1:fb37746c29518954dbc034bb1fa7735a84fb667e
+    pristine_git_object: fee04c42b67e267eadfb16c01fcd13e7078ff8d2
   src/models/operations/com-crm-estimate-self-service-resource-estimate-invoicing.ts:
     id: d767553b0a69
     last_write_checksum: sha1:22d6b29bd47192ab61172a89d09e2feb91366984
@@ -11704,8 +11706,8 @@ trackedFiles:
     pristine_git_object: cb45aa3c133941bad7c44a52b6db5d302be7bdbe
   src/models/operations/index.ts:
     id: 0d9ffaf774d2
-    last_write_checksum: sha1:c9bdc5ce905221708edbc821627a4a8085c9e745
-    pristine_git_object: c3907f924652f6d96a1882c6bc5e6bb33c739268
+    last_write_checksum: sha1:92fa17e6bb7793b92fa02da296c7e19d308c49d3
+    pristine_git_object: 57dd6842788372908eb3b1b08a6ea8d9204742dd
   src/models/operations/list-contact-addresses-ss.ts:
     id: 4885e293c36b
     last_write_checksum: sha1:e7763a80b3bdcbdd40596b625d6f53a8333273d8
@@ -11714,6 +11716,10 @@ trackedFiles:
     id: b459df378eac
     last_write_checksum: sha1:474bd3b73167fecc7db4cc3431136a64bd523bd2
     pristine_git_object: 64146b75d98ed7b2db8e816fe0469039bf5a2853
+  src/models/operations/order-invoicing-taxes-breakdown-tax-code.ts:
+    id: 4589c28f3f7a
+    last_write_checksum: sha1:6c8632764c372cc4ba40780bee181fb23d8dcaaa
+    pristine_git_object: bad6f01d2093a01f4adb7645ae4152bfecb7f3ef
   src/models/operations/register-contact-ss.ts:
     id: 1ddf940b73f0
     last_write_checksum: sha1:b5eee3accfacac79f35b88744e5b5e61b71f92b5
