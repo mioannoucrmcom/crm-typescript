@@ -9,11 +9,11 @@ import { ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition } f
 
 let value: ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition =
   "FLAT";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "FLAT" | "FLEXIBLE_BUNDLE" | "FIXED_BUNDLE" | "COMPOSITE" | Unrecognized<string>

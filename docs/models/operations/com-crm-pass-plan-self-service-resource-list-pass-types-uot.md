@@ -8,11 +8,11 @@ The period unit of time, applicable only if validity type is PERIOD. Used in con
 import { ComCrmPassPlanSelfServiceResourceListPassTypesUot } from "crm/models/operations";
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesUot = "MONTHS";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "DAYS" | "MONTHS" | "YEARS" | Unrecognized<string>
