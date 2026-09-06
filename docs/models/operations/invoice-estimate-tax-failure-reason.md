@@ -8,11 +8,11 @@ Shows the reason for failing to calculating taxes for the invoice, typically bec
 import { InvoiceEstimateTaxFailureReason } from "crm/models/operations";
 
 let value: InvoiceEstimateTaxFailureReason = "INVALID_ADDRESS";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "INVALID_ADDRESS" | "API_ERROR" | "COMMUNICATION_ERROR" | Unrecognized<string>

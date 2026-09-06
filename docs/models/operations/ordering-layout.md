@@ -8,11 +8,11 @@ The application ordering layout
 import { OrderingLayout } from "crm/models/operations";
 
 let value: OrderingLayout = "LAYOUT5";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "LAYOUT1" | "LAYOUT2" | "LAYOUT3" | "LAYOUT4" | "LAYOUT5" | Unrecognized<string>

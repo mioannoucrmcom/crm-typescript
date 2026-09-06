@@ -8,11 +8,11 @@ The wallet balance to be credited when the pass is redeemed. For TOP_UP and GIFT
 import { CreditWalletBalance } from "crm/models/operations";
 
 let value: CreditWalletBalance = "COMMERCE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "OPEN" | "COMMERCE" | Unrecognized<string>

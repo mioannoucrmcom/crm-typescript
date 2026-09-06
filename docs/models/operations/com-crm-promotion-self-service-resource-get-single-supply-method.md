@@ -12,11 +12,11 @@ The type of the event:
 import { ComCrmPromotionSelfServiceResourceGetSingleSupplyMethod } from "crm/models/operations";
 
 let value: ComCrmPromotionSelfServiceResourceGetSingleSupplyMethod = "DELIVERY";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "DELIVERY" | "PICK_UP" | "DIRECT_SALE" | Unrecognized<string>
