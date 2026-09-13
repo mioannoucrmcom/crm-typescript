@@ -12,11 +12,11 @@ import {
 let value:
   ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingModel =
     "PRE_BILL";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "POST_BILL" | "PRE_BILL" | Unrecognized<string>

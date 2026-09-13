@@ -8,11 +8,11 @@ Valid states of a pass plan
 import { ComCrmPassPlanSelfServiceResourceListPassTypesState } from "crm/models/operations";
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesState = "ACTIVE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "ACTIVE" | "INACTIVE" | Unrecognized<string>

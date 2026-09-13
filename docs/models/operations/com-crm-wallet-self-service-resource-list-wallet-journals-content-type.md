@@ -9,11 +9,11 @@ import { ComCrmWalletSelfServiceResourceListWalletJournalsContentType } from "cr
 
 let value: ComCrmWalletSelfServiceResourceListWalletJournalsContentType =
   "CREDIT";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "CREDIT" | "DEBIT" | Unrecognized<string>
