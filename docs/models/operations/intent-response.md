@@ -8,11 +8,11 @@ The intent for which the token was requested
 import { IntentResponse } from "crm/models/operations";
 
 let value: IntentResponse = "SPEND";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "APPROVE_PURCHASE" | "REJECT_PURCHASE" | "SPEND" | Unrecognized<string>

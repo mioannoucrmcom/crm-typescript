@@ -8,11 +8,11 @@ price tax code
 import { ComCrmProductSelfServiceResourceGetProductComponentsTaxCode } from "crm/models/operations";
 
 let value: ComCrmProductSelfServiceResourceGetProductComponentsTaxCode = "VAT";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "VAT" | "TAX_EXEMPT" | "SALES_TAX" | "OTHER" | Unrecognized<string>

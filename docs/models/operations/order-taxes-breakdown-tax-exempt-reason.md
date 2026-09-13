@@ -8,11 +8,11 @@ Applicable only when a Tax Exempt rate was applied. Shows whether the tax exempt
 import { OrderTaxesBreakdownTaxExemptReason } from "crm/models/operations";
 
 let value: OrderTaxesBreakdownTaxExemptReason = "PRODUCT";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "CONTACT" | "PRODUCT" | Unrecognized<string>

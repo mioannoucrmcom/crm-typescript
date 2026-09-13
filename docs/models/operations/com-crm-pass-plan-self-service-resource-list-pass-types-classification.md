@@ -9,11 +9,11 @@ import { ComCrmPassPlanSelfServiceResourceListPassTypesClassification } from "cr
 
 let value: ComCrmPassPlanSelfServiceResourceListPassTypesClassification =
   "GIFT";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "GIFT" | "TOPUP" | "PROMOTION" | Unrecognized<string>

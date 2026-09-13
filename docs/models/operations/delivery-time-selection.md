@@ -8,11 +8,11 @@ Defines how the contact selects the delivery time for their order: explicit_deli
 import { DeliveryTimeSelection } from "crm/models/operations";
 
 let value: DeliveryTimeSelection = "NO_TIME";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "EXPLICIT_DELIVERY_TIME" | "SLOT_SELECTION" | "NO_TIME" | Unrecognized<string>
