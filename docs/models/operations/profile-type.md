@@ -8,11 +8,11 @@ The contact attribute
 import { ProfileType } from "crm/models/operations";
 
 let value: ProfileType = "NAMEDAY";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "BIRTHDATE" | "NAMEDAY" | "GENDER" | Unrecognized<string>
