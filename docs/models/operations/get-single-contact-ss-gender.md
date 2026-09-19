@@ -8,11 +8,11 @@ Contact’s gender information
 import { GetSingleContactSSGender } from "crm/models/operations";
 
 let value: GetSingleContactSSGender = "MALE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "FEMALE" | "MALE" | "OTHER" | Unrecognized<string>
