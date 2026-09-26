@@ -8,11 +8,11 @@ The type of the entity that blocked the item
 import { ComCrmWalletSelfServiceResourceGetTransactionsEntity } from "crm/models/operations";
 
 let value: ComCrmWalletSelfServiceResourceGetTransactionsEntity = "PURCHASE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "PURCHASE" | "ORDER" | Unrecognized<string>

@@ -13,11 +13,11 @@ Details on why the product is considered as invalid and cannot be included in th
 import { OrderUnavailabilityReason } from "crm/models/operations";
 
 let value: OrderUnavailabilityReason = "STOCK";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "STOCK" | "VALIDITY_PERIOD" | "AVAILABILITY" | "ORDER_CATALOGUE" | Unrecognized<string>

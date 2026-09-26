@@ -8,11 +8,11 @@ The device’s operation platform
 import { ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform } from "crm/models/operations";
 
 let value: ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform = "MOBILE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "MOBILE" | "BROWSER" | "OTHER" | Unrecognized<string>

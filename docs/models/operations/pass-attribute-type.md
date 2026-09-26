@@ -8,11 +8,11 @@ The pass supplementary attribute type
 import { PassAttributeType } from "crm/models/operations";
 
 let value: PassAttributeType = "CODE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "CODE" | "PIN" | Unrecognized<string>
