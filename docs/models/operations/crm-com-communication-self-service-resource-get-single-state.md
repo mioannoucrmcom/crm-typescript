@@ -8,11 +8,11 @@ The state of the communication
 import { CrmComCommunicationSelfServiceResourceGetSingleState } from "crm/models/operations";
 
 let value: CrmComCommunicationSelfServiceResourceGetSingleState = "PENDING";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "PENDING" | "COMPLETED" | "REJECTED" | Unrecognized<string>

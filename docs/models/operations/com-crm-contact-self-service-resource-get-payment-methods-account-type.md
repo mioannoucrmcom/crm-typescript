@@ -9,11 +9,11 @@ import { ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType } from "cr
 
 let value: ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType =
   "SAVINGS";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "SAVINGS" | "CHECKING" | "BUSINESS_CHECKING" | Unrecognized<string>
