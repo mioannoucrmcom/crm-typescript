@@ -8,11 +8,11 @@ Denotes whether the product is available for ordering at the organisation that w
 import { ComCrmProductSelfServiceResourceListProductsAvailability } from "crm/models/operations";
 
 let value: ComCrmProductSelfServiceResourceListProductsAvailability = "ENABLED";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "ENABLED" | "DISABLED" | Unrecognized<string>

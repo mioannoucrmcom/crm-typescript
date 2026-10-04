@@ -8,11 +8,11 @@ The offer goal
 import { Goal } from "crm/models/operations";
 
 let value: Goal = "ACHIEVEMENT";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "ACHIEVEMENT" | "SPEND" | "VISITS" | "MEMBERSHIP" | Unrecognized<string>
