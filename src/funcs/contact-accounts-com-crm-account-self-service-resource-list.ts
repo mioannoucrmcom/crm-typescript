@@ -5,6 +5,7 @@
 import * as z from "zod/v4-mini";
 import { CrmCore } from "../core.js";
 import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
+import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
@@ -30,6 +31,8 @@ import { Result } from "../types/fp.js";
  *
  * @remarks
  * Get a list of Contact Accounts. Normally a contact will have a single account but multiple accounts can be used to service different currencies, or different spending profiles.
+ *
+ * If set, this operation will use {@link Security.authorizationSelfService} from the global security.
  */
 export function contactAccountsComCrmAccountSelfServiceResourceList(
   client: CrmCore,
@@ -96,7 +99,6 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
   const path = pathToFunc("/self-service/v2/contacts/{id}/accounts")(
     pathParams,
   );
@@ -121,7 +123,7 @@ async function $do(
   const securityInput = secConfig == null
     ? {}
     : { authorizationSelfService: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,
@@ -156,18 +158,8 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: [
-      "400",
-      "401",
-      "403",
-      "404",
-      "4XX",
-      "500",
-      "502",
-      "503",
-      "504",
-      "5XX",
-    ],
+    isErrorStatusCode: (statusCode: number) =>
+      matchStatusCode({ status: statusCode } as Response, ["4XX", "5XX"]),
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });

@@ -8,11 +8,11 @@ Specifies which pocket the transaction was logged against. CRMCOM = CRM.COM pock
 import { PocketResponse } from "crm/models/operations";
 
 let value: PocketResponse = "BUSINESS_COMMERCE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "CRMCOM" | "BUSINESS" | "BUSINESS_COMMERCE" | Unrecognized<string>

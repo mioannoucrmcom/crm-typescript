@@ -9,11 +9,11 @@ import { ComCrmOrderSelfServiceResourceListOrdersLifeCycleState } from "crm/mode
 
 let value: ComCrmOrderSelfServiceResourceListOrdersLifeCycleState =
   "PENDING_DELIVERY";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "PENDING_DELIVERY" | "DELIVERED" | "PENDING_STOCK_MOVEMENT" | Unrecognized<string>

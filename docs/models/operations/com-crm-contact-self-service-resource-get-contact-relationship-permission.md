@@ -7,11 +7,11 @@ import { ComCrmContactSelfServiceResourceGetContactRelationshipPermission } from
 
 let value: ComCrmContactSelfServiceResourceGetContactRelationshipPermission =
   "SERVICE_REQUESTS_MANAGEMENT";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "CONTACT_MANAGEMENT" | "SERVICE_REQUESTS_MANAGEMENT" | "ORDERS_MANAGEMENT" | "FULL_ACCESS" | Unrecognized<string>
