@@ -8,11 +8,11 @@ The community people person's relation state. A person is considered as a valid 
 import { ComCrmContactSelfServiceResourceGetCommunitiesState } from "crm/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetCommunitiesState = "ACCEPTED";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "PENDING" | "ACCEPTED" | "REJECTED" | Unrecognized<string>

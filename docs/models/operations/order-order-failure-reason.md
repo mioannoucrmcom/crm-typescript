@@ -8,11 +8,11 @@ Shows the reason why the order cannot be placed
 import { OrderOrderFailureReason } from "crm/models/operations";
 
 let value: OrderOrderFailureReason = "MINIMUM_COST";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "MINIMUM_COST" | "TAX_CALCULATION" | Unrecognized<string>
