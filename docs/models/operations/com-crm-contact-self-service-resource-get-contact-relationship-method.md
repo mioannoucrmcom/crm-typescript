@@ -9,11 +9,11 @@ import { ComCrmContactSelfServiceResourceGetContactRelationshipMethod } from "cr
 
 let value: ComCrmContactSelfServiceResourceGetContactRelationshipMethod =
   "AUTO";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "AUTO" | "MANUAL" | Unrecognized<string>

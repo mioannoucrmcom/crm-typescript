@@ -13,11 +13,11 @@ import { ComCrmOrderSelfServiceResourceListOrdersDeliveryMethod } from "crm/mode
 
 let value: ComCrmOrderSelfServiceResourceListOrdersDeliveryMethod =
   "PICKUP_POINT";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "DIRECT_DELIVERY" | "COURIER_SERVICE" | "PICKUP_POINT" | Unrecognized<string>
