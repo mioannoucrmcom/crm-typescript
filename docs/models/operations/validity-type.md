@@ -8,11 +8,11 @@ The validity type
 import { ValidityType } from "crm/models/operations";
 
 let value: ValidityType = "ALWAYS";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "PERIOD" | "DATE" | "ALWAYS" | Unrecognized<string>

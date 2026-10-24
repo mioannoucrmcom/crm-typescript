@@ -8,11 +8,11 @@ Indicates whether the offering will be applied once, for a period of time or for
 import { DurationType } from "crm/models/operations";
 
 let value: DurationType = "PERIOD";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "ONE_TIME" | "FOREVER" | "PERIOD" | "VARIABLE_DISCOUNTS" | Unrecognized<string>
