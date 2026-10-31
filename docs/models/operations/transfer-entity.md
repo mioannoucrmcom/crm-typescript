@@ -6,11 +6,11 @@
 import { TransferEntity } from "crm/models/operations";
 
 let value: TransferEntity = "WALLET";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "ACCOUNT" | "WALLET" | Unrecognized<string>

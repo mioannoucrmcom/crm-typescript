@@ -9,11 +9,11 @@ import { ComCrmProductSelfServiceResourceGetProductComponentsItemType } from "cr
 
 let value: ComCrmProductSelfServiceResourceGetProductComponentsItemType =
   "PRODUCT";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "PRODUCT" | "FAMILY" | "TYPE" | "CATEGORY" | "COMPONENT_SET" | Unrecognized<string>
