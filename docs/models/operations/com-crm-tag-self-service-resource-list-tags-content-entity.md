@@ -9,11 +9,11 @@ import { ComCrmTagSelfServiceResourceListTagsContentEntity } from "crm/models/op
 
 let value: ComCrmTagSelfServiceResourceListTagsContentEntity =
   "SERVICE_REQUESTS";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "ORGANISATIONS" | "CONTACTS" | "SERVICE_REQUESTS" | "LEADS" | "ACTIVITIES" | "PRODUCTS" | "REWARD_OFFERS" | "PROMOTIONS" | Unrecognized<string>

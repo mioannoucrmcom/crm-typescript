@@ -7,11 +7,11 @@ import { ComCrmApplicationSelfServiceResourceGetApplicationSubscription } from "
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationSubscription =
   "CHANGE_PAYMENT_METHOD";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "CHANGE_BILLING_DAY" | "CHANGE_PAYMENT_METHOD" | Unrecognized<string>
