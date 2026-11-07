@@ -8,11 +8,11 @@ The type of the contact information
 import { ComCrmOrganisationSelfServiceResourceGetSingleType } from "crm/models/operations";
 
 let value: ComCrmOrganisationSelfServiceResourceGetSingleType = "PHONE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "EMAIL" | "PHONE" | Unrecognized<string>
