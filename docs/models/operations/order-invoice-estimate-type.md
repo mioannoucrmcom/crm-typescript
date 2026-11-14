@@ -8,11 +8,11 @@ Type of discount applied
 import { OrderInvoiceEstimateType } from "crm/models/operations";
 
 let value: OrderInvoiceEstimateType = "AD_HOC";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "AD_HOC" | "PROMOTION" | "AUTO_APPLIED" | Unrecognized<string>

@@ -8,11 +8,11 @@ Contact type - can be PERSON or COMPANY
 import { ComCrmContactSelfServiceResourceAuthenticateContactType } from "crm/models/operations";
 
 let value: ComCrmContactSelfServiceResourceAuthenticateContactType = "COMPANY";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "PERSON" | "COMPANY" | Unrecognized<string>

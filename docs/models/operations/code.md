@@ -8,11 +8,11 @@ The command (unique) code. Its value varies according to the implemented IRD com
 import { Code } from "crm/models/operations";
 
 let value: Code = "REFRESH";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "REFRESH" | "RESET_PIN" | Unrecognized<string>

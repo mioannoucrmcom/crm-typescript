@@ -12,11 +12,11 @@ Define how awards can be/were spent (for SPEND transactions only)
 import { SpendMethod } from "crm/models/operations";
 
 let value: SpendMethod = "INSTANT";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "ON_REQUEST" | "INSTANT" | "DEFERRED" | "AUTO_SPEND" | "VOUCHER" | Unrecognized<string>
