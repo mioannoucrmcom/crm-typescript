@@ -8,11 +8,11 @@ The organisation type
 import { RegisterContactSSOrganisationType } from "crm/models/operations";
 
 let value: RegisterContactSSOrganisationType = "ORGANISATION";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "OPERATOR" | "SERVICE_OWNER" | "TRANSACTION_PROCESSOR" | "BUSINESS" | "ORGANISATION" | "MERCHANT" | "VENUE" | Unrecognized<string>
