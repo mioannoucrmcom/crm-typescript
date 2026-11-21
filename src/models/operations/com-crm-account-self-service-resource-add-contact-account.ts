@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -88,10 +88,12 @@ export const ComCrmAccountSelfServiceResourceAddContactAccountCustomField$outbou
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceAddContactAccountCustomField$Outbound,
     ComCrmAccountSelfServiceResourceAddContactAccountCustomField
-  > = z.object({
-    key: z.optional(z.string()),
-    value: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: z.optional(z.string()),
+      value: z.optional(z.string()),
+    })
+  );
 
 export function comCrmAccountSelfServiceResourceAddContactAccountCustomFieldToJSON(
   comCrmAccountSelfServiceResourceAddContactAccountCustomField:
@@ -124,26 +126,30 @@ export const ComCrmAccountSelfServiceResourceAddContactAccountRequestBody$outbou
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceAddContactAccountRequestBody$Outbound,
     ComCrmAccountSelfServiceResourceAddContactAccountRequestBody
-  > = z.pipe(
-    z.object({
-      name: z.optional(z.nullable(z.string())),
-      classificationId: z.optional(z.nullable(z.string())),
-      currencyCode: z.string(),
-      isPrimary: z.optional(z.nullable(z.boolean())),
-      billingAddressId: z.optional(z.nullable(z.string())),
-      customFields: z.optional(z.nullable(z.array(z.lazy(() =>
-        ComCrmAccountSelfServiceResourceAddContactAccountCustomField$outboundSchema
-      )))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        classificationId: "classification_id",
-        currencyCode: "currency_code",
-        isPrimary: "is_primary",
-        billingAddressId: "billing_address_id",
-        customFields: "custom_fields",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        name: z.optional(z.nullable(z.string())),
+        classificationId: z.optional(z.nullable(z.string())),
+        currencyCode: z.string(),
+        isPrimary: z.optional(z.nullable(z.boolean())),
+        billingAddressId: z.optional(z.nullable(z.string())),
+        customFields: z.optional(
+          z.nullable(z.array(z.lazy(() =>
+            ComCrmAccountSelfServiceResourceAddContactAccountCustomField$outboundSchema
+          ))),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          classificationId: "classification_id",
+          currencyCode: "currency_code",
+          isPrimary: "is_primary",
+          billingAddressId: "billing_address_id",
+          customFields: "custom_fields",
+        });
+      }),
+    )
   );
 
 export function comCrmAccountSelfServiceResourceAddContactAccountRequestBodyToJSON(
@@ -170,14 +176,14 @@ export const ComCrmAccountSelfServiceResourceAddContactAccountRequest$outboundSc
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceAddContactAccountRequest$Outbound,
     ComCrmAccountSelfServiceResourceAddContactAccountRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmAccountSelfServiceResourceAddContactAccountRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmAccountSelfServiceResourceAddContactAccountRequestToJSON(
   comCrmAccountSelfServiceResourceAddContactAccountRequest:
@@ -194,9 +200,11 @@ export const ComCrmAccountSelfServiceResourceAddContactAccountResponse$inboundSc
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceAddContactAccountResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmAccountSelfServiceResourceAddContactAccountResponseFromJSON(
   jsonString: string,

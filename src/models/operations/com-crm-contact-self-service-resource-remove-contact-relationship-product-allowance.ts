@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceRemoveContactRelationshipProductAllowanceRequest =
   {
@@ -34,18 +35,20 @@ export const ComCrmContactSelfServiceResourceRemoveContactRelationshipProductAll
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceRemoveContactRelationshipProductAllowanceRequest$Outbound,
     ComCrmContactSelfServiceResourceRemoveContactRelationshipProductAllowanceRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      productAllowanceId: z.string(),
-      relationshipId: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        productAllowanceId: "product_allowance_id",
-        relationshipId: "relationship_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        productAllowanceId: z.string(),
+        relationshipId: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          productAllowanceId: "product_allowance_id",
+          relationshipId: "relationship_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceRemoveContactRelationshipProductAllowanceRequestToJSON(

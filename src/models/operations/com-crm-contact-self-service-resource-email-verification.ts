@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceEmailVerificationRequestBody = {
   /**
@@ -30,15 +31,17 @@ export const ComCrmContactSelfServiceResourceEmailVerificationRequestBody$outbou
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceEmailVerificationRequestBody$Outbound,
     ComCrmContactSelfServiceResourceEmailVerificationRequestBody
-  > = z.pipe(
-    z.object({
-      emailAddress: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        emailAddress: "email_address",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        emailAddress: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          emailAddress: "email_address",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceEmailVerificationRequestBodyToJSON(
@@ -65,18 +68,22 @@ export const ComCrmContactSelfServiceResourceEmailVerificationRequest$outboundSc
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceEmailVerificationRequest$Outbound,
     ComCrmContactSelfServiceResourceEmailVerificationRequest
-  > = z.pipe(
-    z.object({
-      apiKey: z.optional(z.string()),
-      body: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceEmailVerificationRequestBody$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        apiKey: "api_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        apiKey: z.optional(z.string()),
+        body: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceEmailVerificationRequestBody$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          apiKey: "api_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceEmailVerificationRequestToJSON(

@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -90,13 +90,15 @@ export const ComCrmIndustrySelfServiceResourceListIndustriesRequest$outboundSche
   z.ZodMiniType<
     ComCrmIndustrySelfServiceResourceListIndustriesRequest$Outbound,
     ComCrmIndustrySelfServiceResourceListIndustriesRequest
-  > = z.object({
-    name: z.optional(z.string()),
-    order: z.optional(z.string()),
-    page: z.optional(z.int()),
-    size: z.optional(z.int()),
-    sort: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      name: z.optional(z.string()),
+      order: z.optional(z.string()),
+      page: z.optional(z.int()),
+      size: z.optional(z.int()),
+      sort: z.optional(z.string()),
+    })
+  );
 
 export function comCrmIndustrySelfServiceResourceListIndustriesRequestToJSON(
   comCrmIndustrySelfServiceResourceListIndustriesRequest:
@@ -114,11 +116,13 @@ export const ComCrmIndustrySelfServiceResourceListIndustriesPaging$inboundSchema
   z.ZodMiniType<
     ComCrmIndustrySelfServiceResourceListIndustriesPaging,
     unknown
-  > = z.object({
-    page: types.optional(types.number()),
-    size: types.optional(types.number()),
-    total: types.optional(types.number()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      page: types.optional(types.number()),
+      size: types.optional(types.number()),
+      total: types.optional(types.number()),
+    })
+  );
 
 export function comCrmIndustrySelfServiceResourceListIndustriesPagingFromJSON(
   jsonString: string,
@@ -141,10 +145,12 @@ export const ComCrmIndustrySelfServiceResourceListIndustriesContent$inboundSchem
   z.ZodMiniType<
     ComCrmIndustrySelfServiceResourceListIndustriesContent,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmIndustrySelfServiceResourceListIndustriesContentFromJSON(
   jsonString: string,
@@ -166,18 +172,16 @@ export const ComCrmIndustrySelfServiceResourceListIndustriesResponse$inboundSche
   z.ZodMiniType<
     ComCrmIndustrySelfServiceResourceListIndustriesResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmIndustrySelfServiceResourceListIndustriesPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmIndustrySelfServiceResourceListIndustriesContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmIndustrySelfServiceResourceListIndustriesContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmIndustrySelfServiceResourceListIndustriesResponseFromJSON(
   jsonString: string,

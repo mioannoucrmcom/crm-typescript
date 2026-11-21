@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -154,16 +154,18 @@ export const ComCrmContactSelfServiceResourceGetFilesSecurity$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetFilesSecurity$Outbound,
     ComCrmContactSelfServiceResourceGetFilesSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetFilesSecurityToJSON(
@@ -179,9 +181,10 @@ export function comCrmContactSelfServiceResourceGetFilesSecurityToJSON(
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceGetFilesOrder$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmContactSelfServiceResourceGetFilesOrder> = z.enum(
-    ComCrmContactSelfServiceResourceGetFilesOrder,
-  );
+  z.ZodMiniEnum<typeof ComCrmContactSelfServiceResourceGetFilesOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmContactSelfServiceResourceGetFilesOrder)
+    );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceGetFilesRequest$Outbound = {
@@ -197,16 +200,18 @@ export const ComCrmContactSelfServiceResourceGetFilesRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetFilesRequest$Outbound,
     ComCrmContactSelfServiceResourceGetFilesRequest
-  > = z.object({
-    id: z.string(),
-    order: z._default(
-      ComCrmContactSelfServiceResourceGetFilesOrder$outboundSchema,
-      "DESC",
-    ),
-    page: z._default(z.int(), 1),
-    size: z._default(z.int(), 10),
-    sort: z._default(z.string(), "CREATED_DATE"),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      order: z._default(
+        ComCrmContactSelfServiceResourceGetFilesOrder$outboundSchema,
+        "DESC",
+      ),
+      page: z._default(z.int(), 1),
+      size: z._default(z.int(), 10),
+      sort: z._default(z.string(), "CREATED_DATE"),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetFilesRequestToJSON(
   comCrmContactSelfServiceResourceGetFilesRequest:
@@ -221,19 +226,21 @@ export function comCrmContactSelfServiceResourceGetFilesRequestToJSON(
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceGetFilesPaging$inboundSchema:
-  z.ZodMiniType<ComCrmContactSelfServiceResourceGetFilesPaging, unknown> = z
-    .pipe(
-      z.object({
-        page: types.optional(types.number()),
-        size: types.optional(types.number()),
-        total: types.optional(types.number()),
-        has_more: types.optional(types.boolean()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "has_more": "hasMore",
-        });
-      }),
+  z.ZodMiniType<ComCrmContactSelfServiceResourceGetFilesPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
     );
 
 export function comCrmContactSelfServiceResourceGetFilesPagingFromJSON(
@@ -255,18 +262,22 @@ export function comCrmContactSelfServiceResourceGetFilesPagingFromJSON(
 /** @internal */
 export const ComCrmContactSelfServiceResourceGetFilesMime$inboundSchema:
   z.ZodMiniType<ComCrmContactSelfServiceResourceGetFilesMime, unknown> =
-    openEnums.inboundSchema(ComCrmContactSelfServiceResourceGetFilesMime);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmContactSelfServiceResourceGetFilesMime)
+    );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceGetFilesFile$inboundSchema:
-  z.ZodMiniType<ComCrmContactSelfServiceResourceGetFilesFile, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      mime: types.optional(
-        ComCrmContactSelfServiceResourceGetFilesMime$inboundSchema,
-      ),
-    });
+  z.ZodMiniType<ComCrmContactSelfServiceResourceGetFilesFile, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        mime: types.optional(
+          ComCrmContactSelfServiceResourceGetFilesMime$inboundSchema,
+        ),
+      })
+    );
 
 export function comCrmContactSelfServiceResourceGetFilesFileFromJSON(
   jsonString: string,
@@ -286,17 +297,17 @@ export function comCrmContactSelfServiceResourceGetFilesFileFromJSON(
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceGetFilesContent$inboundSchema:
-  z.ZodMiniType<ComCrmContactSelfServiceResourceGetFilesContent, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      file: types.optional(
-        z.lazy(() =>
+  z.ZodMiniType<ComCrmContactSelfServiceResourceGetFilesContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        file: types.optional(z.lazy(() =>
           ComCrmContactSelfServiceResourceGetFilesFile$inboundSchema
-        ),
-      ),
-      description: types.optional(types.string()),
-      link: types.optional(types.string()),
-    });
+        )),
+        description: types.optional(types.string()),
+        link: types.optional(types.string()),
+      })
+    );
 
 export function comCrmContactSelfServiceResourceGetFilesContentFromJSON(
   jsonString: string,
@@ -316,19 +327,17 @@ export function comCrmContactSelfServiceResourceGetFilesContentFromJSON(
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceGetFilesResponse$inboundSchema:
-  z.ZodMiniType<ComCrmContactSelfServiceResourceGetFilesResponse, unknown> = z
-    .object({
-      paging: types.optional(
-        z.lazy(() =>
+  z.ZodMiniType<ComCrmContactSelfServiceResourceGetFilesResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(z.lazy(() =>
           ComCrmContactSelfServiceResourceGetFilesPaging$inboundSchema
-        ),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmContactSelfServiceResourceGetFilesContent$inboundSchema
         )),
-      ),
-    });
+        content: types.optional(z.array(z.lazy(() =>
+          ComCrmContactSelfServiceResourceGetFilesContent$inboundSchema
+        ))),
+      })
+    );
 
 export function comCrmContactSelfServiceResourceGetFilesResponseFromJSON(
   jsonString: string,

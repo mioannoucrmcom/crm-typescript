@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -57,16 +57,18 @@ export const ComCrmOrganisationTagSelfServiceResourceListOrganisationTagsRequest
   z.ZodMiniType<
     ComCrmOrganisationTagSelfServiceResourceListOrganisationTagsRequest$Outbound,
     ComCrmOrganisationTagSelfServiceResourceListOrganisationTagsRequest
-  > = z.pipe(
-    z.object({
-      industry: z.optional(z.string()),
-      industrySector: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        industrySector: "industry_sector",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        industry: z.optional(z.string()),
+        industrySector: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          industrySector: "industry_sector",
+        });
+      }),
+    )
   );
 
 export function comCrmOrganisationTagSelfServiceResourceListOrganisationTagsRequestToJSON(
@@ -86,10 +88,12 @@ export const ComCrmOrganisationTagSelfServiceResourceListOrganisationTagsContent
   z.ZodMiniType<
     ComCrmOrganisationTagSelfServiceResourceListOrganisationTagsContent,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmOrganisationTagSelfServiceResourceListOrganisationTagsContentFromJSON(
   jsonString: string,
@@ -111,13 +115,13 @@ export const ComCrmOrganisationTagSelfServiceResourceListOrganisationTagsRespons
   z.ZodMiniType<
     ComCrmOrganisationTagSelfServiceResourceListOrganisationTagsResponse,
     unknown
-  > = z.object({
-    content: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      content: types.optional(z.array(z.lazy(() =>
         ComCrmOrganisationTagSelfServiceResourceListOrganisationTagsContent$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmOrganisationTagSelfServiceResourceListOrganisationTagsResponseFromJSON(
   jsonString: string,

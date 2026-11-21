@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -466,9 +466,11 @@ export const ComCrmAccountSelfServiceResourceGetSingleRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceGetSingleRequest$Outbound,
     ComCrmAccountSelfServiceResourceGetSingleRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmAccountSelfServiceResourceGetSingleRequestToJSON(
   comCrmAccountSelfServiceResourceGetSingleRequest:
@@ -484,17 +486,21 @@ export function comCrmAccountSelfServiceResourceGetSingleRequestToJSON(
 /** @internal */
 export const ComCrmAccountSelfServiceResourceGetSingleState$inboundSchema:
   z.ZodMiniType<ComCrmAccountSelfServiceResourceGetSingleState, unknown> =
-    openEnums.inboundSchema(ComCrmAccountSelfServiceResourceGetSingleState);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmAccountSelfServiceResourceGetSingleState)
+    );
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceGetSingleClassification$inboundSchema:
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceGetSingleClassification,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmAccountSelfServiceResourceGetSingleClassificationFromJSON(
   jsonString: string,
@@ -514,10 +520,12 @@ export function comCrmAccountSelfServiceResourceGetSingleClassificationFromJSON(
 /** @internal */
 export const ComCrmAccountSelfServiceResourceGetSingleCustomField$inboundSchema:
   z.ZodMiniType<ComCrmAccountSelfServiceResourceGetSingleCustomField, unknown> =
-    z.object({
-      key: types.optional(types.string()),
-      value: types.optional(types.string()),
-    });
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        key: types.optional(types.string()),
+        value: types.optional(types.string()),
+      })
+    );
 
 export function comCrmAccountSelfServiceResourceGetSingleCustomFieldFromJSON(
   jsonString: string,
@@ -537,10 +545,12 @@ export function comCrmAccountSelfServiceResourceGetSingleCustomFieldFromJSON(
 
 /** @internal */
 export const PaymentTerms$inboundSchema: z.ZodMiniType<PaymentTerms, unknown> =
-  z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function paymentTermsFromJSON(
   jsonString: string,
@@ -555,42 +565,46 @@ export function paymentTermsFromJSON(
 /** @internal */
 export const ComCrmAccountSelfServiceResourceGetSingleCountryCode$inboundSchema:
   z.ZodMiniType<ComCrmAccountSelfServiceResourceGetSingleCountryCode, unknown> =
-    openEnums.inboundSchema(
-      ComCrmAccountSelfServiceResourceGetSingleCountryCode,
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmAccountSelfServiceResourceGetSingleCountryCode,
+      )
     );
 
 /** @internal */
 export const BillingAddress$inboundSchema: z.ZodMiniType<
   BillingAddress,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    type: types.optional(types.string()),
-    name: types.optional(types.string()),
-    address_line_1: types.optional(types.string()),
-    address_line_2: types.optional(types.string()),
-    state_province_county: types.optional(types.string()),
-    town_city: types.optional(types.string()),
-    postal_code: types.optional(types.string()),
-    country_code: types.optional(
-      ComCrmAccountSelfServiceResourceGetSingleCountryCode$inboundSchema,
-    ),
-    lat: types.optional(types.number()),
-    lon: types.optional(types.number()),
-    google_place_id: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "address_line_1": "addressLine1",
-      "address_line_2": "addressLine2",
-      "state_province_county": "stateProvinceCounty",
-      "town_city": "townCity",
-      "postal_code": "postalCode",
-      "country_code": "countryCode",
-      "google_place_id": "googlePlaceId",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(types.string()),
+      name: types.optional(types.string()),
+      address_line_1: types.optional(types.string()),
+      address_line_2: types.optional(types.string()),
+      state_province_county: types.optional(types.string()),
+      town_city: types.optional(types.string()),
+      postal_code: types.optional(types.string()),
+      country_code: types.optional(
+        ComCrmAccountSelfServiceResourceGetSingleCountryCode$inboundSchema,
+      ),
+      lat: types.optional(types.number()),
+      lon: types.optional(types.number()),
+      google_place_id: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "address_line_1": "addressLine1",
+        "address_line_2": "addressLine2",
+        "state_province_county": "stateProvinceCounty",
+        "town_city": "townCity",
+        "postal_code": "postalCode",
+        "country_code": "countryCode",
+        "google_place_id": "googlePlaceId",
+      });
+    }),
+  )
 );
 
 export function billingAddressFromJSON(
@@ -605,44 +619,50 @@ export function billingAddressFromJSON(
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceGetSingleResponse$inboundSchema:
-  z.ZodMiniType<ComCrmAccountSelfServiceResourceGetSingleResponse, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        is_primary: types.optional(types.boolean()),
-        name: types.optional(types.string()),
-        number: types.optional(types.string()),
-        state: types.optional(
-          ComCrmAccountSelfServiceResourceGetSingleState$inboundSchema,
-        ),
-        currency_code: types.optional(types.string()),
-        classification: types.optional(z.lazy(() =>
-          ComCrmAccountSelfServiceResourceGetSingleClassification$inboundSchema
-        )),
-        custom_fields: types.optional(z.array(z.lazy(() =>
-          ComCrmAccountSelfServiceResourceGetSingleCustomField$inboundSchema
-        ))),
-        balance: types.optional(types.number()),
-        overdue_amount: types.optional(types.number()),
-        credit_limit: types.optional(types.number()),
-        payment_terms: types.optional(z.lazy(() =>
-          PaymentTerms$inboundSchema
-        )),
-        billing_address: types.optional(z.lazy(() =>
-          BillingAddress$inboundSchema
-        )),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "is_primary": "isPrimary",
-          "currency_code": "currencyCode",
-          "custom_fields": "customFields",
-          "overdue_amount": "overdueAmount",
-          "credit_limit": "creditLimit",
-          "payment_terms": "paymentTerms",
-          "billing_address": "billingAddress",
-        });
-      }),
+  z.ZodMiniType<ComCrmAccountSelfServiceResourceGetSingleResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          is_primary: types.optional(types.boolean()),
+          name: types.optional(types.string()),
+          number: types.optional(types.string()),
+          state: types.optional(
+            ComCrmAccountSelfServiceResourceGetSingleState$inboundSchema,
+          ),
+          currency_code: types.optional(types.string()),
+          classification: types.optional(
+            z.lazy(() =>
+              ComCrmAccountSelfServiceResourceGetSingleClassification$inboundSchema
+            ),
+          ),
+          custom_fields: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmAccountSelfServiceResourceGetSingleCustomField$inboundSchema
+            )),
+          ),
+          balance: types.optional(types.number()),
+          overdue_amount: types.optional(types.number()),
+          credit_limit: types.optional(types.number()),
+          payment_terms: types.optional(
+            z.lazy(() => PaymentTerms$inboundSchema),
+          ),
+          billing_address: types.optional(
+            z.lazy(() => BillingAddress$inboundSchema),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "is_primary": "isPrimary",
+            "currency_code": "currencyCode",
+            "custom_fields": "customFields",
+            "overdue_amount": "overdueAmount",
+            "credit_limit": "creditLimit",
+            "payment_terms": "paymentTerms",
+            "billing_address": "billingAddress",
+          });
+        }),
+      )
     );
 
 export function comCrmAccountSelfServiceResourceGetSingleResponseFromJSON(

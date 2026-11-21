@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -178,16 +178,18 @@ export const ComCrmPaymentSelfServiceResourceCreateSecurity$outboundSchema:
   z.ZodMiniType<
     ComCrmPaymentSelfServiceResourceCreateSecurity$Outbound,
     ComCrmPaymentSelfServiceResourceCreateSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmPaymentSelfServiceResourceCreateSecurityToJSON(
@@ -203,15 +205,17 @@ export function comCrmPaymentSelfServiceResourceCreateSecurityToJSON(
 
 /** @internal */
 export const ComCrmPaymentSelfServiceResourceCreateState$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmPaymentSelfServiceResourceCreateState> = z.enum(
-    ComCrmPaymentSelfServiceResourceCreateState,
-  );
+  z.ZodMiniEnum<typeof ComCrmPaymentSelfServiceResourceCreateState> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmPaymentSelfServiceResourceCreateState)
+    );
 
 /** @internal */
 export const ComCrmPaymentSelfServiceResourceCreateType$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmPaymentSelfServiceResourceCreateType> = z.enum(
-    ComCrmPaymentSelfServiceResourceCreateType,
-  );
+  z.ZodMiniEnum<typeof ComCrmPaymentSelfServiceResourceCreateType> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmPaymentSelfServiceResourceCreateType)
+    );
 
 /** @internal */
 export type ComCrmPaymentSelfServiceResourceCreatePaymentMethod$Outbound = {
@@ -224,10 +228,14 @@ export const ComCrmPaymentSelfServiceResourceCreatePaymentMethod$outboundSchema:
   z.ZodMiniType<
     ComCrmPaymentSelfServiceResourceCreatePaymentMethod$Outbound,
     ComCrmPaymentSelfServiceResourceCreatePaymentMethod
-  > = z.object({
-    id: z.optional(z.string()),
-    type: z.optional(ComCrmPaymentSelfServiceResourceCreateType$outboundSchema),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+      type: z.optional(
+        ComCrmPaymentSelfServiceResourceCreateType$outboundSchema,
+      ),
+    })
+  );
 
 export function comCrmPaymentSelfServiceResourceCreatePaymentMethodToJSON(
   comCrmPaymentSelfServiceResourceCreatePaymentMethod:
@@ -249,9 +257,11 @@ export type InvoicesPaid$Outbound = {
 export const InvoicesPaid$outboundSchema: z.ZodMiniType<
   InvoicesPaid$Outbound,
   InvoicesPaid
-> = z.object({
-  id: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.optional(z.string()),
+  })
+);
 
 export function invoicesPaidToJSON(invoicesPaid: InvoicesPaid): string {
   return JSON.stringify(InvoicesPaid$outboundSchema.parse(invoicesPaid));
@@ -266,9 +276,11 @@ export type ExternalPayable$Outbound = {
 export const ExternalPayable$outboundSchema: z.ZodMiniType<
   ExternalPayable$Outbound,
   ExternalPayable
-> = z.object({
-  reference: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    reference: z.optional(z.string()),
+  })
+);
 
 export function externalPayableToJSON(
   externalPayable: ExternalPayable,
@@ -287,10 +299,12 @@ export const ComCrmPaymentSelfServiceResourceCreateCustomField$outboundSchema:
   z.ZodMiniType<
     ComCrmPaymentSelfServiceResourceCreateCustomField$Outbound,
     ComCrmPaymentSelfServiceResourceCreateCustomField
-  > = z.object({
-    key: z.optional(z.string()),
-    value: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: z.optional(z.string()),
+      value: z.optional(z.string()),
+    })
+  );
 
 export function comCrmPaymentSelfServiceResourceCreateCustomFieldToJSON(
   comCrmPaymentSelfServiceResourceCreateCustomField:
@@ -330,50 +344,54 @@ export const ComCrmPaymentSelfServiceResourceCreateRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmPaymentSelfServiceResourceCreateRequest$Outbound,
     ComCrmPaymentSelfServiceResourceCreateRequest
-  > = z.pipe(
-    z.object({
-      id: z.optional(z.string()),
-      accountId: z.string(),
-      typeId: z.optional(z.string()),
-      postedDate: z.optional(z.int()),
-      issuedDate: z.optional(z.int()),
-      notes: z.optional(z.string()),
-      state: z.optional(
-        ComCrmPaymentSelfServiceResourceCreateState$outboundSchema,
-      ),
-      code: z.optional(z.string()),
-      clientSecret: z.optional(z.string()),
-      amount: z.number(),
-      currencyCode: z.optional(z.string()),
-      contactId: z.optional(z.string()),
-      paymentMethod: z.lazy(() =>
-        ComCrmPaymentSelfServiceResourceCreatePaymentMethod$outboundSchema
-      ),
-      invoicesPaid: z.optional(
-        z.array(z.lazy(() => InvoicesPaid$outboundSchema)),
-      ),
-      externalPayable: z.optional(
-        z.array(z.lazy(() => ExternalPayable$outboundSchema)),
-      ),
-      customFields: z.optional(z.array(z.lazy(() =>
-        ComCrmPaymentSelfServiceResourceCreateCustomField$outboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        accountId: "account_id",
-        typeId: "type_id",
-        postedDate: "posted_date",
-        issuedDate: "issued_date",
-        clientSecret: "client_secret",
-        currencyCode: "currency_code",
-        contactId: "contact_id",
-        paymentMethod: "payment_method",
-        invoicesPaid: "invoices_paid",
-        externalPayable: "external_payable",
-        customFields: "custom_fields",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.optional(z.string()),
+        accountId: z.string(),
+        typeId: z.optional(z.string()),
+        postedDate: z.optional(z.int()),
+        issuedDate: z.optional(z.int()),
+        notes: z.optional(z.string()),
+        state: z.optional(
+          ComCrmPaymentSelfServiceResourceCreateState$outboundSchema,
+        ),
+        code: z.optional(z.string()),
+        clientSecret: z.optional(z.string()),
+        amount: z.number(),
+        currencyCode: z.optional(z.string()),
+        contactId: z.optional(z.string()),
+        paymentMethod: z.lazy(() =>
+          ComCrmPaymentSelfServiceResourceCreatePaymentMethod$outboundSchema
+        ),
+        invoicesPaid: z.optional(
+          z.array(z.lazy(() => InvoicesPaid$outboundSchema)),
+        ),
+        externalPayable: z.optional(
+          z.array(z.lazy(() => ExternalPayable$outboundSchema)),
+        ),
+        customFields: z.optional(
+          z.array(z.lazy(() =>
+            ComCrmPaymentSelfServiceResourceCreateCustomField$outboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          accountId: "account_id",
+          typeId: "type_id",
+          postedDate: "posted_date",
+          issuedDate: "issued_date",
+          clientSecret: "client_secret",
+          currencyCode: "currency_code",
+          contactId: "contact_id",
+          paymentMethod: "payment_method",
+          invoicesPaid: "invoices_paid",
+          externalPayable: "external_payable",
+          customFields: "custom_fields",
+        });
+      }),
+    )
   );
 
 export function comCrmPaymentSelfServiceResourceCreateRequestToJSON(
@@ -389,10 +407,12 @@ export function comCrmPaymentSelfServiceResourceCreateRequestToJSON(
 
 /** @internal */
 export const ComCrmPaymentSelfServiceResourceCreateResponse$inboundSchema:
-  z.ZodMiniType<ComCrmPaymentSelfServiceResourceCreateResponse, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmPaymentSelfServiceResourceCreateResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function comCrmPaymentSelfServiceResourceCreateResponseFromJSON(
   jsonString: string,

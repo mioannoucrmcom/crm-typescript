@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -30,15 +30,17 @@ export const ComCrmLanguageSelfServiceResourceGetSupportedLanguagesContent$inbou
   z.ZodMiniType<
     ComCrmLanguageSelfServiceResourceGetSupportedLanguagesContent,
     unknown
-  > = z.pipe(
-    z.object({
-      language_code: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "language_code": "languageCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        language_code: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "language_code": "languageCode",
+        });
+      }),
+    )
   );
 
 export function comCrmLanguageSelfServiceResourceGetSupportedLanguagesContentFromJSON(
@@ -61,13 +63,13 @@ export const ComCrmLanguageSelfServiceResourceGetSupportedLanguagesResponse$inbo
   z.ZodMiniType<
     ComCrmLanguageSelfServiceResourceGetSupportedLanguagesResponse,
     unknown
-  > = z.object({
-    content: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      content: types.optional(z.array(z.lazy(() =>
         ComCrmLanguageSelfServiceResourceGetSupportedLanguagesContent$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmLanguageSelfServiceResourceGetSupportedLanguagesResponseFromJSON(
   jsonString: string,

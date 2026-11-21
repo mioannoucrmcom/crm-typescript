@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -98,7 +98,9 @@ export type ComCrmDeviceSelfServiceResourceAddContactDeviceResponse = {
 export const ComCrmDeviceSelfServiceResourceAddContactDevicePlatform$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmDeviceSelfServiceResourceAddContactDevicePlatform
-  > = z.enum(ComCrmDeviceSelfServiceResourceAddContactDevicePlatform);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmDeviceSelfServiceResourceAddContactDevicePlatform)
+  );
 
 /** @internal */
 export type ComCrmDeviceSelfServiceResourceAddContactDeviceCustomField$Outbound =
@@ -112,10 +114,12 @@ export const ComCrmDeviceSelfServiceResourceAddContactDeviceCustomField$outbound
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceAddContactDeviceCustomField$Outbound,
     ComCrmDeviceSelfServiceResourceAddContactDeviceCustomField
-  > = z.object({
-    key: z.optional(z.string()),
-    value: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: z.optional(z.string()),
+      value: z.optional(z.string()),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceAddContactDeviceCustomFieldToJSON(
   comCrmDeviceSelfServiceResourceAddContactDeviceCustomField:
@@ -150,34 +154,38 @@ export const ComCrmDeviceSelfServiceResourceAddContactDeviceRequestBody$outbound
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceAddContactDeviceRequestBody$Outbound,
     ComCrmDeviceSelfServiceResourceAddContactDeviceRequestBody
-  > = z.pipe(
-    z.object({
-      macAddress: z.optional(z.nullable(z.string())),
-      platform: z.optional(
-        z.nullable(
-          ComCrmDeviceSelfServiceResourceAddContactDevicePlatform$outboundSchema,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        macAddress: z.optional(z.nullable(z.string())),
+        platform: z.optional(
+          z.nullable(
+            ComCrmDeviceSelfServiceResourceAddContactDevicePlatform$outboundSchema,
+          ),
         ),
-      ),
-      registrationToken: z.optional(z.nullable(z.string())),
-      serialNumber: z.optional(z.nullable(z.string())),
-      productId: z.optional(z.nullable(z.string())),
-      applicationId: z.optional(z.nullable(z.string())),
-      electronicId: z.optional(z.nullable(z.string())),
-      customFields: z.optional(z.nullable(z.array(z.lazy(() =>
-        ComCrmDeviceSelfServiceResourceAddContactDeviceCustomField$outboundSchema
-      )))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        macAddress: "mac_address",
-        registrationToken: "registration_token",
-        serialNumber: "serial_number",
-        productId: "product_id",
-        applicationId: "application_id",
-        electronicId: "electronic_id",
-        customFields: "custom_fields",
-      });
-    }),
+        registrationToken: z.optional(z.nullable(z.string())),
+        serialNumber: z.optional(z.nullable(z.string())),
+        productId: z.optional(z.nullable(z.string())),
+        applicationId: z.optional(z.nullable(z.string())),
+        electronicId: z.optional(z.nullable(z.string())),
+        customFields: z.optional(
+          z.nullable(z.array(z.lazy(() =>
+            ComCrmDeviceSelfServiceResourceAddContactDeviceCustomField$outboundSchema
+          ))),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          macAddress: "mac_address",
+          registrationToken: "registration_token",
+          serialNumber: "serial_number",
+          productId: "product_id",
+          applicationId: "application_id",
+          electronicId: "electronic_id",
+          customFields: "custom_fields",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceAddContactDeviceRequestBodyToJSON(
@@ -203,14 +211,14 @@ export const ComCrmDeviceSelfServiceResourceAddContactDeviceRequest$outboundSche
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceAddContactDeviceRequest$Outbound,
     ComCrmDeviceSelfServiceResourceAddContactDeviceRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmDeviceSelfServiceResourceAddContactDeviceRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceAddContactDeviceRequestToJSON(
   comCrmDeviceSelfServiceResourceAddContactDeviceRequest:
@@ -228,9 +236,11 @@ export const ComCrmDeviceSelfServiceResourceAddContactDeviceResponse$inboundSche
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceAddContactDeviceResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceAddContactDeviceResponseFromJSON(
   jsonString: string,

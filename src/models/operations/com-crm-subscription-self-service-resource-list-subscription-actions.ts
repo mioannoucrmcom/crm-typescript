@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -295,16 +295,18 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsSecurit
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsSecurity$Outbound,
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionActionsSecurityToJSON(
@@ -323,7 +325,9 @@ export function comCrmSubscriptionSelfServiceResourceListSubscriptionActionsSecu
 export const ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsOrder
-  > = z.enum(ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsOrder);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsOrder)
+  );
 
 /** @internal */
 export type ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsRequest$Outbound =
@@ -346,34 +350,36 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsRequest
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsRequest$Outbound,
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsRequest
-  > = z.pipe(
-    z.object({
-      behaviourCode: z.optional(z.string()),
-      businessClassificationCode: z.optional(z.string()),
-      contactId: z.optional(z.string()),
-      isScheduled: z.optional(z.boolean()),
-      serviceId: z.optional(z.string()),
-      subscriptionId: z.optional(z.string()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        behaviourCode: "behaviour_code",
-        businessClassificationCode: "business_classification_code",
-        contactId: "contact_id",
-        isScheduled: "is_scheduled",
-        serviceId: "service_id",
-        subscriptionId: "subscription_id",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        behaviourCode: z.optional(z.string()),
+        businessClassificationCode: z.optional(z.string()),
+        contactId: z.optional(z.string()),
+        isScheduled: z.optional(z.boolean()),
+        serviceId: z.optional(z.string()),
+        subscriptionId: z.optional(z.string()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          behaviourCode: "behaviour_code",
+          businessClassificationCode: "business_classification_code",
+          contactId: "contact_id",
+          isScheduled: "is_scheduled",
+          serviceId: "service_id",
+          subscriptionId: "subscription_id",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionActionsRequestToJSON(
@@ -393,18 +399,20 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsPaging$
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionActionsPagingFromJSON(
@@ -427,8 +435,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsState$i
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsState,
+    )
   );
 
 /** @internal */
@@ -436,8 +446,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBehavio
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBehaviourCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBehaviourCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBehaviourCode,
+    )
   );
 
 /** @internal */
@@ -445,8 +457,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBusines
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBusinessClassificationCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBusinessClassificationCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBusinessClassificationCode,
+    )
   );
 
 /** @internal */
@@ -454,10 +468,12 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsCategor
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsCategory,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionActionsCategoryFromJSON(
   jsonString: string,
@@ -479,37 +495,41 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsContent
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      code: types.optional(types.string()),
-      state: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsState$inboundSchema,
-      ),
-      behaviour_code: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBehaviourCode$inboundSchema,
-      ),
-      business_classification_code: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBusinessClassificationCode$inboundSchema,
-      ),
-      executed_on: types.optional(types.number()),
-      scheduled_on: types.optional(types.number()),
-      cancelled_on: types.optional(types.number()),
-      rejected_on: types.optional(types.number()),
-      category: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsCategory$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "behaviour_code": "behaviourCode",
-        "business_classification_code": "businessClassificationCode",
-        "executed_on": "executedOn",
-        "scheduled_on": "scheduledOn",
-        "cancelled_on": "cancelledOn",
-        "rejected_on": "rejectedOn",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        code: types.optional(types.string()),
+        state: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsState$inboundSchema,
+        ),
+        behaviour_code: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBehaviourCode$inboundSchema,
+        ),
+        business_classification_code: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsBusinessClassificationCode$inboundSchema,
+        ),
+        executed_on: types.optional(types.number()),
+        scheduled_on: types.optional(types.number()),
+        cancelled_on: types.optional(types.number()),
+        rejected_on: types.optional(types.number()),
+        category: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsCategory$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "behaviour_code": "behaviourCode",
+          "business_classification_code": "businessClassificationCode",
+          "executed_on": "executedOn",
+          "scheduled_on": "scheduledOn",
+          "cancelled_on": "cancelledOn",
+          "rejected_on": "rejectedOn",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionActionsContentFromJSON(
@@ -532,18 +552,16 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsRespons
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmSubscriptionSelfServiceResourceListSubscriptionActionsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionActionsResponseFromJSON(
   jsonString: string,

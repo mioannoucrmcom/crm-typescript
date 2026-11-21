@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -581,7 +581,9 @@ export type ComCrmOrderSelfServiceResourceCreateOrderResponse = {
 export const ComCrmOrderSelfServiceResourceCreateOrderPaymentMethodType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmOrderSelfServiceResourceCreateOrderPaymentMethodType
-  > = z.enum(ComCrmOrderSelfServiceResourceCreateOrderPaymentMethodType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmOrderSelfServiceResourceCreateOrderPaymentMethodType)
+  );
 
 /** @internal */
 export type Payment$Outbound = {
@@ -594,23 +596,25 @@ export type Payment$Outbound = {
 
 /** @internal */
 export const Payment$outboundSchema: z.ZodMiniType<Payment$Outbound, Payment> =
-  z.pipe(
-    z.object({
-      paymentMethodType:
-        ComCrmOrderSelfServiceResourceCreateOrderPaymentMethodType$outboundSchema,
-      paidOn: z.optional(z.string()),
-      paymentMethodId: z.optional(z.nullable(z.string())),
-      amount: z.optional(z.number()),
-      paymentToken: z.optional(z.nullable(z.string())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        paymentMethodType: "payment_method_type",
-        paidOn: "paid_on",
-        paymentMethodId: "payment_method_id",
-        paymentToken: "payment_token",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        paymentMethodType:
+          ComCrmOrderSelfServiceResourceCreateOrderPaymentMethodType$outboundSchema,
+        paidOn: z.optional(z.string()),
+        paymentMethodId: z.optional(z.nullable(z.string())),
+        amount: z.optional(z.number()),
+        paymentToken: z.optional(z.nullable(z.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          paymentMethodType: "payment_method_type",
+          paidOn: "paid_on",
+          paymentMethodId: "payment_method_id",
+          paymentToken: "payment_token",
+        });
+      }),
+    )
   );
 
 export function paymentToJSON(payment: Payment): string {
@@ -628,17 +632,19 @@ export const ComCrmOrderSelfServiceResourceCreateOrderDevice$outboundSchema:
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourceCreateOrderDevice$Outbound,
     ComCrmOrderSelfServiceResourceCreateOrderDevice
-  > = z.pipe(
-    z.object({
-      productId: z.optional(z.string()),
-      deviceIds: z.optional(z.array(z.string())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        productId: "product_id",
-        deviceIds: "device_ids",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        productId: z.optional(z.string()),
+        deviceIds: z.optional(z.array(z.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          productId: "product_id",
+          deviceIds: "device_ids",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderSelfServiceResourceCreateOrderDeviceToJSON(
@@ -663,10 +669,12 @@ export const ComCrmOrderSelfServiceResourceCreateOrderCustomField$outboundSchema
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourceCreateOrderCustomField$Outbound,
     ComCrmOrderSelfServiceResourceCreateOrderCustomField
-  > = z.object({
-    key: z.optional(z.string()),
-    value: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: z.optional(z.string()),
+      value: z.optional(z.string()),
+    })
+  );
 
 export function comCrmOrderSelfServiceResourceCreateOrderCustomFieldToJSON(
   comCrmOrderSelfServiceResourceCreateOrderCustomField:
@@ -680,13 +688,15 @@ export function comCrmOrderSelfServiceResourceCreateOrderCustomFieldToJSON(
 }
 
 /** @internal */
-export const MediumType$outboundSchema: z.ZodMiniEnum<typeof MediumType> = z
-  .enum(MediumType);
+export const MediumType$outboundSchema: z.ZodMiniEnum<typeof MediumType> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(MediumType));
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceCreateOrderCountryCode$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmOrderSelfServiceResourceCreateOrderCountryCode> = z
-    .enum(ComCrmOrderSelfServiceResourceCreateOrderCountryCode);
+  z.ZodMiniEnum<typeof ComCrmOrderSelfServiceResourceCreateOrderCountryCode> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmOrderSelfServiceResourceCreateOrderCountryCode)
+    );
 
 /** @internal */
 export type RegisteredContact$Outbound = {
@@ -698,17 +708,19 @@ export type RegisteredContact$Outbound = {
 export const RegisteredContact$outboundSchema: z.ZodMiniType<
   RegisteredContact$Outbound,
   RegisteredContact
-> = z.pipe(
-  z.object({
-    contactId: z.string(),
-    walletId: z.string(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      contactId: "contact_id",
-      walletId: "wallet_id",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      contactId: z.string(),
+      walletId: z.string(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        contactId: "contact_id",
+        walletId: "wallet_id",
+      });
+    }),
+  )
 );
 
 export function registeredContactToJSON(
@@ -733,27 +745,29 @@ export type Recipient$Outbound = {
 export const Recipient$outboundSchema: z.ZodMiniType<
   Recipient$Outbound,
   Recipient
-> = z.pipe(
-  z.object({
-    name: z.string(),
-    mediumType: MediumType$outboundSchema,
-    mediumValue: z.optional(z.string()),
-    countryCode: z.optional(
-      ComCrmOrderSelfServiceResourceCreateOrderCountryCode$outboundSchema,
-    ),
-    language: z.optional(z.string()),
-    registeredContact: z.optional(
-      z.lazy(() => RegisteredContact$outboundSchema),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      mediumType: "medium_type",
-      mediumValue: "medium_value",
-      countryCode: "country_code",
-      registeredContact: "registered_contact",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      name: z.string(),
+      mediumType: MediumType$outboundSchema,
+      mediumValue: z.optional(z.string()),
+      countryCode: z.optional(
+        ComCrmOrderSelfServiceResourceCreateOrderCountryCode$outboundSchema,
+      ),
+      language: z.optional(z.string()),
+      registeredContact: z.optional(
+        z.lazy(() => RegisteredContact$outboundSchema),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        mediumType: "medium_type",
+        mediumValue: "medium_value",
+        countryCode: "country_code",
+        registeredContact: "registered_contact",
+      });
+    }),
+  )
 );
 
 export function recipientToJSON(recipient: Recipient): string {
@@ -770,10 +784,12 @@ export type GiftSender$Outbound = {
 export const GiftSender$outboundSchema: z.ZodMiniType<
   GiftSender$Outbound,
   GiftSender
-> = z.object({
-  name: z.string(),
-  message: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    name: z.string(),
+    message: z.optional(z.string()),
+  })
+);
 
 export function giftSenderToJSON(giftSender: GiftSender): string {
   return JSON.stringify(GiftSender$outboundSchema.parse(giftSender));
@@ -790,16 +806,18 @@ export const ComCrmOrderSelfServiceResourceCreateOrderPass$outboundSchema:
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourceCreateOrderPass$Outbound,
     ComCrmOrderSelfServiceResourceCreateOrderPass
-  > = z.pipe(
-    z.object({
-      recipient: z.optional(z.lazy(() => Recipient$outboundSchema)),
-      giftSender: z.optional(z.lazy(() => GiftSender$outboundSchema)),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        giftSender: "gift_sender",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        recipient: z.optional(z.lazy(() => Recipient$outboundSchema)),
+        giftSender: z.optional(z.lazy(() => GiftSender$outboundSchema)),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          giftSender: "gift_sender",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderSelfServiceResourceCreateOrderPassToJSON(
@@ -839,38 +857,46 @@ export const ComCrmOrderSelfServiceResourceCreateOrderRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourceCreateOrderRequest$Outbound,
     ComCrmOrderSelfServiceResourceCreateOrderRequest
-  > = z.pipe(
-    z.object({
-      id: z.optional(z.string()),
-      estimationId: z.string(),
-      useWalletFunds: z.nullable(z._default(z.boolean(), false)),
-      walletFundsAmount: z.optional(z.nullable(z.number())),
-      notes: z.optional(z.nullable(z.string())),
-      intentId: z.optional(z.nullable(z.string())),
-      useAccountFunds: z.nullable(z._default(z.boolean(), false)),
-      accountFundsAmount: z.optional(z.number()),
-      payments: z.array(z.lazy(() => Payment$outboundSchema)),
-      devices: z.optional(z.array(z.lazy(() =>
-        ComCrmOrderSelfServiceResourceCreateOrderDevice$outboundSchema
-      ))),
-      customFields: z.optional(z.nullable(z.array(z.lazy(() =>
-        ComCrmOrderSelfServiceResourceCreateOrderCustomField$outboundSchema
-      )))),
-      pass: z.optional(z.lazy(() =>
-        ComCrmOrderSelfServiceResourceCreateOrderPass$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        estimationId: "estimation_id",
-        useWalletFunds: "use_wallet_funds",
-        walletFundsAmount: "wallet_funds_amount",
-        intentId: "intent_id",
-        useAccountFunds: "use_account_funds",
-        accountFundsAmount: "account_funds_amount",
-        customFields: "custom_fields",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.optional(z.string()),
+        estimationId: z.string(),
+        useWalletFunds: z.nullable(z._default(z.boolean(), false)),
+        walletFundsAmount: z.optional(z.nullable(z.number())),
+        notes: z.optional(z.nullable(z.string())),
+        intentId: z.optional(z.nullable(z.string())),
+        useAccountFunds: z.nullable(z._default(z.boolean(), false)),
+        accountFundsAmount: z.optional(z.number()),
+        payments: z.array(z.lazy(() => Payment$outboundSchema)),
+        devices: z.optional(
+          z.array(z.lazy(() =>
+            ComCrmOrderSelfServiceResourceCreateOrderDevice$outboundSchema
+          )),
+        ),
+        customFields: z.optional(
+          z.nullable(z.array(z.lazy(() =>
+            ComCrmOrderSelfServiceResourceCreateOrderCustomField$outboundSchema
+          ))),
+        ),
+        pass: z.optional(
+          z.lazy(() =>
+            ComCrmOrderSelfServiceResourceCreateOrderPass$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          estimationId: "estimation_id",
+          useWalletFunds: "use_wallet_funds",
+          walletFundsAmount: "wallet_funds_amount",
+          intentId: "intent_id",
+          useAccountFunds: "use_account_funds",
+          accountFundsAmount: "account_funds_amount",
+          customFields: "custom_fields",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderSelfServiceResourceCreateOrderRequestToJSON(
@@ -886,29 +912,31 @@ export function comCrmOrderSelfServiceResourceCreateOrderRequestToJSON(
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceCreateOrderAddress$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceCreateOrderAddress, unknown> = z
-    .pipe(
-      z.object({
-        address_line_1: types.optional(types.string()),
-        address_line_2: types.optional(types.string()),
-        state_province_county: types.optional(types.string()),
-        town_city: types.optional(types.string()),
-        postal_code: types.optional(types.string()),
-        lat: types.optional(types.number()),
-        lon: types.optional(types.number()),
-        googleplaceid: types.optional(types.string()),
-        google_place_id: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "address_line_1": "addressLine1",
-          "address_line_2": "addressLine2",
-          "state_province_county": "stateProvinceCounty",
-          "town_city": "townCity",
-          "postal_code": "postalCode",
-          "google_place_id": "googlePlaceId",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceCreateOrderAddress, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          address_line_1: types.optional(types.string()),
+          address_line_2: types.optional(types.string()),
+          state_province_county: types.optional(types.string()),
+          town_city: types.optional(types.string()),
+          postal_code: types.optional(types.string()),
+          lat: types.optional(types.number()),
+          lon: types.optional(types.number()),
+          googleplaceid: types.optional(types.string()),
+          google_place_id: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "address_line_1": "addressLine1",
+            "address_line_2": "addressLine2",
+            "state_province_county": "stateProvinceCounty",
+            "town_city": "townCity",
+            "postal_code": "postalCode",
+            "google_place_id": "googlePlaceId",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderSelfServiceResourceCreateOrderAddressFromJSON(
@@ -930,16 +958,16 @@ export function comCrmOrderSelfServiceResourceCreateOrderAddressFromJSON(
 /** @internal */
 export const ComCrmOrderSelfServiceResourceCreateOrderFulfilledBy$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceCreateOrderFulfilledBy, unknown> =
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      phone: types.optional(types.string()),
-      address: types.optional(
-        z.lazy(() =>
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        phone: types.optional(types.string()),
+        address: types.optional(z.lazy(() =>
           ComCrmOrderSelfServiceResourceCreateOrderAddress$inboundSchema
-        ),
-      ),
-    });
+        )),
+      })
+    );
 
 export function comCrmOrderSelfServiceResourceCreateOrderFulfilledByFromJSON(
   jsonString: string,
@@ -960,26 +988,30 @@ export function comCrmOrderSelfServiceResourceCreateOrderFulfilledByFromJSON(
 /** @internal */
 export const ComCrmOrderSelfServiceResourceCreateOrderUot$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceCreateOrderUot, unknown> =
-    openEnums.inboundSchema(ComCrmOrderSelfServiceResourceCreateOrderUot);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmOrderSelfServiceResourceCreateOrderUot)
+    );
 
 /** @internal */
 export const EstimatedDeliveryTime$inboundSchema: z.ZodMiniType<
   EstimatedDeliveryTime,
   unknown
-> = z.pipe(
-  z.object({
-    time_to_delivery: types.optional(types.number()),
-    uot: types.optional(
-      ComCrmOrderSelfServiceResourceCreateOrderUot$inboundSchema,
-    ),
-    delivery_at: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "time_to_delivery": "timeToDelivery",
-      "delivery_at": "deliveryAt",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      time_to_delivery: types.optional(types.number()),
+      uot: types.optional(
+        ComCrmOrderSelfServiceResourceCreateOrderUot$inboundSchema,
+      ),
+      delivery_at: types.optional(types.number()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "time_to_delivery": "timeToDelivery",
+        "delivery_at": "deliveryAt",
+      });
+    }),
+  )
 );
 
 export function estimatedDeliveryTimeFromJSON(
@@ -994,24 +1026,28 @@ export function estimatedDeliveryTimeFromJSON(
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceCreateOrderResponse$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceCreateOrderResponse, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        number: types.optional(types.string()),
-        fulfilled_by: types.optional(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceCreateOrderFulfilledBy$inboundSchema
-        )),
-        estimated_delivery_time: types.optional(z.lazy(() =>
-          EstimatedDeliveryTime$inboundSchema
-        )),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "fulfilled_by": "fulfilledBy",
-          "estimated_delivery_time": "estimatedDeliveryTime",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceCreateOrderResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          number: types.optional(types.string()),
+          fulfilled_by: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceCreateOrderFulfilledBy$inboundSchema
+            ),
+          ),
+          estimated_delivery_time: types.optional(
+            z.lazy(() => EstimatedDeliveryTime$inboundSchema),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "fulfilled_by": "fulfilledBy",
+            "estimated_delivery_time": "estimatedDeliveryTime",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderSelfServiceResourceCreateOrderResponseFromJSON(

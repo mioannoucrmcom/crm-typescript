@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -462,13 +462,17 @@ export type ComCrmSettlementTransactionSelfServiceResourceListResponse = {
 export const ComCrmSettlementTransactionSelfServiceResourceListQueryParamState$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSettlementTransactionSelfServiceResourceListQueryParamState
-  > = z.enum(ComCrmSettlementTransactionSelfServiceResourceListQueryParamState);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmSettlementTransactionSelfServiceResourceListQueryParamState)
+  );
 
 /** @internal */
 export const ComCrmSettlementTransactionSelfServiceResourceListOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSettlementTransactionSelfServiceResourceListOrder
-  > = z.enum(ComCrmSettlementTransactionSelfServiceResourceListOrder);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmSettlementTransactionSelfServiceResourceListOrder)
+  );
 
 /** @internal */
 export type ComCrmSettlementTransactionSelfServiceResourceListRequest$Outbound =
@@ -496,45 +500,47 @@ export const ComCrmSettlementTransactionSelfServiceResourceListRequest$outboundS
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceListRequest$Outbound,
     ComCrmSettlementTransactionSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      accountJournalEntryId: z.optional(z.string()),
-      accountingType: z.optional(z.string()),
-      createdOn: z.optional(z.int()),
-      createdOnGt: z.optional(z.int()),
-      createdOnGte: z.optional(z.int()),
-      createdOnLt: z.optional(z.int()),
-      createdOnLte: z.optional(z.int()),
-      currencyCode: z.optional(z.string()),
-      includeRelatedTransactions: z.optional(z.boolean()),
-      settlementType: z.optional(z.string()),
-      state: z.optional(
-        ComCrmSettlementTransactionSelfServiceResourceListQueryParamState$outboundSchema,
-      ),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmSettlementTransactionSelfServiceResourceListOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        accountJournalEntryId: "account_journal_entry_id",
-        accountingType: "accounting_type",
-        createdOn: "created_on",
-        createdOnGt: "created_on[gt]",
-        createdOnGte: "created_on[gte]",
-        createdOnLt: "created_on[lt]",
-        createdOnLte: "created_on[lte]",
-        currencyCode: "currency_code",
-        includeRelatedTransactions: "include_related_transactions",
-        settlementType: "settlement_type",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        accountJournalEntryId: z.optional(z.string()),
+        accountingType: z.optional(z.string()),
+        createdOn: z.optional(z.int()),
+        createdOnGt: z.optional(z.int()),
+        createdOnGte: z.optional(z.int()),
+        createdOnLt: z.optional(z.int()),
+        createdOnLte: z.optional(z.int()),
+        currencyCode: z.optional(z.string()),
+        includeRelatedTransactions: z.optional(z.boolean()),
+        settlementType: z.optional(z.string()),
+        state: z.optional(
+          ComCrmSettlementTransactionSelfServiceResourceListQueryParamState$outboundSchema,
+        ),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmSettlementTransactionSelfServiceResourceListOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          accountJournalEntryId: "account_journal_entry_id",
+          accountingType: "accounting_type",
+          createdOn: "created_on",
+          createdOnGt: "created_on[gt]",
+          createdOnGte: "created_on[gte]",
+          createdOnLt: "created_on[lt]",
+          createdOnLte: "created_on[lte]",
+          currencyCode: "currency_code",
+          includeRelatedTransactions: "include_related_transactions",
+          settlementType: "settlement_type",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmSettlementTransactionSelfServiceResourceListRequestToJSON(
@@ -552,18 +558,20 @@ export const ComCrmSettlementTransactionSelfServiceResourceListPaging$inboundSch
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceListPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmSettlementTransactionSelfServiceResourceListPagingFromJSON(
@@ -585,43 +593,48 @@ export function comCrmSettlementTransactionSelfServiceResourceListPagingFromJSON
 export const SettlementType$inboundSchema: z.ZodMiniType<
   SettlementType,
   unknown
-> = openEnums.inboundSchema(SettlementType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(SettlementType));
 
 /** @internal */
 export const AccountingType$inboundSchema: z.ZodMiniType<
   AccountingType,
   unknown
-> = openEnums.inboundSchema(AccountingType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(AccountingType));
 
 /** @internal */
-export const FeeType$inboundSchema: z.ZodMiniType<FeeType, unknown> = openEnums
-  .inboundSchema(FeeType);
+export const FeeType$inboundSchema: z.ZodMiniType<FeeType, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(FeeType));
 
 /** @internal */
 export const ComCrmSettlementTransactionSelfServiceResourceListValueType$inboundSchema:
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceListValueType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSettlementTransactionSelfServiceResourceListValueType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSettlementTransactionSelfServiceResourceListValueType,
+    )
   );
 
 /** @internal */
-export const Fee$inboundSchema: z.ZodMiniType<Fee, unknown> = z.pipe(
-  z.object({
-    fee_type: types.optional(FeeType$inboundSchema),
-    value_type: types.optional(
-      ComCrmSettlementTransactionSelfServiceResourceListValueType$inboundSchema,
-    ),
-    number: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "fee_type": "feeType",
-      "value_type": "valueType",
-    });
-  }),
-);
+export const Fee$inboundSchema: z.ZodMiniType<Fee, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        fee_type: types.optional(FeeType$inboundSchema),
+        value_type: types.optional(
+          ComCrmSettlementTransactionSelfServiceResourceListValueType$inboundSchema,
+        ),
+        number: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "fee_type": "feeType",
+          "value_type": "valueType",
+        });
+      }),
+    )
+  );
 
 export function feeFromJSON(
   jsonString: string,
@@ -634,19 +647,21 @@ export function feeFromJSON(
 }
 
 /** @internal */
-export const TypeMerchant$inboundSchema: z.ZodMiniEnum<typeof TypeMerchant> = z
-  .enum(TypeMerchant);
+export const TypeMerchant$inboundSchema: z.ZodMiniEnum<typeof TypeMerchant> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(TypeMerchant));
 
 /** @internal */
 export const ComCrmSettlementTransactionSelfServiceResourceListOrganisation$inboundSchema:
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceListOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    type: types.optional(TypeMerchant$inboundSchema),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      type: types.optional(TypeMerchant$inboundSchema),
+    })
+  );
 
 export function comCrmSettlementTransactionSelfServiceResourceListOrganisationFromJSON(
   jsonString: string,
@@ -664,29 +679,31 @@ export function comCrmSettlementTransactionSelfServiceResourceListOrganisationFr
 }
 
 /** @internal */
-export const TypePurchase$inboundSchema: z.ZodMiniEnum<typeof TypePurchase> = z
-  .enum(TypePurchase);
+export const TypePurchase$inboundSchema: z.ZodMiniEnum<typeof TypePurchase> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(TypePurchase));
 
 /** @internal */
 export const SettlementEvent$inboundSchema: z.ZodMiniType<
   SettlementEvent,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    type: types.optional(TypePurchase$inboundSchema),
-    reference_number: types.optional(types.string()),
-    amount: types.optional(types.number()),
-    posted_date: types.optional(types.number()),
-    location_name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "reference_number": "referenceNumber",
-      "posted_date": "postedDate",
-      "location_name": "locationName",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(TypePurchase$inboundSchema),
+      reference_number: types.optional(types.string()),
+      amount: types.optional(types.number()),
+      posted_date: types.optional(types.number()),
+      location_name: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "reference_number": "referenceNumber",
+        "posted_date": "postedDate",
+        "location_name": "locationName",
+      });
+    }),
+  )
 );
 
 export function settlementEventFromJSON(
@@ -704,10 +721,12 @@ export const ComCrmSettlementTransactionSelfServiceResourceListRewardOffer$inbou
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceListRewardOffer,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmSettlementTransactionSelfServiceResourceListRewardOfferFromJSON(
   jsonString: string,
@@ -729,8 +748,10 @@ export const ComCrmSettlementTransactionSelfServiceResourceListContentState$inbo
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceListContentState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSettlementTransactionSelfServiceResourceListContentState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSettlementTransactionSelfServiceResourceListContentState,
+    )
   );
 
 /** @internal */
@@ -738,11 +759,13 @@ export const ComCrmSettlementTransactionSelfServiceResourceListContact$inboundSc
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceListContact,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    code: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      code: types.optional(types.string()),
+    })
+  );
 
 export function comCrmSettlementTransactionSelfServiceResourceListContactFromJSON(
   jsonString: string,
@@ -760,11 +783,13 @@ export function comCrmSettlementTransactionSelfServiceResourceListContactFromJSO
 }
 
 /** @internal */
-export const SchemeOwner$inboundSchema: z.ZodMiniType<SchemeOwner, unknown> = z
-  .object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+export const SchemeOwner$inboundSchema: z.ZodMiniType<SchemeOwner, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function schemeOwnerFromJSON(
   jsonString: string,
@@ -781,54 +806,60 @@ export const ComCrmSettlementTransactionSelfServiceResourceListContent$inboundSc
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceListContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      settlement_type: types.optional(SettlementType$inboundSchema),
-      accounting_type: types.optional(AccountingType$inboundSchema),
-      event_amount: types.optional(types.number()),
-      settlement_amount: types.optional(types.number()),
-      fee: types.optional(z.lazy(() => Fee$inboundSchema)),
-      organisation: types.optional(z.lazy(() =>
-        ComCrmSettlementTransactionSelfServiceResourceListOrganisation$inboundSchema
-      )),
-      settlement_event: types.optional(z.lazy(() =>
-        SettlementEvent$inboundSchema
-      )),
-      reward_offer: types.optional(z.lazy(() =>
-        ComCrmSettlementTransactionSelfServiceResourceListRewardOffer$inboundSchema
-      )),
-      state: types.optional(
-        ComCrmSettlementTransactionSelfServiceResourceListContentState$inboundSchema,
-      ),
-      contact: types.optional(z.lazy(() =>
-        ComCrmSettlementTransactionSelfServiceResourceListContact$inboundSchema
-      )),
-      scheme_owner: types.optional(z.lazy(() =>
-        SchemeOwner$inboundSchema
-      )),
-      currency_code: types.optional(types.string()),
-      exchange_rate: types.optional(types.number()),
-      total_default_currency: types.optional(types.number()),
-      default_currency_code: types.optional(types.string()),
-      is_reverted: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "settlement_type": "settlementType",
-        "accounting_type": "accountingType",
-        "event_amount": "eventAmount",
-        "settlement_amount": "settlementAmount",
-        "settlement_event": "settlementEvent",
-        "reward_offer": "rewardOffer",
-        "scheme_owner": "schemeOwner",
-        "currency_code": "currencyCode",
-        "exchange_rate": "exchangeRate",
-        "total_default_currency": "totalDefaultCurrency",
-        "default_currency_code": "defaultCurrencyCode",
-        "is_reverted": "isReverted",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        settlement_type: types.optional(SettlementType$inboundSchema),
+        accounting_type: types.optional(AccountingType$inboundSchema),
+        event_amount: types.optional(types.number()),
+        settlement_amount: types.optional(types.number()),
+        fee: types.optional(z.lazy(() => Fee$inboundSchema)),
+        organisation: types.optional(
+          z.lazy(() =>
+            ComCrmSettlementTransactionSelfServiceResourceListOrganisation$inboundSchema
+          ),
+        ),
+        settlement_event: types.optional(
+          z.lazy(() => SettlementEvent$inboundSchema),
+        ),
+        reward_offer: types.optional(
+          z.lazy(() =>
+            ComCrmSettlementTransactionSelfServiceResourceListRewardOffer$inboundSchema
+          ),
+        ),
+        state: types.optional(
+          ComCrmSettlementTransactionSelfServiceResourceListContentState$inboundSchema,
+        ),
+        contact: types.optional(
+          z.lazy(() =>
+            ComCrmSettlementTransactionSelfServiceResourceListContact$inboundSchema
+          ),
+        ),
+        scheme_owner: types.optional(z.lazy(() => SchemeOwner$inboundSchema)),
+        currency_code: types.optional(types.string()),
+        exchange_rate: types.optional(types.number()),
+        total_default_currency: types.optional(types.number()),
+        default_currency_code: types.optional(types.string()),
+        is_reverted: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "settlement_type": "settlementType",
+          "accounting_type": "accountingType",
+          "event_amount": "eventAmount",
+          "settlement_amount": "settlementAmount",
+          "settlement_event": "settlementEvent",
+          "reward_offer": "rewardOffer",
+          "scheme_owner": "schemeOwner",
+          "currency_code": "currencyCode",
+          "exchange_rate": "exchangeRate",
+          "total_default_currency": "totalDefaultCurrency",
+          "default_currency_code": "defaultCurrencyCode",
+          "is_reverted": "isReverted",
+        });
+      }),
+    )
   );
 
 export function comCrmSettlementTransactionSelfServiceResourceListContentFromJSON(
@@ -851,18 +882,16 @@ export const ComCrmSettlementTransactionSelfServiceResourceListResponse$inboundS
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceListResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmSettlementTransactionSelfServiceResourceListPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmSettlementTransactionSelfServiceResourceListContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmSettlementTransactionSelfServiceResourceListContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmSettlementTransactionSelfServiceResourceListResponseFromJSON(
   jsonString: string,

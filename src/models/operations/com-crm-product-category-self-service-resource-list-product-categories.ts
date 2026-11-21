@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -286,8 +286,8 @@ export type ComCrmProductCategorySelfServiceResourceListProductCategoriesRespons
 export const ComCrmProductCategorySelfServiceResourceListProductCategoriesOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmProductCategorySelfServiceResourceListProductCategoriesOrder
-  > = z.enum(
-    ComCrmProductCategorySelfServiceResourceListProductCategoriesOrder,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmProductCategorySelfServiceResourceListProductCategoriesOrder)
   );
 
 /** @internal */
@@ -309,30 +309,32 @@ export const ComCrmProductCategorySelfServiceResourceListProductCategoriesReques
   z.ZodMiniType<
     ComCrmProductCategorySelfServiceResourceListProductCategoriesRequest$Outbound,
     ComCrmProductCategorySelfServiceResourceListProductCategoriesRequest
-  > = z.pipe(
-    z.object({
-      availableInOrderMenus: z.optional(z.boolean()),
-      organisationId: z.optional(z.string()),
-      parentId: z.optional(z.string()),
-      returnAll: z.optional(z.boolean()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmProductCategorySelfServiceResourceListProductCategoriesOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        availableInOrderMenus: "available_in_order_menus",
-        organisationId: "organisation_id",
-        parentId: "parent_id",
-        returnAll: "return_all",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        availableInOrderMenus: z.optional(z.boolean()),
+        organisationId: z.optional(z.string()),
+        parentId: z.optional(z.string()),
+        returnAll: z.optional(z.boolean()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmProductCategorySelfServiceResourceListProductCategoriesOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          availableInOrderMenus: "available_in_order_menus",
+          organisationId: "organisation_id",
+          parentId: "parent_id",
+          returnAll: "return_all",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmProductCategorySelfServiceResourceListProductCategoriesRequestToJSON(
@@ -352,18 +354,20 @@ export const ComCrmProductCategorySelfServiceResourceListProductCategoriesPaging
   z.ZodMiniType<
     ComCrmProductCategorySelfServiceResourceListProductCategoriesPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmProductCategorySelfServiceResourceListProductCategoriesPagingFromJSON(
@@ -386,10 +390,12 @@ export const ComCrmProductCategorySelfServiceResourceListProductCategoriesParent
   z.ZodMiniType<
     ComCrmProductCategorySelfServiceResourceListProductCategoriesParent,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductCategorySelfServiceResourceListProductCategoriesParentFromJSON(
   jsonString: string,
@@ -411,8 +417,10 @@ export const ComCrmProductCategorySelfServiceResourceListProductCategoriesUsageT
   z.ZodMiniType<
     ComCrmProductCategorySelfServiceResourceListProductCategoriesUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductCategorySelfServiceResourceListProductCategoriesUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductCategorySelfServiceResourceListProductCategoriesUsageType,
+    )
   );
 
 /** @internal */
@@ -420,11 +428,13 @@ export const ComCrmProductCategorySelfServiceResourceListProductCategoriesMedia$
   z.ZodMiniType<
     ComCrmProductCategorySelfServiceResourceListProductCategoriesMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductCategorySelfServiceResourceListProductCategoriesMediaFromJSON(
   jsonString: string,
@@ -446,34 +456,38 @@ export const ComCrmProductCategorySelfServiceResourceListProductCategoriesCreati
   z.ZodMiniType<
     ComCrmProductCategorySelfServiceResourceListProductCategoriesCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmProductCategorySelfServiceResourceListProductCategoriesUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmProductCategorySelfServiceResourceListProductCategoriesMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmProductCategorySelfServiceResourceListProductCategoriesUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductCategorySelfServiceResourceListProductCategoriesMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmProductCategorySelfServiceResourceListProductCategoriesCreativeFromJSON(
@@ -496,29 +510,35 @@ export const ComCrmProductCategorySelfServiceResourceListProductCategoriesConten
   z.ZodMiniType<
     ComCrmProductCategorySelfServiceResourceListProductCategoriesContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      display_name: types.optional(types.string()),
-      code: types.optional(types.string()),
-      description: types.optional(types.string()),
-      child_nodes: types.optional(types.number()),
-      parent: types.optional(z.lazy(() =>
-        ComCrmProductCategorySelfServiceResourceListProductCategoriesParent$inboundSchema
-      )),
-      available_in_order_menus: types.boolean(),
-      creatives: types.optional(z.array(z.lazy(() =>
-        ComCrmProductCategorySelfServiceResourceListProductCategoriesCreative$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "display_name": "displayName",
-        "child_nodes": "childNodes",
-        "available_in_order_menus": "availableInOrderMenus",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        display_name: types.optional(types.string()),
+        code: types.optional(types.string()),
+        description: types.optional(types.string()),
+        child_nodes: types.optional(types.number()),
+        parent: types.optional(
+          z.lazy(() =>
+            ComCrmProductCategorySelfServiceResourceListProductCategoriesParent$inboundSchema
+          ),
+        ),
+        available_in_order_menus: types.boolean(),
+        creatives: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductCategorySelfServiceResourceListProductCategoriesCreative$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "display_name": "displayName",
+          "child_nodes": "childNodes",
+          "available_in_order_menus": "availableInOrderMenus",
+        });
+      }),
+    )
   );
 
 export function comCrmProductCategorySelfServiceResourceListProductCategoriesContentFromJSON(
@@ -541,18 +561,16 @@ export const ComCrmProductCategorySelfServiceResourceListProductCategoriesRespon
   z.ZodMiniType<
     ComCrmProductCategorySelfServiceResourceListProductCategoriesResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmProductCategorySelfServiceResourceListProductCategoriesPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmProductCategorySelfServiceResourceListProductCategoriesContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmProductCategorySelfServiceResourceListProductCategoriesContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmProductCategorySelfServiceResourceListProductCategoriesResponseFromJSON(
   jsonString: string,

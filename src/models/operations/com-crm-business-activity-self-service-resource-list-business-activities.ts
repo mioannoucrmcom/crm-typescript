@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -96,20 +96,22 @@ export const ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesRequ
   z.ZodMiniType<
     ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesRequest$Outbound,
     ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesRequest
-  > = z.pipe(
-    z.object({
-      assignedToOrganisation: z.optional(z.boolean()),
-      name: z.optional(z.string()),
-      order: z.optional(z.string()),
-      page: z.optional(z.int()),
-      size: z.optional(z.int()),
-      sort: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        assignedToOrganisation: "assigned_to_organisation",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        assignedToOrganisation: z.optional(z.boolean()),
+        name: z.optional(z.string()),
+        order: z.optional(z.string()),
+        page: z.optional(z.int()),
+        size: z.optional(z.int()),
+        sort: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          assignedToOrganisation: "assigned_to_organisation",
+        });
+      }),
+    )
   );
 
 export function comCrmBusinessActivitySelfServiceResourceListBusinessActivitiesRequestToJSON(
@@ -129,11 +131,13 @@ export const ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesPagi
   z.ZodMiniType<
     ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesPaging,
     unknown
-  > = z.object({
-    page: types.optional(types.number()),
-    size: types.optional(types.number()),
-    total: types.optional(types.number()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      page: types.optional(types.number()),
+      size: types.optional(types.number()),
+      total: types.optional(types.number()),
+    })
+  );
 
 export function comCrmBusinessActivitySelfServiceResourceListBusinessActivitiesPagingFromJSON(
   jsonString: string,
@@ -155,10 +159,12 @@ export const ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesCont
   z.ZodMiniType<
     ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesContent,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmBusinessActivitySelfServiceResourceListBusinessActivitiesContentFromJSON(
   jsonString: string,
@@ -180,18 +186,16 @@ export const ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesResp
   z.ZodMiniType<
     ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmBusinessActivitySelfServiceResourceListBusinessActivitiesContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmBusinessActivitySelfServiceResourceListBusinessActivitiesResponseFromJSON(
   jsonString: string,

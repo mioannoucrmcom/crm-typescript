@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmServiceRequestSelfServiceResourceRemoveFileRequest = {
   /**
@@ -28,16 +29,18 @@ export const ComCrmServiceRequestSelfServiceResourceRemoveFileRequest$outboundSc
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceRemoveFileRequest$Outbound,
     ComCrmServiceRequestSelfServiceResourceRemoveFileRequest
-  > = z.pipe(
-    z.object({
-      attachmentId: z.string(),
-      id: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        attachmentId: "attachment_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        attachmentId: z.string(),
+        id: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          attachmentId: "attachment_id",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceRequestSelfServiceResourceRemoveFileRequestToJSON(

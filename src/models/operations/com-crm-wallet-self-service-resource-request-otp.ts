@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 /**
@@ -313,14 +314,17 @@ export type ComCrmWalletSelfServiceResourceRequestOTPRequest = {
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceRequestOTPType$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmWalletSelfServiceResourceRequestOTPType> = z.enum(
-    ComCrmWalletSelfServiceResourceRequestOTPType,
-  );
+  z.ZodMiniEnum<typeof ComCrmWalletSelfServiceResourceRequestOTPType> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmWalletSelfServiceResourceRequestOTPType)
+    );
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceRequestOTPCountryCode$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmWalletSelfServiceResourceRequestOTPCountryCode> = z
-    .enum(ComCrmWalletSelfServiceResourceRequestOTPCountryCode);
+  z.ZodMiniEnum<typeof ComCrmWalletSelfServiceResourceRequestOTPCountryCode> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmWalletSelfServiceResourceRequestOTPCountryCode)
+    );
 
 /** @internal */
 export type ComCrmWalletSelfServiceResourceRequestOTPIdentity$Outbound = {
@@ -334,21 +338,23 @@ export const ComCrmWalletSelfServiceResourceRequestOTPIdentity$outboundSchema:
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceRequestOTPIdentity$Outbound,
     ComCrmWalletSelfServiceResourceRequestOTPIdentity
-  > = z.pipe(
-    z.object({
-      type: ComCrmWalletSelfServiceResourceRequestOTPType$outboundSchema,
-      value: z.string(),
-      countryCode: z.optional(
-        z.nullable(
-          ComCrmWalletSelfServiceResourceRequestOTPCountryCode$outboundSchema,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: ComCrmWalletSelfServiceResourceRequestOTPType$outboundSchema,
+        value: z.string(),
+        countryCode: z.optional(
+          z.nullable(
+            ComCrmWalletSelfServiceResourceRequestOTPCountryCode$outboundSchema,
+          ),
         ),
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        countryCode: "country_code",
-      });
-    }),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          countryCode: "country_code",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceRequestOTPIdentityToJSON(
@@ -374,13 +380,13 @@ export const ComCrmWalletSelfServiceResourceRequestOTPRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceRequestOTPRequest$Outbound,
     ComCrmWalletSelfServiceResourceRequestOTPRequest
-  > = z.object({
-    identity: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      identity: z.optional(z.lazy(() =>
         ComCrmWalletSelfServiceResourceRequestOTPIdentity$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmWalletSelfServiceResourceRequestOTPRequestToJSON(
   comCrmWalletSelfServiceResourceRequestOTPRequest:

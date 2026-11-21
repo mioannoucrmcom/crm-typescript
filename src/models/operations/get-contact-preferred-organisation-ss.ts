@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -174,9 +174,11 @@ export const GetContactPreferredOrganisationSSRequest$outboundSchema:
   z.ZodMiniType<
     GetContactPreferredOrganisationSSRequest$Outbound,
     GetContactPreferredOrganisationSSRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function getContactPreferredOrganisationSSRequestToJSON(
   getContactPreferredOrganisationSSRequest:
@@ -193,20 +195,27 @@ export function getContactPreferredOrganisationSSRequestToJSON(
 export const GetContactPreferredOrganisationSSType$inboundSchema: z.ZodMiniType<
   GetContactPreferredOrganisationSSType,
   unknown
-> = openEnums.inboundSchema(GetContactPreferredOrganisationSSType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(GetContactPreferredOrganisationSSType)
+);
 
 /** @internal */
 export const GetContactPreferredOrganisationSSUsageType$inboundSchema:
-  z.ZodMiniType<GetContactPreferredOrganisationSSUsageType, unknown> = openEnums
-    .inboundSchema(GetContactPreferredOrganisationSSUsageType);
+  z.ZodMiniType<GetContactPreferredOrganisationSSUsageType, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(GetContactPreferredOrganisationSSUsageType)
+    );
 
 /** @internal */
 export const GetContactPreferredOrganisationSSMedia$inboundSchema:
-  z.ZodMiniType<GetContactPreferredOrganisationSSMedia, unknown> = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  z.ZodMiniType<GetContactPreferredOrganisationSSMedia, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        url: types.optional(types.string()),
+      })
+    );
 
 export function getContactPreferredOrganisationSSMediaFromJSON(
   jsonString: string,
@@ -221,35 +230,40 @@ export function getContactPreferredOrganisationSSMediaFromJSON(
 
 /** @internal */
 export const GetContactPreferredOrganisationSSCreative$inboundSchema:
-  z.ZodMiniType<GetContactPreferredOrganisationSSCreative, unknown> = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        GetContactPreferredOrganisationSSUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        GetContactPreferredOrganisationSSMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
-  );
+  z.ZodMiniType<GetContactPreferredOrganisationSSCreative, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          media_group_id: types.optional(types.string()),
+          usage_type: types.optional(
+            GetContactPreferredOrganisationSSUsageType$inboundSchema,
+          ),
+          width: types.optional(types.number()),
+          height: types.optional(types.number()),
+          format: types.optional(types.string()),
+          url: types.optional(types.string()),
+          public_id: types.optional(types.string()),
+          media_id: types.optional(types.string()),
+          caption: types.optional(types.string()),
+          sort_order: types.optional(types.number()),
+          media: types.optional(
+            z.array(z.lazy(() =>
+              GetContactPreferredOrganisationSSMedia$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "media_group_id": "mediaGroupId",
+            "usage_type": "usageType",
+            "public_id": "publicId",
+            "media_id": "mediaId",
+            "sort_order": "sortOrder",
+          });
+        }),
+      )
+    );
 
 export function getContactPreferredOrganisationSSCreativeFromJSON(
   jsonString: string,
@@ -269,17 +283,21 @@ export function getContactPreferredOrganisationSSCreativeFromJSON(
 
 /** @internal */
 export const GetContactPreferredOrganisationSSOrganisation$inboundSchema:
-  z.ZodMiniType<GetContactPreferredOrganisationSSOrganisation, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      type: types.optional(GetContactPreferredOrganisationSSType$inboundSchema),
-      name: types.optional(types.string()),
-      creatives: types.optional(
-        z.array(z.lazy(() =>
-          GetContactPreferredOrganisationSSCreative$inboundSchema
-        )),
-      ),
-    });
+  z.ZodMiniType<GetContactPreferredOrganisationSSOrganisation, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        type: types.optional(
+          GetContactPreferredOrganisationSSType$inboundSchema,
+        ),
+        name: types.optional(types.string()),
+        creatives: types.optional(
+          z.array(z.lazy(() =>
+            GetContactPreferredOrganisationSSCreative$inboundSchema
+          )),
+        ),
+      })
+    );
 
 export function getContactPreferredOrganisationSSOrganisationFromJSON(
   jsonString: string,
@@ -299,13 +317,14 @@ export function getContactPreferredOrganisationSSOrganisationFromJSON(
 
 /** @internal */
 export const GetContactPreferredOrganisationSSResponse$inboundSchema:
-  z.ZodMiniType<GetContactPreferredOrganisationSSResponse, unknown> = z.object({
-    organisations: types.optional(
-      z.array(z.lazy(() =>
-        GetContactPreferredOrganisationSSOrganisation$inboundSchema
-      )),
-    ),
-  });
+  z.ZodMiniType<GetContactPreferredOrganisationSSResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        organisations: types.optional(z.array(z.lazy(() =>
+          GetContactPreferredOrganisationSSOrganisation$inboundSchema
+        ))),
+      })
+    );
 
 export function getContactPreferredOrganisationSSResponseFromJSON(
   jsonString: string,

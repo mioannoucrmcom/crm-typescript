@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceUpdateDonationsRequestBody = {
   /**
@@ -45,17 +46,19 @@ export const ComCrmContactSelfServiceResourceUpdateDonationsRequestBody$outbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdateDonationsRequestBody$Outbound,
     ComCrmContactSelfServiceResourceUpdateDonationsRequestBody
-  > = z.pipe(
-    z.object({
-      donationOfferId: z.string(),
-      multiplier: z._default(z.int(), 1),
-      amount: z.optional(z.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        donationOfferId: "donation_offer_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        donationOfferId: z.string(),
+        multiplier: z._default(z.int(), 1),
+        amount: z.optional(z.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          donationOfferId: "donation_offer_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdateDonationsRequestBodyToJSON(
@@ -82,19 +85,23 @@ export const ComCrmContactSelfServiceResourceUpdateDonationsRequest$outboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdateDonationsRequest$Outbound,
     ComCrmContactSelfServiceResourceUpdateDonationsRequest
-  > = z.pipe(
-    z.object({
-      donationId: z.string(),
-      id: z.string(),
-      body: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceUpdateDonationsRequestBody$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        donationId: "donation_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        donationId: z.string(),
+        id: z.string(),
+        body: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceUpdateDonationsRequestBody$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          donationId: "donation_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdateDonationsRequestToJSON(

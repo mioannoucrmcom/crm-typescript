@@ -8,11 +8,11 @@ Will passes have a fixed or variable value? FIXED indicates that the pass value 
 import { ValueType } from "crm/models/operations";
 
 let value: ValueType = "FIXED";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "FIXED" | "VARIABLE" | Unrecognized<string>

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceOptOutDonationsRequest = {
   /**
@@ -27,16 +28,18 @@ export const ComCrmContactSelfServiceResourceOptOutDonationsRequest$outboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceOptOutDonationsRequest$Outbound,
     ComCrmContactSelfServiceResourceOptOutDonationsRequest
-  > = z.pipe(
-    z.object({
-      donationId: z.string(),
-      id: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        donationId: "donation_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        donationId: z.string(),
+        id: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          donationId: "donation_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceOptOutDonationsRequestToJSON(

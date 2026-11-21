@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -1092,17 +1092,19 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsSecurity$outbou
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsSecurity$Outbound,
     ComCrmProductSelfServiceResourceGetProductVariationsSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorizationSelfService: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-        authorizationSelfService: "authorization_self_service",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorizationSelfService: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+          authorizationSelfService: "authorization_self_service",
+        });
+      }),
+    )
   );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsSecurityToJSON(
@@ -1136,33 +1138,35 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsRequest$outboun
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsRequest$Outbound,
     ComCrmProductSelfServiceResourceGetProductVariationsRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      billingPeriod: z.optional(z.int()),
-      billingPeriodUot: z.optional(z.string()),
-      characteristics: z.optional(z.string()),
-      countryCode: z.optional(z.string()),
-      currencyCode: z.optional(z.string()),
-      fulfilledBy: z.optional(z.string()),
-      includeCharacteristics: z.optional(z.boolean()),
-      includeStock: z.optional(z.boolean()),
-      salesModelId: z.optional(z.string()),
-      supplyMethod: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        billingPeriod: "billing_period",
-        billingPeriodUot: "billing_period_uot",
-        countryCode: "country_code",
-        currencyCode: "currency_code",
-        fulfilledBy: "fulfilled_by",
-        includeCharacteristics: "include_characteristics",
-        includeStock: "include_stock",
-        salesModelId: "sales_model_id",
-        supplyMethod: "supply_method",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        billingPeriod: z.optional(z.int()),
+        billingPeriodUot: z.optional(z.string()),
+        characteristics: z.optional(z.string()),
+        countryCode: z.optional(z.string()),
+        currencyCode: z.optional(z.string()),
+        fulfilledBy: z.optional(z.string()),
+        includeCharacteristics: z.optional(z.boolean()),
+        includeStock: z.optional(z.boolean()),
+        salesModelId: z.optional(z.string()),
+        supplyMethod: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          billingPeriod: "billing_period",
+          billingPeriodUot: "billing_period_uot",
+          countryCode: "country_code",
+          currencyCode: "currency_code",
+          fulfilledBy: "fulfilled_by",
+          includeCharacteristics: "include_characteristics",
+          includeStock: "include_stock",
+          salesModelId: "sales_model_id",
+          supplyMethod: "supply_method",
+        });
+      }),
+    )
   );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsRequestToJSON(
@@ -1180,8 +1184,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsClassification$
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsClassification,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsClassification,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsClassification,
+    )
   );
 
 /** @internal */
@@ -1189,8 +1195,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition,
+    )
   );
 
 /** @internal */
@@ -1198,10 +1206,12 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsType$inboundSch
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsType,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsTypeFromJSON(
   jsonString: string,
@@ -1223,10 +1233,12 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsCategory$inboun
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsCategory,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsCategoryFromJSON(
   jsonString: string,
@@ -1248,10 +1260,12 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsFamily$inboundS
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsFamily,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsFamilyFromJSON(
   jsonString: string,
@@ -1273,10 +1287,12 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsBrand$inboundSc
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsBrand,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsBrandFromJSON(
   jsonString: string,
@@ -1298,8 +1314,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsItemType$inboun
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsItemType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsItemType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsItemType,
+    )
   );
 
 /** @internal */
@@ -1307,11 +1325,13 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsDefaultModifier
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsDefaultModifier,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsDefaultModifierFromJSON(
   jsonString: string,
@@ -1333,11 +1353,13 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsMandatoryProduc
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsMandatoryProduct,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsMandatoryProductFromJSON(
   jsonString: string,
@@ -1359,38 +1381,44 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsComposition$inb
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsComposition,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      item_type: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsItemType$inboundSchema,
-      ),
-      item_id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      sku: types.optional(types.string()),
-      mandatory: types.optional(types.boolean()),
-      minimum_quantity: types.optional(types.number()),
-      maximum_quantity: types.optional(types.number()),
-      price_inclusive: types.optional(types.boolean()),
-      priority: types.optional(types.number()),
-      default_modifier: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsDefaultModifier$inboundSchema
-      )),
-      mandatory_product: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsMandatoryProduct$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "item_type": "itemType",
-        "item_id": "itemId",
-        "minimum_quantity": "minimumQuantity",
-        "maximum_quantity": "maximumQuantity",
-        "price_inclusive": "priceInclusive",
-        "default_modifier": "defaultModifier",
-        "mandatory_product": "mandatoryProduct",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        item_type: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsItemType$inboundSchema,
+        ),
+        item_id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        sku: types.optional(types.string()),
+        mandatory: types.optional(types.boolean()),
+        minimum_quantity: types.optional(types.number()),
+        maximum_quantity: types.optional(types.number()),
+        price_inclusive: types.optional(types.boolean()),
+        priority: types.optional(types.number()),
+        default_modifier: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsDefaultModifier$inboundSchema
+          ),
+        ),
+        mandatory_product: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsMandatoryProduct$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "item_type": "itemType",
+          "item_id": "itemId",
+          "minimum_quantity": "minimumQuantity",
+          "maximum_quantity": "maximumQuantity",
+          "price_inclusive": "priceInclusive",
+          "default_modifier": "defaultModifier",
+          "mandatory_product": "mandatoryProduct",
+        });
+      }),
+    )
   );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsCompositionFromJSON(
@@ -1413,8 +1441,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsCurrencyCode$in
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -1422,8 +1452,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsTaxModel$inboun
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsTaxModel,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsTaxModel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsTaxModel,
+    )
   );
 
 /** @internal */
@@ -1431,8 +1463,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsPriceModel$inbo
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsPriceModel,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsPriceModel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsPriceModel,
+    )
   );
 
 /** @internal */
@@ -1440,8 +1474,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsSupplyMethod$in
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsSupplyMethod,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsSupplyMethod,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsSupplyMethod,
+    )
   );
 
 /** @internal */
@@ -1449,10 +1485,12 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsSalesModel$inbo
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsSalesModel,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsSalesModelFromJSON(
   jsonString: string,
@@ -1474,10 +1512,12 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsOrderQueue$inbo
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsOrderQueue,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsOrderQueueFromJSON(
   jsonString: string,
@@ -1499,8 +1539,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriodUo
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriodUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriodUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriodUot,
+    )
   );
 
 /** @internal */
@@ -1508,12 +1550,14 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriod$i
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriod,
     unknown
-  > = z.object({
-    duration: types.optional(types.number()),
-    uot: types.optional(
-      ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriodUot$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      duration: types.optional(types.number()),
+      uot: types.optional(
+        ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriodUot$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsBillingPeriodFromJSON(
   jsonString: string,
@@ -1535,8 +1579,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriodUot$
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriodUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriodUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriodUot,
+    )
   );
 
 /** @internal */
@@ -1544,12 +1590,14 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriod$inb
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriod,
     unknown
-  > = z.object({
-    duration: types.optional(types.number()),
-    uot: types.optional(
-      ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriodUot$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      duration: types.optional(types.number()),
+      uot: types.optional(
+        ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriodUot$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsTrialPeriodFromJSON(
   jsonString: string,
@@ -1571,17 +1619,19 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsAccessPeriod$in
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsAccessPeriod,
     unknown
-  > = z.pipe(
-    z.object({
-      start_date: types.optional(types.number()),
-      end_date: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "start_date": "startDate",
-        "end_date": "endDate",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        start_date: types.optional(types.number()),
+        end_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "start_date": "startDate",
+          "end_date": "endDate",
+        });
+      }),
+    )
   );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsAccessPeriodFromJSON(
@@ -1604,8 +1654,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsBillingModel$in
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsBillingModel,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsBillingModel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsBillingModel,
+    )
   );
 
 /** @internal */
@@ -1613,8 +1665,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsContractPeriodU
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsContractPeriodUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsContractPeriodUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsContractPeriodUot,
+    )
   );
 
 /** @internal */
@@ -1622,12 +1676,14 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsContractPeriod$
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsContractPeriod,
     unknown
-  > = z.object({
-    duration: types.optional(types.number()),
-    uot: types.optional(
-      ComCrmProductSelfServiceResourceGetProductVariationsContractPeriodUot$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      duration: types.optional(types.number()),
+      uot: types.optional(
+        ComCrmProductSelfServiceResourceGetProductVariationsContractPeriodUot$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsContractPeriodFromJSON(
   jsonString: string,
@@ -1649,11 +1705,13 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsRentalService$i
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsRentalService,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsRentalServiceFromJSON(
   jsonString: string,
@@ -1675,8 +1733,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsValueType$inbou
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsValueType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsValueType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsValueType,
+    )
   );
 
 /** @internal */
@@ -1684,45 +1744,57 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsPriceTerms$inbo
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsPriceTerms,
     unknown
-  > = z.pipe(
-    z.object({
-      billing_period: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriod$inboundSchema
-      )),
-      trial_period: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriod$inboundSchema
-      )),
-      access_period: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsAccessPeriod$inboundSchema
-      )),
-      auto_renewed: types.optional(types.boolean()),
-      billing_model: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsBillingModel$inboundSchema,
-      ),
-      contract_period: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsContractPeriod$inboundSchema
-      )),
-      terms_billing_cycles: types.optional(types.number()),
-      rental_service: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsRentalService$inboundSchema
-      )),
-      value_type: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsValueType$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "billing_period": "billingPeriod",
-        "trial_period": "trialPeriod",
-        "access_period": "accessPeriod",
-        "auto_renewed": "autoRenewed",
-        "billing_model": "billingModel",
-        "contract_period": "contractPeriod",
-        "terms_billing_cycles": "termsBillingCycles",
-        "rental_service": "rentalService",
-        "value_type": "valueType",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        billing_period: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsBillingPeriod$inboundSchema
+          ),
+        ),
+        trial_period: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsTrialPeriod$inboundSchema
+          ),
+        ),
+        access_period: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsAccessPeriod$inboundSchema
+          ),
+        ),
+        auto_renewed: types.optional(types.boolean()),
+        billing_model: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsBillingModel$inboundSchema,
+        ),
+        contract_period: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsContractPeriod$inboundSchema
+          ),
+        ),
+        terms_billing_cycles: types.optional(types.number()),
+        rental_service: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsRentalService$inboundSchema
+          ),
+        ),
+        value_type: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsValueType$inboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "billing_period": "billingPeriod",
+          "trial_period": "trialPeriod",
+          "access_period": "accessPeriod",
+          "auto_renewed": "autoRenewed",
+          "billing_model": "billingModel",
+          "contract_period": "contractPeriod",
+          "terms_billing_cycles": "termsBillingCycles",
+          "rental_service": "rentalService",
+          "value_type": "valueType",
+        });
+      }),
+    )
   );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsPriceTermsFromJSON(
@@ -1745,21 +1817,23 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsTier$inboundSch
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsTier,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      lower_tier: types.optional(types.number()),
-      upper_tier: types.optional(types.number()),
-      price: types.optional(types.number()),
-      out_of_contract: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "lower_tier": "lowerTier",
-        "upper_tier": "upperTier",
-        "out_of_contract": "outOfContract",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        lower_tier: types.optional(types.number()),
+        upper_tier: types.optional(types.number()),
+        price: types.optional(types.number()),
+        out_of_contract: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "lower_tier": "lowerTier",
+          "upper_tier": "upperTier",
+          "out_of_contract": "outOfContract",
+        });
+      }),
+    )
   );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsTierFromJSON(
@@ -1782,49 +1856,59 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsPricing$inbound
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsPricing,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      price: types.optional(types.number()),
-      label: types.optional(types.string()),
-      currency_code: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsCurrencyCode$inboundSchema,
-      ),
-      is_default: types.optional(types.boolean()),
-      tax_model: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsTaxModel$inboundSchema,
-      ),
-      price_model: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsPriceModel$inboundSchema,
-      ),
-      supply_method: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsSupplyMethod$inboundSchema,
-      ),
-      sales_model: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsSalesModel$inboundSchema
-      )),
-      order_queue: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsOrderQueue$inboundSchema
-      )),
-      price_terms: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsPriceTerms$inboundSchema
-      )),
-      tiers: types.optional(z.array(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsTier$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "currency_code": "currencyCode",
-        "is_default": "isDefault",
-        "tax_model": "taxModel",
-        "price_model": "priceModel",
-        "supply_method": "supplyMethod",
-        "sales_model": "salesModel",
-        "order_queue": "orderQueue",
-        "price_terms": "priceTerms",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        price: types.optional(types.number()),
+        label: types.optional(types.string()),
+        currency_code: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsCurrencyCode$inboundSchema,
+        ),
+        is_default: types.optional(types.boolean()),
+        tax_model: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsTaxModel$inboundSchema,
+        ),
+        price_model: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsPriceModel$inboundSchema,
+        ),
+        supply_method: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsSupplyMethod$inboundSchema,
+        ),
+        sales_model: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsSalesModel$inboundSchema
+          ),
+        ),
+        order_queue: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsOrderQueue$inboundSchema
+          ),
+        ),
+        price_terms: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsPriceTerms$inboundSchema
+          ),
+        ),
+        tiers: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsTier$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "currency_code": "currencyCode",
+          "is_default": "isDefault",
+          "tax_model": "taxModel",
+          "price_model": "priceModel",
+          "supply_method": "supplyMethod",
+          "sales_model": "salesModel",
+          "order_queue": "orderQueue",
+          "price_terms": "priceTerms",
+        });
+      }),
+    )
   );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsPricingFromJSON(
@@ -1847,13 +1931,15 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsCharacteristic$
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsCharacteristic,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    key: types.optional(types.string()),
-    value: types.optional(types.string()),
-    label: types.optional(types.string()),
-    mandatory: types.optional(types.boolean()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      key: types.optional(types.string()),
+      value: types.optional(types.string()),
+      label: types.optional(types.string()),
+      mandatory: types.optional(types.boolean()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsCharacteristicFromJSON(
   jsonString: string,
@@ -1875,8 +1961,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsUsageType$inbou
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsUsageType,
+    )
   );
 
 /** @internal */
@@ -1884,11 +1972,13 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsMedia$inboundSc
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsMediaFromJSON(
   jsonString: string,
@@ -1910,34 +2000,38 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsCreative$inboun
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsCreativeFromJSON(
@@ -1960,8 +2054,10 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsAvailability$in
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsAvailability,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductSelfServiceResourceGetProductVariationsAvailability,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductSelfServiceResourceGetProductVariationsAvailability,
+    )
   );
 
 /** @internal */
@@ -1969,18 +2065,20 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsStockInformatio
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsStockInformation,
     unknown
-  > = z.pipe(
-    z.object({
-      stock_balance: types.optional(types.number()),
-      reserved: types.optional(types.number()),
-      in_stock: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "stock_balance": "stockBalance",
-        "in_stock": "inStock",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        stock_balance: types.optional(types.number()),
+        reserved: types.optional(types.number()),
+        in_stock: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "stock_balance": "stockBalance",
+          "in_stock": "inStock",
+        });
+      }),
+    )
   );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsStockInformationFromJSON(
@@ -2003,60 +2101,80 @@ export const ComCrmProductSelfServiceResourceGetProductVariationsResponse$inboun
   z.ZodMiniType<
     ComCrmProductSelfServiceResourceGetProductVariationsResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      sku: types.optional(types.string()),
-      name: types.optional(types.string()),
-      description: types.optional(types.string()),
-      priority: types.optional(types.number()),
-      classification: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsClassification$inboundSchema,
-      ),
-      type_composition: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition$inboundSchema,
-      ),
-      number_of_prices: types.optional(types.number()),
-      number_of_characteristics: types.optional(types.number()),
-      type: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsType$inboundSchema
-      )),
-      categories: types.optional(z.array(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsCategory$inboundSchema
-      ))),
-      family: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsFamily$inboundSchema
-      )),
-      brand: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsBrand$inboundSchema
-      )),
-      composition: types.optional(z.array(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsComposition$inboundSchema
-      ))),
-      pricing: types.optional(z.array(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsPricing$inboundSchema
-      ))),
-      characteristics: types.optional(z.array(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsCharacteristic$inboundSchema
-      ))),
-      creatives: types.optional(z.array(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsCreative$inboundSchema
-      ))),
-      availability: types.optional(
-        ComCrmProductSelfServiceResourceGetProductVariationsAvailability$inboundSchema,
-      ),
-      stock_information: types.optional(z.lazy(() =>
-        ComCrmProductSelfServiceResourceGetProductVariationsStockInformation$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "type_composition": "typeComposition",
-        "number_of_prices": "numberOfPrices",
-        "number_of_characteristics": "numberOfCharacteristics",
-        "stock_information": "stockInformation",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        sku: types.optional(types.string()),
+        name: types.optional(types.string()),
+        description: types.optional(types.string()),
+        priority: types.optional(types.number()),
+        classification: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsClassification$inboundSchema,
+        ),
+        type_composition: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsTypeComposition$inboundSchema,
+        ),
+        number_of_prices: types.optional(types.number()),
+        number_of_characteristics: types.optional(types.number()),
+        type: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsType$inboundSchema
+          ),
+        ),
+        categories: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsCategory$inboundSchema
+          )),
+        ),
+        family: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsFamily$inboundSchema
+          ),
+        ),
+        brand: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsBrand$inboundSchema
+          ),
+        ),
+        composition: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsComposition$inboundSchema
+          )),
+        ),
+        pricing: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsPricing$inboundSchema
+          )),
+        ),
+        characteristics: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsCharacteristic$inboundSchema
+          )),
+        ),
+        creatives: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsCreative$inboundSchema
+          )),
+        ),
+        availability: types.optional(
+          ComCrmProductSelfServiceResourceGetProductVariationsAvailability$inboundSchema,
+        ),
+        stock_information: types.optional(
+          z.lazy(() =>
+            ComCrmProductSelfServiceResourceGetProductVariationsStockInformation$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "type_composition": "typeComposition",
+          "number_of_prices": "numberOfPrices",
+          "number_of_characteristics": "numberOfCharacteristics",
+          "stock_information": "stockInformation",
+        });
+      }),
+    )
   );
 
 export function comCrmProductSelfServiceResourceGetProductVariationsResponseFromJSON(

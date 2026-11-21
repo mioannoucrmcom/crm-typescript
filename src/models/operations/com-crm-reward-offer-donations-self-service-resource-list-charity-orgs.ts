@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -190,16 +190,18 @@ export const ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsRequest
   z.ZodMiniType<
     ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsRequest$Outbound,
     ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsRequest
-  > = z.pipe(
-    z.object({
-      includeCreatives: z.optional(z.boolean()),
-      type: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        includeCreatives: "include_creatives",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        includeCreatives: z.optional(z.boolean()),
+        type: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          includeCreatives: "include_creatives",
+        });
+      }),
+    )
   );
 
 export function comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsRequestToJSON(
@@ -219,8 +221,10 @@ export const ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsUsageTy
   z.ZodMiniType<
     ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsUsageType,
+    )
   );
 
 /** @internal */
@@ -228,11 +232,13 @@ export const ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsMedia$i
   z.ZodMiniType<
     ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsMediaFromJSON(
   jsonString: string,
@@ -254,34 +260,38 @@ export const ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsCreativ
   z.ZodMiniType<
     ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsCreativeFromJSON(
@@ -304,16 +314,16 @@ export const ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsContent
   z.ZodMiniType<
     ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsContent,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    description: types.optional(types.string()),
-    creatives: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      description: types.optional(types.string()),
+      creatives: types.optional(z.array(z.lazy(() =>
         ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsCreative$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsContentFromJSON(
   jsonString: string,
@@ -335,14 +345,14 @@ export const ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsRespons
   z.ZodMiniType<
     ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    content: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      content: types.optional(z.array(z.lazy(() =>
         ComCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsContent$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmRewardOfferDonationsSelfServiceResourceListCharityOrgsResponseFromJSON(
   jsonString: string,

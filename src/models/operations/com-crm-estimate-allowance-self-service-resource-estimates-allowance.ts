@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -716,14 +716,16 @@ export type ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceResponse
 export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceCurrencyCodeRequest$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceCurrencyCodeRequest
-  > = z.enum(
-    ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceCurrencyCodeRequest,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceCurrencyCodeRequest,
+    )
   );
 
 /** @internal */
 export const ClassificationRequest$outboundSchema: z.ZodMiniEnum<
   typeof ClassificationRequest
-> = z.enum(ClassificationRequest);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(ClassificationRequest));
 
 /** @internal */
 export type ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceRequest$Outbound =
@@ -737,10 +739,12 @@ export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceService
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceRequest$Outbound,
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceRequest
-  > = z.object({
-    id: z.string(),
-    classification: ClassificationRequest$outboundSchema,
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      classification: ClassificationRequest$outboundSchema,
+    })
+  );
 
 export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceRequestToJSON(
   comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceRequest:
@@ -764,10 +768,12 @@ export type ProductRequest$Outbound = {
 export const ProductRequest$outboundSchema: z.ZodMiniType<
   ProductRequest$Outbound,
   ProductRequest
-> = z.object({
-  id: z.nullable(z.string()),
-  sku: z.nullable(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.nullable(z.string()),
+    sku: z.nullable(z.string()),
+  })
+);
 
 export function productRequestToJSON(productRequest: ProductRequest): string {
   return JSON.stringify(ProductRequest$outboundSchema.parse(productRequest));
@@ -781,19 +787,21 @@ export type Usage$Outbound = {
 };
 
 /** @internal */
-export const Usage$outboundSchema: z.ZodMiniType<Usage$Outbound, Usage> = z
-  .pipe(
-    z.object({
-      product: z.optional(z.lazy(() => ProductRequest$outboundSchema)),
-      usageAmount: z.optional(z.number()),
-      cashAmount: z.optional(z.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        usageAmount: "usage_amount",
-        cashAmount: "cash_amount",
-      });
-    }),
+export const Usage$outboundSchema: z.ZodMiniType<Usage$Outbound, Usage> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        product: z.optional(z.lazy(() => ProductRequest$outboundSchema)),
+        usageAmount: z.optional(z.number()),
+        cashAmount: z.optional(z.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          usageAmount: "usage_amount",
+          cashAmount: "cash_amount",
+        });
+      }),
+    )
   );
 
 export function usageToJSON(usage: Usage): string {
@@ -822,37 +830,39 @@ export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRequest
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRequest$Outbound,
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRequest
-  > = z.pipe(
-    z.object({
-      contactId: z.optional(z.string()),
-      communityId: z.optional(z.string()),
-      accountId: z.optional(z.string()),
-      organisationId: z.optional(z.string()),
-      currencyCode: z.optional(
-        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceCurrencyCodeRequest$outboundSchema,
-      ),
-      service: z.optional(z.lazy(() =>
-        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceRequest$outboundSchema
-      )),
-      blockUsage: z._default(z.boolean(), true),
-      estimationId: z.optional(z.string()),
-      cashAmount: z.optional(z.number()),
-      usage: z.optional(z.array(z.lazy(() =>
-        Usage$outboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        contactId: "contact_id",
-        communityId: "community_id",
-        accountId: "account_id",
-        organisationId: "organisation_id",
-        currencyCode: "currency_code",
-        blockUsage: "block_usage",
-        estimationId: "estimation_id",
-        cashAmount: "cash_amount",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        contactId: z.optional(z.string()),
+        communityId: z.optional(z.string()),
+        accountId: z.optional(z.string()),
+        organisationId: z.optional(z.string()),
+        currencyCode: z.optional(
+          ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceCurrencyCodeRequest$outboundSchema,
+        ),
+        service: z.optional(
+          z.lazy(() =>
+            ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceRequest$outboundSchema
+          ),
+        ),
+        blockUsage: z._default(z.boolean(), true),
+        estimationId: z.optional(z.string()),
+        cashAmount: z.optional(z.number()),
+        usage: z.optional(z.array(z.lazy(() => Usage$outboundSchema))),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          contactId: "contact_id",
+          communityId: "community_id",
+          accountId: "account_id",
+          organisationId: "organisation_id",
+          currencyCode: "currency_code",
+          blockUsage: "block_usage",
+          estimationId: "estimation_id",
+          cashAmount: "cash_amount",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRequestToJSON(
@@ -871,15 +881,19 @@ export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRequ
 export const ServiceCurrencyCode$inboundSchema: z.ZodMiniType<
   ServiceCurrencyCode,
   unknown
-> = openEnums.inboundSchema(ServiceCurrencyCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ServiceCurrencyCode)
+);
 
 /** @internal */
 export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceClassificationResponse$inboundSchema:
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceClassificationResponse,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceClassificationResponse,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceClassificationResponse,
+    )
   );
 
 /** @internal */
@@ -887,11 +901,13 @@ export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceService
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceProduct,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceProductFromJSON(
   jsonString: string,
@@ -913,17 +929,17 @@ export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceService
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceServiceResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    classification: types.optional(
-      ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceClassificationResponse$inboundSchema,
-    ),
-    product: types.optional(
-      z.lazy(() =>
-        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceProduct$inboundSchema
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      classification: types.optional(
+        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceClassificationResponse$inboundSchema,
       ),
-    ),
-  });
+      product: types.optional(z.lazy(() =>
+        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceProduct$inboundSchema
+      )),
+    })
+  );
 
 export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceServiceResponseFromJSON(
   jsonString: string,
@@ -941,20 +957,22 @@ export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServ
 }
 
 /** @internal */
-export const CashAmounts$inboundSchema: z.ZodMiniType<CashAmounts, unknown> = z
-  .pipe(
-    z.object({
-      per_transaction: types.optional(types.number()),
-      per_day: types.optional(types.number()),
-      per_billing_cycle: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "per_transaction": "perTransaction",
-        "per_day": "perDay",
-        "per_billing_cycle": "perBillingCycle",
-      });
-    }),
+export const CashAmounts$inboundSchema: z.ZodMiniType<CashAmounts, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        per_transaction: types.optional(types.number()),
+        per_day: types.optional(types.number()),
+        per_billing_cycle: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "per_transaction": "perTransaction",
+          "per_day": "perDay",
+          "per_billing_cycle": "perBillingCycle",
+        });
+      }),
+    )
   );
 
 export function cashAmountsFromJSON(
@@ -972,15 +990,17 @@ export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceAccumul
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceAccumulatedAllowance,
     unknown
-  > = z.pipe(
-    z.object({
-      cash_amounts: types.optional(z.lazy(() => CashAmounts$inboundSchema)),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "cash_amounts": "cashAmounts",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        cash_amounts: types.optional(z.lazy(() => CashAmounts$inboundSchema)),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "cash_amounts": "cashAmounts",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceAccumulatedAllowanceFromJSON(
@@ -1003,19 +1023,21 @@ export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRemaini
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRemainingCash,
     unknown
-  > = z.pipe(
-    z.object({
-      per_transaction: types.optional(types.number()),
-      per_day: types.optional(types.number()),
-      per_billing_cycle: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "per_transaction": "perTransaction",
-        "per_day": "perDay",
-        "per_billing_cycle": "perBillingCycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        per_transaction: types.optional(types.number()),
+        per_day: types.optional(types.number()),
+        per_billing_cycle: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "per_transaction": "perTransaction",
+          "per_day": "perDay",
+          "per_billing_cycle": "perBillingCycle",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRemainingCashFromJSON(
@@ -1038,19 +1060,21 @@ export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRemaini
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRemainingUsage,
     unknown
-  > = z.pipe(
-    z.object({
-      per_transaction: types.optional(types.number()),
-      per_day: types.optional(types.number()),
-      per_billing_cycle: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "per_transaction": "perTransaction",
-        "per_day": "perDay",
-        "per_billing_cycle": "perBillingCycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        per_transaction: types.optional(types.number()),
+        per_day: types.optional(types.number()),
+        per_billing_cycle: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "per_transaction": "perTransaction",
+          "per_day": "perDay",
+          "per_billing_cycle": "perBillingCycle",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRemainingUsageFromJSON(
@@ -1072,17 +1096,19 @@ export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRema
 export const ServiceMeasurementUnit$inboundSchema: z.ZodMiniType<
   ServiceMeasurementUnit,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    display_name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "display_name": "displayName",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      display_name: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "display_name": "displayName",
+      });
+    }),
+  )
 );
 
 export function serviceMeasurementUnitFromJSON(
@@ -1100,32 +1126,38 @@ export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceProduct
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceProductsAllowance,
     unknown
-  > = z.pipe(
-    z.object({
-      item_type: types.optional(types.string()),
-      item_id: types.optional(types.string()),
-      item_code: types.optional(types.string()),
-      name: types.optional(types.string()),
-      remaining_cash: types.optional(z.lazy(() =>
-        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRemainingCash$inboundSchema
-      )),
-      remaining_usage: types.optional(z.lazy(() =>
-        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRemainingUsage$inboundSchema
-      )),
-      measurement_unit: types.optional(z.lazy(() =>
-        ServiceMeasurementUnit$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "item_type": "itemType",
-        "item_id": "itemId",
-        "item_code": "itemCode",
-        "remaining_cash": "remainingCash",
-        "remaining_usage": "remainingUsage",
-        "measurement_unit": "measurementUnit",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        item_type: types.optional(types.string()),
+        item_id: types.optional(types.string()),
+        item_code: types.optional(types.string()),
+        name: types.optional(types.string()),
+        remaining_cash: types.optional(
+          z.lazy(() =>
+            ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRemainingCash$inboundSchema
+          ),
+        ),
+        remaining_usage: types.optional(
+          z.lazy(() =>
+            ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRemainingUsage$inboundSchema
+          ),
+        ),
+        measurement_unit: types.optional(
+          z.lazy(() => ServiceMeasurementUnit$inboundSchema),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "item_type": "itemType",
+          "item_id": "itemId",
+          "item_code": "itemCode",
+          "remaining_cash": "remainingCash",
+          "remaining_usage": "remainingUsage",
+          "measurement_unit": "measurementUnit",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceProductsAllowanceFromJSON(
@@ -1148,28 +1180,36 @@ export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceService
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      authorise_consumption: types.optional(types.boolean()),
-      currency_code: types.optional(ServiceCurrencyCode$inboundSchema),
-      service: types.optional(z.lazy(() =>
-        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceServiceResponse$inboundSchema
-      )),
-      accumulated_allowance: types.optional(z.lazy(() =>
-        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceAccumulatedAllowance$inboundSchema
-      )),
-      products_allowance: types.optional(z.array(z.lazy(() =>
-        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceProductsAllowance$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "authorise_consumption": "authoriseConsumption",
-        "currency_code": "currencyCode",
-        "accumulated_allowance": "accumulatedAllowance",
-        "products_allowance": "productsAllowance",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        authorise_consumption: types.optional(types.boolean()),
+        currency_code: types.optional(ServiceCurrencyCode$inboundSchema),
+        service: types.optional(
+          z.lazy(() =>
+            ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceServiceResponse$inboundSchema
+          ),
+        ),
+        accumulated_allowance: types.optional(
+          z.lazy(() =>
+            ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceAccumulatedAllowance$inboundSchema
+          ),
+        ),
+        products_allowance: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceProductsAllowance$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "authorise_consumption": "authoriseConsumption",
+          "currency_code": "currencyCode",
+          "accumulated_allowance": "accumulatedAllowance",
+          "products_allowance": "productsAllowance",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceResponseFromJSON(
@@ -1191,11 +1231,13 @@ export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServ
 export const AuthorisedUsageProduct$inboundSchema: z.ZodMiniType<
   AuthorisedUsageProduct,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-  sku: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+    sku: types.optional(types.string()),
+  })
+);
 
 export function authorisedUsageProductFromJSON(
   jsonString: string,
@@ -1211,17 +1253,19 @@ export function authorisedUsageProductFromJSON(
 export const AuthorisedUsageMeasurementUnit$inboundSchema: z.ZodMiniType<
   AuthorisedUsageMeasurementUnit,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    display_name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "display_name": "displayName",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      display_name: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "display_name": "displayName",
+      });
+    }),
+  )
 );
 
 export function authorisedUsageMeasurementUnitFromJSON(
@@ -1238,17 +1282,21 @@ export function authorisedUsageMeasurementUnitFromJSON(
 export const AuthorisedUsageClassification$inboundSchema: z.ZodMiniType<
   AuthorisedUsageClassification,
   unknown
-> = openEnums.inboundSchema(AuthorisedUsageClassification);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AuthorisedUsageClassification)
+);
 
 /** @internal */
 export const AuthorisedUsageServiceProduct$inboundSchema: z.ZodMiniType<
   AuthorisedUsageServiceProduct,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-  sku: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+    sku: types.optional(types.string()),
+  })
+);
 
 export function authorisedUsageServiceProductFromJSON(
   jsonString: string,
@@ -1264,13 +1312,15 @@ export function authorisedUsageServiceProductFromJSON(
 export const AuthorisedUsageService$inboundSchema: z.ZodMiniType<
   AuthorisedUsageService,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  classification: types.optional(AuthorisedUsageClassification$inboundSchema),
-  product: types.optional(
-    z.lazy(() => AuthorisedUsageServiceProduct$inboundSchema),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    classification: types.optional(AuthorisedUsageClassification$inboundSchema),
+    product: types.optional(
+      z.lazy(() => AuthorisedUsageServiceProduct$inboundSchema),
+    ),
+  })
+);
 
 export function authorisedUsageServiceFromJSON(
   jsonString: string,
@@ -1286,23 +1336,27 @@ export function authorisedUsageServiceFromJSON(
 export const AuthorisedUsage$inboundSchema: z.ZodMiniType<
   AuthorisedUsage,
   unknown
-> = z.pipe(
-  z.object({
-    amount: types.optional(types.number()),
-    usage: types.optional(types.number()),
-    product: types.optional(z.lazy(() => AuthorisedUsageProduct$inboundSchema)),
-    measurement_unit: types.optional(
-      z.lazy(() => AuthorisedUsageMeasurementUnit$inboundSchema),
-    ),
-    services: types.optional(
-      z.array(z.lazy(() => AuthorisedUsageService$inboundSchema)),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "measurement_unit": "measurementUnit",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      amount: types.optional(types.number()),
+      usage: types.optional(types.number()),
+      product: types.optional(
+        z.lazy(() => AuthorisedUsageProduct$inboundSchema),
+      ),
+      measurement_unit: types.optional(
+        z.lazy(() => AuthorisedUsageMeasurementUnit$inboundSchema),
+      ),
+      services: types.optional(
+        z.array(z.lazy(() => AuthorisedUsageService$inboundSchema)),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "measurement_unit": "measurementUnit",
+      });
+    }),
+  )
 );
 
 export function authorisedUsageFromJSON(
@@ -1320,22 +1374,26 @@ export const ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceRespons
   z.ZodMiniType<
     ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      estimation_id: types.optional(types.string()),
-      services: types.optional(z.array(z.lazy(() =>
-        ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceResponse$inboundSchema
-      ))),
-      authorised_usage: types.optional(z.array(z.lazy(() =>
-        AuthorisedUsage$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "estimation_id": "estimationId",
-        "authorised_usage": "authorisedUsage",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        estimation_id: types.optional(types.string()),
+        services: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceServiceResponse$inboundSchema
+          )),
+        ),
+        authorised_usage: types.optional(
+          z.array(z.lazy(() => AuthorisedUsage$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "estimation_id": "estimationId",
+          "authorised_usage": "authorisedUsage",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateAllowanceSelfServiceResourceEstimatesAllowanceResponseFromJSON(

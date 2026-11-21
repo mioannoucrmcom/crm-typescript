@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -323,20 +323,21 @@ export type ComCrmPaymentIntentSelfServiceResourceSetUpIntentsResponse = {
 export const ComCrmPaymentIntentSelfServiceResourceSetUpIntentsPaymentMethodType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmPaymentIntentSelfServiceResourceSetUpIntentsPaymentMethodType
-  > = z.enum(
-    ComCrmPaymentIntentSelfServiceResourceSetUpIntentsPaymentMethodType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmPaymentIntentSelfServiceResourceSetUpIntentsPaymentMethodType)
   );
 
 /** @internal */
-export const Capture$outboundSchema: z.ZodMiniEnum<typeof Capture> = z.enum(
-  Capture,
-);
+export const Capture$outboundSchema: z.ZodMiniEnum<typeof Capture> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(Capture));
 
 /** @internal */
 export const ComCrmPaymentIntentSelfServiceResourceSetUpIntentsCurrencyCode$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmPaymentIntentSelfServiceResourceSetUpIntentsCurrencyCode
-  > = z.enum(ComCrmPaymentIntentSelfServiceResourceSetUpIntentsCurrencyCode);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmPaymentIntentSelfServiceResourceSetUpIntentsCurrencyCode)
+  );
 
 /** @internal */
 export type ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequestBody$Outbound =
@@ -355,28 +356,30 @@ export const ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequestBody$outbo
   z.ZodMiniType<
     ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequestBody$Outbound,
     ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequestBody
-  > = z.pipe(
-    z.object({
-      integrationId: z.optional(z.string()),
-      paymentMethodId: z.optional(z.string()),
-      paymentMethodType: z.optional(
-        ComCrmPaymentIntentSelfServiceResourceSetUpIntentsPaymentMethodType$outboundSchema,
-      ),
-      capture: z.optional(Capture$outboundSchema),
-      amount: z.number(),
-      currencyCode:
-        ComCrmPaymentIntentSelfServiceResourceSetUpIntentsCurrencyCode$outboundSchema,
-      statementInfo: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        integrationId: "integration_id",
-        paymentMethodId: "payment_method_id",
-        paymentMethodType: "payment_method_type",
-        currencyCode: "currency_code",
-        statementInfo: "statement_info",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        integrationId: z.optional(z.string()),
+        paymentMethodId: z.optional(z.string()),
+        paymentMethodType: z.optional(
+          ComCrmPaymentIntentSelfServiceResourceSetUpIntentsPaymentMethodType$outboundSchema,
+        ),
+        capture: z.optional(Capture$outboundSchema),
+        amount: z.number(),
+        currencyCode:
+          ComCrmPaymentIntentSelfServiceResourceSetUpIntentsCurrencyCode$outboundSchema,
+        statementInfo: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          integrationId: "integration_id",
+          paymentMethodId: "payment_method_id",
+          paymentMethodType: "payment_method_type",
+          currencyCode: "currency_code",
+          statementInfo: "statement_info",
+        });
+      }),
+    )
   );
 
 export function comCrmPaymentIntentSelfServiceResourceSetUpIntentsRequestBodyToJSON(
@@ -403,14 +406,14 @@ export const ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequest$outboundS
   z.ZodMiniType<
     ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequest$Outbound,
     ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmPaymentIntentSelfServiceResourceSetUpIntentsRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmPaymentIntentSelfServiceResourceSetUpIntentsRequestToJSON(
   comCrmPaymentIntentSelfServiceResourceSetUpIntentsRequest:
@@ -427,16 +430,20 @@ export const ComCrmPaymentIntentSelfServiceResourceSetUpIntentsState$inboundSche
   z.ZodMiniType<
     ComCrmPaymentIntentSelfServiceResourceSetUpIntentsState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPaymentIntentSelfServiceResourceSetUpIntentsState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPaymentIntentSelfServiceResourceSetUpIntentsState,
+    )
   );
 
 /** @internal */
-export const Parameter$inboundSchema: z.ZodMiniType<Parameter, unknown> = z
-  .object({
-    key: types.optional(types.string()),
-    value: types.optional(types.string()),
-  });
+export const Parameter$inboundSchema: z.ZodMiniType<Parameter, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: types.optional(types.string()),
+      value: types.optional(types.string()),
+    })
+  );
 
 export function parameterFromJSON(
   jsonString: string,
@@ -453,25 +460,27 @@ export const ComCrmPaymentIntentSelfServiceResourceSetUpIntentsResponse$inboundS
   z.ZodMiniType<
     ComCrmPaymentIntentSelfServiceResourceSetUpIntentsResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      client_secret: types.optional(types.string()),
-      state: types.optional(
-        ComCrmPaymentIntentSelfServiceResourceSetUpIntentsState$inboundSchema,
-      ),
-      parameters: types.optional(
-        z.array(z.lazy(() => Parameter$inboundSchema)),
-      ),
-      error_code: types.optional(types.string()),
-      error_description: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "client_secret": "clientSecret",
-        "error_code": "errorCode",
-        "error_description": "errorDescription",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        client_secret: types.optional(types.string()),
+        state: types.optional(
+          ComCrmPaymentIntentSelfServiceResourceSetUpIntentsState$inboundSchema,
+        ),
+        parameters: types.optional(
+          z.array(z.lazy(() => Parameter$inboundSchema)),
+        ),
+        error_code: types.optional(types.string()),
+        error_description: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "client_secret": "clientSecret",
+          "error_code": "errorCode",
+          "error_description": "errorDescription",
+        });
+      }),
+    )
   );
 
 export function comCrmPaymentIntentSelfServiceResourceSetUpIntentsResponseFromJSON(

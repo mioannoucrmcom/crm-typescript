@@ -5,12 +5,12 @@
 import * as z from "zod/v4-mini";
 import { CrmCore } from "../core.js";
 import { encodeJSON, encodeSimple } from "../lib/encodings.js";
+import { matchStatusCode } from "../lib/http.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
-import { RequestOptions } from "../lib/sdks.js";
+import { encodePath, RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
-import { pathToFunc } from "../lib/url.js";
 import { CrmError } from "../models/errors/crm-error.js";
 import {
   ConnectionError,
@@ -30,6 +30,8 @@ import { Result } from "../types/fp.js";
  *
  * @remarks
  * Create a new meter reading for a device.
+ *
+ * If set, this operation will use {@link Security.authorizationSelfService} from the global security.
  */
 export function contactDevicesComCrmDeviceSelfServiceResourceCreateDeviceMeterReading(
   client: CrmCore,
@@ -103,10 +105,14 @@ async function $do(
       charEncoding: "percent",
     }),
   };
-
-  const path = pathToFunc(
+  const pathResult = encodePath(
     "/self-service/v2/contacts/{id}/devices/{dev_id}/meter_readings",
-  )(pathParams);
+    pathParams,
+  );
+  if (!pathResult.ok) {
+    return [pathResult, { status: "invalid" }];
+  }
+  const path = pathResult.value;
 
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
@@ -119,7 +125,7 @@ async function $do(
   const securityInput = secConfig == null
     ? {}
     : { authorizationSelfService: secConfig };
-  const requestSecurity = resolveGlobalSecurity(securityInput);
+  const requestSecurity = resolveGlobalSecurity(securityInput, [0]);
 
   const context = {
     options: client._options,
@@ -153,18 +159,8 @@ async function $do(
 
   const doResult = await client._do(req, {
     context,
-    errorCodes: [
-      "400",
-      "401",
-      "403",
-      "404",
-      "4XX",
-      "500",
-      "502",
-      "503",
-      "504",
-      "5XX",
-    ],
+    isErrorStatusCode: (statusCode: number) =>
+      matchStatusCode({ status: statusCode } as Response, ["4XX", "5XX"]),
     retryConfig: context.retryConfig,
     retryCodes: context.retryCodes,
   });

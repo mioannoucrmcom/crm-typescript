@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -972,13 +972,17 @@ export type ComCrmContactSelfServiceResourceUpdatePaymentMethodResponse = {
 export const ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountType
-  > = z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountType)
+  );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceUpdatePaymentMethodType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceUpdatePaymentMethodType
-  > = z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodType)
+  );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceUpdatePaymentMethodMandate$Outbound =
@@ -994,21 +998,23 @@ export const ComCrmContactSelfServiceResourceUpdatePaymentMethodMandate$outbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdatePaymentMethodMandate$Outbound,
     ComCrmContactSelfServiceResourceUpdatePaymentMethodMandate
-  > = z.pipe(
-    z.object({
-      type: z.optional(
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodType$outboundSchema,
-      ),
-      reference: z.optional(z.string()),
-      signDate: z.optional(z.int()),
-      terminationDate: z.optional(z.int()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        signDate: "sign_date",
-        terminationDate: "termination_date",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: z.optional(
+          ComCrmContactSelfServiceResourceUpdatePaymentMethodType$outboundSchema,
+        ),
+        reference: z.optional(z.string()),
+        signDate: z.optional(z.int()),
+        terminationDate: z.optional(z.int()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          signDate: "sign_date",
+          terminationDate: "termination_date",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdatePaymentMethodMandateToJSON(
@@ -1025,7 +1031,9 @@ export function comCrmContactSelfServiceResourceUpdatePaymentMethodMandateToJSON
 export const ComCrmContactSelfServiceResourceUpdatePaymentMethodGateway$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceUpdatePaymentMethodGateway
-  > = z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodGateway);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodGateway)
+  );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceUpdatePaymentMethodGatewayToken$Outbound =
@@ -1042,24 +1050,26 @@ export const ComCrmContactSelfServiceResourceUpdatePaymentMethodGatewayToken$out
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdatePaymentMethodGatewayToken$Outbound,
     ComCrmContactSelfServiceResourceUpdatePaymentMethodGatewayToken
-  > = z.pipe(
-    z.object({
-      id: z.optional(z.string()),
-      gateway: z.optional(
-        z.nullable(
-          ComCrmContactSelfServiceResourceUpdatePaymentMethodGateway$outboundSchema,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.optional(z.string()),
+        gateway: z.optional(
+          z.nullable(
+            ComCrmContactSelfServiceResourceUpdatePaymentMethodGateway$outboundSchema,
+          ),
         ),
-      ),
-      token: z.string(),
-      alternativeToken: z.optional(z.string()),
-      integrationId: z.optional(z.nullable(z.string())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        alternativeToken: "alternative_token",
-        integrationId: "integration_id",
-      });
-    }),
+        token: z.string(),
+        alternativeToken: z.optional(z.string()),
+        integrationId: z.optional(z.nullable(z.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          alternativeToken: "alternative_token",
+          integrationId: "integration_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdatePaymentMethodGatewayTokenToJSON(
@@ -1076,7 +1086,9 @@ export function comCrmContactSelfServiceResourceUpdatePaymentMethodGatewayTokenT
 export const ComCrmContactSelfServiceResourceUpdatePaymentMethodAddressCountry$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceUpdatePaymentMethodAddressCountry
-  > = z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodAddressCountry);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodAddressCountry)
+  );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolderDetails$Outbound =
@@ -1096,31 +1108,33 @@ export const ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolderDet
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolderDetails$Outbound,
     ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolderDetails
-  > = z.pipe(
-    z.object({
-      accountHolderName: z.optional(z.string()),
-      addressLine1: z.optional(z.string()),
-      addressLine2: z.optional(z.string()),
-      addressCity: z.optional(z.string()),
-      addressZip: z.optional(z.string()),
-      addressState: z.optional(z.string()),
-      addressCountry: z.optional(
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodAddressCountry$outboundSchema,
-      ),
-      useBillingAddress: z.optional(z.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        accountHolderName: "account_holder_name",
-        addressLine1: "address_line_1",
-        addressLine2: "address_line_2",
-        addressCity: "address_city",
-        addressZip: "address_zip",
-        addressState: "address_state",
-        addressCountry: "address_country",
-        useBillingAddress: "use_billing_address",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        accountHolderName: z.optional(z.string()),
+        addressLine1: z.optional(z.string()),
+        addressLine2: z.optional(z.string()),
+        addressCity: z.optional(z.string()),
+        addressZip: z.optional(z.string()),
+        addressState: z.optional(z.string()),
+        addressCountry: z.optional(
+          ComCrmContactSelfServiceResourceUpdatePaymentMethodAddressCountry$outboundSchema,
+        ),
+        useBillingAddress: z.optional(z.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          accountHolderName: "account_holder_name",
+          addressLine1: "address_line_1",
+          addressLine2: "address_line_2",
+          addressCity: "address_city",
+          addressZip: "address_zip",
+          addressState: "address_state",
+          addressCountry: "address_country",
+          useBillingAddress: "use_billing_address",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolderDetailsToJSON(
@@ -1139,13 +1153,17 @@ export function comCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolder
 export const ComCrmContactSelfServiceResourceUpdatePaymentMethodCountry$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceUpdatePaymentMethodCountry
-  > = z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodCountry);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodCountry)
+  );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceUpdatePaymentMethodCurrency$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceUpdatePaymentMethodCurrency
-  > = z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodCurrency);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceUpdatePaymentMethodCurrency)
+  );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountDebit$Outbound =
@@ -1180,48 +1198,56 @@ export const ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountDebit$out
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountDebit$Outbound,
     ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountDebit
-  > = z.pipe(
-    z.object({
-      accountName: z.optional(z.string()),
-      accountNumber: z.optional(z.nullable(z.string())),
-      iban: z.optional(z.nullable(z.string())),
-      sortCode: z.optional(z.nullable(z.string())),
-      routingNumber: z.optional(z.nullable(z.string())),
-      bank: z.optional(z.nullable(z.string())),
-      bankCode: z.optional(z.nullable(z.string())),
-      branch: z.optional(z.nullable(z.string())),
-      swift: z.optional(z.nullable(z.string())),
-      accountType: z.optional(
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountType$outboundSchema,
-      ),
-      mandate: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodMandate$outboundSchema
-      )),
-      gatewayToken: z.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodGatewayToken$outboundSchema
-      ))),
-      accountHolderDetails: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolderDetails$outboundSchema
-      )),
-      country: z.optional(
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodCountry$outboundSchema,
-      ),
-      currency: z.optional(
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodCurrency$outboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        accountName: "account_name",
-        accountNumber: "account_number",
-        sortCode: "sort_code",
-        routingNumber: "routing_number",
-        bankCode: "bank_code",
-        accountType: "account_type",
-        gatewayToken: "gateway_token",
-        accountHolderDetails: "account_holder_details",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        accountName: z.optional(z.string()),
+        accountNumber: z.optional(z.nullable(z.string())),
+        iban: z.optional(z.nullable(z.string())),
+        sortCode: z.optional(z.nullable(z.string())),
+        routingNumber: z.optional(z.nullable(z.string())),
+        bank: z.optional(z.nullable(z.string())),
+        bankCode: z.optional(z.nullable(z.string())),
+        branch: z.optional(z.nullable(z.string())),
+        swift: z.optional(z.nullable(z.string())),
+        accountType: z.optional(
+          ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountType$outboundSchema,
+        ),
+        mandate: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceUpdatePaymentMethodMandate$outboundSchema
+          ),
+        ),
+        gatewayToken: z.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceUpdatePaymentMethodGatewayToken$outboundSchema
+          )),
+        ),
+        accountHolderDetails: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountHolderDetails$outboundSchema
+          ),
+        ),
+        country: z.optional(
+          ComCrmContactSelfServiceResourceUpdatePaymentMethodCountry$outboundSchema,
+        ),
+        currency: z.optional(
+          ComCrmContactSelfServiceResourceUpdatePaymentMethodCurrency$outboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          accountName: "account_name",
+          accountNumber: "account_number",
+          sortCode: "sort_code",
+          routingNumber: "routing_number",
+          bankCode: "bank_code",
+          accountType: "account_type",
+          gatewayToken: "gateway_token",
+          accountHolderDetails: "account_holder_details",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdatePaymentMethodAccountDebitToJSON(
@@ -1247,21 +1273,23 @@ export const ComCrmContactSelfServiceResourceUpdatePaymentMethodCard$outboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdatePaymentMethodCard$Outbound,
     ComCrmContactSelfServiceResourceUpdatePaymentMethodCard
-  > = z.pipe(
-    z.object({
-      expMonth: z.nullable(z.int()),
-      expYear: z.nullable(z.int()),
-      alternativeToken: z.optional(z.nullable(z.string())),
-      integrationId: z.optional(z.nullable(z.string())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        expMonth: "exp_month",
-        expYear: "exp_year",
-        alternativeToken: "alternative_token",
-        integrationId: "integration_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        expMonth: z.nullable(z.int()),
+        expYear: z.nullable(z.int()),
+        alternativeToken: z.optional(z.nullable(z.string())),
+        integrationId: z.optional(z.nullable(z.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          expMonth: "exp_month",
+          expYear: "exp_year",
+          alternativeToken: "alternative_token",
+          integrationId: "integration_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdatePaymentMethodCardToJSON(
@@ -1294,24 +1322,30 @@ export const ComCrmContactSelfServiceResourceUpdatePaymentMethodRequestBody$outb
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdatePaymentMethodRequestBody$Outbound,
     ComCrmContactSelfServiceResourceUpdatePaymentMethodRequestBody
-  > = z.pipe(
-    z.object({
-      name: z.optional(z.string()),
-      isPrimary: z.optional(z.boolean()),
-      notes: z.optional(z.string()),
-      accountDebit: z.optional(z.nullable(z.lazy(() =>
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountDebit$outboundSchema
-      ))),
-      card: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodCard$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        isPrimary: "is_primary",
-        accountDebit: "account_debit",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        name: z.optional(z.string()),
+        isPrimary: z.optional(z.boolean()),
+        notes: z.optional(z.string()),
+        accountDebit: z.optional(
+          z.nullable(z.lazy(() =>
+            ComCrmContactSelfServiceResourceUpdatePaymentMethodAccountDebit$outboundSchema
+          )),
+        ),
+        card: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceUpdatePaymentMethodCard$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          isPrimary: "is_primary",
+          accountDebit: "account_debit",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdatePaymentMethodRequestBodyToJSON(
@@ -1339,19 +1373,23 @@ export const ComCrmContactSelfServiceResourceUpdatePaymentMethodRequest$outbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdatePaymentMethodRequest$Outbound,
     ComCrmContactSelfServiceResourceUpdatePaymentMethodRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      paymentMethodId: z.string(),
-      body: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceUpdatePaymentMethodRequestBody$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        paymentMethodId: "payment_method_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        paymentMethodId: z.string(),
+        body: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceUpdatePaymentMethodRequestBody$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          paymentMethodId: "payment_method_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdatePaymentMethodRequestToJSON(
@@ -1369,9 +1407,11 @@ export const ComCrmContactSelfServiceResourceUpdatePaymentMethodResponse$inbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdatePaymentMethodResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceUpdatePaymentMethodResponseFromJSON(
   jsonString: string,

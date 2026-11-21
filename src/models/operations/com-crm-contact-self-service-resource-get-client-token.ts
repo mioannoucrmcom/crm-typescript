@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceGetClientTokenRequest = {
   id: string;
@@ -21,16 +22,18 @@ export const ComCrmContactSelfServiceResourceGetClientTokenRequest$outboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetClientTokenRequest$Outbound,
     ComCrmContactSelfServiceResourceGetClientTokenRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      integrationId: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        integrationId: "integration_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        integrationId: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          integrationId: "integration_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetClientTokenRequestToJSON(

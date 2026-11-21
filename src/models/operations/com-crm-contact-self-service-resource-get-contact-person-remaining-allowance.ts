@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -287,8 +287,10 @@ export type ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRe
 export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceOrder
-  > = z.enum(
-    ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceOrder,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceOrder,
+    )
   );
 
 /** @internal */
@@ -313,35 +315,37 @@ export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceR
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRequest$Outbound,
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      relationshipId: z.string(),
-      categoryId: z.optional(z.string()),
-      familyId: z.optional(z.string()),
-      productId: z.optional(z.string()),
-      productSku: z.optional(z.string()),
-      typeId: z.optional(z.string()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        relationshipId: "relationship_id",
-        categoryId: "category_id",
-        familyId: "family_id",
-        productId: "product_id",
-        productSku: "product_sku",
-        typeId: "type_id",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        relationshipId: z.string(),
+        categoryId: z.optional(z.string()),
+        familyId: z.optional(z.string()),
+        productId: z.optional(z.string()),
+        productSku: z.optional(z.string()),
+        typeId: z.optional(z.string()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          relationshipId: "relationship_id",
+          categoryId: "category_id",
+          familyId: "family_id",
+          productId: "product_id",
+          productSku: "product_sku",
+          typeId: "type_id",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRequestToJSON(
@@ -361,18 +365,20 @@ export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceP
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowancePaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactPersonRemainingAllowancePagingFromJSON(
@@ -395,8 +401,10 @@ export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceI
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceItemType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceItemType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceItemType,
+    )
   );
 
 /** @internal */
@@ -404,16 +412,18 @@ export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceM
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceMeasurementUnit,
     unknown
-  > = z.pipe(
-    z.object({
-      name: types.optional(types.string()),
-      display_name: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "display_name": "displayName",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        name: types.optional(types.string()),
+        display_name: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "display_name": "displayName",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceMeasurementUnitFromJSON(
@@ -436,19 +446,21 @@ export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceC
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceCashLimits,
     unknown
-  > = z.pipe(
-    z.object({
-      per_transaction: types.optional(types.number()),
-      per_day: types.optional(types.number()),
-      per_billing_cycle: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "per_transaction": "perTransaction",
-        "per_day": "perDay",
-        "per_billing_cycle": "perBillingCycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        per_transaction: types.optional(types.number()),
+        per_day: types.optional(types.number()),
+        per_billing_cycle: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "per_transaction": "perTransaction",
+          "per_day": "perDay",
+          "per_billing_cycle": "perBillingCycle",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceCashLimitsFromJSON(
@@ -471,19 +483,21 @@ export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceU
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceUsageLimits,
     unknown
-  > = z.pipe(
-    z.object({
-      per_transaction: types.optional(types.number()),
-      per_day: types.optional(types.number()),
-      per_billing_cycle: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "per_transaction": "perTransaction",
-        "per_day": "perDay",
-        "per_billing_cycle": "perBillingCycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        per_transaction: types.optional(types.number()),
+        per_day: types.optional(types.number()),
+        per_billing_cycle: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "per_transaction": "perTransaction",
+          "per_day": "perDay",
+          "per_billing_cycle": "perBillingCycle",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceUsageLimitsFromJSON(
@@ -506,19 +520,21 @@ export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceR
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingCash,
     unknown
-  > = z.pipe(
-    z.object({
-      per_transaction: types.optional(types.number()),
-      per_day: types.optional(types.number()),
-      per_billing_cycle: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "per_transaction": "perTransaction",
-        "per_day": "perDay",
-        "per_billing_cycle": "perBillingCycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        per_transaction: types.optional(types.number()),
+        per_day: types.optional(types.number()),
+        per_billing_cycle: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "per_transaction": "perTransaction",
+          "per_day": "perDay",
+          "per_billing_cycle": "perBillingCycle",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingCashFromJSON(
@@ -541,19 +557,21 @@ export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceR
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingUsage,
     unknown
-  > = z.pipe(
-    z.object({
-      per_transaction: types.optional(types.number()),
-      per_day: types.optional(types.number()),
-      per_billing_cycle: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "per_transaction": "perTransaction",
-        "per_day": "perDay",
-        "per_billing_cycle": "perBillingCycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        per_transaction: types.optional(types.number()),
+        per_day: types.optional(types.number()),
+        per_billing_cycle: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "per_transaction": "perTransaction",
+          "per_day": "perDay",
+          "per_billing_cycle": "perBillingCycle",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingUsageFromJSON(
@@ -576,45 +594,57 @@ export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceC
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      group_id: types.optional(types.string()),
-      currency: types.optional(types.string()),
-      item_type: types.optional(
-        ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceItemType$inboundSchema,
-      ),
-      item_id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      sku: types.optional(types.string()),
-      measurement_unit: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceMeasurementUnit$inboundSchema
-      )),
-      cash_limits: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceCashLimits$inboundSchema
-      )),
-      usage_limits: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceUsageLimits$inboundSchema
-      )),
-      remaining_cash: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingCash$inboundSchema
-      )),
-      remaining_usage: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingUsage$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "group_id": "groupId",
-        "item_type": "itemType",
-        "item_id": "itemId",
-        "measurement_unit": "measurementUnit",
-        "cash_limits": "cashLimits",
-        "usage_limits": "usageLimits",
-        "remaining_cash": "remainingCash",
-        "remaining_usage": "remainingUsage",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        group_id: types.optional(types.string()),
+        currency: types.optional(types.string()),
+        item_type: types.optional(
+          ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceItemType$inboundSchema,
+        ),
+        item_id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        sku: types.optional(types.string()),
+        measurement_unit: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceMeasurementUnit$inboundSchema
+          ),
+        ),
+        cash_limits: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceCashLimits$inboundSchema
+          ),
+        ),
+        usage_limits: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceUsageLimits$inboundSchema
+          ),
+        ),
+        remaining_cash: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingCash$inboundSchema
+          ),
+        ),
+        remaining_usage: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceRemainingUsage$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "group_id": "groupId",
+          "item_type": "itemType",
+          "item_id": "itemId",
+          "measurement_unit": "measurementUnit",
+          "cash_limits": "cashLimits",
+          "usage_limits": "usageLimits",
+          "remaining_cash": "remainingCash",
+          "remaining_usage": "remainingUsage",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceContentFromJSON(
@@ -637,18 +667,16 @@ export const ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceR
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowancePaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetContactPersonRemainingAllowanceResponseFromJSON(
   jsonString: string,

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestRequest =
   {
@@ -23,9 +24,11 @@ export const ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestReques
   z.ZodMiniType<
     ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestRequest$Outbound,
     ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestRequest
-  > = z.object({
-    token: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      token: z.string(),
+    })
+  );
 
 export function comCrmApprovalRequestSelfServiceResourceRejectApprovalRequestRequestToJSON(
   comCrmApprovalRequestSelfServiceResourceRejectApprovalRequestRequest:

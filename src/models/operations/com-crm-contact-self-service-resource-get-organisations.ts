@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -226,19 +226,21 @@ export const ComCrmContactSelfServiceResourceGetOrganisationsRequest$outboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOrganisationsRequest$Outbound,
     ComCrmContactSelfServiceResourceGetOrganisationsRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      includeWallet: z.optional(z.boolean()),
-      name: z.optional(z.string()),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        includeWallet: "include_wallet",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        includeWallet: z.optional(z.boolean()),
+        name: z.optional(z.string()),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          includeWallet: "include_wallet",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetOrganisationsRequestToJSON(
@@ -256,18 +258,20 @@ export const ComCrmContactSelfServiceResourceGetOrganisationsPaging$inboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOrganisationsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetOrganisationsPagingFromJSON(
@@ -290,8 +294,10 @@ export const ComCrmContactSelfServiceResourceGetOrganisationsUsageType$inboundSc
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOrganisationsUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetOrganisationsUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetOrganisationsUsageType,
+    )
   );
 
 /** @internal */
@@ -299,11 +305,13 @@ export const ComCrmContactSelfServiceResourceGetOrganisationsMedia$inboundSchema
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOrganisationsMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetOrganisationsMediaFromJSON(
   jsonString: string,
@@ -326,34 +334,38 @@ export const ComCrmContactSelfServiceResourceGetOrganisationsCreative$inboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOrganisationsCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmContactSelfServiceResourceGetOrganisationsUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetOrganisationsMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmContactSelfServiceResourceGetOrganisationsUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetOrganisationsMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetOrganisationsCreativeFromJSON(
@@ -376,18 +388,20 @@ export const ComCrmContactSelfServiceResourceGetOrganisationsWallet$inboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOrganisationsWallet,
     unknown
-  > = z.pipe(
-    z.object({
-      wallet_id: types.optional(types.string()),
-      balance: types.optional(types.number()),
-      currency_code: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "wallet_id": "walletId",
-        "currency_code": "currencyCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        wallet_id: types.optional(types.string()),
+        balance: types.optional(types.number()),
+        currency_code: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "wallet_id": "walletId",
+          "currency_code": "currencyCode",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetOrganisationsWalletFromJSON(
@@ -410,20 +424,18 @@ export const ComCrmContactSelfServiceResourceGetOrganisationsContent$inboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOrganisationsContent,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    creatives: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      creatives: types.optional(z.array(z.lazy(() =>
         ComCrmContactSelfServiceResourceGetOrganisationsCreative$inboundSchema
-      )),
-    ),
-    wallet: types.optional(
-      z.lazy(() =>
+      ))),
+      wallet: types.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceGetOrganisationsWallet$inboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetOrganisationsContentFromJSON(
   jsonString: string,
@@ -445,18 +457,16 @@ export const ComCrmContactSelfServiceResourceGetOrganisationsResponse$inboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOrganisationsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceGetOrganisationsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetOrganisationsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmContactSelfServiceResourceGetOrganisationsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetOrganisationsResponseFromJSON(
   jsonString: string,

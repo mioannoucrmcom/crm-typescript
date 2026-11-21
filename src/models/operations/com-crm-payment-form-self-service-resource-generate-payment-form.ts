@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -295,17 +295,19 @@ export const ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormSecurity$out
   z.ZodMiniType<
     ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormSecurity$Outbound,
     ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorizationSelfService: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-        authorizationSelfService: "authorization_self_service",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorizationSelfService: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+          authorizationSelfService: "authorization_self_service",
+        });
+      }),
+    )
   );
 
 export function comCrmPaymentFormSelfServiceResourceGeneratePaymentFormSecurityToJSON(
@@ -322,21 +324,25 @@ export function comCrmPaymentFormSelfServiceResourceGeneratePaymentFormSecurityT
 export const ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormCurrencyCode$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormCurrencyCode
-  > = z.enum(
-    ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormCurrencyCode)
   );
 
 /** @internal */
 export const ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormDeviceType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormDeviceType
-  > = z.enum(ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormDeviceType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormDeviceType)
+  );
 
 /** @internal */
 export const ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormType
-  > = z.enum(ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormType)
+  );
 
 /** @internal */
 export type ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormRequest$Outbound =
@@ -358,35 +364,37 @@ export const ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormRequest$outb
   z.ZodMiniType<
     ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormRequest$Outbound,
     ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormRequest
-  > = z.pipe(
-    z.object({
-      amount: z.number(),
-      backUrl: z.optional(z.string()),
-      backUrlName: z.optional(z.string()),
-      currencyCode:
-        ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormCurrencyCode$outboundSchema,
-      deviceType: z.optional(
-        ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormDeviceType$outboundSchema,
-      ),
-      estimationId: z.optional(z.string()),
-      integrationId: z.string(),
-      paymentMethodId: z.optional(z.string()),
-      redirectUrl: z.optional(z.string()),
-      type:
-        ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormType$outboundSchema,
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        backUrl: "back_url",
-        backUrlName: "back_url_name",
-        currencyCode: "currency_code",
-        deviceType: "device_type",
-        estimationId: "estimation_id",
-        integrationId: "integration_id",
-        paymentMethodId: "payment_method_id",
-        redirectUrl: "redirect_url",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        amount: z.number(),
+        backUrl: z.optional(z.string()),
+        backUrlName: z.optional(z.string()),
+        currencyCode:
+          ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormCurrencyCode$outboundSchema,
+        deviceType: z.optional(
+          ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormDeviceType$outboundSchema,
+        ),
+        estimationId: z.optional(z.string()),
+        integrationId: z.string(),
+        paymentMethodId: z.optional(z.string()),
+        redirectUrl: z.optional(z.string()),
+        type:
+          ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormType$outboundSchema,
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          backUrl: "back_url",
+          backUrlName: "back_url_name",
+          currencyCode: "currency_code",
+          deviceType: "device_type",
+          estimationId: "estimation_id",
+          integrationId: "integration_id",
+          paymentMethodId: "payment_method_id",
+          redirectUrl: "redirect_url",
+        });
+      }),
+    )
   );
 
 export function comCrmPaymentFormSelfServiceResourceGeneratePaymentFormRequestToJSON(
@@ -404,17 +412,19 @@ export const ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormResponse$inb
   z.ZodMiniType<
     ComCrmPaymentFormSelfServiceResourceGeneratePaymentFormResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      form_html: types.optional(types.string()),
-      form_url: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "form_html": "formHtml",
-        "form_url": "formUrl",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        form_html: types.optional(types.string()),
+        form_url: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "form_html": "formHtml",
+          "form_url": "formUrl",
+        });
+      }),
+    )
   );
 
 export function comCrmPaymentFormSelfServiceResourceGeneratePaymentFormResponseFromJSON(

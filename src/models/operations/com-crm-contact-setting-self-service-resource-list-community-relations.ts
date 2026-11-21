@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -111,8 +111,8 @@ export type ComCrmContactSettingSelfServiceResourceListCommunityRelationsRespons
 export const ComCrmContactSettingSelfServiceResourceListCommunityRelationsOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSettingSelfServiceResourceListCommunityRelationsOrder
-  > = z.enum(
-    ComCrmContactSettingSelfServiceResourceListCommunityRelationsOrder,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSettingSelfServiceResourceListCommunityRelationsOrder)
   );
 
 /** @internal */
@@ -131,22 +131,24 @@ export const ComCrmContactSettingSelfServiceResourceListCommunityRelationsReques
   z.ZodMiniType<
     ComCrmContactSettingSelfServiceResourceListCommunityRelationsRequest$Outbound,
     ComCrmContactSettingSelfServiceResourceListCommunityRelationsRequest
-  > = z.pipe(
-    z.object({
-      includeTotal: z.optional(z.boolean()),
-      name: z.optional(z.string()),
-      order: z.optional(
-        ComCrmContactSettingSelfServiceResourceListCommunityRelationsOrder$outboundSchema,
-      ),
-      page: z.optional(z.int()),
-      size: z.optional(z.int()),
-      sort: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        includeTotal: z.optional(z.boolean()),
+        name: z.optional(z.string()),
+        order: z.optional(
+          ComCrmContactSettingSelfServiceResourceListCommunityRelationsOrder$outboundSchema,
+        ),
+        page: z.optional(z.int()),
+        size: z.optional(z.int()),
+        sort: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSettingSelfServiceResourceListCommunityRelationsRequestToJSON(
@@ -166,18 +168,20 @@ export const ComCrmContactSettingSelfServiceResourceListCommunityRelationsPaging
   z.ZodMiniType<
     ComCrmContactSettingSelfServiceResourceListCommunityRelationsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSettingSelfServiceResourceListCommunityRelationsPagingFromJSON(
@@ -200,17 +204,19 @@ export const ComCrmContactSettingSelfServiceResourceListCommunityRelationsConten
   z.ZodMiniType<
     ComCrmContactSettingSelfServiceResourceListCommunityRelationsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      is_default: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_default": "isDefault",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        is_default: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_default": "isDefault",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSettingSelfServiceResourceListCommunityRelationsContentFromJSON(
@@ -233,18 +239,16 @@ export const ComCrmContactSettingSelfServiceResourceListCommunityRelationsRespon
   z.ZodMiniType<
     ComCrmContactSettingSelfServiceResourceListCommunityRelationsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmContactSettingSelfServiceResourceListCommunityRelationsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmContactSettingSelfServiceResourceListCommunityRelationsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmContactSettingSelfServiceResourceListCommunityRelationsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmContactSettingSelfServiceResourceListCommunityRelationsResponseFromJSON(
   jsonString: string,

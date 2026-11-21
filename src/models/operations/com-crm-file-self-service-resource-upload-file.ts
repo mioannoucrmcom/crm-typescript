@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { blobLikeSchema } from "../../types/blobs.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -69,15 +69,17 @@ export const ComCrmFileSelfServiceResourceUploadFileFile$outboundSchema:
   z.ZodMiniType<
     ComCrmFileSelfServiceResourceUploadFileFile$Outbound,
     ComCrmFileSelfServiceResourceUploadFileFile
-  > = z.object({
-    fileName: z.string(),
-    content: z.union([
-      z.custom<ReadableStream<Uint8Array>>(x => x instanceof ReadableStream),
-      z.custom<Blob>(x => x instanceof Blob),
-      z.custom<ArrayBuffer>(x => x instanceof ArrayBuffer),
-      z.custom<Uint8Array>(x => x instanceof Uint8Array),
-    ]),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      fileName: z.string(),
+      content: z.union([
+        z.custom<ReadableStream<Uint8Array>>(x => x instanceof ReadableStream),
+        z.custom<Blob>(x => x instanceof Blob),
+        z.custom<ArrayBuffer>(x => x instanceof ArrayBuffer),
+        z.custom<Uint8Array>(x => x instanceof Uint8Array),
+      ]),
+    })
+  );
 
 export function comCrmFileSelfServiceResourceUploadFileFileToJSON(
   comCrmFileSelfServiceResourceUploadFileFile:
@@ -93,7 +95,7 @@ export function comCrmFileSelfServiceResourceUploadFileFileToJSON(
 /** @internal */
 export const FileEntityType$outboundSchema: z.ZodMiniEnum<
   typeof FileEntityType
-> = z.enum(FileEntityType);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(FileEntityType));
 
 /** @internal */
 export type ComCrmFileSelfServiceResourceUploadFileRequest$Outbound = {
@@ -106,13 +108,17 @@ export const ComCrmFileSelfServiceResourceUploadFileRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmFileSelfServiceResourceUploadFileRequest$Outbound,
     ComCrmFileSelfServiceResourceUploadFileRequest
-  > = z.object({
-    file: z.union([
-      z.lazy(() => ComCrmFileSelfServiceResourceUploadFileFile$outboundSchema),
-      blobLikeSchema,
-    ]),
-    fileEntityType: z.optional(FileEntityType$outboundSchema),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      file: z.union([
+        z.lazy(() =>
+          ComCrmFileSelfServiceResourceUploadFileFile$outboundSchema
+        ),
+        blobLikeSchema,
+      ]),
+      fileEntityType: z.optional(FileEntityType$outboundSchema),
+    })
+  );
 
 export function comCrmFileSelfServiceResourceUploadFileRequestToJSON(
   comCrmFileSelfServiceResourceUploadFileRequest:
@@ -127,10 +133,12 @@ export function comCrmFileSelfServiceResourceUploadFileRequestToJSON(
 
 /** @internal */
 export const ComCrmFileSelfServiceResourceUploadFileResponse$inboundSchema:
-  z.ZodMiniType<ComCrmFileSelfServiceResourceUploadFileResponse, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmFileSelfServiceResourceUploadFileResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function comCrmFileSelfServiceResourceUploadFileResponseFromJSON(
   jsonString: string,

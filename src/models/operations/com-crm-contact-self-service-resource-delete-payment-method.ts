@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceDeletePaymentMethodRequest = {
   id: string;
@@ -22,16 +23,18 @@ export const ComCrmContactSelfServiceResourceDeletePaymentMethodRequest$outbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceDeletePaymentMethodRequest$Outbound,
     ComCrmContactSelfServiceResourceDeletePaymentMethodRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      paymentMethodId: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        paymentMethodId: "payment_method_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        paymentMethodId: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          paymentMethodId: "payment_method_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceDeletePaymentMethodRequestToJSON(

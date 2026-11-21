@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -42,15 +42,17 @@ export const ComCrmContactSelfServiceResourceGetOIDCConfigurationSecurity$outbou
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOIDCConfigurationSecurity$Outbound,
     ComCrmContactSelfServiceResourceGetOIDCConfigurationSecurity
-  > = z.pipe(
-    z.object({
-      publicAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        publicAPIKey: "Public_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        publicAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          publicAPIKey: "Public_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetOIDCConfigurationSecurityToJSON(
@@ -75,16 +77,18 @@ export const ComCrmContactSelfServiceResourceGetOIDCConfigurationRequest$outboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOIDCConfigurationRequest$Outbound,
     ComCrmContactSelfServiceResourceGetOIDCConfigurationRequest
-  > = z.pipe(
-    z.object({
-      type: z.string(),
-      redirectUrl: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        redirectUrl: "redirect_url",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: z.string(),
+        redirectUrl: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          redirectUrl: "redirect_url",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetOIDCConfigurationRequestToJSON(
@@ -102,15 +106,17 @@ export const ComCrmContactSelfServiceResourceGetOIDCConfigurationResponse$inboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetOIDCConfigurationResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      authorization_url: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "authorization_url": "authorizationUrl",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        authorization_url: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "authorization_url": "authorizationUrl",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetOIDCConfigurationResponseFromJSON(

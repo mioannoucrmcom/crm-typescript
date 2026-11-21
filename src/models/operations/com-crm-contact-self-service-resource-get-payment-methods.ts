@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -2285,15 +2285,19 @@ export type ComCrmContactSelfServiceResourceGetPaymentMethodsResponse = {
 export const ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamClassification$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamClassification
-  > = z.enum(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamClassification,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamClassification,
+    )
   );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamType
-  > = z.enum(ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamType)
+  );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceGetPaymentMethodsRequest$Outbound =
@@ -2310,24 +2314,26 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsRequest$outboundSc
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsRequest$Outbound,
     ComCrmContactSelfServiceResourceGetPaymentMethodsRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      classification: z.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamClassification$outboundSchema,
-      ),
-      financialTypes: z.optional(z.string()),
-      isRewards: z.optional(z.boolean()),
-      type: z.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamType$outboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        financialTypes: "financial_types",
-        isRewards: "is_rewards",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        classification: z.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamClassification$outboundSchema,
+        ),
+        financialTypes: z.optional(z.string()),
+        isRewards: z.optional(z.boolean()),
+        type: z.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsQueryParamType$outboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          financialTypes: "financial_types",
+          isRewards: "is_rewards",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsRequestToJSON(
@@ -2345,18 +2351,20 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsPaging$inboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsPagingFromJSON(
@@ -2379,8 +2387,10 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsPaymentMethodType$
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsPaymentMethodType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsPaymentMethodType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsPaymentMethodType,
+    )
   );
 
 /** @internal */
@@ -2388,8 +2398,10 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsCountryOfIssue$inb
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsCountryOfIssue,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsCountryOfIssue,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsCountryOfIssue,
+    )
   );
 
 /** @internal */
@@ -2397,8 +2409,10 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetailsA
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetailsAddressCountry,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetailsAddressCountry,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetailsAddressCountry,
+    )
   );
 
 /** @internal */
@@ -2406,31 +2420,33 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetails$
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetails,
     unknown
-  > = z.pipe(
-    z.object({
-      card_holder_name: types.optional(types.string()),
-      address_line_1: types.optional(types.string()),
-      address_line_2: types.optional(types.string()),
-      address_city: types.optional(types.string()),
-      address_zip: types.optional(types.string()),
-      address_state: types.optional(types.string()),
-      address_country: types.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetailsAddressCountry$inboundSchema,
-      ),
-      use_billing_address: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "card_holder_name": "cardHolderName",
-        "address_line_1": "addressLine1",
-        "address_line_2": "addressLine2",
-        "address_city": "addressCity",
-        "address_zip": "addressZip",
-        "address_state": "addressState",
-        "address_country": "addressCountry",
-        "use_billing_address": "useBillingAddress",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        card_holder_name: types.optional(types.string()),
+        address_line_1: types.optional(types.string()),
+        address_line_2: types.optional(types.string()),
+        address_city: types.optional(types.string()),
+        address_zip: types.optional(types.string()),
+        address_state: types.optional(types.string()),
+        address_country: types.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetailsAddressCountry$inboundSchema,
+        ),
+        use_billing_address: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "card_holder_name": "cardHolderName",
+          "address_line_1": "addressLine1",
+          "address_line_2": "addressLine2",
+          "address_city": "addressCity",
+          "address_zip": "addressZip",
+          "address_state": "addressState",
+          "address_country": "addressCountry",
+          "use_billing_address": "useBillingAddress",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetailsFromJSON(
@@ -2452,10 +2468,12 @@ export function comCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetai
 export const CardIntegration$inboundSchema: z.ZodMiniType<
   CardIntegration,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function cardIntegrationFromJSON(
   jsonString: string,
@@ -2472,13 +2490,15 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsCardGatewayToken$i
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsCardGatewayToken,
     unknown
-  > = z.object({
-    gateway: types.optional(types.string()),
-    token: types.optional(types.string()),
-    integration: z.optional(
-      z.nullable(z.lazy(() => CardIntegration$inboundSchema)),
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      gateway: types.optional(types.string()),
+      token: types.optional(types.string()),
+      integration: z.optional(
+        z.nullable(z.lazy(() => CardIntegration$inboundSchema)),
+      ),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsCardGatewayTokenFromJSON(
   jsonString: string,
@@ -2500,35 +2520,41 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsCard$inboundSchema
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsCard,
     unknown
-  > = z.pipe(
-    z.object({
-      name: types.optional(types.string()),
-      first6: types.optional(types.string()),
-      last4: types.optional(types.string()),
-      brand: types.optional(types.string()),
-      funding_type: types.optional(types.string()),
-      expiration_month: types.optional(types.number()),
-      expiration_year: types.optional(types.number()),
-      country_of_issue: types.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsCountryOfIssue$inboundSchema,
-      ),
-      card_holder_details: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetails$inboundSchema
-      )),
-      gateway_token: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsCardGatewayToken$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "funding_type": "fundingType",
-        "expiration_month": "expirationMonth",
-        "expiration_year": "expirationYear",
-        "country_of_issue": "countryOfIssue",
-        "card_holder_details": "cardHolderDetails",
-        "gateway_token": "gatewayToken",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        name: types.optional(types.string()),
+        first6: types.optional(types.string()),
+        last4: types.optional(types.string()),
+        brand: types.optional(types.string()),
+        funding_type: types.optional(types.string()),
+        expiration_month: types.optional(types.number()),
+        expiration_year: types.optional(types.number()),
+        country_of_issue: types.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsCountryOfIssue$inboundSchema,
+        ),
+        card_holder_details: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetPaymentMethodsCardHolderDetails$inboundSchema
+          ),
+        ),
+        gateway_token: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetPaymentMethodsCardGatewayToken$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "funding_type": "fundingType",
+          "expiration_month": "expirationMonth",
+          "expiration_year": "expirationYear",
+          "country_of_issue": "countryOfIssue",
+          "card_holder_details": "cardHolderDetails",
+          "gateway_token": "gatewayToken",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsCardFromJSON(
@@ -2552,8 +2578,10 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType$inboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType,
+    )
   );
 
 /** @internal */
@@ -2561,8 +2589,10 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsMandateType$inboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsMandateType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsMandateType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsMandateType,
+    )
   );
 
 /** @internal */
@@ -2570,21 +2600,23 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsMandate$inboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsMandate,
     unknown
-  > = z.pipe(
-    z.object({
-      type: types.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsMandateType$inboundSchema,
-      ),
-      reference: types.optional(types.string()),
-      sign_date: types.optional(types.number()),
-      termination_date: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "sign_date": "signDate",
-        "termination_date": "terminationDate",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: types.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsMandateType$inboundSchema,
+        ),
+        reference: types.optional(types.string()),
+        sign_date: types.optional(types.number()),
+        termination_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "sign_date": "signDate",
+          "termination_date": "terminationDate",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsMandateFromJSON(
@@ -2606,10 +2638,12 @@ export function comCrmContactSelfServiceResourceGetPaymentMethodsMandateFromJSON
 export const AccountDebitIntegration$inboundSchema: z.ZodMiniType<
   AccountDebitIntegration,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function accountDebitIntegrationFromJSON(
   jsonString: string,
@@ -2626,13 +2660,15 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitGatewa
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitGatewayToken,
     unknown
-  > = z.object({
-    gateway: types.optional(types.string()),
-    token: types.optional(types.string()),
-    integration: z.optional(
-      z.nullable(z.lazy(() => AccountDebitIntegration$inboundSchema)),
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      gateway: types.optional(types.string()),
+      token: types.optional(types.string()),
+      integration: z.optional(
+        z.nullable(z.lazy(() => AccountDebitIntegration$inboundSchema)),
+      ),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitGatewayTokenFromJSON(
   jsonString: string,
@@ -2654,8 +2690,10 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetai
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetailsAddressCountry,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetailsAddressCountry,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetailsAddressCountry,
+    )
   );
 
 /** @internal */
@@ -2663,31 +2701,33 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetai
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetails,
     unknown
-  > = z.pipe(
-    z.object({
-      account_holder_name: types.optional(types.string()),
-      address_line_1: types.optional(types.string()),
-      address_line_2: types.optional(types.string()),
-      address_city: types.optional(types.string()),
-      address_zip: types.optional(types.string()),
-      address_state: types.optional(types.string()),
-      address_country: types.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetailsAddressCountry$inboundSchema,
-      ),
-      use_billing_address: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "account_holder_name": "accountHolderName",
-        "address_line_1": "addressLine1",
-        "address_line_2": "addressLine2",
-        "address_city": "addressCity",
-        "address_zip": "addressZip",
-        "address_state": "addressState",
-        "address_country": "addressCountry",
-        "use_billing_address": "useBillingAddress",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        account_holder_name: types.optional(types.string()),
+        address_line_1: types.optional(types.string()),
+        address_line_2: types.optional(types.string()),
+        address_city: types.optional(types.string()),
+        address_zip: types.optional(types.string()),
+        address_state: types.optional(types.string()),
+        address_country: types.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetailsAddressCountry$inboundSchema,
+        ),
+        use_billing_address: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "account_holder_name": "accountHolderName",
+          "address_line_1": "addressLine1",
+          "address_line_2": "addressLine2",
+          "address_city": "addressCity",
+          "address_zip": "addressZip",
+          "address_state": "addressState",
+          "address_country": "addressCountry",
+          "use_billing_address": "useBillingAddress",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetailsFromJSON(
@@ -2710,8 +2750,10 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsCountry$inboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsCountry,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsCountry,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsCountry,
+    )
   );
 
 /** @internal */
@@ -2719,8 +2761,10 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitCurren
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitCurrency,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitCurrency,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitCurrency,
+    )
   );
 
 /** @internal */
@@ -2728,48 +2772,56 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebit$inbou
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebit,
     unknown
-  > = z.pipe(
-    z.object({
-      account_name: types.optional(types.string()),
-      account_number: types.optional(types.string()),
-      iban: types.optional(types.string()),
-      sort_code: types.optional(types.string()),
-      routing_number: types.optional(types.string()),
-      bank: types.optional(types.string()),
-      bank_code: types.optional(types.string()),
-      branch: types.optional(types.string()),
-      swift: types.optional(types.string()),
-      account_type: types.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType$inboundSchema,
-      ),
-      mandate: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsMandate$inboundSchema
-      )),
-      gateway_token: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitGatewayToken$inboundSchema
-      ))),
-      account_holder_details: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetails$inboundSchema
-      )),
-      country: types.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsCountry$inboundSchema,
-      ),
-      currency: types.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitCurrency$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "account_name": "accountName",
-        "account_number": "accountNumber",
-        "sort_code": "sortCode",
-        "routing_number": "routingNumber",
-        "bank_code": "bankCode",
-        "account_type": "accountType",
-        "gateway_token": "gatewayToken",
-        "account_holder_details": "accountHolderDetails",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        account_name: types.optional(types.string()),
+        account_number: types.optional(types.string()),
+        iban: types.optional(types.string()),
+        sort_code: types.optional(types.string()),
+        routing_number: types.optional(types.string()),
+        bank: types.optional(types.string()),
+        bank_code: types.optional(types.string()),
+        branch: types.optional(types.string()),
+        swift: types.optional(types.string()),
+        account_type: types.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsAccountType$inboundSchema,
+        ),
+        mandate: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetPaymentMethodsMandate$inboundSchema
+          ),
+        ),
+        gateway_token: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitGatewayToken$inboundSchema
+          )),
+        ),
+        account_holder_details: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetPaymentMethodsAccountHolderDetails$inboundSchema
+          ),
+        ),
+        country: types.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsCountry$inboundSchema,
+        ),
+        currency: types.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitCurrency$inboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "account_name": "accountName",
+          "account_number": "accountNumber",
+          "sort_code": "sortCode",
+          "routing_number": "routingNumber",
+          "bank_code": "bankCode",
+          "account_type": "accountType",
+          "gateway_token": "gatewayToken",
+          "account_holder_details": "accountHolderDetails",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsAccountDebitFromJSON(
@@ -2792,8 +2844,10 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsCountryCode$inboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsCountryCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsCountryCode,
+    )
   );
 
 /** @internal */
@@ -2801,20 +2855,22 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsPhone$inboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsPhone,
     unknown
-  > = z.pipe(
-    z.object({
-      name: types.optional(types.string()),
-      country_code: types.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsCountryCode$inboundSchema,
-      ),
-      number: types.optional(types.string()),
-      msisdn: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "country_code": "countryCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        name: types.optional(types.string()),
+        country_code: types.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsCountryCode$inboundSchema,
+        ),
+        number: types.optional(types.string()),
+        msisdn: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "country_code": "countryCode",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsPhoneFromJSON(
@@ -2836,10 +2892,12 @@ export function comCrmContactSelfServiceResourceGetPaymentMethodsPhoneFromJSON(
 export const WalletIntegration$inboundSchema: z.ZodMiniType<
   WalletIntegration,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function walletIntegrationFromJSON(
   jsonString: string,
@@ -2856,13 +2914,15 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsWalletGatewayToken
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsWalletGatewayToken,
     unknown
-  > = z.object({
-    gateway: types.optional(types.string()),
-    token: types.optional(types.string()),
-    integration: z.optional(
-      z.nullable(z.lazy(() => WalletIntegration$inboundSchema)),
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      gateway: types.optional(types.string()),
+      token: types.optional(types.string()),
+      integration: z.optional(
+        z.nullable(z.lazy(() => WalletIntegration$inboundSchema)),
+      ),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsWalletGatewayTokenFromJSON(
   jsonString: string,
@@ -2884,21 +2944,27 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsWallet$inboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsWallet,
     unknown
-  > = z.pipe(
-    z.object({
-      phone: z.optional(z.nullable(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsPhone$inboundSchema
-      ))),
-      email: z.optional(z.nullable(types.string())),
-      gateway_token: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsWalletGatewayToken$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "gateway_token": "gatewayToken",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        phone: z.optional(
+          z.nullable(z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetPaymentMethodsPhone$inboundSchema
+          )),
+        ),
+        email: z.optional(z.nullable(types.string())),
+        gateway_token: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetPaymentMethodsWalletGatewayToken$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "gateway_token": "gatewayToken",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsWalletFromJSON(
@@ -2921,22 +2987,26 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsContentClassificat
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsContentClassification,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetPaymentMethodsContentClassification,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetPaymentMethodsContentClassification,
+    )
   );
 
 /** @internal */
 export const A2aCurrency$inboundSchema: z.ZodMiniType<A2aCurrency, unknown> =
-  openEnums.inboundSchema(A2aCurrency);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(A2aCurrency));
 
 /** @internal */
 export const A2aIntegration$inboundSchema: z.ZodMiniType<
   A2aIntegration,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function a2aIntegrationFromJSON(
   jsonString: string,
@@ -2952,13 +3022,15 @@ export function a2aIntegrationFromJSON(
 export const A2aGatewayToken$inboundSchema: z.ZodMiniType<
   A2aGatewayToken,
   unknown
-> = z.object({
-  gateway: types.optional(types.string()),
-  token: types.optional(types.string()),
-  integration: z.optional(
-    z.nullable(z.lazy(() => A2aIntegration$inboundSchema)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    gateway: types.optional(types.string()),
+    token: types.optional(types.string()),
+    integration: z.optional(
+      z.nullable(z.lazy(() => A2aIntegration$inboundSchema)),
+    ),
+  })
+);
 
 export function a2aGatewayTokenFromJSON(
   jsonString: string,
@@ -2971,25 +3043,28 @@ export function a2aGatewayTokenFromJSON(
 }
 
 /** @internal */
-export const A2a$inboundSchema: z.ZodMiniType<A2a, unknown> = z.pipe(
-  z.object({
-    scheme_name: types.optional(types.string()),
-    account_identification: types.optional(types.string()),
-    currency: types.optional(A2aCurrency$inboundSchema),
-    account_name: types.optional(types.string()),
-    gateway_token: types.optional(
-      z.array(z.lazy(() => A2aGatewayToken$inboundSchema)),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "scheme_name": "schemeName",
-      "account_identification": "accountIdentification",
-      "account_name": "accountName",
-      "gateway_token": "gatewayToken",
-    });
-  }),
-);
+export const A2a$inboundSchema: z.ZodMiniType<A2a, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        scheme_name: types.optional(types.string()),
+        account_identification: types.optional(types.string()),
+        currency: types.optional(A2aCurrency$inboundSchema),
+        account_name: types.optional(types.string()),
+        gateway_token: types.optional(
+          z.array(z.lazy(() => A2aGatewayToken$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "scheme_name": "schemeName",
+          "account_identification": "accountIdentification",
+          "account_name": "accountName",
+          "gateway_token": "gatewayToken",
+        });
+      }),
+    )
+  );
 
 export function a2aFromJSON(
   jsonString: string,
@@ -3006,42 +3081,48 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsContent$inboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      is_primary: types.optional(types.boolean()),
-      is_rewards: types.optional(types.boolean()),
-      payment_method_id: types.optional(types.string()),
-      payment_method_type: types.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsPaymentMethodType$inboundSchema,
-      ),
-      notes: types.optional(types.string()),
-      name: types.optional(types.string()),
-      card: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsCard$inboundSchema
-      )),
-      account_debit: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebit$inboundSchema
-      )),
-      wallet: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsWallet$inboundSchema
-      )),
-      classification: types.optional(
-        ComCrmContactSelfServiceResourceGetPaymentMethodsContentClassification$inboundSchema,
-      ),
-      a2a: types.optional(z.lazy(() =>
-        A2a$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_primary": "isPrimary",
-        "is_rewards": "isRewards",
-        "payment_method_id": "paymentMethodId",
-        "payment_method_type": "paymentMethodType",
-        "account_debit": "accountDebit",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        is_primary: types.optional(types.boolean()),
+        is_rewards: types.optional(types.boolean()),
+        payment_method_id: types.optional(types.string()),
+        payment_method_type: types.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsPaymentMethodType$inboundSchema,
+        ),
+        notes: types.optional(types.string()),
+        name: types.optional(types.string()),
+        card: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetPaymentMethodsCard$inboundSchema
+          ),
+        ),
+        account_debit: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetPaymentMethodsAccountDebit$inboundSchema
+          ),
+        ),
+        wallet: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetPaymentMethodsWallet$inboundSchema
+          ),
+        ),
+        classification: types.optional(
+          ComCrmContactSelfServiceResourceGetPaymentMethodsContentClassification$inboundSchema,
+        ),
+        a2a: types.optional(z.lazy(() => A2a$inboundSchema)),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_primary": "isPrimary",
+          "is_rewards": "isRewards",
+          "payment_method_id": "paymentMethodId",
+          "payment_method_type": "paymentMethodType",
+          "account_debit": "accountDebit",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsContentFromJSON(
@@ -3064,18 +3145,16 @@ export const ComCrmContactSelfServiceResourceGetPaymentMethodsResponse$inboundSc
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetPaymentMethodsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceGetPaymentMethodsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetPaymentMethodsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmContactSelfServiceResourceGetPaymentMethodsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetPaymentMethodsResponseFromJSON(
   jsonString: string,

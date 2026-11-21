@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -306,9 +306,10 @@ export type ComCrmAccountSelfServiceResourceListResponse = {
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceListOrder$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmAccountSelfServiceResourceListOrder> = z.enum(
-    ComCrmAccountSelfServiceResourceListOrder,
-  );
+  z.ZodMiniEnum<typeof ComCrmAccountSelfServiceResourceListOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmAccountSelfServiceResourceListOrder)
+    );
 
 /** @internal */
 export type ComCrmAccountSelfServiceResourceListRequest$Outbound = {
@@ -327,27 +328,29 @@ export const ComCrmAccountSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceListRequest$Outbound,
     ComCrmAccountSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      currencyCode: z.optional(z.string()),
-      isPrimary: z.optional(z.boolean()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmAccountSelfServiceResourceListOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        currencyCode: "currency_code",
-        isPrimary: "is_primary",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        currencyCode: z.optional(z.string()),
+        isPrimary: z.optional(z.boolean()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmAccountSelfServiceResourceListOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          currencyCode: "currency_code",
+          isPrimary: "is_primary",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmAccountSelfServiceResourceListRequestToJSON(
@@ -363,19 +366,22 @@ export function comCrmAccountSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceListPaging$inboundSchema:
-  z.ZodMiniType<ComCrmAccountSelfServiceResourceListPaging, unknown> = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmAccountSelfServiceResourceListPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
+    );
 
 export function comCrmAccountSelfServiceResourceListPagingFromJSON(
   jsonString: string,
@@ -395,36 +401,43 @@ export function comCrmAccountSelfServiceResourceListPagingFromJSON(
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceListState$inboundSchema:
-  z.ZodMiniType<ComCrmAccountSelfServiceResourceListState, unknown> = openEnums
-    .inboundSchema(ComCrmAccountSelfServiceResourceListState);
+  z.ZodMiniType<ComCrmAccountSelfServiceResourceListState, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmAccountSelfServiceResourceListState)
+    );
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceListCurrencyCode$inboundSchema:
   z.ZodMiniType<ComCrmAccountSelfServiceResourceListCurrencyCode, unknown> =
-    openEnums.inboundSchema(ComCrmAccountSelfServiceResourceListCurrencyCode);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmAccountSelfServiceResourceListCurrencyCode)
+    );
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<ComCrmAccountSelfServiceResourceListContent, unknown> = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      is_primary: types.optional(types.boolean()),
-      name: types.optional(types.string()),
-      number: types.optional(types.string()),
-      state: types.optional(
-        ComCrmAccountSelfServiceResourceListState$inboundSchema,
-      ),
-      currency_code: types.optional(
-        ComCrmAccountSelfServiceResourceListCurrencyCode$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_primary": "isPrimary",
-        "currency_code": "currencyCode",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmAccountSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          is_primary: types.optional(types.boolean()),
+          name: types.optional(types.string()),
+          number: types.optional(types.string()),
+          state: types.optional(
+            ComCrmAccountSelfServiceResourceListState$inboundSchema,
+          ),
+          currency_code: types.optional(
+            ComCrmAccountSelfServiceResourceListCurrencyCode$inboundSchema,
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "is_primary": "isPrimary",
+            "currency_code": "currencyCode",
+          });
+        }),
+      )
+    );
 
 export function comCrmAccountSelfServiceResourceListContentFromJSON(
   jsonString: string,
@@ -444,17 +457,21 @@ export function comCrmAccountSelfServiceResourceListContentFromJSON(
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceListResponse$inboundSchema:
-  z.ZodMiniType<ComCrmAccountSelfServiceResourceListResponse, unknown> = z
-    .object({
-      paging: types.optional(
-        z.lazy(() => ComCrmAccountSelfServiceResourceListPaging$inboundSchema),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmAccountSelfServiceResourceListContent$inboundSchema
-        )),
-      ),
-    });
+  z.ZodMiniType<ComCrmAccountSelfServiceResourceListResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(
+          z.lazy(() =>
+            ComCrmAccountSelfServiceResourceListPaging$inboundSchema
+          ),
+        ),
+        content: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmAccountSelfServiceResourceListContent$inboundSchema
+          )),
+        ),
+      })
+    );
 
 export function comCrmAccountSelfServiceResourceListResponseFromJSON(
   jsonString: string,

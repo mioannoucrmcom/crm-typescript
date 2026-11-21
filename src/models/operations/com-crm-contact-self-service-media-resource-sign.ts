@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 export const ComCrmContactSelfServiceMediaResourceSignUsageType = {
@@ -53,8 +54,10 @@ export type ComCrmContactSelfServiceMediaResourceSignRequest = {
 
 /** @internal */
 export const ComCrmContactSelfServiceMediaResourceSignUsageType$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmContactSelfServiceMediaResourceSignUsageType> = z
-    .enum(ComCrmContactSelfServiceMediaResourceSignUsageType);
+  z.ZodMiniEnum<typeof ComCrmContactSelfServiceMediaResourceSignUsageType> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmContactSelfServiceMediaResourceSignUsageType)
+    );
 
 /** @internal */
 export type ComCrmContactSelfServiceMediaResourceSignRequest$Outbound = {
@@ -71,25 +74,27 @@ export const ComCrmContactSelfServiceMediaResourceSignRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceMediaResourceSignRequest$Outbound,
     ComCrmContactSelfServiceMediaResourceSignRequest
-  > = z.pipe(
-    z.object({
-      id: z.optional(z.string()),
-      contactId: z.optional(z.string()),
-      usageType: z.optional(
-        ComCrmContactSelfServiceMediaResourceSignUsageType$outboundSchema,
-      ),
-      folder: z.optional(z.string()),
-      trackingKey: z.optional(z.string()),
-      mediaGroupId: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        contactId: "contact_id",
-        usageType: "usage_type",
-        trackingKey: "tracking_key",
-        mediaGroupId: "media_group_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.optional(z.string()),
+        contactId: z.optional(z.string()),
+        usageType: z.optional(
+          ComCrmContactSelfServiceMediaResourceSignUsageType$outboundSchema,
+        ),
+        folder: z.optional(z.string()),
+        trackingKey: z.optional(z.string()),
+        mediaGroupId: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          contactId: "contact_id",
+          usageType: "usage_type",
+          trackingKey: "tracking_key",
+          mediaGroupId: "media_group_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceMediaResourceSignRequestToJSON(

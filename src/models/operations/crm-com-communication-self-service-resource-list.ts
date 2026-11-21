@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -254,8 +254,10 @@ export type CrmComCommunicationSelfServiceResourceListResponse = {
 
 /** @internal */
 export const CrmComCommunicationSelfServiceResourceListCreatedOn$outboundSchema:
-  z.ZodMiniEnum<typeof CrmComCommunicationSelfServiceResourceListCreatedOn> = z
-    .enum(CrmComCommunicationSelfServiceResourceListCreatedOn);
+  z.ZodMiniEnum<typeof CrmComCommunicationSelfServiceResourceListCreatedOn> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(CrmComCommunicationSelfServiceResourceListCreatedOn)
+    );
 
 /** @internal */
 export type CrmComCommunicationSelfServiceResourceListRequest$Outbound = {
@@ -275,25 +277,27 @@ export const CrmComCommunicationSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     CrmComCommunicationSelfServiceResourceListRequest$Outbound,
     CrmComCommunicationSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      archived: z.optional(z.boolean()),
-      channel: z.optional(z.string()),
-      createdOn: z.optional(
-        CrmComCommunicationSelfServiceResourceListCreatedOn$outboundSchema,
-      ),
-      order: z.optional(z.string()),
-      page: z.optional(z.int()),
-      size: z.optional(z.int()),
-      sort: z.optional(z.string()),
-      viewed: z.optional(z.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        createdOn: "created_on",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        archived: z.optional(z.boolean()),
+        channel: z.optional(z.string()),
+        createdOn: z.optional(
+          CrmComCommunicationSelfServiceResourceListCreatedOn$outboundSchema,
+        ),
+        order: z.optional(z.string()),
+        page: z.optional(z.int()),
+        size: z.optional(z.int()),
+        sort: z.optional(z.string()),
+        viewed: z.optional(z.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          createdOn: "created_on",
+        });
+      }),
+    )
   );
 
 export function crmComCommunicationSelfServiceResourceListRequestToJSON(
@@ -309,12 +313,14 @@ export function crmComCommunicationSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const CrmComCommunicationSelfServiceResourceListPaging$inboundSchema:
-  z.ZodMiniType<CrmComCommunicationSelfServiceResourceListPaging, unknown> = z
-    .object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-    });
+  z.ZodMiniType<CrmComCommunicationSelfServiceResourceListPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+      })
+    );
 
 export function crmComCommunicationSelfServiceResourceListPagingFromJSON(
   jsonString: string,
@@ -335,21 +341,27 @@ export function crmComCommunicationSelfServiceResourceListPagingFromJSON(
 /** @internal */
 export const CrmComCommunicationSelfServiceResourceListState$inboundSchema:
   z.ZodMiniType<CrmComCommunicationSelfServiceResourceListState, unknown> =
-    openEnums.inboundSchema(CrmComCommunicationSelfServiceResourceListState);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(CrmComCommunicationSelfServiceResourceListState)
+    );
 
 /** @internal */
 export const CrmComCommunicationSelfServiceResourceListChannel$inboundSchema:
   z.ZodMiniType<CrmComCommunicationSelfServiceResourceListChannel, unknown> =
-    openEnums.inboundSchema(CrmComCommunicationSelfServiceResourceListChannel);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(CrmComCommunicationSelfServiceResourceListChannel)
+    );
 
 /** @internal */
 export const CrmComCommunicationSelfServiceResourceListContact$inboundSchema:
-  z.ZodMiniType<CrmComCommunicationSelfServiceResourceListContact, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      code: types.optional(types.string()),
-    });
+  z.ZodMiniType<CrmComCommunicationSelfServiceResourceListContact, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        code: types.optional(types.string()),
+      })
+    );
 
 export function crmComCommunicationSelfServiceResourceListContactFromJSON(
   jsonString: string,
@@ -372,53 +384,59 @@ export const CrmComCommunicationSelfServiceResourceListMessageType$inboundSchema
   z.ZodMiniType<
     CrmComCommunicationSelfServiceResourceListMessageType,
     unknown
-  > = openEnums.inboundSchema(
-    CrmComCommunicationSelfServiceResourceListMessageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      CrmComCommunicationSelfServiceResourceListMessageType,
+    )
   );
 
 /** @internal */
 export const CrmComCommunicationSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<CrmComCommunicationSelfServiceResourceListContent, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        name: types.optional(types.string()),
-        state: types.optional(
-          CrmComCommunicationSelfServiceResourceListState$inboundSchema,
-        ),
-        channel: types.optional(
-          CrmComCommunicationSelfServiceResourceListChannel$inboundSchema,
-        ),
-        is_viewed: types.optional(types.boolean()),
-        viewed_on: types.optional(types.number()),
-        is_archived: z._default(types.boolean(), false),
-        clicked_on: types.optional(types.number()),
-        created_on: types.optional(types.number()),
-        language: types.optional(types.string()),
-        sender: types.optional(types.string()),
-        recipient: types.optional(types.string()),
-        subtitle: types.optional(types.string()),
-        subject: types.optional(types.string()),
-        content: types.optional(types.string()),
-        in_app_image_url: types.optional(types.string()),
-        contact: types.optional(z.lazy(() =>
-          CrmComCommunicationSelfServiceResourceListContact$inboundSchema
-        )),
-        message_type: types.optional(
-          CrmComCommunicationSelfServiceResourceListMessageType$inboundSchema,
-        ),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "is_viewed": "isViewed",
-          "viewed_on": "viewedOn",
-          "is_archived": "isArchived",
-          "clicked_on": "clickedOn",
-          "created_on": "createdOn",
-          "in_app_image_url": "inAppImageUrl",
-          "message_type": "messageType",
-        });
-      }),
+  z.ZodMiniType<CrmComCommunicationSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          state: types.optional(
+            CrmComCommunicationSelfServiceResourceListState$inboundSchema,
+          ),
+          channel: types.optional(
+            CrmComCommunicationSelfServiceResourceListChannel$inboundSchema,
+          ),
+          is_viewed: types.optional(types.boolean()),
+          viewed_on: types.optional(types.number()),
+          is_archived: z._default(types.boolean(), false),
+          clicked_on: types.optional(types.number()),
+          created_on: types.optional(types.number()),
+          language: types.optional(types.string()),
+          sender: types.optional(types.string()),
+          recipient: types.optional(types.string()),
+          subtitle: types.optional(types.string()),
+          subject: types.optional(types.string()),
+          content: types.optional(types.string()),
+          in_app_image_url: types.optional(types.string()),
+          contact: types.optional(
+            z.lazy(() =>
+              CrmComCommunicationSelfServiceResourceListContact$inboundSchema
+            ),
+          ),
+          message_type: types.optional(
+            CrmComCommunicationSelfServiceResourceListMessageType$inboundSchema,
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "is_viewed": "isViewed",
+            "viewed_on": "viewedOn",
+            "is_archived": "isArchived",
+            "clicked_on": "clickedOn",
+            "created_on": "createdOn",
+            "in_app_image_url": "inAppImageUrl",
+            "message_type": "messageType",
+          });
+        }),
+      )
     );
 
 export function crmComCommunicationSelfServiceResourceListContentFromJSON(
@@ -439,19 +457,17 @@ export function crmComCommunicationSelfServiceResourceListContentFromJSON(
 
 /** @internal */
 export const CrmComCommunicationSelfServiceResourceListResponse$inboundSchema:
-  z.ZodMiniType<CrmComCommunicationSelfServiceResourceListResponse, unknown> = z
-    .object({
-      paging: types.optional(
-        z.lazy(() =>
+  z.ZodMiniType<CrmComCommunicationSelfServiceResourceListResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(z.lazy(() =>
           CrmComCommunicationSelfServiceResourceListPaging$inboundSchema
-        ),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          CrmComCommunicationSelfServiceResourceListContent$inboundSchema
         )),
-      ),
-    });
+        content: types.optional(z.array(z.lazy(() =>
+          CrmComCommunicationSelfServiceResourceListContent$inboundSchema
+        ))),
+      })
+    );
 
 export function crmComCommunicationSelfServiceResourceListResponseFromJSON(
   jsonString: string,

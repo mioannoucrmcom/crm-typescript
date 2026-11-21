@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmDeviceSelfServiceResourceRemoveContactDeviceRequest = {
   fcmToken: string;
@@ -22,16 +23,18 @@ export const ComCrmDeviceSelfServiceResourceRemoveContactDeviceRequest$outboundS
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceRemoveContactDeviceRequest$Outbound,
     ComCrmDeviceSelfServiceResourceRemoveContactDeviceRequest
-  > = z.pipe(
-    z.object({
-      fcmToken: z.string(),
-      id: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        fcmToken: "fcm_token",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        fcmToken: z.string(),
+        id: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          fcmToken: "fcm_token",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceRemoveContactDeviceRequestToJSON(

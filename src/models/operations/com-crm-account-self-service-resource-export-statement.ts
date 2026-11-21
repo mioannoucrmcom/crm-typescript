@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 /**
@@ -58,7 +59,9 @@ export type ComCrmAccountSelfServiceResourceExportStatementRequest = {
 /** @internal */
 export const ComCrmAccountSelfServiceResourceExportStatementFormat$outboundSchema:
   z.ZodMiniEnum<typeof ComCrmAccountSelfServiceResourceExportStatementFormat> =
-    z.enum(ComCrmAccountSelfServiceResourceExportStatementFormat);
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmAccountSelfServiceResourceExportStatementFormat)
+    );
 
 /** @internal */
 export type ComCrmAccountSelfServiceResourceExportStatementRequestBody$Outbound =
@@ -76,25 +79,27 @@ export const ComCrmAccountSelfServiceResourceExportStatementRequestBody$outbound
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceExportStatementRequestBody$Outbound,
     ComCrmAccountSelfServiceResourceExportStatementRequestBody
-  > = z.pipe(
-    z.object({
-      accountId: z.optional(z.nullable(z.string())),
-      format:
-        ComCrmAccountSelfServiceResourceExportStatementFormat$outboundSchema,
-      fromMonth: z.int(),
-      fromYear: z.int(),
-      toMonth: z.int(),
-      toYear: z.int(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        accountId: "account_id",
-        fromMonth: "from_month",
-        fromYear: "from_year",
-        toMonth: "to_month",
-        toYear: "to_year",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        accountId: z.optional(z.nullable(z.string())),
+        format:
+          ComCrmAccountSelfServiceResourceExportStatementFormat$outboundSchema,
+        fromMonth: z.int(),
+        fromYear: z.int(),
+        toMonth: z.int(),
+        toYear: z.int(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          accountId: "account_id",
+          fromMonth: "from_month",
+          fromYear: "from_year",
+          toMonth: "to_month",
+          toYear: "to_year",
+        });
+      }),
+    )
   );
 
 export function comCrmAccountSelfServiceResourceExportStatementRequestBodyToJSON(
@@ -120,14 +125,14 @@ export const ComCrmAccountSelfServiceResourceExportStatementRequest$outboundSche
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceExportStatementRequest$Outbound,
     ComCrmAccountSelfServiceResourceExportStatementRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmAccountSelfServiceResourceExportStatementRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmAccountSelfServiceResourceExportStatementRequestToJSON(
   comCrmAccountSelfServiceResourceExportStatementRequest:

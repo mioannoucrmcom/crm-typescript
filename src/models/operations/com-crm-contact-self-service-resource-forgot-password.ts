@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceForgotPasswordRequestBody = {
   /**
@@ -28,9 +29,11 @@ export const ComCrmContactSelfServiceResourceForgotPasswordRequestBody$outboundS
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceForgotPasswordRequestBody$Outbound,
     ComCrmContactSelfServiceResourceForgotPasswordRequestBody
-  > = z.object({
-    username: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      username: z.string(),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceForgotPasswordRequestBodyToJSON(
   comCrmContactSelfServiceResourceForgotPasswordRequestBody:
@@ -55,18 +58,22 @@ export const ComCrmContactSelfServiceResourceForgotPasswordRequest$outboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceForgotPasswordRequest$Outbound,
     ComCrmContactSelfServiceResourceForgotPasswordRequest
-  > = z.pipe(
-    z.object({
-      apiKey: z.optional(z.string()),
-      body: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceForgotPasswordRequestBody$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        apiKey: "api_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        apiKey: z.optional(z.string()),
+        body: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceForgotPasswordRequestBody$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          apiKey: "api_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceForgotPasswordRequestToJSON(
