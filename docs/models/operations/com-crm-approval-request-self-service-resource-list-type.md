@@ -9,11 +9,11 @@ import { ComCrmApprovalRequestSelfServiceResourceListType } from "crm/models/ope
 
 let value: ComCrmApprovalRequestSelfServiceResourceListType =
   "SERVICE_REQUESTS";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "REWARD_OFFERS" | "ORGANISATIONS" | "SERVICE_REQUESTS" | "ORDERS" | Unrecognized<string>

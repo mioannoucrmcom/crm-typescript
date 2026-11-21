@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceOptInDonationsRequestBody = {
   /**
@@ -38,17 +39,19 @@ export const ComCrmContactSelfServiceResourceOptInDonationsRequestBody$outboundS
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceOptInDonationsRequestBody$Outbound,
     ComCrmContactSelfServiceResourceOptInDonationsRequestBody
-  > = z.pipe(
-    z.object({
-      donationOfferId: z.string(),
-      multiplier: z._default(z.int(), 1),
-      amount: z.optional(z.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        donationOfferId: "donation_offer_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        donationOfferId: z.string(),
+        multiplier: z._default(z.int(), 1),
+        amount: z.optional(z.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          donationOfferId: "donation_offer_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceOptInDonationsRequestBodyToJSON(
@@ -74,14 +77,14 @@ export const ComCrmContactSelfServiceResourceOptInDonationsRequest$outboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceOptInDonationsRequest$Outbound,
     ComCrmContactSelfServiceResourceOptInDonationsRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceOptInDonationsRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceOptInDonationsRequestToJSON(
   comCrmContactSelfServiceResourceOptInDonationsRequest:

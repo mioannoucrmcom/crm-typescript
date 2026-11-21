@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -82,11 +82,13 @@ export type ComCrmOrderSelfServiceResourcePerformOrderActionsResponse = {
 export const ComCrmOrderSelfServiceResourcePerformOrderActionsAction$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmOrderSelfServiceResourcePerformOrderActionsAction
-  > = z.enum(ComCrmOrderSelfServiceResourcePerformOrderActionsAction);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmOrderSelfServiceResourcePerformOrderActionsAction)
+  );
 
 /** @internal */
-export const Provisioner$outboundSchema: z.ZodMiniEnum<typeof Provisioner> = z
-  .enum(Provisioner);
+export const Provisioner$outboundSchema: z.ZodMiniEnum<typeof Provisioner> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(Provisioner));
 
 /** @internal */
 export type ComCrmOrderSelfServiceResourcePerformOrderActionsRequestBody$Outbound =
@@ -102,19 +104,21 @@ export const ComCrmOrderSelfServiceResourcePerformOrderActionsRequestBody$outbou
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourcePerformOrderActionsRequestBody$Outbound,
     ComCrmOrderSelfServiceResourcePerformOrderActionsRequestBody
-  > = z.pipe(
-    z.object({
-      id: z.optional(z.string()),
-      action:
-        ComCrmOrderSelfServiceResourcePerformOrderActionsAction$outboundSchema,
-      cancellationReasonId: z.optional(z.nullable(z.string())),
-      provisioner: z.optional(Provisioner$outboundSchema),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        cancellationReasonId: "cancellation_reason_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.optional(z.string()),
+        action:
+          ComCrmOrderSelfServiceResourcePerformOrderActionsAction$outboundSchema,
+        cancellationReasonId: z.optional(z.nullable(z.string())),
+        provisioner: z.optional(Provisioner$outboundSchema),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          cancellationReasonId: "cancellation_reason_id",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderSelfServiceResourcePerformOrderActionsRequestBodyToJSON(
@@ -141,14 +145,14 @@ export const ComCrmOrderSelfServiceResourcePerformOrderActionsRequest$outboundSc
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourcePerformOrderActionsRequest$Outbound,
     ComCrmOrderSelfServiceResourcePerformOrderActionsRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmOrderSelfServiceResourcePerformOrderActionsRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmOrderSelfServiceResourcePerformOrderActionsRequestToJSON(
   comCrmOrderSelfServiceResourcePerformOrderActionsRequest:
@@ -165,9 +169,11 @@ export const ComCrmOrderSelfServiceResourcePerformOrderActionsResponse$inboundSc
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourcePerformOrderActionsResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmOrderSelfServiceResourcePerformOrderActionsResponseFromJSON(
   jsonString: string,

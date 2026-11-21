@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -573,28 +573,30 @@ export type ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsResp
 /** @internal */
 export const QueryParamBillingDirective$outboundSchema: z.ZodMiniEnum<
   typeof QueryParamBillingDirective
-> = z.enum(QueryParamBillingDirective);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(QueryParamBillingDirective));
 
 /** @internal */
 export const QueryParamBillingState$outboundSchema: z.ZodMiniEnum<
   typeof QueryParamBillingState
-> = z.enum(QueryParamBillingState);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(QueryParamBillingState));
 
 /** @internal */
-export const CreatedDate$outboundSchema: z.ZodMiniEnum<typeof CreatedDate> = z
-  .enum(CreatedDate);
+export const CreatedDate$outboundSchema: z.ZodMiniEnum<typeof CreatedDate> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(CreatedDate));
 
 /** @internal */
 export const UsageTimestamp$outboundSchema: z.ZodMiniEnum<
   typeof UsageTimestamp
-> = z.enum(UsageTimestamp);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(UsageTimestamp));
 
 /** @internal */
 export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrder
-  > = z.enum(
-    ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrder,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrder,
+    )
   );
 
 /** @internal */
@@ -622,41 +624,43 @@ export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsReq
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsRequest$Outbound,
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      billingDirective: z.optional(QueryParamBillingDirective$outboundSchema),
-      billingState: z.optional(QueryParamBillingState$outboundSchema),
-      createdDate: z.optional(CreatedDate$outboundSchema),
-      creditNoteId: z.optional(z.string()),
-      invoiceId: z.optional(z.string()),
-      organisationId: z.optional(z.string()),
-      serviceId: z.optional(z.string()),
-      subscriptionId: z.optional(z.string()),
-      usageServiceId: z.optional(z.string()),
-      usageTimestamp: z.optional(UsageTimestamp$outboundSchema),
-      order: z._default(
-        ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        billingDirective: "billing_directive",
-        billingState: "billing_state",
-        createdDate: "created_date",
-        creditNoteId: "credit_note_id",
-        invoiceId: "invoice_id",
-        organisationId: "organisation_id",
-        serviceId: "service_id",
-        subscriptionId: "subscription_id",
-        usageServiceId: "usage_service_id",
-        usageTimestamp: "usage_timestamp",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        billingDirective: z.optional(QueryParamBillingDirective$outboundSchema),
+        billingState: z.optional(QueryParamBillingState$outboundSchema),
+        createdDate: z.optional(CreatedDate$outboundSchema),
+        creditNoteId: z.optional(z.string()),
+        invoiceId: z.optional(z.string()),
+        organisationId: z.optional(z.string()),
+        serviceId: z.optional(z.string()),
+        subscriptionId: z.optional(z.string()),
+        usageServiceId: z.optional(z.string()),
+        usageTimestamp: z.optional(UsageTimestamp$outboundSchema),
+        order: z._default(
+          ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          billingDirective: "billing_directive",
+          billingState: "billing_state",
+          createdDate: "created_date",
+          creditNoteId: "credit_note_id",
+          invoiceId: "invoice_id",
+          organisationId: "organisation_id",
+          serviceId: "service_id",
+          subscriptionId: "subscription_id",
+          usageServiceId: "usage_service_id",
+          usageTimestamp: "usage_timestamp",
+        });
+      }),
+    )
   );
 
 export function comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsRequestToJSON(
@@ -676,18 +680,20 @@ export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsPag
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsPagingFromJSON(
@@ -710,8 +716,10 @@ export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsCur
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -719,29 +727,37 @@ export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsSta
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsState,
+    )
   );
 
 /** @internal */
 export const BillingDirectiveResponse$inboundSchema: z.ZodMiniType<
   BillingDirectiveResponse,
   unknown
-> = openEnums.inboundSchema(BillingDirectiveResponse);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(BillingDirectiveResponse)
+);
 
 /** @internal */
 export const BillingStateResponse$inboundSchema: z.ZodMiniType<
   BillingStateResponse,
   unknown
-> = openEnums.inboundSchema(BillingStateResponse);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(BillingStateResponse)
+);
 
 /** @internal */
 export const UsageProduct$inboundSchema: z.ZodMiniType<UsageProduct, unknown> =
-  z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function usageProductFromJSON(
   jsonString: string,
@@ -758,11 +774,13 @@ export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsSer
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsService,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsServiceFromJSON(
   jsonString: string,
@@ -784,10 +802,12 @@ export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrg
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrganisationFromJSON(
   jsonString: string,
@@ -809,17 +829,19 @@ export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsMea
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsMeasurementUnit,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      display_name: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "display_name": "displayName",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        display_name: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "display_name": "displayName",
+        });
+      }),
+    )
   );
 
 export function comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsMeasurementUnitFromJSON(
@@ -842,17 +864,19 @@ export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsInv
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsInvoice,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      number: types.optional(types.string()),
-      reference_number: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "reference_number": "referenceNumber",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        number: types.optional(types.string()),
+        reference_number: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "reference_number": "referenceNumber",
+        });
+      }),
+    )
   );
 
 export function comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsInvoiceFromJSON(
@@ -875,50 +899,62 @@ export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsCon
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      usage_amount: types.optional(types.number()),
-      usage_timestamp: types.optional(types.number()),
-      created_date: types.optional(types.number()),
-      charged_amount: types.optional(types.number()),
-      currency_code: types.optional(
-        ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsCurrencyCode$inboundSchema,
-      ),
-      billed_amount: types.optional(types.number()),
-      state: types.optional(
-        ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsState$inboundSchema,
-      ),
-      billing_directive: types.optional(BillingDirectiveResponse$inboundSchema),
-      billing_state: types.optional(BillingStateResponse$inboundSchema),
-      usage_product: types.optional(z.lazy(() => UsageProduct$inboundSchema)),
-      service: types.optional(z.lazy(() =>
-        ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsService$inboundSchema
-      )),
-      organisation: types.optional(z.lazy(() =>
-        ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrganisation$inboundSchema
-      )),
-      measurement_unit: types.optional(z.lazy(() =>
-        ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsMeasurementUnit$inboundSchema
-      )),
-      invoice: types.optional(z.lazy(() =>
-        ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsInvoice$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "usage_amount": "usageAmount",
-        "usage_timestamp": "usageTimestamp",
-        "created_date": "createdDate",
-        "charged_amount": "chargedAmount",
-        "currency_code": "currencyCode",
-        "billed_amount": "billedAmount",
-        "billing_directive": "billingDirective",
-        "billing_state": "billingState",
-        "usage_product": "usageProduct",
-        "measurement_unit": "measurementUnit",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        usage_amount: types.optional(types.number()),
+        usage_timestamp: types.optional(types.number()),
+        created_date: types.optional(types.number()),
+        charged_amount: types.optional(types.number()),
+        currency_code: types.optional(
+          ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsCurrencyCode$inboundSchema,
+        ),
+        billed_amount: types.optional(types.number()),
+        state: types.optional(
+          ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsState$inboundSchema,
+        ),
+        billing_directive: types.optional(
+          BillingDirectiveResponse$inboundSchema,
+        ),
+        billing_state: types.optional(BillingStateResponse$inboundSchema),
+        usage_product: types.optional(z.lazy(() => UsageProduct$inboundSchema)),
+        service: types.optional(
+          z.lazy(() =>
+            ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsService$inboundSchema
+          ),
+        ),
+        organisation: types.optional(
+          z.lazy(() =>
+            ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsOrganisation$inboundSchema
+          ),
+        ),
+        measurement_unit: types.optional(
+          z.lazy(() =>
+            ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsMeasurementUnit$inboundSchema
+          ),
+        ),
+        invoice: types.optional(
+          z.lazy(() =>
+            ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsInvoice$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "usage_amount": "usageAmount",
+          "usage_timestamp": "usageTimestamp",
+          "created_date": "createdDate",
+          "charged_amount": "chargedAmount",
+          "currency_code": "currencyCode",
+          "billed_amount": "billedAmount",
+          "billing_directive": "billingDirective",
+          "billing_state": "billingState",
+          "usage_product": "usageProduct",
+          "measurement_unit": "measurementUnit",
+        });
+      }),
+    )
   );
 
 export function comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsContentFromJSON(
@@ -941,18 +977,16 @@ export const ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsRes
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmUsageDetailRecordSelfServiceResourceListUsageDetailRecordsResponseFromJSON(
   jsonString: string,

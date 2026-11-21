@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -149,7 +149,7 @@ export type SignUpOutOrganisationSSResponse = {
 /** @internal */
 export const SignUpOutOrganisationSSAction$outboundSchema: z.ZodMiniEnum<
   typeof SignUpOutOrganisationSSAction
-> = z.enum(SignUpOutOrganisationSSAction);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(SignUpOutOrganisationSSAction));
 
 /** @internal */
 export type SignUpOutOrganisationSSRequestBody$Outbound = {
@@ -165,24 +165,26 @@ export type SignUpOutOrganisationSSRequestBody$Outbound = {
 export const SignUpOutOrganisationSSRequestBody$outboundSchema: z.ZodMiniType<
   SignUpOutOrganisationSSRequestBody$Outbound,
   SignUpOutOrganisationSSRequestBody
-> = z.pipe(
-  z.object({
-    action: SignUpOutOrganisationSSAction$outboundSchema,
-    organisationId: z.string(),
-    serviceAcceptance: z.nullable(z._default(z.boolean(), true)),
-    emailOptOut: z.nullable(z._default(z.boolean(), false)),
-    smsOptOut: z.nullable(z._default(z.boolean(), false)),
-    referralCode: z.optional(z.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      organisationId: "organisation_id",
-      serviceAcceptance: "service_acceptance",
-      emailOptOut: "email_opt_out",
-      smsOptOut: "sms_opt_out",
-      referralCode: "referral_code",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      action: SignUpOutOrganisationSSAction$outboundSchema,
+      organisationId: z.string(),
+      serviceAcceptance: z.nullable(z._default(z.boolean(), true)),
+      emailOptOut: z.nullable(z._default(z.boolean(), false)),
+      smsOptOut: z.nullable(z._default(z.boolean(), false)),
+      referralCode: z.optional(z.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        organisationId: "organisation_id",
+        serviceAcceptance: "service_acceptance",
+        emailOptOut: "email_opt_out",
+        smsOptOut: "sms_opt_out",
+        referralCode: "referral_code",
+      });
+    }),
+  )
 );
 
 export function signUpOutOrganisationSSRequestBodyToJSON(
@@ -205,12 +207,14 @@ export type SignUpOutOrganisationSSRequest$Outbound = {
 export const SignUpOutOrganisationSSRequest$outboundSchema: z.ZodMiniType<
   SignUpOutOrganisationSSRequest$Outbound,
   SignUpOutOrganisationSSRequest
-> = z.object({
-  id: z.string(),
-  body: z.optional(
-    z.lazy(() => SignUpOutOrganisationSSRequestBody$outboundSchema),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    body: z.optional(
+      z.lazy(() => SignUpOutOrganisationSSRequestBody$outboundSchema),
+    ),
+  })
+);
 
 export function signUpOutOrganisationSSRequestToJSON(
   signUpOutOrganisationSSRequest: SignUpOutOrganisationSSRequest,
@@ -226,29 +230,33 @@ export function signUpOutOrganisationSSRequestToJSON(
 export const SignUpOutOrganisationSSContactType$inboundSchema: z.ZodMiniType<
   SignUpOutOrganisationSSContactType,
   unknown
-> = openEnums.inboundSchema(SignUpOutOrganisationSSContactType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(SignUpOutOrganisationSSContactType)
+);
 
 /** @internal */
 export const SignUpOutOrganisationSSContact$inboundSchema: z.ZodMiniType<
   SignUpOutOrganisationSSContact,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    type: types.optional(SignUpOutOrganisationSSContactType$inboundSchema),
-    first_name: types.optional(types.string()),
-    last_name: types.optional(types.string()),
-    is_verified: types.optional(types.boolean()),
-    company_name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "first_name": "firstName",
-      "last_name": "lastName",
-      "is_verified": "isVerified",
-      "company_name": "companyName",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(SignUpOutOrganisationSSContactType$inboundSchema),
+      first_name: types.optional(types.string()),
+      last_name: types.optional(types.string()),
+      is_verified: types.optional(types.boolean()),
+      company_name: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "first_name": "firstName",
+        "last_name": "lastName",
+        "is_verified": "isVerified",
+        "company_name": "companyName",
+      });
+    }),
+  )
 );
 
 export function signUpOutOrganisationSSContactFromJSON(
@@ -263,18 +271,22 @@ export function signUpOutOrganisationSSContactFromJSON(
 
 /** @internal */
 export const SignUpOutOrganisationSSOrganisationType$inboundSchema:
-  z.ZodMiniType<SignUpOutOrganisationSSOrganisationType, unknown> = openEnums
-    .inboundSchema(SignUpOutOrganisationSSOrganisationType);
+  z.ZodMiniType<SignUpOutOrganisationSSOrganisationType, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(SignUpOutOrganisationSSOrganisationType)
+    );
 
 /** @internal */
 export const SignUpOutOrganisationSSOrganisation$inboundSchema: z.ZodMiniType<
   SignUpOutOrganisationSSOrganisation,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  type: types.optional(SignUpOutOrganisationSSOrganisationType$inboundSchema),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    type: types.optional(SignUpOutOrganisationSSOrganisationType$inboundSchema),
+    name: types.optional(types.string()),
+  })
+);
 
 export function signUpOutOrganisationSSOrganisationFromJSON(
   jsonString: string,
@@ -291,24 +303,28 @@ export function signUpOutOrganisationSSOrganisationFromJSON(
 export const SignUpOutOrganisationSSResponse$inboundSchema: z.ZodMiniType<
   SignUpOutOrganisationSSResponse,
   unknown
-> = z.pipe(
-  z.object({
-    access_token: types.optional(types.string()),
-    refresh_token: types.optional(types.string()),
-    exp: types.optional(types.date()),
-    contact: types.optional(
-      z.lazy(() => SignUpOutOrganisationSSContact$inboundSchema),
-    ),
-    organisations: types.optional(
-      z.array(z.lazy(() => SignUpOutOrganisationSSOrganisation$inboundSchema)),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "access_token": "accessToken",
-      "refresh_token": "refreshToken",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      access_token: types.optional(types.string()),
+      refresh_token: types.optional(types.string()),
+      exp: types.optional(types.date()),
+      contact: types.optional(
+        z.lazy(() => SignUpOutOrganisationSSContact$inboundSchema),
+      ),
+      organisations: types.optional(
+        z.array(
+          z.lazy(() => SignUpOutOrganisationSSOrganisation$inboundSchema),
+        ),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "access_token": "accessToken",
+        "refresh_token": "refreshToken",
+      });
+    }),
+  )
 );
 
 export function signUpOutOrganisationSSResponseFromJSON(

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -174,17 +174,19 @@ export const ComCrmTagSelfServiceResourceListTagsSecurity$outboundSchema:
   z.ZodMiniType<
     ComCrmTagSelfServiceResourceListTagsSecurity$Outbound,
     ComCrmTagSelfServiceResourceListTagsSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorizationSelfService: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-        authorizationSelfService: "authorization_self_service",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorizationSelfService: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+          authorizationSelfService: "authorization_self_service",
+        });
+      }),
+    )
   );
 
 export function comCrmTagSelfServiceResourceListTagsSecurityToJSON(
@@ -201,13 +203,14 @@ export function comCrmTagSelfServiceResourceListTagsSecurityToJSON(
 /** @internal */
 export const QueryParamEntity$outboundSchema: z.ZodMiniEnum<
   typeof QueryParamEntity
-> = z.enum(QueryParamEntity);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(QueryParamEntity));
 
 /** @internal */
 export const ComCrmTagSelfServiceResourceListTagsOrder$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmTagSelfServiceResourceListTagsOrder> = z.enum(
-    ComCrmTagSelfServiceResourceListTagsOrder,
-  );
+  z.ZodMiniEnum<typeof ComCrmTagSelfServiceResourceListTagsOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmTagSelfServiceResourceListTagsOrder)
+    );
 
 /** @internal */
 export type ComCrmTagSelfServiceResourceListTagsRequest$Outbound = {
@@ -224,23 +227,25 @@ export const ComCrmTagSelfServiceResourceListTagsRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmTagSelfServiceResourceListTagsRequest$Outbound,
     ComCrmTagSelfServiceResourceListTagsRequest
-  > = z.pipe(
-    z.object({
-      entity: QueryParamEntity$outboundSchema,
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmTagSelfServiceResourceListTagsOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        entity: QueryParamEntity$outboundSchema,
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmTagSelfServiceResourceListTagsOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmTagSelfServiceResourceListTagsRequestToJSON(
@@ -256,19 +261,22 @@ export function comCrmTagSelfServiceResourceListTagsRequestToJSON(
 
 /** @internal */
 export const ComCrmTagSelfServiceResourceListTagsPaging$inboundSchema:
-  z.ZodMiniType<ComCrmTagSelfServiceResourceListTagsPaging, unknown> = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmTagSelfServiceResourceListTagsPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
+    );
 
 export function comCrmTagSelfServiceResourceListTagsPagingFromJSON(
   jsonString: string,
@@ -289,28 +297,34 @@ export function comCrmTagSelfServiceResourceListTagsPagingFromJSON(
 /** @internal */
 export const ComCrmTagSelfServiceResourceListTagsContentEntity$inboundSchema:
   z.ZodMiniType<ComCrmTagSelfServiceResourceListTagsContentEntity, unknown> =
-    openEnums.inboundSchema(ComCrmTagSelfServiceResourceListTagsContentEntity);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmTagSelfServiceResourceListTagsContentEntity)
+    );
 
 /** @internal */
 export const ComCrmTagSelfServiceResourceListTagsState$inboundSchema:
-  z.ZodMiniType<ComCrmTagSelfServiceResourceListTagsState, unknown> = openEnums
-    .inboundSchema(ComCrmTagSelfServiceResourceListTagsState);
+  z.ZodMiniType<ComCrmTagSelfServiceResourceListTagsState, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmTagSelfServiceResourceListTagsState)
+    );
 
 /** @internal */
 export const ComCrmTagSelfServiceResourceListTagsContent$inboundSchema:
-  z.ZodMiniType<ComCrmTagSelfServiceResourceListTagsContent, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      description: types.optional(types.string()),
-      colour: types.optional(types.string()),
-      entity: types.optional(
-        ComCrmTagSelfServiceResourceListTagsContentEntity$inboundSchema,
-      ),
-      state: types.optional(
-        ComCrmTagSelfServiceResourceListTagsState$inboundSchema,
-      ),
-    });
+  z.ZodMiniType<ComCrmTagSelfServiceResourceListTagsContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        description: types.optional(types.string()),
+        colour: types.optional(types.string()),
+        entity: types.optional(
+          ComCrmTagSelfServiceResourceListTagsContentEntity$inboundSchema,
+        ),
+        state: types.optional(
+          ComCrmTagSelfServiceResourceListTagsState$inboundSchema,
+        ),
+      })
+    );
 
 export function comCrmTagSelfServiceResourceListTagsContentFromJSON(
   jsonString: string,
@@ -330,17 +344,21 @@ export function comCrmTagSelfServiceResourceListTagsContentFromJSON(
 
 /** @internal */
 export const ComCrmTagSelfServiceResourceListTagsResponse$inboundSchema:
-  z.ZodMiniType<ComCrmTagSelfServiceResourceListTagsResponse, unknown> = z
-    .object({
-      paging: types.optional(
-        z.lazy(() => ComCrmTagSelfServiceResourceListTagsPaging$inboundSchema),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmTagSelfServiceResourceListTagsContent$inboundSchema
-        )),
-      ),
-    });
+  z.ZodMiniType<ComCrmTagSelfServiceResourceListTagsResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(
+          z.lazy(() =>
+            ComCrmTagSelfServiceResourceListTagsPaging$inboundSchema
+          ),
+        ),
+        content: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmTagSelfServiceResourceListTagsContent$inboundSchema
+          )),
+        ),
+      })
+    );
 
 export function comCrmTagSelfServiceResourceListTagsResponseFromJSON(
   jsonString: string,

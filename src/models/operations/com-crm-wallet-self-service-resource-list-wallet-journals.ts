@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -216,12 +216,16 @@ export type ComCrmWalletSelfServiceResourceListWalletJournalsResponse = {
 export const ComCrmWalletSelfServiceResourceListWalletJournalsQueryParamType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmWalletSelfServiceResourceListWalletJournalsQueryParamType
-  > = z.enum(ComCrmWalletSelfServiceResourceListWalletJournalsQueryParamType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmWalletSelfServiceResourceListWalletJournalsQueryParamType)
+  );
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceListWalletJournalsOrder$outboundSchema:
   z.ZodMiniEnum<typeof ComCrmWalletSelfServiceResourceListWalletJournalsOrder> =
-    z.enum(ComCrmWalletSelfServiceResourceListWalletJournalsOrder);
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmWalletSelfServiceResourceListWalletJournalsOrder)
+    );
 
 /** @internal */
 export type ComCrmWalletSelfServiceResourceListWalletJournalsRequest$Outbound =
@@ -251,48 +255,50 @@ export const ComCrmWalletSelfServiceResourceListWalletJournalsRequest$outboundSc
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceListWalletJournalsRequest$Outbound,
     ComCrmWalletSelfServiceResourceListWalletJournalsRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      commercePoolId: z.optional(z.string()),
-      includeUnallocatedCredit: z.optional(z.boolean()),
-      isCommerce: z.optional(z.boolean()),
-      isOpen: z.optional(z.boolean()),
-      isWalletFee: z.optional(z.boolean()),
-      postedOn: z.optional(z.int()),
-      postedOnGt: z.optional(z.int()),
-      postedOnGte: z.optional(z.int()),
-      postedOnLt: z.optional(z.int()),
-      postedOnLte: z.optional(z.int()),
-      transactionType: z.optional(z.string()),
-      type: z.optional(
-        ComCrmWalletSelfServiceResourceListWalletJournalsQueryParamType$outboundSchema,
-      ),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmWalletSelfServiceResourceListWalletJournalsOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        commercePoolId: "commerce_pool_id",
-        includeUnallocatedCredit: "include_unallocated_credit",
-        isCommerce: "is_commerce",
-        isOpen: "is_open",
-        isWalletFee: "is_wallet_fee",
-        postedOn: "posted_on",
-        postedOnGt: "posted_on[gt]",
-        postedOnGte: "posted_on[gte]",
-        postedOnLt: "posted_on[lt]",
-        postedOnLte: "posted_on[lte]",
-        transactionType: "transaction_type",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        commercePoolId: z.optional(z.string()),
+        includeUnallocatedCredit: z.optional(z.boolean()),
+        isCommerce: z.optional(z.boolean()),
+        isOpen: z.optional(z.boolean()),
+        isWalletFee: z.optional(z.boolean()),
+        postedOn: z.optional(z.int()),
+        postedOnGt: z.optional(z.int()),
+        postedOnGte: z.optional(z.int()),
+        postedOnLt: z.optional(z.int()),
+        postedOnLte: z.optional(z.int()),
+        transactionType: z.optional(z.string()),
+        type: z.optional(
+          ComCrmWalletSelfServiceResourceListWalletJournalsQueryParamType$outboundSchema,
+        ),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmWalletSelfServiceResourceListWalletJournalsOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          commercePoolId: "commerce_pool_id",
+          includeUnallocatedCredit: "include_unallocated_credit",
+          isCommerce: "is_commerce",
+          isOpen: "is_open",
+          isWalletFee: "is_wallet_fee",
+          postedOn: "posted_on",
+          postedOnGt: "posted_on[gt]",
+          postedOnGte: "posted_on[gte]",
+          postedOnLt: "posted_on[lt]",
+          postedOnLte: "posted_on[lte]",
+          transactionType: "transaction_type",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceListWalletJournalsRequestToJSON(
@@ -310,18 +316,20 @@ export const ComCrmWalletSelfServiceResourceListWalletJournalsPaging$inboundSche
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceListWalletJournalsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceListWalletJournalsPagingFromJSON(
@@ -344,8 +352,10 @@ export const ComCrmWalletSelfServiceResourceListWalletJournalsContentType$inboun
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceListWalletJournalsContentType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmWalletSelfServiceResourceListWalletJournalsContentType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmWalletSelfServiceResourceListWalletJournalsContentType,
+    )
   );
 
 /** @internal */
@@ -353,34 +363,36 @@ export const ComCrmWalletSelfServiceResourceListWalletJournalsContent$inboundSch
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceListWalletJournalsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      amount: types.optional(types.number()),
-      currency: types.optional(types.string()),
-      type: types.optional(
-        ComCrmWalletSelfServiceResourceListWalletJournalsContentType$inboundSchema,
-      ),
-      posted_on: types.optional(types.number()),
-      expiration_date: types.optional(types.number()),
-      unallocated_amount: types.optional(types.number()),
-      description: types.optional(types.string()),
-      exchange_rate: types.optional(types.number()),
-      total_default_currency: types.optional(types.number()),
-      default_currency_code: types.optional(types.string()),
-      transaction_type: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "posted_on": "postedOn",
-        "expiration_date": "expirationDate",
-        "unallocated_amount": "unallocatedAmount",
-        "exchange_rate": "exchangeRate",
-        "total_default_currency": "totalDefaultCurrency",
-        "default_currency_code": "defaultCurrencyCode",
-        "transaction_type": "transactionType",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        amount: types.optional(types.number()),
+        currency: types.optional(types.string()),
+        type: types.optional(
+          ComCrmWalletSelfServiceResourceListWalletJournalsContentType$inboundSchema,
+        ),
+        posted_on: types.optional(types.number()),
+        expiration_date: types.optional(types.number()),
+        unallocated_amount: types.optional(types.number()),
+        description: types.optional(types.string()),
+        exchange_rate: types.optional(types.number()),
+        total_default_currency: types.optional(types.number()),
+        default_currency_code: types.optional(types.string()),
+        transaction_type: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "posted_on": "postedOn",
+          "expiration_date": "expirationDate",
+          "unallocated_amount": "unallocatedAmount",
+          "exchange_rate": "exchangeRate",
+          "total_default_currency": "totalDefaultCurrency",
+          "default_currency_code": "defaultCurrencyCode",
+          "transaction_type": "transactionType",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceListWalletJournalsContentFromJSON(
@@ -403,18 +415,16 @@ export const ComCrmWalletSelfServiceResourceListWalletJournalsResponse$inboundSc
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceListWalletJournalsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmWalletSelfServiceResourceListWalletJournalsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmWalletSelfServiceResourceListWalletJournalsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmWalletSelfServiceResourceListWalletJournalsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmWalletSelfServiceResourceListWalletJournalsResponseFromJSON(
   jsonString: string,

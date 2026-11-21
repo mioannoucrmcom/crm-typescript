@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -86,15 +86,17 @@ export const ComCrmPayoutSelfServiceResourceCreateSecurity$outboundSchema:
   z.ZodMiniType<
     ComCrmPayoutSelfServiceResourceCreateSecurity$Outbound,
     ComCrmPayoutSelfServiceResourceCreateSecurity
-  > = z.pipe(
-    z.object({
-      publicAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        publicAPIKey: "Public_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        publicAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          publicAPIKey: "Public_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmPayoutSelfServiceResourceCreateSecurityToJSON(
@@ -110,9 +112,10 @@ export function comCrmPayoutSelfServiceResourceCreateSecurityToJSON(
 
 /** @internal */
 export const ComCrmPayoutSelfServiceResourceCreateType$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmPayoutSelfServiceResourceCreateType> = z.enum(
-    ComCrmPayoutSelfServiceResourceCreateType,
-  );
+  z.ZodMiniEnum<typeof ComCrmPayoutSelfServiceResourceCreateType> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmPayoutSelfServiceResourceCreateType)
+    );
 
 /** @internal */
 export type ComCrmPayoutSelfServiceResourceCreatePaymentMethod$Outbound = {
@@ -125,10 +128,12 @@ export const ComCrmPayoutSelfServiceResourceCreatePaymentMethod$outboundSchema:
   z.ZodMiniType<
     ComCrmPayoutSelfServiceResourceCreatePaymentMethod$Outbound,
     ComCrmPayoutSelfServiceResourceCreatePaymentMethod
-  > = z.object({
-    id: z.string(),
-    type: ComCrmPayoutSelfServiceResourceCreateType$outboundSchema,
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      type: ComCrmPayoutSelfServiceResourceCreateType$outboundSchema,
+    })
+  );
 
 export function comCrmPayoutSelfServiceResourceCreatePaymentMethodToJSON(
   comCrmPayoutSelfServiceResourceCreatePaymentMethod:
@@ -154,21 +159,23 @@ export const ComCrmPayoutSelfServiceResourceCreateRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmPayoutSelfServiceResourceCreateRequest$Outbound,
     ComCrmPayoutSelfServiceResourceCreateRequest
-  > = z.pipe(
-    z.object({
-      walletId: z.optional(z.string()),
-      amount: z.number(),
-      paymentMethod: z.lazy(() =>
-        ComCrmPayoutSelfServiceResourceCreatePaymentMethod$outboundSchema
-      ),
-      notes: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        walletId: "wallet_id",
-        paymentMethod: "payment_method",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        walletId: z.optional(z.string()),
+        amount: z.number(),
+        paymentMethod: z.lazy(() =>
+          ComCrmPayoutSelfServiceResourceCreatePaymentMethod$outboundSchema
+        ),
+        notes: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          walletId: "wallet_id",
+          paymentMethod: "payment_method",
+        });
+      }),
+    )
   );
 
 export function comCrmPayoutSelfServiceResourceCreateRequestToJSON(
@@ -184,10 +191,12 @@ export function comCrmPayoutSelfServiceResourceCreateRequestToJSON(
 
 /** @internal */
 export const ComCrmPayoutSelfServiceResourceCreateResponse$inboundSchema:
-  z.ZodMiniType<ComCrmPayoutSelfServiceResourceCreateResponse, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmPayoutSelfServiceResourceCreateResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function comCrmPayoutSelfServiceResourceCreateResponseFromJSON(
   jsonString: string,

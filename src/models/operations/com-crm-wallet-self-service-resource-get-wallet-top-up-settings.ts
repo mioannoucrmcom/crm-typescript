@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -580,17 +580,19 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsSecurity$outbo
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsSecurity$Outbound,
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorizationSelfService: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-        authorizationSelfService: "authorization_self_service",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorizationSelfService: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+          authorizationSelfService: "authorization_self_service",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceGetWalletTopUpSettingsSecurityToJSON(
@@ -614,9 +616,11 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsRequest$outbou
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsRequest$Outbound,
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmWalletSelfServiceResourceGetWalletTopUpSettingsRequestToJSON(
   comCrmWalletSelfServiceResourceGetWalletTopUpSettingsRequest:
@@ -633,18 +637,22 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupType$
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupType,
+    )
   );
 
 /** @internal */
 export const AutoTopupIdentity$inboundSchema: z.ZodMiniType<
   AutoTopupIdentity,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  identifier: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    identifier: types.optional(types.string()),
+  })
+);
 
 export function autoTopupIdentityFromJSON(
   jsonString: string,
@@ -661,12 +669,14 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupPayme
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupPaymentMethod,
     unknown
-  > = z.object({
-    type: types.optional(
-      ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupType$inboundSchema,
-    ),
-    identity: types.optional(z.lazy(() => AutoTopupIdentity$inboundSchema)),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      type: types.optional(
+        ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupType$inboundSchema,
+      ),
+      identity: types.optional(z.lazy(() => AutoTopupIdentity$inboundSchema)),
+    })
+  );
 
 export function comCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupPaymentMethodFromJSON(
   jsonString: string,
@@ -687,28 +697,34 @@ export function comCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupPa
 export const AutoTopupCurrencyCode$inboundSchema: z.ZodMiniType<
   AutoTopupCurrencyCode,
   unknown
-> = openEnums.inboundSchema(AutoTopupCurrencyCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(AutoTopupCurrencyCode)
+);
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopup$inboundSchema:
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopup,
     unknown
-  > = z.pipe(
-    z.object({
-      threshold: types.optional(types.number()),
-      amount: types.optional(types.number()),
-      payment_method: types.optional(z.lazy(() =>
-        ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupPaymentMethod$inboundSchema
-      )),
-      currency_code: types.optional(AutoTopupCurrencyCode$inboundSchema),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "payment_method": "paymentMethod",
-        "currency_code": "currencyCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        threshold: types.optional(types.number()),
+        amount: types.optional(types.number()),
+        payment_method: types.optional(
+          z.lazy(() =>
+            ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupPaymentMethod$inboundSchema
+          ),
+        ),
+        currency_code: types.optional(AutoTopupCurrencyCode$inboundSchema),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "payment_method": "paymentMethod",
+          "currency_code": "currencyCode",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopupFromJSON(
@@ -731,8 +747,10 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupCur
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -740,8 +758,10 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupTyp
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupType,
+    )
   );
 
 /** @internal */
@@ -749,10 +769,12 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupIde
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupIdentity,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    identifier: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      identifier: types.optional(types.string()),
+    })
+  );
 
 export function comCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupIdentityFromJSON(
   jsonString: string,
@@ -774,16 +796,16 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupPay
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupPaymentMethod,
     unknown
-  > = z.object({
-    type: types.optional(
-      ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupType$inboundSchema,
-    ),
-    identity: types.optional(
-      z.lazy(() =>
-        ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupIdentity$inboundSchema
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      type: types.optional(
+        ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupType$inboundSchema,
       ),
-    ),
-  });
+      identity: types.optional(z.lazy(() =>
+        ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupIdentity$inboundSchema
+      )),
+    })
+  );
 
 export function comCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupPaymentMethodFromJSON(
   jsonString: string,
@@ -805,8 +827,10 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsPeriod$inbound
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsPeriod,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsPeriod,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsPeriod,
+    )
   );
 
 /** @internal */
@@ -814,26 +838,28 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopup$in
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopup,
     unknown
-  > = z.pipe(
-    z.object({
-      amount: types.number(),
-      currency_code: types.optional(
-        ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupCurrencyCode$inboundSchema,
-      ),
-      frequency: types.string(),
-      payment_method: z.lazy(() =>
-        ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupPaymentMethod$inboundSchema
-      ),
-      period: types.optional(
-        ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsPeriod$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "currency_code": "currencyCode",
-        "payment_method": "paymentMethod",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        amount: types.number(),
+        currency_code: types.optional(
+          ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupCurrencyCode$inboundSchema,
+        ),
+        frequency: types.string(),
+        payment_method: z.lazy(() =>
+          ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupPaymentMethod$inboundSchema
+        ),
+        period: types.optional(
+          ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsPeriod$inboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "currency_code": "currencyCode",
+          "payment_method": "paymentMethod",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopupFromJSON(
@@ -856,21 +882,27 @@ export const ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsResponse$inbou
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      auto_topup: types.optional(z.lazy(() =>
-        ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopup$inboundSchema
-      )),
-      termed_topup: types.optional(z.lazy(() =>
-        ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopup$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "auto_topup": "autoTopup",
-        "termed_topup": "termedTopup",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        auto_topup: types.optional(
+          z.lazy(() =>
+            ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsAutoTopup$inboundSchema
+          ),
+        ),
+        termed_topup: types.optional(
+          z.lazy(() =>
+            ComCrmWalletSelfServiceResourceGetWalletTopUpSettingsTermedTopup$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "auto_topup": "autoTopup",
+          "termed_topup": "termedTopup",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceGetWalletTopUpSettingsResponseFromJSON(

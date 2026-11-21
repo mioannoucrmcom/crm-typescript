@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -60,7 +60,9 @@ export type ComCrmApprovalRequestSelfServiceResourcePerformActionsResponse = {
 export const ComCrmApprovalRequestSelfServiceResourcePerformActionsAction$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmApprovalRequestSelfServiceResourcePerformActionsAction
-  > = z.enum(ComCrmApprovalRequestSelfServiceResourcePerformActionsAction);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmApprovalRequestSelfServiceResourcePerformActionsAction)
+  );
 
 /** @internal */
 export type ComCrmApprovalRequestSelfServiceResourcePerformActionsRequestBody$Outbound =
@@ -74,12 +76,14 @@ export const ComCrmApprovalRequestSelfServiceResourcePerformActionsRequestBody$o
   z.ZodMiniType<
     ComCrmApprovalRequestSelfServiceResourcePerformActionsRequestBody$Outbound,
     ComCrmApprovalRequestSelfServiceResourcePerformActionsRequestBody
-  > = z.object({
-    action: z.optional(
-      ComCrmApprovalRequestSelfServiceResourcePerformActionsAction$outboundSchema,
-    ),
-    comments: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      action: z.optional(
+        ComCrmApprovalRequestSelfServiceResourcePerformActionsAction$outboundSchema,
+      ),
+      comments: z.optional(z.string()),
+    })
+  );
 
 export function comCrmApprovalRequestSelfServiceResourcePerformActionsRequestBodyToJSON(
   comCrmApprovalRequestSelfServiceResourcePerformActionsRequestBody:
@@ -104,12 +108,14 @@ export const ComCrmApprovalRequestSelfServiceResourcePerformActionsRequest$outbo
   z.ZodMiniType<
     ComCrmApprovalRequestSelfServiceResourcePerformActionsRequest$Outbound,
     ComCrmApprovalRequestSelfServiceResourcePerformActionsRequest
-  > = z.object({
-    id: z.string(),
-    body: z.lazy(() =>
-      ComCrmApprovalRequestSelfServiceResourcePerformActionsRequestBody$outboundSchema
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.lazy(() =>
+        ComCrmApprovalRequestSelfServiceResourcePerformActionsRequestBody$outboundSchema
+      ),
+    })
+  );
 
 export function comCrmApprovalRequestSelfServiceResourcePerformActionsRequestToJSON(
   comCrmApprovalRequestSelfServiceResourcePerformActionsRequest:
@@ -126,9 +132,11 @@ export const ComCrmApprovalRequestSelfServiceResourcePerformActionsResponse$inbo
   z.ZodMiniType<
     ComCrmApprovalRequestSelfServiceResourcePerformActionsResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmApprovalRequestSelfServiceResourcePerformActionsResponseFromJSON(
   jsonString: string,

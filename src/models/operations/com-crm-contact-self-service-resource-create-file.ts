@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -62,16 +62,18 @@ export const ComCrmContactSelfServiceResourceCreateFileSecurity$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceCreateFileSecurity$Outbound,
     ComCrmContactSelfServiceResourceCreateFileSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceCreateFileSecurityToJSON(
@@ -98,18 +100,20 @@ export const ComCrmContactSelfServiceResourceCreateFileRequestBody$outboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceCreateFileRequestBody$Outbound,
     ComCrmContactSelfServiceResourceCreateFileRequestBody
-  > = z.pipe(
-    z.object({
-      id: z.optional(z.string()),
-      fileId: z.nullable(z.string()),
-      link: z.nullable(z.string()),
-      description: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        fileId: "file_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.optional(z.string()),
+        fileId: z.nullable(z.string()),
+        link: z.nullable(z.string()),
+        description: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          fileId: "file_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceCreateFileRequestBodyToJSON(
@@ -136,14 +140,14 @@ export const ComCrmContactSelfServiceResourceCreateFileRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceCreateFileRequest$Outbound,
     ComCrmContactSelfServiceResourceCreateFileRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceCreateFileRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceCreateFileRequestToJSON(
   comCrmContactSelfServiceResourceCreateFileRequest:
@@ -158,10 +162,12 @@ export function comCrmContactSelfServiceResourceCreateFileRequestToJSON(
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceCreateFileResponse$inboundSchema:
-  z.ZodMiniType<ComCrmContactSelfServiceResourceCreateFileResponse, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmContactSelfServiceResourceCreateFileResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function comCrmContactSelfServiceResourceCreateFileResponseFromJSON(
   jsonString: string,

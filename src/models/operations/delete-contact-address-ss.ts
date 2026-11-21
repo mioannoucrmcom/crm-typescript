@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type DeleteContactAddressSSRequest = {
   /**
@@ -26,16 +27,18 @@ export type DeleteContactAddressSSRequest$Outbound = {
 export const DeleteContactAddressSSRequest$outboundSchema: z.ZodMiniType<
   DeleteContactAddressSSRequest$Outbound,
   DeleteContactAddressSSRequest
-> = z.pipe(
-  z.object({
-    addressId: z.string(),
-    id: z.string(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      addressId: "address_id",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      addressId: z.string(),
+      id: z.string(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        addressId: "address_id",
+      });
+    }),
+  )
 );
 
 export function deleteContactAddressSSRequestToJSON(

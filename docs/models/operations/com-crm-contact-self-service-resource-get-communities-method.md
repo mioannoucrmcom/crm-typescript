@@ -8,11 +8,11 @@ Defines whether money requests will require an acceptance from the community own
 import { ComCrmContactSelfServiceResourceGetCommunitiesMethod } from "crm/models/operations";
 
 let value: ComCrmContactSelfServiceResourceGetCommunitiesMethod = "AUTO";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "AUTO" | "MANUAL" | Unrecognized<string>

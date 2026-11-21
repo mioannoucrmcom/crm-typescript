@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceLeaveCommunitySecurity = {
   secretAPIKey?: string | undefined;
@@ -32,16 +33,18 @@ export const ComCrmContactSelfServiceResourceLeaveCommunitySecurity$outboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceLeaveCommunitySecurity$Outbound,
     ComCrmContactSelfServiceResourceLeaveCommunitySecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceLeaveCommunitySecurityToJSON(
@@ -66,16 +69,18 @@ export const ComCrmContactSelfServiceResourceLeaveCommunityRequest$outboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceLeaveCommunityRequest$Outbound,
     ComCrmContactSelfServiceResourceLeaveCommunityRequest
-  > = z.pipe(
-    z.object({
-      communityOwnerId: z.string(),
-      id: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        communityOwnerId: "community_owner_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        communityOwnerId: z.string(),
+        id: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          communityOwnerId: "community_owner_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceLeaveCommunityRequestToJSON(

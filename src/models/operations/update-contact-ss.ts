@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -1331,12 +1331,12 @@ export type UpdateContactSSResponse = {
 /** @internal */
 export const UpdateContactSSType$outboundSchema: z.ZodMiniEnum<
   typeof UpdateContactSSType
-> = z.enum(UpdateContactSSType);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(UpdateContactSSType));
 
 /** @internal */
 export const UpdateContactSSCountryCode$outboundSchema: z.ZodMiniEnum<
   typeof UpdateContactSSCountryCode
-> = z.enum(UpdateContactSSCountryCode);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(UpdateContactSSCountryCode));
 
 /** @internal */
 export type UpdateContactSSPhone$Outbound = {
@@ -1349,17 +1349,19 @@ export type UpdateContactSSPhone$Outbound = {
 export const UpdateContactSSPhone$outboundSchema: z.ZodMiniType<
   UpdateContactSSPhone$Outbound,
   UpdateContactSSPhone
-> = z.pipe(
-  z.object({
-    type: UpdateContactSSType$outboundSchema,
-    countryCode: z.optional(UpdateContactSSCountryCode$outboundSchema),
-    number: z.optional(z.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      countryCode: "country_code",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      type: UpdateContactSSType$outboundSchema,
+      countryCode: z.optional(UpdateContactSSCountryCode$outboundSchema),
+      number: z.optional(z.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        countryCode: "country_code",
+      });
+    }),
+  )
 );
 
 export function updateContactSSPhoneToJSON(
@@ -1373,7 +1375,7 @@ export function updateContactSSPhoneToJSON(
 /** @internal */
 export const UpdateContactSSGender$outboundSchema: z.ZodMiniEnum<
   typeof UpdateContactSSGender
-> = z.enum(UpdateContactSSGender);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(UpdateContactSSGender));
 
 /** @internal */
 export type UpdateContactSSDateOfBirth$Outbound = {
@@ -1386,11 +1388,13 @@ export type UpdateContactSSDateOfBirth$Outbound = {
 export const UpdateContactSSDateOfBirth$outboundSchema: z.ZodMiniType<
   UpdateContactSSDateOfBirth$Outbound,
   UpdateContactSSDateOfBirth
-> = z.object({
-  year: z.int(),
-  month: z.int(),
-  day: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    year: z.int(),
+    month: z.int(),
+    day: z.int(),
+  })
+);
 
 export function updateContactSSDateOfBirthToJSON(
   updateContactSSDateOfBirth: UpdateContactSSDateOfBirth,
@@ -1410,10 +1414,12 @@ export type UpdateContactSSNameDay$Outbound = {
 export const UpdateContactSSNameDay$outboundSchema: z.ZodMiniType<
   UpdateContactSSNameDay$Outbound,
   UpdateContactSSNameDay
-> = z.object({
-  month: z.int(),
-  day: z.int(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    month: z.int(),
+    day: z.int(),
+  })
+);
 
 export function updateContactSSNameDayToJSON(
   updateContactSSNameDay: UpdateContactSSNameDay,
@@ -1425,9 +1431,10 @@ export function updateContactSSNameDayToJSON(
 
 /** @internal */
 export const UpdateContactSSPassportIssuingCountryCode$outboundSchema:
-  z.ZodMiniEnum<typeof UpdateContactSSPassportIssuingCountryCode> = z.enum(
-    UpdateContactSSPassportIssuingCountryCode,
-  );
+  z.ZodMiniEnum<typeof UpdateContactSSPassportIssuingCountryCode> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(UpdateContactSSPassportIssuingCountryCode)
+    );
 
 /** @internal */
 export type UpdateContactSSPassport$Outbound = {
@@ -1440,19 +1447,21 @@ export type UpdateContactSSPassport$Outbound = {
 export const UpdateContactSSPassport$outboundSchema: z.ZodMiniType<
   UpdateContactSSPassport$Outbound,
   UpdateContactSSPassport
-> = z.pipe(
-  z.object({
-    number: z.string(),
-    issuingCountryCode:
-      UpdateContactSSPassportIssuingCountryCode$outboundSchema,
-    expirationDate: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      issuingCountryCode: "issuing_country_code",
-      expirationDate: "expiration_date",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      number: z.string(),
+      issuingCountryCode:
+        UpdateContactSSPassportIssuingCountryCode$outboundSchema,
+      expirationDate: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        issuingCountryCode: "issuing_country_code",
+        expirationDate: "expiration_date",
+      });
+    }),
+  )
 );
 
 export function updateContactSSPassportToJSON(
@@ -1465,9 +1474,10 @@ export function updateContactSSPassportToJSON(
 
 /** @internal */
 export const UpdateContactSSIdDetailsIssuingCountryCode$outboundSchema:
-  z.ZodMiniEnum<typeof UpdateContactSSIdDetailsIssuingCountryCode> = z.enum(
-    UpdateContactSSIdDetailsIssuingCountryCode,
-  );
+  z.ZodMiniEnum<typeof UpdateContactSSIdDetailsIssuingCountryCode> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(UpdateContactSSIdDetailsIssuingCountryCode)
+    );
 
 /** @internal */
 export type UpdateContactSSIdDetails$Outbound = {
@@ -1480,19 +1490,21 @@ export type UpdateContactSSIdDetails$Outbound = {
 export const UpdateContactSSIdDetails$outboundSchema: z.ZodMiniType<
   UpdateContactSSIdDetails$Outbound,
   UpdateContactSSIdDetails
-> = z.pipe(
-  z.object({
-    number: z.string(),
-    issuingCountryCode:
-      UpdateContactSSIdDetailsIssuingCountryCode$outboundSchema,
-    expirationDate: z.int(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      issuingCountryCode: "issuing_country_code",
-      expirationDate: "expiration_date",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      number: z.string(),
+      issuingCountryCode:
+        UpdateContactSSIdDetailsIssuingCountryCode$outboundSchema,
+      expirationDate: z.int(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        issuingCountryCode: "issuing_country_code",
+        expirationDate: "expiration_date",
+      });
+    }),
+  )
 );
 
 export function updateContactSSIdDetailsToJSON(
@@ -1517,31 +1529,33 @@ export type UpdateContactSSDemographics$Outbound = {
 export const UpdateContactSSDemographics$outboundSchema: z.ZodMiniType<
   UpdateContactSSDemographics$Outbound,
   UpdateContactSSDemographics
-> = z.pipe(
-  z.object({
-    gender: z.optional(UpdateContactSSGender$outboundSchema),
-    dateOfBirth: z.optional(
-      z.nullable(z.lazy(() => UpdateContactSSDateOfBirth$outboundSchema)),
-    ),
-    nameDay: z.optional(
-      z.nullable(z.lazy(() => UpdateContactSSNameDay$outboundSchema)),
-    ),
-    passport: z.optional(
-      z.nullable(z.lazy(() => UpdateContactSSPassport$outboundSchema)),
-    ),
-    idDetails: z.optional(
-      z.nullable(z.lazy(() => UpdateContactSSIdDetails$outboundSchema)),
-    ),
-    statutoryNumber: z.optional(z.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      dateOfBirth: "date_of_birth",
-      nameDay: "name_day",
-      idDetails: "id_details",
-      statutoryNumber: "statutory_number",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      gender: z.optional(UpdateContactSSGender$outboundSchema),
+      dateOfBirth: z.optional(
+        z.nullable(z.lazy(() => UpdateContactSSDateOfBirth$outboundSchema)),
+      ),
+      nameDay: z.optional(
+        z.nullable(z.lazy(() => UpdateContactSSNameDay$outboundSchema)),
+      ),
+      passport: z.optional(
+        z.nullable(z.lazy(() => UpdateContactSSPassport$outboundSchema)),
+      ),
+      idDetails: z.optional(
+        z.nullable(z.lazy(() => UpdateContactSSIdDetails$outboundSchema)),
+      ),
+      statutoryNumber: z.optional(z.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        dateOfBirth: "date_of_birth",
+        nameDay: "name_day",
+        idDetails: "id_details",
+        statutoryNumber: "statutory_number",
+      });
+    }),
+  )
 );
 
 export function updateContactSSDemographicsToJSON(
@@ -1564,10 +1578,12 @@ export type UpdateContactSSCustomField$Outbound = {
 export const UpdateContactSSCustomField$outboundSchema: z.ZodMiniType<
   UpdateContactSSCustomField$Outbound,
   UpdateContactSSCustomField
-> = z.object({
-  key: z.optional(z.string()),
-  value: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    key: z.optional(z.string()),
+    value: z.optional(z.string()),
+  })
+);
 
 export function updateContactSSCustomFieldToJSON(
   updateContactSSCustomField: UpdateContactSSCustomField,
@@ -1580,7 +1596,9 @@ export function updateContactSSCustomFieldToJSON(
 /** @internal */
 export const UpdateContactSSRegistrationCountry$outboundSchema: z.ZodMiniEnum<
   typeof UpdateContactSSRegistrationCountry
-> = z.enum(UpdateContactSSRegistrationCountry);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.enum(UpdateContactSSRegistrationCountry)
+);
 
 /** @internal */
 export type UpdateContactSSSubIndustry$Outbound = {
@@ -1591,9 +1609,11 @@ export type UpdateContactSSSubIndustry$Outbound = {
 export const UpdateContactSSSubIndustry$outboundSchema: z.ZodMiniType<
   UpdateContactSSSubIndustry$Outbound,
   UpdateContactSSSubIndustry
-> = z.object({
-  id: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.optional(z.string()),
+  })
+);
 
 export function updateContactSSSubIndustryToJSON(
   updateContactSSSubIndustry: UpdateContactSSSubIndustry,
@@ -1620,29 +1640,33 @@ export type UpdateContactSSCompanyProfile$Outbound = {
 export const UpdateContactSSCompanyProfile$outboundSchema: z.ZodMiniType<
   UpdateContactSSCompanyProfile$Outbound,
   UpdateContactSSCompanyProfile
-> = z.pipe(
-  z.object({
-    registrationNumber: z.optional(z.nullable(z.string())),
-    registrationCountry: z.optional(
-      z.nullable(UpdateContactSSRegistrationCountry$outboundSchema),
-    ),
-    taxReferenceNumber: z.optional(z.nullable(z.string())),
-    vatRegistrationNumber: z.optional(z.nullable(z.string())),
-    industryId: z.optional(z.nullable(z.string())),
-    subIndustries: z.optional(z.nullable(z.array(z.lazy(() =>
-      UpdateContactSSSubIndustry$outboundSchema
-    )))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      registrationNumber: "registration_number",
-      registrationCountry: "registration_country",
-      taxReferenceNumber: "tax_reference_number",
-      vatRegistrationNumber: "vat_registration_number",
-      industryId: "industry_id",
-      subIndustries: "sub_industries",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      registrationNumber: z.optional(z.nullable(z.string())),
+      registrationCountry: z.optional(
+        z.nullable(UpdateContactSSRegistrationCountry$outboundSchema),
+      ),
+      taxReferenceNumber: z.optional(z.nullable(z.string())),
+      vatRegistrationNumber: z.optional(z.nullable(z.string())),
+      industryId: z.optional(z.nullable(z.string())),
+      subIndustries: z.optional(
+        z.nullable(z.array(z.lazy(() =>
+          UpdateContactSSSubIndustry$outboundSchema
+        ))),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        registrationNumber: "registration_number",
+        registrationCountry: "registration_country",
+        taxReferenceNumber: "tax_reference_number",
+        vatRegistrationNumber: "vat_registration_number",
+        industryId: "industry_id",
+        subIndustries: "sub_industries",
+      });
+    }),
+  )
 );
 
 export function updateContactSSCompanyProfileToJSON(
@@ -1676,41 +1700,43 @@ export type UpdateContactSSRequestBody$Outbound = {
 export const UpdateContactSSRequestBody$outboundSchema: z.ZodMiniType<
   UpdateContactSSRequestBody$Outbound,
   UpdateContactSSRequestBody
-> = z.pipe(
-  z.object({
-    id: z.optional(z.string()),
-    firstName: z.optional(z.nullable(z.string())),
-    middleName: z.optional(z.nullable(z.string())),
-    lastName: z.optional(z.nullable(z.string())),
-    languageCode: z.optional(z.nullable(z.string())),
-    email: z.optional(z.string()),
-    phone: z.optional(z.lazy(() => UpdateContactSSPhone$outboundSchema)),
-    demographics: z.optional(
-      z.lazy(() => UpdateContactSSDemographics$outboundSchema),
-    ),
-    smsOptOut: z.optional(z.boolean()),
-    emailOptOut: z.optional(z.boolean()),
-    customFields: z.optional(
-      z.array(z.lazy(() => UpdateContactSSCustomField$outboundSchema)),
-    ),
-    companyName: z.optional(z.string()),
-    companyProfile: z.optional(
-      z.lazy(() => UpdateContactSSCompanyProfile$outboundSchema),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      firstName: "first_name",
-      middleName: "middle_name",
-      lastName: "last_name",
-      languageCode: "language_code",
-      smsOptOut: "sms_opt_out",
-      emailOptOut: "email_opt_out",
-      customFields: "custom_fields",
-      companyName: "company_name",
-      companyProfile: "company_profile",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: z.optional(z.string()),
+      firstName: z.optional(z.nullable(z.string())),
+      middleName: z.optional(z.nullable(z.string())),
+      lastName: z.optional(z.nullable(z.string())),
+      languageCode: z.optional(z.nullable(z.string())),
+      email: z.optional(z.string()),
+      phone: z.optional(z.lazy(() => UpdateContactSSPhone$outboundSchema)),
+      demographics: z.optional(
+        z.lazy(() => UpdateContactSSDemographics$outboundSchema),
+      ),
+      smsOptOut: z.optional(z.boolean()),
+      emailOptOut: z.optional(z.boolean()),
+      customFields: z.optional(
+        z.array(z.lazy(() => UpdateContactSSCustomField$outboundSchema)),
+      ),
+      companyName: z.optional(z.string()),
+      companyProfile: z.optional(
+        z.lazy(() => UpdateContactSSCompanyProfile$outboundSchema),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        firstName: "first_name",
+        middleName: "middle_name",
+        lastName: "last_name",
+        languageCode: "language_code",
+        smsOptOut: "sms_opt_out",
+        emailOptOut: "email_opt_out",
+        customFields: "custom_fields",
+        companyName: "company_name",
+        companyProfile: "company_profile",
+      });
+    }),
+  )
 );
 
 export function updateContactSSRequestBodyToJSON(
@@ -1731,10 +1757,12 @@ export type UpdateContactSSRequest$Outbound = {
 export const UpdateContactSSRequest$outboundSchema: z.ZodMiniType<
   UpdateContactSSRequest$Outbound,
   UpdateContactSSRequest
-> = z.object({
-  id: z.string(),
-  body: z.optional(z.lazy(() => UpdateContactSSRequestBody$outboundSchema)),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    body: z.optional(z.lazy(() => UpdateContactSSRequestBody$outboundSchema)),
+  })
+);
 
 export function updateContactSSRequestToJSON(
   updateContactSSRequest: UpdateContactSSRequest,
@@ -1748,9 +1776,11 @@ export function updateContactSSRequestToJSON(
 export const UpdateContactSSResponse$inboundSchema: z.ZodMiniType<
   UpdateContactSSResponse,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+  })
+);
 
 export function updateContactSSResponseFromJSON(
   jsonString: string,

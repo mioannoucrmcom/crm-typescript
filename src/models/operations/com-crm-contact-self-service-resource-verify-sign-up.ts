@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceVerifySignUpRequest = {
   /**
@@ -22,15 +23,17 @@ export const ComCrmContactSelfServiceResourceVerifySignUpRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceVerifySignUpRequest$Outbound,
     ComCrmContactSelfServiceResourceVerifySignUpRequest
-  > = z.pipe(
-    z.object({
-      signUpCode: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        signUpCode: "sign_up_code",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        signUpCode: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          signUpCode: "sign_up_code",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceVerifySignUpRequestToJSON(

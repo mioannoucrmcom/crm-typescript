@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -191,15 +191,17 @@ export const ComCrmSubscriptionSelfServiceResourceChangeServiceSecurity$outbound
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceChangeServiceSecurity$Outbound,
     ComCrmSubscriptionSelfServiceResourceChangeServiceSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceChangeServiceSecurityToJSON(
@@ -216,7 +218,9 @@ export function comCrmSubscriptionSelfServiceResourceChangeServiceSecurityToJSON
 export const ComCrmSubscriptionSelfServiceResourceChangeServiceAction$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSubscriptionSelfServiceResourceChangeServiceAction
-  > = z.enum(ComCrmSubscriptionSelfServiceResourceChangeServiceAction);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmSubscriptionSelfServiceResourceChangeServiceAction)
+  );
 
 /** @internal */
 export type ChangeToService$Outbound = {
@@ -228,17 +232,19 @@ export type ChangeToService$Outbound = {
 export const ChangeToService$outboundSchema: z.ZodMiniType<
   ChangeToService$Outbound,
   ChangeToService
-> = z.pipe(
-  z.object({
-    productId: z.string(),
-    priceTermsId: z.optional(z.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      productId: "product_id",
-      priceTermsId: "price_terms_id",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      productId: z.string(),
+      priceTermsId: z.optional(z.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        productId: "product_id",
+        priceTermsId: "price_terms_id",
+      });
+    }),
+  )
 );
 
 export function changeToServiceToJSON(
@@ -254,18 +260,20 @@ export type Added$Outbound = {
 };
 
 /** @internal */
-export const Added$outboundSchema: z.ZodMiniType<Added$Outbound, Added> = z
-  .pipe(
-    z.object({
-      productId: z.optional(z.string()),
-      priceTermsId: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        productId: "product_id",
-        priceTermsId: "price_terms_id",
-      });
-    }),
+export const Added$outboundSchema: z.ZodMiniType<Added$Outbound, Added> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        productId: z.optional(z.string()),
+        priceTermsId: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          productId: "product_id",
+          priceTermsId: "price_terms_id",
+        });
+      }),
+    )
   );
 
 export function addedToJSON(added: Added): string {
@@ -279,9 +287,11 @@ export type Removed$Outbound = {
 
 /** @internal */
 export const Removed$outboundSchema: z.ZodMiniType<Removed$Outbound, Removed> =
-  z.object({
-    id: z.optional(z.string()),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+    })
+  );
 
 export function removedToJSON(removed: Removed): string {
   return JSON.stringify(Removed$outboundSchema.parse(removed));
@@ -297,10 +307,12 @@ export type Components$Outbound = {
 export const Components$outboundSchema: z.ZodMiniType<
   Components$Outbound,
   Components
-> = z.object({
-  added: z.optional(z.array(z.lazy(() => Added$outboundSchema))),
-  removed: z.optional(z.array(z.lazy(() => Removed$outboundSchema))),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    added: z.optional(z.array(z.lazy(() => Added$outboundSchema))),
+    removed: z.optional(z.array(z.lazy(() => Removed$outboundSchema))),
+  })
+);
 
 export function componentsToJSON(components: Components): string {
   return JSON.stringify(Components$outboundSchema.parse(components));
@@ -317,10 +329,12 @@ export const ComCrmSubscriptionSelfServiceResourceChangeServicePass$outboundSche
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceChangeServicePass$Outbound,
     ComCrmSubscriptionSelfServiceResourceChangeServicePass
-  > = z.object({
-    code: z.string(),
-    pin: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      code: z.string(),
+      pin: z.optional(z.string()),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceChangeServicePassToJSON(
   comCrmSubscriptionSelfServiceResourceChangeServicePass:
@@ -344,9 +358,11 @@ export const ComCrmSubscriptionSelfServiceResourceChangeServiceLocation$outbound
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceChangeServiceLocation$Outbound,
     ComCrmSubscriptionSelfServiceResourceChangeServiceLocation
-  > = z.object({
-    id: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceChangeServiceLocationToJSON(
   comCrmSubscriptionSelfServiceResourceChangeServiceLocation:
@@ -367,9 +383,11 @@ export type EnabledDevice$Outbound = {
 export const EnabledDevice$outboundSchema: z.ZodMiniType<
   EnabledDevice$Outbound,
   EnabledDevice
-> = z.object({
-  id: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.optional(z.string()),
+  })
+);
 
 export function enabledDeviceToJSON(enabledDevice: EnabledDevice): string {
   return JSON.stringify(EnabledDevice$outboundSchema.parse(enabledDevice));
@@ -403,39 +421,47 @@ export const ComCrmSubscriptionSelfServiceResourceChangeServiceRequestBody$outbo
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceChangeServiceRequestBody$Outbound,
     ComCrmSubscriptionSelfServiceResourceChangeServiceRequestBody
-  > = z.pipe(
-    z.object({
-      action:
-        ComCrmSubscriptionSelfServiceResourceChangeServiceAction$outboundSchema,
-      categoryId: z.optional(z.string()),
-      scheduledDate: z.optional(z.int()),
-      useProposedDate: z.optional(z.boolean()),
-      numberOfDays: z.optional(z.int()),
-      quantity: z.optional(z.int()),
-      priceTermsId: z.optional(z.string()),
-      changeToService: z.optional(z.lazy(() => ChangeToService$outboundSchema)),
-      components: z.optional(z.lazy(() => Components$outboundSchema)),
-      pass: z.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceChangeServicePass$outboundSchema
-      )),
-      locations: z.optional(z.array(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceChangeServiceLocation$outboundSchema
-      ))),
-      enabledDevices: z.optional(z.array(z.lazy(() =>
-        EnabledDevice$outboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        categoryId: "category_id",
-        scheduledDate: "scheduled_date",
-        useProposedDate: "use_proposed_date",
-        numberOfDays: "number_of_days",
-        priceTermsId: "price_terms_id",
-        changeToService: "change_to_service",
-        enabledDevices: "enabled_devices",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        action:
+          ComCrmSubscriptionSelfServiceResourceChangeServiceAction$outboundSchema,
+        categoryId: z.optional(z.string()),
+        scheduledDate: z.optional(z.int()),
+        useProposedDate: z.optional(z.boolean()),
+        numberOfDays: z.optional(z.int()),
+        quantity: z.optional(z.int()),
+        priceTermsId: z.optional(z.string()),
+        changeToService: z.optional(
+          z.lazy(() => ChangeToService$outboundSchema),
+        ),
+        components: z.optional(z.lazy(() => Components$outboundSchema)),
+        pass: z.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceChangeServicePass$outboundSchema
+          ),
+        ),
+        locations: z.optional(
+          z.array(z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceChangeServiceLocation$outboundSchema
+          )),
+        ),
+        enabledDevices: z.optional(
+          z.array(z.lazy(() => EnabledDevice$outboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          categoryId: "category_id",
+          scheduledDate: "scheduled_date",
+          useProposedDate: "use_proposed_date",
+          numberOfDays: "number_of_days",
+          priceTermsId: "price_terms_id",
+          changeToService: "change_to_service",
+          enabledDevices: "enabled_devices",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceChangeServiceRequestBodyToJSON(
@@ -462,14 +488,14 @@ export const ComCrmSubscriptionSelfServiceResourceChangeServiceRequest$outboundS
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceChangeServiceRequest$Outbound,
     ComCrmSubscriptionSelfServiceResourceChangeServiceRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmSubscriptionSelfServiceResourceChangeServiceRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceChangeServiceRequestToJSON(
   comCrmSubscriptionSelfServiceResourceChangeServiceRequest:
@@ -486,16 +512,18 @@ export const ComCrmSubscriptionSelfServiceResourceChangeServiceResponse$inboundS
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceChangeServiceResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      proposed_date: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "proposed_date": "proposedDate",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        proposed_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "proposed_date": "proposedDate",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceChangeServiceResponseFromJSON(

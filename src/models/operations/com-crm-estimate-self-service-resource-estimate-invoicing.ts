@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -785,15 +785,17 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingSecurity$outbound
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingSecurity$Outbound,
     ComCrmEstimateSelfServiceResourceEstimateInvoicingSecurity
-  > = z.pipe(
-    z.object({
-      publicAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        publicAPIKey: "Public_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        publicAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          publicAPIKey: "Public_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingSecurityToJSON(
@@ -810,13 +812,17 @@ export function comCrmEstimateSelfServiceResourceEstimateInvoicingSecurityToJSON
 export const ComCrmEstimateSelfServiceResourceEstimateInvoicingSupplyMethod$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmEstimateSelfServiceResourceEstimateInvoicingSupplyMethod
-  > = z.enum(ComCrmEstimateSelfServiceResourceEstimateInvoicingSupplyMethod);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmEstimateSelfServiceResourceEstimateInvoicingSupplyMethod)
+  );
 
 /** @internal */
 export const ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeRequest$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeRequest
-  > = z.enum(ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeRequest);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeRequest)
+  );
 
 /** @internal */
 export type ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountRequest$Outbound =
@@ -830,12 +836,14 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountRequest$o
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountRequest$Outbound,
     ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountRequest
-  > = z.object({
-    amount: z.optional(z.number()),
-    type: z.optional(
-      ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeRequest$outboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      amount: z.optional(z.number()),
+      type: z.optional(
+        ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeRequest$outboundSchema,
+      ),
+    })
+  );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingDiscountRequestToJSON(
   comCrmEstimateSelfServiceResourceEstimateInvoicingDiscountRequest:
@@ -850,13 +858,15 @@ export function comCrmEstimateSelfServiceResourceEstimateInvoicingDiscountReques
 /** @internal */
 export const DiscountOption$outboundSchema: z.ZodMiniEnum<
   typeof DiscountOption
-> = z.enum(DiscountOption);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(DiscountOption));
 
 /** @internal */
 export const ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxModel$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxModel
-  > = z.enum(ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxModel);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxModel)
+  );
 
 /** @internal */
 export type ComCrmEstimateSelfServiceResourceEstimateInvoicingLineItem$Outbound =
@@ -876,29 +886,31 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingLineItem$outbound
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingLineItem$Outbound,
     ComCrmEstimateSelfServiceResourceEstimateInvoicingLineItem
-  > = z.pipe(
-    z.object({
-      productId: z.string(),
-      quantity: z._default(z.number(), 1),
-      price: z.optional(z.number()),
-      discountValue: z.optional(z.number()),
-      discountOption: z.optional(DiscountOption$outboundSchema),
-      taxModel: z.optional(
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxModel$outboundSchema,
-      ),
-      bundleProductId: z.optional(z.string()),
-      priceTermsId: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        productId: "product_id",
-        discountValue: "discount_value",
-        discountOption: "discount_option",
-        taxModel: "tax_model",
-        bundleProductId: "bundle_product_id",
-        priceTermsId: "price_terms_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        productId: z.string(),
+        quantity: z._default(z.number(), 1),
+        price: z.optional(z.number()),
+        discountValue: z.optional(z.number()),
+        discountOption: z.optional(DiscountOption$outboundSchema),
+        taxModel: z.optional(
+          ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxModel$outboundSchema,
+        ),
+        bundleProductId: z.optional(z.string()),
+        priceTermsId: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          productId: "product_id",
+          discountValue: "discount_value",
+          discountOption: "discount_option",
+          taxModel: "tax_model",
+          bundleProductId: "bundle_product_id",
+          priceTermsId: "price_terms_id",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingLineItemToJSON(
@@ -932,28 +944,34 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingRequest$outboundS
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingRequest$Outbound,
     ComCrmEstimateSelfServiceResourceEstimateInvoicingRequest
-  > = z.pipe(
-    z.object({
-      accountId: z.optional(z.string()),
-      supplyMethod: z.optional(
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingSupplyMethod$outboundSchema,
-      ),
-      addressId: z.optional(z.string()),
-      discount: z.optional(z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountRequest$outboundSchema
-      )),
-      lineItems: z.optional(z.array(z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingLineItem$outboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        accountId: "account_id",
-        supplyMethod: "supply_method",
-        addressId: "address_id",
-        lineItems: "line_items",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        accountId: z.optional(z.string()),
+        supplyMethod: z.optional(
+          ComCrmEstimateSelfServiceResourceEstimateInvoicingSupplyMethod$outboundSchema,
+        ),
+        addressId: z.optional(z.string()),
+        discount: z.optional(
+          z.lazy(() =>
+            ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountRequest$outboundSchema
+          ),
+        ),
+        lineItems: z.optional(
+          z.array(z.lazy(() =>
+            ComCrmEstimateSelfServiceResourceEstimateInvoicingLineItem$outboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          accountId: "account_id",
+          supplyMethod: "supply_method",
+          addressId: "address_id",
+          lineItems: "line_items",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingRequestToJSON(
@@ -971,8 +989,10 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingCurrencyCode$inbo
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmEstimateSelfServiceResourceEstimateInvoicingCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmEstimateSelfServiceResourceEstimateInvoicingCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -980,10 +1000,12 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingPeriod$inboundSch
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingPeriod,
     unknown
-  > = z.object({
-    from: types.optional(types.number()),
-    to: types.optional(types.number()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      from: types.optional(types.number()),
+      to: types.optional(types.number()),
+    })
+  );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingPeriodFromJSON(
   jsonString: string,
@@ -1002,17 +1024,19 @@ export function comCrmEstimateSelfServiceResourceEstimateInvoicingPeriodFromJSON
 
 /** @internal */
 export const LineDiscount$inboundSchema: z.ZodMiniType<LineDiscount, unknown> =
-  z.pipe(
-    z.object({
-      amount: types.optional(types.number()),
-      percentage: types.optional(types.number()),
-      amount_incl_tax: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "amount_incl_tax": "amountInclTax",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        amount: types.optional(types.number()),
+        percentage: types.optional(types.number()),
+        amount_incl_tax: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "amount_incl_tax": "amountInclTax",
+        });
+      }),
+    )
   );
 
 export function lineDiscountFromJSON(
@@ -1030,8 +1054,10 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingProductClassifica
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingProductClassification,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmEstimateSelfServiceResourceEstimateInvoicingProductClassification,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmEstimateSelfServiceResourceEstimateInvoicingProductClassification,
+    )
   );
 
 /** @internal */
@@ -1039,21 +1065,23 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingProduct$inboundSc
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingProduct,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      sku: types.optional(types.string()),
-      name: types.optional(types.string()),
-      classification: types.optional(
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingProductClassification$inboundSchema,
-      ),
-      is_stockable: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_stockable": "isStockable",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        sku: types.optional(types.string()),
+        name: types.optional(types.string()),
+        classification: types.optional(
+          ComCrmEstimateSelfServiceResourceEstimateInvoicingProductClassification$inboundSchema,
+        ),
+        is_stockable: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_stockable": "isStockable",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingProductFromJSON(
@@ -1076,8 +1104,10 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductClas
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductClassification,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductClassification,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductClassification,
+    )
   );
 
 /** @internal */
@@ -1085,21 +1115,23 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProduct$inb
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProduct,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      sku: types.optional(types.string()),
-      name: types.optional(types.string()),
-      classification: types.optional(
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductClassification$inboundSchema,
-      ),
-      is_stockable: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_stockable": "isStockable",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        sku: types.optional(types.string()),
+        name: types.optional(types.string()),
+        classification: types.optional(
+          ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductClassification$inboundSchema,
+        ),
+        is_stockable: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_stockable": "isStockable",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductFromJSON(
@@ -1119,22 +1151,24 @@ export function comCrmEstimateSelfServiceResourceEstimateInvoicingBundleProductF
 
 /** @internal */
 export const LineTaxCode$inboundSchema: z.ZodMiniType<LineTaxCode, unknown> =
-  openEnums.inboundSchema(LineTaxCode);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(LineTaxCode));
 
 /** @internal */
-export const LineTaxRate$inboundSchema: z.ZodMiniType<LineTaxRate, unknown> = z
-  .pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      tax_code: types.optional(LineTaxCode$inboundSchema),
-      percentage: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "tax_code": "taxCode",
-      });
-    }),
+export const LineTaxRate$inboundSchema: z.ZodMiniType<LineTaxRate, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        tax_code: types.optional(LineTaxCode$inboundSchema),
+        percentage: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "tax_code": "taxCode",
+        });
+      }),
+    )
   );
 
 export function lineTaxRateFromJSON(
@@ -1151,39 +1185,43 @@ export function lineTaxRateFromJSON(
 export const LineTaxExemptReason$inboundSchema: z.ZodMiniType<
   LineTaxExemptReason,
   unknown
-> = openEnums.inboundSchema(LineTaxExemptReason);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(LineTaxExemptReason)
+);
 
 /** @internal */
 export const ComCrmEstimateSelfServiceResourceEstimateInvoicingAppliedTax$inboundSchema:
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingAppliedTax,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      tax_rate: types.optional(z.lazy(() => LineTaxRate$inboundSchema)),
-      tax_amount: types.optional(types.number()),
-      tax_exempt_reason: types.optional(LineTaxExemptReason$inboundSchema),
-      tax_category: types.optional(types.string()),
-      exempt_amount: types.optional(types.number()),
-      juris_name: types.optional(types.string()),
-      juris_type: types.optional(types.string()),
-      tax_region: types.optional(types.string()),
-      tax_type: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "tax_rate": "taxRate",
-        "tax_amount": "taxAmount",
-        "tax_exempt_reason": "taxExemptReason",
-        "tax_category": "taxCategory",
-        "exempt_amount": "exemptAmount",
-        "juris_name": "jurisName",
-        "juris_type": "jurisType",
-        "tax_region": "taxRegion",
-        "tax_type": "taxType",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        tax_rate: types.optional(z.lazy(() => LineTaxRate$inboundSchema)),
+        tax_amount: types.optional(types.number()),
+        tax_exempt_reason: types.optional(LineTaxExemptReason$inboundSchema),
+        tax_category: types.optional(types.string()),
+        exempt_amount: types.optional(types.number()),
+        juris_name: types.optional(types.string()),
+        juris_type: types.optional(types.string()),
+        tax_region: types.optional(types.string()),
+        tax_type: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "tax_rate": "taxRate",
+          "tax_amount": "taxAmount",
+          "tax_exempt_reason": "taxExemptReason",
+          "tax_category": "taxCategory",
+          "exempt_amount": "exemptAmount",
+          "juris_name": "jurisName",
+          "juris_type": "jurisType",
+          "tax_region": "taxRegion",
+          "tax_type": "taxType",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingAppliedTaxFromJSON(
@@ -1206,39 +1244,47 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingLine$inboundSchem
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingLine,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      quantity: types.optional(types.number()),
-      unit_price: types.optional(types.number()),
-      net: types.optional(types.number()),
-      tax: types.optional(types.number()),
-      sub_total: types.optional(types.number()),
-      period: types.optional(z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingPeriod$inboundSchema
-      )),
-      discount: types.optional(z.lazy(() =>
-        LineDiscount$inboundSchema
-      )),
-      product: types.optional(z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingProduct$inboundSchema
-      )),
-      bundle_product: types.optional(z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProduct$inboundSchema
-      )),
-      applied_taxes: types.optional(z.array(z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingAppliedTax$inboundSchema
-      ))),
-      pricing: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "unit_price": "unitPrice",
-        "sub_total": "subTotal",
-        "bundle_product": "bundleProduct",
-        "applied_taxes": "appliedTaxes",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        quantity: types.optional(types.number()),
+        unit_price: types.optional(types.number()),
+        net: types.optional(types.number()),
+        tax: types.optional(types.number()),
+        sub_total: types.optional(types.number()),
+        period: types.optional(
+          z.lazy(() =>
+            ComCrmEstimateSelfServiceResourceEstimateInvoicingPeriod$inboundSchema
+          ),
+        ),
+        discount: types.optional(z.lazy(() => LineDiscount$inboundSchema)),
+        product: types.optional(
+          z.lazy(() =>
+            ComCrmEstimateSelfServiceResourceEstimateInvoicingProduct$inboundSchema
+          ),
+        ),
+        bundle_product: types.optional(
+          z.lazy(() =>
+            ComCrmEstimateSelfServiceResourceEstimateInvoicingBundleProduct$inboundSchema
+          ),
+        ),
+        applied_taxes: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmEstimateSelfServiceResourceEstimateInvoicingAppliedTax$inboundSchema
+          )),
+        ),
+        pricing: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "unit_price": "unitPrice",
+          "sub_total": "subTotal",
+          "bundle_product": "bundleProduct",
+          "applied_taxes": "appliedTaxes",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingLineFromJSON(
@@ -1261,8 +1307,10 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTax
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxCode,
+    )
   );
 
 /** @internal */
@@ -1270,20 +1318,22 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTax
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxRate,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      tax_code: types.optional(
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxCode$inboundSchema,
-      ),
-      percentage: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "tax_code": "taxCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        tax_code: types.optional(
+          ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxCode$inboundSchema,
+        ),
+        percentage: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "tax_code": "taxCode",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxRateFromJSON(
@@ -1306,8 +1356,10 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTax
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxExemptReason,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxExemptReason,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxExemptReason,
+    )
   );
 
 /** @internal */
@@ -1315,23 +1367,27 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdown$in
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdown,
     unknown
-  > = z.pipe(
-    z.object({
-      tax_rate: types.optional(z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxRate$inboundSchema
-      )),
-      tax_amount: types.optional(types.number()),
-      tax_exempt_reason: types.optional(
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxExemptReason$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "tax_rate": "taxRate",
-        "tax_amount": "taxAmount",
-        "tax_exempt_reason": "taxExemptReason",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        tax_rate: types.optional(
+          z.lazy(() =>
+            ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxRate$inboundSchema
+          ),
+        ),
+        tax_amount: types.optional(types.number()),
+        tax_exempt_reason: types.optional(
+          ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownTaxExemptReason$inboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "tax_rate": "taxRate",
+          "tax_amount": "taxAmount",
+          "tax_exempt_reason": "taxExemptReason",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdownFromJSON(
@@ -1354,8 +1410,10 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeResponse$inbo
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeResponse,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeResponse,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeResponse,
+    )
   );
 
 /** @internal */
@@ -1363,10 +1421,12 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingPromotion$inbound
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingPromotion,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingPromotionFromJSON(
   jsonString: string,
@@ -1388,17 +1448,17 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountResponse$
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountResponse,
     unknown
-  > = z.object({
-    amount: types.optional(types.number()),
-    type: types.optional(
-      ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeResponse$inboundSchema,
-    ),
-    promotion: types.optional(
-      z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingPromotion$inboundSchema
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      amount: types.optional(types.number()),
+      type: types.optional(
+        ComCrmEstimateSelfServiceResourceEstimateInvoicingTypeResponse$inboundSchema,
       ),
-    ),
-  });
+      promotion: types.optional(z.lazy(() =>
+        ComCrmEstimateSelfServiceResourceEstimateInvoicingPromotion$inboundSchema
+      )),
+    })
+  );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingDiscountResponseFromJSON(
   jsonString: string,
@@ -1420,53 +1480,61 @@ export const ComCrmEstimateSelfServiceResourceEstimateInvoicingResponse$inboundS
   z.ZodMiniType<
     ComCrmEstimateSelfServiceResourceEstimateInvoicingResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      issued_date: types.optional(types.number()),
-      due_date: types.optional(types.number()),
-      currency_code: types.optional(
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingCurrencyCode$inboundSchema,
-      ),
-      total_net_amount: types.optional(types.number()),
-      total_discount_amount: types.optional(types.number()),
-      total_tax_amount: types.optional(types.number()),
-      total_amount: types.optional(types.number()),
-      wallet_funds_amount: types.optional(types.number()),
-      is_credit: types.optional(types.boolean()),
-      total_discount_incl_tax: types.optional(types.number()),
-      amount_due: types.optional(types.number()),
-      amount_to_collect: types.optional(types.number()),
-      total_price: types.optional(types.number()),
-      account_funds: types.optional(types.number()),
-      lines: types.optional(z.array(z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingLine$inboundSchema
-      ))),
-      taxes_breakdown: types.optional(z.array(z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdown$inboundSchema
-      ))),
-      discounts: types.optional(z.array(z.lazy(() =>
-        ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountResponse$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "issued_date": "issuedDate",
-        "due_date": "dueDate",
-        "currency_code": "currencyCode",
-        "total_net_amount": "totalNetAmount",
-        "total_discount_amount": "totalDiscountAmount",
-        "total_tax_amount": "totalTaxAmount",
-        "total_amount": "totalAmount",
-        "wallet_funds_amount": "walletFundsAmount",
-        "is_credit": "isCredit",
-        "total_discount_incl_tax": "totalDiscountInclTax",
-        "amount_due": "amountDue",
-        "amount_to_collect": "amountToCollect",
-        "total_price": "totalPrice",
-        "account_funds": "accountFunds",
-        "taxes_breakdown": "taxesBreakdown",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        issued_date: types.optional(types.number()),
+        due_date: types.optional(types.number()),
+        currency_code: types.optional(
+          ComCrmEstimateSelfServiceResourceEstimateInvoicingCurrencyCode$inboundSchema,
+        ),
+        total_net_amount: types.optional(types.number()),
+        total_discount_amount: types.optional(types.number()),
+        total_tax_amount: types.optional(types.number()),
+        total_amount: types.optional(types.number()),
+        wallet_funds_amount: types.optional(types.number()),
+        is_credit: types.optional(types.boolean()),
+        total_discount_incl_tax: types.optional(types.number()),
+        amount_due: types.optional(types.number()),
+        amount_to_collect: types.optional(types.number()),
+        total_price: types.optional(types.number()),
+        account_funds: types.optional(types.number()),
+        lines: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmEstimateSelfServiceResourceEstimateInvoicingLine$inboundSchema
+          )),
+        ),
+        taxes_breakdown: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmEstimateSelfServiceResourceEstimateInvoicingTaxesBreakdown$inboundSchema
+          )),
+        ),
+        discounts: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmEstimateSelfServiceResourceEstimateInvoicingDiscountResponse$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "issued_date": "issuedDate",
+          "due_date": "dueDate",
+          "currency_code": "currencyCode",
+          "total_net_amount": "totalNetAmount",
+          "total_discount_amount": "totalDiscountAmount",
+          "total_tax_amount": "totalTaxAmount",
+          "total_amount": "totalAmount",
+          "wallet_funds_amount": "walletFundsAmount",
+          "is_credit": "isCredit",
+          "total_discount_incl_tax": "totalDiscountInclTax",
+          "amount_due": "amountDue",
+          "amount_to_collect": "amountToCollect",
+          "total_price": "totalPrice",
+          "account_funds": "accountFunds",
+          "taxes_breakdown": "taxesBreakdown",
+        });
+      }),
+    )
   );
 
 export function comCrmEstimateSelfServiceResourceEstimateInvoicingResponseFromJSON(

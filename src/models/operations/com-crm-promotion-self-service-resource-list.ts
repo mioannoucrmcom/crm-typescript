@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -449,9 +449,10 @@ export type ComCrmPromotionSelfServiceResourceListResponse = {
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListOrder$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmPromotionSelfServiceResourceListOrder> = z.enum(
-    ComCrmPromotionSelfServiceResourceListOrder,
-  );
+  z.ZodMiniEnum<typeof ComCrmPromotionSelfServiceResourceListOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmPromotionSelfServiceResourceListOrder)
+    );
 
 /** @internal */
 export type ComCrmPromotionSelfServiceResourceListRequest$Outbound = {
@@ -469,25 +470,27 @@ export const ComCrmPromotionSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmPromotionSelfServiceResourceListRequest$Outbound,
     ComCrmPromotionSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      organisations: z.optional(z.string()),
-      promotionTags: z.optional(z.string()),
-      searchValue: z.optional(z.string()),
-      order: z._default(
-        ComCrmPromotionSelfServiceResourceListOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        promotionTags: "promotion_tags",
-        searchValue: "search_value",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        organisations: z.optional(z.string()),
+        promotionTags: z.optional(z.string()),
+        searchValue: z.optional(z.string()),
+        order: z._default(
+          ComCrmPromotionSelfServiceResourceListOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          promotionTags: "promotion_tags",
+          searchValue: "search_value",
+        });
+      }),
+    )
   );
 
 export function comCrmPromotionSelfServiceResourceListRequestToJSON(
@@ -503,19 +506,22 @@ export function comCrmPromotionSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListPaging$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListPaging, unknown> = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
+    );
 
 export function comCrmPromotionSelfServiceResourceListPagingFromJSON(
   jsonString: string,
@@ -536,22 +542,26 @@ export function comCrmPromotionSelfServiceResourceListPagingFromJSON(
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListState$inboundSchema:
   z.ZodMiniType<ComCrmPromotionSelfServiceResourceListState, unknown> =
-    openEnums.inboundSchema(ComCrmPromotionSelfServiceResourceListState);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmPromotionSelfServiceResourceListState)
+    );
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListAvailability$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListAvailability, unknown> = z
-    .pipe(
-      z.object({
-        from_date: types.optional(types.number()),
-        to_date: types.optional(types.number()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "from_date": "fromDate",
-          "to_date": "toDate",
-        });
-      }),
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListAvailability, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          from_date: types.optional(types.number()),
+          to_date: types.optional(types.number()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "from_date": "fromDate",
+            "to_date": "toDate",
+          });
+        }),
+      )
     );
 
 export function comCrmPromotionSelfServiceResourceListAvailabilityFromJSON(
@@ -573,21 +583,29 @@ export function comCrmPromotionSelfServiceResourceListAvailabilityFromJSON(
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListCurrencyCode$inboundSchema:
   z.ZodMiniType<ComCrmPromotionSelfServiceResourceListCurrencyCode, unknown> =
-    openEnums.inboundSchema(ComCrmPromotionSelfServiceResourceListCurrencyCode);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmPromotionSelfServiceResourceListCurrencyCode,
+      )
+    );
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListUsageType$inboundSchema:
   z.ZodMiniType<ComCrmPromotionSelfServiceResourceListUsageType, unknown> =
-    openEnums.inboundSchema(ComCrmPromotionSelfServiceResourceListUsageType);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmPromotionSelfServiceResourceListUsageType)
+    );
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListMedia$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListMedia, unknown> = z
-    .object({
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      url: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListMedia, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        url: types.optional(types.string()),
+      })
+    );
 
 export function comCrmPromotionSelfServiceResourceListMediaFromJSON(
   jsonString: string,
@@ -607,35 +625,39 @@ export function comCrmPromotionSelfServiceResourceListMediaFromJSON(
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListCreative$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListCreative, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        media_group_id: types.optional(types.string()),
-        usage_type: types.optional(
-          ComCrmPromotionSelfServiceResourceListUsageType$inboundSchema,
-        ),
-        width: types.optional(types.number()),
-        height: types.optional(types.number()),
-        format: types.optional(types.string()),
-        url: types.optional(types.string()),
-        public_id: types.optional(types.string()),
-        media_id: types.optional(types.string()),
-        caption: types.optional(types.string()),
-        sort_order: types.optional(types.number()),
-        media: types.optional(z.array(z.lazy(() =>
-          ComCrmPromotionSelfServiceResourceListMedia$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "media_group_id": "mediaGroupId",
-          "usage_type": "usageType",
-          "public_id": "publicId",
-          "media_id": "mediaId",
-          "sort_order": "sortOrder",
-        });
-      }),
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListCreative, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          media_group_id: types.optional(types.string()),
+          usage_type: types.optional(
+            ComCrmPromotionSelfServiceResourceListUsageType$inboundSchema,
+          ),
+          width: types.optional(types.number()),
+          height: types.optional(types.number()),
+          format: types.optional(types.string()),
+          url: types.optional(types.string()),
+          public_id: types.optional(types.string()),
+          media_id: types.optional(types.string()),
+          caption: types.optional(types.string()),
+          sort_order: types.optional(types.number()),
+          media: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmPromotionSelfServiceResourceListMedia$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "media_group_id": "mediaGroupId",
+            "usage_type": "usageType",
+            "public_id": "publicId",
+            "media_id": "mediaId",
+            "sort_order": "sortOrder",
+          });
+        }),
+      )
     );
 
 export function comCrmPromotionSelfServiceResourceListCreativeFromJSON(
@@ -656,18 +678,21 @@ export function comCrmPromotionSelfServiceResourceListCreativeFromJSON(
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListTag$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListTag, unknown> = z.pipe(
-    z.object({
-      tag_id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      colour: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "tag_id": "tagId",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListTag, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          tag_id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          colour: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "tag_id": "tagId",
+          });
+        }),
+      )
+    );
 
 export function comCrmPromotionSelfServiceResourceListTagFromJSON(
   jsonString: string,
@@ -687,35 +712,43 @@ export function comCrmPromotionSelfServiceResourceListTagFromJSON(
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListContent, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        name: types.optional(types.string()),
-        state: types.optional(
-          ComCrmPromotionSelfServiceResourceListState$inboundSchema,
-        ),
-        short_description: types.optional(types.string()),
-        long_description: types.optional(types.string()),
-        availability: types.optional(z.lazy(() =>
-          ComCrmPromotionSelfServiceResourceListAvailability$inboundSchema
-        )),
-        currency_code:
-          ComCrmPromotionSelfServiceResourceListCurrencyCode$inboundSchema,
-        creatives: types.optional(z.array(z.lazy(() =>
-          ComCrmPromotionSelfServiceResourceListCreative$inboundSchema
-        ))),
-        tags: types.optional(z.array(z.lazy(() =>
-          ComCrmPromotionSelfServiceResourceListTag$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "short_description": "shortDescription",
-          "long_description": "longDescription",
-          "currency_code": "currencyCode",
-        });
-      }),
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          state: types.optional(
+            ComCrmPromotionSelfServiceResourceListState$inboundSchema,
+          ),
+          short_description: types.optional(types.string()),
+          long_description: types.optional(types.string()),
+          availability: types.optional(
+            z.lazy(() =>
+              ComCrmPromotionSelfServiceResourceListAvailability$inboundSchema
+            ),
+          ),
+          currency_code:
+            ComCrmPromotionSelfServiceResourceListCurrencyCode$inboundSchema,
+          creatives: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmPromotionSelfServiceResourceListCreative$inboundSchema
+            )),
+          ),
+          tags: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmPromotionSelfServiceResourceListTag$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "short_description": "shortDescription",
+            "long_description": "longDescription",
+            "currency_code": "currencyCode",
+          });
+        }),
+      )
     );
 
 export function comCrmPromotionSelfServiceResourceListContentFromJSON(
@@ -736,19 +769,17 @@ export function comCrmPromotionSelfServiceResourceListContentFromJSON(
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceListResponse$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListResponse, unknown> = z
-    .object({
-      paging: types.optional(
-        z.lazy(() =>
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceListResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(z.lazy(() =>
           ComCrmPromotionSelfServiceResourceListPaging$inboundSchema
-        ),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmPromotionSelfServiceResourceListContent$inboundSchema
         )),
-      ),
-    });
+        content: types.optional(z.array(z.lazy(() =>
+          ComCrmPromotionSelfServiceResourceListContent$inboundSchema
+        ))),
+      })
+    );
 
 export function comCrmPromotionSelfServiceResourceListResponseFromJSON(
   jsonString: string,

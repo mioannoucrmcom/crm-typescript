@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -104,22 +104,24 @@ export const ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsRequest$o
   z.ZodMiniType<
     ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsRequest$Outbound,
     ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsRequest
-  > = z.pipe(
-    z.object({
-      industryName: z.optional(z.string()),
-      name: z.optional(z.string()),
-      order: z.optional(z.string()),
-      page: z.optional(z.int()),
-      size: z.optional(z.int()),
-      sort: z.optional(z.string()),
-      subIndustryIds: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        industryName: "industry_name",
-        subIndustryIds: "sub_industry_ids",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        industryName: z.optional(z.string()),
+        name: z.optional(z.string()),
+        order: z.optional(z.string()),
+        page: z.optional(z.int()),
+        size: z.optional(z.int()),
+        sort: z.optional(z.string()),
+        subIndustryIds: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          industryName: "industry_name",
+          subIndustryIds: "sub_industry_ids",
+        });
+      }),
+    )
   );
 
 export function comCrmSubIndustrySelfServiceResourceListSubIndustrySectorsRequestToJSON(
@@ -137,11 +139,13 @@ export const ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsPaging$in
   z.ZodMiniType<
     ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsPaging,
     unknown
-  > = z.object({
-    page: types.optional(types.number()),
-    size: types.optional(types.number()),
-    total: types.optional(types.number()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      page: types.optional(types.number()),
+      size: types.optional(types.number()),
+      total: types.optional(types.number()),
+    })
+  );
 
 export function comCrmSubIndustrySelfServiceResourceListSubIndustrySectorsPagingFromJSON(
   jsonString: string,
@@ -163,10 +167,12 @@ export const ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsContent$i
   z.ZodMiniType<
     ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsContent,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmSubIndustrySelfServiceResourceListSubIndustrySectorsContentFromJSON(
   jsonString: string,
@@ -188,18 +194,16 @@ export const ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsResponse$
   z.ZodMiniType<
     ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmSubIndustrySelfServiceResourceListSubIndustrySectorsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmSubIndustrySelfServiceResourceListSubIndustrySectorsResponseFromJSON(
   jsonString: string,

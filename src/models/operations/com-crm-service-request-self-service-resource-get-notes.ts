@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -127,8 +127,10 @@ export type ComCrmServiceRequestSelfServiceResourceGetNotesResponse = {
 
 /** @internal */
 export const ComCrmServiceRequestSelfServiceResourceGetNotesOrder$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmServiceRequestSelfServiceResourceGetNotesOrder> = z
-    .enum(ComCrmServiceRequestSelfServiceResourceGetNotesOrder);
+  z.ZodMiniEnum<typeof ComCrmServiceRequestSelfServiceResourceGetNotesOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmServiceRequestSelfServiceResourceGetNotesOrder)
+    );
 
 /** @internal */
 export type ComCrmServiceRequestSelfServiceResourceGetNotesRequest$Outbound = {
@@ -145,23 +147,25 @@ export const ComCrmServiceRequestSelfServiceResourceGetNotesRequest$outboundSche
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceGetNotesRequest$Outbound,
     ComCrmServiceRequestSelfServiceResourceGetNotesRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmServiceRequestSelfServiceResourceGetNotesOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmServiceRequestSelfServiceResourceGetNotesOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceRequestSelfServiceResourceGetNotesRequestToJSON(
@@ -180,18 +184,20 @@ export const ComCrmServiceRequestSelfServiceResourceGetNotesPaging$inboundSchema
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceGetNotesPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceRequestSelfServiceResourceGetNotesPagingFromJSON(
@@ -211,12 +217,14 @@ export function comCrmServiceRequestSelfServiceResourceGetNotesPagingFromJSON(
 }
 
 /** @internal */
-export const CreatedBy$inboundSchema: z.ZodMiniType<CreatedBy, unknown> = z
-  .object({
-    id: types.optional(types.string()),
-    username: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+export const CreatedBy$inboundSchema: z.ZodMiniType<CreatedBy, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      username: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function createdByFromJSON(
   jsonString: string,
@@ -233,22 +241,24 @@ export const ComCrmServiceRequestSelfServiceResourceGetNotesContent$inboundSchem
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceGetNotesContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      created_on: types.optional(types.number()),
-      updated_on: types.optional(types.number()),
-      created_by: types.optional(z.lazy(() => CreatedBy$inboundSchema)),
-      pinned: types.optional(types.boolean()),
-      note: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "created_on": "createdOn",
-        "updated_on": "updatedOn",
-        "created_by": "createdBy",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        created_on: types.optional(types.number()),
+        updated_on: types.optional(types.number()),
+        created_by: types.optional(z.lazy(() => CreatedBy$inboundSchema)),
+        pinned: types.optional(types.boolean()),
+        note: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "created_on": "createdOn",
+          "updated_on": "updatedOn",
+          "created_by": "createdBy",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceRequestSelfServiceResourceGetNotesContentFromJSON(
@@ -271,18 +281,16 @@ export const ComCrmServiceRequestSelfServiceResourceGetNotesResponse$inboundSche
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceGetNotesResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmServiceRequestSelfServiceResourceGetNotesPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmServiceRequestSelfServiceResourceGetNotesContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmServiceRequestSelfServiceResourceGetNotesContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmServiceRequestSelfServiceResourceGetNotesResponseFromJSON(
   jsonString: string,

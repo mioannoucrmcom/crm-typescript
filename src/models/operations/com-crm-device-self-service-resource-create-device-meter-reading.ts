@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -66,11 +66,13 @@ export type Dates$Outbound = {
 };
 
 /** @internal */
-export const Dates$outboundSchema: z.ZodMiniType<Dates$Outbound, Dates> = z
-  .object({
-    from: z.optional(z.int()),
-    to: z.optional(z.int()),
-  });
+export const Dates$outboundSchema: z.ZodMiniType<Dates$Outbound, Dates> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      from: z.optional(z.int()),
+      to: z.optional(z.int()),
+    })
+  );
 
 export function datesToJSON(dates: Dates): string {
   return JSON.stringify(Dates$outboundSchema.parse(dates));
@@ -88,10 +90,12 @@ export const ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequestBody$
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequestBody$Outbound,
     ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequestBody
-  > = z.object({
-    reading: z.number(),
-    dates: z.optional(z.lazy(() => Dates$outboundSchema)),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      reading: z.number(),
+      dates: z.optional(z.lazy(() => Dates$outboundSchema)),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequestBodyToJSON(
   comCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequestBody:
@@ -120,19 +124,23 @@ export const ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequest$outb
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequest$Outbound,
     ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequest
-  > = z.pipe(
-    z.object({
-      devId: z.string(),
-      id: z.string(),
-      body: z.optional(z.lazy(() =>
-        ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequestBody$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        devId: "dev_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        devId: z.string(),
+        id: z.string(),
+        body: z.optional(
+          z.lazy(() =>
+            ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequestBody$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          devId: "dev_id",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceCreateDeviceMeterReadingRequestToJSON(
@@ -150,9 +158,11 @@ export const ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingResponse$inb
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceCreateDeviceMeterReadingResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceCreateDeviceMeterReadingResponseFromJSON(
   jsonString: string,

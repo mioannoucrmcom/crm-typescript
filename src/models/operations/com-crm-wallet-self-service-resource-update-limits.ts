@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -284,16 +284,18 @@ export const ComCrmWalletSelfServiceResourceUpdateLimitsSecurity$outboundSchema:
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceUpdateLimitsSecurity$Outbound,
     ComCrmWalletSelfServiceResourceUpdateLimitsSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceUpdateLimitsSecurityToJSON(
@@ -309,19 +311,25 @@ export function comCrmWalletSelfServiceResourceUpdateLimitsSecurityToJSON(
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceUpdateLimitsPeriod$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmWalletSelfServiceResourceUpdateLimitsPeriod> = z
-    .enum(ComCrmWalletSelfServiceResourceUpdateLimitsPeriod);
+  z.ZodMiniEnum<typeof ComCrmWalletSelfServiceResourceUpdateLimitsPeriod> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmWalletSelfServiceResourceUpdateLimitsPeriod)
+    );
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceUpdateLimitsAppliesFor$outboundSchema:
   z.ZodMiniEnum<typeof ComCrmWalletSelfServiceResourceUpdateLimitsAppliesFor> =
-    z.enum(ComCrmWalletSelfServiceResourceUpdateLimitsAppliesFor);
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmWalletSelfServiceResourceUpdateLimitsAppliesFor)
+    );
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceUpdateLimitsCurrencyCode$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmWalletSelfServiceResourceUpdateLimitsCurrencyCode
-  > = z.enum(ComCrmWalletSelfServiceResourceUpdateLimitsCurrencyCode);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmWalletSelfServiceResourceUpdateLimitsCurrencyCode)
+  );
 
 /** @internal */
 export type ComCrmWalletSelfServiceResourceUpdateLimitsLimitRule$Outbound = {
@@ -339,32 +347,34 @@ export const ComCrmWalletSelfServiceResourceUpdateLimitsLimitRule$outboundSchema
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceUpdateLimitsLimitRule$Outbound,
     ComCrmWalletSelfServiceResourceUpdateLimitsLimitRule
-  > = z.pipe(
-    z.object({
-      id: z.optional(z.string()),
-      name: z.optional(z.string()),
-      maximumNumber: z.optional(z.int()),
-      maximumAmount: z.optional(z.number()),
-      period: z.optional(
-        ComCrmWalletSelfServiceResourceUpdateLimitsPeriod$outboundSchema,
-      ),
-      appliesFor: z.optional(
-        z.array(
-          ComCrmWalletSelfServiceResourceUpdateLimitsAppliesFor$outboundSchema,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.optional(z.string()),
+        name: z.optional(z.string()),
+        maximumNumber: z.optional(z.int()),
+        maximumAmount: z.optional(z.number()),
+        period: z.optional(
+          ComCrmWalletSelfServiceResourceUpdateLimitsPeriod$outboundSchema,
         ),
-      ),
-      currencyCode: z.optional(
-        ComCrmWalletSelfServiceResourceUpdateLimitsCurrencyCode$outboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        maximumNumber: "maximum_number",
-        maximumAmount: "maximum_amount",
-        appliesFor: "applies_for",
-        currencyCode: "currency_code",
-      });
-    }),
+        appliesFor: z.optional(
+          z.array(
+            ComCrmWalletSelfServiceResourceUpdateLimitsAppliesFor$outboundSchema,
+          ),
+        ),
+        currencyCode: z.optional(
+          ComCrmWalletSelfServiceResourceUpdateLimitsCurrencyCode$outboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          maximumNumber: "maximum_number",
+          maximumAmount: "maximum_amount",
+          appliesFor: "applies_for",
+          currencyCode: "currency_code",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceUpdateLimitsLimitRuleToJSON(
@@ -390,17 +400,21 @@ export const ComCrmWalletSelfServiceResourceUpdateLimitsRequestBody$outboundSche
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceUpdateLimitsRequestBody$Outbound,
     ComCrmWalletSelfServiceResourceUpdateLimitsRequestBody
-  > = z.pipe(
-    z.object({
-      limitRules: z.optional(z.array(z.lazy(() =>
-        ComCrmWalletSelfServiceResourceUpdateLimitsLimitRule$outboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        limitRules: "limit_rules",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        limitRules: z.optional(
+          z.array(z.lazy(() =>
+            ComCrmWalletSelfServiceResourceUpdateLimitsLimitRule$outboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          limitRules: "limit_rules",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceUpdateLimitsRequestBodyToJSON(
@@ -427,14 +441,14 @@ export const ComCrmWalletSelfServiceResourceUpdateLimitsRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceUpdateLimitsRequest$Outbound,
     ComCrmWalletSelfServiceResourceUpdateLimitsRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmWalletSelfServiceResourceUpdateLimitsRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmWalletSelfServiceResourceUpdateLimitsRequestToJSON(
   comCrmWalletSelfServiceResourceUpdateLimitsRequest:
@@ -450,9 +464,11 @@ export function comCrmWalletSelfServiceResourceUpdateLimitsRequestToJSON(
 /** @internal */
 export const ComCrmWalletSelfServiceResourceUpdateLimitsResponse$inboundSchema:
   z.ZodMiniType<ComCrmWalletSelfServiceResourceUpdateLimitsResponse, unknown> =
-    z.object({
-      id: types.optional(types.string()),
-    });
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function comCrmWalletSelfServiceResourceUpdateLimitsResponseFromJSON(
   jsonString: string,

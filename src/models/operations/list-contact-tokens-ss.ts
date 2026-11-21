@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -93,7 +93,7 @@ export type ListContactTokensSSResponse = {
 /** @internal */
 export const QueryParamIntent$outboundSchema: z.ZodMiniEnum<
   typeof QueryParamIntent
-> = z.enum(QueryParamIntent);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(QueryParamIntent));
 
 /** @internal */
 export type ListContactTokensSSRequest$Outbound = {
@@ -106,17 +106,19 @@ export type ListContactTokensSSRequest$Outbound = {
 export const ListContactTokensSSRequest$outboundSchema: z.ZodMiniType<
   ListContactTokensSSRequest$Outbound,
   ListContactTokensSSRequest
-> = z.pipe(
-  z.object({
-    id: z.string(),
-    communityId: z.optional(z.string()),
-    intent: z.optional(QueryParamIntent$outboundSchema),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      communityId: "community_id",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: z.string(),
+      communityId: z.optional(z.string()),
+      intent: z.optional(QueryParamIntent$outboundSchema),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        communityId: "community_id",
+      });
+    }),
+  )
 );
 
 export function listContactTokensSSRequestToJSON(
@@ -131,29 +133,31 @@ export function listContactTokensSSRequestToJSON(
 export const IntentResponse$inboundSchema: z.ZodMiniType<
   IntentResponse,
   unknown
-> = openEnums.inboundSchema(IntentResponse);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(IntentResponse));
 
 /** @internal */
 export const ListContactTokensSSContent$inboundSchema: z.ZodMiniType<
   ListContactTokensSSContent,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    value: types.optional(types.string()),
-    alternative_token: types.optional(types.string()),
-    expiration: types.optional(types.number()),
-    spend_amount: types.optional(types.number()),
-    intent: types.optional(IntentResponse$inboundSchema),
-    community_id: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "alternative_token": "alternativeToken",
-      "spend_amount": "spendAmount",
-      "community_id": "communityId",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      value: types.optional(types.string()),
+      alternative_token: types.optional(types.string()),
+      expiration: types.optional(types.number()),
+      spend_amount: types.optional(types.number()),
+      intent: types.optional(IntentResponse$inboundSchema),
+      community_id: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "alternative_token": "alternativeToken",
+        "spend_amount": "spendAmount",
+        "community_id": "communityId",
+      });
+    }),
+  )
 );
 
 export function listContactTokensSSContentFromJSON(
@@ -170,11 +174,13 @@ export function listContactTokensSSContentFromJSON(
 export const ListContactTokensSSResponse$inboundSchema: z.ZodMiniType<
   ListContactTokensSSResponse,
   unknown
-> = z.object({
-  content: types.optional(
-    z.array(z.lazy(() => ListContactTokensSSContent$inboundSchema)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    content: types.optional(
+      z.array(z.lazy(() => ListContactTokensSSContent$inboundSchema)),
+    ),
+  })
+);
 
 export function listContactTokensSSResponseFromJSON(
   jsonString: string,

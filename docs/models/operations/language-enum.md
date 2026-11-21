@@ -8,11 +8,11 @@ The supported glossary language code
 import { LanguageEnum } from "crm/models/operations";
 
 let value: LanguageEnum = "ENG";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "ENG" | "GRE" | Unrecognized<string>

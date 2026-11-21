@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -106,16 +106,18 @@ export const ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionSecuri
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionSecurity$Outbound,
     ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionSecurityToJSON(
@@ -134,8 +136,8 @@ export function comCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionSec
 export const ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionAction$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionAction
-  > = z.enum(
-    ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionAction,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionAction)
   );
 
 /** @internal */
@@ -148,17 +150,19 @@ export type PeriodSettings$Outbound = {
 export const PeriodSettings$outboundSchema: z.ZodMiniType<
   PeriodSettings$Outbound,
   PeriodSettings
-> = z.pipe(
-  z.object({
-    durationInDays: z.optional(z.int()),
-    endsOn: z.optional(z.int()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      durationInDays: "duration_in_days",
-      endsOn: "ends_on",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      durationInDays: z.optional(z.int()),
+      endsOn: z.optional(z.int()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        durationInDays: "duration_in_days",
+        endsOn: "ends_on",
+      });
+    }),
+  )
 );
 
 export function periodSettingsToJSON(periodSettings: PeriodSettings): string {
@@ -180,23 +184,25 @@ export const ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionReques
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionRequestBody$Outbound,
     ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionRequestBody
-  > = z.pipe(
-    z.object({
-      action:
-        ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionAction$outboundSchema,
-      categoryId: z.optional(z.string()),
-      scheduledDate: z.optional(z.int()),
-      periodSettings: z.optional(z.lazy(() => PeriodSettings$outboundSchema)),
-      useProposedDate: z.optional(z.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        categoryId: "category_id",
-        scheduledDate: "scheduled_date",
-        periodSettings: "period_settings",
-        useProposedDate: "use_proposed_date",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        action:
+          ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionAction$outboundSchema,
+        categoryId: z.optional(z.string()),
+        scheduledDate: z.optional(z.int()),
+        periodSettings: z.optional(z.lazy(() => PeriodSettings$outboundSchema)),
+        useProposedDate: z.optional(z.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          categoryId: "category_id",
+          scheduledDate: "scheduled_date",
+          periodSettings: "period_settings",
+          useProposedDate: "use_proposed_date",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionRequestBodyToJSON(
@@ -225,14 +231,14 @@ export const ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionReques
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionRequest$Outbound,
     ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionRequestToJSON(
   comCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionRequest:
@@ -251,16 +257,18 @@ export const ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionRespon
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      proposed_date: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "proposed_date": "proposedDate",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        proposed_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "proposed_date": "proposedDate",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceUpdateSubscriptionActionResponseFromJSON(

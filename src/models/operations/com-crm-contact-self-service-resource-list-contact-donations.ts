@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -479,7 +479,9 @@ export type ComCrmContactSelfServiceResourceListContactDonationsResponse = {
 export const ComCrmContactSelfServiceResourceListContactDonationsOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceListContactDonationsOrder
-  > = z.enum(ComCrmContactSelfServiceResourceListContactDonationsOrder);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceListContactDonationsOrder)
+  );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceListContactDonationsRequest$Outbound =
@@ -499,26 +501,28 @@ export const ComCrmContactSelfServiceResourceListContactDonationsRequest$outboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsRequest$Outbound,
     ComCrmContactSelfServiceResourceListContactDonationsRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      donationOfferId: z.optional(z.string()),
-      includeOptOut: z.optional(z.boolean()),
-      includeTotal: z.optional(z.boolean()),
-      order: z.optional(
-        ComCrmContactSelfServiceResourceListContactDonationsOrder$outboundSchema,
-      ),
-      page: z.optional(z.int()),
-      size: z.optional(z.int()),
-      sort: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        donationOfferId: "donation_offer_id",
-        includeOptOut: "include_opt_out",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        donationOfferId: z.optional(z.string()),
+        includeOptOut: z.optional(z.boolean()),
+        includeTotal: z.optional(z.boolean()),
+        order: z.optional(
+          ComCrmContactSelfServiceResourceListContactDonationsOrder$outboundSchema,
+        ),
+        page: z.optional(z.int()),
+        size: z.optional(z.int()),
+        sort: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          donationOfferId: "donation_offer_id",
+          includeOptOut: "include_opt_out",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactDonationsRequestToJSON(
@@ -536,18 +540,20 @@ export const ComCrmContactSelfServiceResourceListContactDonationsPaging$inboundS
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactDonationsPagingFromJSON(
@@ -570,8 +576,10 @@ export const ComCrmContactSelfServiceResourceListContactDonationsCurrencyCode$in
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceListContactDonationsCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceListContactDonationsCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -579,8 +587,10 @@ export const ComCrmContactSelfServiceResourceListContactDonationsUsageType$inbou
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceListContactDonationsUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceListContactDonationsUsageType,
+    )
   );
 
 /** @internal */
@@ -588,11 +598,13 @@ export const ComCrmContactSelfServiceResourceListContactDonationsMedia$inboundSc
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactDonationsMediaFromJSON(
   jsonString: string,
@@ -614,34 +626,38 @@ export const ComCrmContactSelfServiceResourceListContactDonationsCreative$inboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmContactSelfServiceResourceListContactDonationsUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactDonationsMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmContactSelfServiceResourceListContactDonationsUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactDonationsMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactDonationsCreativeFromJSON(
@@ -664,15 +680,15 @@ export const ComCrmContactSelfServiceResourceListContactDonationsDonationOffer$i
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsDonationOffer,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    creatives: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      creatives: types.optional(z.array(z.lazy(() =>
         ComCrmContactSelfServiceResourceListContactDonationsCreative$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactDonationsDonationOfferFromJSON(
   jsonString: string,
@@ -694,10 +710,12 @@ export const ComCrmContactSelfServiceResourceListContactDonationsOrganisation$in
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactDonationsOrganisationFromJSON(
   jsonString: string,
@@ -719,10 +737,12 @@ export const ComCrmContactSelfServiceResourceListContactDonationsDetails$inbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsDetails,
     unknown
-  > = z.object({
-    multiplier: z._default(types.number(), 1),
-    amount: z._default(types.number(), 1),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      multiplier: z._default(types.number(), 1),
+      amount: z._default(types.number(), 1),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactDonationsDetailsFromJSON(
   jsonString: string,
@@ -744,34 +764,42 @@ export const ComCrmContactSelfServiceResourceListContactDonationsContent$inbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      opted_in: types.optional(types.number()),
-      opted_out: types.optional(types.number()),
-      donations: types.optional(types.number()),
-      amount: types.optional(types.number()),
-      currency_code: types.optional(
-        ComCrmContactSelfServiceResourceListContactDonationsCurrencyCode$inboundSchema,
-      ),
-      donation_offer: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactDonationsDonationOffer$inboundSchema
-      )),
-      organisation: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactDonationsOrganisation$inboundSchema
-      )),
-      details: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactDonationsDetails$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "opted_in": "optedIn",
-        "opted_out": "optedOut",
-        "currency_code": "currencyCode",
-        "donation_offer": "donationOffer",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        opted_in: types.optional(types.number()),
+        opted_out: types.optional(types.number()),
+        donations: types.optional(types.number()),
+        amount: types.optional(types.number()),
+        currency_code: types.optional(
+          ComCrmContactSelfServiceResourceListContactDonationsCurrencyCode$inboundSchema,
+        ),
+        donation_offer: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactDonationsDonationOffer$inboundSchema
+          ),
+        ),
+        organisation: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactDonationsOrganisation$inboundSchema
+          ),
+        ),
+        details: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactDonationsDetails$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "opted_in": "optedIn",
+          "opted_out": "optedOut",
+          "currency_code": "currencyCode",
+          "donation_offer": "donationOffer",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactDonationsContentFromJSON(
@@ -794,18 +822,16 @@ export const ComCrmContactSelfServiceResourceListContactDonationsResponse$inboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactDonationsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceListContactDonationsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactDonationsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmContactSelfServiceResourceListContactDonationsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactDonationsResponseFromJSON(
   jsonString: string,

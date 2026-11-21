@@ -11,11 +11,11 @@ The message type that a provisioning provider will send (applicable and required
 import { CrmComCommunicationSelfServiceResourceListMessageType } from "crm/models/operations";
 
 let value: CrmComCommunicationSelfServiceResourceListMessageType = "OSD";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "MAIL" | "OSD" | Unrecognized<string>

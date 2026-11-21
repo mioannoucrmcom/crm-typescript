@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -67,9 +67,10 @@ export type ComCrmContactSelfServiceResourceActionResponse = {
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceActionAction$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmContactSelfServiceResourceActionAction> = z.enum(
-    ComCrmContactSelfServiceResourceActionAction,
-  );
+  z.ZodMiniEnum<typeof ComCrmContactSelfServiceResourceActionAction> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmContactSelfServiceResourceActionAction)
+    );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceActionRequestBody$Outbound = {
@@ -81,9 +82,11 @@ export const ComCrmContactSelfServiceResourceActionRequestBody$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceActionRequestBody$Outbound,
     ComCrmContactSelfServiceResourceActionRequestBody
-  > = z.object({
-    action: ComCrmContactSelfServiceResourceActionAction$outboundSchema,
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      action: ComCrmContactSelfServiceResourceActionAction$outboundSchema,
+    })
+  );
 
 export function comCrmContactSelfServiceResourceActionRequestBodyToJSON(
   comCrmContactSelfServiceResourceActionRequestBody:
@@ -108,19 +111,23 @@ export const ComCrmContactSelfServiceResourceActionRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceActionRequest$Outbound,
     ComCrmContactSelfServiceResourceActionRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      relationshipId: z.string(),
-      body: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceActionRequestBody$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        relationshipId: "relationship_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        relationshipId: z.string(),
+        body: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceActionRequestBody$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          relationshipId: "relationship_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceActionRequestToJSON(
@@ -136,10 +143,12 @@ export function comCrmContactSelfServiceResourceActionRequestToJSON(
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceActionResponse$inboundSchema:
-  z.ZodMiniType<ComCrmContactSelfServiceResourceActionResponse, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmContactSelfServiceResourceActionResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function comCrmContactSelfServiceResourceActionResponseFromJSON(
   jsonString: string,

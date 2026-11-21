@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceSignOutRequestBody = {
   redirectUrl?: string | undefined;
@@ -29,16 +30,18 @@ export const ComCrmContactSelfServiceResourceSignOutRequestBody$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSignOutRequestBody$Outbound,
     ComCrmContactSelfServiceResourceSignOutRequestBody
-  > = z.pipe(
-    z.object({
-      redirectUrl: z.optional(z.string()),
-      rredirectUrl: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        redirectUrl: "redirect_url",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        redirectUrl: z.optional(z.string()),
+        rredirectUrl: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          redirectUrl: "redirect_url",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceSignOutRequestBodyToJSON(
@@ -65,14 +68,14 @@ export const ComCrmContactSelfServiceResourceSignOutRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSignOutRequest$Outbound,
     ComCrmContactSelfServiceResourceSignOutRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceSignOutRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceSignOutRequestToJSON(
   comCrmContactSelfServiceResourceSignOutRequest:

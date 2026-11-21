@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -368,7 +368,9 @@ export type ComCrmDeviceSelfServiceResourceGetContactDevicesResponse = {
 /** @internal */
 export const ComCrmDeviceSelfServiceResourceGetContactDevicesOrder$outboundSchema:
   z.ZodMiniEnum<typeof ComCrmDeviceSelfServiceResourceGetContactDevicesOrder> =
-    z.enum(ComCrmDeviceSelfServiceResourceGetContactDevicesOrder);
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmDeviceSelfServiceResourceGetContactDevicesOrder)
+    );
 
 /** @internal */
 export type ComCrmDeviceSelfServiceResourceGetContactDevicesRequest$Outbound = {
@@ -394,41 +396,43 @@ export const ComCrmDeviceSelfServiceResourceGetContactDevicesRequest$outboundSch
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceGetContactDevicesRequest$Outbound,
     ComCrmDeviceSelfServiceResourceGetContactDevicesRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      customFields: z.optional(z.string()),
-      electronicId: z.optional(z.string()),
-      includeCharacteristics: z.optional(z.boolean()),
-      includeCustomFields: z.optional(z.boolean()),
-      includeSubscription: z.optional(z.boolean()),
-      ownedByContact: z.optional(z.boolean()),
-      rentedByContact: z.optional(z.boolean()),
-      searchValue: z.optional(z.string()),
-      serialNumber: z.optional(z.string()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmDeviceSelfServiceResourceGetContactDevicesOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        customFields: "custom_fields",
-        electronicId: "electronic_id",
-        includeCharacteristics: "include_characteristics",
-        includeCustomFields: "include_custom_fields",
-        includeSubscription: "include_subscription",
-        ownedByContact: "owned_by_contact",
-        rentedByContact: "rented_by_contact",
-        searchValue: "search_value",
-        serialNumber: "serial_number",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        customFields: z.optional(z.string()),
+        electronicId: z.optional(z.string()),
+        includeCharacteristics: z.optional(z.boolean()),
+        includeCustomFields: z.optional(z.boolean()),
+        includeSubscription: z.optional(z.boolean()),
+        ownedByContact: z.optional(z.boolean()),
+        rentedByContact: z.optional(z.boolean()),
+        searchValue: z.optional(z.string()),
+        serialNumber: z.optional(z.string()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmDeviceSelfServiceResourceGetContactDevicesOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          customFields: "custom_fields",
+          electronicId: "electronic_id",
+          includeCharacteristics: "include_characteristics",
+          includeCustomFields: "include_custom_fields",
+          includeSubscription: "include_subscription",
+          ownedByContact: "owned_by_contact",
+          rentedByContact: "rented_by_contact",
+          searchValue: "search_value",
+          serialNumber: "serial_number",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceGetContactDevicesRequestToJSON(
@@ -446,18 +450,20 @@ export const ComCrmDeviceSelfServiceResourceGetContactDevicesPaging$inboundSchem
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceGetContactDevicesPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceGetContactDevicesPagingFromJSON(
@@ -480,8 +486,10 @@ export const ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform$inboundSch
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform,
+    )
   );
 
 /** @internal */
@@ -489,11 +497,13 @@ export const ComCrmDeviceSelfServiceResourceGetContactDevicesProduct$inboundSche
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceGetContactDevicesProduct,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceGetContactDevicesProductFromJSON(
   jsonString: string,
@@ -515,10 +525,12 @@ export const ComCrmDeviceSelfServiceResourceGetContactDevicesCustomField$inbound
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceGetContactDevicesCustomField,
     unknown
-  > = z.object({
-    key: types.optional(types.string()),
-    value: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: types.optional(types.string()),
+      value: types.optional(types.string()),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceGetContactDevicesCustomFieldFromJSON(
   jsonString: string,
@@ -540,17 +552,19 @@ export const ComCrmDeviceSelfServiceResourceGetContactDevicesMeasurementUnit$inb
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceGetContactDevicesMeasurementUnit,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      display_name: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "display_name": "displayName",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        display_name: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "display_name": "displayName",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceGetContactDevicesMeasurementUnitFromJSON(
@@ -571,28 +585,34 @@ export function comCrmDeviceSelfServiceResourceGetContactDevicesMeasurementUnitF
 /** @internal */
 export const ComCrmDeviceSelfServiceResourceGetContactDevicesType$inboundSchema:
   z.ZodMiniType<ComCrmDeviceSelfServiceResourceGetContactDevicesType, unknown> =
-    openEnums.inboundSchema(
-      ComCrmDeviceSelfServiceResourceGetContactDevicesType,
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmDeviceSelfServiceResourceGetContactDevicesType,
+      )
     );
 
 /** @internal */
 export const MeterReadings$inboundSchema: z.ZodMiniType<
   MeterReadings,
   unknown
-> = z.pipe(
-  z.object({
-    measurement_unit: types.optional(z.lazy(() =>
-      ComCrmDeviceSelfServiceResourceGetContactDevicesMeasurementUnit$inboundSchema
-    )),
-    type: types.optional(
-      ComCrmDeviceSelfServiceResourceGetContactDevicesType$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "measurement_unit": "measurementUnit",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      measurement_unit: types.optional(
+        z.lazy(() =>
+          ComCrmDeviceSelfServiceResourceGetContactDevicesMeasurementUnit$inboundSchema
+        ),
+      ),
+      type: types.optional(
+        ComCrmDeviceSelfServiceResourceGetContactDevicesType$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "measurement_unit": "measurementUnit",
+      });
+    }),
+  )
 );
 
 export function meterReadingsFromJSON(
@@ -610,11 +630,13 @@ export const ComCrmDeviceSelfServiceResourceGetContactDevicesCharacteristic$inbo
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceGetContactDevicesCharacteristic,
     unknown
-  > = z.object({
-    key: types.string(),
-    value: types.string(),
-    label: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: types.string(),
+      value: types.string(),
+      label: types.optional(types.string()),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceGetContactDevicesCharacteristicFromJSON(
   jsonString: string,
@@ -636,19 +658,23 @@ export const ComCrmDeviceSelfServiceResourceGetContactDevicesLifeCycleState$inbo
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceGetContactDevicesLifeCycleState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmDeviceSelfServiceResourceGetContactDevicesLifeCycleState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmDeviceSelfServiceResourceGetContactDevicesLifeCycleState,
+    )
   );
 
 /** @internal */
 export const EnabledServiceProduct$inboundSchema: z.ZodMiniType<
   EnabledServiceProduct,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-  sku: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+    sku: types.optional(types.string()),
+  })
+);
 
 export function enabledServiceProductFromJSON(
   jsonString: string,
@@ -664,11 +690,13 @@ export function enabledServiceProductFromJSON(
 export const RelatedTermedServiceProduct$inboundSchema: z.ZodMiniType<
   RelatedTermedServiceProduct,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-  sku: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+    sku: types.optional(types.string()),
+  })
+);
 
 export function relatedTermedServiceProductFromJSON(
   jsonString: string,
@@ -684,12 +712,14 @@ export function relatedTermedServiceProductFromJSON(
 export const RelatedTermedService$inboundSchema: z.ZodMiniType<
   RelatedTermedService,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  product: types.optional(
-    z.lazy(() => RelatedTermedServiceProduct$inboundSchema),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    product: types.optional(
+      z.lazy(() => RelatedTermedServiceProduct$inboundSchema),
+    ),
+  })
+);
 
 export function relatedTermedServiceFromJSON(
   jsonString: string,
@@ -705,23 +735,27 @@ export function relatedTermedServiceFromJSON(
 export const EnabledService$inboundSchema: z.ZodMiniType<
   EnabledService,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    life_cycle_state: types.optional(
-      ComCrmDeviceSelfServiceResourceGetContactDevicesLifeCycleState$inboundSchema,
-    ),
-    product: types.optional(z.lazy(() => EnabledServiceProduct$inboundSchema)),
-    related_termed_service: types.optional(
-      z.lazy(() => RelatedTermedService$inboundSchema),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "life_cycle_state": "lifeCycleState",
-      "related_termed_service": "relatedTermedService",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      life_cycle_state: types.optional(
+        ComCrmDeviceSelfServiceResourceGetContactDevicesLifeCycleState$inboundSchema,
+      ),
+      product: types.optional(
+        z.lazy(() => EnabledServiceProduct$inboundSchema),
+      ),
+      related_termed_service: types.optional(
+        z.lazy(() => RelatedTermedService$inboundSchema),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "life_cycle_state": "lifeCycleState",
+        "related_termed_service": "relatedTermedService",
+      });
+    }),
+  )
 );
 
 export function enabledServiceFromJSON(
@@ -739,45 +773,53 @@ export const ComCrmDeviceSelfServiceResourceGetContactDevicesContent$inboundSche
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceGetContactDevicesContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      mac_address: types.optional(types.string()),
-      platform: types.optional(
-        ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform$inboundSchema,
-      ),
-      serial_number: types.optional(types.string()),
-      electronic_id: types.optional(types.string()),
-      registration_token: types.optional(types.string()),
-      registration_date: types.optional(types.number()),
-      product: types.optional(z.lazy(() =>
-        ComCrmDeviceSelfServiceResourceGetContactDevicesProduct$inboundSchema
-      )),
-      custom_fields: types.optional(z.array(z.lazy(() =>
-        ComCrmDeviceSelfServiceResourceGetContactDevicesCustomField$inboundSchema
-      ))),
-      meter_readings: types.optional(z.lazy(() =>
-        MeterReadings$inboundSchema
-      )),
-      characteristics: types.optional(z.array(z.lazy(() =>
-        ComCrmDeviceSelfServiceResourceGetContactDevicesCharacteristic$inboundSchema
-      ))),
-      enabled_services: types.optional(z.array(z.lazy(() =>
-        EnabledService$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "mac_address": "macAddress",
-        "serial_number": "serialNumber",
-        "electronic_id": "electronicId",
-        "registration_token": "registrationToken",
-        "registration_date": "registrationDate",
-        "custom_fields": "customFields",
-        "meter_readings": "meterReadings",
-        "enabled_services": "enabledServices",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        mac_address: types.optional(types.string()),
+        platform: types.optional(
+          ComCrmDeviceSelfServiceResourceGetContactDevicesPlatform$inboundSchema,
+        ),
+        serial_number: types.optional(types.string()),
+        electronic_id: types.optional(types.string()),
+        registration_token: types.optional(types.string()),
+        registration_date: types.optional(types.number()),
+        product: types.optional(
+          z.lazy(() =>
+            ComCrmDeviceSelfServiceResourceGetContactDevicesProduct$inboundSchema
+          ),
+        ),
+        custom_fields: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmDeviceSelfServiceResourceGetContactDevicesCustomField$inboundSchema
+          )),
+        ),
+        meter_readings: types.optional(
+          z.lazy(() => MeterReadings$inboundSchema),
+        ),
+        characteristics: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmDeviceSelfServiceResourceGetContactDevicesCharacteristic$inboundSchema
+          )),
+        ),
+        enabled_services: types.optional(
+          z.array(z.lazy(() => EnabledService$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "mac_address": "macAddress",
+          "serial_number": "serialNumber",
+          "electronic_id": "electronicId",
+          "registration_token": "registrationToken",
+          "registration_date": "registrationDate",
+          "custom_fields": "customFields",
+          "meter_readings": "meterReadings",
+          "enabled_services": "enabledServices",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceGetContactDevicesContentFromJSON(
@@ -800,18 +842,16 @@ export const ComCrmDeviceSelfServiceResourceGetContactDevicesResponse$inboundSch
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceGetContactDevicesResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmDeviceSelfServiceResourceGetContactDevicesPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmDeviceSelfServiceResourceGetContactDevicesContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmDeviceSelfServiceResourceGetContactDevicesContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceGetContactDevicesResponseFromJSON(
   jsonString: string,

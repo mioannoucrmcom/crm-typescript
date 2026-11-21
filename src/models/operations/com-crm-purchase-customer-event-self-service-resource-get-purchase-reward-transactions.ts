@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -383,16 +383,18 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTran
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsSecurity$Outbound,
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsSecurity
-  > = z.pipe(
-    z.object({
-      authorizationSelfService: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        authorizationSelfService: "authorization_self_service",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        authorizationSelfService: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          authorizationSelfService: "authorization_self_service",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsSecurityToJSON(
@@ -411,8 +413,10 @@ export function comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardT
 export const ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsQueryParamType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsQueryParamType
-  > = z.enum(
-    ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsQueryParamType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsQueryParamType,
+    )
   );
 
 /** @internal */
@@ -427,12 +431,14 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTran
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsRequest$Outbound,
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsRequest
-  > = z.object({
-    id: z.string(),
-    type: z.optional(
-      ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsQueryParamType$outboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      type: z.optional(
+        ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsQueryParamType$outboundSchema,
+      ),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsRequestToJSON(
   comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsRequest:
@@ -451,8 +457,10 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTran
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsContentType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsContentType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsContentType,
+    )
   );
 
 /** @internal */
@@ -460,10 +468,12 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTran
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsRewardOffer,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsRewardOfferFromJSON(
   jsonString: string,
@@ -482,15 +492,17 @@ export function comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardT
 
 /** @internal */
 export const RedeemMethod$inboundSchema: z.ZodMiniType<RedeemMethod, unknown> =
-  openEnums.inboundSchema(RedeemMethod);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(RedeemMethod));
 
 /** @internal */
 export const ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCurrencyCode$inboundSchema:
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -498,10 +510,12 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTran
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCommercePool,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCommercePoolFromJSON(
   jsonString: string,
@@ -520,18 +534,20 @@ export function comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardT
 
 /** @internal */
 export const ProductType$inboundSchema: z.ZodMiniType<ProductType, unknown> =
-  openEnums.inboundSchema(ProductType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ProductType));
 
 /** @internal */
 export const ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsProduct$inboundSchema:
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsProduct,
     unknown
-  > = z.object({
-    id: types.optional(z.any()),
-    name: types.optional(z.any()),
-    type: types.optional(ProductType$inboundSchema),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(z.any()),
+      name: types.optional(z.any()),
+      type: types.optional(ProductType$inboundSchema),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsProductFromJSON(
   jsonString: string,
@@ -553,34 +569,42 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTran
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      type: types.optional(
-        ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsContentType$inboundSchema,
-      ),
-      reward_offer: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsRewardOffer$inboundSchema
-      )),
-      redeem_method: types.optional(RedeemMethod$inboundSchema),
-      amount: types.optional(types.number()),
-      currency_code: types.optional(
-        ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCurrencyCode$inboundSchema,
-      ),
-      commerce_pool: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCommercePool$inboundSchema
-      )),
-      product: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsProduct$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "reward_offer": "rewardOffer",
-        "redeem_method": "redeemMethod",
-        "currency_code": "currencyCode",
-        "commerce_pool": "commercePool",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: types.optional(
+          ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsContentType$inboundSchema,
+        ),
+        reward_offer: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsRewardOffer$inboundSchema
+          ),
+        ),
+        redeem_method: types.optional(RedeemMethod$inboundSchema),
+        amount: types.optional(types.number()),
+        currency_code: types.optional(
+          ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCurrencyCode$inboundSchema,
+        ),
+        commerce_pool: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsCommercePool$inboundSchema
+          ),
+        ),
+        product: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsProduct$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "reward_offer": "rewardOffer",
+          "redeem_method": "redeemMethod",
+          "currency_code": "currencyCode",
+          "commerce_pool": "commercePool",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsContentFromJSON(
@@ -603,13 +627,13 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTran
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsResponse,
     unknown
-  > = z.object({
-    content: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      content: types.optional(z.array(z.lazy(() =>
         ComCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsContent$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceGetPurchaseRewardTransactionsResponseFromJSON(
   jsonString: string,

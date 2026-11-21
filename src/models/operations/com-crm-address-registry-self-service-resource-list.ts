@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -56,17 +56,19 @@ export const ComCrmAddressRegistrySelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmAddressRegistrySelfServiceResourceListRequest$Outbound,
     ComCrmAddressRegistrySelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      countries: z.optional(z.string()),
-      input: z.string(),
-      sessionId: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        sessionId: "session_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        countries: z.optional(z.string()),
+        input: z.string(),
+        sessionId: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          sessionId: "session_id",
+        });
+      }),
+    )
   );
 
 export function comCrmAddressRegistrySelfServiceResourceListRequestToJSON(
@@ -83,17 +85,19 @@ export function comCrmAddressRegistrySelfServiceResourceListRequestToJSON(
 /** @internal */
 export const ComCrmAddressRegistrySelfServiceResourceListContent$inboundSchema:
   z.ZodMiniType<ComCrmAddressRegistrySelfServiceResourceListContent, unknown> =
-    z.pipe(
-      z.object({
-        address_description: types.optional(types.string()),
-        google_place_id: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "address_description": "addressDescription",
-          "google_place_id": "googlePlaceId",
-        });
-      }),
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          address_description: types.optional(types.string()),
+          google_place_id: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "address_description": "addressDescription",
+            "google_place_id": "googlePlaceId",
+          });
+        }),
+      )
     );
 
 export function comCrmAddressRegistrySelfServiceResourceListContentFromJSON(
@@ -115,13 +119,13 @@ export function comCrmAddressRegistrySelfServiceResourceListContentFromJSON(
 /** @internal */
 export const ComCrmAddressRegistrySelfServiceResourceListResponse$inboundSchema:
   z.ZodMiniType<ComCrmAddressRegistrySelfServiceResourceListResponse, unknown> =
-    z.object({
-      content: types.optional(
-        z.array(z.lazy(() =>
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        content: types.optional(z.array(z.lazy(() =>
           ComCrmAddressRegistrySelfServiceResourceListContent$inboundSchema
-        )),
-      ),
-    });
+        ))),
+      })
+    );
 
 export function comCrmAddressRegistrySelfServiceResourceListResponseFromJSON(
   jsonString: string,

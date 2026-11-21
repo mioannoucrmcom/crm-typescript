@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -50,15 +50,17 @@ export const ComCrmNameDayRulesSelfServiceResourceListNameDayRulesRequest$outbou
   z.ZodMiniType<
     ComCrmNameDayRulesSelfServiceResourceListNameDayRulesRequest$Outbound,
     ComCrmNameDayRulesSelfServiceResourceListNameDayRulesRequest
-  > = z.pipe(
-    z.object({
-      firstName: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        firstName: "first_name",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        firstName: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          firstName: "first_name",
+        });
+      }),
+    )
   );
 
 export function comCrmNameDayRulesSelfServiceResourceListNameDayRulesRequestToJSON(
@@ -76,13 +78,15 @@ export const ComCrmNameDayRulesSelfServiceResourceListNameDayRulesResponse$inbou
   z.ZodMiniType<
     ComCrmNameDayRulesSelfServiceResourceListNameDayRulesResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    day: types.optional(types.number()),
-    month: types.optional(types.number()),
-    names: types.optional(types.string()),
-    description: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      day: types.optional(types.number()),
+      month: types.optional(types.number()),
+      names: types.optional(types.string()),
+      description: types.optional(types.string()),
+    })
+  );
 
 export function comCrmNameDayRulesSelfServiceResourceListNameDayRulesResponseFromJSON(
   jsonString: string,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -149,15 +149,17 @@ export const ComCrmSubscriptionSelfServiceResourceChangeSecurity$outboundSchema:
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceChangeSecurity$Outbound,
     ComCrmSubscriptionSelfServiceResourceChangeSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceChangeSecurityToJSON(
@@ -173,8 +175,10 @@ export function comCrmSubscriptionSelfServiceResourceChangeSecurityToJSON(
 
 /** @internal */
 export const ComCrmSubscriptionSelfServiceResourceChangeAction$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmSubscriptionSelfServiceResourceChangeAction> = z
-    .enum(ComCrmSubscriptionSelfServiceResourceChangeAction);
+  z.ZodMiniEnum<typeof ComCrmSubscriptionSelfServiceResourceChangeAction> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmSubscriptionSelfServiceResourceChangeAction)
+    );
 
 /** @internal */
 export type ComCrmSubscriptionSelfServiceResourceChangeBillingDay$Outbound = {
@@ -187,17 +191,19 @@ export const ComCrmSubscriptionSelfServiceResourceChangeBillingDay$outboundSchem
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceChangeBillingDay$Outbound,
     ComCrmSubscriptionSelfServiceResourceChangeBillingDay
-  > = z.pipe(
-    z.object({
-      dayOfWeek: z.optional(z.string()),
-      dayOfMonth: z.optional(z.int()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        dayOfWeek: "day_of_week",
-        dayOfMonth: "day_of_month",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        dayOfWeek: z.optional(z.string()),
+        dayOfMonth: z.optional(z.int()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          dayOfWeek: "day_of_week",
+          dayOfMonth: "day_of_month",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceChangeBillingDayToJSON(
@@ -215,13 +221,17 @@ export function comCrmSubscriptionSelfServiceResourceChangeBillingDayToJSON(
 export const ComCrmSubscriptionSelfServiceResourceChangeFundingSource$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSubscriptionSelfServiceResourceChangeFundingSource
-  > = z.enum(ComCrmSubscriptionSelfServiceResourceChangeFundingSource);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmSubscriptionSelfServiceResourceChangeFundingSource)
+  );
 
 /** @internal */
 export const ComCrmSubscriptionSelfServiceResourceChangePaymentMethodType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSubscriptionSelfServiceResourceChangePaymentMethodType
-  > = z.enum(ComCrmSubscriptionSelfServiceResourceChangePaymentMethodType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmSubscriptionSelfServiceResourceChangePaymentMethodType)
+  );
 
 /** @internal */
 export type ComCrmSubscriptionSelfServiceResourceChangeRequestBody$Outbound = {
@@ -241,33 +251,38 @@ export const ComCrmSubscriptionSelfServiceResourceChangeRequestBody$outboundSche
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceChangeRequestBody$Outbound,
     ComCrmSubscriptionSelfServiceResourceChangeRequestBody
-  > = z.pipe(
-    z.object({
-      action: ComCrmSubscriptionSelfServiceResourceChangeAction$outboundSchema,
-      paymentMethodId: z.optional(z.string()),
-      billingDay: z.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceChangeBillingDay$outboundSchema
-      )),
-      fundingSource: z._default(
-        ComCrmSubscriptionSelfServiceResourceChangeFundingSource$outboundSchema,
-        "ACCOUNT",
-      ),
-      scheduledDate: z.optional(z.int()),
-      useProposedDate: z._default(z.boolean(), false),
-      paymentMethodType: z.optional(
-        ComCrmSubscriptionSelfServiceResourceChangePaymentMethodType$outboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        paymentMethodId: "payment_method_id",
-        billingDay: "billing_day",
-        fundingSource: "funding_source",
-        scheduledDate: "scheduled_date",
-        useProposedDate: "use_proposed_date",
-        paymentMethodType: "payment_method_type",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        action:
+          ComCrmSubscriptionSelfServiceResourceChangeAction$outboundSchema,
+        paymentMethodId: z.optional(z.string()),
+        billingDay: z.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceChangeBillingDay$outboundSchema
+          ),
+        ),
+        fundingSource: z._default(
+          ComCrmSubscriptionSelfServiceResourceChangeFundingSource$outboundSchema,
+          "ACCOUNT",
+        ),
+        scheduledDate: z.optional(z.int()),
+        useProposedDate: z._default(z.boolean(), false),
+        paymentMethodType: z.optional(
+          ComCrmSubscriptionSelfServiceResourceChangePaymentMethodType$outboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          paymentMethodId: "payment_method_id",
+          billingDay: "billing_day",
+          fundingSource: "funding_source",
+          scheduledDate: "scheduled_date",
+          useProposedDate: "use_proposed_date",
+          paymentMethodType: "payment_method_type",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceChangeRequestBodyToJSON(
@@ -294,14 +309,14 @@ export const ComCrmSubscriptionSelfServiceResourceChangeRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceChangeRequest$Outbound,
     ComCrmSubscriptionSelfServiceResourceChangeRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmSubscriptionSelfServiceResourceChangeRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceChangeRequestToJSON(
   comCrmSubscriptionSelfServiceResourceChangeRequest:
@@ -317,16 +332,18 @@ export function comCrmSubscriptionSelfServiceResourceChangeRequestToJSON(
 /** @internal */
 export const ComCrmSubscriptionSelfServiceResourceChangeResponse$inboundSchema:
   z.ZodMiniType<ComCrmSubscriptionSelfServiceResourceChangeResponse, unknown> =
-    z.pipe(
-      z.object({
-        id: types.optional(types.string()),
-        proposed_date: types.optional(types.number()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "proposed_date": "proposedDate",
-        });
-      }),
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          proposed_date: types.optional(types.number()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "proposed_date": "proposedDate",
+          });
+        }),
+      )
     );
 
 export function comCrmSubscriptionSelfServiceResourceChangeResponseFromJSON(

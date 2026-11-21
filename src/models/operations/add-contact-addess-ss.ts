@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -359,12 +359,12 @@ export type AddContactAddessSSResponse = {
 /** @internal */
 export const AddContactAddessSSType$outboundSchema: z.ZodMiniEnum<
   typeof AddContactAddessSSType
-> = z.enum(AddContactAddessSSType);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(AddContactAddessSSType));
 
 /** @internal */
 export const AddContactAddessSSCountryCode$outboundSchema: z.ZodMiniEnum<
   typeof AddContactAddessSSCountryCode
-> = z.enum(AddContactAddessSSCountryCode);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(AddContactAddessSSCountryCode));
 
 /** @internal */
 export type AddContactAddessSSRequestBody$Outbound = {
@@ -387,35 +387,37 @@ export type AddContactAddessSSRequestBody$Outbound = {
 export const AddContactAddessSSRequestBody$outboundSchema: z.ZodMiniType<
   AddContactAddessSSRequestBody$Outbound,
   AddContactAddessSSRequestBody
-> = z.pipe(
-  z.object({
-    type: AddContactAddessSSType$outboundSchema,
-    name: z.optional(z.nullable(z.string())),
-    isPrimary: z.nullable(z._default(z.boolean(), false)),
-    addressLine1: z.string(),
-    addressLine2: z.optional(z.nullable(z.string())),
-    stateProvinceCounty: z.optional(z.nullable(z.string())),
-    townCity: z.optional(z.nullable(z.string())),
-    postalCode: z.optional(z.nullable(z.string())),
-    countryCode: z.optional(AddContactAddessSSCountryCode$outboundSchema),
-    lat: z.optional(z.nullable(z.number())),
-    lon: z.optional(z.nullable(z.number())),
-    googlePlaceId: z.optional(z.nullable(z.string())),
-    isBillingAddress: z.optional(z.nullable(z.boolean())),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      isPrimary: "is_primary",
-      addressLine1: "address_line_1",
-      addressLine2: "address_line_2",
-      stateProvinceCounty: "state_province_county",
-      townCity: "town_city",
-      postalCode: "postal_code",
-      countryCode: "country_code",
-      googlePlaceId: "google_place_id",
-      isBillingAddress: "is_billing_address",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      type: AddContactAddessSSType$outboundSchema,
+      name: z.optional(z.nullable(z.string())),
+      isPrimary: z.nullable(z._default(z.boolean(), false)),
+      addressLine1: z.string(),
+      addressLine2: z.optional(z.nullable(z.string())),
+      stateProvinceCounty: z.optional(z.nullable(z.string())),
+      townCity: z.optional(z.nullable(z.string())),
+      postalCode: z.optional(z.nullable(z.string())),
+      countryCode: z.optional(AddContactAddessSSCountryCode$outboundSchema),
+      lat: z.optional(z.nullable(z.number())),
+      lon: z.optional(z.nullable(z.number())),
+      googlePlaceId: z.optional(z.nullable(z.string())),
+      isBillingAddress: z.optional(z.nullable(z.boolean())),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        isPrimary: "is_primary",
+        addressLine1: "address_line_1",
+        addressLine2: "address_line_2",
+        stateProvinceCounty: "state_province_county",
+        townCity: "town_city",
+        postalCode: "postal_code",
+        countryCode: "country_code",
+        googlePlaceId: "google_place_id",
+        isBillingAddress: "is_billing_address",
+      });
+    }),
+  )
 );
 
 export function addContactAddessSSRequestBodyToJSON(
@@ -438,10 +440,14 @@ export type AddContactAddessSSRequest$Outbound = {
 export const AddContactAddessSSRequest$outboundSchema: z.ZodMiniType<
   AddContactAddessSSRequest$Outbound,
   AddContactAddessSSRequest
-> = z.object({
-  id: z.string(),
-  body: z.optional(z.lazy(() => AddContactAddessSSRequestBody$outboundSchema)),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    body: z.optional(
+      z.lazy(() => AddContactAddessSSRequestBody$outboundSchema),
+    ),
+  })
+);
 
 export function addContactAddessSSRequestToJSON(
   addContactAddessSSRequest: AddContactAddessSSRequest,
@@ -455,9 +461,11 @@ export function addContactAddessSSRequestToJSON(
 export const AddContactAddessSSResponse$inboundSchema: z.ZodMiniType<
   AddContactAddessSSResponse,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+  })
+);
 
 export function addContactAddessSSResponseFromJSON(
   jsonString: string,

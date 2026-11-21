@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -173,14 +173,18 @@ export type ComCrmApprovalRequestSelfServiceResourceListResponse = {
 
 /** @internal */
 export const ComCrmApprovalRequestSelfServiceResourceListOrder$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmApprovalRequestSelfServiceResourceListOrder> = z
-    .enum(ComCrmApprovalRequestSelfServiceResourceListOrder);
+  z.ZodMiniEnum<typeof ComCrmApprovalRequestSelfServiceResourceListOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmApprovalRequestSelfServiceResourceListOrder)
+    );
 
 /** @internal */
 export const ComCrmApprovalRequestSelfServiceResourceListQueryParamState$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmApprovalRequestSelfServiceResourceListQueryParamState
-  > = z.enum(ComCrmApprovalRequestSelfServiceResourceListQueryParamState);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmApprovalRequestSelfServiceResourceListQueryParamState)
+  );
 
 /** @internal */
 export type ComCrmApprovalRequestSelfServiceResourceListRequest$Outbound = {
@@ -198,25 +202,27 @@ export const ComCrmApprovalRequestSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmApprovalRequestSelfServiceResourceListRequest$Outbound,
     ComCrmApprovalRequestSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      entityTypes: z.optional(z.string()),
-      order: z.optional(
-        ComCrmApprovalRequestSelfServiceResourceListOrder$outboundSchema,
-      ),
-      page: z.optional(z.int()),
-      size: z.optional(z.int()),
-      sort: z.optional(z.string()),
-      state: z.optional(
-        ComCrmApprovalRequestSelfServiceResourceListQueryParamState$outboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        entityTypes: "entity_types",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        entityTypes: z.optional(z.string()),
+        order: z.optional(
+          ComCrmApprovalRequestSelfServiceResourceListOrder$outboundSchema,
+        ),
+        page: z.optional(z.int()),
+        size: z.optional(z.int()),
+        sort: z.optional(z.string()),
+        state: z.optional(
+          ComCrmApprovalRequestSelfServiceResourceListQueryParamState$outboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          entityTypes: "entity_types",
+        });
+      }),
+    )
   );
 
 export function comCrmApprovalRequestSelfServiceResourceListRequestToJSON(
@@ -232,12 +238,14 @@ export function comCrmApprovalRequestSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const ComCrmApprovalRequestSelfServiceResourceListPaging$inboundSchema:
-  z.ZodMiniType<ComCrmApprovalRequestSelfServiceResourceListPaging, unknown> = z
-    .object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-    });
+  z.ZodMiniType<ComCrmApprovalRequestSelfServiceResourceListPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+      })
+    );
 
 export function comCrmApprovalRequestSelfServiceResourceListPagingFromJSON(
   jsonString: string,
@@ -260,32 +268,38 @@ export const ComCrmApprovalRequestSelfServiceResourceListContentState$inboundSch
   z.ZodMiniType<
     ComCrmApprovalRequestSelfServiceResourceListContentState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApprovalRequestSelfServiceResourceListContentState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApprovalRequestSelfServiceResourceListContentState,
+    )
   );
 
 /** @internal */
 export const ComCrmApprovalRequestSelfServiceResourceListType$inboundSchema:
   z.ZodMiniType<ComCrmApprovalRequestSelfServiceResourceListType, unknown> =
-    openEnums.inboundSchema(ComCrmApprovalRequestSelfServiceResourceListType);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmApprovalRequestSelfServiceResourceListType)
+    );
 
 /** @internal */
 export const ComCrmApprovalRequestSelfServiceResourceListEntity$inboundSchema:
-  z.ZodMiniType<ComCrmApprovalRequestSelfServiceResourceListEntity, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        type: types.optional(
-          ComCrmApprovalRequestSelfServiceResourceListType$inboundSchema,
-        ),
-        reference: types.optional(types.string()),
-        stage_id: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "stage_id": "stageId",
-        });
-      }),
+  z.ZodMiniType<ComCrmApprovalRequestSelfServiceResourceListEntity, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          type: types.optional(
+            ComCrmApprovalRequestSelfServiceResourceListType$inboundSchema,
+          ),
+          reference: types.optional(types.string()),
+          stage_id: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "stage_id": "stageId",
+          });
+        }),
+      )
     );
 
 export function comCrmApprovalRequestSelfServiceResourceListEntityFromJSON(
@@ -307,18 +321,18 @@ export function comCrmApprovalRequestSelfServiceResourceListEntityFromJSON(
 /** @internal */
 export const ComCrmApprovalRequestSelfServiceResourceListContent$inboundSchema:
   z.ZodMiniType<ComCrmApprovalRequestSelfServiceResourceListContent, unknown> =
-    z.object({
-      id: types.optional(types.string()),
-      state: types.optional(
-        ComCrmApprovalRequestSelfServiceResourceListContentState$inboundSchema,
-      ),
-      entity: types.optional(
-        z.lazy(() =>
-          ComCrmApprovalRequestSelfServiceResourceListEntity$inboundSchema
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        state: types.optional(
+          ComCrmApprovalRequestSelfServiceResourceListContentState$inboundSchema,
         ),
-      ),
-      comments: types.optional(types.string()),
-    });
+        entity: types.optional(z.lazy(() =>
+          ComCrmApprovalRequestSelfServiceResourceListEntity$inboundSchema
+        )),
+        comments: types.optional(types.string()),
+      })
+    );
 
 export function comCrmApprovalRequestSelfServiceResourceListContentFromJSON(
   jsonString: string,
@@ -339,18 +353,16 @@ export function comCrmApprovalRequestSelfServiceResourceListContentFromJSON(
 /** @internal */
 export const ComCrmApprovalRequestSelfServiceResourceListResponse$inboundSchema:
   z.ZodMiniType<ComCrmApprovalRequestSelfServiceResourceListResponse, unknown> =
-    z.object({
-      paging: types.optional(
-        z.lazy(() =>
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(z.lazy(() =>
           ComCrmApprovalRequestSelfServiceResourceListPaging$inboundSchema
-        ),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmApprovalRequestSelfServiceResourceListContent$inboundSchema
         )),
-      ),
-    });
+        content: types.optional(z.array(z.lazy(() =>
+          ComCrmApprovalRequestSelfServiceResourceListContent$inboundSchema
+        ))),
+      })
+    );
 
 export function comCrmApprovalRequestSelfServiceResourceListResponseFromJSON(
   jsonString: string,

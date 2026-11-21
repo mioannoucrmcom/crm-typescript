@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -731,9 +731,11 @@ export const ComCrmRewardOfferSelfServiceResourceGetSingleRequest$outboundSchema
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleRequest$Outbound,
     ComCrmRewardOfferSelfServiceResourceGetSingleRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleRequestToJSON(
   comCrmRewardOfferSelfServiceResourceGetSingleRequest:
@@ -751,10 +753,12 @@ export const ComCrmRewardOfferSelfServiceResourceGetSingleAvailability$inboundSc
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleAvailability,
     unknown
-  > = z.object({
-    from: types.optional(types.number()),
-    to: types.optional(types.number()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      from: types.optional(types.number()),
+      to: types.optional(types.number()),
+    })
+  );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleAvailabilityFromJSON(
   jsonString: string,
@@ -776,8 +780,10 @@ export const ComCrmRewardOfferSelfServiceResourceGetSingleOwnerUsageType$inbound
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleOwnerUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmRewardOfferSelfServiceResourceGetSingleOwnerUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmRewardOfferSelfServiceResourceGetSingleOwnerUsageType,
+    )
   );
 
 /** @internal */
@@ -785,11 +791,13 @@ export const ComCrmRewardOfferSelfServiceResourceGetSingleOwnerMedia$inboundSche
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleOwnerMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleOwnerMediaFromJSON(
   jsonString: string,
@@ -811,34 +819,38 @@ export const ComCrmRewardOfferSelfServiceResourceGetSingleOwnerCreative$inboundS
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleOwnerCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmRewardOfferSelfServiceResourceGetSingleOwnerUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmRewardOfferSelfServiceResourceGetSingleOwnerMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmRewardOfferSelfServiceResourceGetSingleOwnerUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmRewardOfferSelfServiceResourceGetSingleOwnerMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleOwnerCreativeFromJSON(
@@ -858,16 +870,16 @@ export function comCrmRewardOfferSelfServiceResourceGetSingleOwnerCreativeFromJS
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceGetSingleOwner$inboundSchema:
-  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceGetSingleOwner, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      creatives: types.optional(
-        z.array(z.lazy(() =>
+  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceGetSingleOwner, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        creatives: types.optional(z.array(z.lazy(() =>
           ComCrmRewardOfferSelfServiceResourceGetSingleOwnerCreative$inboundSchema
-        )),
-      ),
-    });
+        ))),
+      })
+    );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleOwnerFromJSON(
   jsonString: string,
@@ -888,10 +900,12 @@ export function comCrmRewardOfferSelfServiceResourceGetSingleOwnerFromJSON(
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceGetSingleScheme$inboundSchema:
   z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceGetSingleScheme, unknown> =
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-    });
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+      })
+    );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleSchemeFromJSON(
   jsonString: string,
@@ -914,18 +928,22 @@ export const ComCrmRewardOfferSelfServiceResourceGetSingleUsageType$inboundSchem
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmRewardOfferSelfServiceResourceGetSingleUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmRewardOfferSelfServiceResourceGetSingleUsageType,
+    )
   );
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceGetSingleMedia$inboundSchema:
-  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceGetSingleMedia, unknown> = z
-    .object({
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      url: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceGetSingleMedia, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        url: types.optional(types.string()),
+      })
+    );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleMediaFromJSON(
   jsonString: string,
@@ -948,34 +966,38 @@ export const ComCrmRewardOfferSelfServiceResourceGetSingleCreative$inboundSchema
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmRewardOfferSelfServiceResourceGetSingleUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmRewardOfferSelfServiceResourceGetSingleMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmRewardOfferSelfServiceResourceGetSingleUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmRewardOfferSelfServiceResourceGetSingleMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleCreativeFromJSON(
@@ -999,8 +1021,10 @@ export const ComCrmRewardOfferSelfServiceResourceGetSingleCountryCode$inboundSch
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleCountryCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmRewardOfferSelfServiceResourceGetSingleCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmRewardOfferSelfServiceResourceGetSingleCountryCode,
+    )
   );
 
 /** @internal */
@@ -1008,40 +1032,42 @@ export const ComCrmRewardOfferSelfServiceResourceGetSingleLocation$inboundSchema
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleLocation,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: z.optional(z.nullable(types.string())),
-      address_line_1: types.string(),
-      address_line_2: z.optional(z.nullable(types.string())),
-      state_province_county: z.optional(z.nullable(types.string())),
-      town_city: types.string(),
-      postal_code: types.string(),
-      country_code:
-        ComCrmRewardOfferSelfServiceResourceGetSingleCountryCode$inboundSchema,
-      care_of: z.optional(z.nullable(types.string())),
-      lat: z.optional(z.nullable(types.number())),
-      lon: z.optional(z.nullable(types.number())),
-      google_place_id: z.optional(z.nullable(types.string())),
-      is_primary: z.optional(z.nullable(types.boolean())),
-      is_billing: z.optional(z.nullable(types.boolean())),
-      is_test_mode: z.optional(z.nullable(types.boolean())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "address_line_1": "addressLine1",
-        "address_line_2": "addressLine2",
-        "state_province_county": "stateProvinceCounty",
-        "town_city": "townCity",
-        "postal_code": "postalCode",
-        "country_code": "countryCode",
-        "care_of": "careOf",
-        "google_place_id": "googlePlaceId",
-        "is_primary": "isPrimary",
-        "is_billing": "isBilling",
-        "is_test_mode": "isTestMode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: z.optional(z.nullable(types.string())),
+        address_line_1: types.string(),
+        address_line_2: z.optional(z.nullable(types.string())),
+        state_province_county: z.optional(z.nullable(types.string())),
+        town_city: types.string(),
+        postal_code: types.string(),
+        country_code:
+          ComCrmRewardOfferSelfServiceResourceGetSingleCountryCode$inboundSchema,
+        care_of: z.optional(z.nullable(types.string())),
+        lat: z.optional(z.nullable(types.number())),
+        lon: z.optional(z.nullable(types.number())),
+        google_place_id: z.optional(z.nullable(types.string())),
+        is_primary: z.optional(z.nullable(types.boolean())),
+        is_billing: z.optional(z.nullable(types.boolean())),
+        is_test_mode: z.optional(z.nullable(types.boolean())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "address_line_1": "addressLine1",
+          "address_line_2": "addressLine2",
+          "state_province_county": "stateProvinceCounty",
+          "town_city": "townCity",
+          "postal_code": "postalCode",
+          "country_code": "countryCode",
+          "care_of": "careOf",
+          "google_place_id": "googlePlaceId",
+          "is_primary": "isPrimary",
+          "is_billing": "isBilling",
+          "is_test_mode": "isTestMode",
+        });
+      }),
+    )
   );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleLocationFromJSON(
@@ -1063,25 +1089,27 @@ export function comCrmRewardOfferSelfServiceResourceGetSingleLocationFromJSON(
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceGetSingleType$inboundSchema:
   z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceGetSingleType, unknown> =
-    openEnums.inboundSchema(ComCrmRewardOfferSelfServiceResourceGetSingleType);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmRewardOfferSelfServiceResourceGetSingleType)
+    );
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceGetSingleOrganisation$inboundSchema:
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    locations: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      locations: types.optional(z.array(z.lazy(() =>
         ComCrmRewardOfferSelfServiceResourceGetSingleLocation$inboundSchema
-      )),
-    ),
-    type: types.optional(
-      ComCrmRewardOfferSelfServiceResourceGetSingleType$inboundSchema,
-    ),
-  });
+      ))),
+      type: types.optional(
+        ComCrmRewardOfferSelfServiceResourceGetSingleType$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleOrganisationFromJSON(
   jsonString: string,
@@ -1101,13 +1129,13 @@ export function comCrmRewardOfferSelfServiceResourceGetSingleOrganisationFromJSO
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceGetSingleTargets$inboundSchema:
   z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceGetSingleTargets, unknown> =
-    z.object({
-      organisations: types.optional(
-        z.array(z.lazy(() =>
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        organisations: types.optional(z.array(z.lazy(() =>
           ComCrmRewardOfferSelfServiceResourceGetSingleOrganisation$inboundSchema
-        )),
-      ),
-    });
+        ))),
+      })
+    );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleTargetsFromJSON(
   jsonString: string,
@@ -1130,40 +1158,52 @@ export const ComCrmRewardOfferSelfServiceResourceGetSingleResponse$inboundSchema
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetSingleResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      short_description: types.optional(types.string()),
-      long_description: types.optional(types.string()),
-      terms_and_conditions: types.optional(types.string()),
-      availability: types.optional(z.lazy(() =>
-        ComCrmRewardOfferSelfServiceResourceGetSingleAvailability$inboundSchema
-      )),
-      is_featured: types.optional(types.boolean()),
-      owner: types.optional(z.lazy(() =>
-        ComCrmRewardOfferSelfServiceResourceGetSingleOwner$inboundSchema
-      )),
-      performance_enabled: types.optional(types.boolean()),
-      scheme: types.optional(z.lazy(() =>
-        ComCrmRewardOfferSelfServiceResourceGetSingleScheme$inboundSchema
-      )),
-      creatives: types.optional(z.array(z.lazy(() =>
-        ComCrmRewardOfferSelfServiceResourceGetSingleCreative$inboundSchema
-      ))),
-      targets: types.optional(z.lazy(() =>
-        ComCrmRewardOfferSelfServiceResourceGetSingleTargets$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "short_description": "shortDescription",
-        "long_description": "longDescription",
-        "terms_and_conditions": "termsAndConditions",
-        "is_featured": "isFeatured",
-        "performance_enabled": "performanceEnabled",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        short_description: types.optional(types.string()),
+        long_description: types.optional(types.string()),
+        terms_and_conditions: types.optional(types.string()),
+        availability: types.optional(
+          z.lazy(() =>
+            ComCrmRewardOfferSelfServiceResourceGetSingleAvailability$inboundSchema
+          ),
+        ),
+        is_featured: types.optional(types.boolean()),
+        owner: types.optional(
+          z.lazy(() =>
+            ComCrmRewardOfferSelfServiceResourceGetSingleOwner$inboundSchema
+          ),
+        ),
+        performance_enabled: types.optional(types.boolean()),
+        scheme: types.optional(
+          z.lazy(() =>
+            ComCrmRewardOfferSelfServiceResourceGetSingleScheme$inboundSchema
+          ),
+        ),
+        creatives: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmRewardOfferSelfServiceResourceGetSingleCreative$inboundSchema
+          )),
+        ),
+        targets: types.optional(
+          z.lazy(() =>
+            ComCrmRewardOfferSelfServiceResourceGetSingleTargets$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "short_description": "shortDescription",
+          "long_description": "longDescription",
+          "terms_and_conditions": "termsAndConditions",
+          "is_featured": "isFeatured",
+          "performance_enabled": "performanceEnabled",
+        });
+      }),
+    )
   );
 
 export function comCrmRewardOfferSelfServiceResourceGetSingleResponseFromJSON(

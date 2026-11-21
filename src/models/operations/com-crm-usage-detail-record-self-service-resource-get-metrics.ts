@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -77,24 +77,26 @@ export const ComCrmUsageDetailRecordSelfServiceResourceGetMetricsRequest$outboun
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceGetMetricsRequest$Outbound,
     ComCrmUsageDetailRecordSelfServiceResourceGetMetricsRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      createdOn: z.optional(z.int()),
-      createdOnGt: z.optional(z.int()),
-      createdOnGte: z.optional(z.int()),
-      createdOnLt: z.optional(z.int()),
-      createdOnLte: z.optional(z.int()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        createdOn: "created_on",
-        createdOnGt: "created_on[gt]",
-        createdOnGte: "created_on[gte]",
-        createdOnLt: "created_on[lt]",
-        createdOnLte: "created_on[lte]",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        createdOn: z.optional(z.int()),
+        createdOnGt: z.optional(z.int()),
+        createdOnGte: z.optional(z.int()),
+        createdOnLt: z.optional(z.int()),
+        createdOnLte: z.optional(z.int()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          createdOn: "created_on",
+          createdOnGt: "created_on[gt]",
+          createdOnGte: "created_on[gte]",
+          createdOnLt: "created_on[lt]",
+          createdOnLte: "created_on[lte]",
+        });
+      }),
+    )
   );
 
 export function comCrmUsageDetailRecordSelfServiceResourceGetMetricsRequestToJSON(
@@ -112,11 +114,13 @@ export const ComCrmUsageDetailRecordSelfServiceResourceGetMetricsProduct$inbound
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceGetMetricsProduct,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmUsageDetailRecordSelfServiceResourceGetMetricsProductFromJSON(
   jsonString: string,
@@ -138,14 +142,14 @@ export const ComCrmUsageDetailRecordSelfServiceResourceGetMetricsResponse$inboun
   z.ZodMiniType<
     ComCrmUsageDetailRecordSelfServiceResourceGetMetricsResponse,
     unknown
-  > = z.object({
-    product: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      product: types.optional(z.lazy(() =>
         ComCrmUsageDetailRecordSelfServiceResourceGetMetricsProduct$inboundSchema
-      ),
-    ),
-    amount: types.optional(types.number()),
-  });
+      )),
+      amount: types.optional(types.number()),
+    })
+  );
 
 export function comCrmUsageDetailRecordSelfServiceResourceGetMetricsResponseFromJSON(
   jsonString: string,

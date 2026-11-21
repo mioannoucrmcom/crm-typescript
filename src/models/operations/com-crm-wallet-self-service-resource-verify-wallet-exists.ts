@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -45,15 +45,17 @@ export const ComCrmWalletSelfServiceResourceVerifyWalletExistsSecurity$outboundS
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceVerifyWalletExistsSecurity$Outbound,
     ComCrmWalletSelfServiceResourceVerifyWalletExistsSecurity
-  > = z.pipe(
-    z.object({
-      publicAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        publicAPIKey: "Public_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        publicAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          publicAPIKey: "Public_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceVerifyWalletExistsSecurityToJSON(
@@ -78,10 +80,12 @@ export const ComCrmWalletSelfServiceResourceVerifyWalletExistsRequest$outboundSc
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceVerifyWalletExistsRequest$Outbound,
     ComCrmWalletSelfServiceResourceVerifyWalletExistsRequest
-  > = z.object({
-    type: z.optional(z.string()),
-    value: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      type: z.optional(z.string()),
+      value: z.optional(z.string()),
+    })
+  );
 
 export function comCrmWalletSelfServiceResourceVerifyWalletExistsRequestToJSON(
   comCrmWalletSelfServiceResourceVerifyWalletExistsRequest:
@@ -98,15 +102,17 @@ export const ComCrmWalletSelfServiceResourceVerifyWalletExistsResponse$inboundSc
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceVerifyWalletExistsResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      wallet_exists: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "wallet_exists": "walletExists",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        wallet_exists: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "wallet_exists": "walletExists",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceVerifyWalletExistsResponseFromJSON(

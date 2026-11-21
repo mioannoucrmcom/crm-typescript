@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -212,15 +212,17 @@ export const ComCrmSubscriptionSelfServiceResourceListServiceDevicesSecurity$out
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListServiceDevicesSecurity$Outbound,
     ComCrmSubscriptionSelfServiceResourceListServiceDevicesSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListServiceDevicesSecurityToJSON(
@@ -237,14 +239,18 @@ export function comCrmSubscriptionSelfServiceResourceListServiceDevicesSecurityT
 export const ComCrmSubscriptionSelfServiceResourceListServiceDevicesOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSubscriptionSelfServiceResourceListServiceDevicesOrder
-  > = z.enum(ComCrmSubscriptionSelfServiceResourceListServiceDevicesOrder);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmSubscriptionSelfServiceResourceListServiceDevicesOrder)
+  );
 
 /** @internal */
 export const ComCrmSubscriptionSelfServiceResourceListServiceDevicesQueryParamState$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSubscriptionSelfServiceResourceListServiceDevicesQueryParamState
-  > = z.enum(
-    ComCrmSubscriptionSelfServiceResourceListServiceDevicesQueryParamState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmSubscriptionSelfServiceResourceListServiceDevicesQueryParamState,
+    )
   );
 
 /** @internal */
@@ -264,25 +270,27 @@ export const ComCrmSubscriptionSelfServiceResourceListServiceDevicesRequest$outb
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListServiceDevicesRequest$Outbound,
     ComCrmSubscriptionSelfServiceResourceListServiceDevicesRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      order: z.optional(
-        ComCrmSubscriptionSelfServiceResourceListServiceDevicesOrder$outboundSchema,
-      ),
-      page: z.optional(z.int()),
-      size: z.optional(z.int()),
-      sort: z.optional(z.string()),
-      state: z.optional(
-        ComCrmSubscriptionSelfServiceResourceListServiceDevicesQueryParamState$outboundSchema,
-      ),
-      includeTotal: z._default(z.boolean(), false),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        order: z.optional(
+          ComCrmSubscriptionSelfServiceResourceListServiceDevicesOrder$outboundSchema,
+        ),
+        page: z.optional(z.int()),
+        size: z.optional(z.int()),
+        sort: z.optional(z.string()),
+        state: z.optional(
+          ComCrmSubscriptionSelfServiceResourceListServiceDevicesQueryParamState$outboundSchema,
+        ),
+        includeTotal: z._default(z.boolean(), false),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListServiceDevicesRequestToJSON(
@@ -300,18 +308,20 @@ export const ComCrmSubscriptionSelfServiceResourceListServiceDevicesPaging$inbou
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListServiceDevicesPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListServiceDevicesPagingFromJSON(
@@ -334,8 +344,10 @@ export const ComCrmSubscriptionSelfServiceResourceListServiceDevicesContentState
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListServiceDevicesContentState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListServiceDevicesContentState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListServiceDevicesContentState,
+    )
   );
 
 /** @internal */
@@ -343,11 +355,13 @@ export const ComCrmSubscriptionSelfServiceResourceListServiceDevicesProduct$inbo
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListServiceDevicesProduct,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListServiceDevicesProductFromJSON(
   jsonString: string,
@@ -369,21 +383,25 @@ export const ComCrmSubscriptionSelfServiceResourceListServiceDevicesDevice$inbou
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListServiceDevicesDevice,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      serial_number: types.optional(types.string()),
-      eletronic_id: types.optional(types.string()),
-      product: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListServiceDevicesProduct$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "serial_number": "serialNumber",
-        "eletronic_id": "eletronicId",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        serial_number: types.optional(types.string()),
+        eletronic_id: types.optional(types.string()),
+        product: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListServiceDevicesProduct$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "serial_number": "serialNumber",
+          "eletronic_id": "eletronicId",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListServiceDevicesDeviceFromJSON(
@@ -406,17 +424,17 @@ export const ComCrmSubscriptionSelfServiceResourceListServiceDevicesContent$inbo
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListServiceDevicesContent,
     unknown
-  > = z.object({
-    code: types.optional(types.string()),
-    state: types.optional(
-      ComCrmSubscriptionSelfServiceResourceListServiceDevicesContentState$inboundSchema,
-    ),
-    device: types.optional(
-      z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListServiceDevicesDevice$inboundSchema
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      code: types.optional(types.string()),
+      state: types.optional(
+        ComCrmSubscriptionSelfServiceResourceListServiceDevicesContentState$inboundSchema,
       ),
-    ),
-  });
+      device: types.optional(z.lazy(() =>
+        ComCrmSubscriptionSelfServiceResourceListServiceDevicesDevice$inboundSchema
+      )),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListServiceDevicesContentFromJSON(
   jsonString: string,
@@ -438,18 +456,16 @@ export const ComCrmSubscriptionSelfServiceResourceListServiceDevicesResponse$inb
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListServiceDevicesResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmSubscriptionSelfServiceResourceListServiceDevicesPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListServiceDevicesContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmSubscriptionSelfServiceResourceListServiceDevicesContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListServiceDevicesResponseFromJSON(
   jsonString: string,
