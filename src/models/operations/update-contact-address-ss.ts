@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -368,12 +368,14 @@ export type UpdateContactAddressSSResponse = {
 /** @internal */
 export const UpdateContactAddressSSType$outboundSchema: z.ZodMiniEnum<
   typeof UpdateContactAddressSSType
-> = z.enum(UpdateContactAddressSSType);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(UpdateContactAddressSSType));
 
 /** @internal */
 export const UpdateContactAddressSSCountryCode$outboundSchema: z.ZodMiniEnum<
   typeof UpdateContactAddressSSCountryCode
-> = z.enum(UpdateContactAddressSSCountryCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.enum(UpdateContactAddressSSCountryCode)
+);
 
 /** @internal */
 export type UpdateContactAddressSSRequestBody$Outbound = {
@@ -396,35 +398,37 @@ export type UpdateContactAddressSSRequestBody$Outbound = {
 export const UpdateContactAddressSSRequestBody$outboundSchema: z.ZodMiniType<
   UpdateContactAddressSSRequestBody$Outbound,
   UpdateContactAddressSSRequestBody
-> = z.pipe(
-  z.object({
-    type: UpdateContactAddressSSType$outboundSchema,
-    name: z.optional(z.nullable(z.string())),
-    isPrimary: z.nullable(z._default(z.boolean(), false)),
-    addressLine1: z.string(),
-    addressLine2: z.optional(z.nullable(z.string())),
-    stateProvinceCounty: z.optional(z.nullable(z.string())),
-    townCity: z.optional(z.nullable(z.string())),
-    postalCode: z.optional(z.nullable(z.string())),
-    countryCode: z.optional(UpdateContactAddressSSCountryCode$outboundSchema),
-    lat: z.optional(z.nullable(z.number())),
-    lon: z.optional(z.nullable(z.number())),
-    googlePlaceId: z.optional(z.nullable(z.string())),
-    isBillingAddress: z.optional(z.nullable(z.boolean())),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      isPrimary: "is_primary",
-      addressLine1: "address_line_1",
-      addressLine2: "address_line_2",
-      stateProvinceCounty: "state_province_county",
-      townCity: "town_city",
-      postalCode: "postal_code",
-      countryCode: "country_code",
-      googlePlaceId: "google_place_id",
-      isBillingAddress: "is_billing_address",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      type: UpdateContactAddressSSType$outboundSchema,
+      name: z.optional(z.nullable(z.string())),
+      isPrimary: z.nullable(z._default(z.boolean(), false)),
+      addressLine1: z.string(),
+      addressLine2: z.optional(z.nullable(z.string())),
+      stateProvinceCounty: z.optional(z.nullable(z.string())),
+      townCity: z.optional(z.nullable(z.string())),
+      postalCode: z.optional(z.nullable(z.string())),
+      countryCode: z.optional(UpdateContactAddressSSCountryCode$outboundSchema),
+      lat: z.optional(z.nullable(z.number())),
+      lon: z.optional(z.nullable(z.number())),
+      googlePlaceId: z.optional(z.nullable(z.string())),
+      isBillingAddress: z.optional(z.nullable(z.boolean())),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        isPrimary: "is_primary",
+        addressLine1: "address_line_1",
+        addressLine2: "address_line_2",
+        stateProvinceCounty: "state_province_county",
+        townCity: "town_city",
+        postalCode: "postal_code",
+        countryCode: "country_code",
+        googlePlaceId: "google_place_id",
+        isBillingAddress: "is_billing_address",
+      });
+    }),
+  )
 );
 
 export function updateContactAddressSSRequestBodyToJSON(
@@ -448,19 +452,21 @@ export type UpdateContactAddressSSRequest$Outbound = {
 export const UpdateContactAddressSSRequest$outboundSchema: z.ZodMiniType<
   UpdateContactAddressSSRequest$Outbound,
   UpdateContactAddressSSRequest
-> = z.pipe(
-  z.object({
-    addressId: z.string(),
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() => UpdateContactAddressSSRequestBody$outboundSchema),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      addressId: "address_id",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      addressId: z.string(),
+      id: z.string(),
+      body: z.optional(
+        z.lazy(() => UpdateContactAddressSSRequestBody$outboundSchema),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        addressId: "address_id",
+      });
+    }),
+  )
 );
 
 export function updateContactAddressSSRequestToJSON(
@@ -477,9 +483,11 @@ export function updateContactAddressSSRequestToJSON(
 export const UpdateContactAddressSSResponse$inboundSchema: z.ZodMiniType<
   UpdateContactAddressSSResponse,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+  })
+);
 
 export function updateContactAddressSSResponseFromJSON(
   jsonString: string,

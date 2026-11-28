@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -435,9 +435,11 @@ export const ComCrmContactSelfServiceResourceGetSingleWithRewardsRequest$outboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetSingleWithRewardsRequest$Outbound,
     ComCrmContactSelfServiceResourceGetSingleWithRewardsRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetSingleWithRewardsRequestToJSON(
   comCrmContactSelfServiceResourceGetSingleWithRewardsRequest:
@@ -451,23 +453,25 @@ export function comCrmContactSelfServiceResourceGetSingleWithRewardsRequestToJSO
 
 /** @internal */
 export const RewardScheme$inboundSchema: z.ZodMiniType<RewardScheme, unknown> =
-  z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      signed_up_on: types.optional(types.number()),
-      email_address: types.optional(types.string()),
-      sign_up_option: types.optional(types.string()),
-      sign_up_code: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "signed_up_on": "signedUpOn",
-        "email_address": "emailAddress",
-        "sign_up_option": "signUpOption",
-        "sign_up_code": "signUpCode",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        signed_up_on: types.optional(types.number()),
+        email_address: types.optional(types.string()),
+        sign_up_option: types.optional(types.string()),
+        sign_up_code: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "signed_up_on": "signedUpOn",
+          "email_address": "emailAddress",
+          "sign_up_option": "signUpOption",
+          "sign_up_code": "signUpCode",
+        });
+      }),
+    )
   );
 
 export function rewardSchemeFromJSON(
@@ -482,10 +486,12 @@ export function rewardSchemeFromJSON(
 
 /** @internal */
 export const SpendBlocked$inboundSchema: z.ZodMiniType<SpendBlocked, unknown> =
-  z.object({
-    date: types.optional(types.number()),
-    status: types.optional(types.boolean()),
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      date: types.optional(types.number()),
+      status: types.optional(types.boolean()),
+    })
+  );
 
 export function spendBlockedFromJSON(
   jsonString: string,
@@ -499,17 +505,19 @@ export function spendBlockedFromJSON(
 
 /** @internal */
 export const MaintainTier$inboundSchema: z.ZodMiniType<MaintainTier, unknown> =
-  z.pipe(
-    z.object({
-      points_needed: types.optional(types.number()),
-      collected_by: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "points_needed": "pointsNeeded",
-        "collected_by": "collectedBy",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        points_needed: types.optional(types.number()),
+        collected_by: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "points_needed": "pointsNeeded",
+          "collected_by": "collectedBy",
+        });
+      }),
+    )
   );
 
 export function maintainTierFromJSON(
@@ -523,20 +531,23 @@ export function maintainTierFromJSON(
 }
 
 /** @internal */
-export const Progress$inboundSchema: z.ZodMiniType<Progress, unknown> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    points_needed: types.optional(types.number()),
-    collected_by: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "points_needed": "pointsNeeded",
-      "collected_by": "collectedBy",
-    });
-  }),
-);
+export const Progress$inboundSchema: z.ZodMiniType<Progress, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        points_needed: types.optional(types.number()),
+        collected_by: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "points_needed": "pointsNeeded",
+          "collected_by": "collectedBy",
+        });
+      }),
+    )
+  );
 
 export function progressFromJSON(
   jsonString: string,
@@ -552,17 +563,21 @@ export function progressFromJSON(
 export const RewardTierUsageType$inboundSchema: z.ZodMiniType<
   RewardTierUsageType,
   unknown
-> = openEnums.inboundSchema(RewardTierUsageType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(RewardTierUsageType)
+);
 
 /** @internal */
 export const RewardTierMedia$inboundSchema: z.ZodMiniType<
   RewardTierMedia,
   unknown
-> = z.object({
-  width: types.optional(types.number()),
-  height: types.optional(types.number()),
-  url: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    width: types.optional(types.number()),
+    height: types.optional(types.number()),
+    url: types.optional(types.string()),
+  })
+);
 
 export function rewardTierMediaFromJSON(
   jsonString: string,
@@ -578,30 +593,34 @@ export function rewardTierMediaFromJSON(
 export const RewardTierCreative$inboundSchema: z.ZodMiniType<
   RewardTierCreative,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    media_group_id: types.optional(types.string()),
-    usage_type: types.optional(RewardTierUsageType$inboundSchema),
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    format: types.optional(types.string()),
-    url: types.optional(types.string()),
-    public_id: types.optional(types.string()),
-    media_id: types.optional(types.string()),
-    caption: types.optional(types.string()),
-    sort_order: types.optional(types.number()),
-    media: types.optional(z.array(z.lazy(() => RewardTierMedia$inboundSchema))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "media_group_id": "mediaGroupId",
-      "usage_type": "usageType",
-      "public_id": "publicId",
-      "media_id": "mediaId",
-      "sort_order": "sortOrder",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      media_group_id: types.optional(types.string()),
+      usage_type: types.optional(RewardTierUsageType$inboundSchema),
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      format: types.optional(types.string()),
+      url: types.optional(types.string()),
+      public_id: types.optional(types.string()),
+      media_id: types.optional(types.string()),
+      caption: types.optional(types.string()),
+      sort_order: types.optional(types.number()),
+      media: types.optional(
+        z.array(z.lazy(() => RewardTierMedia$inboundSchema)),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "media_group_id": "mediaGroupId",
+        "usage_type": "usageType",
+        "public_id": "publicId",
+        "media_id": "mediaId",
+        "sort_order": "sortOrder",
+      });
+    }),
+  )
 );
 
 export function rewardTierCreativeFromJSON(
@@ -615,29 +634,31 @@ export function rewardTierCreativeFromJSON(
 }
 
 /** @internal */
-export const RewardTier$inboundSchema: z.ZodMiniType<RewardTier, unknown> = z
-  .pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      colour: types.optional(types.string()),
-      achieved_date: types.optional(types.number()),
-      period_value_units: types.optional(types.number()),
-      lifetime_value_units: types.optional(types.number()),
-      maintain_tier: types.optional(z.lazy(() => MaintainTier$inboundSchema)),
-      progress: types.optional(z.lazy(() => Progress$inboundSchema)),
-      creatives: types.optional(
-        z.array(z.lazy(() => RewardTierCreative$inboundSchema)),
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "achieved_date": "achievedDate",
-        "period_value_units": "periodValueUnits",
-        "lifetime_value_units": "lifetimeValueUnits",
-        "maintain_tier": "maintainTier",
-      });
-    }),
+export const RewardTier$inboundSchema: z.ZodMiniType<RewardTier, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        colour: types.optional(types.string()),
+        achieved_date: types.optional(types.number()),
+        period_value_units: types.optional(types.number()),
+        lifetime_value_units: types.optional(types.number()),
+        maintain_tier: types.optional(z.lazy(() => MaintainTier$inboundSchema)),
+        progress: types.optional(z.lazy(() => Progress$inboundSchema)),
+        creatives: types.optional(
+          z.array(z.lazy(() => RewardTierCreative$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "achieved_date": "achievedDate",
+          "period_value_units": "periodValueUnits",
+          "lifetime_value_units": "lifetimeValueUnits",
+          "maintain_tier": "maintainTier",
+        });
+      }),
+    )
   );
 
 export function rewardTierFromJSON(
@@ -654,15 +675,17 @@ export function rewardTierFromJSON(
 export const TierUsageType$inboundSchema: z.ZodMiniType<
   TierUsageType,
   unknown
-> = openEnums.inboundSchema(TierUsageType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(TierUsageType));
 
 /** @internal */
-export const TierMedia$inboundSchema: z.ZodMiniType<TierMedia, unknown> = z
-  .object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+export const TierMedia$inboundSchema: z.ZodMiniType<TierMedia, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function tierMediaFromJSON(
   jsonString: string,
@@ -676,30 +699,32 @@ export function tierMediaFromJSON(
 
 /** @internal */
 export const TierCreative$inboundSchema: z.ZodMiniType<TierCreative, unknown> =
-  z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(TierUsageType$inboundSchema),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() => TierMedia$inboundSchema))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(TierUsageType$inboundSchema),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(z.array(z.lazy(() => TierMedia$inboundSchema))),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function tierCreativeFromJSON(
@@ -717,22 +742,24 @@ export const ComCrmContactSelfServiceResourceGetSingleWithRewardsTier$inboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetSingleWithRewardsTier,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      description: types.optional(types.string()),
-      color: types.optional(types.string()),
-      value_units: types.optional(types.number()),
-      creatives: types.optional(
-        z.array(z.lazy(() => TierCreative$inboundSchema)),
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "value_units": "valueUnits",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        description: types.optional(types.string()),
+        color: types.optional(types.string()),
+        value_units: types.optional(types.number()),
+        creatives: types.optional(
+          z.array(z.lazy(() => TierCreative$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "value_units": "valueUnits",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetSingleWithRewardsTierFromJSON(
@@ -751,20 +778,24 @@ export function comCrmContactSelfServiceResourceGetSingleWithRewardsTierFromJSON
 }
 
 /** @internal */
-export const RewardTiers$inboundSchema: z.ZodMiniType<RewardTiers, unknown> = z
-  .pipe(
-    z.object({
-      id: types.optional(types.string()),
-      conversion_rate: types.optional(types.number()),
-      tiers: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetSingleWithRewardsTier$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "conversion_rate": "conversionRate",
-      });
-    }),
+export const RewardTiers$inboundSchema: z.ZodMiniType<RewardTiers, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        conversion_rate: types.optional(types.number()),
+        tiers: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetSingleWithRewardsTier$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "conversion_rate": "conversionRate",
+        });
+      }),
+    )
   );
 
 export function rewardTiersFromJSON(
@@ -782,26 +813,28 @@ export const ComCrmContactSelfServiceResourceGetSingleWithRewardsResponse$inboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetSingleWithRewardsResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      reward_schemes: types.optional(
-        z.array(z.lazy(() => RewardScheme$inboundSchema)),
-      ),
-      sign_up_date: types.optional(types.number()),
-      spend_blocked: types.optional(z.lazy(() => SpendBlocked$inboundSchema)),
-      reward_tier: types.optional(z.lazy(() => RewardTier$inboundSchema)),
-      reward_tiers: types.optional(z.lazy(() => RewardTiers$inboundSchema)),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "reward_schemes": "rewardSchemes",
-        "sign_up_date": "signUpDate",
-        "spend_blocked": "spendBlocked",
-        "reward_tier": "rewardTier",
-        "reward_tiers": "rewardTiers",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        reward_schemes: types.optional(
+          z.array(z.lazy(() => RewardScheme$inboundSchema)),
+        ),
+        sign_up_date: types.optional(types.number()),
+        spend_blocked: types.optional(z.lazy(() => SpendBlocked$inboundSchema)),
+        reward_tier: types.optional(z.lazy(() => RewardTier$inboundSchema)),
+        reward_tiers: types.optional(z.lazy(() => RewardTiers$inboundSchema)),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "reward_schemes": "rewardSchemes",
+          "sign_up_date": "signUpDate",
+          "spend_blocked": "spendBlocked",
+          "reward_tier": "rewardTier",
+          "reward_tiers": "rewardTiers",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetSingleWithRewardsResponseFromJSON(

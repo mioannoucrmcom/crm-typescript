@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -241,14 +241,15 @@ export type ComCrmServiceRequestSelfServiceResourceListResponse = {
 };
 
 /** @internal */
-export const States$outboundSchema: z.ZodMiniEnum<typeof States> = z.enum(
-  States,
-);
+export const States$outboundSchema: z.ZodMiniEnum<typeof States> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(States));
 
 /** @internal */
 export const ComCrmServiceRequestSelfServiceResourceListOrder$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmServiceRequestSelfServiceResourceListOrder> = z
-    .enum(ComCrmServiceRequestSelfServiceResourceListOrder);
+  z.ZodMiniEnum<typeof ComCrmServiceRequestSelfServiceResourceListOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmServiceRequestSelfServiceResourceListOrder)
+    );
 
 /** @internal */
 export type ComCrmServiceRequestSelfServiceResourceListRequest$Outbound = {
@@ -268,28 +269,30 @@ export const ComCrmServiceRequestSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceListRequest$Outbound,
     ComCrmServiceRequestSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      queueId: z.optional(z.string()),
-      searchValue: z.optional(z.string()),
-      states: z.optional(States$outboundSchema),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmServiceRequestSelfServiceResourceListOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        queueId: "queue_id",
-        searchValue: "search_value",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        queueId: z.optional(z.string()),
+        searchValue: z.optional(z.string()),
+        states: z.optional(States$outboundSchema),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmServiceRequestSelfServiceResourceListOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          queueId: "queue_id",
+          searchValue: "search_value",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceRequestSelfServiceResourceListRequestToJSON(
@@ -305,19 +308,21 @@ export function comCrmServiceRequestSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const ComCrmServiceRequestSelfServiceResourceListPaging$inboundSchema:
-  z.ZodMiniType<ComCrmServiceRequestSelfServiceResourceListPaging, unknown> = z
-    .pipe(
-      z.object({
-        page: types.optional(types.number()),
-        size: types.optional(types.number()),
-        total: types.optional(types.number()),
-        has_more: types.optional(types.boolean()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "has_more": "hasMore",
-        });
-      }),
+  z.ZodMiniType<ComCrmServiceRequestSelfServiceResourceListPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
     );
 
 export function comCrmServiceRequestSelfServiceResourceListPagingFromJSON(
@@ -338,13 +343,15 @@ export function comCrmServiceRequestSelfServiceResourceListPagingFromJSON(
 
 /** @internal */
 export const ComCrmServiceRequestSelfServiceResourceListStage$inboundSchema:
-  z.ZodMiniType<ComCrmServiceRequestSelfServiceResourceListStage, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      colour: types.optional(types.string()),
-      order: types.optional(types.number()),
-    });
+  z.ZodMiniType<ComCrmServiceRequestSelfServiceResourceListStage, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        colour: types.optional(types.string()),
+        order: types.optional(types.number()),
+      })
+    );
 
 export function comCrmServiceRequestSelfServiceResourceListStageFromJSON(
   jsonString: string,
@@ -364,35 +371,37 @@ export function comCrmServiceRequestSelfServiceResourceListStageFromJSON(
 
 /** @internal */
 export const ComCrmServiceRequestSelfServiceResourceListAddress$inboundSchema:
-  z.ZodMiniType<ComCrmServiceRequestSelfServiceResourceListAddress, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        address_type: types.optional(types.string()),
-        address_name: types.optional(types.string()),
-        address_line_1: types.optional(types.string()),
-        address_line_2: types.optional(types.string()),
-        state_province_county: types.optional(types.string()),
-        town_city: types.optional(types.string()),
-        postal_code: types.optional(types.string()),
-        country_code: types.optional(types.string()),
-        lat: types.optional(types.number()),
-        lon: types.optional(types.number()),
-        google_place_id: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "address_type": "addressType",
-          "address_name": "addressName",
-          "address_line_1": "addressLine1",
-          "address_line_2": "addressLine2",
-          "state_province_county": "stateProvinceCounty",
-          "town_city": "townCity",
-          "postal_code": "postalCode",
-          "country_code": "countryCode",
-          "google_place_id": "googlePlaceId",
-        });
-      }),
+  z.ZodMiniType<ComCrmServiceRequestSelfServiceResourceListAddress, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          address_type: types.optional(types.string()),
+          address_name: types.optional(types.string()),
+          address_line_1: types.optional(types.string()),
+          address_line_2: types.optional(types.string()),
+          state_province_county: types.optional(types.string()),
+          town_city: types.optional(types.string()),
+          postal_code: types.optional(types.string()),
+          country_code: types.optional(types.string()),
+          lat: types.optional(types.number()),
+          lon: types.optional(types.number()),
+          google_place_id: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "address_type": "addressType",
+            "address_name": "addressName",
+            "address_line_1": "addressLine1",
+            "address_line_2": "addressLine2",
+            "state_province_county": "stateProvinceCounty",
+            "town_city": "townCity",
+            "postal_code": "postalCode",
+            "country_code": "countryCode",
+            "google_place_id": "googlePlaceId",
+          });
+        }),
+      )
     );
 
 export function comCrmServiceRequestSelfServiceResourceListAddressFromJSON(
@@ -416,10 +425,12 @@ export const ComCrmServiceRequestSelfServiceResourceListCustomField$inboundSchem
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceListCustomField,
     unknown
-  > = z.object({
-    key: types.optional(types.string()),
-    value: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: types.optional(types.string()),
+      value: types.optional(types.string()),
+    })
+  );
 
 export function comCrmServiceRequestSelfServiceResourceListCustomFieldFromJSON(
   jsonString: string,
@@ -438,33 +449,41 @@ export function comCrmServiceRequestSelfServiceResourceListCustomFieldFromJSON(
 
 /** @internal */
 export const ComCrmServiceRequestSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<ComCrmServiceRequestSelfServiceResourceListContent, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        number: types.optional(types.string()),
-        description: types.optional(types.string()),
-        created_date: types.optional(types.number()),
-        comments: types.optional(types.string()),
-        is_resolved: types.optional(types.boolean()),
-        classification: types.optional(types.string()),
-        stage: types.optional(z.lazy(() =>
-          ComCrmServiceRequestSelfServiceResourceListStage$inboundSchema
-        )),
-        address: types.optional(z.lazy(() =>
-          ComCrmServiceRequestSelfServiceResourceListAddress$inboundSchema
-        )),
-        custom_fields: types.optional(z.array(z.lazy(() =>
-          ComCrmServiceRequestSelfServiceResourceListCustomField$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "created_date": "createdDate",
-          "is_resolved": "isResolved",
-          "custom_fields": "customFields",
-        });
-      }),
+  z.ZodMiniType<ComCrmServiceRequestSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          number: types.optional(types.string()),
+          description: types.optional(types.string()),
+          created_date: types.optional(types.number()),
+          comments: types.optional(types.string()),
+          is_resolved: types.optional(types.boolean()),
+          classification: types.optional(types.string()),
+          stage: types.optional(
+            z.lazy(() =>
+              ComCrmServiceRequestSelfServiceResourceListStage$inboundSchema
+            ),
+          ),
+          address: types.optional(
+            z.lazy(() =>
+              ComCrmServiceRequestSelfServiceResourceListAddress$inboundSchema
+            ),
+          ),
+          custom_fields: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmServiceRequestSelfServiceResourceListCustomField$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "created_date": "createdDate",
+            "is_resolved": "isResolved",
+            "custom_fields": "customFields",
+          });
+        }),
+      )
     );
 
 export function comCrmServiceRequestSelfServiceResourceListContentFromJSON(
@@ -486,18 +505,16 @@ export function comCrmServiceRequestSelfServiceResourceListContentFromJSON(
 /** @internal */
 export const ComCrmServiceRequestSelfServiceResourceListResponse$inboundSchema:
   z.ZodMiniType<ComCrmServiceRequestSelfServiceResourceListResponse, unknown> =
-    z.object({
-      paging: types.optional(
-        z.lazy(() =>
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(z.lazy(() =>
           ComCrmServiceRequestSelfServiceResourceListPaging$inboundSchema
-        ),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmServiceRequestSelfServiceResourceListContent$inboundSchema
         )),
-      ),
-    });
+        content: types.optional(z.array(z.lazy(() =>
+          ComCrmServiceRequestSelfServiceResourceListContent$inboundSchema
+        ))),
+      })
+    );
 
 export function comCrmServiceRequestSelfServiceResourceListResponseFromJSON(
   jsonString: string,

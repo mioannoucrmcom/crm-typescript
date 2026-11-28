@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -814,7 +814,9 @@ export type ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesResponse 
 export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrder
-  > = z.enum(ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrder);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrder)
+  );
 
 /** @internal */
 export type ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRequest$Outbound =
@@ -838,34 +840,36 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRequest$
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRequest$Outbound,
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      date: z.optional(z.int()),
-      dateGt: z.optional(z.int()),
-      dateGte: z.optional(z.int()),
-      dateLt: z.optional(z.int()),
-      dateLte: z.optional(z.int()),
-      isAdHocReturned: z.optional(z.boolean()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        dateGt: "date[gt]",
-        dateGte: "date[gte]",
-        dateLt: "date[lt]",
-        dateLte: "date[lte]",
-        isAdHocReturned: "is_ad_hoc_returned",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        date: z.optional(z.int()),
+        dateGt: z.optional(z.int()),
+        dateGte: z.optional(z.int()),
+        dateLt: z.optional(z.int()),
+        dateLte: z.optional(z.int()),
+        isAdHocReturned: z.optional(z.boolean()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          dateGt: "date[gt]",
+          dateGte: "date[gte]",
+          dateLt: "date[lt]",
+          dateLte: "date[lte]",
+          isAdHocReturned: "is_ad_hoc_returned",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRequestToJSON(
@@ -885,18 +889,20 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPaging$i
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPagingFromJSON(
@@ -919,8 +925,10 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesState$in
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesState,
+    )
   );
 
 /** @internal */
@@ -928,12 +936,14 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesTransact
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesTransactionAmounts,
     unknown
-  > = z.object({
-    net: types.nullable(types.number()),
-    tax: types.nullable(types.number()),
-    discount: z.optional(z.nullable(types.number())),
-    total: types.number(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      net: types.nullable(types.number()),
+      tax: types.nullable(types.number()),
+      discount: z.optional(z.nullable(types.number())),
+      total: types.number(),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesTransactionAmountsFromJSON(
   jsonString: string,
@@ -955,9 +965,11 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesSpendReq
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesSpendRequest,
     unknown
-  > = z.object({
-    amount: types.optional(types.number()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      amount: types.optional(types.number()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesSpendRequestFromJSON(
   jsonString: string,
@@ -979,10 +991,12 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesClassifi
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesClassification,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesClassificationFromJSON(
   jsonString: string,
@@ -1004,10 +1018,12 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPass$inb
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPass,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    code: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      code: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPassFromJSON(
   jsonString: string,
@@ -1029,8 +1045,10 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisa
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationUsageType,
+    )
   );
 
 /** @internal */
@@ -1038,11 +1056,13 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisa
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationMediaFromJSON(
   jsonString: string,
@@ -1064,34 +1084,38 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisa
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationCreativeFromJSON(
@@ -1114,15 +1138,15 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisa
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    creatives: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      creatives: types.optional(z.array(z.lazy(() =>
         ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationCreative$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisationFromJSON(
   jsonString: string,
@@ -1144,8 +1168,10 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOr
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationUsageType,
+    )
   );
 
 /** @internal */
@@ -1153,11 +1179,13 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOr
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationMediaFromJSON(
   jsonString: string,
@@ -1179,34 +1207,38 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOr
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationCreativeFromJSON(
@@ -1229,15 +1261,15 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOr
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    creatives: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      creatives: types.optional(z.array(z.lazy(() =>
         ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationCreative$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisationFromJSON(
   jsonString: string,
@@ -1259,11 +1291,13 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRewards$
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRewards,
     unknown
-  > = z.object({
-    award: types.optional(types.number()),
-    spend: types.optional(types.number()),
-    redeem: types.optional(types.number()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      award: types.optional(types.number()),
+      spend: types.optional(types.number()),
+      redeem: types.optional(types.number()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRewardsFromJSON(
   jsonString: string,
@@ -1285,21 +1319,23 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesAdHocRet
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesAdHocReturn,
     unknown
-  > = z.pipe(
-    z.object({
-      amount: types.optional(types.number()),
-      date: types.optional(types.number()),
-      reference_number: types.optional(types.string()),
-      return_amount: types.optional(types.number()),
-      return_spent_amount: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "reference_number": "referenceNumber",
-        "return_amount": "returnAmount",
-        "return_spent_amount": "returnSpentAmount",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        amount: types.optional(types.number()),
+        date: types.optional(types.number()),
+        reference_number: types.optional(types.string()),
+        return_amount: types.optional(types.number()),
+        return_spent_amount: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "reference_number": "referenceNumber",
+          "return_amount": "returnAmount",
+          "return_spent_amount": "returnSpentAmount",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesAdHocReturnFromJSON(
@@ -1322,18 +1358,20 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesFees$inb
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesFees,
     unknown
-  > = z.pipe(
-    z.object({
-      total: types.optional(types.number()),
-      credit_fee: types.optional(types.number()),
-      debit_fee: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "credit_fee": "creditFee",
-        "debit_fee": "debitFee",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        total: types.optional(types.number()),
+        credit_fee: types.optional(types.number()),
+        debit_fee: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "credit_fee": "creditFee",
+          "debit_fee": "debitFee",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesFeesFromJSON(
@@ -1356,8 +1394,10 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesCurrency
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -1365,63 +1405,83 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesContent$
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      reference_number: types.optional(types.string()),
-      state: types.optional(
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesState$inboundSchema,
-      ),
-      payment_medium_identifier: types.optional(types.string()),
-      transaction_amounts: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesTransactionAmounts$inboundSchema
-      )),
-      spend_request: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesSpendRequest$inboundSchema
-      )),
-      date: types.optional(types.number()),
-      classification: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesClassification$inboundSchema
-      )),
-      pass: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPass$inboundSchema
-      )),
-      organisation: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisation$inboundSchema
-      )),
-      parent_organisation: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisation$inboundSchema
-      )),
-      rewards: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRewards$inboundSchema
-      )),
-      ad_hoc_return: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesAdHocReturn$inboundSchema
-      )),
-      fees: types.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesFees$inboundSchema
-      )),
-      currency_code: types.optional(
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesCurrencyCode$inboundSchema,
-      ),
-      total_default_currency: types.optional(types.number()),
-      exchange_rate: types.optional(types.number()),
-      default_currency_code: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "reference_number": "referenceNumber",
-        "payment_medium_identifier": "paymentMediumIdentifier",
-        "transaction_amounts": "transactionAmounts",
-        "spend_request": "spendRequest",
-        "parent_organisation": "parentOrganisation",
-        "ad_hoc_return": "adHocReturn",
-        "currency_code": "currencyCode",
-        "total_default_currency": "totalDefaultCurrency",
-        "exchange_rate": "exchangeRate",
-        "default_currency_code": "defaultCurrencyCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        reference_number: types.optional(types.string()),
+        state: types.optional(
+          ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesState$inboundSchema,
+        ),
+        payment_medium_identifier: types.optional(types.string()),
+        transaction_amounts: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesTransactionAmounts$inboundSchema
+          ),
+        ),
+        spend_request: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesSpendRequest$inboundSchema
+          ),
+        ),
+        date: types.optional(types.number()),
+        classification: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesClassification$inboundSchema
+          ),
+        ),
+        pass: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPass$inboundSchema
+          ),
+        ),
+        organisation: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesOrganisation$inboundSchema
+          ),
+        ),
+        parent_organisation: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesParentOrganisation$inboundSchema
+          ),
+        ),
+        rewards: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesRewards$inboundSchema
+          ),
+        ),
+        ad_hoc_return: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesAdHocReturn$inboundSchema
+          ),
+        ),
+        fees: types.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesFees$inboundSchema
+          ),
+        ),
+        currency_code: types.optional(
+          ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesCurrencyCode$inboundSchema,
+        ),
+        total_default_currency: types.optional(types.number()),
+        exchange_rate: types.optional(types.number()),
+        default_currency_code: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "reference_number": "referenceNumber",
+          "payment_medium_identifier": "paymentMediumIdentifier",
+          "transaction_amounts": "transactionAmounts",
+          "spend_request": "spendRequest",
+          "parent_organisation": "parentOrganisation",
+          "ad_hoc_return": "adHocReturn",
+          "currency_code": "currencyCode",
+          "total_default_currency": "totalDefaultCurrency",
+          "exchange_rate": "exchangeRate",
+          "default_currency_code": "defaultCurrencyCode",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesContentFromJSON(
@@ -1444,18 +1504,16 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesResponse
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmPurchaseCustomerEventSelfServiceResourceListPurchasesContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceListPurchasesResponseFromJSON(
   jsonString: string,

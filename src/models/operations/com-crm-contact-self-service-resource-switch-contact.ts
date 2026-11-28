@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -206,9 +206,11 @@ export const ComCrmContactSelfServiceResourceSwitchContactRequest$outboundSchema
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSwitchContactRequest$Outbound,
     ComCrmContactSelfServiceResourceSwitchContactRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceSwitchContactRequestToJSON(
   comCrmContactSelfServiceResourceSwitchContactRequest:
@@ -226,32 +228,36 @@ export const ComCrmContactSelfServiceResourceSwitchContactContactType$inboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSwitchContactContactType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceSwitchContactContactType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceSwitchContactContactType,
+    )
   );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceSwitchContactContact$inboundSchema:
   z.ZodMiniType<ComCrmContactSelfServiceResourceSwitchContactContact, unknown> =
-    z.pipe(
-      z.object({
-        id: types.optional(types.string()),
-        type: types.optional(
-          ComCrmContactSelfServiceResourceSwitchContactContactType$inboundSchema,
-        ),
-        first_name: types.optional(types.string()),
-        last_name: types.optional(types.string()),
-        is_verified: types.optional(types.boolean()),
-        company_name: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "first_name": "firstName",
-          "last_name": "lastName",
-          "is_verified": "isVerified",
-          "company_name": "companyName",
-        });
-      }),
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          type: types.optional(
+            ComCrmContactSelfServiceResourceSwitchContactContactType$inboundSchema,
+          ),
+          first_name: types.optional(types.string()),
+          last_name: types.optional(types.string()),
+          is_verified: types.optional(types.boolean()),
+          company_name: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "first_name": "firstName",
+            "last_name": "lastName",
+            "is_verified": "isVerified",
+            "company_name": "companyName",
+          });
+        }),
+      )
     );
 
 export function comCrmContactSelfServiceResourceSwitchContactContactFromJSON(
@@ -275,8 +281,10 @@ export const ComCrmContactSelfServiceResourceSwitchContactOrganisationType$inbou
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSwitchContactOrganisationType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceSwitchContactOrganisationType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceSwitchContactOrganisationType,
+    )
   );
 
 /** @internal */
@@ -284,13 +292,15 @@ export const ComCrmContactSelfServiceResourceSwitchContactOrganisation$inboundSc
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSwitchContactOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    type: types.optional(
-      ComCrmContactSelfServiceResourceSwitchContactOrganisationType$inboundSchema,
-    ),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(
+        ComCrmContactSelfServiceResourceSwitchContactOrganisationType$inboundSchema,
+      ),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceSwitchContactOrganisationFromJSON(
   jsonString: string,
@@ -312,10 +322,12 @@ export const ComCrmContactSelfServiceResourceSwitchContactCommunity$inboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSwitchContactCommunity,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceSwitchContactCommunityFromJSON(
   jsonString: string,
@@ -336,29 +348,33 @@ export function comCrmContactSelfServiceResourceSwitchContactCommunityFromJSON(
 export const InitialContactType$inboundSchema: z.ZodMiniType<
   InitialContactType,
   unknown
-> = openEnums.inboundSchema(InitialContactType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(InitialContactType)
+);
 
 /** @internal */
 export const InitialContact$inboundSchema: z.ZodMiniType<
   InitialContact,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    type: types.optional(InitialContactType$inboundSchema),
-    first_name: types.optional(types.string()),
-    last_name: types.optional(types.string()),
-    is_verified: types.optional(types.boolean()),
-    company_name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "first_name": "firstName",
-      "last_name": "lastName",
-      "is_verified": "isVerified",
-      "company_name": "companyName",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(InitialContactType$inboundSchema),
+      first_name: types.optional(types.string()),
+      last_name: types.optional(types.string()),
+      is_verified: types.optional(types.boolean()),
+      company_name: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "first_name": "firstName",
+        "last_name": "lastName",
+        "is_verified": "isVerified",
+        "company_name": "companyName",
+      });
+    }),
+  )
 );
 
 export function initialContactFromJSON(
@@ -376,38 +392,46 @@ export const ComCrmContactSelfServiceResourceSwitchContactResponse$inboundSchema
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSwitchContactResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      access_token: types.optional(types.string()),
-      refresh_token: types.optional(types.string()),
-      expiration_date: types.optional(types.number()),
-      contact: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceSwitchContactContact$inboundSchema
-      )),
-      organisations: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceSwitchContactOrganisation$inboundSchema
-      ))),
-      communities: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceSwitchContactCommunity$inboundSchema
-      ))),
-      obfuscated_value: types.optional(types.string()),
-      auth_otp: types.optional(types.string()),
-      existing_contact: types.optional(types.boolean()),
-      initial_contact: types.optional(z.lazy(() =>
-        InitialContact$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "access_token": "accessToken",
-        "refresh_token": "refreshToken",
-        "expiration_date": "expirationDate",
-        "obfuscated_value": "obfuscatedValue",
-        "auth_otp": "authOtp",
-        "existing_contact": "existingContact",
-        "initial_contact": "initialContact",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        access_token: types.optional(types.string()),
+        refresh_token: types.optional(types.string()),
+        expiration_date: types.optional(types.number()),
+        contact: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceSwitchContactContact$inboundSchema
+          ),
+        ),
+        organisations: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceSwitchContactOrganisation$inboundSchema
+          )),
+        ),
+        communities: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceSwitchContactCommunity$inboundSchema
+          )),
+        ),
+        obfuscated_value: types.optional(types.string()),
+        auth_otp: types.optional(types.string()),
+        existing_contact: types.optional(types.boolean()),
+        initial_contact: types.optional(
+          z.lazy(() => InitialContact$inboundSchema),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "access_token": "accessToken",
+          "refresh_token": "refreshToken",
+          "expiration_date": "expirationDate",
+          "obfuscated_value": "obfuscatedValue",
+          "auth_otp": "authOtp",
+          "existing_contact": "existingContact",
+          "initial_contact": "initialContact",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceSwitchContactResponseFromJSON(

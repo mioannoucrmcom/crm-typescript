@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -1160,45 +1160,47 @@ export const ComCrmLocationSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmLocationSelfServiceResourceListRequest$Outbound,
     ComCrmLocationSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      businessActivities: z.optional(z.string()),
-      customFields: z.optional(z.string()),
-      includeCreatives: z.optional(z.boolean()),
-      includeCustomFields: z._default(z.boolean(), false),
-      includeOpeningHours: z.optional(z.boolean()),
-      includeOrderCatalogs: z.optional(z.boolean()),
-      includeTags: z.optional(z.boolean()),
-      industries: z.optional(z.string()),
-      industrySectors: z.optional(z.string()),
-      isOpen: z.optional(z.string()),
-      lat: z.string(),
-      lon: z.string(),
-      name: z.optional(z.string()),
-      organisationId: z.optional(z.string()),
-      supplyMethod: z.optional(z.string()),
-      tags: z.optional(z.string()),
-      townCities: z.optional(z.string()),
-      within: z.optional(z.string()),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        businessActivities: "business_activities",
-        customFields: "custom_fields",
-        includeCreatives: "include_creatives",
-        includeCustomFields: "include_custom_fields",
-        includeOpeningHours: "include_opening_hours",
-        includeOrderCatalogs: "include_order_catalogs",
-        includeTags: "include_tags",
-        industrySectors: "industry_sectors",
-        isOpen: "is_open",
-        organisationId: "organisation_id",
-        supplyMethod: "supply_method",
-        townCities: "town_cities",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        businessActivities: z.optional(z.string()),
+        customFields: z.optional(z.string()),
+        includeCreatives: z.optional(z.boolean()),
+        includeCustomFields: z._default(z.boolean(), false),
+        includeOpeningHours: z.optional(z.boolean()),
+        includeOrderCatalogs: z.optional(z.boolean()),
+        includeTags: z.optional(z.boolean()),
+        industries: z.optional(z.string()),
+        industrySectors: z.optional(z.string()),
+        isOpen: z.optional(z.string()),
+        lat: z.string(),
+        lon: z.string(),
+        name: z.optional(z.string()),
+        organisationId: z.optional(z.string()),
+        supplyMethod: z.optional(z.string()),
+        tags: z.optional(z.string()),
+        townCities: z.optional(z.string()),
+        within: z.optional(z.string()),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          businessActivities: "business_activities",
+          customFields: "custom_fields",
+          includeCreatives: "include_creatives",
+          includeCustomFields: "include_custom_fields",
+          includeOpeningHours: "include_opening_hours",
+          includeOrderCatalogs: "include_order_catalogs",
+          includeTags: "include_tags",
+          industrySectors: "industry_sectors",
+          isOpen: "is_open",
+          organisationId: "organisation_id",
+          supplyMethod: "supply_method",
+          townCities: "town_cities",
+        });
+      }),
+    )
   );
 
 export function comCrmLocationSelfServiceResourceListRequestToJSON(
@@ -1214,19 +1216,22 @@ export function comCrmLocationSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListPaging$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListPaging, unknown> = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
+    );
 
 export function comCrmLocationSelfServiceResourceListPagingFromJSON(
   jsonString: string,
@@ -1249,40 +1254,45 @@ export const ComCrmLocationSelfServiceResourceListAddressCountryCode$inboundSche
   z.ZodMiniType<
     ComCrmLocationSelfServiceResourceListAddressCountryCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLocationSelfServiceResourceListAddressCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLocationSelfServiceResourceListAddressCountryCode,
+    )
   );
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListAddress$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListAddress, unknown> = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      address_line_1: types.optional(types.string()),
-      address_line_2: types.optional(types.string()),
-      state_province_county: types.optional(types.string()),
-      town_city: types.optional(types.string()),
-      postal_code: types.optional(types.string()),
-      country_code: types.optional(
-        ComCrmLocationSelfServiceResourceListAddressCountryCode$inboundSchema,
-      ),
-      lat: types.optional(types.number()),
-      lon: types.optional(types.number()),
-      distance: types.optional(types.number()),
-      google_place_id: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "address_line_1": "addressLine1",
-        "address_line_2": "addressLine2",
-        "state_province_county": "stateProvinceCounty",
-        "town_city": "townCity",
-        "postal_code": "postalCode",
-        "country_code": "countryCode",
-        "google_place_id": "googlePlaceId",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListAddress, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          address_line_1: types.optional(types.string()),
+          address_line_2: types.optional(types.string()),
+          state_province_county: types.optional(types.string()),
+          town_city: types.optional(types.string()),
+          postal_code: types.optional(types.string()),
+          country_code: types.optional(
+            ComCrmLocationSelfServiceResourceListAddressCountryCode$inboundSchema,
+          ),
+          lat: types.optional(types.number()),
+          lon: types.optional(types.number()),
+          distance: types.optional(types.number()),
+          google_place_id: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "address_line_1": "addressLine1",
+            "address_line_2": "addressLine2",
+            "state_province_county": "stateProvinceCounty",
+            "town_city": "townCity",
+            "postal_code": "postalCode",
+            "country_code": "countryCode",
+            "google_place_id": "googlePlaceId",
+          });
+        }),
+      )
+    );
 
 export function comCrmLocationSelfServiceResourceListAddressFromJSON(
   jsonString: string,
@@ -1304,22 +1314,26 @@ export function comCrmLocationSelfServiceResourceListAddressFromJSON(
 export const OpeningHourSupplyMethod$inboundSchema: z.ZodMiniType<
   OpeningHourSupplyMethod,
   unknown
-> = openEnums.inboundSchema(OpeningHourSupplyMethod);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(OpeningHourSupplyMethod)
+);
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListOpeningHour$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListOpeningHour, unknown> = z
-    .pipe(
-      z.object({
-        supply_method: types.optional(OpeningHourSupplyMethod$inboundSchema),
-        open: types.optional(types.string()),
-        close: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "supply_method": "supplyMethod",
-        });
-      }),
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListOpeningHour, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          supply_method: types.optional(OpeningHourSupplyMethod$inboundSchema),
+          open: types.optional(types.string()),
+          close: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "supply_method": "supplyMethod",
+          });
+        }),
+      )
     );
 
 export function comCrmLocationSelfServiceResourceListOpeningHourFromJSON(
@@ -1340,38 +1354,44 @@ export function comCrmLocationSelfServiceResourceListOpeningHourFromJSON(
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListType$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListType, unknown> = openEnums
-    .inboundSchema(ComCrmLocationSelfServiceResourceListType);
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListType, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmLocationSelfServiceResourceListType)
+    );
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListContactInfoCountryCode$inboundSchema:
   z.ZodMiniType<
     ComCrmLocationSelfServiceResourceListContactInfoCountryCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLocationSelfServiceResourceListContactInfoCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLocationSelfServiceResourceListContactInfoCountryCode,
+    )
   );
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListContactInfo$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListContactInfo, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        name: types.optional(types.string()),
-        type: types.optional(
-          ComCrmLocationSelfServiceResourceListType$inboundSchema,
-        ),
-        value: types.optional(types.string()),
-        country_code: types.optional(
-          ComCrmLocationSelfServiceResourceListContactInfoCountryCode$inboundSchema,
-        ),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "country_code": "countryCode",
-        });
-      }),
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListContactInfo, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          type: types.optional(
+            ComCrmLocationSelfServiceResourceListType$inboundSchema,
+          ),
+          value: types.optional(types.string()),
+          country_code: types.optional(
+            ComCrmLocationSelfServiceResourceListContactInfoCountryCode$inboundSchema,
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "country_code": "countryCode",
+          });
+        }),
+      )
     );
 
 export function comCrmLocationSelfServiceResourceListContactInfoFromJSON(
@@ -1393,17 +1413,20 @@ export function comCrmLocationSelfServiceResourceListContactInfoFromJSON(
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListUsageType$inboundSchema:
   z.ZodMiniType<ComCrmLocationSelfServiceResourceListUsageType, unknown> =
-    openEnums.inboundSchema(ComCrmLocationSelfServiceResourceListUsageType);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmLocationSelfServiceResourceListUsageType)
+    );
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListMedia$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListMedia, unknown> = z.object(
-    {
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      url: types.optional(types.string()),
-    },
-  );
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListMedia, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        url: types.optional(types.string()),
+      })
+    );
 
 export function comCrmLocationSelfServiceResourceListMediaFromJSON(
   jsonString: string,
@@ -1423,35 +1446,39 @@ export function comCrmLocationSelfServiceResourceListMediaFromJSON(
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListCreative$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListCreative, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        media_group_id: types.optional(types.string()),
-        usage_type: types.optional(
-          ComCrmLocationSelfServiceResourceListUsageType$inboundSchema,
-        ),
-        width: types.optional(types.number()),
-        height: types.optional(types.number()),
-        format: types.optional(types.string()),
-        url: types.optional(types.string()),
-        public_id: types.optional(types.string()),
-        media_id: types.optional(types.string()),
-        caption: types.optional(types.string()),
-        sort_order: types.optional(types.number()),
-        media: types.optional(z.array(z.lazy(() =>
-          ComCrmLocationSelfServiceResourceListMedia$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "media_group_id": "mediaGroupId",
-          "usage_type": "usageType",
-          "public_id": "publicId",
-          "media_id": "mediaId",
-          "sort_order": "sortOrder",
-        });
-      }),
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListCreative, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          media_group_id: types.optional(types.string()),
+          usage_type: types.optional(
+            ComCrmLocationSelfServiceResourceListUsageType$inboundSchema,
+          ),
+          width: types.optional(types.number()),
+          height: types.optional(types.number()),
+          format: types.optional(types.string()),
+          url: types.optional(types.string()),
+          public_id: types.optional(types.string()),
+          media_id: types.optional(types.string()),
+          caption: types.optional(types.string()),
+          sort_order: types.optional(types.number()),
+          media: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmLocationSelfServiceResourceListMedia$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "media_group_id": "mediaGroupId",
+            "usage_type": "usageType",
+            "public_id": "publicId",
+            "media_id": "mediaId",
+            "sort_order": "sortOrder",
+          });
+        }),
+      )
     );
 
 export function comCrmLocationSelfServiceResourceListCreativeFromJSON(
@@ -1472,30 +1499,33 @@ export function comCrmLocationSelfServiceResourceListCreativeFromJSON(
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListDayOfWeek$inboundSchema:
-  z.ZodMiniEnum<typeof ComCrmLocationSelfServiceResourceListDayOfWeek> = z.enum(
-    ComCrmLocationSelfServiceResourceListDayOfWeek,
-  );
+  z.ZodMiniEnum<typeof ComCrmLocationSelfServiceResourceListDayOfWeek> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmLocationSelfServiceResourceListDayOfWeek)
+    );
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListTimeAvailability$inboundSchema:
   z.ZodMiniType<
     ComCrmLocationSelfServiceResourceListTimeAvailability,
     unknown
-  > = z.pipe(
-    z.object({
-      day_of_week: types.optional(
-        ComCrmLocationSelfServiceResourceListDayOfWeek$inboundSchema,
-      ),
-      start_time: z.optional(z.nullable(types.string())),
-      end_time: z.optional(z.nullable(types.string())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "day_of_week": "dayOfWeek",
-        "start_time": "startTime",
-        "end_time": "endTime",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        day_of_week: types.optional(
+          ComCrmLocationSelfServiceResourceListDayOfWeek$inboundSchema,
+        ),
+        start_time: z.optional(z.nullable(types.string())),
+        end_time: z.optional(z.nullable(types.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "day_of_week": "dayOfWeek",
+          "start_time": "startTime",
+          "end_time": "endTime",
+        });
+      }),
+    )
   );
 
 export function comCrmLocationSelfServiceResourceListTimeAvailabilityFromJSON(
@@ -1519,8 +1549,10 @@ export const ComCrmLocationSelfServiceResourceListOrderCatalogSupplyMethod$inbou
   z.ZodMiniType<
     ComCrmLocationSelfServiceResourceListOrderCatalogSupplyMethod,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLocationSelfServiceResourceListOrderCatalogSupplyMethod,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLocationSelfServiceResourceListOrderCatalogSupplyMethod,
+    )
   );
 
 /** @internal */
@@ -1528,8 +1560,10 @@ export const ComCrmLocationSelfServiceResourceListOrderCatalogUsageType$inboundS
   z.ZodMiniType<
     ComCrmLocationSelfServiceResourceListOrderCatalogUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLocationSelfServiceResourceListOrderCatalogUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLocationSelfServiceResourceListOrderCatalogUsageType,
+    )
   );
 
 /** @internal */
@@ -1537,11 +1571,13 @@ export const ComCrmLocationSelfServiceResourceListOrderCatalogMedia$inboundSchem
   z.ZodMiniType<
     ComCrmLocationSelfServiceResourceListOrderCatalogMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmLocationSelfServiceResourceListOrderCatalogMediaFromJSON(
   jsonString: string,
@@ -1563,34 +1599,38 @@ export const ComCrmLocationSelfServiceResourceListOrderCatalogCreative$inboundSc
   z.ZodMiniType<
     ComCrmLocationSelfServiceResourceListOrderCatalogCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmLocationSelfServiceResourceListOrderCatalogUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmLocationSelfServiceResourceListOrderCatalogMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmLocationSelfServiceResourceListOrderCatalogUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmLocationSelfServiceResourceListOrderCatalogMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmLocationSelfServiceResourceListOrderCatalogCreativeFromJSON(
@@ -1610,30 +1650,36 @@ export function comCrmLocationSelfServiceResourceListOrderCatalogCreativeFromJSO
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListOrderCatalog$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListOrderCatalog, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        display_name: types.optional(types.string()),
-        time_availability: types.optional(z.array(z.lazy(() =>
-          ComCrmLocationSelfServiceResourceListTimeAvailability$inboundSchema
-        ))),
-        supply_methods: types.optional(
-          z.array(
-            ComCrmLocationSelfServiceResourceListOrderCatalogSupplyMethod$inboundSchema,
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListOrderCatalog, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          display_name: types.optional(types.string()),
+          time_availability: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmLocationSelfServiceResourceListTimeAvailability$inboundSchema
+            )),
           ),
-        ),
-        creatives: types.optional(z.array(z.lazy(() =>
-          ComCrmLocationSelfServiceResourceListOrderCatalogCreative$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "display_name": "displayName",
-          "time_availability": "timeAvailability",
-          "supply_methods": "supplyMethods",
-        });
-      }),
+          supply_methods: types.optional(
+            z.array(
+              ComCrmLocationSelfServiceResourceListOrderCatalogSupplyMethod$inboundSchema,
+            ),
+          ),
+          creatives: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmLocationSelfServiceResourceListOrderCatalogCreative$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "display_name": "displayName",
+            "time_availability": "timeAvailability",
+            "supply_methods": "supplyMethods",
+          });
+        }),
+      )
     );
 
 export function comCrmLocationSelfServiceResourceListOrderCatalogFromJSON(
@@ -1654,9 +1700,12 @@ export function comCrmLocationSelfServiceResourceListOrderCatalogFromJSON(
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListTag$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListTag, unknown> = z.object({
-    name: types.optional(types.string()),
-  });
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListTag, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        name: types.optional(types.string()),
+      })
+    );
 
 export function comCrmLocationSelfServiceResourceListTagFromJSON(
   jsonString: string,
@@ -1676,11 +1725,13 @@ export function comCrmLocationSelfServiceResourceListTagFromJSON(
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListCustomField$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListCustomField, unknown> = z
-    .object({
-      key: types.optional(types.string()),
-      value: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListCustomField, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        key: types.optional(types.string()),
+        value: types.optional(types.string()),
+      })
+    );
 
 export function comCrmLocationSelfServiceResourceListCustomFieldFromJSON(
   jsonString: string,
@@ -1700,42 +1751,59 @@ export function comCrmLocationSelfServiceResourceListCustomFieldFromJSON(
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListContent, unknown> = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      description: types.optional(types.string()),
-      address: types.optional(z.lazy(() =>
-        ComCrmLocationSelfServiceResourceListAddress$inboundSchema
-      )),
-      opening_hours: types.optional(z.array(z.lazy(() =>
-        ComCrmLocationSelfServiceResourceListOpeningHour$inboundSchema
-      ))),
-      contact_info: types.optional(z.array(z.lazy(() =>
-        ComCrmLocationSelfServiceResourceListContactInfo$inboundSchema
-      ))),
-      creatives: types.optional(z.array(z.lazy(() =>
-        ComCrmLocationSelfServiceResourceListCreative$inboundSchema
-      ))),
-      order_catalogs: types.optional(z.array(z.lazy(() =>
-        ComCrmLocationSelfServiceResourceListOrderCatalog$inboundSchema
-      ))),
-      tags: types.optional(z.array(z.lazy(() =>
-        ComCrmLocationSelfServiceResourceListTag$inboundSchema
-      ))),
-      custom_fields: types.optional(z.array(z.lazy(() =>
-        ComCrmLocationSelfServiceResourceListCustomField$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "opening_hours": "openingHours",
-        "contact_info": "contactInfo",
-        "order_catalogs": "orderCatalogs",
-        "custom_fields": "customFields",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          description: types.optional(types.string()),
+          address: types.optional(
+            z.lazy(() =>
+              ComCrmLocationSelfServiceResourceListAddress$inboundSchema
+            ),
+          ),
+          opening_hours: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmLocationSelfServiceResourceListOpeningHour$inboundSchema
+            )),
+          ),
+          contact_info: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmLocationSelfServiceResourceListContactInfo$inboundSchema
+            )),
+          ),
+          creatives: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmLocationSelfServiceResourceListCreative$inboundSchema
+            )),
+          ),
+          order_catalogs: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmLocationSelfServiceResourceListOrderCatalog$inboundSchema
+            )),
+          ),
+          tags: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmLocationSelfServiceResourceListTag$inboundSchema
+            )),
+          ),
+          custom_fields: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmLocationSelfServiceResourceListCustomField$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "opening_hours": "openingHours",
+            "contact_info": "contactInfo",
+            "order_catalogs": "orderCatalogs",
+            "custom_fields": "customFields",
+          });
+        }),
+      )
+    );
 
 export function comCrmLocationSelfServiceResourceListContentFromJSON(
   jsonString: string,
@@ -1755,17 +1823,21 @@ export function comCrmLocationSelfServiceResourceListContentFromJSON(
 
 /** @internal */
 export const ComCrmLocationSelfServiceResourceListResponse$inboundSchema:
-  z.ZodMiniType<ComCrmLocationSelfServiceResourceListResponse, unknown> = z
-    .object({
-      paging: types.optional(
-        z.lazy(() => ComCrmLocationSelfServiceResourceListPaging$inboundSchema),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmLocationSelfServiceResourceListContent$inboundSchema
-        )),
-      ),
-    });
+  z.ZodMiniType<ComCrmLocationSelfServiceResourceListResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(
+          z.lazy(() =>
+            ComCrmLocationSelfServiceResourceListPaging$inboundSchema
+          ),
+        ),
+        content: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmLocationSelfServiceResourceListContent$inboundSchema
+          )),
+        ),
+      })
+    );
 
 export function comCrmLocationSelfServiceResourceListResponseFromJSON(
   jsonString: string,

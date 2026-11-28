@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -1484,9 +1484,11 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageRequest$out
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageRequest$Outbound,
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmLandingPageSelfServiceResourceGetSingleLandingPageRequestToJSON(
   comCrmLandingPageSelfServiceResourceGetSingleLandingPageRequest:
@@ -1503,8 +1505,10 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageType$inboun
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLandingPageSelfServiceResourceGetSingleLandingPageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageType,
+    )
   );
 
 /** @internal */
@@ -1512,19 +1516,24 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageState$inbou
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLandingPageSelfServiceResourceGetSingleLandingPageState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageState,
+    )
   );
 
 /** @internal */
 export const ColorType$inboundSchema: z.ZodMiniType<ColorType, unknown> =
-  openEnums.inboundSchema(ColorType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ColorType));
 
 /** @internal */
-export const Color$inboundSchema: z.ZodMiniType<Color, unknown> = z.object({
-  type: types.optional(ColorType$inboundSchema),
-  value: types.optional(types.string()),
-});
+export const Color$inboundSchema: z.ZodMiniType<Color, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      type: types.optional(ColorType$inboundSchema),
+      value: types.optional(types.string()),
+    })
+  );
 
 export function colorFromJSON(
   jsonString: string,
@@ -1541,27 +1550,32 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCode
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCode,
+    )
   );
 
 /** @internal */
-export const Form$inboundSchema: z.ZodMiniType<Form, unknown> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    property: types.optional(types.string()),
-    label: types.optional(types.string()),
-    priority: types.optional(types.number()),
-    country_code: types.optional(
-      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCode$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "country_code": "countryCode",
-    });
-  }),
-);
+export const Form$inboundSchema: z.ZodMiniType<Form, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        property: types.optional(types.string()),
+        label: types.optional(types.string()),
+        priority: types.optional(types.number()),
+        country_code: types.optional(
+          ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCode$inboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "country_code": "countryCode",
+        });
+      }),
+    )
+  );
 
 export function formFromJSON(
   jsonString: string,
@@ -1578,8 +1592,10 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageUsageType$i
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLandingPageSelfServiceResourceGetSingleLandingPageUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageUsageType,
+    )
   );
 
 /** @internal */
@@ -1587,11 +1603,13 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageMedia$inbou
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmLandingPageSelfServiceResourceGetSingleLandingPageMediaFromJSON(
   jsonString: string,
@@ -1613,31 +1631,35 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCreative$in
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmLandingPageSelfServiceResourceGetSingleLandingPageUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmLandingPageSelfServiceResourceGetSingleLandingPageMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmLandingPageSelfServiceResourceGetSingleLandingPageUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmLandingPageSelfServiceResourceGetSingleLandingPageMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+        });
+      }),
+    )
   );
 
 export function comCrmLandingPageSelfServiceResourceGetSingleLandingPageCreativeFromJSON(
@@ -1659,24 +1681,29 @@ export function comCrmLandingPageSelfServiceResourceGetSingleLandingPageCreative
 export const LogoImgPosition$inboundSchema: z.ZodMiniType<
   LogoImgPosition,
   unknown
-> = openEnums.inboundSchema(LogoImgPosition);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(LogoImgPosition));
 
 /** @internal */
 export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageImage$inboundSchema:
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageImage,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLandingPageSelfServiceResourceGetSingleLandingPageImage,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageImage,
+    )
   );
 
 /** @internal */
-export const Opacity$inboundSchema: z.ZodMiniType<Opacity, unknown> = z.object({
-  image: types.optional(
-    ComCrmLandingPageSelfServiceResourceGetSingleLandingPageImage$inboundSchema,
-  ),
-  value: types.optional(types.number()),
-});
+export const Opacity$inboundSchema: z.ZodMiniType<Opacity, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      image: types.optional(
+        ComCrmLandingPageSelfServiceResourceGetSingleLandingPageImage$inboundSchema,
+      ),
+      value: types.optional(types.number()),
+    })
+  );
 
 export function opacityFromJSON(
   jsonString: string,
@@ -1692,37 +1719,43 @@ export function opacityFromJSON(
 export const PassPlanValueType$inboundSchema: z.ZodMiniType<
   PassPlanValueType,
   unknown
-> = openEnums.inboundSchema(PassPlanValueType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PassPlanValueType)
+);
 
 /** @internal */
 export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCurrencyCode$inboundSchema:
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCurrencyCode,
+    )
   );
 
 /** @internal */
 export const PassPlanValue$inboundSchema: z.ZodMiniType<
   PassPlanValue,
   unknown
-> = z.pipe(
-  z.object({
-    type: types.optional(PassPlanValueType$inboundSchema),
-    fixed_amount: types.optional(types.number()),
-    minimum: types.optional(types.number()),
-    maximum: types.optional(types.number()),
-    currency_code: types.optional(
-      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCurrencyCode$inboundSchema,
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "fixed_amount": "fixedAmount",
-      "currency_code": "currencyCode",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      type: types.optional(PassPlanValueType$inboundSchema),
+      fixed_amount: types.optional(types.number()),
+      minimum: types.optional(types.number()),
+      maximum: types.optional(types.number()),
+      currency_code: types.optional(
+        ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCurrencyCode$inboundSchema,
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "fixed_amount": "fixedAmount",
+        "currency_code": "currencyCode",
+      });
+    }),
+  )
 );
 
 export function passPlanValueFromJSON(
@@ -1739,23 +1772,25 @@ export function passPlanValueFromJSON(
 export const TermsOfService$inboundSchema: z.ZodMiniType<
   TermsOfService,
   unknown
-> = z.pipe(
-  z.object({
-    acceptance_message: types.optional(types.string()),
-    terms_conditions: types.optional(types.string()),
-    privacy_policy: types.optional(types.string()),
-    terms_conditions_link: types.optional(types.string()),
-    privacy_policy_link: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "acceptance_message": "acceptanceMessage",
-      "terms_conditions": "termsConditions",
-      "privacy_policy": "privacyPolicy",
-      "terms_conditions_link": "termsConditionsLink",
-      "privacy_policy_link": "privacyPolicyLink",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      acceptance_message: types.optional(types.string()),
+      terms_conditions: types.optional(types.string()),
+      privacy_policy: types.optional(types.string()),
+      terms_conditions_link: types.optional(types.string()),
+      privacy_policy_link: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "acceptance_message": "acceptanceMessage",
+        "terms_conditions": "termsConditions",
+        "privacy_policy": "privacyPolicy",
+        "terms_conditions_link": "termsConditionsLink",
+        "privacy_policy_link": "privacyPolicyLink",
+      });
+    }),
+  )
 );
 
 export function termsOfServiceFromJSON(
@@ -1772,17 +1807,19 @@ export function termsOfServiceFromJSON(
 export const CommunicationsConsent$inboundSchema: z.ZodMiniType<
   CommunicationsConsent,
   unknown
-> = z.pipe(
-  z.object({
-    email_consent: types.optional(types.string()),
-    sms_consent: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "email_consent": "emailConsent",
-      "sms_consent": "smsConsent",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      email_consent: types.optional(types.string()),
+      sms_consent: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "email_consent": "emailConsent",
+        "sms_consent": "smsConsent",
+      });
+    }),
+  )
 );
 
 export function communicationsConsentFromJSON(
@@ -1796,22 +1833,25 @@ export function communicationsConsentFromJSON(
 }
 
 /** @internal */
-export const Legal$inboundSchema: z.ZodMiniType<Legal, unknown> = z.pipe(
-  z.object({
-    terms_of_service: types.optional(
-      z.lazy(() => TermsOfService$inboundSchema),
-    ),
-    communications_consent: types.optional(
-      z.lazy(() => CommunicationsConsent$inboundSchema),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "terms_of_service": "termsOfService",
-      "communications_consent": "communicationsConsent",
-    });
-  }),
-);
+export const Legal$inboundSchema: z.ZodMiniType<Legal, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        terms_of_service: types.optional(
+          z.lazy(() => TermsOfService$inboundSchema),
+        ),
+        communications_consent: types.optional(
+          z.lazy(() => CommunicationsConsent$inboundSchema),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "terms_of_service": "termsOfService",
+          "communications_consent": "communicationsConsent",
+        });
+      }),
+    )
+  );
 
 export function legalFromJSON(
   jsonString: string,
@@ -1825,16 +1865,18 @@ export function legalFromJSON(
 
 /** @internal */
 export const Connector$inboundSchema: z.ZodMiniType<Connector, unknown> =
-  openEnums.inboundSchema(Connector);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Connector));
 
 /** @internal */
 export const PaymentIntegration$inboundSchema: z.ZodMiniType<
   PaymentIntegration,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  connector: types.optional(Connector$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    connector: types.optional(Connector$inboundSchema),
+  })
+);
 
 export function paymentIntegrationFromJSON(
   jsonString: string,
@@ -1851,8 +1893,10 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountry$inb
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountry,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountry,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountry,
+    )
   );
 
 /** @internal */
@@ -1860,11 +1904,13 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCall
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCallingCode,
     unknown
-  > = z.object({
-    country: types.optional(
-      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountry$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      country: types.optional(
+        ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountry$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCallingCodeFromJSON(
   jsonString: string,
@@ -1886,20 +1932,24 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageDefaultCoun
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageDefaultCountryCallingCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmLandingPageSelfServiceResourceGetSingleLandingPageDefaultCountryCallingCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmLandingPageSelfServiceResourceGetSingleLandingPageDefaultCountryCallingCode,
+    )
   );
 
 /** @internal */
 export const LanguageEnum$inboundSchema: z.ZodMiniType<LanguageEnum, unknown> =
-  openEnums.inboundSchema(LanguageEnum);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(LanguageEnum));
 
 /** @internal */
-export const Language$inboundSchema: z.ZodMiniType<Language, unknown> = z
-  .object({
-    id: types.optional(types.string()),
-    language: types.optional(LanguageEnum$inboundSchema),
-  });
+export const Language$inboundSchema: z.ZodMiniType<Language, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      language: types.optional(LanguageEnum$inboundSchema),
+    })
+  );
 
 export function languageFromJSON(
   jsonString: string,
@@ -1916,71 +1966,73 @@ export const ComCrmLandingPageSelfServiceResourceGetSingleLandingPageResponse$in
   z.ZodMiniType<
     ComCrmLandingPageSelfServiceResourceGetSingleLandingPageResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      description: types.optional(types.string()),
-      type: types.optional(
-        ComCrmLandingPageSelfServiceResourceGetSingleLandingPageType$inboundSchema,
-      ),
-      link: types.optional(types.string()),
-      mobile_pass: types.optional(types.boolean()),
-      state: types.optional(
-        ComCrmLandingPageSelfServiceResourceGetSingleLandingPageState$inboundSchema,
-      ),
-      header: types.optional(types.string()),
-      title: types.optional(types.string()),
-      footer: types.optional(types.string()),
-      button: types.optional(types.string()),
-      success: types.optional(types.string()),
-      fail: types.optional(types.string()),
-      colors: types.optional(z.array(z.lazy(() => Color$inboundSchema))),
-      form: types.optional(z.array(z.lazy(() => Form$inboundSchema))),
-      creatives: types.optional(z.array(z.lazy(() =>
-        ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCreative$inboundSchema
-      ))),
-      logo_img_position: types.optional(LogoImgPosition$inboundSchema),
-      opacity: types.optional(z.array(z.lazy(() =>
-        Opacity$inboundSchema
-      ))),
-      public_key: types.optional(types.string()),
-      pass_plan_id: types.optional(types.string()),
-      pass_plan_value: types.optional(
-        z.lazy(() => PassPlanValue$inboundSchema),
-      ),
-      legal: types.optional(z.lazy(() => Legal$inboundSchema)),
-      payment_integration: types.optional(
-        z.lazy(() => PaymentIntegration$inboundSchema),
-      ),
-      registered_contacts_text: types.optional(types.string()),
-      registered_contacts_label: types.optional(types.string()),
-      sign_in_url: types.optional(types.string()),
-      country_calling_codes: types.optional(
-        z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        description: types.optional(types.string()),
+        type: types.optional(
+          ComCrmLandingPageSelfServiceResourceGetSingleLandingPageType$inboundSchema,
+        ),
+        link: types.optional(types.string()),
+        mobile_pass: types.optional(types.boolean()),
+        state: types.optional(
+          ComCrmLandingPageSelfServiceResourceGetSingleLandingPageState$inboundSchema,
+        ),
+        header: types.optional(types.string()),
+        title: types.optional(types.string()),
+        footer: types.optional(types.string()),
+        button: types.optional(types.string()),
+        success: types.optional(types.string()),
+        fail: types.optional(types.string()),
+        colors: types.optional(z.array(z.lazy(() => Color$inboundSchema))),
+        form: types.optional(z.array(z.lazy(() => Form$inboundSchema))),
+        creatives: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCreative$inboundSchema
+          )),
+        ),
+        logo_img_position: types.optional(LogoImgPosition$inboundSchema),
+        opacity: types.optional(z.array(z.lazy(() => Opacity$inboundSchema))),
+        public_key: types.optional(types.string()),
+        pass_plan_id: types.optional(types.string()),
+        pass_plan_value: types.optional(
+          z.lazy(() => PassPlanValue$inboundSchema),
+        ),
+        legal: types.optional(z.lazy(() => Legal$inboundSchema)),
+        payment_integration: types.optional(
+          z.lazy(() => PaymentIntegration$inboundSchema),
+        ),
+        registered_contacts_text: types.optional(types.string()),
+        registered_contacts_label: types.optional(types.string()),
+        sign_in_url: types.optional(types.string()),
+        country_calling_codes: types.optional(z.array(z.lazy(() =>
           ComCrmLandingPageSelfServiceResourceGetSingleLandingPageCountryCallingCode$inboundSchema
-        )),
-      ),
-      default_country_calling_code: types.optional(
-        ComCrmLandingPageSelfServiceResourceGetSingleLandingPageDefaultCountryCallingCode$inboundSchema,
-      ),
-      languages: types.optional(z.array(z.lazy(() => Language$inboundSchema))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "mobile_pass": "mobilePass",
-        "logo_img_position": "logoImgPosition",
-        "public_key": "publicKey",
-        "pass_plan_id": "passPlanId",
-        "pass_plan_value": "passPlanValue",
-        "payment_integration": "paymentIntegration",
-        "registered_contacts_text": "registeredContactsText",
-        "registered_contacts_label": "registeredContactsLabel",
-        "sign_in_url": "signInUrl",
-        "country_calling_codes": "countryCallingCodes",
-        "default_country_calling_code": "defaultCountryCallingCode",
-      });
-    }),
+        ))),
+        default_country_calling_code: types.optional(
+          ComCrmLandingPageSelfServiceResourceGetSingleLandingPageDefaultCountryCallingCode$inboundSchema,
+        ),
+        languages: types.optional(z.array(z.lazy(() =>
+          Language$inboundSchema
+        ))),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "mobile_pass": "mobilePass",
+          "logo_img_position": "logoImgPosition",
+          "public_key": "publicKey",
+          "pass_plan_id": "passPlanId",
+          "pass_plan_value": "passPlanValue",
+          "payment_integration": "paymentIntegration",
+          "registered_contacts_text": "registeredContactsText",
+          "registered_contacts_label": "registeredContactsLabel",
+          "sign_in_url": "signInUrl",
+          "country_calling_codes": "countryCallingCodes",
+          "default_country_calling_code": "defaultCountryCallingCode",
+        });
+      }),
+    )
   );
 
 export function comCrmLandingPageSelfServiceResourceGetSingleLandingPageResponseFromJSON(

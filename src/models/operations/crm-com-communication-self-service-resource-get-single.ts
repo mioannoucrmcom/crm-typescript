@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -182,9 +182,11 @@ export const CrmComCommunicationSelfServiceResourceGetSingleRequest$outboundSche
   z.ZodMiniType<
     CrmComCommunicationSelfServiceResourceGetSingleRequest$Outbound,
     CrmComCommunicationSelfServiceResourceGetSingleRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function crmComCommunicationSelfServiceResourceGetSingleRequestToJSON(
   crmComCommunicationSelfServiceResourceGetSingleRequest:
@@ -200,8 +202,10 @@ export function crmComCommunicationSelfServiceResourceGetSingleRequestToJSON(
 /** @internal */
 export const CrmComCommunicationSelfServiceResourceGetSingleState$inboundSchema:
   z.ZodMiniType<CrmComCommunicationSelfServiceResourceGetSingleState, unknown> =
-    openEnums.inboundSchema(
-      CrmComCommunicationSelfServiceResourceGetSingleState,
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        CrmComCommunicationSelfServiceResourceGetSingleState,
+      )
     );
 
 /** @internal */
@@ -209,8 +213,10 @@ export const CrmComCommunicationSelfServiceResourceGetSingleChannel$inboundSchem
   z.ZodMiniType<
     CrmComCommunicationSelfServiceResourceGetSingleChannel,
     unknown
-  > = openEnums.inboundSchema(
-    CrmComCommunicationSelfServiceResourceGetSingleChannel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      CrmComCommunicationSelfServiceResourceGetSingleChannel,
+    )
   );
 
 /** @internal */
@@ -218,11 +224,13 @@ export const CrmComCommunicationSelfServiceResourceGetSingleContact$inboundSchem
   z.ZodMiniType<
     CrmComCommunicationSelfServiceResourceGetSingleContact,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    code: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      code: types.optional(types.string()),
+    })
+  );
 
 export function crmComCommunicationSelfServiceResourceGetSingleContactFromJSON(
   jsonString: string,
@@ -244,8 +252,10 @@ export const CrmComCommunicationSelfServiceResourceGetSingleMessageType$inboundS
   z.ZodMiniType<
     CrmComCommunicationSelfServiceResourceGetSingleMessageType,
     unknown
-  > = openEnums.inboundSchema(
-    CrmComCommunicationSelfServiceResourceGetSingleMessageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      CrmComCommunicationSelfServiceResourceGetSingleMessageType,
+    )
   );
 
 /** @internal */
@@ -253,46 +263,50 @@ export const CrmComCommunicationSelfServiceResourceGetSingleResponse$inboundSche
   z.ZodMiniType<
     CrmComCommunicationSelfServiceResourceGetSingleResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      state: types.optional(
-        CrmComCommunicationSelfServiceResourceGetSingleState$inboundSchema,
-      ),
-      channel: types.optional(
-        CrmComCommunicationSelfServiceResourceGetSingleChannel$inboundSchema,
-      ),
-      is_viewed: types.optional(types.boolean()),
-      viewed_on: types.optional(types.number()),
-      is_archived: z._default(types.boolean(), false),
-      clicked_on: types.optional(types.number()),
-      created_on: types.optional(types.number()),
-      language: types.optional(types.string()),
-      sender: types.optional(types.string()),
-      recipient: types.optional(types.string()),
-      subtitle: types.optional(types.string()),
-      subject: types.optional(types.string()),
-      content: types.optional(types.string()),
-      in_app_image_url: types.optional(types.string()),
-      contact: types.optional(z.lazy(() =>
-        CrmComCommunicationSelfServiceResourceGetSingleContact$inboundSchema
-      )),
-      message_type: types.optional(
-        CrmComCommunicationSelfServiceResourceGetSingleMessageType$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_viewed": "isViewed",
-        "viewed_on": "viewedOn",
-        "is_archived": "isArchived",
-        "clicked_on": "clickedOn",
-        "created_on": "createdOn",
-        "in_app_image_url": "inAppImageUrl",
-        "message_type": "messageType",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        state: types.optional(
+          CrmComCommunicationSelfServiceResourceGetSingleState$inboundSchema,
+        ),
+        channel: types.optional(
+          CrmComCommunicationSelfServiceResourceGetSingleChannel$inboundSchema,
+        ),
+        is_viewed: types.optional(types.boolean()),
+        viewed_on: types.optional(types.number()),
+        is_archived: z._default(types.boolean(), false),
+        clicked_on: types.optional(types.number()),
+        created_on: types.optional(types.number()),
+        language: types.optional(types.string()),
+        sender: types.optional(types.string()),
+        recipient: types.optional(types.string()),
+        subtitle: types.optional(types.string()),
+        subject: types.optional(types.string()),
+        content: types.optional(types.string()),
+        in_app_image_url: types.optional(types.string()),
+        contact: types.optional(
+          z.lazy(() =>
+            CrmComCommunicationSelfServiceResourceGetSingleContact$inboundSchema
+          ),
+        ),
+        message_type: types.optional(
+          CrmComCommunicationSelfServiceResourceGetSingleMessageType$inboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_viewed": "isViewed",
+          "viewed_on": "viewedOn",
+          "is_archived": "isArchived",
+          "clicked_on": "clickedOn",
+          "created_on": "createdOn",
+          "in_app_image_url": "inAppImageUrl",
+          "message_type": "messageType",
+        });
+      }),
+    )
   );
 
 export function crmComCommunicationSelfServiceResourceGetSingleResponseFromJSON(

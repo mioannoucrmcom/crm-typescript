@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 /**
@@ -50,7 +51,9 @@ export type ComCrmContactSelfServiceResourceSignUpOutSchemeRequest = {
 /** @internal */
 export const ComCrmContactSelfServiceResourceSignUpOutSchemeAction$outboundSchema:
   z.ZodMiniEnum<typeof ComCrmContactSelfServiceResourceSignUpOutSchemeAction> =
-    z.enum(ComCrmContactSelfServiceResourceSignUpOutSchemeAction);
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmContactSelfServiceResourceSignUpOutSchemeAction)
+    );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceSignUpOutSchemeRequestBody$Outbound =
@@ -66,21 +69,23 @@ export const ComCrmContactSelfServiceResourceSignUpOutSchemeRequestBody$outbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSignUpOutSchemeRequestBody$Outbound,
     ComCrmContactSelfServiceResourceSignUpOutSchemeRequestBody
-  > = z.pipe(
-    z.object({
-      action:
-        ComCrmContactSelfServiceResourceSignUpOutSchemeAction$outboundSchema,
-      rewardSchemeId: z.string(),
-      emailAddress: z.optional(z.string()),
-      signUpCode: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        rewardSchemeId: "reward_scheme_id",
-        emailAddress: "email_address",
-        signUpCode: "sign_up_code",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        action:
+          ComCrmContactSelfServiceResourceSignUpOutSchemeAction$outboundSchema,
+        rewardSchemeId: z.string(),
+        emailAddress: z.optional(z.string()),
+        signUpCode: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          rewardSchemeId: "reward_scheme_id",
+          emailAddress: "email_address",
+          signUpCode: "sign_up_code",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceSignUpOutSchemeRequestBodyToJSON(
@@ -106,14 +111,14 @@ export const ComCrmContactSelfServiceResourceSignUpOutSchemeRequest$outboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSignUpOutSchemeRequest$Outbound,
     ComCrmContactSelfServiceResourceSignUpOutSchemeRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceSignUpOutSchemeRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceSignUpOutSchemeRequestToJSON(
   comCrmContactSelfServiceResourceSignUpOutSchemeRequest:

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -851,16 +851,18 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationSecurity$Outbound,
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationSecurityToJSON(
@@ -876,8 +878,8 @@ export function comCrmProductRecommendationSelfServiceResourceGetProductRecommen
 }
 
 /** @internal */
-export const CategoryType$outboundSchema: z.ZodMiniEnum<typeof CategoryType> = z
-  .enum(CategoryType);
+export const CategoryType$outboundSchema: z.ZodMiniEnum<typeof CategoryType> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(CategoryType));
 
 /** @internal */
 export type ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationRequest$Outbound =
@@ -893,20 +895,22 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationRequest$Outbound,
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationRequest
-  > = z.pipe(
-    z.object({
-      categoryId: z.optional(z.string()),
-      categoryType: z.optional(CategoryType$outboundSchema),
-      contactId: z.optional(z.string()),
-      size: z.optional(z.int()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        categoryId: "category_id",
-        categoryType: "category_type",
-        contactId: "contact_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        categoryId: z.optional(z.string()),
+        categoryType: z.optional(CategoryType$outboundSchema),
+        contactId: z.optional(z.string()),
+        size: z.optional(z.int()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          categoryId: "category_id",
+          categoryType: "category_type",
+          contactId: "contact_id",
+        });
+      }),
+    )
   );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationRequestToJSON(
@@ -926,8 +930,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationType,
+    )
   );
 
 /** @internal */
@@ -935,8 +941,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -944,8 +952,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTaxModel,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTaxModel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTaxModel,
+    )
   );
 
 /** @internal */
@@ -953,8 +963,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationPriceModel,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationPriceModel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationPriceModel,
+    )
   );
 
 /** @internal */
@@ -962,8 +974,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationSupplyMethod,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationSupplyMethod,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationSupplyMethod,
+    )
   );
 
 /** @internal */
@@ -971,10 +985,12 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationSalesModel,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationSalesModelFromJSON(
   jsonString: string,
@@ -996,10 +1012,12 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationOrderQueue,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationOrderQueueFromJSON(
   jsonString: string,
@@ -1021,8 +1039,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriodUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriodUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriodUot,
+    )
   );
 
 /** @internal */
@@ -1030,12 +1050,14 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriod,
     unknown
-  > = z.object({
-    duration: types.optional(types.number()),
-    uot: types.optional(
-      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriodUot$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      duration: types.optional(types.number()),
+      uot: types.optional(
+        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriodUot$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriodFromJSON(
   jsonString: string,
@@ -1057,8 +1079,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriodUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriodUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriodUot,
+    )
   );
 
 /** @internal */
@@ -1066,12 +1090,14 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriod,
     unknown
-  > = z.object({
-    duration: types.optional(types.number()),
-    uot: types.optional(
-      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriodUot$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      duration: types.optional(types.number()),
+      uot: types.optional(
+        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriodUot$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriodFromJSON(
   jsonString: string,
@@ -1093,17 +1119,19 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationAccessPeriod,
     unknown
-  > = z.pipe(
-    z.object({
-      start_date: types.optional(types.number()),
-      end_date: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "start_date": "startDate",
-        "end_date": "endDate",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        start_date: types.optional(types.number()),
+        end_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "start_date": "startDate",
+          "end_date": "endDate",
+        });
+      }),
+    )
   );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationAccessPeriodFromJSON(
@@ -1126,8 +1154,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingModel,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingModel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingModel,
+    )
   );
 
 /** @internal */
@@ -1135,8 +1165,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriodUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriodUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriodUot,
+    )
   );
 
 /** @internal */
@@ -1144,12 +1176,14 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriod,
     unknown
-  > = z.object({
-    duration: types.optional(types.number()),
-    uot: types.optional(
-      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriodUot$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      duration: types.optional(types.number()),
+      uot: types.optional(
+        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriodUot$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriodFromJSON(
   jsonString: string,
@@ -1171,11 +1205,13 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationRentalService,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationRentalServiceFromJSON(
   jsonString: string,
@@ -1197,8 +1233,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationValueType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationValueType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationValueType,
+    )
   );
 
 /** @internal */
@@ -1206,45 +1244,57 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationPriceTerms,
     unknown
-  > = z.pipe(
-    z.object({
-      billing_period: types.optional(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriod$inboundSchema
-      )),
-      trial_period: types.optional(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriod$inboundSchema
-      )),
-      access_period: types.optional(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationAccessPeriod$inboundSchema
-      )),
-      auto_renewed: types.optional(types.boolean()),
-      billing_model: types.optional(
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingModel$inboundSchema,
-      ),
-      contract_period: types.optional(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriod$inboundSchema
-      )),
-      terms_billing_cycles: types.optional(types.number()),
-      rental_service: types.optional(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationRentalService$inboundSchema
-      )),
-      value_type: types.optional(
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationValueType$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "billing_period": "billingPeriod",
-        "trial_period": "trialPeriod",
-        "access_period": "accessPeriod",
-        "auto_renewed": "autoRenewed",
-        "billing_model": "billingModel",
-        "contract_period": "contractPeriod",
-        "terms_billing_cycles": "termsBillingCycles",
-        "rental_service": "rentalService",
-        "value_type": "valueType",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        billing_period: types.optional(
+          z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingPeriod$inboundSchema
+          ),
+        ),
+        trial_period: types.optional(
+          z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTrialPeriod$inboundSchema
+          ),
+        ),
+        access_period: types.optional(
+          z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationAccessPeriod$inboundSchema
+          ),
+        ),
+        auto_renewed: types.optional(types.boolean()),
+        billing_model: types.optional(
+          ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationBillingModel$inboundSchema,
+        ),
+        contract_period: types.optional(
+          z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationContractPeriod$inboundSchema
+          ),
+        ),
+        terms_billing_cycles: types.optional(types.number()),
+        rental_service: types.optional(
+          z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationRentalService$inboundSchema
+          ),
+        ),
+        value_type: types.optional(
+          ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationValueType$inboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "billing_period": "billingPeriod",
+          "trial_period": "trialPeriod",
+          "access_period": "accessPeriod",
+          "auto_renewed": "autoRenewed",
+          "billing_model": "billingModel",
+          "contract_period": "contractPeriod",
+          "terms_billing_cycles": "termsBillingCycles",
+          "rental_service": "rentalService",
+          "value_type": "valueType",
+        });
+      }),
+    )
   );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationPriceTermsFromJSON(
@@ -1267,21 +1317,23 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTier,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      lower_tier: types.optional(types.number()),
-      upper_tier: types.optional(types.number()),
-      price: types.optional(types.number()),
-      out_of_contract: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "lower_tier": "lowerTier",
-        "upper_tier": "upperTier",
-        "out_of_contract": "outOfContract",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        lower_tier: types.optional(types.number()),
+        upper_tier: types.optional(types.number()),
+        price: types.optional(types.number()),
+        out_of_contract: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "lower_tier": "lowerTier",
+          "upper_tier": "upperTier",
+          "out_of_contract": "outOfContract",
+        });
+      }),
+    )
   );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationTierFromJSON(
@@ -1304,49 +1356,59 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationPricing,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      price: types.optional(types.number()),
-      label: types.optional(types.string()),
-      currency_code: types.optional(
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationCurrencyCode$inboundSchema,
-      ),
-      is_default: types.optional(types.boolean()),
-      tax_model: types.optional(
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTaxModel$inboundSchema,
-      ),
-      price_model: types.optional(
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationPriceModel$inboundSchema,
-      ),
-      supply_method: types.optional(
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationSupplyMethod$inboundSchema,
-      ),
-      sales_model: types.optional(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationSalesModel$inboundSchema
-      )),
-      order_queue: types.optional(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationOrderQueue$inboundSchema
-      )),
-      price_terms: types.optional(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationPriceTerms$inboundSchema
-      )),
-      tiers: types.optional(z.array(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTier$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "currency_code": "currencyCode",
-        "is_default": "isDefault",
-        "tax_model": "taxModel",
-        "price_model": "priceModel",
-        "supply_method": "supplyMethod",
-        "sales_model": "salesModel",
-        "order_queue": "orderQueue",
-        "price_terms": "priceTerms",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        price: types.optional(types.number()),
+        label: types.optional(types.string()),
+        currency_code: types.optional(
+          ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationCurrencyCode$inboundSchema,
+        ),
+        is_default: types.optional(types.boolean()),
+        tax_model: types.optional(
+          ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTaxModel$inboundSchema,
+        ),
+        price_model: types.optional(
+          ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationPriceModel$inboundSchema,
+        ),
+        supply_method: types.optional(
+          ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationSupplyMethod$inboundSchema,
+        ),
+        sales_model: types.optional(
+          z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationSalesModel$inboundSchema
+          ),
+        ),
+        order_queue: types.optional(
+          z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationOrderQueue$inboundSchema
+          ),
+        ),
+        price_terms: types.optional(
+          z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationPriceTerms$inboundSchema
+          ),
+        ),
+        tiers: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationTier$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "currency_code": "currencyCode",
+          "is_default": "isDefault",
+          "tax_model": "taxModel",
+          "price_model": "priceModel",
+          "supply_method": "supplyMethod",
+          "sales_model": "salesModel",
+          "order_queue": "orderQueue",
+          "price_terms": "priceTerms",
+        });
+      }),
+    )
   );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationPricingFromJSON(
@@ -1369,8 +1431,10 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationUsageType,
+    )
   );
 
 /** @internal */
@@ -1378,11 +1442,13 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationMediaFromJSON(
   jsonString: string,
@@ -1404,34 +1470,38 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationCreativeFromJSON(
@@ -1454,22 +1524,20 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationProduct,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    sku: types.optional(types.string()),
-    name: types.optional(types.string()),
-    description: types.optional(types.string()),
-    pricing: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      sku: types.optional(types.string()),
+      name: types.optional(types.string()),
+      description: types.optional(types.string()),
+      pricing: types.optional(z.array(z.lazy(() =>
         ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationPricing$inboundSchema
-      )),
-    ),
-    creatives: types.optional(
-      z.array(z.lazy(() =>
+      ))),
+      creatives: types.optional(z.array(z.lazy(() =>
         ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationCreative$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationProductFromJSON(
   jsonString: string,
@@ -1491,26 +1559,30 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationCategory,
     unknown
-  > = z.pipe(
-    z.object({
-      type: types.optional(
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationType$inboundSchema,
-      ),
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      description: types.optional(types.string()),
-      validity_ends: types.optional(types.number()),
-      products: types.optional(z.array(z.lazy(() =>
-        ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationProduct$inboundSchema
-      ))),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "validity_ends": "validityEnds",
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: types.optional(
+          ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationType$inboundSchema,
+        ),
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        description: types.optional(types.string()),
+        validity_ends: types.optional(types.number()),
+        products: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationProduct$inboundSchema
+          )),
+        ),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "validity_ends": "validityEnds",
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationCategoryFromJSON(
@@ -1533,13 +1605,13 @@ export const ComCrmProductRecommendationSelfServiceResourceGetProductRecommendat
   z.ZodMiniType<
     ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationResponse,
     unknown
-  > = z.object({
-    category: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      category: types.optional(z.lazy(() =>
         ComCrmProductRecommendationSelfServiceResourceGetProductRecommendationCategory$inboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmProductRecommendationSelfServiceResourceGetProductRecommendationResponseFromJSON(
   jsonString: string,

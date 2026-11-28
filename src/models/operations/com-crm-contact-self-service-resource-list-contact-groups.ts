@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -33,9 +33,11 @@ export const ComCrmContactSelfServiceResourceListContactGroupsRequest$outboundSc
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactGroupsRequest$Outbound,
     ComCrmContactSelfServiceResourceListContactGroupsRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactGroupsRequestToJSON(
   comCrmContactSelfServiceResourceListContactGroupsRequest:
@@ -52,9 +54,11 @@ export const ComCrmContactSelfServiceResourceListContactGroupsResponse$inboundSc
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactGroupsResponse,
     unknown
-  > = z.object({
-    groups: types.optional(z.array(types.string())),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      groups: types.optional(z.array(types.string())),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactGroupsResponseFromJSON(
   jsonString: string,

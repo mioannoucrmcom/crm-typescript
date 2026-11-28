@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmWalletPassesSelfServiceResourceGetGooglePassRequest = {
   /**
@@ -27,10 +28,12 @@ export const ComCrmWalletPassesSelfServiceResourceGetGooglePassRequest$outboundS
   z.ZodMiniType<
     ComCrmWalletPassesSelfServiceResourceGetGooglePassRequest$Outbound,
     ComCrmWalletPassesSelfServiceResourceGetGooglePassRequest
-  > = z.object({
-    contactId: z.string(),
-    organisationId: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      contactId: z.string(),
+      organisationId: z.string(),
+    })
+  );
 
 export function comCrmWalletPassesSelfServiceResourceGetGooglePassRequestToJSON(
   comCrmWalletPassesSelfServiceResourceGetGooglePassRequest:

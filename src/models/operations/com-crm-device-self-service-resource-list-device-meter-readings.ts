@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -233,20 +233,20 @@ export type ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsResponse = {
 };
 
 /** @internal */
-export const DateFrom$outboundSchema: z.ZodMiniEnum<typeof DateFrom> = z.enum(
-  DateFrom,
-);
+export const DateFrom$outboundSchema: z.ZodMiniEnum<typeof DateFrom> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(DateFrom));
 
 /** @internal */
-export const DateTo$outboundSchema: z.ZodMiniEnum<typeof DateTo> = z.enum(
-  DateTo,
-);
+export const DateTo$outboundSchema: z.ZodMiniEnum<typeof DateTo> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(DateTo));
 
 /** @internal */
 export const ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsOrder
-  > = z.enum(ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsOrder);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsOrder)
+  );
 
 /** @internal */
 export type ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsRequest$Outbound =
@@ -275,45 +275,47 @@ export const ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsRequest$outbo
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsRequest$Outbound,
     ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsRequest
-  > = z.pipe(
-    z.object({
-      devId: z.string(),
-      id: z.string(),
-      dateFrom: z.optional(DateFrom$outboundSchema),
-      dateFromGt: z.optional(z.int()),
-      dateFromGte: z.optional(z.int()),
-      dateFromLt: z.optional(z.int()),
-      dateFromLte: z.optional(z.int()),
-      dateTo: z.optional(DateTo$outboundSchema),
-      dateToGt: z.optional(z.int()),
-      dateToGte: z.optional(z.int()),
-      dateToLt: z.optional(z.int()),
-      dateToLte: z.optional(z.int()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        devId: "dev_id",
-        dateFrom: "date_from",
-        dateFromGt: "date_from[gt]",
-        dateFromGte: "date_from[gte]",
-        dateFromLt: "date_from[lt]",
-        dateFromLte: "date_from[lte]",
-        dateTo: "date_to",
-        dateToGt: "date_to[gt]",
-        dateToGte: "date_to[gte]",
-        dateToLt: "date_to[lt]",
-        dateToLte: "date_to[lte]",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        devId: z.string(),
+        id: z.string(),
+        dateFrom: z.optional(DateFrom$outboundSchema),
+        dateFromGt: z.optional(z.int()),
+        dateFromGte: z.optional(z.int()),
+        dateFromLt: z.optional(z.int()),
+        dateFromLte: z.optional(z.int()),
+        dateTo: z.optional(DateTo$outboundSchema),
+        dateToGt: z.optional(z.int()),
+        dateToGte: z.optional(z.int()),
+        dateToLt: z.optional(z.int()),
+        dateToLte: z.optional(z.int()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          devId: "dev_id",
+          dateFrom: "date_from",
+          dateFromGt: "date_from[gt]",
+          dateFromGte: "date_from[gte]",
+          dateFromLt: "date_from[lt]",
+          dateFromLte: "date_from[lte]",
+          dateTo: "date_to",
+          dateToGt: "date_to[gt]",
+          dateToGte: "date_to[gte]",
+          dateToLt: "date_to[lt]",
+          dateToLte: "date_to[lte]",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceListDeviceMeterReadingsRequestToJSON(
@@ -331,18 +333,20 @@ export const ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsPaging$inboun
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceListDeviceMeterReadingsPagingFromJSON(
@@ -361,10 +365,13 @@ export function comCrmDeviceSelfServiceResourceListDeviceMeterReadingsPagingFrom
 }
 
 /** @internal */
-export const DateT$inboundSchema: z.ZodMiniType<DateT, unknown> = z.object({
-  from: types.optional(types.number()),
-  to: types.optional(types.number()),
-});
+export const DateT$inboundSchema: z.ZodMiniType<DateT, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      from: types.optional(types.number()),
+      to: types.optional(types.number()),
+    })
+  );
 
 export function dateFromJSON(
   jsonString: string,
@@ -381,8 +388,10 @@ export const ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsType$inboundS
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsType,
+    )
   );
 
 /** @internal */
@@ -390,14 +399,16 @@ export const ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsSubmittedBy$i
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsSubmittedBy,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    type: types.optional(
-      ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsType$inboundSchema,
-    ),
-    name: types.optional(types.string()),
-    reference: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(
+        ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsType$inboundSchema,
+      ),
+      name: types.optional(types.string()),
+      reference: types.optional(types.string()),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceListDeviceMeterReadingsSubmittedByFromJSON(
   jsonString: string,
@@ -419,20 +430,24 @@ export const ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsContent$inbou
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      reading: types.optional(types.number()),
-      date: types.optional(z.lazy(() => DateT$inboundSchema)),
-      submitted_by: types.optional(z.lazy(() =>
-        ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsSubmittedBy$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "submitted_by": "submittedBy",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        reading: types.optional(types.number()),
+        date: types.optional(z.lazy(() => DateT$inboundSchema)),
+        submitted_by: types.optional(
+          z.lazy(() =>
+            ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsSubmittedBy$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "submitted_by": "submittedBy",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceListDeviceMeterReadingsContentFromJSON(
@@ -455,18 +470,16 @@ export const ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsResponse$inbo
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmDeviceSelfServiceResourceListDeviceMeterReadingsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceListDeviceMeterReadingsResponseFromJSON(
   jsonString: string,

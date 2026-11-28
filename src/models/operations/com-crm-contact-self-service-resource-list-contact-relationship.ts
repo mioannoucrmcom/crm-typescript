@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -1109,7 +1109,9 @@ export type ComCrmContactSelfServiceResourceListContactRelationshipResponse = {
 export const ComCrmContactSelfServiceResourceListContactRelationshipOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceListContactRelationshipOrder
-  > = z.enum(ComCrmContactSelfServiceResourceListContactRelationshipOrder);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceListContactRelationshipOrder)
+  );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceListContactRelationshipRequest$Outbound =
@@ -1132,31 +1134,33 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipRequest$outb
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipRequest$Outbound,
     ComCrmContactSelfServiceResourceListContactRelationshipRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      group: z.optional(z.string()),
-      includeDevices: z.optional(z.boolean()),
-      includeProductAllowance: z.optional(z.boolean()),
-      includeRemainingAllowance: z.optional(z.boolean()),
-      includeTermedTransfers: z.optional(z.boolean()),
-      includeTotal: z.optional(z.boolean()),
-      order: z.optional(
-        ComCrmContactSelfServiceResourceListContactRelationshipOrder$outboundSchema,
-      ),
-      page: z.optional(z.int()),
-      size: z.optional(z.int()),
-      sort: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        includeDevices: "include_devices",
-        includeProductAllowance: "include_product_allowance",
-        includeRemainingAllowance: "include_remaining_allowance",
-        includeTermedTransfers: "include_termed_transfers",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        group: z.optional(z.string()),
+        includeDevices: z.optional(z.boolean()),
+        includeProductAllowance: z.optional(z.boolean()),
+        includeRemainingAllowance: z.optional(z.boolean()),
+        includeTermedTransfers: z.optional(z.boolean()),
+        includeTotal: z.optional(z.boolean()),
+        order: z.optional(
+          ComCrmContactSelfServiceResourceListContactRelationshipOrder$outboundSchema,
+        ),
+        page: z.optional(z.int()),
+        size: z.optional(z.int()),
+        sort: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          includeDevices: "include_devices",
+          includeProductAllowance: "include_product_allowance",
+          includeRemainingAllowance: "include_remaining_allowance",
+          includeTermedTransfers: "include_termed_transfers",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipRequestToJSON(
@@ -1174,18 +1178,20 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipPaging$inbou
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipPagingFromJSON(
@@ -1208,10 +1214,12 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipRelation$inb
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipRelation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipRelationFromJSON(
   jsonString: string,
@@ -1233,8 +1241,10 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipPermission$i
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipPermission,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceListContactRelationshipPermission,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceListContactRelationshipPermission,
+    )
   );
 
 /** @internal */
@@ -1242,10 +1252,12 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipCustomField$
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipCustomField,
     unknown
-  > = z.object({
-    key: types.optional(types.string()),
-    value: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: types.optional(types.string()),
+      value: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipCustomFieldFromJSON(
   jsonString: string,
@@ -1267,20 +1279,24 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipDevice$inbou
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipDevice,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      serial_number: types.optional(types.string()),
-      custom_fields: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipCustomField$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "serial_number": "serialNumber",
-        "custom_fields": "customFields",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        serial_number: types.optional(types.string()),
+        custom_fields: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipCustomField$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "serial_number": "serialNumber",
+          "custom_fields": "customFields",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipDeviceFromJSON(
@@ -1303,8 +1319,10 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipCountryCode$
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipCountryCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceListContactRelationshipCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceListContactRelationshipCountryCode,
+    )
   );
 
 /** @internal */
@@ -1312,18 +1330,20 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipPhone$inboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipPhone,
     unknown
-  > = z.pipe(
-    z.object({
-      country_code: types.optional(
-        ComCrmContactSelfServiceResourceListContactRelationshipCountryCode$inboundSchema,
-      ),
-      number: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "country_code": "countryCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        country_code: types.optional(
+          ComCrmContactSelfServiceResourceListContactRelationshipCountryCode$inboundSchema,
+        ),
+        number: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "country_code": "countryCode",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipPhoneFromJSON(
@@ -1346,9 +1366,11 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipWallet$inbou
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipWallet,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipWalletFromJSON(
   jsonString: string,
@@ -1370,25 +1392,31 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipContact$inbo
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipContact,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      first_name: types.optional(types.string()),
-      last_name: types.optional(types.string()),
-      phone: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipPhone$inboundSchema
-      )),
-      email: types.optional(types.string()),
-      wallet: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipWallet$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "first_name": "firstName",
-        "last_name": "lastName",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        first_name: types.optional(types.string()),
+        last_name: types.optional(types.string()),
+        phone: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipPhone$inboundSchema
+          ),
+        ),
+        email: types.optional(types.string()),
+        wallet: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipWallet$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "first_name": "firstName",
+          "last_name": "lastName",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipContactFromJSON(
@@ -1411,11 +1439,13 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipWalletSharin
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipWalletSharingCommercePool,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    description: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      description: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipWalletSharingCommercePoolFromJSON(
   jsonString: string,
@@ -1437,8 +1467,10 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipMethod$inbou
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipMethod,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceListContactRelationshipMethod,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceListContactRelationshipMethod,
+    )
   );
 
 /** @internal */
@@ -1446,26 +1478,30 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipWalletSharin
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipWalletSharing,
     unknown
-  > = z.pipe(
-    z.object({
-      is_enabled: types.optional(types.boolean()),
-      commerce_pools: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipWalletSharingCommercePool$inboundSchema
-      ))),
-      method: types.optional(
-        ComCrmContactSelfServiceResourceListContactRelationshipMethod$inboundSchema,
-      ),
-      max_amount: types.optional(types.number()),
-      remaining_amount: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_enabled": "isEnabled",
-        "commerce_pools": "commercePools",
-        "max_amount": "maxAmount",
-        "remaining_amount": "remainingAmount",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_enabled: types.optional(types.boolean()),
+        commerce_pools: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipWalletSharingCommercePool$inboundSchema
+          )),
+        ),
+        method: types.optional(
+          ComCrmContactSelfServiceResourceListContactRelationshipMethod$inboundSchema,
+        ),
+        max_amount: types.optional(types.number()),
+        remaining_amount: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_enabled": "isEnabled",
+          "commerce_pools": "commercePools",
+          "max_amount": "maxAmount",
+          "remaining_amount": "remainingAmount",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipWalletSharingFromJSON(
@@ -1488,19 +1524,21 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipAccumulatedA
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipAccumulatedAllowanceCashLimits,
     unknown
-  > = z.pipe(
-    z.object({
-      per_transaction: types.optional(types.number()),
-      per_day: types.optional(types.number()),
-      per_billing_cycle: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "per_transaction": "perTransaction",
-        "per_day": "perDay",
-        "per_billing_cycle": "perBillingCycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        per_transaction: types.optional(types.number()),
+        per_day: types.optional(types.number()),
+        per_billing_cycle: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "per_transaction": "perTransaction",
+          "per_day": "perDay",
+          "per_billing_cycle": "perBillingCycle",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipAccumulatedAllowanceCashLimitsFromJSON(
@@ -1523,18 +1561,22 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipAccumulatedA
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipAccumulatedAllowance,
     unknown
-  > = z.pipe(
-    z.object({
-      currency: types.optional(types.string()),
-      cash_limits: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipAccumulatedAllowanceCashLimits$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "cash_limits": "cashLimits",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        currency: types.optional(types.string()),
+        cash_limits: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipAccumulatedAllowanceCashLimits$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "cash_limits": "cashLimits",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipAccumulatedAllowanceFromJSON(
@@ -1557,8 +1599,10 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipItemType$inb
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipItemType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceListContactRelationshipItemType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceListContactRelationshipItemType,
+    )
   );
 
 /** @internal */
@@ -1566,16 +1610,18 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipMeasurementU
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipMeasurementUnit,
     unknown
-  > = z.pipe(
-    z.object({
-      name: types.optional(types.string()),
-      display_name: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "display_name": "displayName",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        name: types.optional(types.string()),
+        display_name: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "display_name": "displayName",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipMeasurementUnitFromJSON(
@@ -1598,19 +1644,21 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipProductsAllo
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipProductsAllowanceCashLimits,
     unknown
-  > = z.pipe(
-    z.object({
-      per_transaction: types.optional(types.number()),
-      per_day: types.optional(types.number()),
-      per_billing_cycle: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "per_transaction": "perTransaction",
-        "per_day": "perDay",
-        "per_billing_cycle": "perBillingCycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        per_transaction: types.optional(types.number()),
+        per_day: types.optional(types.number()),
+        per_billing_cycle: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "per_transaction": "perTransaction",
+          "per_day": "perDay",
+          "per_billing_cycle": "perBillingCycle",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipProductsAllowanceCashLimitsFromJSON(
@@ -1633,19 +1681,21 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipUsageLimits$
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipUsageLimits,
     unknown
-  > = z.pipe(
-    z.object({
-      per_transaction: types.optional(types.number()),
-      per_day: types.optional(types.number()),
-      per_billing_cycle: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "per_transaction": "perTransaction",
-        "per_day": "perDay",
-        "per_billing_cycle": "perBillingCycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        per_transaction: types.optional(types.number()),
+        per_day: types.optional(types.number()),
+        per_billing_cycle: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "per_transaction": "perTransaction",
+          "per_day": "perDay",
+          "per_billing_cycle": "perBillingCycle",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipUsageLimitsFromJSON(
@@ -1668,37 +1718,45 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipProductsAllo
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipProductsAllowance,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      group_id: types.optional(types.string()),
-      currency: types.optional(types.string()),
-      item_type: types.optional(
-        ComCrmContactSelfServiceResourceListContactRelationshipItemType$inboundSchema,
-      ),
-      item_id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      sku: types.optional(types.string()),
-      measurement_unit: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipMeasurementUnit$inboundSchema
-      )),
-      cash_limits: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipProductsAllowanceCashLimits$inboundSchema
-      )),
-      usage_limits: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipUsageLimits$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "group_id": "groupId",
-        "item_type": "itemType",
-        "item_id": "itemId",
-        "measurement_unit": "measurementUnit",
-        "cash_limits": "cashLimits",
-        "usage_limits": "usageLimits",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        group_id: types.optional(types.string()),
+        currency: types.optional(types.string()),
+        item_type: types.optional(
+          ComCrmContactSelfServiceResourceListContactRelationshipItemType$inboundSchema,
+        ),
+        item_id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        sku: types.optional(types.string()),
+        measurement_unit: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipMeasurementUnit$inboundSchema
+          ),
+        ),
+        cash_limits: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipProductsAllowanceCashLimits$inboundSchema
+          ),
+        ),
+        usage_limits: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipUsageLimits$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "group_id": "groupId",
+          "item_type": "itemType",
+          "item_id": "itemId",
+          "measurement_unit": "measurementUnit",
+          "cash_limits": "cashLimits",
+          "usage_limits": "usageLimits",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipProductsAllowanceFromJSON(
@@ -1721,10 +1779,12 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipOrganisation
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipOrganisationFromJSON(
   jsonString: string,
@@ -1746,26 +1806,34 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipUsageAllowan
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipUsageAllowance,
     unknown
-  > = z.pipe(
-    z.object({
-      accumulated_allowance: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipAccumulatedAllowance$inboundSchema
-      )),
-      same_as_owner: types.optional(types.boolean()),
-      products_allowance: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipProductsAllowance$inboundSchema
-      ))),
-      organisations: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipOrganisation$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "accumulated_allowance": "accumulatedAllowance",
-        "same_as_owner": "sameAsOwner",
-        "products_allowance": "productsAllowance",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        accumulated_allowance: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipAccumulatedAllowance$inboundSchema
+          ),
+        ),
+        same_as_owner: types.optional(types.boolean()),
+        products_allowance: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipProductsAllowance$inboundSchema
+          )),
+        ),
+        organisations: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipOrganisation$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "accumulated_allowance": "accumulatedAllowance",
+          "same_as_owner": "sameAsOwner",
+          "products_allowance": "productsAllowance",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipUsageAllowanceFromJSON(
@@ -1788,8 +1856,10 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipState$inboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceListContactRelationshipState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceListContactRelationshipState,
+    )
   );
 
 /** @internal */
@@ -1797,8 +1867,10 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipCurrencyCode
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceListContactRelationshipCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceListContactRelationshipCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -1806,10 +1878,12 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipTermedTransf
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipTermedTransferCommercePool,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipTermedTransferCommercePoolFromJSON(
   jsonString: string,
@@ -1831,37 +1905,43 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipFrequency$in
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipFrequency,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceListContactRelationshipFrequency,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceListContactRelationshipFrequency,
+    )
   );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceListContactRelationshipDayOfWeek$inboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceListContactRelationshipDayOfWeek
-  > = z.enum(ComCrmContactSelfServiceResourceListContactRelationshipDayOfWeek);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceListContactRelationshipDayOfWeek)
+  );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceListContactRelationshipSchedule$inboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipSchedule,
     unknown
-  > = z.pipe(
-    z.object({
-      frequency: types.optional(
-        ComCrmContactSelfServiceResourceListContactRelationshipFrequency$inboundSchema,
-      ),
-      day_of_week: types.optional(
-        ComCrmContactSelfServiceResourceListContactRelationshipDayOfWeek$inboundSchema,
-      ),
-      day_of_month: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "day_of_week": "dayOfWeek",
-        "day_of_month": "dayOfMonth",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        frequency: types.optional(
+          ComCrmContactSelfServiceResourceListContactRelationshipFrequency$inboundSchema,
+        ),
+        day_of_week: types.optional(
+          ComCrmContactSelfServiceResourceListContactRelationshipDayOfWeek$inboundSchema,
+        ),
+        day_of_month: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "day_of_week": "dayOfWeek",
+          "day_of_month": "dayOfMonth",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipScheduleFromJSON(
@@ -1884,27 +1964,33 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipTermedTransf
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipTermedTransfer,
     unknown
-  > = z.pipe(
-    z.object({
-      is_enabled: types.optional(types.boolean()),
-      amount: types.optional(types.number()),
-      currency_code: types.optional(
-        ComCrmContactSelfServiceResourceListContactRelationshipCurrencyCode$inboundSchema,
-      ),
-      commerce_pool: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipTermedTransferCommercePool$inboundSchema
-      )),
-      schedule: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipSchedule$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_enabled": "isEnabled",
-        "currency_code": "currencyCode",
-        "commerce_pool": "commercePool",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_enabled: types.optional(types.boolean()),
+        amount: types.optional(types.number()),
+        currency_code: types.optional(
+          ComCrmContactSelfServiceResourceListContactRelationshipCurrencyCode$inboundSchema,
+        ),
+        commerce_pool: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipTermedTransferCommercePool$inboundSchema
+          ),
+        ),
+        schedule: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipSchedule$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_enabled": "isEnabled",
+          "currency_code": "currencyCode",
+          "commerce_pool": "commercePool",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipTermedTransferFromJSON(
@@ -1927,46 +2013,60 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipContent$inbo
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      relation: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipRelation$inboundSchema
-      )),
-      group: types.optional(types.string()),
-      is_admin: types.optional(types.boolean()),
-      permissions: types.optional(
-        z.array(
-          ComCrmContactSelfServiceResourceListContactRelationshipPermission$inboundSchema,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        relation: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipRelation$inboundSchema
+          ),
         ),
-      ),
-      devices: types.optional(z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipDevice$inboundSchema
-      ))),
-      contact: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipContact$inboundSchema
-      )),
-      wallet_sharing: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipWalletSharing$inboundSchema
-      )),
-      usage_allowance: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipUsageAllowance$inboundSchema
-      )),
-      state: types.optional(
-        ComCrmContactSelfServiceResourceListContactRelationshipState$inboundSchema,
-      ),
-      termed_transfer: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipTermedTransfer$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_admin": "isAdmin",
-        "wallet_sharing": "walletSharing",
-        "usage_allowance": "usageAllowance",
-        "termed_transfer": "termedTransfer",
-      });
-    }),
+        group: types.optional(types.string()),
+        is_admin: types.optional(types.boolean()),
+        permissions: types.optional(
+          z.array(
+            ComCrmContactSelfServiceResourceListContactRelationshipPermission$inboundSchema,
+          ),
+        ),
+        devices: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipDevice$inboundSchema
+          )),
+        ),
+        contact: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipContact$inboundSchema
+          ),
+        ),
+        wallet_sharing: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipWalletSharing$inboundSchema
+          ),
+        ),
+        usage_allowance: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipUsageAllowance$inboundSchema
+          ),
+        ),
+        state: types.optional(
+          ComCrmContactSelfServiceResourceListContactRelationshipState$inboundSchema,
+        ),
+        termed_transfer: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceListContactRelationshipTermedTransfer$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_admin": "isAdmin",
+          "wallet_sharing": "walletSharing",
+          "usage_allowance": "usageAllowance",
+          "termed_transfer": "termedTransfer",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipContentFromJSON(
@@ -1989,18 +2089,16 @@ export const ComCrmContactSelfServiceResourceListContactRelationshipResponse$inb
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceListContactRelationshipResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceListContactRelationshipPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceListContactRelationshipContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmContactSelfServiceResourceListContactRelationshipContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceListContactRelationshipResponseFromJSON(
   jsonString: string,

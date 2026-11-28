@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -410,19 +410,23 @@ export type ComCrmAccountSelfServiceResourceListAccountJournalsResponse = {
 /** @internal */
 export const QueryParamTransactionType$outboundSchema: z.ZodMiniEnum<
   typeof QueryParamTransactionType
-> = z.enum(QueryParamTransactionType);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(QueryParamTransactionType));
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceListAccountJournalsQueryParamType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmAccountSelfServiceResourceListAccountJournalsQueryParamType
-  > = z.enum(ComCrmAccountSelfServiceResourceListAccountJournalsQueryParamType);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmAccountSelfServiceResourceListAccountJournalsQueryParamType)
+  );
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceListAccountJournalsOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmAccountSelfServiceResourceListAccountJournalsOrder
-  > = z.enum(ComCrmAccountSelfServiceResourceListAccountJournalsOrder);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmAccountSelfServiceResourceListAccountJournalsOrder)
+  );
 
 /** @internal */
 export type ComCrmAccountSelfServiceResourceListAccountJournalsRequest$Outbound =
@@ -443,30 +447,32 @@ export const ComCrmAccountSelfServiceResourceListAccountJournalsRequest$outbound
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceListAccountJournalsRequest$Outbound,
     ComCrmAccountSelfServiceResourceListAccountJournalsRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      postedOn: z.optional(z.int()),
-      transactionType: z.optional(QueryParamTransactionType$outboundSchema),
-      type: z.optional(
-        ComCrmAccountSelfServiceResourceListAccountJournalsQueryParamType$outboundSchema,
-      ),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmAccountSelfServiceResourceListAccountJournalsOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        postedOn: "posted_on",
-        transactionType: "transaction_type",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        postedOn: z.optional(z.int()),
+        transactionType: z.optional(QueryParamTransactionType$outboundSchema),
+        type: z.optional(
+          ComCrmAccountSelfServiceResourceListAccountJournalsQueryParamType$outboundSchema,
+        ),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmAccountSelfServiceResourceListAccountJournalsOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          postedOn: "posted_on",
+          transactionType: "transaction_type",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmAccountSelfServiceResourceListAccountJournalsRequestToJSON(
@@ -484,18 +490,20 @@ export const ComCrmAccountSelfServiceResourceListAccountJournalsPaging$inboundSc
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceListAccountJournalsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmAccountSelfServiceResourceListAccountJournalsPagingFromJSON(
@@ -517,15 +525,19 @@ export function comCrmAccountSelfServiceResourceListAccountJournalsPagingFromJSO
 export const TransactionTypeResponse$inboundSchema: z.ZodMiniType<
   TransactionTypeResponse,
   unknown
-> = openEnums.inboundSchema(TransactionTypeResponse);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(TransactionTypeResponse)
+);
 
 /** @internal */
 export const ComCrmAccountSelfServiceResourceListAccountJournalsContentType$inboundSchema:
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceListAccountJournalsContentType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmAccountSelfServiceResourceListAccountJournalsContentType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmAccountSelfServiceResourceListAccountJournalsContentType,
+    )
   );
 
 /** @internal */
@@ -533,8 +545,10 @@ export const ComCrmAccountSelfServiceResourceListAccountJournalsCurrencyCode$inb
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceListAccountJournalsCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmAccountSelfServiceResourceListAccountJournalsCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmAccountSelfServiceResourceListAccountJournalsCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -542,19 +556,21 @@ export const ComCrmAccountSelfServiceResourceListAccountJournalsInvoice$inboundS
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceListAccountJournalsInvoice,
     unknown
-  > = z.pipe(
-    z.object({
-      due_date: types.optional(types.number()),
-      overdue_amount: types.optional(types.number()),
-      unpaid_amount: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "due_date": "dueDate",
-        "overdue_amount": "overdueAmount",
-        "unpaid_amount": "unpaidAmount",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        due_date: types.optional(types.number()),
+        overdue_amount: types.optional(types.number()),
+        unpaid_amount: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "due_date": "dueDate",
+          "overdue_amount": "overdueAmount",
+          "unpaid_amount": "unpaidAmount",
+        });
+      }),
+    )
   );
 
 export function comCrmAccountSelfServiceResourceListAccountJournalsInvoiceFromJSON(
@@ -577,34 +593,38 @@ export const ComCrmAccountSelfServiceResourceListAccountJournalsContent$inboundS
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceListAccountJournalsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      number: types.optional(types.string()),
-      entity_id: types.optional(types.string()),
-      issued_date: types.optional(types.number()),
-      posted_date: types.optional(types.number()),
-      transaction_type: types.optional(TransactionTypeResponse$inboundSchema),
-      type: types.optional(
-        ComCrmAccountSelfServiceResourceListAccountJournalsContentType$inboundSchema,
-      ),
-      currency_code: types.optional(
-        ComCrmAccountSelfServiceResourceListAccountJournalsCurrencyCode$inboundSchema,
-      ),
-      amount: types.optional(types.number()),
-      invoice: types.optional(z.lazy(() =>
-        ComCrmAccountSelfServiceResourceListAccountJournalsInvoice$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "entity_id": "entityId",
-        "issued_date": "issuedDate",
-        "posted_date": "postedDate",
-        "transaction_type": "transactionType",
-        "currency_code": "currencyCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        number: types.optional(types.string()),
+        entity_id: types.optional(types.string()),
+        issued_date: types.optional(types.number()),
+        posted_date: types.optional(types.number()),
+        transaction_type: types.optional(TransactionTypeResponse$inboundSchema),
+        type: types.optional(
+          ComCrmAccountSelfServiceResourceListAccountJournalsContentType$inboundSchema,
+        ),
+        currency_code: types.optional(
+          ComCrmAccountSelfServiceResourceListAccountJournalsCurrencyCode$inboundSchema,
+        ),
+        amount: types.optional(types.number()),
+        invoice: types.optional(
+          z.lazy(() =>
+            ComCrmAccountSelfServiceResourceListAccountJournalsInvoice$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "entity_id": "entityId",
+          "issued_date": "issuedDate",
+          "posted_date": "postedDate",
+          "transaction_type": "transactionType",
+          "currency_code": "currencyCode",
+        });
+      }),
+    )
   );
 
 export function comCrmAccountSelfServiceResourceListAccountJournalsContentFromJSON(
@@ -627,18 +647,16 @@ export const ComCrmAccountSelfServiceResourceListAccountJournalsResponse$inbound
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceListAccountJournalsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmAccountSelfServiceResourceListAccountJournalsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmAccountSelfServiceResourceListAccountJournalsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmAccountSelfServiceResourceListAccountJournalsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmAccountSelfServiceResourceListAccountJournalsResponseFromJSON(
   jsonString: string,

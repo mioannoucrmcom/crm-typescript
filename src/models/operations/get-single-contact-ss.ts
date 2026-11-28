@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -1791,9 +1791,11 @@ export type GetSingleContactSSRequest$Outbound = {
 export const GetSingleContactSSRequest$outboundSchema: z.ZodMiniType<
   GetSingleContactSSRequest$Outbound,
   GetSingleContactSSRequest
-> = z.object({
-  id: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+  })
+);
 
 export function getSingleContactSSRequestToJSON(
   getSingleContactSSRequest: GetSingleContactSSRequest,
@@ -1807,20 +1809,26 @@ export function getSingleContactSSRequestToJSON(
 export const GetSingleContactSSType$inboundSchema: z.ZodMiniType<
   GetSingleContactSSType,
   unknown
-> = openEnums.inboundSchema(GetSingleContactSSType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(GetSingleContactSSType)
+);
 
 /** @internal */
 export const GetSingleContactSSRegistrationCountry$inboundSchema: z.ZodMiniType<
   GetSingleContactSSRegistrationCountry,
   unknown
-> = openEnums.inboundSchema(GetSingleContactSSRegistrationCountry);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(GetSingleContactSSRegistrationCountry)
+);
 
 /** @internal */
-export const Industry$inboundSchema: z.ZodMiniType<Industry, unknown> = z
-  .object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+export const Industry$inboundSchema: z.ZodMiniType<Industry, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function industryFromJSON(
   jsonString: string,
@@ -1836,10 +1844,12 @@ export function industryFromJSON(
 export const GetSingleContactSSSubIndustry$inboundSchema: z.ZodMiniType<
   GetSingleContactSSSubIndustry,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function getSingleContactSSSubIndustryFromJSON(
   jsonString: string,
@@ -1855,28 +1865,30 @@ export function getSingleContactSSSubIndustryFromJSON(
 export const GetSingleContactSSCompanyProfile$inboundSchema: z.ZodMiniType<
   GetSingleContactSSCompanyProfile,
   unknown
-> = z.pipe(
-  z.object({
-    registration_number: types.optional(types.string()),
-    registration_country: types.optional(
-      GetSingleContactSSRegistrationCountry$inboundSchema,
-    ),
-    tax_reference_number: types.optional(types.string()),
-    vat_registration_number: types.optional(types.string()),
-    industry: types.optional(z.lazy(() => Industry$inboundSchema)),
-    sub_industries: types.optional(
-      z.array(z.lazy(() => GetSingleContactSSSubIndustry$inboundSchema)),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "registration_number": "registrationNumber",
-      "registration_country": "registrationCountry",
-      "tax_reference_number": "taxReferenceNumber",
-      "vat_registration_number": "vatRegistrationNumber",
-      "sub_industries": "subIndustries",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      registration_number: types.optional(types.string()),
+      registration_country: types.optional(
+        GetSingleContactSSRegistrationCountry$inboundSchema,
+      ),
+      tax_reference_number: types.optional(types.string()),
+      vat_registration_number: types.optional(types.string()),
+      industry: types.optional(z.lazy(() => Industry$inboundSchema)),
+      sub_industries: types.optional(
+        z.array(z.lazy(() => GetSingleContactSSSubIndustry$inboundSchema)),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "registration_number": "registrationNumber",
+        "registration_country": "registrationCountry",
+        "tax_reference_number": "taxReferenceNumber",
+        "vat_registration_number": "vatRegistrationNumber",
+        "sub_industries": "subIndustries",
+      });
+    }),
+  )
 );
 
 export function getSingleContactSSCompanyProfileFromJSON(
@@ -1893,30 +1905,36 @@ export function getSingleContactSSCompanyProfileFromJSON(
 export const GetSingleContactSSPhoneType$inboundSchema: z.ZodMiniType<
   GetSingleContactSSPhoneType,
   unknown
-> = openEnums.inboundSchema(GetSingleContactSSPhoneType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(GetSingleContactSSPhoneType)
+);
 
 /** @internal */
 export const GetSingleContactSSCountryCode$inboundSchema: z.ZodMiniType<
   GetSingleContactSSCountryCode,
   unknown
-> = openEnums.inboundSchema(GetSingleContactSSCountryCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(GetSingleContactSSCountryCode)
+);
 
 /** @internal */
 export const GetSingleContactSSPhone$inboundSchema: z.ZodMiniType<
   GetSingleContactSSPhone,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    type: types.optional(GetSingleContactSSPhoneType$inboundSchema),
-    country_code: types.optional(GetSingleContactSSCountryCode$inboundSchema),
-    number: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "country_code": "countryCode",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(GetSingleContactSSPhoneType$inboundSchema),
+      country_code: types.optional(GetSingleContactSSCountryCode$inboundSchema),
+      number: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "country_code": "countryCode",
+      });
+    }),
+  )
 );
 
 export function getSingleContactSSPhoneFromJSON(
@@ -1933,16 +1951,20 @@ export function getSingleContactSSPhoneFromJSON(
 export const GetSingleContactSSGender$inboundSchema: z.ZodMiniType<
   GetSingleContactSSGender,
   unknown
-> = openEnums.inboundSchema(GetSingleContactSSGender);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(GetSingleContactSSGender)
+);
 
 /** @internal */
 export const GetSingleContactSSNameDay$inboundSchema: z.ZodMiniType<
   GetSingleContactSSNameDay,
   unknown
-> = z.object({
-  month: types.optional(types.number()),
-  day: types.optional(types.number()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    month: types.optional(types.number()),
+    day: types.optional(types.number()),
+  })
+);
 
 export function getSingleContactSSNameDayFromJSON(
   jsonString: string,
@@ -1958,11 +1980,13 @@ export function getSingleContactSSNameDayFromJSON(
 export const GetSingleContactSSDateOfBirth$inboundSchema: z.ZodMiniType<
   GetSingleContactSSDateOfBirth,
   unknown
-> = z.object({
-  year: types.optional(types.number()),
-  month: types.optional(types.number()),
-  day: types.optional(types.number()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    year: types.optional(types.number()),
+    month: types.optional(types.number()),
+    day: types.optional(types.number()),
+  })
+);
 
 export function getSingleContactSSDateOfBirthFromJSON(
   jsonString: string,
@@ -1977,26 +2001,30 @@ export function getSingleContactSSDateOfBirthFromJSON(
 /** @internal */
 export const GetSingleContactSSPassportIssuingCountryCode$inboundSchema:
   z.ZodMiniType<GetSingleContactSSPassportIssuingCountryCode, unknown> =
-    openEnums.inboundSchema(GetSingleContactSSPassportIssuingCountryCode);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(GetSingleContactSSPassportIssuingCountryCode)
+    );
 
 /** @internal */
 export const GetSingleContactSSPassport$inboundSchema: z.ZodMiniType<
   GetSingleContactSSPassport,
   unknown
-> = z.pipe(
-  z.object({
-    number: types.optional(types.string()),
-    issuing_country_code: types.optional(
-      GetSingleContactSSPassportIssuingCountryCode$inboundSchema,
-    ),
-    expiration_date: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "issuing_country_code": "issuingCountryCode",
-      "expiration_date": "expirationDate",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      number: types.optional(types.string()),
+      issuing_country_code: types.optional(
+        GetSingleContactSSPassportIssuingCountryCode$inboundSchema,
+      ),
+      expiration_date: types.optional(types.number()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "issuing_country_code": "issuingCountryCode",
+        "expiration_date": "expirationDate",
+      });
+    }),
+  )
 );
 
 export function getSingleContactSSPassportFromJSON(
@@ -2012,26 +2040,30 @@ export function getSingleContactSSPassportFromJSON(
 /** @internal */
 export const GetSingleContactSSIdDetailsIssuingCountryCode$inboundSchema:
   z.ZodMiniType<GetSingleContactSSIdDetailsIssuingCountryCode, unknown> =
-    openEnums.inboundSchema(GetSingleContactSSIdDetailsIssuingCountryCode);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(GetSingleContactSSIdDetailsIssuingCountryCode)
+    );
 
 /** @internal */
 export const GetSingleContactSSIdDetails$inboundSchema: z.ZodMiniType<
   GetSingleContactSSIdDetails,
   unknown
-> = z.pipe(
-  z.object({
-    number: types.optional(types.string()),
-    issuing_country_code: types.optional(
-      GetSingleContactSSIdDetailsIssuingCountryCode$inboundSchema,
-    ),
-    expiration_date: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "issuing_country_code": "issuingCountryCode",
-      "expiration_date": "expirationDate",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      number: types.optional(types.string()),
+      issuing_country_code: types.optional(
+        GetSingleContactSSIdDetailsIssuingCountryCode$inboundSchema,
+      ),
+      expiration_date: types.optional(types.number()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "issuing_country_code": "issuingCountryCode",
+        "expiration_date": "expirationDate",
+      });
+    }),
+  )
 );
 
 export function getSingleContactSSIdDetailsFromJSON(
@@ -2048,31 +2080,33 @@ export function getSingleContactSSIdDetailsFromJSON(
 export const GetSingleContactSSDemographics$inboundSchema: z.ZodMiniType<
   GetSingleContactSSDemographics,
   unknown
-> = z.pipe(
-  z.object({
-    gender: types.optional(GetSingleContactSSGender$inboundSchema),
-    name_day: types.optional(
-      z.lazy(() => GetSingleContactSSNameDay$inboundSchema),
-    ),
-    date_of_birth: types.optional(
-      z.lazy(() => GetSingleContactSSDateOfBirth$inboundSchema),
-    ),
-    passport: types.optional(
-      z.lazy(() => GetSingleContactSSPassport$inboundSchema),
-    ),
-    statutory_number: types.optional(types.string()),
-    id_details: z.optional(
-      z.nullable(z.lazy(() => GetSingleContactSSIdDetails$inboundSchema)),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "name_day": "nameDay",
-      "date_of_birth": "dateOfBirth",
-      "statutory_number": "statutoryNumber",
-      "id_details": "idDetails",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      gender: types.optional(GetSingleContactSSGender$inboundSchema),
+      name_day: types.optional(
+        z.lazy(() => GetSingleContactSSNameDay$inboundSchema),
+      ),
+      date_of_birth: types.optional(
+        z.lazy(() => GetSingleContactSSDateOfBirth$inboundSchema),
+      ),
+      passport: types.optional(
+        z.lazy(() => GetSingleContactSSPassport$inboundSchema),
+      ),
+      statutory_number: types.optional(types.string()),
+      id_details: z.optional(
+        z.nullable(z.lazy(() => GetSingleContactSSIdDetails$inboundSchema)),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "name_day": "nameDay",
+        "date_of_birth": "dateOfBirth",
+        "statutory_number": "statutoryNumber",
+        "id_details": "idDetails",
+      });
+    }),
+  )
 );
 
 export function getSingleContactSSDemographicsFromJSON(
@@ -2089,15 +2123,19 @@ export function getSingleContactSSDemographicsFromJSON(
 export const GetSingleContactSSCountryOfAgreement$inboundSchema: z.ZodMiniType<
   GetSingleContactSSCountryOfAgreement,
   unknown
-> = openEnums.inboundSchema(GetSingleContactSSCountryOfAgreement);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(GetSingleContactSSCountryOfAgreement)
+);
 
 /** @internal */
 export const LoyaltyIdentifier$inboundSchema: z.ZodMiniType<
   LoyaltyIdentifier,
   unknown
-> = z.object({
-  identifier: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    identifier: types.optional(types.string()),
+  })
+);
 
 export function loyaltyIdentifierFromJSON(
   jsonString: string,
@@ -2113,10 +2151,12 @@ export function loyaltyIdentifierFromJSON(
 export const GetSingleContactSSCustomField$inboundSchema: z.ZodMiniType<
   GetSingleContactSSCustomField,
   unknown
-> = z.object({
-  key: types.optional(types.string()),
-  value: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    key: types.optional(types.string()),
+    value: types.optional(types.string()),
+  })
+);
 
 export function getSingleContactSSCustomFieldFromJSON(
   jsonString: string,
@@ -2132,10 +2172,12 @@ export function getSingleContactSSCustomFieldFromJSON(
 export const GetSingleContactSSWallet$inboundSchema: z.ZodMiniType<
   GetSingleContactSSWallet,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  code: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    code: types.optional(types.string()),
+  })
+);
 
 export function getSingleContactSSWalletFromJSON(
   jsonString: string,
@@ -2151,17 +2193,21 @@ export function getSingleContactSSWalletFromJSON(
 export const GetSingleContactSSUsageType$inboundSchema: z.ZodMiniType<
   GetSingleContactSSUsageType,
   unknown
-> = openEnums.inboundSchema(GetSingleContactSSUsageType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(GetSingleContactSSUsageType)
+);
 
 /** @internal */
 export const GetSingleContactSSMedia$inboundSchema: z.ZodMiniType<
   GetSingleContactSSMedia,
   unknown
-> = z.object({
-  width: types.optional(types.number()),
-  height: types.optional(types.number()),
-  url: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    width: types.optional(types.number()),
+    height: types.optional(types.number()),
+    url: types.optional(types.string()),
+  })
+);
 
 export function getSingleContactSSMediaFromJSON(
   jsonString: string,
@@ -2177,32 +2223,34 @@ export function getSingleContactSSMediaFromJSON(
 export const GetSingleContactSSCreative$inboundSchema: z.ZodMiniType<
   GetSingleContactSSCreative,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    media_group_id: types.optional(types.string()),
-    usage_type: types.optional(GetSingleContactSSUsageType$inboundSchema),
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    format: types.optional(types.string()),
-    url: types.optional(types.string()),
-    public_id: types.optional(types.string()),
-    media_id: types.optional(types.string()),
-    caption: types.optional(types.string()),
-    sort_order: types.optional(types.number()),
-    media: types.optional(
-      z.array(z.lazy(() => GetSingleContactSSMedia$inboundSchema)),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "media_group_id": "mediaGroupId",
-      "usage_type": "usageType",
-      "public_id": "publicId",
-      "media_id": "mediaId",
-      "sort_order": "sortOrder",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      media_group_id: types.optional(types.string()),
+      usage_type: types.optional(GetSingleContactSSUsageType$inboundSchema),
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      format: types.optional(types.string()),
+      url: types.optional(types.string()),
+      public_id: types.optional(types.string()),
+      media_id: types.optional(types.string()),
+      caption: types.optional(types.string()),
+      sort_order: types.optional(types.number()),
+      media: types.optional(
+        z.array(z.lazy(() => GetSingleContactSSMedia$inboundSchema)),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "media_group_id": "mediaGroupId",
+        "usage_type": "usageType",
+        "public_id": "publicId",
+        "media_id": "mediaId",
+        "sort_order": "sortOrder",
+      });
+    }),
+  )
 );
 
 export function getSingleContactSSCreativeFromJSON(
@@ -2219,63 +2267,67 @@ export function getSingleContactSSCreativeFromJSON(
 export const GetSingleContactSSResponse$inboundSchema: z.ZodMiniType<
   GetSingleContactSSResponse,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    code: types.optional(types.string()),
-    type: types.optional(GetSingleContactSSType$inboundSchema),
-    first_name: types.optional(types.string()),
-    middle_name: types.optional(types.string()),
-    last_name: types.optional(types.string()),
-    company_name: types.optional(types.string()),
-    company_profile: types.optional(
-      z.lazy(() => GetSingleContactSSCompanyProfile$inboundSchema),
-    ),
-    language_code: types.optional(types.string()),
-    email: types.optional(types.string()),
-    phone: types.optional(z.lazy(() => GetSingleContactSSPhone$inboundSchema)),
-    demographics: types.optional(
-      z.lazy(() => GetSingleContactSSDemographics$inboundSchema),
-    ),
-    referral_code: types.optional(types.string()),
-    sms_opt_out: types.optional(types.boolean()),
-    email_opt_out: types.optional(types.boolean()),
-    country_of_agreement: types.optional(
-      GetSingleContactSSCountryOfAgreement$inboundSchema,
-    ),
-    avatar_url: types.optional(types.string()),
-    loyalty_identifiers: types.optional(
-      z.array(z.lazy(() => LoyaltyIdentifier$inboundSchema)),
-    ),
-    custom_fields: types.optional(
-      z.array(z.lazy(() => GetSingleContactSSCustomField$inboundSchema)),
-    ),
-    wallet: types.optional(
-      z.lazy(() => GetSingleContactSSWallet$inboundSchema),
-    ),
-    creatives: types.optional(
-      z.array(z.lazy(() => GetSingleContactSSCreative$inboundSchema)),
-    ),
-    viewed_onboarding_cards: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "first_name": "firstName",
-      "middle_name": "middleName",
-      "last_name": "lastName",
-      "company_name": "companyName",
-      "company_profile": "companyProfile",
-      "language_code": "languageCode",
-      "referral_code": "referralCode",
-      "sms_opt_out": "smsOptOut",
-      "email_opt_out": "emailOptOut",
-      "country_of_agreement": "countryOfAgreement",
-      "avatar_url": "avatarUrl",
-      "loyalty_identifiers": "loyaltyIdentifiers",
-      "custom_fields": "customFields",
-      "viewed_onboarding_cards": "viewedOnboardingCards",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      code: types.optional(types.string()),
+      type: types.optional(GetSingleContactSSType$inboundSchema),
+      first_name: types.optional(types.string()),
+      middle_name: types.optional(types.string()),
+      last_name: types.optional(types.string()),
+      company_name: types.optional(types.string()),
+      company_profile: types.optional(
+        z.lazy(() => GetSingleContactSSCompanyProfile$inboundSchema),
+      ),
+      language_code: types.optional(types.string()),
+      email: types.optional(types.string()),
+      phone: types.optional(
+        z.lazy(() => GetSingleContactSSPhone$inboundSchema),
+      ),
+      demographics: types.optional(
+        z.lazy(() => GetSingleContactSSDemographics$inboundSchema),
+      ),
+      referral_code: types.optional(types.string()),
+      sms_opt_out: types.optional(types.boolean()),
+      email_opt_out: types.optional(types.boolean()),
+      country_of_agreement: types.optional(
+        GetSingleContactSSCountryOfAgreement$inboundSchema,
+      ),
+      avatar_url: types.optional(types.string()),
+      loyalty_identifiers: types.optional(
+        z.array(z.lazy(() => LoyaltyIdentifier$inboundSchema)),
+      ),
+      custom_fields: types.optional(
+        z.array(z.lazy(() => GetSingleContactSSCustomField$inboundSchema)),
+      ),
+      wallet: types.optional(
+        z.lazy(() => GetSingleContactSSWallet$inboundSchema),
+      ),
+      creatives: types.optional(
+        z.array(z.lazy(() => GetSingleContactSSCreative$inboundSchema)),
+      ),
+      viewed_onboarding_cards: types.optional(types.boolean()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "first_name": "firstName",
+        "middle_name": "middleName",
+        "last_name": "lastName",
+        "company_name": "companyName",
+        "company_profile": "companyProfile",
+        "language_code": "languageCode",
+        "referral_code": "referralCode",
+        "sms_opt_out": "smsOptOut",
+        "email_opt_out": "emailOptOut",
+        "country_of_agreement": "countryOfAgreement",
+        "avatar_url": "avatarUrl",
+        "loyalty_identifiers": "loyaltyIdentifiers",
+        "custom_fields": "customFields",
+        "viewed_onboarding_cards": "viewedOnboardingCards",
+      });
+    }),
+  )
 );
 
 export function getSingleContactSSResponseFromJSON(

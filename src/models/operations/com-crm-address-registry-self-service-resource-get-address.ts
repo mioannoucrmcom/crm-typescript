@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -355,16 +355,18 @@ export const ComCrmAddressRegistrySelfServiceResourceGetAddressSecurity$outbound
   z.ZodMiniType<
     ComCrmAddressRegistrySelfServiceResourceGetAddressSecurity$Outbound,
     ComCrmAddressRegistrySelfServiceResourceGetAddressSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmAddressRegistrySelfServiceResourceGetAddressSecurityToJSON(
@@ -390,18 +392,20 @@ export const ComCrmAddressRegistrySelfServiceResourceGetAddressRequest$outboundS
   z.ZodMiniType<
     ComCrmAddressRegistrySelfServiceResourceGetAddressRequest$Outbound,
     ComCrmAddressRegistrySelfServiceResourceGetAddressRequest
-  > = z.pipe(
-    z.object({
-      googlePlaceId: z.string(),
-      latlng: z.string(),
-      sessionId: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        googlePlaceId: "google_place_id",
-        sessionId: "session_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        googlePlaceId: z.string(),
+        latlng: z.string(),
+        sessionId: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          googlePlaceId: "google_place_id",
+          sessionId: "session_id",
+        });
+      }),
+    )
   );
 
 export function comCrmAddressRegistrySelfServiceResourceGetAddressRequestToJSON(
@@ -419,8 +423,10 @@ export const ComCrmAddressRegistrySelfServiceResourceGetAddressCountryCode$inbou
   z.ZodMiniType<
     ComCrmAddressRegistrySelfServiceResourceGetAddressCountryCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmAddressRegistrySelfServiceResourceGetAddressCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmAddressRegistrySelfServiceResourceGetAddressCountryCode,
+    )
   );
 
 /** @internal */
@@ -428,32 +434,34 @@ export const ComCrmAddressRegistrySelfServiceResourceGetAddressResponse$inboundS
   z.ZodMiniType<
     ComCrmAddressRegistrySelfServiceResourceGetAddressResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      address: types.optional(types.string()),
-      address_line_1: types.optional(types.string()),
-      address_line_2: types.optional(types.string()),
-      state_province_county: types.optional(types.string()),
-      town_city: types.optional(types.string()),
-      postal_code: types.optional(types.string()),
-      country_code: types.optional(
-        ComCrmAddressRegistrySelfServiceResourceGetAddressCountryCode$inboundSchema,
-      ),
-      lat: types.optional(types.number()),
-      lon: types.optional(types.number()),
-      google_place_id: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "address_line_1": "addressLine1",
-        "address_line_2": "addressLine2",
-        "state_province_county": "stateProvinceCounty",
-        "town_city": "townCity",
-        "postal_code": "postalCode",
-        "country_code": "countryCode",
-        "google_place_id": "googlePlaceId",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        address: types.optional(types.string()),
+        address_line_1: types.optional(types.string()),
+        address_line_2: types.optional(types.string()),
+        state_province_county: types.optional(types.string()),
+        town_city: types.optional(types.string()),
+        postal_code: types.optional(types.string()),
+        country_code: types.optional(
+          ComCrmAddressRegistrySelfServiceResourceGetAddressCountryCode$inboundSchema,
+        ),
+        lat: types.optional(types.number()),
+        lon: types.optional(types.number()),
+        google_place_id: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "address_line_1": "addressLine1",
+          "address_line_2": "addressLine2",
+          "state_province_county": "stateProvinceCounty",
+          "town_city": "townCity",
+          "postal_code": "postalCode",
+          "country_code": "countryCode",
+          "google_place_id": "googlePlaceId",
+        });
+      }),
+    )
   );
 
 export function comCrmAddressRegistrySelfServiceResourceGetAddressResponseFromJSON(

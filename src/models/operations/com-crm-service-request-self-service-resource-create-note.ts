@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -51,10 +51,12 @@ export const ComCrmServiceRequestSelfServiceResourceCreateNoteRequestBody$outbou
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceCreateNoteRequestBody$Outbound,
     ComCrmServiceRequestSelfServiceResourceCreateNoteRequestBody
-  > = z.object({
-    id: z.optional(z.string()),
-    note: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+      note: z.string(),
+    })
+  );
 
 export function comCrmServiceRequestSelfServiceResourceCreateNoteRequestBodyToJSON(
   comCrmServiceRequestSelfServiceResourceCreateNoteRequestBody:
@@ -80,14 +82,14 @@ export const ComCrmServiceRequestSelfServiceResourceCreateNoteRequest$outboundSc
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceCreateNoteRequest$Outbound,
     ComCrmServiceRequestSelfServiceResourceCreateNoteRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmServiceRequestSelfServiceResourceCreateNoteRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmServiceRequestSelfServiceResourceCreateNoteRequestToJSON(
   comCrmServiceRequestSelfServiceResourceCreateNoteRequest:
@@ -104,9 +106,11 @@ export const ComCrmServiceRequestSelfServiceResourceCreateNoteResponse$inboundSc
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceCreateNoteResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmServiceRequestSelfServiceResourceCreateNoteResponseFromJSON(
   jsonString: string,

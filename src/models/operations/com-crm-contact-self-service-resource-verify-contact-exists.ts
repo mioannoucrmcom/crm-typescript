@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -45,15 +45,17 @@ export const ComCrmContactSelfServiceResourceVerifyContactExistsSecurity$outboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceVerifyContactExistsSecurity$Outbound,
     ComCrmContactSelfServiceResourceVerifyContactExistsSecurity
-  > = z.pipe(
-    z.object({
-      publicAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        publicAPIKey: "Public_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        publicAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          publicAPIKey: "Public_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceVerifyContactExistsSecurityToJSON(
@@ -78,16 +80,18 @@ export const ComCrmContactSelfServiceResourceVerifyContactExistsRequest$outbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceVerifyContactExistsRequest$Outbound,
     ComCrmContactSelfServiceResourceVerifyContactExistsRequest
-  > = z.pipe(
-    z.object({
-      emailAddress: z.optional(z.string()),
-      phone: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        emailAddress: "email_address",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        emailAddress: z.optional(z.string()),
+        phone: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          emailAddress: "email_address",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceVerifyContactExistsRequestToJSON(
@@ -105,15 +109,17 @@ export const ComCrmContactSelfServiceResourceVerifyContactExistsResponse$inbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceVerifyContactExistsResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      contact_exists: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "contact_exists": "contactExists",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        contact_exists: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "contact_exists": "contactExists",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceVerifyContactExistsResponseFromJSON(

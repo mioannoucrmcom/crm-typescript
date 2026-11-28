@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -112,16 +112,18 @@ export const ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsSecurity
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsSecurity$Outbound,
     ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceCommandsSelfServiceResourceSendServiceCommandsSecurityToJSON(
@@ -149,11 +151,13 @@ export const ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsContact$
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsContact$Outbound,
     ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsContact
-  > = z.object({
-    id: z.optional(z.string()),
-    name: z.optional(z.string()),
-    code: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+      name: z.optional(z.string()),
+      code: z.optional(z.string()),
+    })
+  );
 
 export function comCrmServiceCommandsSelfServiceResourceSendServiceCommandsContactToJSON(
   comCrmServiceCommandsSelfServiceResourceSendServiceCommandsContact:
@@ -179,10 +183,12 @@ export const ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsMetadata
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsMetadataAttribute$Outbound,
     ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsMetadataAttribute
-  > = z.object({
-    key: z.string(),
-    value: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: z.string(),
+      value: z.string(),
+    })
+  );
 
 export function comCrmServiceCommandsSelfServiceResourceSendServiceCommandsMetadataAttributeToJSON(
   comCrmServiceCommandsSelfServiceResourceSendServiceCommandsMetadataAttribute:
@@ -217,25 +223,31 @@ export const ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsRequest$
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsRequest$Outbound,
     ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsRequest
-  > = z.pipe(
-    z.object({
-      integrationId: z.string(),
-      serviceId: z.string(),
-      code: z.string(),
-      contact: z.optional(z.lazy(() =>
-        ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsContact$outboundSchema
-      )),
-      metadataAttributes: z.optional(z.array(z.lazy(() =>
-        ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsMetadataAttribute$outboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        integrationId: "integration_id",
-        serviceId: "service_id",
-        metadataAttributes: "metadata_attributes",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        integrationId: z.string(),
+        serviceId: z.string(),
+        code: z.string(),
+        contact: z.optional(
+          z.lazy(() =>
+            ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsContact$outboundSchema
+          ),
+        ),
+        metadataAttributes: z.optional(
+          z.array(z.lazy(() =>
+            ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsMetadataAttribute$outboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          integrationId: "integration_id",
+          serviceId: "service_id",
+          metadataAttributes: "metadata_attributes",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceCommandsSelfServiceResourceSendServiceCommandsRequestToJSON(
@@ -255,8 +267,10 @@ export const ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsState$in
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsState,
+    )
   );
 
 /** @internal */
@@ -264,11 +278,13 @@ export const ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsResponse
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsResponse,
     unknown
-  > = z.object({
-    state: types.optional(
-      ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsState$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      state: types.optional(
+        ComCrmServiceCommandsSelfServiceResourceSendServiceCommandsState$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmServiceCommandsSelfServiceResourceSendServiceCommandsResponseFromJSON(
   jsonString: string,

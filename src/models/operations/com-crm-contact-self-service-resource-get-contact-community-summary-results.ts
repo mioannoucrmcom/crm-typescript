@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -456,8 +456,10 @@ export type ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsRes
 export const ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsOrder
-  > = z.enum(
-    ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsOrder,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsOrder,
+    )
   );
 
 /** @internal */
@@ -477,24 +479,26 @@ export const ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsRe
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsRequest$Outbound,
     ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsRequest
-  > = z.pipe(
-    z.object({
-      group: z.string(),
-      includeTotal: z.optional(z.boolean()),
-      order: z.optional(
-        ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsOrder$outboundSchema,
-      ),
-      ownerId: z.string(),
-      page: z.optional(z.int()),
-      size: z.optional(z.int()),
-      sort: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        includeTotal: "include_total",
-        ownerId: "owner_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        group: z.string(),
+        includeTotal: z.optional(z.boolean()),
+        order: z.optional(
+          ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsOrder$outboundSchema,
+        ),
+        ownerId: z.string(),
+        page: z.optional(z.int()),
+        size: z.optional(z.int()),
+        sort: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          includeTotal: "include_total",
+          ownerId: "owner_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactCommunitySummaryResultsRequestToJSON(
@@ -514,18 +518,20 @@ export const ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsPa
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactCommunitySummaryResultsPagingFromJSON(
@@ -548,8 +554,10 @@ export const ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsCo
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsCountryCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsCountryCode,
+    )
   );
 
 /** @internal */
@@ -557,18 +565,20 @@ export const ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsPh
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsPhone,
     unknown
-  > = z.pipe(
-    z.object({
-      country_code: types.optional(
-        ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsCountryCode$inboundSchema,
-      ),
-      number: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "country_code": "countryCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        country_code: types.optional(
+          ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsCountryCode$inboundSchema,
+        ),
+        number: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "country_code": "countryCode",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactCommunitySummaryResultsPhoneFromJSON(
@@ -591,22 +601,26 @@ export const ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsCo
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsContact,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      first_name: types.optional(types.string()),
-      last_name: types.optional(types.string()),
-      phone: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsPhone$inboundSchema
-      )),
-      email: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "first_name": "firstName",
-        "last_name": "lastName",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        first_name: types.optional(types.string()),
+        last_name: types.optional(types.string()),
+        phone: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsPhone$inboundSchema
+          ),
+        ),
+        email: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "first_name": "firstName",
+          "last_name": "lastName",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactCommunitySummaryResultsContactFromJSON(
@@ -629,8 +643,10 @@ export const ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsSt
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsState,
+    )
   );
 
 /** @internal */
@@ -638,24 +654,28 @@ export const ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsCo
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(z.any()),
-      contact: types.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsContact$inboundSchema
-      )),
-      state: types.optional(
-        ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsState$inboundSchema,
-      ),
-      is_owner: types.optional(types.boolean()),
-      relationship_id: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_owner": "isOwner",
-        "relationship_id": "relationshipId",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(z.any()),
+        contact: types.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsContact$inboundSchema
+          ),
+        ),
+        state: types.optional(
+          ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsState$inboundSchema,
+        ),
+        is_owner: types.optional(types.boolean()),
+        relationship_id: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_owner": "isOwner",
+          "relationship_id": "relationshipId",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceGetContactCommunitySummaryResultsContentFromJSON(
@@ -678,18 +698,16 @@ export const ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsRe
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmContactSelfServiceResourceGetContactCommunitySummaryResultsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceGetContactCommunitySummaryResultsResponseFromJSON(
   jsonString: string,

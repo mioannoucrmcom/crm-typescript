@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -173,16 +173,18 @@ export const ComCrmQueueSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmQueueSelfServiceResourceListRequest$Outbound,
     ComCrmQueueSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      name: z.optional(z.string()),
-      searchValue: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        searchValue: "search_value",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        name: z.optional(z.string()),
+        searchValue: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          searchValue: "search_value",
+        });
+      }),
+    )
   );
 
 export function comCrmQueueSelfServiceResourceListRequestToJSON(
@@ -198,10 +200,13 @@ export function comCrmQueueSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const ComCrmQueueSelfServiceResourceListOwner$inboundSchema:
-  z.ZodMiniType<ComCrmQueueSelfServiceResourceListOwner, unknown> = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  z.ZodMiniType<ComCrmQueueSelfServiceResourceListOwner, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+      })
+    );
 
 export function comCrmQueueSelfServiceResourceListOwnerFromJSON(
   jsonString: string,
@@ -220,26 +225,28 @@ export function comCrmQueueSelfServiceResourceListOwnerFromJSON(
 }
 
 /** @internal */
-export const Urgency$inboundSchema: z.ZodMiniType<Urgency, unknown> = openEnums
-  .inboundSchema(Urgency);
+export const Urgency$inboundSchema: z.ZodMiniType<Urgency, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Urgency));
 
 /** @internal */
-export const Impact$inboundSchema: z.ZodMiniType<Impact, unknown> = openEnums
-  .inboundSchema(Impact);
+export const Impact$inboundSchema: z.ZodMiniType<Impact, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Impact));
 
 /** @internal */
 export const Priority$inboundSchema: z.ZodMiniType<Priority, unknown> =
-  openEnums.inboundSchema(Priority);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Priority));
 
 /** @internal */
 export const DefaultPriority$inboundSchema: z.ZodMiniType<
   DefaultPriority,
   unknown
-> = z.object({
-  urgency: types.optional(Urgency$inboundSchema),
-  impact: types.optional(Impact$inboundSchema),
-  priority: types.optional(Priority$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    urgency: types.optional(Urgency$inboundSchema),
+    impact: types.optional(Impact$inboundSchema),
+    priority: types.optional(Priority$inboundSchema),
+  })
+);
 
 export function defaultPriorityFromJSON(
   jsonString: string,
@@ -252,18 +259,20 @@ export function defaultPriorityFromJSON(
 }
 
 /** @internal */
-export const DefaultTag$inboundSchema: z.ZodMiniType<DefaultTag, unknown> = z
-  .pipe(
-    z.object({
-      tag_id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      colour: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "tag_id": "tagId",
-      });
-    }),
+export const DefaultTag$inboundSchema: z.ZodMiniType<DefaultTag, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        tag_id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        colour: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "tag_id": "tagId",
+        });
+      }),
+    )
   );
 
 export function defaultTagFromJSON(
@@ -278,13 +287,14 @@ export function defaultTagFromJSON(
 
 /** @internal */
 export const ComCrmQueueSelfServiceResourceListCategory$inboundSchema:
-  z.ZodMiniType<ComCrmQueueSelfServiceResourceListCategory, unknown> = z.object(
-    {
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      description: types.optional(types.string()),
-    },
-  );
+  z.ZodMiniType<ComCrmQueueSelfServiceResourceListCategory, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        description: types.optional(types.string()),
+      })
+    );
 
 export function comCrmQueueSelfServiceResourceListCategoryFromJSON(
   jsonString: string,
@@ -304,31 +314,36 @@ export function comCrmQueueSelfServiceResourceListCategoryFromJSON(
 
 /** @internal */
 export const ComCrmQueueSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<ComCrmQueueSelfServiceResourceListContent, unknown> = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      classification: types.optional(types.string()),
-      owner: types.optional(z.lazy(() =>
-        ComCrmQueueSelfServiceResourceListOwner$inboundSchema
-      )),
-      default_priority: types.optional(z.lazy(() =>
-        DefaultPriority$inboundSchema
-      )),
-      default_tags: types.optional(z.array(z.lazy(() =>
-        DefaultTag$inboundSchema
-      ))),
-      categories: types.optional(z.array(z.lazy(() =>
-        ComCrmQueueSelfServiceResourceListCategory$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "default_priority": "defaultPriority",
-        "default_tags": "defaultTags",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmQueueSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          classification: types.optional(types.string()),
+          owner: types.optional(
+            z.lazy(() => ComCrmQueueSelfServiceResourceListOwner$inboundSchema),
+          ),
+          default_priority: types.optional(
+            z.lazy(() => DefaultPriority$inboundSchema),
+          ),
+          default_tags: types.optional(
+            z.array(z.lazy(() => DefaultTag$inboundSchema)),
+          ),
+          categories: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmQueueSelfServiceResourceListCategory$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "default_priority": "defaultPriority",
+            "default_tags": "defaultTags",
+          });
+        }),
+      )
+    );
 
 export function comCrmQueueSelfServiceResourceListContentFromJSON(
   jsonString: string,
@@ -348,13 +363,14 @@ export function comCrmQueueSelfServiceResourceListContentFromJSON(
 
 /** @internal */
 export const ComCrmQueueSelfServiceResourceListResponse$inboundSchema:
-  z.ZodMiniType<ComCrmQueueSelfServiceResourceListResponse, unknown> = z.object(
-    {
-      content: types.optional(z.array(z.lazy(() =>
-        ComCrmQueueSelfServiceResourceListContent$inboundSchema
-      ))),
-    },
-  );
+  z.ZodMiniType<ComCrmQueueSelfServiceResourceListResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        content: types.optional(z.array(z.lazy(() =>
+          ComCrmQueueSelfServiceResourceListContent$inboundSchema
+        ))),
+      })
+    );
 
 export function comCrmQueueSelfServiceResourceListResponseFromJSON(
   jsonString: string,

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -176,9 +176,11 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTran
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsRequest$Outbound,
     ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsRequestToJSON(
   comCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsRequest:
@@ -197,16 +199,20 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTran
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsLanguageCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsLanguageCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsLanguageCode,
+    )
   );
 
 /** @internal */
 export const ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsUsageType$inboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsUsageType
-  > = z.enum(
-    ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsUsageType,
+    )
   );
 
 /** @internal */
@@ -214,11 +220,13 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTran
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsMediaFromJSON(
   jsonString: string,
@@ -240,31 +248,35 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTran
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsCreativeFromJSON(
@@ -287,25 +299,29 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTran
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsEmbeddedLink,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      title: types.optional(types.string()),
-      url: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      language_code: types.optional(
-        ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsLanguageCode$inboundSchema,
-      ),
-      creatives: types.optional(z.array(z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsCreative$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "sort_order": "sortOrder",
-        "language_code": "languageCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        title: types.optional(types.string()),
+        url: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        language_code: types.optional(
+          ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsLanguageCode$inboundSchema,
+        ),
+        creatives: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsCreative$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "sort_order": "sortOrder",
+          "language_code": "languageCode",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsEmbeddedLinkFromJSON(
@@ -328,17 +344,21 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTran
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      embedded_links: types.optional(z.array(z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsEmbeddedLink$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "embedded_links": "embeddedLinks",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        embedded_links: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsEmbeddedLink$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "embedded_links": "embeddedLinks",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinksTranslationsResponseFromJSON(

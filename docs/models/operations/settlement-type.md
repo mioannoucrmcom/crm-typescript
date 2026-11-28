@@ -13,11 +13,11 @@ Defines the settlement transaction type
 import { SettlementType } from "crm/models/operations";
 
 let value: SettlementType = "AWARD";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "AWARD" | "SPEND" | "AWARD_FEE" | "SPEND_FEE" | Unrecognized<string>

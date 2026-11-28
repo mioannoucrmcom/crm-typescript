@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -51,9 +51,11 @@ export const ComCrmContactSelfServiceResourceUpdateContactGroupNameRequestBody$o
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdateContactGroupNameRequestBody$Outbound,
     ComCrmContactSelfServiceResourceUpdateContactGroupNameRequestBody
-  > = z.object({
-    name: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      name: z.optional(z.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceUpdateContactGroupNameRequestBodyToJSON(
   comCrmContactSelfServiceResourceUpdateContactGroupNameRequestBody:
@@ -80,15 +82,15 @@ export const ComCrmContactSelfServiceResourceUpdateContactGroupNameRequest$outbo
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdateContactGroupNameRequest$Outbound,
     ComCrmContactSelfServiceResourceUpdateContactGroupNameRequest
-  > = z.object({
-    id: z.string(),
-    name: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      name: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceUpdateContactGroupNameRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceUpdateContactGroupNameRequestToJSON(
   comCrmContactSelfServiceResourceUpdateContactGroupNameRequest:
@@ -105,9 +107,11 @@ export const ComCrmContactSelfServiceResourceUpdateContactGroupNameResponse$inbo
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdateContactGroupNameResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceUpdateContactGroupNameResponseFromJSON(
   jsonString: string,

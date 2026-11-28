@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -1474,15 +1474,17 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSecuri
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSecurity$Outbound,
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesSecurityToJSON(
@@ -1501,16 +1503,20 @@ export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesSec
 export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesQueryParamClassification$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesQueryParamClassification
-  > = z.enum(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesQueryParamClassification,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesQueryParamClassification,
+    )
   );
 
 /** @internal */
 export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesOrderEnum$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesOrderEnum
-  > = z.enum(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesOrderEnum,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesOrderEnum,
+    )
   );
 
 /** @internal */
@@ -1534,34 +1540,36 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesReques
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesRequest$Outbound,
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      classification: z.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesQueryParamClassification$outboundSchema,
-      ),
-      includeFutureInfo: z._default(z.boolean(), false),
-      includeOrderInfo: z._default(z.boolean(), false),
-      includeSubscription: z.optional(z.boolean()),
-      subscriptionId: z.optional(z.string()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesOrderEnum$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        includeFutureInfo: "include_future_info",
-        includeOrderInfo: "include_order_info",
-        includeSubscription: "include_subscription",
-        subscriptionId: "subscription_id",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        classification: z.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesQueryParamClassification$outboundSchema,
+        ),
+        includeFutureInfo: z._default(z.boolean(), false),
+        includeOrderInfo: z._default(z.boolean(), false),
+        includeSubscription: z.optional(z.boolean()),
+        subscriptionId: z.optional(z.string()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesOrderEnum$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          includeFutureInfo: "include_future_info",
+          includeOrderInfo: "include_order_info",
+          includeSubscription: "include_subscription",
+          subscriptionId: "subscription_id",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesRequestToJSON(
@@ -1581,18 +1589,20 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaging
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesPagingFromJSON(
@@ -1615,8 +1625,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesState$
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesState,
+    )
   );
 
 /** @internal */
@@ -1624,8 +1636,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesConten
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContentClassification,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContentClassification,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContentClassification,
+    )
   );
 
 /** @internal */
@@ -1633,8 +1647,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTypeCo
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTypeComposition,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTypeComposition,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTypeComposition,
+    )
   );
 
 /** @internal */
@@ -1642,8 +1658,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesInstan
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesInstanceModel,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesInstanceModel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesInstanceModel,
+    )
   );
 
 /** @internal */
@@ -1651,27 +1669,29 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesProduc
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesProduct,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      sku: types.optional(types.string()),
-      classification: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContentClassification$inboundSchema,
-      ),
-      type_composition: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTypeComposition$inboundSchema,
-      ),
-      instance_model: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesInstanceModel$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "type_composition": "typeComposition",
-        "instance_model": "instanceModel",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        sku: types.optional(types.string()),
+        classification: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContentClassification$inboundSchema,
+        ),
+        type_composition: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTypeComposition$inboundSchema,
+        ),
+        instance_model: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesInstanceModel$inboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "type_composition": "typeComposition",
+          "instance_model": "instanceModel",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesProductFromJSON(
@@ -1694,8 +1714,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesCurren
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -1703,8 +1725,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTaxMod
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTaxModel,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTaxModel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTaxModel,
+    )
   );
 
 /** @internal */
@@ -1712,8 +1736,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceU
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceUot,
+    )
   );
 
 /** @internal */
@@ -1721,12 +1747,14 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceB
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceBillingPeriod,
     unknown
-  > = z.object({
-    duration: types.optional(types.number()),
-    uot: types.optional(
-      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceUot$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      duration: types.optional(types.number()),
+      uot: types.optional(
+        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceUot$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceBillingPeriodFromJSON(
   jsonString: string,
@@ -1748,29 +1776,33 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPrice$
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPrice,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      price: types.optional(types.number()),
-      currency_code: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesCurrencyCode$inboundSchema,
-      ),
-      tax_model: z._default(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTaxModel$inboundSchema,
-        "TAX_INCLUSIVE",
-      ),
-      billing_period: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceBillingPeriod$inboundSchema
-      )),
-      label: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "currency_code": "currencyCode",
-        "tax_model": "taxModel",
-        "billing_period": "billingPeriod",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        price: types.optional(types.number()),
+        currency_code: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesCurrencyCode$inboundSchema,
+        ),
+        tax_model: z._default(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTaxModel$inboundSchema,
+          "TAX_INCLUSIVE",
+        ),
+        billing_period: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceBillingPeriod$inboundSchema
+          ),
+        ),
+        label: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "currency_code": "currencyCode",
+          "tax_model": "taxModel",
+          "billing_period": "billingPeriod",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesPriceFromJSON(
@@ -1789,18 +1821,21 @@ export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesPri
 }
 
 /** @internal */
-export const Billing$inboundSchema: z.ZodMiniType<Billing, unknown> = z.pipe(
-  z.object({
-    billed_from: types.optional(types.number()),
-    billed_to: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "billed_from": "billedFrom",
-      "billed_to": "billedTo",
-    });
-  }),
-);
+export const Billing$inboundSchema: z.ZodMiniType<Billing, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        billed_from: types.optional(types.number()),
+        billed_to: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "billed_from": "billedFrom",
+          "billed_to": "billedTo",
+        });
+      }),
+    )
+  );
 
 export function billingFromJSON(
   jsonString: string,
@@ -1817,8 +1852,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillin
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillingModel,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillingModel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillingModel,
+    )
   );
 
 /** @internal */
@@ -1826,8 +1863,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContra
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContractPeriodUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContractPeriodUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContractPeriodUot,
+    )
   );
 
 /** @internal */
@@ -1835,21 +1874,23 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContra
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContractPeriod,
     unknown
-  > = z.pipe(
-    z.object({
-      duration: types.optional(types.number()),
-      uot: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContractPeriodUot$inboundSchema,
-      ),
-      start_date: types.optional(types.number()),
-      end_date: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "start_date": "startDate",
-        "end_date": "endDate",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        duration: types.optional(types.number()),
+        uot: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContractPeriodUot$inboundSchema,
+        ),
+        start_date: types.optional(types.number()),
+        end_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "start_date": "startDate",
+          "end_date": "endDate",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesContractPeriodFromJSON(
@@ -1869,19 +1910,21 @@ export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesCon
 
 /** @internal */
 export const TermedPeriod$inboundSchema: z.ZodMiniType<TermedPeriod, unknown> =
-  z.pipe(
-    z.object({
-      billing_cycles: types.optional(types.number()),
-      start_date: types.optional(types.number()),
-      end_date: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "billing_cycles": "billingCycles",
-        "start_date": "startDate",
-        "end_date": "endDate",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        billing_cycles: types.optional(types.number()),
+        start_date: types.optional(types.number()),
+        end_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "billing_cycles": "billingCycles",
+          "start_date": "startDate",
+          "end_date": "endDate",
+        });
+      }),
+    )
   );
 
 export function termedPeriodFromJSON(
@@ -1899,17 +1942,19 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesAccess
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesAccessPeriod,
     unknown
-  > = z.pipe(
-    z.object({
-      start_date: types.optional(types.number()),
-      end_date: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "start_date": "startDate",
-        "end_date": "endDate",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        start_date: types.optional(types.number()),
+        end_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "start_date": "startDate",
+          "end_date": "endDate",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesAccessPeriodFromJSON(
@@ -1932,34 +1977,38 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTerms$
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTerms,
     unknown
-  > = z.pipe(
-    z.object({
-      billing_model: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillingModel$inboundSchema,
-      ),
-      auto_renew: types.optional(types.boolean()),
-      in_contract: types.optional(types.boolean()),
-      contract_period: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContractPeriod$inboundSchema
-      )),
-      termed_period: types.optional(z.lazy(() =>
-        TermedPeriod$inboundSchema
-      )),
-      quantity: types.optional(types.number()),
-      access_period: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesAccessPeriod$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "billing_model": "billingModel",
-        "auto_renew": "autoRenew",
-        "in_contract": "inContract",
-        "contract_period": "contractPeriod",
-        "termed_period": "termedPeriod",
-        "access_period": "accessPeriod",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        billing_model: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillingModel$inboundSchema,
+        ),
+        auto_renew: types.optional(types.boolean()),
+        in_contract: types.optional(types.boolean()),
+        contract_period: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContractPeriod$inboundSchema
+          ),
+        ),
+        termed_period: types.optional(z.lazy(() => TermedPeriod$inboundSchema)),
+        quantity: types.optional(types.number()),
+        access_period: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesAccessPeriod$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "billing_model": "billingModel",
+          "auto_renew": "autoRenew",
+          "in_contract": "inContract",
+          "contract_period": "contractPeriod",
+          "termed_period": "termedPeriod",
+          "access_period": "accessPeriod",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesTermsFromJSON(
@@ -1982,36 +2031,40 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialP
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialPeriodUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialPeriodUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialPeriodUot,
+    )
   );
 
 /** @internal */
 export const TrialState$inboundSchema: z.ZodMiniType<TrialState, unknown> =
-  openEnums.inboundSchema(TrialState);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(TrialState));
 
 /** @internal */
 export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialPeriod$inboundSchema:
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialPeriod,
     unknown
-  > = z.pipe(
-    z.object({
-      start_date: types.optional(types.number()),
-      end_date: types.optional(types.number()),
-      duration: types.optional(types.number()),
-      uot: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialPeriodUot$inboundSchema,
-      ),
-      trial_state: types.optional(TrialState$inboundSchema),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "start_date": "startDate",
-        "end_date": "endDate",
-        "trial_state": "trialState",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        start_date: types.optional(types.number()),
+        end_date: types.optional(types.number()),
+        duration: types.optional(types.number()),
+        uot: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialPeriodUot$inboundSchema,
+        ),
+        trial_state: types.optional(TrialState$inboundSchema),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "start_date": "startDate",
+          "end_date": "endDate",
+          "trial_state": "trialState",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialPeriodFromJSON(
@@ -2034,17 +2087,19 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaused
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPausedPeriod,
     unknown
-  > = z.pipe(
-    z.object({
-      start_date: types.optional(types.number()),
-      end_date: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "start_date": "startDate",
-        "end_date": "endDate",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        start_date: types.optional(types.number()),
+        end_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "start_date": "startDate",
+          "end_date": "endDate",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesPausedPeriodFromJSON(
@@ -2066,11 +2121,13 @@ export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesPau
 export const BundledServiceProduct$inboundSchema: z.ZodMiniType<
   BundledServiceProduct,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-  sku: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+    sku: types.optional(types.string()),
+  })
+);
 
 export function bundledServiceProductFromJSON(
   jsonString: string,
@@ -2086,10 +2143,12 @@ export function bundledServiceProductFromJSON(
 export const BundledService$inboundSchema: z.ZodMiniType<
   BundledService,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  product: types.optional(z.lazy(() => BundledServiceProduct$inboundSchema)),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    product: types.optional(z.lazy(() => BundledServiceProduct$inboundSchema)),
+  })
+);
 
 export function bundledServiceFromJSON(
   jsonString: string,
@@ -2105,11 +2164,13 @@ export function bundledServiceFromJSON(
 export const BundledDeviceProduct$inboundSchema: z.ZodMiniType<
   BundledDeviceProduct,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-  sku: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+    sku: types.optional(types.string()),
+  })
+);
 
 export function bundledDeviceProductFromJSON(
   jsonString: string,
@@ -2125,17 +2186,19 @@ export function bundledDeviceProductFromJSON(
 export const BundledDevice$inboundSchema: z.ZodMiniType<
   BundledDevice,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    serial_number: types.optional(types.string()),
-    product: types.optional(z.lazy(() => BundledDeviceProduct$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "serial_number": "serialNumber",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      serial_number: types.optional(types.string()),
+      product: types.optional(z.lazy(() => BundledDeviceProduct$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "serial_number": "serialNumber",
+      });
+    }),
+  )
 );
 
 export function bundledDeviceFromJSON(
@@ -2153,8 +2216,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscr
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionUot,
+    )
   );
 
 /** @internal */
@@ -2162,12 +2227,14 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscr
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingPeriod,
     unknown
-  > = z.object({
-    duration: types.optional(types.number()),
-    uot: types.optional(
-      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionUot$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      duration: types.optional(types.number()),
+      uot: types.optional(
+        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionUot$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingPeriodFromJSON(
   jsonString: string,
@@ -2189,19 +2256,21 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillin
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillingDay,
     unknown
-  > = z.pipe(
-    z.object({
-      day_of_week: types.optional(types.string()),
-      day_of_month: types.optional(types.number()),
-      month_of_year: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "day_of_week": "dayOfWeek",
-        "day_of_month": "dayOfMonth",
-        "month_of_year": "monthOfYear",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        day_of_week: types.optional(types.string()),
+        day_of_month: types.optional(types.number()),
+        month_of_year: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "day_of_week": "dayOfWeek",
+          "day_of_month": "dayOfMonth",
+          "month_of_year": "monthOfYear",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillingDayFromJSON(
@@ -2224,8 +2293,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesType$i
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesType,
+    )
   );
 
 /** @internal */
@@ -2233,10 +2304,12 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesIdenti
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesIdentity,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    identifier: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      identifier: types.optional(types.string()),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesIdentityFromJSON(
   jsonString: string,
@@ -2258,16 +2331,16 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaymen
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaymentMethod,
     unknown
-  > = z.object({
-    type: types.optional(
-      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesType$inboundSchema,
-    ),
-    identity: types.optional(
-      z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesIdentity$inboundSchema
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      type: types.optional(
+        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesType$inboundSchema,
       ),
-    ),
-  });
+      identity: types.optional(z.lazy(() =>
+        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesIdentity$inboundSchema
+      )),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaymentMethodFromJSON(
   jsonString: string,
@@ -2289,8 +2362,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesFundin
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesFundingSource,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesFundingSource,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesFundingSource,
+    )
   );
 
 /** @internal */
@@ -2298,8 +2373,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscr
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingModel,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingModel,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingModel,
+    )
   );
 
 /** @internal */
@@ -2307,33 +2384,41 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscr
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionTerms,
     unknown
-  > = z.pipe(
-    z.object({
-      billing_period: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingPeriod$inboundSchema
-      )),
-      billing_day: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillingDay$inboundSchema
-      )),
-      payment_method: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaymentMethod$inboundSchema
-      )),
-      funding_source: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesFundingSource$inboundSchema,
-      ),
-      billing_model: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingModel$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "billing_period": "billingPeriod",
-        "billing_day": "billingDay",
-        "payment_method": "paymentMethod",
-        "funding_source": "fundingSource",
-        "billing_model": "billingModel",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        billing_period: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingPeriod$inboundSchema
+          ),
+        ),
+        billing_day: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesBillingDay$inboundSchema
+          ),
+        ),
+        payment_method: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaymentMethod$inboundSchema
+          ),
+        ),
+        funding_source: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesFundingSource$inboundSchema,
+        ),
+        billing_model: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionBillingModel$inboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "billing_period": "billingPeriod",
+          "billing_day": "billingDay",
+          "payment_method": "paymentMethod",
+          "funding_source": "fundingSource",
+          "billing_model": "billingModel",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionTermsFromJSON(
@@ -2356,8 +2441,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscr
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionState,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionState,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionState,
+    )
   );
 
 /** @internal */
@@ -2365,18 +2452,18 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscr
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscription,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    code: types.optional(types.string()),
-    terms: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      code: types.optional(types.string()),
+      terms: types.optional(z.lazy(() =>
         ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionTerms$inboundSchema
+      )),
+      state: types.optional(
+        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionState$inboundSchema,
       ),
-    ),
-    state: types.optional(
-      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionState$inboundSchema,
-    ),
-  });
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscriptionFromJSON(
   jsonString: string,
@@ -2398,10 +2485,12 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesConten
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContentOrder,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    number: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      number: types.optional(types.string()),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesContentOrderFromJSON(
   jsonString: string,
@@ -2423,11 +2512,13 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesCompon
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentProduct,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentProductFromJSON(
   jsonString: string,
@@ -2449,8 +2540,10 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesCompon
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -2458,19 +2551,21 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesCompon
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentPrice,
     unknown
-  > = z.pipe(
-    z.object({
-      price: types.optional(types.number()),
-      currency_code: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentCurrencyCode$inboundSchema,
-      ),
-      label: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "currency_code": "currencyCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        price: types.optional(types.number()),
+        currency_code: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentCurrencyCode$inboundSchema,
+        ),
+        label: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "currency_code": "currencyCode",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentPriceFromJSON(
@@ -2492,39 +2587,45 @@ export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesCom
 export const ComponentState$inboundSchema: z.ZodMiniType<
   ComponentState,
   unknown
-> = openEnums.inboundSchema(ComponentState);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ComponentState));
 
 /** @internal */
 export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponent$inboundSchema:
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      added_on: types.optional(types.number()),
-      first_activated_on: types.optional(types.number()),
-      product: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentProduct$inboundSchema
-      )),
-      price: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentPrice$inboundSchema
-      )),
-      state: types.optional(ComponentState$inboundSchema),
-      in_contract: types.optional(types.boolean()),
-      quantity: types.optional(types.number()),
-      price_inclusive: types.optional(types.boolean()),
-      has_allowance: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "added_on": "addedOn",
-        "first_activated_on": "firstActivatedOn",
-        "in_contract": "inContract",
-        "price_inclusive": "priceInclusive",
-        "has_allowance": "hasAllowance",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        added_on: types.optional(types.number()),
+        first_activated_on: types.optional(types.number()),
+        product: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentProduct$inboundSchema
+          ),
+        ),
+        price: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentPrice$inboundSchema
+          ),
+        ),
+        state: types.optional(ComponentState$inboundSchema),
+        in_contract: types.optional(types.boolean()),
+        quantity: types.optional(types.number()),
+        price_inclusive: types.optional(types.boolean()),
+        has_allowance: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "added_on": "addedOn",
+          "first_activated_on": "firstActivatedOn",
+          "in_contract": "inContract",
+          "price_inclusive": "priceInclusive",
+          "has_allowance": "hasAllowance",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponentFromJSON(
@@ -2547,10 +2648,12 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesIntegr
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesIntegration,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesIntegrationFromJSON(
   jsonString: string,
@@ -2572,75 +2675,93 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesConten
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      state: types.optional(
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesState$inboundSchema,
-      ),
-      added_on: types.optional(types.number()),
-      first_activated_on: types.optional(types.number()),
-      removed_on: types.optional(types.number()),
-      is_recurring_charge: types.optional(types.boolean()),
-      has_allowance: types.optional(types.boolean()),
-      scheduled_actions: types.optional(types.boolean()),
-      product: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesProduct$inboundSchema
-      )),
-      price: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPrice$inboundSchema
-      )),
-      billing: types.optional(z.lazy(() =>
-        Billing$inboundSchema
-      )),
-      terms: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTerms$inboundSchema
-      )),
-      trial_period: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialPeriod$inboundSchema
-      )),
-      paused_period: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPausedPeriod$inboundSchema
-      )),
-      bundled_service: types.optional(z.lazy(() =>
-        BundledService$inboundSchema
-      )),
-      bundled_device: types.optional(z.lazy(() =>
-        BundledDevice$inboundSchema
-      )),
-      subscription: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscription$inboundSchema
-      )),
-      start_date: types.optional(types.number()),
-      order: types.optional(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContentOrder$inboundSchema
-      )),
-      last_activated_on: types.optional(types.number()),
-      last_deactivated_on: types.optional(types.number()),
-      components: types.optional(z.array(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponent$inboundSchema
-      ))),
-      integrations: types.optional(z.array(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesIntegration$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "added_on": "addedOn",
-        "first_activated_on": "firstActivatedOn",
-        "removed_on": "removedOn",
-        "is_recurring_charge": "isRecurringCharge",
-        "has_allowance": "hasAllowance",
-        "scheduled_actions": "scheduledActions",
-        "trial_period": "trialPeriod",
-        "paused_period": "pausedPeriod",
-        "bundled_service": "bundledService",
-        "bundled_device": "bundledDevice",
-        "start_date": "startDate",
-        "last_activated_on": "lastActivatedOn",
-        "last_deactivated_on": "lastDeactivatedOn",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        state: types.optional(
+          ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesState$inboundSchema,
+        ),
+        added_on: types.optional(types.number()),
+        first_activated_on: types.optional(types.number()),
+        removed_on: types.optional(types.number()),
+        is_recurring_charge: types.optional(types.boolean()),
+        has_allowance: types.optional(types.boolean()),
+        scheduled_actions: types.optional(types.boolean()),
+        product: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesProduct$inboundSchema
+          ),
+        ),
+        price: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPrice$inboundSchema
+          ),
+        ),
+        billing: types.optional(z.lazy(() => Billing$inboundSchema)),
+        terms: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTerms$inboundSchema
+          ),
+        ),
+        trial_period: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesTrialPeriod$inboundSchema
+          ),
+        ),
+        paused_period: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPausedPeriod$inboundSchema
+          ),
+        ),
+        bundled_service: types.optional(
+          z.lazy(() => BundledService$inboundSchema),
+        ),
+        bundled_device: types.optional(
+          z.lazy(() => BundledDevice$inboundSchema),
+        ),
+        subscription: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesSubscription$inboundSchema
+          ),
+        ),
+        start_date: types.optional(types.number()),
+        order: types.optional(
+          z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContentOrder$inboundSchema
+          ),
+        ),
+        last_activated_on: types.optional(types.number()),
+        last_deactivated_on: types.optional(types.number()),
+        components: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesComponent$inboundSchema
+          )),
+        ),
+        integrations: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesIntegration$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "added_on": "addedOn",
+          "first_activated_on": "firstActivatedOn",
+          "removed_on": "removedOn",
+          "is_recurring_charge": "isRecurringCharge",
+          "has_allowance": "hasAllowance",
+          "scheduled_actions": "scheduledActions",
+          "trial_period": "trialPeriod",
+          "paused_period": "pausedPeriod",
+          "bundled_service": "bundledService",
+          "bundled_device": "bundledDevice",
+          "start_date": "startDate",
+          "last_activated_on": "lastActivatedOn",
+          "last_deactivated_on": "lastDeactivatedOn",
+        });
+      }),
+    )
   );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesContentFromJSON(
@@ -2663,18 +2784,16 @@ export const ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesRespon
   z.ZodMiniType<
     ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmSubscriptionSelfServiceResourceListSubscriptionServicesContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmSubscriptionSelfServiceResourceListSubscriptionServicesResponseFromJSON(
   jsonString: string,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceRemoveFileSecurity = {
   secretAPIKey?: string | undefined;
@@ -32,16 +33,18 @@ export const ComCrmContactSelfServiceResourceRemoveFileSecurity$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceRemoveFileSecurity$Outbound,
     ComCrmContactSelfServiceResourceRemoveFileSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceRemoveFileSecurityToJSON(
@@ -66,16 +69,18 @@ export const ComCrmContactSelfServiceResourceRemoveFileRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceRemoveFileRequest$Outbound,
     ComCrmContactSelfServiceResourceRemoveFileRequest
-  > = z.pipe(
-    z.object({
-      attachmentId: z.string(),
-      id: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        attachmentId: "attachment_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        attachmentId: z.string(),
+        id: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          attachmentId: "attachment_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceRemoveFileRequestToJSON(

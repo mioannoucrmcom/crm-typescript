@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -55,19 +55,21 @@ export const ComCrmAccountSelfServiceResourceUpdateAccountRequestBody$outboundSc
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceUpdateAccountRequestBody$Outbound,
     ComCrmAccountSelfServiceResourceUpdateAccountRequestBody
-  > = z.pipe(
-    z.object({
-      classificationId: z.optional(z.string()),
-      isPrimary: z.optional(z.boolean()),
-      billingAddressId: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        classificationId: "classification_id",
-        isPrimary: "is_primary",
-        billingAddressId: "billing_address_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        classificationId: z.optional(z.string()),
+        isPrimary: z.optional(z.boolean()),
+        billingAddressId: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          classificationId: "classification_id",
+          isPrimary: "is_primary",
+          billingAddressId: "billing_address_id",
+        });
+      }),
+    )
   );
 
 export function comCrmAccountSelfServiceResourceUpdateAccountRequestBodyToJSON(
@@ -91,12 +93,14 @@ export const ComCrmAccountSelfServiceResourceUpdateAccountRequest$outboundSchema
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceUpdateAccountRequest$Outbound,
     ComCrmAccountSelfServiceResourceUpdateAccountRequest
-  > = z.object({
-    id: z.string(),
-    body: z.lazy(() =>
-      ComCrmAccountSelfServiceResourceUpdateAccountRequestBody$outboundSchema
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.lazy(() =>
+        ComCrmAccountSelfServiceResourceUpdateAccountRequestBody$outboundSchema
+      ),
+    })
+  );
 
 export function comCrmAccountSelfServiceResourceUpdateAccountRequestToJSON(
   comCrmAccountSelfServiceResourceUpdateAccountRequest:
@@ -114,9 +118,11 @@ export const ComCrmAccountSelfServiceResourceUpdateAccountResponse$inboundSchema
   z.ZodMiniType<
     ComCrmAccountSelfServiceResourceUpdateAccountResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmAccountSelfServiceResourceUpdateAccountResponseFromJSON(
   jsonString: string,

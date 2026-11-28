@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -126,7 +126,9 @@ export type ComCrmProductBrandSelfServiceResourceGetProductBrandsResponse = {
 export const ComCrmProductBrandSelfServiceResourceGetProductBrandsOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmProductBrandSelfServiceResourceGetProductBrandsOrder
-  > = z.enum(ComCrmProductBrandSelfServiceResourceGetProductBrandsOrder);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmProductBrandSelfServiceResourceGetProductBrandsOrder)
+  );
 
 /** @internal */
 export type ComCrmProductBrandSelfServiceResourceGetProductBrandsRequest$Outbound =
@@ -145,26 +147,28 @@ export const ComCrmProductBrandSelfServiceResourceGetProductBrandsRequest$outbou
   z.ZodMiniType<
     ComCrmProductBrandSelfServiceResourceGetProductBrandsRequest$Outbound,
     ComCrmProductBrandSelfServiceResourceGetProductBrandsRequest
-  > = z.pipe(
-    z.object({
-      brandIds: z.optional(z.string()),
-      searchValue: z.optional(z.string()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmProductBrandSelfServiceResourceGetProductBrandsOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        brandIds: "brand_ids",
-        searchValue: "search_value",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        brandIds: z.optional(z.string()),
+        searchValue: z.optional(z.string()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmProductBrandSelfServiceResourceGetProductBrandsOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          brandIds: "brand_ids",
+          searchValue: "search_value",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmProductBrandSelfServiceResourceGetProductBrandsRequestToJSON(
@@ -182,18 +186,20 @@ export const ComCrmProductBrandSelfServiceResourceGetProductBrandsPaging$inbound
   z.ZodMiniType<
     ComCrmProductBrandSelfServiceResourceGetProductBrandsPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmProductBrandSelfServiceResourceGetProductBrandsPagingFromJSON(
@@ -216,10 +222,12 @@ export const ComCrmProductBrandSelfServiceResourceGetProductBrandsOwner$inboundS
   z.ZodMiniType<
     ComCrmProductBrandSelfServiceResourceGetProductBrandsOwner,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductBrandSelfServiceResourceGetProductBrandsOwnerFromJSON(
   jsonString: string,
@@ -241,16 +249,16 @@ export const ComCrmProductBrandSelfServiceResourceGetProductBrandsContent$inboun
   z.ZodMiniType<
     ComCrmProductBrandSelfServiceResourceGetProductBrandsContent,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    description: types.optional(types.string()),
-    owner: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      description: types.optional(types.string()),
+      owner: types.optional(z.lazy(() =>
         ComCrmProductBrandSelfServiceResourceGetProductBrandsOwner$inboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmProductBrandSelfServiceResourceGetProductBrandsContentFromJSON(
   jsonString: string,
@@ -272,18 +280,16 @@ export const ComCrmProductBrandSelfServiceResourceGetProductBrandsResponse$inbou
   z.ZodMiniType<
     ComCrmProductBrandSelfServiceResourceGetProductBrandsResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmProductBrandSelfServiceResourceGetProductBrandsPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmProductBrandSelfServiceResourceGetProductBrandsContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmProductBrandSelfServiceResourceGetProductBrandsContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmProductBrandSelfServiceResourceGetProductBrandsResponseFromJSON(
   jsonString: string,

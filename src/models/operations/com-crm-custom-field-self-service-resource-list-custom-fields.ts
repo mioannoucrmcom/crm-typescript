@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -120,17 +120,19 @@ export const ComCrmCustomFieldSelfServiceResourceListCustomFieldsSecurity$outbou
   z.ZodMiniType<
     ComCrmCustomFieldSelfServiceResourceListCustomFieldsSecurity$Outbound,
     ComCrmCustomFieldSelfServiceResourceListCustomFieldsSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorizationSelfService: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-        authorizationSelfService: "authorization_self_service",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorizationSelfService: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+          authorizationSelfService: "authorization_self_service",
+        });
+      }),
+    )
   );
 
 export function comCrmCustomFieldSelfServiceResourceListCustomFieldsSecurityToJSON(
@@ -154,9 +156,11 @@ export const ComCrmCustomFieldSelfServiceResourceListCustomFieldsRequest$outboun
   z.ZodMiniType<
     ComCrmCustomFieldSelfServiceResourceListCustomFieldsRequest$Outbound,
     ComCrmCustomFieldSelfServiceResourceListCustomFieldsRequest
-  > = z.object({
-    entity: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      entity: z.string(),
+    })
+  );
 
 export function comCrmCustomFieldSelfServiceResourceListCustomFieldsRequestToJSON(
   comCrmCustomFieldSelfServiceResourceListCustomFieldsRequest:
@@ -169,16 +173,18 @@ export function comCrmCustomFieldSelfServiceResourceListCustomFieldsRequestToJSO
 }
 
 /** @internal */
-export const Field$inboundSchema: z.ZodMiniType<Field, unknown> = openEnums
-  .inboundSchema(Field);
+export const Field$inboundSchema: z.ZodMiniType<Field, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Field));
 
 /** @internal */
 export const ComCrmCustomFieldSelfServiceResourceListCustomFieldsEntity$inboundSchema:
   z.ZodMiniType<
     ComCrmCustomFieldSelfServiceResourceListCustomFieldsEntity,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmCustomFieldSelfServiceResourceListCustomFieldsEntity,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmCustomFieldSelfServiceResourceListCustomFieldsEntity,
+    )
   );
 
 /** @internal */
@@ -186,17 +192,19 @@ export const ComCrmCustomFieldSelfServiceResourceListCustomFieldsResponse$inboun
   z.ZodMiniType<
     ComCrmCustomFieldSelfServiceResourceListCustomFieldsResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    key: types.optional(types.string()),
-    label: types.optional(types.string()),
-    tooltip: types.optional(types.string()),
-    visible: types.optional(types.boolean()),
-    field: types.optional(Field$inboundSchema),
-    entity: types.optional(
-      ComCrmCustomFieldSelfServiceResourceListCustomFieldsEntity$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      key: types.optional(types.string()),
+      label: types.optional(types.string()),
+      tooltip: types.optional(types.string()),
+      visible: types.optional(types.boolean()),
+      field: types.optional(Field$inboundSchema),
+      entity: types.optional(
+        ComCrmCustomFieldSelfServiceResourceListCustomFieldsEntity$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmCustomFieldSelfServiceResourceListCustomFieldsResponseFromJSON(
   jsonString: string,

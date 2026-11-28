@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -124,16 +124,18 @@ export const ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsSecurity$
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsSecurity$Outbound,
     ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceCommandsSelfServiceResourceGetServiceCommandsSecurityToJSON(
@@ -159,15 +161,17 @@ export const ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsRequest$o
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsRequest$Outbound,
     ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsRequest
-  > = z.pipe(
-    z.object({
-      integrationId: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        integrationId: "integration_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        integrationId: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          integrationId: "integration_id",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceCommandsSelfServiceResourceGetServiceCommandsRequestToJSON(
@@ -181,16 +185,18 @@ export function comCrmServiceCommandsSelfServiceResourceGetServiceCommandsReques
 }
 
 /** @internal */
-export const Code$inboundSchema: z.ZodMiniType<Code, unknown> = openEnums
-  .inboundSchema(Code);
+export const Code$inboundSchema: z.ZodMiniType<Code, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Code));
 
 /** @internal */
 export const ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsType$inboundSchema:
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsType,
+    )
   );
 
 /** @internal */
@@ -198,21 +204,23 @@ export const ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsMetadataA
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsMetadataAttribute,
     unknown
-  > = z.pipe(
-    z.object({
-      key: types.optional(types.string()),
-      label: types.optional(types.string()),
-      description: types.optional(types.string()),
-      type: types.optional(
-        ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsType$inboundSchema,
-      ),
-      is_mandatory: z._default(types.boolean(), false),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_mandatory": "isMandatory",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        key: types.optional(types.string()),
+        label: types.optional(types.string()),
+        description: types.optional(types.string()),
+        type: types.optional(
+          ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsType$inboundSchema,
+        ),
+        is_mandatory: z._default(types.boolean(), false),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_mandatory": "isMandatory",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceCommandsSelfServiceResourceGetServiceCommandsMetadataAttributeFromJSON(
@@ -235,20 +243,24 @@ export const ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsContent$i
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsContent,
     unknown
-  > = z.pipe(
-    z.object({
-      name: types.optional(types.string()),
-      code: types.optional(Code$inboundSchema),
-      description: types.optional(types.string()),
-      metadata_attributes: types.optional(z.array(z.lazy(() =>
-        ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsMetadataAttribute$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "metadata_attributes": "metadataAttributes",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        name: types.optional(types.string()),
+        code: types.optional(Code$inboundSchema),
+        description: types.optional(types.string()),
+        metadata_attributes: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsMetadataAttribute$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "metadata_attributes": "metadataAttributes",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceCommandsSelfServiceResourceGetServiceCommandsContentFromJSON(
@@ -271,13 +283,13 @@ export const ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsResponse$
   z.ZodMiniType<
     ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsResponse,
     unknown
-  > = z.object({
-    content: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      content: types.optional(z.array(z.lazy(() =>
         ComCrmServiceCommandsSelfServiceResourceGetServiceCommandsContent$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmServiceCommandsSelfServiceResourceGetServiceCommandsResponseFromJSON(
   jsonString: string,

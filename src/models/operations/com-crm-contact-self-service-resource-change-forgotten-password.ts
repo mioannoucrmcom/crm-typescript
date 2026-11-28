@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceChangeForgottenPasswordRequest = {
   /**
@@ -27,10 +28,12 @@ export const ComCrmContactSelfServiceResourceChangeForgottenPasswordRequest$outb
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceChangeForgottenPasswordRequest$Outbound,
     ComCrmContactSelfServiceResourceChangeForgottenPasswordRequest
-  > = z.object({
-    token: z.string(),
-    password: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      token: z.string(),
+      password: z.string(),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceChangeForgottenPasswordRequestToJSON(
   comCrmContactSelfServiceResourceChangeForgottenPasswordRequest:

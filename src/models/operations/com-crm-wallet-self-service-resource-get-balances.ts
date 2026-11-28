@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -588,20 +588,22 @@ export const ComCrmWalletSelfServiceResourceGetBalancesRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetBalancesRequest$Outbound,
     ComCrmWalletSelfServiceResourceGetBalancesRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      commercePoolId: z.optional(z.string()),
-      includeExpiration: z.optional(z.boolean()),
-      isActive: z.optional(z.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        commercePoolId: "commerce_pool_id",
-        includeExpiration: "include_expiration",
-        isActive: "is_active",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        commercePoolId: z.optional(z.string()),
+        includeExpiration: z.optional(z.boolean()),
+        isActive: z.optional(z.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          commercePoolId: "commerce_pool_id",
+          includeExpiration: "include_expiration",
+          isActive: "is_active",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceGetBalancesRequestToJSON(
@@ -617,19 +619,21 @@ export function comCrmWalletSelfServiceResourceGetBalancesRequestToJSON(
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceGetBalancesPaging$inboundSchema:
-  z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesPaging, unknown> = z
-    .pipe(
-      z.object({
-        page: types.optional(types.number()),
-        size: types.optional(types.number()),
-        total: types.optional(types.number()),
-        has_more: types.optional(types.boolean()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "has_more": "hasMore",
-        });
-      }),
+  z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
     );
 
 export function comCrmWalletSelfServiceResourceGetBalancesPagingFromJSON(
@@ -649,22 +653,24 @@ export function comCrmWalletSelfServiceResourceGetBalancesPagingFromJSON(
 }
 
 /** @internal */
-export const Expiration$inboundSchema: z.ZodMiniType<Expiration, unknown> = z
-  .pipe(
-    z.object({
-      zero_to_thirty: types.optional(types.number()),
-      thirty_to_sixty: types.optional(types.number()),
-      sixty_to_ninety: types.optional(types.number()),
-      ninety_plus: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "zero_to_thirty": "zeroToThirty",
-        "thirty_to_sixty": "thirtyToSixty",
-        "sixty_to_ninety": "sixtyToNinety",
-        "ninety_plus": "ninetyPlus",
-      });
-    }),
+export const Expiration$inboundSchema: z.ZodMiniType<Expiration, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        zero_to_thirty: types.optional(types.number()),
+        thirty_to_sixty: types.optional(types.number()),
+        sixty_to_ninety: types.optional(types.number()),
+        ninety_plus: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "zero_to_thirty": "zeroToThirty",
+          "thirty_to_sixty": "thirtyToSixty",
+          "sixty_to_ninety": "sixtyToNinety",
+          "ninety_plus": "ninetyPlus",
+        });
+      }),
+    )
   );
 
 export function expirationFromJSON(
@@ -680,46 +686,52 @@ export function expirationFromJSON(
 /** @internal */
 export const ComCrmWalletSelfServiceResourceGetBalancesType$inboundSchema:
   z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesType, unknown> =
-    openEnums.inboundSchema(ComCrmWalletSelfServiceResourceGetBalancesType);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmWalletSelfServiceResourceGetBalancesType)
+    );
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceGetBalancesCountryCode$inboundSchema:
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetBalancesCountryCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmWalletSelfServiceResourceGetBalancesCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmWalletSelfServiceResourceGetBalancesCountryCode,
+    )
   );
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceGetBalancesLocation$inboundSchema:
-  z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesLocation, unknown> = z
-    .pipe(
-      z.object({
-        name: types.optional(types.string()),
-        address_line_1: types.optional(types.string()),
-        address_line_2: types.optional(types.string()),
-        state_province_county: types.optional(types.string()),
-        town_city: types.optional(types.string()),
-        postal_code: types.optional(types.string()),
-        country_code: types.optional(
-          ComCrmWalletSelfServiceResourceGetBalancesCountryCode$inboundSchema,
-        ),
-        lat: types.optional(types.number()),
-        lon: types.optional(types.number()),
-        google_place_id: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "address_line_1": "addressLine1",
-          "address_line_2": "addressLine2",
-          "state_province_county": "stateProvinceCounty",
-          "town_city": "townCity",
-          "postal_code": "postalCode",
-          "country_code": "countryCode",
-          "google_place_id": "googlePlaceId",
-        });
-      }),
+  z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesLocation, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          name: types.optional(types.string()),
+          address_line_1: types.optional(types.string()),
+          address_line_2: types.optional(types.string()),
+          state_province_county: types.optional(types.string()),
+          town_city: types.optional(types.string()),
+          postal_code: types.optional(types.string()),
+          country_code: types.optional(
+            ComCrmWalletSelfServiceResourceGetBalancesCountryCode$inboundSchema,
+          ),
+          lat: types.optional(types.number()),
+          lon: types.optional(types.number()),
+          google_place_id: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "address_line_1": "addressLine1",
+            "address_line_2": "addressLine2",
+            "state_province_county": "stateProvinceCounty",
+            "town_city": "townCity",
+            "postal_code": "postalCode",
+            "country_code": "countryCode",
+            "google_place_id": "googlePlaceId",
+          });
+        }),
+      )
     );
 
 export function comCrmWalletSelfServiceResourceGetBalancesLocationFromJSON(
@@ -743,18 +755,18 @@ export const ComCrmWalletSelfServiceResourceGetBalancesOrganisation$inboundSchem
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetBalancesOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    type: types.optional(
-      ComCrmWalletSelfServiceResourceGetBalancesType$inboundSchema,
-    ),
-    locations: types.optional(
-      z.array(z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      type: types.optional(
+        ComCrmWalletSelfServiceResourceGetBalancesType$inboundSchema,
+      ),
+      locations: types.optional(z.array(z.lazy(() =>
         ComCrmWalletSelfServiceResourceGetBalancesLocation$inboundSchema
-      )),
-    ),
-  });
+      ))),
+    })
+  );
 
 export function comCrmWalletSelfServiceResourceGetBalancesOrganisationFromJSON(
   jsonString: string,
@@ -772,25 +784,27 @@ export function comCrmWalletSelfServiceResourceGetBalancesOrganisationFromJSON(
 }
 
 /** @internal */
-export const IdType$inboundSchema: z.ZodMiniType<IdType, unknown> = openEnums
-  .inboundSchema(IdType);
+export const IdType$inboundSchema: z.ZodMiniType<IdType, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(IdType));
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceGetBalancesProduct$inboundSchema:
-  z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesProduct, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        id_type: types.optional(IdType$inboundSchema),
-        name: types.optional(types.string()),
-        description: types.optional(types.string()),
-        sku: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "id_type": "idType",
-        });
-      }),
+  z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesProduct, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          id_type: types.optional(IdType$inboundSchema),
+          name: types.optional(types.string()),
+          description: types.optional(types.string()),
+          sku: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "id_type": "idType",
+          });
+        }),
+      )
     );
 
 export function comCrmWalletSelfServiceResourceGetBalancesProductFromJSON(
@@ -810,20 +824,23 @@ export function comCrmWalletSelfServiceResourceGetBalancesProductFromJSON(
 }
 
 /** @internal */
-export const Timing$inboundSchema: z.ZodMiniType<Timing, unknown> = z.pipe(
-  z.object({
-    day: types.optional(types.number()),
-    month: types.optional(types.number()),
-    start_time: types.optional(types.string()),
-    end_time: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "start_time": "startTime",
-      "end_time": "endTime",
-    });
-  }),
-);
+export const Timing$inboundSchema: z.ZodMiniType<Timing, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        day: types.optional(types.number()),
+        month: types.optional(types.number()),
+        start_time: types.optional(types.string()),
+        end_time: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "start_time": "startTime",
+          "end_time": "endTime",
+        });
+      }),
+    )
+  );
 
 export function timingFromJSON(
   jsonString: string,
@@ -839,10 +856,12 @@ export function timingFromJSON(
 export const PromotedOrganisation$inboundSchema: z.ZodMiniType<
   PromotedOrganisation,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function promotedOrganisationFromJSON(
   jsonString: string,
@@ -855,22 +874,24 @@ export function promotedOrganisationFromJSON(
 }
 
 /** @internal */
-export const B2bDetails$inboundSchema: z.ZodMiniType<B2bDetails, unknown> = z
-  .pipe(
-    z.object({
-      is_published: types.optional(types.boolean()),
-      is_promoted: types.optional(types.boolean()),
-      promoted_organisation: types.optional(
-        z.lazy(() => PromotedOrganisation$inboundSchema),
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_published": "isPublished",
-        "is_promoted": "isPromoted",
-        "promoted_organisation": "promotedOrganisation",
-      });
-    }),
+export const B2bDetails$inboundSchema: z.ZodMiniType<B2bDetails, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_published: types.optional(types.boolean()),
+        is_promoted: types.optional(types.boolean()),
+        promoted_organisation: types.optional(
+          z.lazy(() => PromotedOrganisation$inboundSchema),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_published": "isPublished",
+          "is_promoted": "isPromoted",
+          "promoted_organisation": "promotedOrganisation",
+        });
+      }),
+    )
   );
 
 export function b2bDetailsFromJSON(
@@ -885,38 +906,40 @@ export function b2bDetailsFromJSON(
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceGetBalancesContent$inboundSchema:
-  z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesContent, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        name: types.optional(types.string()),
-        description: types.optional(types.string()),
-        amount: types.optional(types.number()),
-        currency_code: types.optional(types.string()),
-        expiration: types.optional(z.lazy(() => Expiration$inboundSchema)),
-        organisations: types.optional(z.array(z.lazy(() =>
-          ComCrmWalletSelfServiceResourceGetBalancesOrganisation$inboundSchema
-        ))),
-        products: types.optional(z.array(z.lazy(() =>
-          ComCrmWalletSelfServiceResourceGetBalancesProduct$inboundSchema
-        ))),
-        timings: types.optional(z.array(z.lazy(() =>
-          Timing$inboundSchema
-        ))),
-        applicable_for_activation: types.optional(types.boolean()),
-        is_active: types.optional(types.boolean()),
-        b2b_details: types.optional(z.lazy(() =>
-          B2bDetails$inboundSchema
-        )),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "currency_code": "currencyCode",
-          "applicable_for_activation": "applicableForActivation",
-          "is_active": "isActive",
-          "b2b_details": "b2bDetails",
-        });
-      }),
+  z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          description: types.optional(types.string()),
+          amount: types.optional(types.number()),
+          currency_code: types.optional(types.string()),
+          expiration: types.optional(z.lazy(() => Expiration$inboundSchema)),
+          organisations: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmWalletSelfServiceResourceGetBalancesOrganisation$inboundSchema
+            )),
+          ),
+          products: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmWalletSelfServiceResourceGetBalancesProduct$inboundSchema
+            )),
+          ),
+          timings: types.optional(z.array(z.lazy(() => Timing$inboundSchema))),
+          applicable_for_activation: types.optional(types.boolean()),
+          is_active: types.optional(types.boolean()),
+          b2b_details: types.optional(z.lazy(() => B2bDetails$inboundSchema)),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "currency_code": "currencyCode",
+            "applicable_for_activation": "applicableForActivation",
+            "is_active": "isActive",
+            "b2b_details": "b2bDetails",
+          });
+        }),
+      )
     );
 
 export function comCrmWalletSelfServiceResourceGetBalancesContentFromJSON(
@@ -937,19 +960,17 @@ export function comCrmWalletSelfServiceResourceGetBalancesContentFromJSON(
 
 /** @internal */
 export const ComCrmWalletSelfServiceResourceGetBalancesResponse$inboundSchema:
-  z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesResponse, unknown> = z
-    .object({
-      paging: types.optional(
-        z.lazy(() =>
+  z.ZodMiniType<ComCrmWalletSelfServiceResourceGetBalancesResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(z.lazy(() =>
           ComCrmWalletSelfServiceResourceGetBalancesPaging$inboundSchema
-        ),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmWalletSelfServiceResourceGetBalancesContent$inboundSchema
         )),
-      ),
-    });
+        content: types.optional(z.array(z.lazy(() =>
+          ComCrmWalletSelfServiceResourceGetBalancesContent$inboundSchema
+        ))),
+      })
+    );
 
 export function comCrmWalletSelfServiceResourceGetBalancesResponseFromJSON(
   jsonString: string,

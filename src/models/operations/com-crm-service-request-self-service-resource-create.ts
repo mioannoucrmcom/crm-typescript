@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -408,7 +408,9 @@ export type ComCrmServiceRequestSelfServiceResourceCreateResponse = {
 export const ComCrmServiceRequestSelfServiceResourceCreateCountryCode$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmServiceRequestSelfServiceResourceCreateCountryCode
-  > = z.enum(ComCrmServiceRequestSelfServiceResourceCreateCountryCode);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmServiceRequestSelfServiceResourceCreateCountryCode)
+  );
 
 /** @internal */
 export type Other$Outbound = {
@@ -426,35 +428,37 @@ export type Other$Outbound = {
 };
 
 /** @internal */
-export const Other$outboundSchema: z.ZodMiniType<Other$Outbound, Other> = z
-  .pipe(
-    z.object({
-      name: z.optional(z.nullable(z.string())),
-      isPrimary: z.nullable(z._default(z.boolean(), false)),
-      addressLine1: z.string(),
-      addressLine2: z.optional(z.nullable(z.string())),
-      stateProvinceCounty: z.optional(z.nullable(z.string())),
-      townCity: z.optional(z.nullable(z.string())),
-      postalCode: z.optional(z.nullable(z.string())),
-      countryCode: z.optional(
-        ComCrmServiceRequestSelfServiceResourceCreateCountryCode$outboundSchema,
-      ),
-      lat: z.optional(z.nullable(z.number())),
-      lon: z.optional(z.nullable(z.number())),
-      googlePlaceId: z.optional(z.nullable(z.string())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        isPrimary: "is_primary",
-        addressLine1: "address_line_1",
-        addressLine2: "address_line_2",
-        stateProvinceCounty: "state_province_county",
-        townCity: "town_city",
-        postalCode: "postal_code",
-        countryCode: "country_code",
-        googlePlaceId: "google_place_id",
-      });
-    }),
+export const Other$outboundSchema: z.ZodMiniType<Other$Outbound, Other> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        name: z.optional(z.nullable(z.string())),
+        isPrimary: z.nullable(z._default(z.boolean(), false)),
+        addressLine1: z.string(),
+        addressLine2: z.optional(z.nullable(z.string())),
+        stateProvinceCounty: z.optional(z.nullable(z.string())),
+        townCity: z.optional(z.nullable(z.string())),
+        postalCode: z.optional(z.nullable(z.string())),
+        countryCode: z.optional(
+          ComCrmServiceRequestSelfServiceResourceCreateCountryCode$outboundSchema,
+        ),
+        lat: z.optional(z.nullable(z.number())),
+        lon: z.optional(z.nullable(z.number())),
+        googlePlaceId: z.optional(z.nullable(z.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          isPrimary: "is_primary",
+          addressLine1: "address_line_1",
+          addressLine2: "address_line_2",
+          stateProvinceCounty: "state_province_county",
+          townCity: "town_city",
+          postalCode: "postal_code",
+          countryCode: "country_code",
+          googlePlaceId: "google_place_id",
+        });
+      }),
+    )
   );
 
 export function otherToJSON(other: Other): string {
@@ -472,10 +476,12 @@ export const ComCrmServiceRequestSelfServiceResourceCreateAddress$outboundSchema
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceCreateAddress$Outbound,
     ComCrmServiceRequestSelfServiceResourceCreateAddress
-  > = z.object({
-    id: z.optional(z.string()),
-    other: z.optional(z.lazy(() => Other$outboundSchema)),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+      other: z.optional(z.lazy(() => Other$outboundSchema)),
+    })
+  );
 
 export function comCrmServiceRequestSelfServiceResourceCreateAddressToJSON(
   comCrmServiceRequestSelfServiceResourceCreateAddress:
@@ -498,9 +504,11 @@ export const ComCrmServiceRequestSelfServiceResourceCreateCategory$outboundSchem
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceCreateCategory$Outbound,
     ComCrmServiceRequestSelfServiceResourceCreateCategory
-  > = z.object({
-    id: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+    })
+  );
 
 export function comCrmServiceRequestSelfServiceResourceCreateCategoryToJSON(
   comCrmServiceRequestSelfServiceResourceCreateCategory:
@@ -525,10 +533,12 @@ export const ComCrmServiceRequestSelfServiceResourceCreateCustomField$outboundSc
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceCreateCustomField$Outbound,
     ComCrmServiceRequestSelfServiceResourceCreateCustomField
-  > = z.object({
-    key: z.optional(z.string()),
-    value: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: z.optional(z.string()),
+      value: z.optional(z.string()),
+    })
+  );
 
 export function comCrmServiceRequestSelfServiceResourceCreateCustomFieldToJSON(
   comCrmServiceRequestSelfServiceResourceCreateCustomField:
@@ -561,26 +571,34 @@ export const ComCrmServiceRequestSelfServiceResourceCreateRequestBody$outboundSc
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceCreateRequestBody$Outbound,
     ComCrmServiceRequestSelfServiceResourceCreateRequestBody
-  > = z.pipe(
-    z.object({
-      description: z.string(),
-      queueId: z.string(),
-      address: z.optional(z.lazy(() =>
-        ComCrmServiceRequestSelfServiceResourceCreateAddress$outboundSchema
-      )),
-      categories: z.optional(z.array(z.lazy(() =>
-        ComCrmServiceRequestSelfServiceResourceCreateCategory$outboundSchema
-      ))),
-      customFields: z.optional(z.array(z.lazy(() =>
-        ComCrmServiceRequestSelfServiceResourceCreateCustomField$outboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        queueId: "queue_id",
-        customFields: "custom_fields",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        description: z.string(),
+        queueId: z.string(),
+        address: z.optional(
+          z.lazy(() =>
+            ComCrmServiceRequestSelfServiceResourceCreateAddress$outboundSchema
+          ),
+        ),
+        categories: z.optional(
+          z.array(z.lazy(() =>
+            ComCrmServiceRequestSelfServiceResourceCreateCategory$outboundSchema
+          )),
+        ),
+        customFields: z.optional(
+          z.array(z.lazy(() =>
+            ComCrmServiceRequestSelfServiceResourceCreateCustomField$outboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          queueId: "queue_id",
+          customFields: "custom_fields",
+        });
+      }),
+    )
   );
 
 export function comCrmServiceRequestSelfServiceResourceCreateRequestBodyToJSON(
@@ -606,14 +624,14 @@ export const ComCrmServiceRequestSelfServiceResourceCreateRequest$outboundSchema
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceCreateRequest$Outbound,
     ComCrmServiceRequestSelfServiceResourceCreateRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmServiceRequestSelfServiceResourceCreateRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmServiceRequestSelfServiceResourceCreateRequestToJSON(
   comCrmServiceRequestSelfServiceResourceCreateRequest:
@@ -631,9 +649,11 @@ export const ComCrmServiceRequestSelfServiceResourceCreateResponse$inboundSchema
   z.ZodMiniType<
     ComCrmServiceRequestSelfServiceResourceCreateResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmServiceRequestSelfServiceResourceCreateResponseFromJSON(
   jsonString: string,

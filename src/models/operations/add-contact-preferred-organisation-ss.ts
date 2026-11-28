@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -55,9 +55,10 @@ export type AddContactPreferredOrganisationSSResponse = {
 
 /** @internal */
 export const AddContactPreferredOrganisationSSType$outboundSchema:
-  z.ZodMiniEnum<typeof AddContactPreferredOrganisationSSType> = z.enum(
-    AddContactPreferredOrganisationSSType,
-  );
+  z.ZodMiniEnum<typeof AddContactPreferredOrganisationSSType> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(AddContactPreferredOrganisationSSType)
+    );
 
 /** @internal */
 export type AddContactPreferredOrganisationSSRequestBody$Outbound = {
@@ -70,16 +71,18 @@ export const AddContactPreferredOrganisationSSRequestBody$outboundSchema:
   z.ZodMiniType<
     AddContactPreferredOrganisationSSRequestBody$Outbound,
     AddContactPreferredOrganisationSSRequestBody
-  > = z.pipe(
-    z.object({
-      organisationId: z.string(),
-      type: AddContactPreferredOrganisationSSType$outboundSchema,
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        organisationId: "organisation_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        organisationId: z.string(),
+        type: AddContactPreferredOrganisationSSType$outboundSchema,
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          organisationId: "organisation_id",
+        });
+      }),
+    )
   );
 
 export function addContactPreferredOrganisationSSRequestBodyToJSON(
@@ -104,12 +107,16 @@ export const AddContactPreferredOrganisationSSRequest$outboundSchema:
   z.ZodMiniType<
     AddContactPreferredOrganisationSSRequest$Outbound,
     AddContactPreferredOrganisationSSRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() => AddContactPreferredOrganisationSSRequestBody$outboundSchema),
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(
+        z.lazy(() =>
+          AddContactPreferredOrganisationSSRequestBody$outboundSchema
+        ),
+      ),
+    })
+  );
 
 export function addContactPreferredOrganisationSSRequestToJSON(
   addContactPreferredOrganisationSSRequest:
@@ -124,9 +131,12 @@ export function addContactPreferredOrganisationSSRequestToJSON(
 
 /** @internal */
 export const AddContactPreferredOrganisationSSResponse$inboundSchema:
-  z.ZodMiniType<AddContactPreferredOrganisationSSResponse, unknown> = z.object({
-    id: types.optional(types.string()),
-  });
+  z.ZodMiniType<AddContactPreferredOrganisationSSResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function addContactPreferredOrganisationSSResponseFromJSON(
   jsonString: string,

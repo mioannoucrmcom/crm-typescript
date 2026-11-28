@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -218,7 +218,9 @@ export type ComCrmProductTypeSelfServiceResourceListProductTypesResponse = {
 export const ComCrmProductTypeSelfServiceResourceListProductTypesOrder$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmProductTypeSelfServiceResourceListProductTypesOrder
-  > = z.enum(ComCrmProductTypeSelfServiceResourceListProductTypesOrder);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmProductTypeSelfServiceResourceListProductTypesOrder)
+  );
 
 /** @internal */
 export type ComCrmProductTypeSelfServiceResourceListProductTypesRequest$Outbound =
@@ -237,25 +239,27 @@ export const ComCrmProductTypeSelfServiceResourceListProductTypesRequest$outboun
   z.ZodMiniType<
     ComCrmProductTypeSelfServiceResourceListProductTypesRequest$Outbound,
     ComCrmProductTypeSelfServiceResourceListProductTypesRequest
-  > = z.pipe(
-    z.object({
-      classifications: z.optional(z.string()),
-      searchValue: z.optional(z.string()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmProductTypeSelfServiceResourceListProductTypesOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        searchValue: "search_value",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        classifications: z.optional(z.string()),
+        searchValue: z.optional(z.string()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmProductTypeSelfServiceResourceListProductTypesOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          searchValue: "search_value",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmProductTypeSelfServiceResourceListProductTypesRequestToJSON(
@@ -273,18 +277,20 @@ export const ComCrmProductTypeSelfServiceResourceListProductTypesPaging$inboundS
   z.ZodMiniType<
     ComCrmProductTypeSelfServiceResourceListProductTypesPaging,
     unknown
-  > = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        page: types.optional(types.number()),
+        size: types.optional(types.number()),
+        total: types.optional(types.number()),
+        has_more: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "has_more": "hasMore",
+        });
+      }),
+    )
   );
 
 export function comCrmProductTypeSelfServiceResourceListProductTypesPagingFromJSON(
@@ -307,23 +313,29 @@ export const ComCrmProductTypeSelfServiceResourceListProductTypesClassification$
   z.ZodMiniType<
     ComCrmProductTypeSelfServiceResourceListProductTypesClassification,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmProductTypeSelfServiceResourceListProductTypesClassification,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmProductTypeSelfServiceResourceListProductTypesClassification,
+    )
   );
 
 /** @internal */
 export const CompositionMethod$inboundSchema: z.ZodMiniType<
   CompositionMethod,
   unknown
-> = openEnums.inboundSchema(CompositionMethod);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CompositionMethod)
+);
 
 /** @internal */
-export const TaxCategory$inboundSchema: z.ZodMiniType<TaxCategory, unknown> = z
-  .object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    code: types.optional(types.string()),
-  });
+export const TaxCategory$inboundSchema: z.ZodMiniType<TaxCategory, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      code: types.optional(types.string()),
+    })
+  );
 
 export function taxCategoryFromJSON(
   jsonString: string,
@@ -340,10 +352,12 @@ export const ComCrmProductTypeSelfServiceResourceListProductTypesOwner$inboundSc
   z.ZodMiniType<
     ComCrmProductTypeSelfServiceResourceListProductTypesOwner,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmProductTypeSelfServiceResourceListProductTypesOwnerFromJSON(
   jsonString: string,
@@ -365,37 +379,41 @@ export const ComCrmProductTypeSelfServiceResourceListProductTypesContent$inbound
   z.ZodMiniType<
     ComCrmProductTypeSelfServiceResourceListProductTypesContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      display_name: types.optional(types.string()),
-      description: types.optional(types.string()),
-      classification: types.optional(
-        ComCrmProductTypeSelfServiceResourceListProductTypesClassification$inboundSchema,
-      ),
-      composition_method: types.optional(CompositionMethod$inboundSchema),
-      tax_category: types.optional(z.lazy(() => TaxCategory$inboundSchema)),
-      is_stockable: types.optional(types.boolean()),
-      negative_balance_allowed: types.optional(types.boolean()),
-      is_provisionable: types.optional(types.boolean()),
-      is_modifier: types.optional(types.boolean()),
-      owner: types.optional(z.lazy(() =>
-        ComCrmProductTypeSelfServiceResourceListProductTypesOwner$inboundSchema
-      )),
-      characteristics: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "display_name": "displayName",
-        "composition_method": "compositionMethod",
-        "tax_category": "taxCategory",
-        "is_stockable": "isStockable",
-        "negative_balance_allowed": "negativeBalanceAllowed",
-        "is_provisionable": "isProvisionable",
-        "is_modifier": "isModifier",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        display_name: types.optional(types.string()),
+        description: types.optional(types.string()),
+        classification: types.optional(
+          ComCrmProductTypeSelfServiceResourceListProductTypesClassification$inboundSchema,
+        ),
+        composition_method: types.optional(CompositionMethod$inboundSchema),
+        tax_category: types.optional(z.lazy(() => TaxCategory$inboundSchema)),
+        is_stockable: types.optional(types.boolean()),
+        negative_balance_allowed: types.optional(types.boolean()),
+        is_provisionable: types.optional(types.boolean()),
+        is_modifier: types.optional(types.boolean()),
+        owner: types.optional(
+          z.lazy(() =>
+            ComCrmProductTypeSelfServiceResourceListProductTypesOwner$inboundSchema
+          ),
+        ),
+        characteristics: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "display_name": "displayName",
+          "composition_method": "compositionMethod",
+          "tax_category": "taxCategory",
+          "is_stockable": "isStockable",
+          "negative_balance_allowed": "negativeBalanceAllowed",
+          "is_provisionable": "isProvisionable",
+          "is_modifier": "isModifier",
+        });
+      }),
+    )
   );
 
 export function comCrmProductTypeSelfServiceResourceListProductTypesContentFromJSON(
@@ -418,18 +436,16 @@ export const ComCrmProductTypeSelfServiceResourceListProductTypesResponse$inboun
   z.ZodMiniType<
     ComCrmProductTypeSelfServiceResourceListProductTypesResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmProductTypeSelfServiceResourceListProductTypesPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmProductTypeSelfServiceResourceListProductTypesContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmProductTypeSelfServiceResourceListProductTypesContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmProductTypeSelfServiceResourceListProductTypesResponseFromJSON(
   jsonString: string,

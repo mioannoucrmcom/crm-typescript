@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -41,8 +41,10 @@ export type ComCrmCommercePoolSelfServiceResourceActionsResponse = {
 
 /** @internal */
 export const ComCrmCommercePoolSelfServiceResourceActionsAction$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmCommercePoolSelfServiceResourceActionsAction> = z
-    .enum(ComCrmCommercePoolSelfServiceResourceActionsAction);
+  z.ZodMiniEnum<typeof ComCrmCommercePoolSelfServiceResourceActionsAction> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmCommercePoolSelfServiceResourceActionsAction)
+    );
 
 /** @internal */
 export type ComCrmCommercePoolSelfServiceResourceActionsRequestBody$Outbound = {
@@ -54,11 +56,13 @@ export const ComCrmCommercePoolSelfServiceResourceActionsRequestBody$outboundSch
   z.ZodMiniType<
     ComCrmCommercePoolSelfServiceResourceActionsRequestBody$Outbound,
     ComCrmCommercePoolSelfServiceResourceActionsRequestBody
-  > = z.object({
-    action: z.optional(
-      ComCrmCommercePoolSelfServiceResourceActionsAction$outboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      action: z.optional(
+        ComCrmCommercePoolSelfServiceResourceActionsAction$outboundSchema,
+      ),
+    })
+  );
 
 export function comCrmCommercePoolSelfServiceResourceActionsRequestBodyToJSON(
   comCrmCommercePoolSelfServiceResourceActionsRequestBody:
@@ -81,12 +85,14 @@ export const ComCrmCommercePoolSelfServiceResourceActionsRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmCommercePoolSelfServiceResourceActionsRequest$Outbound,
     ComCrmCommercePoolSelfServiceResourceActionsRequest
-  > = z.object({
-    id: z.string(),
-    body: z.lazy(() =>
-      ComCrmCommercePoolSelfServiceResourceActionsRequestBody$outboundSchema
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.lazy(() =>
+        ComCrmCommercePoolSelfServiceResourceActionsRequestBody$outboundSchema
+      ),
+    })
+  );
 
 export function comCrmCommercePoolSelfServiceResourceActionsRequestToJSON(
   comCrmCommercePoolSelfServiceResourceActionsRequest:
@@ -102,9 +108,11 @@ export function comCrmCommercePoolSelfServiceResourceActionsRequestToJSON(
 /** @internal */
 export const ComCrmCommercePoolSelfServiceResourceActionsResponse$inboundSchema:
   z.ZodMiniType<ComCrmCommercePoolSelfServiceResourceActionsResponse, unknown> =
-    z.object({
-      id: types.optional(types.string()),
-    });
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function comCrmCommercePoolSelfServiceResourceActionsResponseFromJSON(
   jsonString: string,

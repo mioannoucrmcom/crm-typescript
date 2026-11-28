@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -1366,9 +1366,11 @@ export const ComCrmOrderSelfServiceResourceGetOrderRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourceGetOrderRequest$Outbound,
     ComCrmOrderSelfServiceResourceGetOrderRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmOrderSelfServiceResourceGetOrderRequestToJSON(
   comCrmOrderSelfServiceResourceGetOrderRequest:
@@ -1384,49 +1386,59 @@ export function comCrmOrderSelfServiceResourceGetOrderRequestToJSON(
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderSupplyMethod$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderSupplyMethod, unknown> =
-    openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderSupplyMethod);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmOrderSelfServiceResourceGetOrderSupplyMethod,
+      )
+    );
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderState$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderState, unknown> =
-    openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderState);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderState)
+    );
 
 /** @internal */
 export const FulfilledByCountryCode$inboundSchema: z.ZodMiniType<
   FulfilledByCountryCode,
   unknown
-> = openEnums.inboundSchema(FulfilledByCountryCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(FulfilledByCountryCode)
+);
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderFulfilledByAddress$inboundSchema:
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourceGetOrderFulfilledByAddress,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      address_line_1: types.optional(types.string()),
-      address_line_2: types.optional(types.string()),
-      state_province_county: types.optional(types.string()),
-      town_city: types.optional(types.string()),
-      postal_code: types.optional(types.string()),
-      country_code: types.optional(FulfilledByCountryCode$inboundSchema),
-      lat: types.optional(types.number()),
-      lon: types.optional(types.number()),
-      googleplaceid: types.optional(types.string()),
-      google_place_id: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "address_line_1": "addressLine1",
-        "address_line_2": "addressLine2",
-        "state_province_county": "stateProvinceCounty",
-        "town_city": "townCity",
-        "postal_code": "postalCode",
-        "country_code": "countryCode",
-        "google_place_id": "googlePlaceId",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        address_line_1: types.optional(types.string()),
+        address_line_2: types.optional(types.string()),
+        state_province_county: types.optional(types.string()),
+        town_city: types.optional(types.string()),
+        postal_code: types.optional(types.string()),
+        country_code: types.optional(FulfilledByCountryCode$inboundSchema),
+        lat: types.optional(types.number()),
+        lon: types.optional(types.number()),
+        googleplaceid: types.optional(types.string()),
+        google_place_id: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "address_line_1": "addressLine1",
+          "address_line_2": "addressLine2",
+          "state_province_county": "stateProvinceCounty",
+          "town_city": "townCity",
+          "postal_code": "postalCode",
+          "country_code": "countryCode",
+          "google_place_id": "googlePlaceId",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderSelfServiceResourceGetOrderFulfilledByAddressFromJSON(
@@ -1446,17 +1458,17 @@ export function comCrmOrderSelfServiceResourceGetOrderFulfilledByAddressFromJSON
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderFulfilledBy$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderFulfilledBy, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      phone: types.optional(types.string()),
-      address: types.optional(
-        z.lazy(() =>
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderFulfilledBy, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        phone: types.optional(types.string()),
+        address: types.optional(z.lazy(() =>
           ComCrmOrderSelfServiceResourceGetOrderFulfilledByAddress$inboundSchema
-        ),
-      ),
-    });
+        )),
+      })
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderFulfilledByFromJSON(
   jsonString: string,
@@ -1477,41 +1489,45 @@ export function comCrmOrderSelfServiceResourceGetOrderFulfilledByFromJSON(
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderCountryCode$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderCountryCode, unknown> =
-    openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderCountryCode);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderCountryCode)
+    );
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderAddress$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderAddress, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        address_type: types.optional(types.string()),
-        address_name: types.optional(types.string()),
-        address_line_1: types.optional(types.string()),
-        address_line_2: types.optional(types.string()),
-        state_province_county: types.optional(types.string()),
-        town_city: types.optional(types.string()),
-        postal_code: types.optional(types.string()),
-        country_code: types.optional(
-          ComCrmOrderSelfServiceResourceGetOrderCountryCode$inboundSchema,
-        ),
-        lat: types.optional(types.number()),
-        lon: types.optional(types.number()),
-        google_place_id: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "address_type": "addressType",
-          "address_name": "addressName",
-          "address_line_1": "addressLine1",
-          "address_line_2": "addressLine2",
-          "state_province_county": "stateProvinceCounty",
-          "town_city": "townCity",
-          "postal_code": "postalCode",
-          "country_code": "countryCode",
-          "google_place_id": "googlePlaceId",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderAddress, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          address_type: types.optional(types.string()),
+          address_name: types.optional(types.string()),
+          address_line_1: types.optional(types.string()),
+          address_line_2: types.optional(types.string()),
+          state_province_county: types.optional(types.string()),
+          town_city: types.optional(types.string()),
+          postal_code: types.optional(types.string()),
+          country_code: types.optional(
+            ComCrmOrderSelfServiceResourceGetOrderCountryCode$inboundSchema,
+          ),
+          lat: types.optional(types.number()),
+          lon: types.optional(types.number()),
+          google_place_id: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "address_type": "addressType",
+            "address_name": "addressName",
+            "address_line_1": "addressLine1",
+            "address_line_2": "addressLine2",
+            "state_province_county": "stateProvinceCounty",
+            "town_city": "townCity",
+            "postal_code": "postalCode",
+            "country_code": "countryCode",
+            "google_place_id": "googlePlaceId",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderSelfServiceResourceGetOrderAddressFromJSON(
@@ -1532,11 +1548,13 @@ export function comCrmOrderSelfServiceResourceGetOrderAddressFromJSON(
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderCategory$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderCategory, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderCategory, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+      })
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderCategoryFromJSON(
   jsonString: string,
@@ -1558,17 +1576,21 @@ export function comCrmOrderSelfServiceResourceGetOrderCategoryFromJSON(
 export const EstimatedFulfillmentUot$inboundSchema: z.ZodMiniType<
   EstimatedFulfillmentUot,
   unknown
-> = openEnums.inboundSchema(EstimatedFulfillmentUot);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(EstimatedFulfillmentUot)
+);
 
 /** @internal */
 export const EstimatedFulfillment$inboundSchema: z.ZodMiniType<
   EstimatedFulfillment,
   unknown
-> = z.object({
-  date: types.optional(types.number()),
-  duration: types.optional(types.number()),
-  uot: types.optional(EstimatedFulfillmentUot$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    date: types.optional(types.number()),
+    duration: types.optional(types.number()),
+    uot: types.optional(EstimatedFulfillmentUot$inboundSchema),
+  })
+);
 
 export function estimatedFulfillmentFromJSON(
   jsonString: string,
@@ -1581,28 +1603,31 @@ export function estimatedFulfillmentFromJSON(
 }
 
 /** @internal */
-export const KeyDates$inboundSchema: z.ZodMiniType<KeyDates, unknown> = z.pipe(
-  z.object({
-    submitted_on: types.optional(types.number()),
-    completed_on: types.optional(types.number()),
-    cancelled_on: types.optional(types.number()),
-    requested_date: types.optional(types.number()),
-    started_on: types.optional(types.number()),
-    estimated_fulfillment: types.optional(z.lazy(() =>
-      EstimatedFulfillment$inboundSchema
-    )),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "submitted_on": "submittedOn",
-      "completed_on": "completedOn",
-      "cancelled_on": "cancelledOn",
-      "requested_date": "requestedDate",
-      "started_on": "startedOn",
-      "estimated_fulfillment": "estimatedFulfillment",
-    });
-  }),
-);
+export const KeyDates$inboundSchema: z.ZodMiniType<KeyDates, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        submitted_on: types.optional(types.number()),
+        completed_on: types.optional(types.number()),
+        cancelled_on: types.optional(types.number()),
+        requested_date: types.optional(types.number()),
+        started_on: types.optional(types.number()),
+        estimated_fulfillment: types.optional(
+          z.lazy(() => EstimatedFulfillment$inboundSchema),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "submitted_on": "submittedOn",
+          "completed_on": "completedOn",
+          "cancelled_on": "cancelledOn",
+          "requested_date": "requestedDate",
+          "started_on": "startedOn",
+          "estimated_fulfillment": "estimatedFulfillment",
+        });
+      }),
+    )
+  );
 
 export function keyDatesFromJSON(
   jsonString: string,
@@ -1618,10 +1643,12 @@ export function keyDatesFromJSON(
 export const CancellationReason$inboundSchema: z.ZodMiniType<
   CancellationReason,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function cancellationReasonFromJSON(
   jsonString: string,
@@ -1635,17 +1662,19 @@ export function cancellationReasonFromJSON(
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderDiscount$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderDiscount, unknown> = z
-    .pipe(
-      z.object({
-        amount: types.optional(types.number()),
-        amount_incl_tax: types.optional(types.number()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "amount_incl_tax": "amountInclTax",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderDiscount, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          amount: types.optional(types.number()),
+          amount_incl_tax: types.optional(types.number()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "amount_incl_tax": "amountInclTax",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderSelfServiceResourceGetOrderDiscountFromJSON(
@@ -1669,19 +1698,21 @@ export const ComCrmOrderSelfServiceResourceGetOrderPreferredBillingDay$inboundSc
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourceGetOrderPreferredBillingDay,
     unknown
-  > = z.pipe(
-    z.object({
-      day_of_week: types.optional(types.string()),
-      day_of_month: types.optional(types.number()),
-      month_of_year: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "day_of_week": "dayOfWeek",
-        "day_of_month": "dayOfMonth",
-        "month_of_year": "monthOfYear",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        day_of_week: types.optional(types.string()),
+        day_of_month: types.optional(types.number()),
+        month_of_year: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "day_of_week": "dayOfWeek",
+          "day_of_month": "dayOfMonth",
+          "month_of_year": "monthOfYear",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderSelfServiceResourceGetOrderPreferredBillingDayFromJSON(
@@ -1701,18 +1732,20 @@ export function comCrmOrderSelfServiceResourceGetOrderPreferredBillingDayFromJSO
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderItemDiscount$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderItemDiscount, unknown> = z
-    .pipe(
-      z.object({
-        amount: types.optional(types.number()),
-        amount_incl_tax: types.optional(types.number()),
-        percentage: types.optional(types.number()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "amount_incl_tax": "amountInclTax",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderItemDiscount, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          amount: types.optional(types.number()),
+          amount_incl_tax: types.optional(types.number()),
+          percentage: types.optional(types.number()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "amount_incl_tax": "amountInclTax",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderSelfServiceResourceGetOrderItemDiscountFromJSON(
@@ -1736,19 +1769,23 @@ export const ComCrmOrderSelfServiceResourceGetOrderBillingPeriodUot$inboundSchem
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourceGetOrderBillingPeriodUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmOrderSelfServiceResourceGetOrderBillingPeriodUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmOrderSelfServiceResourceGetOrderBillingPeriodUot,
+    )
   );
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderBillingPeriod$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderBillingPeriod, unknown> =
-    z.object({
-      duration: types.optional(types.number()),
-      uot: types.optional(
-        ComCrmOrderSelfServiceResourceGetOrderBillingPeriodUot$inboundSchema,
-      ),
-    });
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        duration: types.optional(types.number()),
+        uot: types.optional(
+          ComCrmOrderSelfServiceResourceGetOrderBillingPeriodUot$inboundSchema,
+        ),
+      })
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderBillingPeriodFromJSON(
   jsonString: string,
@@ -1771,19 +1808,23 @@ export const ComCrmOrderSelfServiceResourceGetOrderContractPeriodUot$inboundSche
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourceGetOrderContractPeriodUot,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmOrderSelfServiceResourceGetOrderContractPeriodUot,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmOrderSelfServiceResourceGetOrderContractPeriodUot,
+    )
   );
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderContractPeriod$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderContractPeriod, unknown> =
-    z.object({
-      duration: types.optional(types.number()),
-      uot: types.optional(
-        ComCrmOrderSelfServiceResourceGetOrderContractPeriodUot$inboundSchema,
-      ),
-    });
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        duration: types.optional(types.number()),
+        uot: types.optional(
+          ComCrmOrderSelfServiceResourceGetOrderContractPeriodUot$inboundSchema,
+        ),
+      })
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderContractPeriodFromJSON(
   jsonString: string,
@@ -1804,19 +1845,23 @@ export function comCrmOrderSelfServiceResourceGetOrderContractPeriodFromJSON(
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderTrialPeriodUot$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderTrialPeriodUot, unknown> =
-    openEnums.inboundSchema(
-      ComCrmOrderSelfServiceResourceGetOrderTrialPeriodUot,
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmOrderSelfServiceResourceGetOrderTrialPeriodUot,
+      )
     );
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderTrialPeriod$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderTrialPeriod, unknown> = z
-    .object({
-      duration: types.optional(types.number()),
-      uot: types.optional(
-        ComCrmOrderSelfServiceResourceGetOrderTrialPeriodUot$inboundSchema,
-      ),
-    });
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderTrialPeriod, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        duration: types.optional(types.number()),
+        uot: types.optional(
+          ComCrmOrderSelfServiceResourceGetOrderTrialPeriodUot$inboundSchema,
+        ),
+      })
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderTrialPeriodFromJSON(
   jsonString: string,
@@ -1837,48 +1882,62 @@ export function comCrmOrderSelfServiceResourceGetOrderTrialPeriodFromJSON(
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderPriceModel$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderPriceModel, unknown> =
-    openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderPriceModel);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderPriceModel)
+    );
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderBillingModel$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderBillingModel, unknown> =
-    openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderBillingModel);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmOrderSelfServiceResourceGetOrderBillingModel,
+      )
+    );
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderPriceTerms$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderPriceTerms, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        billing_period: types.optional(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderBillingPeriod$inboundSchema
-        )),
-        auto_renew: types.optional(types.boolean()),
-        termed_period_cycles: types.optional(types.number()),
-        contract_period: types.optional(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderContractPeriod$inboundSchema
-        )),
-        trial_period: types.optional(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderTrialPeriod$inboundSchema
-        )),
-        price_model: types.optional(
-          ComCrmOrderSelfServiceResourceGetOrderPriceModel$inboundSchema,
-        ),
-        billing_model: types.optional(
-          ComCrmOrderSelfServiceResourceGetOrderBillingModel$inboundSchema,
-        ),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "billing_period": "billingPeriod",
-          "auto_renew": "autoRenew",
-          "termed_period_cycles": "termedPeriodCycles",
-          "contract_period": "contractPeriod",
-          "trial_period": "trialPeriod",
-          "price_model": "priceModel",
-          "billing_model": "billingModel",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderPriceTerms, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          billing_period: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderBillingPeriod$inboundSchema
+            ),
+          ),
+          auto_renew: types.optional(types.boolean()),
+          termed_period_cycles: types.optional(types.number()),
+          contract_period: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderContractPeriod$inboundSchema
+            ),
+          ),
+          trial_period: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderTrialPeriod$inboundSchema
+            ),
+          ),
+          price_model: types.optional(
+            ComCrmOrderSelfServiceResourceGetOrderPriceModel$inboundSchema,
+          ),
+          billing_model: types.optional(
+            ComCrmOrderSelfServiceResourceGetOrderBillingModel$inboundSchema,
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "billing_period": "billingPeriod",
+            "auto_renew": "autoRenew",
+            "termed_period_cycles": "termedPeriodCycles",
+            "contract_period": "contractPeriod",
+            "trial_period": "trialPeriod",
+            "price_model": "priceModel",
+            "billing_model": "billingModel",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderSelfServiceResourceGetOrderPriceTermsFromJSON(
@@ -1900,23 +1959,29 @@ export function comCrmOrderSelfServiceResourceGetOrderPriceTermsFromJSON(
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderClassification$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderClassification, unknown> =
-    openEnums.inboundSchema(
-      ComCrmOrderSelfServiceResourceGetOrderClassification,
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmOrderSelfServiceResourceGetOrderClassification,
+      )
     );
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderUsageType$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderUsageType, unknown> =
-    openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderUsageType);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderUsageType)
+    );
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderMedia$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderMedia, unknown> = z
-    .object({
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      url: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderMedia, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        url: types.optional(types.string()),
+      })
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderMediaFromJSON(
   jsonString: string,
@@ -1936,35 +2001,39 @@ export function comCrmOrderSelfServiceResourceGetOrderMediaFromJSON(
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderCreative$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderCreative, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        media_group_id: types.optional(types.string()),
-        usage_type: types.optional(
-          ComCrmOrderSelfServiceResourceGetOrderUsageType$inboundSchema,
-        ),
-        width: types.optional(types.number()),
-        height: types.optional(types.number()),
-        format: types.optional(types.string()),
-        url: types.optional(types.string()),
-        public_id: types.optional(types.string()),
-        media_id: types.optional(types.string()),
-        caption: types.optional(types.string()),
-        sort_order: types.optional(types.number()),
-        media: types.optional(z.array(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderMedia$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "media_group_id": "mediaGroupId",
-          "usage_type": "usageType",
-          "public_id": "publicId",
-          "media_id": "mediaId",
-          "sort_order": "sortOrder",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderCreative, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          media_group_id: types.optional(types.string()),
+          usage_type: types.optional(
+            ComCrmOrderSelfServiceResourceGetOrderUsageType$inboundSchema,
+          ),
+          width: types.optional(types.number()),
+          height: types.optional(types.number()),
+          format: types.optional(types.string()),
+          url: types.optional(types.string()),
+          public_id: types.optional(types.string()),
+          media_id: types.optional(types.string()),
+          caption: types.optional(types.string()),
+          sort_order: types.optional(types.number()),
+          media: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderMedia$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "media_group_id": "mediaGroupId",
+            "usage_type": "usageType",
+            "public_id": "publicId",
+            "media_id": "mediaId",
+            "sort_order": "sortOrder",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderSelfServiceResourceGetOrderCreativeFromJSON(
@@ -1985,18 +2054,21 @@ export function comCrmOrderSelfServiceResourceGetOrderCreativeFromJSON(
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderTag$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderTag, unknown> = z.pipe(
-    z.object({
-      tag_id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      colour: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "tag_id": "tagId",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderTag, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          tag_id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          colour: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "tag_id": "tagId",
+          });
+        }),
+      )
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderTagFromJSON(
   jsonString: string,
@@ -2019,11 +2091,13 @@ export const ComCrmOrderSelfServiceResourceGetOrderBundledItemProduct$inboundSch
   z.ZodMiniType<
     ComCrmOrderSelfServiceResourceGetOrderBundledItemProduct,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    sku: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      sku: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmOrderSelfServiceResourceGetOrderBundledItemProductFromJSON(
   jsonString: string,
@@ -2042,15 +2116,15 @@ export function comCrmOrderSelfServiceResourceGetOrderBundledItemProductFromJSON
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderBundledItem$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderBundledItem, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      product: types.optional(
-        z.lazy(() =>
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderBundledItem, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        product: types.optional(z.lazy(() =>
           ComCrmOrderSelfServiceResourceGetOrderBundledItemProduct$inboundSchema
-        ),
-      ),
-    });
+        )),
+      })
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderBundledItemFromJSON(
   jsonString: string,
@@ -2070,34 +2144,42 @@ export function comCrmOrderSelfServiceResourceGetOrderBundledItemFromJSON(
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderProduct$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderProduct, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        sku: types.optional(types.string()),
-        name: types.optional(types.string()),
-        description: types.optional(types.string()),
-        classification: types.optional(
-          ComCrmOrderSelfServiceResourceGetOrderClassification$inboundSchema,
-        ),
-        is_stockable: types.optional(types.boolean()),
-        composition: types.optional(types.string()),
-        creatives: types.optional(z.array(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderCreative$inboundSchema
-        ))),
-        tags: types.optional(z.array(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderTag$inboundSchema
-        ))),
-        bundled_item: types.optional(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderBundledItem$inboundSchema
-        )),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "is_stockable": "isStockable",
-          "bundled_item": "bundledItem",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderProduct, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          sku: types.optional(types.string()),
+          name: types.optional(types.string()),
+          description: types.optional(types.string()),
+          classification: types.optional(
+            ComCrmOrderSelfServiceResourceGetOrderClassification$inboundSchema,
+          ),
+          is_stockable: types.optional(types.boolean()),
+          composition: types.optional(types.string()),
+          creatives: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderCreative$inboundSchema
+            )),
+          ),
+          tags: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderTag$inboundSchema
+            )),
+          ),
+          bundled_item: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderBundledItem$inboundSchema
+            ),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "is_stockable": "isStockable",
+            "bundled_item": "bundledItem",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderSelfServiceResourceGetOrderProductFromJSON(
@@ -2119,25 +2201,30 @@ export function comCrmOrderSelfServiceResourceGetOrderProductFromJSON(
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderTaxModel$inboundSchema:
   z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderTaxModel, unknown> =
-    openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderTaxModel);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmOrderSelfServiceResourceGetOrderTaxModel)
+    );
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderDevice$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderDevice, unknown> = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      serial_number: types.optional(types.string()),
-      electronic_id: types.optional(types.string()),
-      dispatched: types.optional(types.boolean()),
-      invoiced: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "serial_number": "serialNumber",
-        "electronic_id": "electronicId",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderDevice, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          serial_number: types.optional(types.string()),
+          electronic_id: types.optional(types.string()),
+          dispatched: types.optional(types.boolean()),
+          invoiced: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "serial_number": "serialNumber",
+            "electronic_id": "electronicId",
+          });
+        }),
+      )
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderDeviceFromJSON(
   jsonString: string,
@@ -2157,42 +2244,53 @@ export function comCrmOrderSelfServiceResourceGetOrderDeviceFromJSON(
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderItem$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderItem, unknown> = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      notes: types.optional(types.string()),
-      quantity: types.optional(types.number()),
-      dispatched: types.optional(types.number()),
-      invoiced: types.optional(types.number()),
-      price: types.optional(types.number()),
-      tax: types.optional(types.number()),
-      net: types.optional(types.number()),
-      discount: types.optional(z.lazy(() =>
-        ComCrmOrderSelfServiceResourceGetOrderItemDiscount$inboundSchema
-      )),
-      sub_total: types.optional(types.number()),
-      total: types.optional(types.number()),
-      price_terms: types.optional(z.lazy(() =>
-        ComCrmOrderSelfServiceResourceGetOrderPriceTerms$inboundSchema
-      )),
-      product: types.optional(z.lazy(() =>
-        ComCrmOrderSelfServiceResourceGetOrderProduct$inboundSchema
-      )),
-      tax_model: types.optional(
-        ComCrmOrderSelfServiceResourceGetOrderTaxModel$inboundSchema,
-      ),
-      devices: types.optional(z.array(z.lazy(() =>
-        ComCrmOrderSelfServiceResourceGetOrderDevice$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "sub_total": "subTotal",
-        "price_terms": "priceTerms",
-        "tax_model": "taxModel",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderItem, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          notes: types.optional(types.string()),
+          quantity: types.optional(types.number()),
+          dispatched: types.optional(types.number()),
+          invoiced: types.optional(types.number()),
+          price: types.optional(types.number()),
+          tax: types.optional(types.number()),
+          net: types.optional(types.number()),
+          discount: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderItemDiscount$inboundSchema
+            ),
+          ),
+          sub_total: types.optional(types.number()),
+          total: types.optional(types.number()),
+          price_terms: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderPriceTerms$inboundSchema
+            ),
+          ),
+          product: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderProduct$inboundSchema
+            ),
+          ),
+          tax_model: types.optional(
+            ComCrmOrderSelfServiceResourceGetOrderTaxModel$inboundSchema,
+          ),
+          devices: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderDevice$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "sub_total": "subTotal",
+            "price_terms": "priceTerms",
+            "tax_model": "taxModel",
+          });
+        }),
+      )
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderItemFromJSON(
   jsonString: string,
@@ -2212,11 +2310,13 @@ export function comCrmOrderSelfServiceResourceGetOrderItemFromJSON(
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderCustomField$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderCustomField, unknown> = z
-    .object({
-      key: types.optional(types.string()),
-      value: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderCustomField, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        key: types.optional(types.string()),
+        value: types.optional(types.string()),
+      })
+    );
 
 export function comCrmOrderSelfServiceResourceGetOrderCustomFieldFromJSON(
   jsonString: string,
@@ -2236,79 +2336,93 @@ export function comCrmOrderSelfServiceResourceGetOrderCustomFieldFromJSON(
 
 /** @internal */
 export const ComCrmOrderSelfServiceResourceGetOrderResponse$inboundSchema:
-  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderResponse, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        number: types.optional(types.string()),
-        supply_method: types.optional(
-          ComCrmOrderSelfServiceResourceGetOrderSupplyMethod$inboundSchema,
-        ),
-        state: types.optional(
-          ComCrmOrderSelfServiceResourceGetOrderState$inboundSchema,
-        ),
-        is_favorite: types.optional(types.boolean()),
-        notes: types.optional(types.string()),
-        total: types.optional(types.number()),
-        wallet_funds: types.optional(types.number()),
-        amount_due: types.optional(types.number()),
-        currency_code: types.optional(types.string()),
-        fulfilled_by: types.optional(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderFulfilledBy$inboundSchema
-        )),
-        address: types.optional(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderAddress$inboundSchema
-        )),
-        category: types.optional(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderCategory$inboundSchema
-        )),
-        key_dates: types.optional(z.lazy(() =>
-          KeyDates$inboundSchema
-        )),
-        cancellation_reason: types.optional(z.lazy(() =>
-          CancellationReason$inboundSchema
-        )),
-        amount_to_collect: types.optional(types.number()),
-        discount: types.optional(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderDiscount$inboundSchema
-        )),
-        sub_total: types.optional(types.number()),
-        net_amount: types.optional(types.number()),
-        tax_amount: types.optional(types.number()),
-        total_default_currency: types.optional(types.number()),
-        exchange_rate: types.optional(types.number()),
-        default_currency_code: types.optional(types.string()),
-        preferred_billing_day: types.optional(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderPreferredBillingDay$inboundSchema
-        )),
-        items: types.optional(z.array(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderItem$inboundSchema
-        ))),
-        custom_fields: types.optional(z.array(z.lazy(() =>
-          ComCrmOrderSelfServiceResourceGetOrderCustomField$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "supply_method": "supplyMethod",
-          "is_favorite": "isFavorite",
-          "wallet_funds": "walletFunds",
-          "amount_due": "amountDue",
-          "currency_code": "currencyCode",
-          "fulfilled_by": "fulfilledBy",
-          "key_dates": "keyDates",
-          "cancellation_reason": "cancellationReason",
-          "amount_to_collect": "amountToCollect",
-          "sub_total": "subTotal",
-          "net_amount": "netAmount",
-          "tax_amount": "taxAmount",
-          "total_default_currency": "totalDefaultCurrency",
-          "exchange_rate": "exchangeRate",
-          "default_currency_code": "defaultCurrencyCode",
-          "preferred_billing_day": "preferredBillingDay",
-          "custom_fields": "customFields",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderSelfServiceResourceGetOrderResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          number: types.optional(types.string()),
+          supply_method: types.optional(
+            ComCrmOrderSelfServiceResourceGetOrderSupplyMethod$inboundSchema,
+          ),
+          state: types.optional(
+            ComCrmOrderSelfServiceResourceGetOrderState$inboundSchema,
+          ),
+          is_favorite: types.optional(types.boolean()),
+          notes: types.optional(types.string()),
+          total: types.optional(types.number()),
+          wallet_funds: types.optional(types.number()),
+          amount_due: types.optional(types.number()),
+          currency_code: types.optional(types.string()),
+          fulfilled_by: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderFulfilledBy$inboundSchema
+            ),
+          ),
+          address: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderAddress$inboundSchema
+            ),
+          ),
+          category: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderCategory$inboundSchema
+            ),
+          ),
+          key_dates: types.optional(z.lazy(() => KeyDates$inboundSchema)),
+          cancellation_reason: types.optional(
+            z.lazy(() => CancellationReason$inboundSchema),
+          ),
+          amount_to_collect: types.optional(types.number()),
+          discount: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderDiscount$inboundSchema
+            ),
+          ),
+          sub_total: types.optional(types.number()),
+          net_amount: types.optional(types.number()),
+          tax_amount: types.optional(types.number()),
+          total_default_currency: types.optional(types.number()),
+          exchange_rate: types.optional(types.number()),
+          default_currency_code: types.optional(types.string()),
+          preferred_billing_day: types.optional(
+            z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderPreferredBillingDay$inboundSchema
+            ),
+          ),
+          items: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderItem$inboundSchema
+            )),
+          ),
+          custom_fields: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmOrderSelfServiceResourceGetOrderCustomField$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "supply_method": "supplyMethod",
+            "is_favorite": "isFavorite",
+            "wallet_funds": "walletFunds",
+            "amount_due": "amountDue",
+            "currency_code": "currencyCode",
+            "fulfilled_by": "fulfilledBy",
+            "key_dates": "keyDates",
+            "cancellation_reason": "cancellationReason",
+            "amount_to_collect": "amountToCollect",
+            "sub_total": "subTotal",
+            "net_amount": "netAmount",
+            "tax_amount": "taxAmount",
+            "total_default_currency": "totalDefaultCurrency",
+            "exchange_rate": "exchangeRate",
+            "default_currency_code": "defaultCurrencyCode",
+            "preferred_billing_day": "preferredBillingDay",
+            "custom_fields": "customFields",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderSelfServiceResourceGetOrderResponseFromJSON(

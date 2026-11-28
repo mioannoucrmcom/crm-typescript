@@ -14,11 +14,11 @@ The application type:
 import { ComCrmApplicationSelfServiceResourceGetApplicationType } from "crm/models/operations";
 
 let value: ComCrmApplicationSelfServiceResourceGetApplicationType = "CAPTIVE";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "NATIVE" | "NATIVE_MERCHANT" | "WEB" | "CAPTIVE" | "CONSUMER_APP" | Unrecognized<string>
