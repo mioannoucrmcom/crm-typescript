@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceChangePasswordRequestBody = {
   /**
@@ -30,9 +31,11 @@ export const ComCrmContactSelfServiceResourceChangePasswordRequestBody$outboundS
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceChangePasswordRequestBody$Outbound,
     ComCrmContactSelfServiceResourceChangePasswordRequestBody
-  > = z.object({
-    password: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      password: z.string(),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceChangePasswordRequestBodyToJSON(
   comCrmContactSelfServiceResourceChangePasswordRequestBody:
@@ -57,14 +60,14 @@ export const ComCrmContactSelfServiceResourceChangePasswordRequest$outboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceChangePasswordRequest$Outbound,
     ComCrmContactSelfServiceResourceChangePasswordRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceChangePasswordRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceChangePasswordRequestToJSON(
   comCrmContactSelfServiceResourceChangePasswordRequest:

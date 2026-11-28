@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequestBody =
   {
@@ -30,9 +31,11 @@ export const ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestAction
   z.ZodMiniType<
     ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequestBody$Outbound,
     ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequestBody
-  > = z.object({
-    comments: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      comments: z.optional(z.string()),
+    })
+  );
 
 export function comCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequestBodyToJSON(
   comCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequestBody:
@@ -59,12 +62,14 @@ export const ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestAction
   z.ZodMiniType<
     ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequest$Outbound,
     ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequest
-  > = z.object({
-    token: z.string(),
-    body: z.lazy(() =>
-      ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequestBody$outboundSchema
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      token: z.string(),
+      body: z.lazy(() =>
+        ComCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequestBody$outboundSchema
+      ),
+    })
+  );
 
 export function comCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequestToJSON(
   comCrmApprovalRequestSelfServiceResourceRejectApprovalRequestActionRequest:

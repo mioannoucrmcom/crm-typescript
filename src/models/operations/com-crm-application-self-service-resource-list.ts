@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -213,7 +213,9 @@ export type ComCrmApplicationSelfServiceResourceListResponse = {
 /** @internal */
 export const ComCrmApplicationSelfServiceResourceListQueryParamType$outboundSchema:
   z.ZodMiniEnum<typeof ComCrmApplicationSelfServiceResourceListQueryParamType> =
-    z.enum(ComCrmApplicationSelfServiceResourceListQueryParamType);
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmApplicationSelfServiceResourceListQueryParamType)
+    );
 
 /** @internal */
 export type ComCrmApplicationSelfServiceResourceListRequest$Outbound = {
@@ -231,23 +233,25 @@ export const ComCrmApplicationSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceListRequest$Outbound,
     ComCrmApplicationSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      connector: z.optional(z.string()),
-      finance: z.optional(z.boolean()),
-      paymentMethod: z.optional(z.string()),
-      rewards: z.optional(z.boolean()),
-      transactions: z.optional(z.string()),
-      type: z.optional(
-        ComCrmApplicationSelfServiceResourceListQueryParamType$outboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        paymentMethod: "payment_method",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        connector: z.optional(z.string()),
+        finance: z.optional(z.boolean()),
+        paymentMethod: z.optional(z.string()),
+        rewards: z.optional(z.boolean()),
+        transactions: z.optional(z.string()),
+        type: z.optional(
+          ComCrmApplicationSelfServiceResourceListQueryParamType$outboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          paymentMethod: "payment_method",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceListRequestToJSON(
@@ -264,8 +268,10 @@ export function comCrmApplicationSelfServiceResourceListRequestToJSON(
 /** @internal */
 export const ComCrmApplicationSelfServiceResourceListContentType$inboundSchema:
   z.ZodMiniType<ComCrmApplicationSelfServiceResourceListContentType, unknown> =
-    openEnums.inboundSchema(
-      ComCrmApplicationSelfServiceResourceListContentType,
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmApplicationSelfServiceResourceListContentType,
+      )
     );
 
 /** @internal */
@@ -273,19 +279,23 @@ export const ComCrmApplicationSelfServiceResourceListOrganisationType$inboundSch
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceListOrganisationType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceListOrganisationType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceListOrganisationType,
+    )
   );
 
 /** @internal */
 export const ComCrmApplicationSelfServiceResourceListOrganisation$inboundSchema:
   z.ZodMiniType<ComCrmApplicationSelfServiceResourceListOrganisation, unknown> =
-    z.object({
-      id: types.optional(types.string()),
-      type: types.optional(
-        ComCrmApplicationSelfServiceResourceListOrganisationType$inboundSchema,
-      ),
-    });
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        type: types.optional(
+          ComCrmApplicationSelfServiceResourceListOrganisationType$inboundSchema,
+        ),
+      })
+    );
 
 export function comCrmApplicationSelfServiceResourceListOrganisationFromJSON(
   jsonString: string,
@@ -308,8 +318,10 @@ export const ComCrmApplicationSelfServiceResourceListClassification$inboundSchem
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceListClassification,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceListClassification,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceListClassification,
+    )
   );
 
 /** @internal */
@@ -317,22 +329,26 @@ export const ComCrmApplicationSelfServiceResourceListPaymentMethod$inboundSchema
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceListPaymentMethod,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceListPaymentMethod,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceListPaymentMethod,
+    )
   );
 
 /** @internal */
 export const ComCrmApplicationSelfServiceResourceListDetails$inboundSchema:
-  z.ZodMiniType<ComCrmApplicationSelfServiceResourceListDetails, unknown> = z
-    .pipe(
-      z.object({
-        account_debit: types.optional(z.array(types.string())),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "account_debit": "accountDebit",
-        });
-      }),
+  z.ZodMiniType<ComCrmApplicationSelfServiceResourceListDetails, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          account_debit: types.optional(z.array(types.string())),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "account_debit": "accountDebit",
+          });
+        }),
+      )
     );
 
 export function comCrmApplicationSelfServiceResourceListDetailsFromJSON(
@@ -355,31 +371,31 @@ export function comCrmApplicationSelfServiceResourceListDetailsFromJSON(
 export const PaymentGateways$inboundSchema: z.ZodMiniType<
   PaymentGateways,
   unknown
-> = z.pipe(
-  z.object({
-    classifications: types.optional(
-      z.array(
-        ComCrmApplicationSelfServiceResourceListClassification$inboundSchema,
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      classifications: types.optional(
+        z.array(
+          ComCrmApplicationSelfServiceResourceListClassification$inboundSchema,
+        ),
       ),
-    ),
-    payment_methods: types.optional(
-      z.array(
-        ComCrmApplicationSelfServiceResourceListPaymentMethod$inboundSchema,
+      payment_methods: types.optional(
+        z.array(
+          ComCrmApplicationSelfServiceResourceListPaymentMethod$inboundSchema,
+        ),
       ),
-    ),
-    details: types.optional(
-      z.lazy(() =>
+      details: types.optional(z.lazy(() =>
         ComCrmApplicationSelfServiceResourceListDetails$inboundSchema
-      ),
-    ),
-    is_rewards: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "payment_methods": "paymentMethods",
-      "is_rewards": "isRewards",
-    });
-  }),
+      )),
+      is_rewards: types.optional(types.boolean()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "payment_methods": "paymentMethods",
+        "is_rewards": "isRewards",
+      });
+    }),
+  )
 );
 
 export function paymentGatewaysFromJSON(
@@ -394,28 +410,32 @@ export function paymentGatewaysFromJSON(
 
 /** @internal */
 export const ComCrmApplicationSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<ComCrmApplicationSelfServiceResourceListContent, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        type: types.optional(
-          ComCrmApplicationSelfServiceResourceListContentType$inboundSchema,
-        ),
-        connector: types.optional(types.string()),
-        media_url: types.optional(types.string()),
-        organisation: types.optional(z.lazy(() =>
-          ComCrmApplicationSelfServiceResourceListOrganisation$inboundSchema
-        )),
-        payment_gateways: types.optional(z.lazy(() =>
-          PaymentGateways$inboundSchema
-        )),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "media_url": "mediaUrl",
-          "payment_gateways": "paymentGateways",
-        });
-      }),
+  z.ZodMiniType<ComCrmApplicationSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          type: types.optional(
+            ComCrmApplicationSelfServiceResourceListContentType$inboundSchema,
+          ),
+          connector: types.optional(types.string()),
+          media_url: types.optional(types.string()),
+          organisation: types.optional(
+            z.lazy(() =>
+              ComCrmApplicationSelfServiceResourceListOrganisation$inboundSchema
+            ),
+          ),
+          payment_gateways: types.optional(
+            z.lazy(() => PaymentGateways$inboundSchema),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "media_url": "mediaUrl",
+            "payment_gateways": "paymentGateways",
+          });
+        }),
+      )
     );
 
 export function comCrmApplicationSelfServiceResourceListContentFromJSON(
@@ -436,14 +456,14 @@ export function comCrmApplicationSelfServiceResourceListContentFromJSON(
 
 /** @internal */
 export const ComCrmApplicationSelfServiceResourceListResponse$inboundSchema:
-  z.ZodMiniType<ComCrmApplicationSelfServiceResourceListResponse, unknown> = z
-    .object({
-      content: types.optional(
-        z.array(z.lazy(() =>
+  z.ZodMiniType<ComCrmApplicationSelfServiceResourceListResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        content: types.optional(z.array(z.lazy(() =>
           ComCrmApplicationSelfServiceResourceListContent$inboundSchema
-        )),
-      ),
-    });
+        ))),
+      })
+    );
 
 export function comCrmApplicationSelfServiceResourceListResponseFromJSON(
   jsonString: string,

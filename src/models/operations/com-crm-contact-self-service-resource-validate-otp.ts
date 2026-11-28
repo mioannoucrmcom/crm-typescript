@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -174,16 +174,18 @@ export const ComCrmContactSelfServiceResourceValidateOTPRequestBody$outboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceValidateOTPRequestBody$Outbound,
     ComCrmContactSelfServiceResourceValidateOTPRequestBody
-  > = z.pipe(
-    z.object({
-      code: z.string(),
-      authOtp: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        authOtp: "auth_otp",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        code: z.string(),
+        authOtp: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          authOtp: "auth_otp",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceValidateOTPRequestBodyToJSON(
@@ -210,18 +212,22 @@ export const ComCrmContactSelfServiceResourceValidateOTPRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceValidateOTPRequest$Outbound,
     ComCrmContactSelfServiceResourceValidateOTPRequest
-  > = z.pipe(
-    z.object({
-      apiKey: z.optional(z.string()),
-      body: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceValidateOTPRequestBody$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        apiKey: "api_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        apiKey: z.optional(z.string()),
+        body: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceValidateOTPRequestBody$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          apiKey: "api_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceValidateOTPRequestToJSON(
@@ -240,32 +246,36 @@ export const ComCrmContactSelfServiceResourceValidateOTPContactType$inboundSchem
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceValidateOTPContactType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceValidateOTPContactType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceValidateOTPContactType,
+    )
   );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceValidateOTPContact$inboundSchema:
-  z.ZodMiniType<ComCrmContactSelfServiceResourceValidateOTPContact, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        type: types.optional(
-          ComCrmContactSelfServiceResourceValidateOTPContactType$inboundSchema,
-        ),
-        first_name: types.optional(types.string()),
-        last_name: types.optional(types.string()),
-        is_verified: types.optional(types.boolean()),
-        company_name: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "first_name": "firstName",
-          "last_name": "lastName",
-          "is_verified": "isVerified",
-          "company_name": "companyName",
-        });
-      }),
+  z.ZodMiniType<ComCrmContactSelfServiceResourceValidateOTPContact, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          type: types.optional(
+            ComCrmContactSelfServiceResourceValidateOTPContactType$inboundSchema,
+          ),
+          first_name: types.optional(types.string()),
+          last_name: types.optional(types.string()),
+          is_verified: types.optional(types.boolean()),
+          company_name: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "first_name": "firstName",
+            "last_name": "lastName",
+            "is_verified": "isVerified",
+            "company_name": "companyName",
+          });
+        }),
+      )
     );
 
 export function comCrmContactSelfServiceResourceValidateOTPContactFromJSON(
@@ -289,8 +299,10 @@ export const ComCrmContactSelfServiceResourceValidateOTPOrganisationType$inbound
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceValidateOTPOrganisationType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceValidateOTPOrganisationType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceValidateOTPOrganisationType,
+    )
   );
 
 /** @internal */
@@ -298,13 +310,15 @@ export const ComCrmContactSelfServiceResourceValidateOTPOrganisation$inboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceValidateOTPOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    type: types.optional(
-      ComCrmContactSelfServiceResourceValidateOTPOrganisationType$inboundSchema,
-    ),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(
+        ComCrmContactSelfServiceResourceValidateOTPOrganisationType$inboundSchema,
+      ),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceValidateOTPOrganisationFromJSON(
   jsonString: string,
@@ -324,10 +338,12 @@ export function comCrmContactSelfServiceResourceValidateOTPOrganisationFromJSON(
 /** @internal */
 export const ComCrmContactSelfServiceResourceValidateOTPCommunity$inboundSchema:
   z.ZodMiniType<ComCrmContactSelfServiceResourceValidateOTPCommunity, unknown> =
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-    });
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+      })
+    );
 
 export function comCrmContactSelfServiceResourceValidateOTPCommunityFromJSON(
   jsonString: string,
@@ -348,34 +364,42 @@ export function comCrmContactSelfServiceResourceValidateOTPCommunityFromJSON(
 /** @internal */
 export const ComCrmContactSelfServiceResourceValidateOTPResponse$inboundSchema:
   z.ZodMiniType<ComCrmContactSelfServiceResourceValidateOTPResponse, unknown> =
-    z.pipe(
-      z.object({
-        access_token: types.optional(types.string()),
-        refresh_token: types.optional(types.string()),
-        expiration_date: types.optional(types.number()),
-        contact: types.optional(z.lazy(() =>
-          ComCrmContactSelfServiceResourceValidateOTPContact$inboundSchema
-        )),
-        organisations: types.optional(z.array(z.lazy(() =>
-          ComCrmContactSelfServiceResourceValidateOTPOrganisation$inboundSchema
-        ))),
-        communities: types.optional(z.array(z.lazy(() =>
-          ComCrmContactSelfServiceResourceValidateOTPCommunity$inboundSchema
-        ))),
-        obfuscated_value: types.optional(types.string()),
-        auth_otp: types.optional(types.string()),
-        existing_contact: types.optional(types.boolean()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "access_token": "accessToken",
-          "refresh_token": "refreshToken",
-          "expiration_date": "expirationDate",
-          "obfuscated_value": "obfuscatedValue",
-          "auth_otp": "authOtp",
-          "existing_contact": "existingContact",
-        });
-      }),
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          access_token: types.optional(types.string()),
+          refresh_token: types.optional(types.string()),
+          expiration_date: types.optional(types.number()),
+          contact: types.optional(
+            z.lazy(() =>
+              ComCrmContactSelfServiceResourceValidateOTPContact$inboundSchema
+            ),
+          ),
+          organisations: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmContactSelfServiceResourceValidateOTPOrganisation$inboundSchema
+            )),
+          ),
+          communities: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmContactSelfServiceResourceValidateOTPCommunity$inboundSchema
+            )),
+          ),
+          obfuscated_value: types.optional(types.string()),
+          auth_otp: types.optional(types.string()),
+          existing_contact: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "access_token": "accessToken",
+            "refresh_token": "refreshToken",
+            "expiration_date": "expirationDate",
+            "obfuscated_value": "obfuscatedValue",
+            "auth_otp": "authOtp",
+            "existing_contact": "existingContact",
+          });
+        }),
+      )
     );
 
 export function comCrmContactSelfServiceResourceValidateOTPResponseFromJSON(

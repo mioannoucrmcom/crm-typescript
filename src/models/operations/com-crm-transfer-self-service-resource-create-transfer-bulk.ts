@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmTransferSelfServiceResourceCreateTransferBulkSecurity = {
   publicAPIKey: string;
@@ -107,15 +108,17 @@ export const ComCrmTransferSelfServiceResourceCreateTransferBulkSecurity$outboun
   z.ZodMiniType<
     ComCrmTransferSelfServiceResourceCreateTransferBulkSecurity$Outbound,
     ComCrmTransferSelfServiceResourceCreateTransferBulkSecurity
-  > = z.pipe(
-    z.object({
-      publicAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        publicAPIKey: "Public_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        publicAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          publicAPIKey: "Public_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmTransferSelfServiceResourceCreateTransferBulkSecurityToJSON(
@@ -140,17 +143,19 @@ export const ComCrmTransferSelfServiceResourceCreateTransferBulkOrigin$outboundS
   z.ZodMiniType<
     ComCrmTransferSelfServiceResourceCreateTransferBulkOrigin$Outbound,
     ComCrmTransferSelfServiceResourceCreateTransferBulkOrigin
-  > = z.pipe(
-    z.object({
-      accountId: z.optional(z.string()),
-      walletId: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        accountId: "account_id",
-        walletId: "wallet_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        accountId: z.optional(z.string()),
+        walletId: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          accountId: "account_id",
+          walletId: "wallet_id",
+        });
+      }),
+    )
   );
 
 export function comCrmTransferSelfServiceResourceCreateTransferBulkOriginToJSON(
@@ -175,17 +180,19 @@ export const ComCrmTransferSelfServiceResourceCreateTransferBulkDestination$outb
   z.ZodMiniType<
     ComCrmTransferSelfServiceResourceCreateTransferBulkDestination$Outbound,
     ComCrmTransferSelfServiceResourceCreateTransferBulkDestination
-  > = z.pipe(
-    z.object({
-      accountId: z.optional(z.string()),
-      walletId: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        accountId: "account_id",
-        walletId: "wallet_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        accountId: z.optional(z.string()),
+        walletId: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          accountId: "account_id",
+          walletId: "wallet_id",
+        });
+      }),
+    )
   );
 
 export function comCrmTransferSelfServiceResourceCreateTransferBulkDestinationToJSON(
@@ -210,10 +217,12 @@ export const ComCrmTransferSelfServiceResourceCreateTransferBulkCustomField$outb
   z.ZodMiniType<
     ComCrmTransferSelfServiceResourceCreateTransferBulkCustomField$Outbound,
     ComCrmTransferSelfServiceResourceCreateTransferBulkCustomField
-  > = z.object({
-    key: z.optional(z.string()),
-    value: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: z.optional(z.string()),
+      value: z.optional(z.string()),
+    })
+  );
 
 export function comCrmTransferSelfServiceResourceCreateTransferBulkCustomFieldToJSON(
   comCrmTransferSelfServiceResourceCreateTransferBulkCustomField:
@@ -248,33 +257,37 @@ export type RequestBody$Outbound = {
 export const RequestBody$outboundSchema: z.ZodMiniType<
   RequestBody$Outbound,
   RequestBody
-> = z.pipe(
-  z.object({
-    id: z.optional(z.string()),
-    origin: z.lazy(() =>
-      ComCrmTransferSelfServiceResourceCreateTransferBulkOrigin$outboundSchema
-    ),
-    destination: z.lazy(() =>
-      ComCrmTransferSelfServiceResourceCreateTransferBulkDestination$outboundSchema
-    ),
-    transferDate: z.optional(z.int()),
-    amount: z.number(),
-    code: z.optional(z.string()),
-    commercePoolId: z.optional(z.string()),
-    cashPocket: z.optional(z.boolean()),
-    notes: z.optional(z.nullable(z.string())),
-    customFields: z.optional(z.array(z.lazy(() =>
-      ComCrmTransferSelfServiceResourceCreateTransferBulkCustomField$outboundSchema
-    ))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      transferDate: "transfer_date",
-      commercePoolId: "commerce_pool_id",
-      cashPocket: "cash_pocket",
-      customFields: "custom_fields",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: z.optional(z.string()),
+      origin: z.lazy(() =>
+        ComCrmTransferSelfServiceResourceCreateTransferBulkOrigin$outboundSchema
+      ),
+      destination: z.lazy(() =>
+        ComCrmTransferSelfServiceResourceCreateTransferBulkDestination$outboundSchema
+      ),
+      transferDate: z.optional(z.int()),
+      amount: z.number(),
+      code: z.optional(z.string()),
+      commercePoolId: z.optional(z.string()),
+      cashPocket: z.optional(z.boolean()),
+      notes: z.optional(z.nullable(z.string())),
+      customFields: z.optional(
+        z.array(z.lazy(() =>
+          ComCrmTransferSelfServiceResourceCreateTransferBulkCustomField$outboundSchema
+        )),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        transferDate: "transfer_date",
+        commercePoolId: "commerce_pool_id",
+        cashPocket: "cash_pocket",
+        customFields: "custom_fields",
+      });
+    }),
+  )
 );
 
 export function requestBodyToJSON(requestBody: RequestBody): string {

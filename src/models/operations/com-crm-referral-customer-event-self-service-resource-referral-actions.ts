@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmReferralCustomerEventSelfServiceResourceReferralActionsSecurity =
   {
@@ -35,17 +36,19 @@ export const ComCrmReferralCustomerEventSelfServiceResourceReferralActionsSecuri
   z.ZodMiniType<
     ComCrmReferralCustomerEventSelfServiceResourceReferralActionsSecurity$Outbound,
     ComCrmReferralCustomerEventSelfServiceResourceReferralActionsSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorizationSelfService: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-        authorizationSelfService: "authorization_self_service",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorizationSelfService: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+          authorizationSelfService: "authorization_self_service",
+        });
+      }),
+    )
   );
 
 export function comCrmReferralCustomerEventSelfServiceResourceReferralActionsSecurityToJSON(
@@ -72,10 +75,12 @@ export const ComCrmReferralCustomerEventSelfServiceResourceReferralActionsReques
   z.ZodMiniType<
     ComCrmReferralCustomerEventSelfServiceResourceReferralActionsRequest$Outbound,
     ComCrmReferralCustomerEventSelfServiceResourceReferralActionsRequest
-  > = z.object({
-    action: z.string(),
-    recipients: z.array(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      action: z.string(),
+      recipients: z.array(z.string()),
+    })
+  );
 
 export function comCrmReferralCustomerEventSelfServiceResourceReferralActionsRequestToJSON(
   comCrmReferralCustomerEventSelfServiceResourceReferralActionsRequest:

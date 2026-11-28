@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -928,19 +928,21 @@ export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormSecu
   z.ZodMiniType<
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormSecurity$Outbound,
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorizationSelfService: z.optional(z.string()),
-      publicAPIKey: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-        authorizationSelfService: "authorization_self_service",
-        publicAPIKey: "Public_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorizationSelfService: z.optional(z.string()),
+        publicAPIKey: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+          authorizationSelfService: "authorization_self_service",
+          publicAPIKey: "Public_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormSecurityToJSON(
@@ -959,24 +961,30 @@ export function comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormS
 export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormCurrencyCode$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormCurrencyCode
-  > = z.enum(
-    ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormCurrencyCode,
+    )
   );
 
 /** @internal */
 export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormDeviceType$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormDeviceType
-  > = z.enum(
-    ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormDeviceType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormDeviceType,
+    )
   );
 
 /** @internal */
 export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhoneCountryCode$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhoneCountryCode
-  > = z.enum(
-    ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhoneCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhoneCountryCode,
+    )
   );
 
 /** @internal */
@@ -991,18 +999,20 @@ export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhon
   z.ZodMiniType<
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhone$Outbound,
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhone
-  > = z.pipe(
-    z.object({
-      countryCode: z.optional(
-        ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhoneCountryCode$outboundSchema,
-      ),
-      number: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        countryCode: "country_code",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        countryCode: z.optional(
+          ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhoneCountryCode$outboundSchema,
+        ),
+        number: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          countryCode: "country_code",
+        });
+      }),
+    )
   );
 
 export function comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhoneToJSON(
@@ -1021,8 +1031,10 @@ export function comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormP
 export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddressCountryCode$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddressCountryCode
-  > = z.enum(
-    ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddressCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(
+      ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddressCountryCode,
+    )
   );
 
 /** @internal */
@@ -1041,27 +1053,29 @@ export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddr
   z.ZodMiniType<
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddress$Outbound,
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddress
-  > = z.pipe(
-    z.object({
-      addressLine1: z.optional(z.string()),
-      addressLine2: z.optional(z.string()),
-      stateProvinceCounty: z.optional(z.string()),
-      townCity: z.optional(z.string()),
-      postalCode: z.optional(z.string()),
-      countryCode: z.optional(
-        ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddressCountryCode$outboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        addressLine1: "address_line_1",
-        addressLine2: "address_line_2",
-        stateProvinceCounty: "state_province_county",
-        townCity: "town_city",
-        postalCode: "postal_code",
-        countryCode: "country_code",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        addressLine1: z.optional(z.string()),
+        addressLine2: z.optional(z.string()),
+        stateProvinceCounty: z.optional(z.string()),
+        townCity: z.optional(z.string()),
+        postalCode: z.optional(z.string()),
+        countryCode: z.optional(
+          ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddressCountryCode$outboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          addressLine1: "address_line_1",
+          addressLine2: "address_line_2",
+          stateProvinceCounty: "state_province_county",
+          townCity: "town_city",
+          postalCode: "postal_code",
+          countryCode: "country_code",
+        });
+      }),
+    )
   );
 
 export function comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddressToJSON(
@@ -1094,20 +1108,18 @@ export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBuye
   z.ZodMiniType<
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBuyer$Outbound,
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBuyer
-  > = z.object({
-    name: z.string(),
-    email: z.optional(z.string()),
-    phone: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      name: z.string(),
+      email: z.optional(z.string()),
+      phone: z.optional(z.lazy(() =>
         ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormPhone$outboundSchema
-      ),
-    ),
-    address: z.optional(
-      z.lazy(() =>
+      )),
+      address: z.optional(z.lazy(() =>
         ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormAddress$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBuyerToJSON(
   comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBuyer:
@@ -1134,11 +1146,13 @@ export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBene
   z.ZodMiniType<
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBeneficiary$Outbound,
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBeneficiary
-  > = z.object({
-    name: z.string(),
-    email: z.string(),
-    language: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      name: z.string(),
+      email: z.string(),
+      language: z.optional(z.string()),
+    })
+  );
 
 export function comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBeneficiaryToJSON(
   comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBeneficiary:
@@ -1178,45 +1192,47 @@ export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormRequ
   z.ZodMiniType<
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormRequest$Outbound,
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormRequest
-  > = z.pipe(
-    z.object({
-      integrationId: z.string(),
-      redirectUrl: z.optional(z.string()),
-      amount: z.number(),
-      currencyCode:
-        ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormCurrencyCode$outboundSchema,
-      statementInfo: z._default(z.string(), "CRM.COM Payment"),
-      message: z.optional(z.string()),
-      passPlanId: z.string(),
-      languageCode: z.optional(z.string()),
-      deviceType: z._default(
-        ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormDeviceType$outboundSchema,
-        "BROWSER",
-      ),
-      buyer: z.lazy(() =>
-        ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBuyer$outboundSchema
-      ),
-      beneficiary: z.lazy(() =>
-        ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBeneficiary$outboundSchema
-      ),
-      additionalParameters: z.optional(z.record(z.string(), z.string())),
-      backUrl: z.optional(z.string()),
-      backUrlName: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        integrationId: "integration_id",
-        redirectUrl: "redirect_url",
-        currencyCode: "currency_code",
-        statementInfo: "statement_info",
-        passPlanId: "pass_plan_id",
-        languageCode: "language_code",
-        deviceType: "device_type",
-        additionalParameters: "additional_parameters",
-        backUrl: "back_url",
-        backUrlName: "back_url_name",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        integrationId: z.string(),
+        redirectUrl: z.optional(z.string()),
+        amount: z.number(),
+        currencyCode:
+          ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormCurrencyCode$outboundSchema,
+        statementInfo: z._default(z.string(), "CRM.COM Payment"),
+        message: z.optional(z.string()),
+        passPlanId: z.string(),
+        languageCode: z.optional(z.string()),
+        deviceType: z._default(
+          ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormDeviceType$outboundSchema,
+          "BROWSER",
+        ),
+        buyer: z.lazy(() =>
+          ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBuyer$outboundSchema
+        ),
+        beneficiary: z.lazy(() =>
+          ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormBeneficiary$outboundSchema
+        ),
+        additionalParameters: z.optional(z.record(z.string(), z.string())),
+        backUrl: z.optional(z.string()),
+        backUrlName: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          integrationId: "integration_id",
+          redirectUrl: "redirect_url",
+          currencyCode: "currency_code",
+          statementInfo: "statement_info",
+          passPlanId: "pass_plan_id",
+          languageCode: "language_code",
+          deviceType: "device_type",
+          additionalParameters: "additional_parameters",
+          backUrl: "back_url",
+          backUrlName: "back_url_name",
+        });
+      }),
+    )
   );
 
 export function comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormRequestToJSON(
@@ -1236,17 +1252,19 @@ export const ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormResp
   z.ZodMiniType<
     ComCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      form_html: types.optional(types.string()),
-      form_url: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "form_html": "formHtml",
-        "form_url": "formUrl",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        form_html: types.optional(types.string()),
+        form_url: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "form_html": "formHtml",
+          "form_url": "formUrl",
+        });
+      }),
+    )
   );
 
 export function comCrmHostedPagesSelfServiceResourceGenerateGiftPassPaymentFormResponseFromJSON(

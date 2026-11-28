@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -66,10 +66,12 @@ export const ComCrmDeviceSelfServiceResourceUpdateDeviceCustomField$outboundSche
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceUpdateDeviceCustomField$Outbound,
     ComCrmDeviceSelfServiceResourceUpdateDeviceCustomField
-  > = z.object({
-    key: z.optional(z.string()),
-    value: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: z.optional(z.string()),
+      value: z.optional(z.string()),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceUpdateDeviceCustomFieldToJSON(
   comCrmDeviceSelfServiceResourceUpdateDeviceCustomField:
@@ -96,18 +98,22 @@ export const ComCrmDeviceSelfServiceResourceUpdateDeviceRequestBody$outboundSche
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceUpdateDeviceRequestBody$Outbound,
     ComCrmDeviceSelfServiceResourceUpdateDeviceRequestBody
-  > = z.pipe(
-    z.object({
-      id: z.optional(z.string()),
-      customFields: z.optional(z.nullable(z.array(z.lazy(() =>
-        ComCrmDeviceSelfServiceResourceUpdateDeviceCustomField$outboundSchema
-      )))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        customFields: "custom_fields",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.optional(z.string()),
+        customFields: z.optional(
+          z.nullable(z.array(z.lazy(() =>
+            ComCrmDeviceSelfServiceResourceUpdateDeviceCustomField$outboundSchema
+          ))),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          customFields: "custom_fields",
+        });
+      }),
+    )
   );
 
 export function comCrmDeviceSelfServiceResourceUpdateDeviceRequestBodyToJSON(
@@ -134,14 +140,14 @@ export const ComCrmDeviceSelfServiceResourceUpdateDeviceRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmDeviceSelfServiceResourceUpdateDeviceRequest$Outbound,
     ComCrmDeviceSelfServiceResourceUpdateDeviceRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmDeviceSelfServiceResourceUpdateDeviceRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmDeviceSelfServiceResourceUpdateDeviceRequestToJSON(
   comCrmDeviceSelfServiceResourceUpdateDeviceRequest:
@@ -157,9 +163,11 @@ export function comCrmDeviceSelfServiceResourceUpdateDeviceRequestToJSON(
 /** @internal */
 export const ComCrmDeviceSelfServiceResourceUpdateDeviceResponse$inboundSchema:
   z.ZodMiniType<ComCrmDeviceSelfServiceResourceUpdateDeviceResponse, unknown> =
-    z.object({
-      id: types.optional(types.string()),
-    });
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function comCrmDeviceSelfServiceResourceUpdateDeviceResponseFromJSON(
   jsonString: string,

@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 /**
@@ -326,13 +327,17 @@ export type ComCrmContactSelfServiceResourceSetUpWalletRequest = {
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceSetUpWalletType$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmContactSelfServiceResourceSetUpWalletType> = z
-    .enum(ComCrmContactSelfServiceResourceSetUpWalletType);
+  z.ZodMiniEnum<typeof ComCrmContactSelfServiceResourceSetUpWalletType> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmContactSelfServiceResourceSetUpWalletType)
+    );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceSetUpWalletCountryCode$outboundSchema:
   z.ZodMiniEnum<typeof ComCrmContactSelfServiceResourceSetUpWalletCountryCode> =
-    z.enum(ComCrmContactSelfServiceResourceSetUpWalletCountryCode);
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmContactSelfServiceResourceSetUpWalletCountryCode)
+    );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceSetUpWalletIdentity$Outbound = {
@@ -346,21 +351,23 @@ export const ComCrmContactSelfServiceResourceSetUpWalletIdentity$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSetUpWalletIdentity$Outbound,
     ComCrmContactSelfServiceResourceSetUpWalletIdentity
-  > = z.pipe(
-    z.object({
-      type: ComCrmContactSelfServiceResourceSetUpWalletType$outboundSchema,
-      value: z.string(),
-      countryCode: z.optional(
-        z.nullable(
-          ComCrmContactSelfServiceResourceSetUpWalletCountryCode$outboundSchema,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: ComCrmContactSelfServiceResourceSetUpWalletType$outboundSchema,
+        value: z.string(),
+        countryCode: z.optional(
+          z.nullable(
+            ComCrmContactSelfServiceResourceSetUpWalletCountryCode$outboundSchema,
+          ),
         ),
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        countryCode: "country_code",
-      });
-    }),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          countryCode: "country_code",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceSetUpWalletIdentityToJSON(
@@ -386,15 +393,15 @@ export const ComCrmContactSelfServiceResourceSetUpWalletRequestBody$outboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSetUpWalletRequestBody$Outbound,
     ComCrmContactSelfServiceResourceSetUpWalletRequestBody
-  > = z.object({
-    otp: z.nullable(z.string()),
-    code: z.nullable(z.string()),
-    identity: z.nullable(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      otp: z.nullable(z.string()),
+      code: z.nullable(z.string()),
+      identity: z.nullable(z.lazy(() =>
         ComCrmContactSelfServiceResourceSetUpWalletIdentity$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceSetUpWalletRequestBodyToJSON(
   comCrmContactSelfServiceResourceSetUpWalletRequestBody:
@@ -420,14 +427,14 @@ export const ComCrmContactSelfServiceResourceSetUpWalletRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceSetUpWalletRequest$Outbound,
     ComCrmContactSelfServiceResourceSetUpWalletRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceSetUpWalletRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceSetUpWalletRequestToJSON(
   comCrmContactSelfServiceResourceSetUpWalletRequest:

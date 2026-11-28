@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { smartUnion } from "../../types/smart-union.js";
@@ -154,10 +154,12 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseMercha
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseMerchantTap$Outbound,
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseMerchantTap
-  > = z.object({
-    id: z.optional(z.string()),
-    code: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+      code: z.optional(z.string()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseMerchantTapToJSON(
   comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseMerchantTap:
@@ -183,10 +185,12 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseVenueT
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseVenueTap$Outbound,
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseVenueTap
-  > = z.object({
-    id: z.optional(z.string()),
-    code: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+      code: z.optional(z.string()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseVenueTapToJSON(
   comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseVenueTap:
@@ -219,22 +223,28 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseOrgani
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseOrganisation$Outbound,
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseOrganisation
-  > = z.pipe(
-    z.object({
-      id: z.optional(z.string()),
-      merchantTap: z.optional(z.nullable(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseMerchantTap$outboundSchema
-      ))),
-      venueTap: z.optional(z.nullable(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseVenueTap$outboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        merchantTap: "merchant_tap",
-        venueTap: "venue_tap",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.optional(z.string()),
+        merchantTap: z.optional(
+          z.nullable(z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseMerchantTap$outboundSchema
+          )),
+        ),
+        venueTap: z.optional(
+          z.nullable(z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseVenueTap$outboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          merchantTap: "merchant_tap",
+          venueTap: "venue_tap",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseOrganisationToJSON(
@@ -263,12 +273,14 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransa
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransactionAmounts$Outbound,
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransactionAmounts
-  > = z.object({
-    net: z.nullable(z.number()),
-    tax: z.nullable(z.number()),
-    discount: z.optional(z.nullable(z.number())),
-    total: z.number(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      net: z.nullable(z.number()),
+      tax: z.nullable(z.number()),
+      discount: z.optional(z.nullable(z.number())),
+      total: z.number(),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransactionAmountsToJSON(
   comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransactionAmounts:
@@ -301,25 +313,31 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseReques
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseRequest$Outbound,
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      organisation: z.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseOrganisation$outboundSchema
-      )),
-      transactionAmounts: z.optional(z.lazy(() =>
-        ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransactionAmounts$outboundSchema
-      )),
-      transactionCode: z.optional(z.nullable(z.string())),
-      currencyCode: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        transactionAmounts: "transaction_amounts",
-        transactionCode: "transaction_code",
-        currencyCode: "currency_code",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        organisation: z.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseOrganisation$outboundSchema
+          ),
+        ),
+        transactionAmounts: z.optional(
+          z.lazy(() =>
+            ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseTransactionAmounts$outboundSchema
+          ),
+        ),
+        transactionCode: z.optional(z.nullable(z.string())),
+        currencyCode: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          transactionAmounts: "transaction_amounts",
+          transactionCode: "transaction_code",
+          currencyCode: "currency_code",
+        });
+      }),
+    )
   );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseRequestToJSON(
@@ -339,9 +357,11 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseRespon
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody2,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody2FromJSON(
   jsonString: string,
@@ -363,9 +383,11 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseRespon
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody1,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody1FromJSON(
   jsonString: string,
@@ -387,14 +409,16 @@ export const ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseRespon
   z.ZodMiniType<
     ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponse,
     unknown
-  > = smartUnion([
-    z.lazy(() =>
-      ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody1$inboundSchema
-    ),
-    z.lazy(() =>
-      ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody2$inboundSchema
-    ),
-  ]);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    smartUnion([
+      z.lazy(() =>
+        ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody1$inboundSchema
+      ),
+      z.lazy(() =>
+        ComCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseBody2$inboundSchema
+      ),
+    ])
+  );
 
 export function comCrmPurchaseCustomerEventSelfServiceResourceReclaimPurchaseResponseFromJSON(
   jsonString: string,

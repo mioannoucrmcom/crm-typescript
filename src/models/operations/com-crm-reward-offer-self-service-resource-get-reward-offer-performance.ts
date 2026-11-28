@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -71,9 +71,11 @@ export const ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceReques
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceRequest$Outbound,
     ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceRequestToJSON(
   comCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceRequest:
@@ -92,8 +94,10 @@ export const ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceType$i
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceType,
+    )
   );
 
 /** @internal */
@@ -101,14 +105,16 @@ export const ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceRespon
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceResponse,
     unknown
-  > = z.object({
-    type: types.optional(
-      ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceType$inboundSchema,
-    ),
-    progress: types.optional(types.number()),
-    current: types.optional(types.number()),
-    target: types.optional(types.number()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      type: types.optional(
+        ComCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceType$inboundSchema,
+      ),
+      progress: types.optional(types.number()),
+      current: types.optional(types.number()),
+      target: types.optional(types.number()),
+    })
+  );
 
 export function comCrmRewardOfferSelfServiceResourceGetRewardOfferPerformanceResponseFromJSON(
   jsonString: string,

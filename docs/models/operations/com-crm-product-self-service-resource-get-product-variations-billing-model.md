@@ -9,11 +9,11 @@ import { ComCrmProductSelfServiceResourceGetProductVariationsBillingModel } from
 
 let value: ComCrmProductSelfServiceResourceGetProductVariationsBillingModel =
   "PRE_BILL";
+
+// Open enum: unrecognized values are captured as Unrecognized<string>
 ```
 
 ## Values
-
-This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
 "PRE_BILL" | "POST_BILL" | Unrecognized<string>

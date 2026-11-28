@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -125,23 +125,25 @@ export const ComCrmSettlementTransactionSelfServiceResourceGetMetricsRequest$out
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceGetMetricsRequest$Outbound,
     ComCrmSettlementTransactionSelfServiceResourceGetMetricsRequest
-  > = z.pipe(
-    z.object({
-      createdOn: z.optional(z.int()),
-      createdOnGt: z.optional(z.int()),
-      createdOnGte: z.optional(z.int()),
-      createdOnLt: z.optional(z.int()),
-      createdOnLte: z.optional(z.int()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        createdOn: "created_on",
-        createdOnGt: "created_on[gt]",
-        createdOnGte: "created_on[gte]",
-        createdOnLt: "created_on[lt]",
-        createdOnLte: "created_on[lte]",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        createdOn: z.optional(z.int()),
+        createdOnGt: z.optional(z.int()),
+        createdOnGte: z.optional(z.int()),
+        createdOnLt: z.optional(z.int()),
+        createdOnLte: z.optional(z.int()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          createdOn: "created_on",
+          createdOnGt: "created_on[gt]",
+          createdOnGte: "created_on[gte]",
+          createdOnLt: "created_on[lt]",
+          createdOnLte: "created_on[lte]",
+        });
+      }),
+    )
   );
 
 export function comCrmSettlementTransactionSelfServiceResourceGetMetricsRequestToJSON(
@@ -159,49 +161,52 @@ export const ComCrmSettlementTransactionSelfServiceResourceGetMetricsResponse$in
   z.ZodMiniType<
     ComCrmSettlementTransactionSelfServiceResourceGetMetricsResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      total_payouts: types.optional(types.number()),
-      total_payments: types.optional(types.number()),
-      total_payouts_credit: types.optional(types.number()),
-      total_payments_debit: types.optional(types.number()),
-      total_orders: types.optional(types.number()),
-      total_purchase_with_cash_pocket: types.optional(types.number()),
-      total_b2b_purchase: types.optional(types.number()),
-      total_fees: types.optional(types.number()),
-      number_of_payouts: types.optional(types.number()),
-      number_of_payments: types.optional(types.number()),
-      number_of_payouts_credit: types.optional(types.number()),
-      number_of_payments_debit: types.optional(types.number()),
-      number_of_orders: types.optional(types.number()),
-      number_of_purchase_with_cash_pocket: types.optional(types.number()),
-      number_of_b2b_purchase: types.optional(types.number()),
-      number_of_fees: types.optional(types.number()),
-      total_top_ups: types.optional(types.number()),
-      number_of_top_ups: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "total_payouts": "totalPayouts",
-        "total_payments": "totalPayments",
-        "total_payouts_credit": "totalPayoutsCredit",
-        "total_payments_debit": "totalPaymentsDebit",
-        "total_orders": "totalOrders",
-        "total_purchase_with_cash_pocket": "totalPurchaseWithCashPocket",
-        "total_b2b_purchase": "totalB2bPurchase",
-        "total_fees": "totalFees",
-        "number_of_payouts": "numberOfPayouts",
-        "number_of_payments": "numberOfPayments",
-        "number_of_payouts_credit": "numberOfPayoutsCredit",
-        "number_of_payments_debit": "numberOfPaymentsDebit",
-        "number_of_orders": "numberOfOrders",
-        "number_of_purchase_with_cash_pocket": "numberOfPurchaseWithCashPocket",
-        "number_of_b2b_purchase": "numberOfB2bPurchase",
-        "number_of_fees": "numberOfFees",
-        "total_top_ups": "totalTopUps",
-        "number_of_top_ups": "numberOfTopUps",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        total_payouts: types.optional(types.number()),
+        total_payments: types.optional(types.number()),
+        total_payouts_credit: types.optional(types.number()),
+        total_payments_debit: types.optional(types.number()),
+        total_orders: types.optional(types.number()),
+        total_purchase_with_cash_pocket: types.optional(types.number()),
+        total_b2b_purchase: types.optional(types.number()),
+        total_fees: types.optional(types.number()),
+        number_of_payouts: types.optional(types.number()),
+        number_of_payments: types.optional(types.number()),
+        number_of_payouts_credit: types.optional(types.number()),
+        number_of_payments_debit: types.optional(types.number()),
+        number_of_orders: types.optional(types.number()),
+        number_of_purchase_with_cash_pocket: types.optional(types.number()),
+        number_of_b2b_purchase: types.optional(types.number()),
+        number_of_fees: types.optional(types.number()),
+        total_top_ups: types.optional(types.number()),
+        number_of_top_ups: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "total_payouts": "totalPayouts",
+          "total_payments": "totalPayments",
+          "total_payouts_credit": "totalPayoutsCredit",
+          "total_payments_debit": "totalPaymentsDebit",
+          "total_orders": "totalOrders",
+          "total_purchase_with_cash_pocket": "totalPurchaseWithCashPocket",
+          "total_b2b_purchase": "totalB2bPurchase",
+          "total_fees": "totalFees",
+          "number_of_payouts": "numberOfPayouts",
+          "number_of_payments": "numberOfPayments",
+          "number_of_payouts_credit": "numberOfPayoutsCredit",
+          "number_of_payments_debit": "numberOfPaymentsDebit",
+          "number_of_orders": "numberOfOrders",
+          "number_of_purchase_with_cash_pocket":
+            "numberOfPurchaseWithCashPocket",
+          "number_of_b2b_purchase": "numberOfB2bPurchase",
+          "number_of_fees": "numberOfFees",
+          "total_top_ups": "totalTopUps",
+          "number_of_top_ups": "numberOfTopUps",
+        });
+      }),
+    )
   );
 
 export function comCrmSettlementTransactionSelfServiceResourceGetMetricsResponseFromJSON(

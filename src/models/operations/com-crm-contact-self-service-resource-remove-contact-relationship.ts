@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceRemoveContactRelationshipRequest = {
   /**
@@ -28,16 +29,18 @@ export const ComCrmContactSelfServiceResourceRemoveContactRelationshipRequest$ou
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceRemoveContactRelationshipRequest$Outbound,
     ComCrmContactSelfServiceResourceRemoveContactRelationshipRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      relationshipId: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        relationshipId: "relationship_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        relationshipId: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          relationshipId: "relationship_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceRemoveContactRelationshipRequestToJSON(

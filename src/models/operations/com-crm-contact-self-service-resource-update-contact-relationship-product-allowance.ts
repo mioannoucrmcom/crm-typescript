@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceCashLimits =
   {
@@ -64,19 +65,21 @@ export const ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAll
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceCashLimits$Outbound,
     ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceCashLimits
-  > = z.pipe(
-    z.object({
-      perTransaction: z.optional(z.number()),
-      perDay: z.optional(z.number()),
-      perBillingCycle: z.optional(z.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        perTransaction: "per_transaction",
-        perDay: "per_day",
-        perBillingCycle: "per_billing_cycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        perTransaction: z.optional(z.number()),
+        perDay: z.optional(z.number()),
+        perBillingCycle: z.optional(z.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          perTransaction: "per_transaction",
+          perDay: "per_day",
+          perBillingCycle: "per_billing_cycle",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceCashLimitsToJSON(
@@ -104,19 +107,21 @@ export const ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAll
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceUsageLimits$Outbound,
     ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceUsageLimits
-  > = z.pipe(
-    z.object({
-      perTransaction: z.optional(z.number()),
-      perDay: z.optional(z.number()),
-      perBillingCycle: z.optional(z.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        perTransaction: "per_transaction",
-        perDay: "per_day",
-        perBillingCycle: "per_billing_cycle",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        perTransaction: z.optional(z.number()),
+        perDay: z.optional(z.number()),
+        perBillingCycle: z.optional(z.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          perTransaction: "per_transaction",
+          perDay: "per_day",
+          perBillingCycle: "per_billing_cycle",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceUsageLimitsToJSON(
@@ -150,27 +155,33 @@ export const ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAll
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceRequestBody$Outbound,
     ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceRequestBody
-  > = z.pipe(
-    z.object({
-      groupId: z.optional(z.string()),
-      itemType: z.optional(z.string()),
-      itemId: z.optional(z.string()),
-      cashLimits: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceCashLimits$outboundSchema
-      )),
-      usageLimits: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceUsageLimits$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        groupId: "group_id",
-        itemType: "item_type",
-        itemId: "item_id",
-        cashLimits: "cash_limits",
-        usageLimits: "usage_limits",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        groupId: z.optional(z.string()),
+        itemType: z.optional(z.string()),
+        itemId: z.optional(z.string()),
+        cashLimits: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceCashLimits$outboundSchema
+          ),
+        ),
+        usageLimits: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceUsageLimits$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          groupId: "group_id",
+          itemType: "item_type",
+          itemId: "item_id",
+          cashLimits: "cash_limits",
+          usageLimits: "usage_limits",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceRequestBodyToJSON(
@@ -201,21 +212,25 @@ export const ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAll
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceRequest$Outbound,
     ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      productAllowanceId: z.string(),
-      relationshipId: z.string(),
-      body: z.optional(z.lazy(() =>
-        ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceRequestBody$outboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        productAllowanceId: "product_allowance_id",
-        relationshipId: "relationship_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        productAllowanceId: z.string(),
+        relationshipId: z.string(),
+        body: z.optional(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceRequestBody$outboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          productAllowanceId: "product_allowance_id",
+          relationshipId: "relationship_id",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUpdateContactRelationshipProductAllowanceRequestToJSON(

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -2668,15 +2668,17 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationSecurity$outbound
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationSecurity$Outbound,
     ComCrmApplicationSelfServiceResourceGetApplicationSecurity
-  > = z.pipe(
-    z.object({
-      publicAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        publicAPIKey: "Public_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        publicAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          publicAPIKey: "Public_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationSecurityToJSON(
@@ -2702,18 +2704,20 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationRequest$outboundS
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationRequest$Outbound,
     ComCrmApplicationSelfServiceResourceGetApplicationRequest
-  > = z.pipe(
-    z.object({
-      cloudName: z.optional(z.string()),
-      platformAppId: z.string(),
-      version: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        cloudName: "cloud_name",
-        platformAppId: "platform_app_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        cloudName: z.optional(z.string()),
+        platformAppId: z.string(),
+        version: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          cloudName: "cloud_name",
+          platformAppId: "platform_app_id",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationRequestToJSON(
@@ -2731,19 +2735,24 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationType$inboundSchem
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationType,
+    )
   );
 
 /** @internal */
 export const ColourType$inboundSchema: z.ZodMiniType<ColourType, unknown> =
-  openEnums.inboundSchema(ColourType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ColourType));
 
 /** @internal */
-export const Colour$inboundSchema: z.ZodMiniType<Colour, unknown> = z.object({
-  type: types.optional(ColourType$inboundSchema),
-  value: types.optional(types.string()),
-});
+export const Colour$inboundSchema: z.ZodMiniType<Colour, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      type: types.optional(ColourType$inboundSchema),
+      value: types.optional(types.string()),
+    })
+  );
 
 export function colourFromJSON(
   jsonString: string,
@@ -2756,19 +2765,21 @@ export function colourFromJSON(
 }
 
 /** @internal */
-export const FontType$inboundSchema: z.ZodMiniEnum<typeof FontType> = z.enum(
-  FontType,
-);
+export const FontType$inboundSchema: z.ZodMiniEnum<typeof FontType> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(FontType));
 
 /** @internal */
 export const FontEnum$inboundSchema: z.ZodMiniType<FontEnum, unknown> =
-  openEnums.inboundSchema(FontEnum);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(FontEnum));
 
 /** @internal */
-export const Font$inboundSchema: z.ZodMiniType<Font, unknown> = z.object({
-  type: types.optional(FontType$inboundSchema),
-  font: types.optional(FontEnum$inboundSchema),
-});
+export const Font$inboundSchema: z.ZodMiniType<Font, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      type: types.optional(FontType$inboundSchema),
+      font: types.optional(FontEnum$inboundSchema),
+    })
+  );
 
 export function fontFromJSON(
   jsonString: string,
@@ -2784,28 +2795,30 @@ export function fontFromJSON(
 export const HomepageLayout$inboundSchema: z.ZodMiniType<
   HomepageLayout,
   unknown
-> = openEnums.inboundSchema(HomepageLayout);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(HomepageLayout));
 
 /** @internal */
 export const OrderingLayout$inboundSchema: z.ZodMiniType<
   OrderingLayout,
   unknown
-> = openEnums.inboundSchema(OrderingLayout);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(OrderingLayout));
 
 /** @internal */
 export const AdvancedSettings$inboundSchema: z.ZodMiniType<
   AdvancedSettings,
   unknown
-> = z.pipe(
-  z.object({
-    colours: types.optional(types.string()),
-    layout_components: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "layout_components": "layoutComponents",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      colours: types.optional(types.string()),
+      layout_components: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "layout_components": "layoutComponents",
+      });
+    }),
+  )
 );
 
 export function advancedSettingsFromJSON(
@@ -2819,26 +2832,28 @@ export function advancedSettingsFromJSON(
 }
 
 /** @internal */
-export const Appearance$inboundSchema: z.ZodMiniType<Appearance, unknown> = z
-  .pipe(
-    z.object({
-      colours: types.optional(z.array(z.lazy(() => Colour$inboundSchema))),
-      fonts: types.optional(z.array(z.lazy(() => Font$inboundSchema))),
-      dark_mode: z._default(types.boolean(), false),
-      homepage_layout: z._default(HomepageLayout$inboundSchema, "LAYOUT1"),
-      ordering_layout: z._default(OrderingLayout$inboundSchema, "LAYOUT1"),
-      advanced_settings: types.optional(
-        z.lazy(() => AdvancedSettings$inboundSchema),
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "dark_mode": "darkMode",
-        "homepage_layout": "homepageLayout",
-        "ordering_layout": "orderingLayout",
-        "advanced_settings": "advancedSettings",
-      });
-    }),
+export const Appearance$inboundSchema: z.ZodMiniType<Appearance, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        colours: types.optional(z.array(z.lazy(() => Colour$inboundSchema))),
+        fonts: types.optional(z.array(z.lazy(() => Font$inboundSchema))),
+        dark_mode: z._default(types.boolean(), false),
+        homepage_layout: z._default(HomepageLayout$inboundSchema, "LAYOUT1"),
+        ordering_layout: z._default(OrderingLayout$inboundSchema, "LAYOUT1"),
+        advanced_settings: types.optional(
+          z.lazy(() => AdvancedSettings$inboundSchema),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "dark_mode": "darkMode",
+          "homepage_layout": "homepageLayout",
+          "ordering_layout": "orderingLayout",
+          "advanced_settings": "advancedSettings",
+        });
+      }),
+    )
   );
 
 export function appearanceFromJSON(
@@ -2855,24 +2870,26 @@ export function appearanceFromJSON(
 export const InformationType$inboundSchema: z.ZodMiniType<
   InformationType,
   unknown
-> = openEnums.inboundSchema(InformationType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(InformationType));
 
 /** @internal */
 export const ComCrmApplicationSelfServiceResourceGetApplicationContent$inboundSchema:
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationContent,
     unknown
-  > = z.pipe(
-    z.object({
-      type: types.optional(InformationType$inboundSchema),
-      url: types.optional(types.string()),
-      rich_content: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "rich_content": "richContent",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: types.optional(InformationType$inboundSchema),
+        url: types.optional(types.string()),
+        rich_content: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "rich_content": "richContent",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationContentFromJSON(
@@ -2895,8 +2912,10 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationCountryCode$inbou
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationCountryCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationCountryCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationCountryCode,
+    )
   );
 
 /** @internal */
@@ -2904,18 +2923,20 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationPhone$inboundSche
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationPhone,
     unknown
-  > = z.pipe(
-    z.object({
-      country_code: types.optional(
-        ComCrmApplicationSelfServiceResourceGetApplicationCountryCode$inboundSchema,
-      ),
-      number: z.optional(z.nullable(types.string())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "country_code": "countryCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        country_code: types.optional(
+          ComCrmApplicationSelfServiceResourceGetApplicationCountryCode$inboundSchema,
+        ),
+        number: z.optional(z.nullable(types.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "country_code": "countryCode",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationPhoneFromJSON(
@@ -2934,20 +2955,24 @@ export function comCrmApplicationSelfServiceResourceGetApplicationPhoneFromJSON(
 }
 
 /** @internal */
-export const ContactUs$inboundSchema: z.ZodMiniType<ContactUs, unknown> = z
-  .pipe(
-    z.object({
-      email_address: z.optional(z.nullable(types.string())),
-      phone: types.optional(z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationPhone$inboundSchema
-      )),
-      website: z.optional(z.nullable(types.string())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "email_address": "emailAddress",
-      });
-    }),
+export const ContactUs$inboundSchema: z.ZodMiniType<ContactUs, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        email_address: z.optional(z.nullable(types.string())),
+        phone: types.optional(
+          z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationPhone$inboundSchema
+          ),
+        ),
+        website: z.optional(z.nullable(types.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "email_address": "emailAddress",
+        });
+      }),
+    )
   );
 
 export function contactUsFromJSON(
@@ -2961,21 +2986,23 @@ export function contactUsFromJSON(
 }
 
 /** @internal */
-export const Information$inboundSchema: z.ZodMiniType<Information, unknown> = z
-  .pipe(
-    z.object({
-      content: types.optional(z.array(z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationContent$inboundSchema
-      ))),
-      contact_us: types.optional(z.lazy(() =>
-        ContactUs$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "contact_us": "contactUs",
-      });
-    }),
+export const Information$inboundSchema: z.ZodMiniType<Information, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        content: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationContent$inboundSchema
+          )),
+        ),
+        contact_us: types.optional(z.lazy(() => ContactUs$inboundSchema)),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "contact_us": "contactUs",
+        });
+      }),
+    )
   );
 
 export function informationFromJSON(
@@ -2992,24 +3019,29 @@ export function informationFromJSON(
 export const WalletCodeFormat$inboundSchema: z.ZodMiniType<
   WalletCodeFormat,
   unknown
-> = openEnums.inboundSchema(WalletCodeFormat);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(WalletCodeFormat)
+);
 
 /** @internal */
 export const ProfileType$inboundSchema: z.ZodMiniType<ProfileType, unknown> =
-  openEnums.inboundSchema(ProfileType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ProfileType));
 
 /** @internal */
-export const Profile$inboundSchema: z.ZodMiniType<Profile, unknown> = z.pipe(
-  z.object({
-    type: types.optional(ProfileType$inboundSchema),
-    is_supported: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-    });
-  }),
-);
+export const Profile$inboundSchema: z.ZodMiniType<Profile, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: types.optional(ProfileType$inboundSchema),
+        is_supported: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+        });
+      }),
+    )
+  );
 
 export function profileFromJSON(
   jsonString: string,
@@ -3022,16 +3054,18 @@ export function profileFromJSON(
 }
 
 /** @internal */
-export const Communities$inboundSchema: z.ZodMiniType<Communities, unknown> = z
-  .pipe(
-    z.object({
-      is_supported: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-      });
-    }),
+export const Communities$inboundSchema: z.ZodMiniType<Communities, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+        });
+      }),
+    )
   );
 
 export function communitiesFromJSON(
@@ -3049,9 +3083,11 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationCountry$inboundSc
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationCountry,
     unknown
-  > = z.object({
-    country: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      country: types.optional(types.string()),
+    })
+  );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationCountryFromJSON(
   jsonString: string,
@@ -3073,8 +3109,10 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCod
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCodeCountry,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCodeCountry,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCodeCountry,
+    )
   );
 
 /** @internal */
@@ -3082,11 +3120,13 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCod
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCode,
     unknown
-  > = z.object({
-    country: types.optional(
-      ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCodeCountry$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      country: types.optional(
+        ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCodeCountry$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationCountryCallingCodeFromJSON(
   jsonString: string,
@@ -3108,42 +3148,50 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationDefaultCountryCal
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationDefaultCountryCallingCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationDefaultCountryCallingCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationDefaultCountryCallingCode,
+    )
   );
 
 /** @internal */
 export const FeaturesContactContact$inboundSchema: z.ZodMiniType<
   FeaturesContactContact,
   unknown
-> = z.pipe(
-  z.object({
-    is_supported: types.optional(types.boolean()),
-    wallet_code_format: types.optional(WalletCodeFormat$inboundSchema),
-    enable_existing_customer_flow: types.optional(types.boolean()),
-    profile: types.optional(z.array(z.lazy(() => Profile$inboundSchema))),
-    communities: types.optional(z.lazy(() => Communities$inboundSchema)),
-    countries: types.optional(z.array(z.lazy(() =>
-      ComCrmApplicationSelfServiceResourceGetApplicationCountry$inboundSchema
-    ))),
-    country_calling_codes: types.optional(z.array(z.lazy(() =>
-      ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCode$inboundSchema
-    ))),
-    default_country_calling_code: types.optional(
-      ComCrmApplicationSelfServiceResourceGetApplicationDefaultCountryCallingCode$inboundSchema,
-    ),
-    preferred_language_code: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-      "wallet_code_format": "walletCodeFormat",
-      "enable_existing_customer_flow": "enableExistingCustomerFlow",
-      "country_calling_codes": "countryCallingCodes",
-      "default_country_calling_code": "defaultCountryCallingCode",
-      "preferred_language_code": "preferredLanguageCode",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      is_supported: types.optional(types.boolean()),
+      wallet_code_format: types.optional(WalletCodeFormat$inboundSchema),
+      enable_existing_customer_flow: types.optional(types.boolean()),
+      profile: types.optional(z.array(z.lazy(() => Profile$inboundSchema))),
+      communities: types.optional(z.lazy(() => Communities$inboundSchema)),
+      countries: types.optional(
+        z.array(z.lazy(() =>
+          ComCrmApplicationSelfServiceResourceGetApplicationCountry$inboundSchema
+        )),
+      ),
+      country_calling_codes: types.optional(
+        z.array(z.lazy(() =>
+          ComCrmApplicationSelfServiceResourceGetApplicationCountryCallingCode$inboundSchema
+        )),
+      ),
+      default_country_calling_code: types.optional(
+        ComCrmApplicationSelfServiceResourceGetApplicationDefaultCountryCallingCode$inboundSchema,
+      ),
+      preferred_language_code: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "is_supported": "isSupported",
+        "wallet_code_format": "walletCodeFormat",
+        "enable_existing_customer_flow": "enableExistingCustomerFlow",
+        "country_calling_codes": "countryCallingCodes",
+        "default_country_calling_code": "defaultCountryCallingCode",
+        "preferred_language_code": "preferredLanguageCode",
+      });
+    }),
+  )
 );
 
 export function featuresContactContactFromJSON(
@@ -3158,15 +3206,17 @@ export function featuresContactContactFromJSON(
 
 /** @internal */
 export const Multitenancy$inboundSchema: z.ZodMiniType<Multitenancy, unknown> =
-  z.pipe(
-    z.object({
-      is_supported: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+        });
+      }),
+    )
   );
 
 export function multitenancyFromJSON(
@@ -3183,16 +3233,18 @@ export function multitenancyFromJSON(
 export const BusinessNetwork$inboundSchema: z.ZodMiniType<
   BusinessNetwork,
   unknown
-> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-    multitenancy: types.optional(z.lazy(() => Multitenancy$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      is_supported: z._default(types.boolean(), false),
+      multitenancy: types.optional(z.lazy(() => Multitenancy$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "is_supported": "isSupported",
+      });
+    }),
+  )
 );
 
 export function businessNetworkFromJSON(
@@ -3209,15 +3261,17 @@ export function businessNetworkFromJSON(
 export const ServiceRequests$inboundSchema: z.ZodMiniType<
   ServiceRequests,
   unknown
-> = z.pipe(
-  z.object({
-    is_supported: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      is_supported: types.optional(types.boolean()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "is_supported": "isSupported",
+      });
+    }),
+  )
 );
 
 export function serviceRequestsFromJSON(
@@ -3231,20 +3285,23 @@ export function serviceRequestsFromJSON(
 }
 
 /** @internal */
-export const Crm$inboundSchema: z.ZodMiniType<Crm, unknown> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-    service_requests: types.optional(
-      z.lazy(() => ServiceRequests$inboundSchema),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-      "service_requests": "serviceRequests",
-    });
-  }),
-);
+export const Crm$inboundSchema: z.ZodMiniType<Crm, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        service_requests: types.optional(
+          z.lazy(() => ServiceRequests$inboundSchema),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "service_requests": "serviceRequests",
+        });
+      }),
+    )
+  );
 
 export function crmFromJSON(
   jsonString: string,
@@ -3260,11 +3317,13 @@ export function crmFromJSON(
 export const TopUpCommercePool$inboundSchema: z.ZodMiniType<
   TopUpCommercePool,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-  description: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+    description: types.optional(types.string()),
+  })
+);
 
 export function topUpCommercePoolFromJSON(
   jsonString: string,
@@ -3280,15 +3339,19 @@ export function topUpCommercePoolFromJSON(
 export const PassAttributeType$inboundSchema: z.ZodMiniType<
   PassAttributeType,
   unknown
-> = openEnums.inboundSchema(PassAttributeType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PassAttributeType)
+);
 
 /** @internal */
 export const PassAttribute$inboundSchema: z.ZodMiniType<
   PassAttribute,
   unknown
-> = z.object({
-  type: types.optional(PassAttributeType$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    type: types.optional(PassAttributeType$inboundSchema),
+  })
+);
 
 export function passAttributeFromJSON(
   jsonString: string,
@@ -3301,22 +3364,24 @@ export function passAttributeFromJSON(
 }
 
 /** @internal */
-export const RedeemPass$inboundSchema: z.ZodMiniType<RedeemPass, unknown> = z
-  .pipe(
-    z.object({
-      is_supported: types.optional(types.boolean()),
-      enable_on_registration: types.optional(types.boolean()),
-      pass_attributes: types.optional(
-        z.array(z.lazy(() => PassAttribute$inboundSchema)),
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-        "enable_on_registration": "enableOnRegistration",
-        "pass_attributes": "passAttributes",
-      });
-    }),
+export const RedeemPass$inboundSchema: z.ZodMiniType<RedeemPass, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: types.optional(types.boolean()),
+        enable_on_registration: types.optional(types.boolean()),
+        pass_attributes: types.optional(
+          z.array(z.lazy(() => PassAttribute$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "enable_on_registration": "enableOnRegistration",
+          "pass_attributes": "passAttributes",
+        });
+      }),
+    )
   );
 
 export function redeemPassFromJSON(
@@ -3333,24 +3398,28 @@ export function redeemPassFromJSON(
 export const TransferEntity$inboundSchema: z.ZodMiniType<
   TransferEntity,
   unknown
-> = openEnums.inboundSchema(TransferEntity);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(TransferEntity));
 
 /** @internal */
 export const TransferRestriction$inboundSchema: z.ZodMiniType<
   TransferRestriction,
   unknown
-> = openEnums.inboundSchema(TransferRestriction);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(TransferRestriction)
+);
 
 /** @internal */
 export const ComCrmApplicationSelfServiceResourceGetApplicationCommercePool$inboundSchema:
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationCommercePool,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    description: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      description: types.optional(types.string()),
+    })
+  );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationCommercePoolFromJSON(
   jsonString: string,
@@ -3372,25 +3441,29 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationTransfer$inboundS
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationTransfer,
     unknown
-  > = z.pipe(
-    z.object({
-      is_supported: types.optional(types.boolean()),
-      transfer_entity: types.optional(z.array(TransferEntity$inboundSchema)),
-      transfer_restrictions: types.optional(
-        z.array(TransferRestriction$inboundSchema),
-      ),
-      commerce_pools: types.optional(z.array(z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationCommercePool$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-        "transfer_entity": "transferEntity",
-        "transfer_restrictions": "transferRestrictions",
-        "commerce_pools": "commercePools",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: types.optional(types.boolean()),
+        transfer_entity: types.optional(z.array(TransferEntity$inboundSchema)),
+        transfer_restrictions: types.optional(
+          z.array(TransferRestriction$inboundSchema),
+        ),
+        commerce_pools: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationCommercePool$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "transfer_entity": "transferEntity",
+          "transfer_restrictions": "transferRestrictions",
+          "commerce_pools": "commercePools",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationTransferFromJSON(
@@ -3409,16 +3482,18 @@ export function comCrmApplicationSelfServiceResourceGetApplicationTransferFromJS
 }
 
 /** @internal */
-export const Donations$inboundSchema: z.ZodMiniType<Donations, unknown> = z
-  .pipe(
-    z.object({
-      is_supported: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-      });
-    }),
+export const Donations$inboundSchema: z.ZodMiniType<Donations, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+        });
+      }),
+    )
   );
 
 export function donationsFromJSON(
@@ -3436,24 +3511,28 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationCurrencyCode$inbo
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationCurrencyCode,
+    )
   );
 
 /** @internal */
-export const TopupAmount$inboundSchema: z.ZodMiniType<TopupAmount, unknown> = z
-  .pipe(
-    z.object({
-      currency_code: types.optional(
-        ComCrmApplicationSelfServiceResourceGetApplicationCurrencyCode$inboundSchema,
-      ),
-      amounts: types.optional(z.array(types.number())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "currency_code": "currencyCode",
-      });
-    }),
+export const TopupAmount$inboundSchema: z.ZodMiniType<TopupAmount, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        currency_code: types.optional(
+          ComCrmApplicationSelfServiceResourceGetApplicationCurrencyCode$inboundSchema,
+        ),
+        amounts: types.optional(z.array(types.number())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "currency_code": "currencyCode",
+        });
+      }),
+    )
   );
 
 export function topupAmountFromJSON(
@@ -3467,44 +3546,47 @@ export function topupAmountFromJSON(
 }
 
 /** @internal */
-export const Finance$inboundSchema: z.ZodMiniType<Finance, unknown> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-    wallet_top_up: types.optional(types.boolean()),
-    top_up_commerce_pools: types.optional(z.array(z.lazy(() =>
-      TopUpCommercePool$inboundSchema
-    ))),
-    wallet_payout: types.optional(types.boolean()),
-    redeem_pass: types.optional(z.lazy(() => RedeemPass$inboundSchema)),
-    transfer: types.optional(z.lazy(() =>
-      ComCrmApplicationSelfServiceResourceGetApplicationTransfer$inboundSchema
-    )),
-    donations: types.optional(z.lazy(() =>
-      Donations$inboundSchema
-    )),
-    topup_amounts: types.optional(z.array(z.lazy(() =>
-      TopupAmount$inboundSchema
-    ))),
-    redeem_method: types.optional(types.string()),
-    egifts_enabled: types.optional(types.boolean()),
-    auto_topup_enabled: types.optional(types.boolean()),
-    dynamic_wallet_code: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-      "wallet_top_up": "walletTopUp",
-      "top_up_commerce_pools": "topUpCommercePools",
-      "wallet_payout": "walletPayout",
-      "redeem_pass": "redeemPass",
-      "topup_amounts": "topupAmounts",
-      "redeem_method": "redeemMethod",
-      "egifts_enabled": "egiftsEnabled",
-      "auto_topup_enabled": "autoTopupEnabled",
-      "dynamic_wallet_code": "dynamicWalletCode",
-    });
-  }),
-);
+export const Finance$inboundSchema: z.ZodMiniType<Finance, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        wallet_top_up: types.optional(types.boolean()),
+        top_up_commerce_pools: types.optional(
+          z.array(z.lazy(() => TopUpCommercePool$inboundSchema)),
+        ),
+        wallet_payout: types.optional(types.boolean()),
+        redeem_pass: types.optional(z.lazy(() => RedeemPass$inboundSchema)),
+        transfer: types.optional(
+          z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationTransfer$inboundSchema
+          ),
+        ),
+        donations: types.optional(z.lazy(() => Donations$inboundSchema)),
+        topup_amounts: types.optional(
+          z.array(z.lazy(() => TopupAmount$inboundSchema)),
+        ),
+        redeem_method: types.optional(types.string()),
+        egifts_enabled: types.optional(types.boolean()),
+        auto_topup_enabled: types.optional(types.boolean()),
+        dynamic_wallet_code: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "wallet_top_up": "walletTopUp",
+          "top_up_commerce_pools": "topUpCommercePools",
+          "wallet_payout": "walletPayout",
+          "redeem_pass": "redeemPass",
+          "topup_amounts": "topupAmounts",
+          "redeem_method": "redeemMethod",
+          "egifts_enabled": "egiftsEnabled",
+          "auto_topup_enabled": "autoTopupEnabled",
+          "dynamic_wallet_code": "dynamicWalletCode",
+        });
+      }),
+    )
+  );
 
 export function financeFromJSON(
   jsonString: string,
@@ -3517,20 +3599,23 @@ export function financeFromJSON(
 }
 
 /** @internal */
-export const PickUp$inboundSchema: z.ZodMiniType<PickUp, unknown> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-    queue_id: types.optional(types.string()),
-    queue_name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-      "queue_id": "queueId",
-      "queue_name": "queueName",
-    });
-  }),
-);
+export const PickUp$inboundSchema: z.ZodMiniType<PickUp, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        queue_id: types.optional(types.string()),
+        queue_name: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "queue_id": "queueId",
+          "queue_name": "queueName",
+        });
+      }),
+    )
+  );
 
 export function pickUpFromJSON(
   jsonString: string,
@@ -3543,20 +3628,23 @@ export function pickUpFromJSON(
 }
 
 /** @internal */
-export const Delivery$inboundSchema: z.ZodMiniType<Delivery, unknown> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-    queue_id: types.optional(types.string()),
-    queue_name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-      "queue_id": "queueId",
-      "queue_name": "queueName",
-    });
-  }),
-);
+export const Delivery$inboundSchema: z.ZodMiniType<Delivery, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        queue_id: types.optional(types.string()),
+        queue_name: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "queue_id": "queueId",
+          "queue_name": "queueName",
+        });
+      }),
+    )
+  );
 
 export function deliveryFromJSON(
   jsonString: string,
@@ -3569,20 +3657,22 @@ export function deliveryFromJSON(
 }
 
 /** @internal */
-export const DirectSale$inboundSchema: z.ZodMiniType<DirectSale, unknown> = z
-  .pipe(
-    z.object({
-      is_supported: z._default(types.boolean(), false),
-      queue_id: types.optional(types.string()),
-      queue_name: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-        "queue_id": "queueId",
-        "queue_name": "queueName",
-      });
-    }),
+export const DirectSale$inboundSchema: z.ZodMiniType<DirectSale, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        queue_id: types.optional(types.string()),
+        queue_name: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "queue_id": "queueId",
+          "queue_name": "queueName",
+        });
+      }),
+    )
   );
 
 export function directSaleFromJSON(
@@ -3596,24 +3686,26 @@ export function directSaleFromJSON(
 }
 
 /** @internal */
-export const Model$inboundSchema: z.ZodMiniType<Model, unknown> = openEnums
-  .inboundSchema(Model);
+export const Model$inboundSchema: z.ZodMiniType<Model, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Model));
 
 /** @internal */
 export const OrderCatalogue$inboundSchema: z.ZodMiniType<
   OrderCatalogue,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    is_pricing_table: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_pricing_table": "isPricingTable",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      is_pricing_table: types.optional(types.boolean()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "is_pricing_table": "isPricingTable",
+      });
+    }),
+  )
 );
 
 export function orderCatalogueFromJSON(
@@ -3630,19 +3722,21 @@ export function orderCatalogueFromJSON(
 export const UseWalletFunds$inboundSchema: z.ZodMiniType<
   UseWalletFunds,
   unknown
-> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-    specific_funds_amount: types.optional(types.boolean()),
-    cover_full_basket: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-      "specific_funds_amount": "specificFundsAmount",
-      "cover_full_basket": "coverFullBasket",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      is_supported: z._default(types.boolean(), false),
+      specific_funds_amount: types.optional(types.boolean()),
+      cover_full_basket: types.optional(types.boolean()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "is_supported": "isSupported",
+        "specific_funds_amount": "specificFundsAmount",
+        "cover_full_basket": "coverFullBasket",
+      });
+    }),
+  )
 );
 
 export function useWalletFundsFromJSON(
@@ -3659,17 +3753,19 @@ export function useWalletFundsFromJSON(
 export const FulfilmentFlows$inboundSchema: z.ZodMiniType<
   FulfilmentFlows,
   unknown
-> = z.pipe(
-  z.object({
-    fulfilment_flow: types.string(),
-    allow_delivery_selection: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "fulfilment_flow": "fulfilmentFlow",
-      "allow_delivery_selection": "allowDeliverySelection",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      fulfilment_flow: types.string(),
+      allow_delivery_selection: types.optional(types.boolean()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "fulfilment_flow": "fulfilmentFlow",
+        "allow_delivery_selection": "allowDeliverySelection",
+      });
+    }),
+  )
 );
 
 export function fulfilmentFlowsFromJSON(
@@ -3687,39 +3783,41 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationOrder$inboundSche
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationOrder,
     unknown
-  > = z.pipe(
-    z.object({
-      is_supported: z._default(types.boolean(), false),
-      pick_up: types.optional(z.lazy(() => PickUp$inboundSchema)),
-      delivery: types.optional(z.lazy(() => Delivery$inboundSchema)),
-      direct_sale: types.optional(z.lazy(() => DirectSale$inboundSchema)),
-      model: types.optional(Model$inboundSchema),
-      preferred_organisation: types.optional(types.boolean()),
-      order_catalogues: types.optional(
-        z.array(z.lazy(() => OrderCatalogue$inboundSchema)),
-      ),
-      use_wallet_funds: types.optional(
-        z.lazy(() => UseWalletFunds$inboundSchema),
-      ),
-      use_account_funds: z._default(types.boolean(), false),
-      fulfilment_flows: types.optional(
-        z.lazy(() => FulfilmentFlows$inboundSchema),
-      ),
-      support_product_additional_notes: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-        "pick_up": "pickUp",
-        "direct_sale": "directSale",
-        "preferred_organisation": "preferredOrganisation",
-        "order_catalogues": "orderCatalogues",
-        "use_wallet_funds": "useWalletFunds",
-        "use_account_funds": "useAccountFunds",
-        "fulfilment_flows": "fulfilmentFlows",
-        "support_product_additional_notes": "supportProductAdditionalNotes",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        pick_up: types.optional(z.lazy(() => PickUp$inboundSchema)),
+        delivery: types.optional(z.lazy(() => Delivery$inboundSchema)),
+        direct_sale: types.optional(z.lazy(() => DirectSale$inboundSchema)),
+        model: types.optional(Model$inboundSchema),
+        preferred_organisation: types.optional(types.boolean()),
+        order_catalogues: types.optional(
+          z.array(z.lazy(() => OrderCatalogue$inboundSchema)),
+        ),
+        use_wallet_funds: types.optional(
+          z.lazy(() => UseWalletFunds$inboundSchema),
+        ),
+        use_account_funds: z._default(types.boolean(), false),
+        fulfilment_flows: types.optional(
+          z.lazy(() => FulfilmentFlows$inboundSchema),
+        ),
+        support_product_additional_notes: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "pick_up": "pickUp",
+          "direct_sale": "directSale",
+          "preferred_organisation": "preferredOrganisation",
+          "order_catalogues": "orderCatalogues",
+          "use_wallet_funds": "useWalletFunds",
+          "use_account_funds": "useAccountFunds",
+          "fulfilment_flows": "fulfilmentFlows",
+          "support_product_additional_notes": "supportProductAdditionalNotes",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationOrderFromJSON(
@@ -3739,21 +3837,23 @@ export function comCrmApplicationSelfServiceResourceGetApplicationOrderFromJSON(
 
 /** @internal */
 export const ReferMethod$inboundSchema: z.ZodMiniType<ReferMethod, unknown> =
-  openEnums.inboundSchema(ReferMethod);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ReferMethod));
 
 /** @internal */
-export const ReferFriend$inboundSchema: z.ZodMiniType<ReferFriend, unknown> = z
-  .pipe(
-    z.object({
-      is_supported: types.optional(types.boolean()),
-      refer_methods: types.optional(z.array(ReferMethod$inboundSchema)),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-        "refer_methods": "referMethods",
-      });
-    }),
+export const ReferFriend$inboundSchema: z.ZodMiniType<ReferFriend, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: types.optional(types.boolean()),
+        refer_methods: types.optional(z.array(ReferMethod$inboundSchema)),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "refer_methods": "referMethods",
+        });
+      }),
+    )
   );
 
 export function referFriendFromJSON(
@@ -3771,22 +3871,26 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationCodeFormat$inboun
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationCodeFormat,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationCodeFormat,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationCodeFormat,
+    )
   );
 
 /** @internal */
 export const SpendAttributeType$inboundSchema: z.ZodMiniEnum<
   typeof SpendAttributeType
-> = z.enum(SpendAttributeType);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(SpendAttributeType));
 
 /** @internal */
 export const SpendAttribute$inboundSchema: z.ZodMiniType<
   SpendAttribute,
   unknown
-> = z.object({
-  type: types.optional(SpendAttributeType$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    type: types.optional(SpendAttributeType$inboundSchema),
+  })
+);
 
 export function spendAttributeFromJSON(
   jsonString: string,
@@ -3799,24 +3903,27 @@ export function spendAttributeFromJSON(
 }
 
 /** @internal */
-export const OtpSpend$inboundSchema: z.ZodMiniType<OtpSpend, unknown> = z.pipe(
-  z.object({
-    is_supported: types.optional(types.boolean()),
-    code_format: types.optional(
-      ComCrmApplicationSelfServiceResourceGetApplicationCodeFormat$inboundSchema,
-    ),
-    spend_attributes: types.optional(z.array(z.lazy(() =>
-      SpendAttribute$inboundSchema
-    ))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-      "code_format": "codeFormat",
-      "spend_attributes": "spendAttributes",
-    });
-  }),
-);
+export const OtpSpend$inboundSchema: z.ZodMiniType<OtpSpend, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: types.optional(types.boolean()),
+        code_format: types.optional(
+          ComCrmApplicationSelfServiceResourceGetApplicationCodeFormat$inboundSchema,
+        ),
+        spend_attributes: types.optional(
+          z.array(z.lazy(() => SpendAttribute$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "code_format": "codeFormat",
+          "spend_attributes": "spendAttributes",
+        });
+      }),
+    )
+  );
 
 export function otpSpendFromJSON(
   jsonString: string,
@@ -3832,25 +3939,29 @@ export function otpSpendFromJSON(
 export const SelfSubmitMethod$inboundSchema: z.ZodMiniType<
   SelfSubmitMethod,
   unknown
-> = openEnums.inboundSchema(SelfSubmitMethod);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(SelfSubmitMethod)
+);
 
 /** @internal */
 export const SelfSubmitPurchases$inboundSchema: z.ZodMiniType<
   SelfSubmitPurchases,
   unknown
-> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-    self_submit_methods: types.optional(
-      z.array(SelfSubmitMethod$inboundSchema),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-      "self_submit_methods": "selfSubmitMethods",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      is_supported: z._default(types.boolean(), false),
+      self_submit_methods: types.optional(
+        z.array(SelfSubmitMethod$inboundSchema),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "is_supported": "isSupported",
+        "self_submit_methods": "selfSubmitMethods",
+      });
+    }),
+  )
 );
 
 export function selfSubmitPurchasesFromJSON(
@@ -3864,27 +3975,30 @@ export function selfSubmitPurchasesFromJSON(
 }
 
 /** @internal */
-export const Reward$inboundSchema: z.ZodMiniType<Reward, unknown> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-    tiering: types.optional(types.boolean()),
-    preferred_organisation: types.optional(types.boolean()),
-    refer_friend: types.optional(z.lazy(() => ReferFriend$inboundSchema)),
-    otp_spend: types.optional(z.lazy(() => OtpSpend$inboundSchema)),
-    self_submit_purchases: types.optional(z.lazy(() =>
-      SelfSubmitPurchases$inboundSchema
-    )),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-      "preferred_organisation": "preferredOrganisation",
-      "refer_friend": "referFriend",
-      "otp_spend": "otpSpend",
-      "self_submit_purchases": "selfSubmitPurchases",
-    });
-  }),
-);
+export const Reward$inboundSchema: z.ZodMiniType<Reward, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        tiering: types.optional(types.boolean()),
+        preferred_organisation: types.optional(types.boolean()),
+        refer_friend: types.optional(z.lazy(() => ReferFriend$inboundSchema)),
+        otp_spend: types.optional(z.lazy(() => OtpSpend$inboundSchema)),
+        self_submit_purchases: types.optional(
+          z.lazy(() => SelfSubmitPurchases$inboundSchema),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "preferred_organisation": "preferredOrganisation",
+          "refer_friend": "referFriend",
+          "otp_spend": "otpSpend",
+          "self_submit_purchases": "selfSubmitPurchases",
+        });
+      }),
+    )
+  );
 
 export function rewardFromJSON(
   jsonString: string,
@@ -3900,22 +4014,26 @@ export function rewardFromJSON(
 export const MarketingLanguageCode$inboundSchema: z.ZodMiniType<
   MarketingLanguageCode,
   unknown
-> = openEnums.inboundSchema(MarketingLanguageCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(MarketingLanguageCode)
+);
 
 /** @internal */
 export const MarketingUsageType$inboundSchema: z.ZodMiniEnum<
   typeof MarketingUsageType
-> = z.enum(MarketingUsageType);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(MarketingUsageType));
 
 /** @internal */
 export const MarketingMedia$inboundSchema: z.ZodMiniType<
   MarketingMedia,
   unknown
-> = z.object({
-  width: types.optional(types.number()),
-  height: types.optional(types.number()),
-  url: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    width: types.optional(types.number()),
+    height: types.optional(types.number()),
+    url: types.optional(types.string()),
+  })
+);
 
 export function marketingMediaFromJSON(
   jsonString: string,
@@ -3931,27 +4049,31 @@ export function marketingMediaFromJSON(
 export const MarketingCreative$inboundSchema: z.ZodMiniType<
   MarketingCreative,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    media_group_id: types.optional(types.string()),
-    usage_type: types.optional(MarketingUsageType$inboundSchema),
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    format: types.optional(types.string()),
-    url: types.optional(types.string()),
-    public_id: types.optional(types.string()),
-    media_id: types.optional(types.string()),
-    media: types.optional(z.array(z.lazy(() => MarketingMedia$inboundSchema))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "media_group_id": "mediaGroupId",
-      "usage_type": "usageType",
-      "public_id": "publicId",
-      "media_id": "mediaId",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      media_group_id: types.optional(types.string()),
+      usage_type: types.optional(MarketingUsageType$inboundSchema),
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      format: types.optional(types.string()),
+      url: types.optional(types.string()),
+      public_id: types.optional(types.string()),
+      media_id: types.optional(types.string()),
+      media: types.optional(
+        z.array(z.lazy(() => MarketingMedia$inboundSchema)),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "media_group_id": "mediaGroupId",
+        "usage_type": "usageType",
+        "public_id": "publicId",
+        "media_id": "mediaId",
+      });
+    }),
+  )
 );
 
 export function marketingCreativeFromJSON(
@@ -3969,23 +4091,25 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLink$inbo
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLink,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      title: types.optional(types.string()),
-      url: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      language_code: types.optional(MarketingLanguageCode$inboundSchema),
-      creatives: types.optional(
-        z.array(z.lazy(() => MarketingCreative$inboundSchema)),
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "sort_order": "sortOrder",
-        "language_code": "languageCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        title: types.optional(types.string()),
+        url: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        language_code: types.optional(MarketingLanguageCode$inboundSchema),
+        creatives: types.optional(
+          z.array(z.lazy(() => MarketingCreative$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "sort_order": "sortOrder",
+          "language_code": "languageCode",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinkFromJSON(
@@ -4004,20 +4128,24 @@ export function comCrmApplicationSelfServiceResourceGetApplicationEmbeddedLinkFr
 }
 
 /** @internal */
-export const Marketing$inboundSchema: z.ZodMiniType<Marketing, unknown> = z
-  .pipe(
-    z.object({
-      is_supported: z._default(types.boolean(), false),
-      embedded_links: types.optional(z.array(z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLink$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-        "embedded_links": "embeddedLinks",
-      });
-    }),
+export const Marketing$inboundSchema: z.ZodMiniType<Marketing, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        embedded_links: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationEmbeddedLink$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "embedded_links": "embeddedLinks",
+        });
+      }),
+    )
   );
 
 export function marketingFromJSON(
@@ -4032,28 +4160,32 @@ export function marketingFromJSON(
 
 /** @internal */
 export const ShortcutType$inboundSchema: z.ZodMiniType<ShortcutType, unknown> =
-  openEnums.inboundSchema(ShortcutType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ShortcutType));
 
 /** @internal */
 export const ShortcutLanguageCode$inboundSchema: z.ZodMiniType<
   ShortcutLanguageCode,
   unknown
-> = openEnums.inboundSchema(ShortcutLanguageCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ShortcutLanguageCode)
+);
 
 /** @internal */
 export const ShortcutUsageType$inboundSchema: z.ZodMiniEnum<
   typeof ShortcutUsageType
-> = z.enum(ShortcutUsageType);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(ShortcutUsageType));
 
 /** @internal */
 export const ShortcutMedia$inboundSchema: z.ZodMiniType<
   ShortcutMedia,
   unknown
-> = z.object({
-  width: types.optional(types.number()),
-  height: types.optional(types.number()),
-  url: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    width: types.optional(types.number()),
+    height: types.optional(types.number()),
+    url: types.optional(types.string()),
+  })
+);
 
 export function shortcutMediaFromJSON(
   jsonString: string,
@@ -4069,27 +4201,29 @@ export function shortcutMediaFromJSON(
 export const ShortcutCreative$inboundSchema: z.ZodMiniType<
   ShortcutCreative,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    media_group_id: types.optional(types.string()),
-    usage_type: types.optional(ShortcutUsageType$inboundSchema),
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    format: types.optional(types.string()),
-    url: types.optional(types.string()),
-    public_id: types.optional(types.string()),
-    media_id: types.optional(types.string()),
-    media: types.optional(z.array(z.lazy(() => ShortcutMedia$inboundSchema))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "media_group_id": "mediaGroupId",
-      "usage_type": "usageType",
-      "public_id": "publicId",
-      "media_id": "mediaId",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      media_group_id: types.optional(types.string()),
+      usage_type: types.optional(ShortcutUsageType$inboundSchema),
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      format: types.optional(types.string()),
+      url: types.optional(types.string()),
+      public_id: types.optional(types.string()),
+      media_id: types.optional(types.string()),
+      media: types.optional(z.array(z.lazy(() => ShortcutMedia$inboundSchema))),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "media_group_id": "mediaGroupId",
+        "usage_type": "usageType",
+        "public_id": "publicId",
+        "media_id": "mediaId",
+      });
+    }),
+  )
 );
 
 export function shortcutCreativeFromJSON(
@@ -4103,24 +4237,27 @@ export function shortcutCreativeFromJSON(
 }
 
 /** @internal */
-export const Shortcut$inboundSchema: z.ZodMiniType<Shortcut, unknown> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    sort_order: types.optional(types.number()),
-    type: types.optional(ShortcutType$inboundSchema),
-    label: types.optional(types.string()),
-    language_code: types.optional(ShortcutLanguageCode$inboundSchema),
-    creatives: types.optional(z.array(z.lazy(() =>
-      ShortcutCreative$inboundSchema
-    ))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "sort_order": "sortOrder",
-      "language_code": "languageCode",
-    });
-  }),
-);
+export const Shortcut$inboundSchema: z.ZodMiniType<Shortcut, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        type: types.optional(ShortcutType$inboundSchema),
+        label: types.optional(types.string()),
+        language_code: types.optional(ShortcutLanguageCode$inboundSchema),
+        creatives: types.optional(
+          z.array(z.lazy(() => ShortcutCreative$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "sort_order": "sortOrder",
+          "language_code": "languageCode",
+        });
+      }),
+    )
+  );
 
 export function shortcutFromJSON(
   jsonString: string,
@@ -4133,17 +4270,21 @@ export function shortcutFromJSON(
 }
 
 /** @internal */
-export const Shortcuts$inboundSchema: z.ZodMiniType<Shortcuts, unknown> = z
-  .pipe(
-    z.object({
-      is_supported: z._default(types.boolean(), false),
-      shortcuts: types.optional(z.array(z.lazy(() => Shortcut$inboundSchema))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-      });
-    }),
+export const Shortcuts$inboundSchema: z.ZodMiniType<Shortcuts, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        shortcuts: types.optional(
+          z.array(z.lazy(() => Shortcut$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+        });
+      }),
+    )
   );
 
 export function shortcutsFromJSON(
@@ -4161,48 +4302,57 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationSubscription$inbo
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationSubscription,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationSubscription,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationSubscription,
+    )
   );
 
 /** @internal */
 export const SubscriptionsScheduledAction$inboundSchema: z.ZodMiniType<
   SubscriptionsScheduledAction,
   unknown
-> = openEnums.inboundSchema(SubscriptionsScheduledAction);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(SubscriptionsScheduledAction)
+);
 
 /** @internal */
 export const ComCrmApplicationSelfServiceResourceGetApplicationService$inboundSchema:
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationService,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationService,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationService,
+    )
   );
 
 /** @internal */
-export const Actions$inboundSchema: z.ZodMiniType<Actions, unknown> = z.pipe(
-  z.object({
-    subscriptions: types.optional(
-      z.array(
-        ComCrmApplicationSelfServiceResourceGetApplicationSubscription$inboundSchema,
-      ),
-    ),
-    subscriptions_scheduled_actions: types.optional(
-      z.array(SubscriptionsScheduledAction$inboundSchema),
-    ),
-    services: types.optional(
-      z.array(
-        ComCrmApplicationSelfServiceResourceGetApplicationService$inboundSchema,
-      ),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "subscriptions_scheduled_actions": "subscriptionsScheduledActions",
-    });
-  }),
-);
+export const Actions$inboundSchema: z.ZodMiniType<Actions, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        subscriptions: types.optional(
+          z.array(
+            ComCrmApplicationSelfServiceResourceGetApplicationSubscription$inboundSchema,
+          ),
+        ),
+        subscriptions_scheduled_actions: types.optional(
+          z.array(SubscriptionsScheduledAction$inboundSchema),
+        ),
+        services: types.optional(
+          z.array(
+            ComCrmApplicationSelfServiceResourceGetApplicationService$inboundSchema,
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "subscriptions_scheduled_actions": "subscriptionsScheduledActions",
+        });
+      }),
+    )
+  );
 
 export function actionsFromJSON(
   jsonString: string,
@@ -4218,16 +4368,18 @@ export function actionsFromJSON(
 export const Subscriptions$inboundSchema: z.ZodMiniType<
   Subscriptions,
   unknown
-> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-    actions: types.optional(z.lazy(() => Actions$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      is_supported: z._default(types.boolean(), false),
+      actions: types.optional(z.lazy(() => Actions$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "is_supported": "isSupported",
+      });
+    }),
+  )
 );
 
 export function subscriptionsFromJSON(
@@ -4241,16 +4393,18 @@ export function subscriptionsFromJSON(
 }
 
 /** @internal */
-export const MobilePass$inboundSchema: z.ZodMiniType<MobilePass, unknown> = z
-  .pipe(
-    z.object({
-      is_supported: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-      });
-    }),
+export const MobilePass$inboundSchema: z.ZodMiniType<MobilePass, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+        });
+      }),
+    )
   );
 
 export function mobilePassFromJSON(
@@ -4267,31 +4421,35 @@ export function mobilePassFromJSON(
 export const FeaturesContact$inboundSchema: z.ZodMiniType<
   FeaturesContact,
   unknown
-> = z.pipe(
-  z.object({
-    contact: types.optional(z.lazy(() => FeaturesContactContact$inboundSchema)),
-    business_network: types.optional(
-      z.lazy(() => BusinessNetwork$inboundSchema),
-    ),
-    crm: types.optional(z.lazy(() => Crm$inboundSchema)),
-    finance: types.optional(z.lazy(() => Finance$inboundSchema)),
-    order: types.optional(
-      z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationOrder$inboundSchema
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      contact: types.optional(
+        z.lazy(() => FeaturesContactContact$inboundSchema),
       ),
-    ),
-    reward: types.optional(z.lazy(() => Reward$inboundSchema)),
-    marketing: types.optional(z.lazy(() => Marketing$inboundSchema)),
-    shortcuts: types.optional(z.lazy(() => Shortcuts$inboundSchema)),
-    subscriptions: types.optional(z.lazy(() => Subscriptions$inboundSchema)),
-    mobile_pass: types.optional(z.lazy(() => MobilePass$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "business_network": "businessNetwork",
-      "mobile_pass": "mobilePass",
-    });
-  }),
+      business_network: types.optional(
+        z.lazy(() => BusinessNetwork$inboundSchema),
+      ),
+      crm: types.optional(z.lazy(() => Crm$inboundSchema)),
+      finance: types.optional(z.lazy(() => Finance$inboundSchema)),
+      order: types.optional(
+        z.lazy(() =>
+          ComCrmApplicationSelfServiceResourceGetApplicationOrder$inboundSchema
+        ),
+      ),
+      reward: types.optional(z.lazy(() => Reward$inboundSchema)),
+      marketing: types.optional(z.lazy(() => Marketing$inboundSchema)),
+      shortcuts: types.optional(z.lazy(() => Shortcuts$inboundSchema)),
+      subscriptions: types.optional(z.lazy(() => Subscriptions$inboundSchema)),
+      mobile_pass: types.optional(z.lazy(() => MobilePass$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "business_network": "businessNetwork",
+        "mobile_pass": "mobilePass",
+      });
+    }),
+  )
 );
 
 export function featuresContactFromJSON(
@@ -4309,21 +4467,23 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationPurchase$inboundS
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationPurchase,
     unknown
-  > = z.pipe(
-    z.object({
-      manual_spend: types.optional(types.boolean()),
-      automatic_spend: types.optional(types.boolean()),
-      spend_full_purchase_amount: types.optional(types.boolean()),
-      restrict_fully_covered: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "manual_spend": "manualSpend",
-        "automatic_spend": "automaticSpend",
-        "spend_full_purchase_amount": "spendFullPurchaseAmount",
-        "restrict_fully_covered": "restrictFullyCovered",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        manual_spend: types.optional(types.boolean()),
+        automatic_spend: types.optional(types.boolean()),
+        spend_full_purchase_amount: types.optional(types.boolean()),
+        restrict_fully_covered: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "manual_spend": "manualSpend",
+          "automatic_spend": "automaticSpend",
+          "spend_full_purchase_amount": "spendFullPurchaseAmount",
+          "restrict_fully_covered": "restrictFullyCovered",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationPurchaseFromJSON(
@@ -4342,14 +4502,14 @@ export function comCrmApplicationSelfServiceResourceGetApplicationPurchaseFromJS
 }
 
 /** @internal */
-export const Merchant$inboundSchema: z.ZodMiniType<Merchant, unknown> = z
-  .object({
-    purchase: types.optional(
-      z.lazy(() =>
+export const Merchant$inboundSchema: z.ZodMiniType<Merchant, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      purchase: types.optional(z.lazy(() =>
         ComCrmApplicationSelfServiceResourceGetApplicationPurchase$inboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function merchantFromJSON(
   jsonString: string,
@@ -4362,11 +4522,13 @@ export function merchantFromJSON(
 }
 
 /** @internal */
-export const Features$inboundSchema: z.ZodMiniType<Features, unknown> = z
-  .object({
-    contact: types.optional(z.lazy(() => FeaturesContact$inboundSchema)),
-    merchant: types.optional(z.lazy(() => Merchant$inboundSchema)),
-  });
+export const Features$inboundSchema: z.ZodMiniType<Features, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      contact: types.optional(z.lazy(() => FeaturesContact$inboundSchema)),
+      merchant: types.optional(z.lazy(() => Merchant$inboundSchema)),
+    })
+  );
 
 export function featuresFromJSON(
   jsonString: string,
@@ -4383,8 +4545,10 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationPlatformEnum$inbo
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationPlatformEnum,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationPlatformEnum,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationPlatformEnum,
+    )
   );
 
 /** @internal */
@@ -4392,23 +4556,25 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationPlatform$inboundS
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationPlatform,
     unknown
-  > = z.pipe(
-    z.object({
-      platform: types.optional(
-        ComCrmApplicationSelfServiceResourceGetApplicationPlatformEnum$inboundSchema,
-      ),
-      platform_id: z.optional(z.nullable(types.string())),
-      cloud_name: z.optional(z.nullable(types.string())),
-      version: z.optional(z.nullable(types.string())),
-      deeplinks_config: z.optional(z.nullable(types.string())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "platform_id": "platformId",
-        "cloud_name": "cloudName",
-        "deeplinks_config": "deeplinksConfig",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        platform: types.optional(
+          ComCrmApplicationSelfServiceResourceGetApplicationPlatformEnum$inboundSchema,
+        ),
+        platform_id: z.optional(z.nullable(types.string())),
+        cloud_name: z.optional(z.nullable(types.string())),
+        version: z.optional(z.nullable(types.string())),
+        deeplinks_config: z.optional(z.nullable(types.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "platform_id": "platformId",
+          "cloud_name": "cloudName",
+          "deeplinks_config": "deeplinksConfig",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationPlatformFromJSON(
@@ -4427,18 +4593,21 @@ export function comCrmApplicationSelfServiceResourceGetApplicationPlatformFromJS
 }
 
 /** @internal */
-export const Facebook$inboundSchema: z.ZodMiniType<Facebook, unknown> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-    app_id: z.optional(z.nullable(types.string())),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-      "app_id": "appId",
-    });
-  }),
-);
+export const Facebook$inboundSchema: z.ZodMiniType<Facebook, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        app_id: z.optional(z.nullable(types.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+          "app_id": "appId",
+        });
+      }),
+    )
+  );
 
 export function facebookFromJSON(
   jsonString: string,
@@ -4451,16 +4620,19 @@ export function facebookFromJSON(
 }
 
 /** @internal */
-export const Google$inboundSchema: z.ZodMiniType<Google, unknown> = z.pipe(
-  z.object({
-    is_supported: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-    });
-  }),
-);
+export const Google$inboundSchema: z.ZodMiniType<Google, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+        });
+      }),
+    )
+  );
 
 export function googleFromJSON(
   jsonString: string,
@@ -4476,10 +4648,12 @@ export function googleFromJSON(
 export const DemoContactContact$inboundSchema: z.ZodMiniType<
   DemoContactContact,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function demoContactContactFromJSON(
   jsonString: string,
@@ -4492,18 +4666,20 @@ export function demoContactContactFromJSON(
 }
 
 /** @internal */
-export const DemoContact$inboundSchema: z.ZodMiniType<DemoContact, unknown> = z
-  .pipe(
-    z.object({
-      is_supported: z._default(types.boolean(), false),
-      contact: types.optional(z.lazy(() => DemoContactContact$inboundSchema)),
-      otp: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-      });
-    }),
+export const DemoContact$inboundSchema: z.ZodMiniType<DemoContact, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        contact: types.optional(z.lazy(() => DemoContactContact$inboundSchema)),
+        otp: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+        });
+      }),
+    )
   );
 
 export function demoContactFromJSON(
@@ -4520,10 +4696,12 @@ export function demoContactFromJSON(
 export const GuestContactContact$inboundSchema: z.ZodMiniType<
   GuestContactContact,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function guestContactContactFromJSON(
   jsonString: string,
@@ -4537,16 +4715,20 @@ export function guestContactContactFromJSON(
 
 /** @internal */
 export const GuestContact$inboundSchema: z.ZodMiniType<GuestContact, unknown> =
-  z.pipe(
-    z.object({
-      is_supported: z._default(types.boolean(), false),
-      contact: types.optional(z.lazy(() => GuestContactContact$inboundSchema)),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "is_supported": "isSupported",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+        contact: types.optional(
+          z.lazy(() => GuestContactContact$inboundSchema),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+        });
+      }),
+    )
   );
 
 export function guestContactFromJSON(
@@ -4560,16 +4742,19 @@ export function guestContactFromJSON(
 }
 
 /** @internal */
-export const Sso$inboundSchema: z.ZodMiniType<Sso, unknown> = z.pipe(
-  z.object({
-    is_supported: z._default(types.boolean(), false),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_supported": "isSupported",
-    });
-  }),
-);
+export const Sso$inboundSchema: z.ZodMiniType<Sso, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        is_supported: z._default(types.boolean(), false),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "is_supported": "isSupported",
+        });
+      }),
+    )
+  );
 
 export function ssoFromJSON(
   jsonString: string,
@@ -4585,26 +4770,28 @@ export function ssoFromJSON(
 export const Authentication$inboundSchema: z.ZodMiniType<
   Authentication,
   unknown
-> = z.pipe(
-  z.object({
-    email_password: types.optional(types.boolean()),
-    email_otp: z.optional(z.nullable(types.boolean())),
-    sms_otp: types.optional(types.boolean()),
-    facebook: types.optional(z.lazy(() => Facebook$inboundSchema)),
-    google: types.optional(z.lazy(() => Google$inboundSchema)),
-    demo_contact: types.optional(z.lazy(() => DemoContact$inboundSchema)),
-    guest_contact: types.optional(z.lazy(() => GuestContact$inboundSchema)),
-    sso: types.optional(z.lazy(() => Sso$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "email_password": "emailPassword",
-      "email_otp": "emailOtp",
-      "sms_otp": "smsOtp",
-      "demo_contact": "demoContact",
-      "guest_contact": "guestContact",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      email_password: types.optional(types.boolean()),
+      email_otp: z.optional(z.nullable(types.boolean())),
+      sms_otp: types.optional(types.boolean()),
+      facebook: types.optional(z.lazy(() => Facebook$inboundSchema)),
+      google: types.optional(z.lazy(() => Google$inboundSchema)),
+      demo_contact: types.optional(z.lazy(() => DemoContact$inboundSchema)),
+      guest_contact: types.optional(z.lazy(() => GuestContact$inboundSchema)),
+      sso: types.optional(z.lazy(() => Sso$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "email_password": "emailPassword",
+        "email_otp": "emailOtp",
+        "sms_otp": "smsOtp",
+        "demo_contact": "demoContact",
+        "guest_contact": "guestContact",
+      });
+    }),
+  )
 );
 
 export function authenticationFromJSON(
@@ -4622,8 +4809,10 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationCreativeUsageType
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationCreativeUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmApplicationSelfServiceResourceGetApplicationCreativeUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmApplicationSelfServiceResourceGetApplicationCreativeUsageType,
+    )
   );
 
 /** @internal */
@@ -4631,11 +4820,13 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationCreativeMedia$inb
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationCreativeMedia,
     unknown
-  > = z.object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationCreativeMediaFromJSON(
   jsonString: string,
@@ -4657,34 +4848,38 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationCreative$inboundS
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmApplicationSelfServiceResourceGetApplicationCreativeUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationCreativeMedia$inboundSchema
-      ))),
-      sort_order: types.optional(types.number()),
-      caption: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmApplicationSelfServiceResourceGetApplicationCreativeUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationCreativeMedia$inboundSchema
+          )),
+        ),
+        sort_order: types.optional(types.number()),
+        caption: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationCreativeFromJSON(
@@ -4706,16 +4901,18 @@ export function comCrmApplicationSelfServiceResourceGetApplicationCreativeFromJS
 export const FirebaseConfig$inboundSchema: z.ZodMiniType<
   FirebaseConfig,
   unknown
-> = z.pipe(
-  z.object({
-    config: types.optional(types.string()),
-    vapid_key: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "vapid_key": "vapidKey",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      config: types.optional(types.string()),
+      vapid_key: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "vapid_key": "vapidKey",
+      });
+    }),
+  )
 );
 
 export function firebaseConfigFromJSON(
@@ -4732,9 +4929,11 @@ export function firebaseConfigFromJSON(
 export const CustomizationConfig$inboundSchema: z.ZodMiniType<
   CustomizationConfig,
   unknown
-> = z.object({
-  extension: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    extension: types.optional(types.string()),
+  })
+);
 
 export function customizationConfigFromJSON(
   jsonString: string,
@@ -4751,47 +4950,53 @@ export const ComCrmApplicationSelfServiceResourceGetApplicationResponse$inboundS
   z.ZodMiniType<
     ComCrmApplicationSelfServiceResourceGetApplicationResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      description: types.optional(types.string()),
-      brand_name: types.optional(types.string()),
-      type: types.optional(
-        ComCrmApplicationSelfServiceResourceGetApplicationType$inboundSchema,
-      ),
-      appearance: types.optional(z.lazy(() => Appearance$inboundSchema)),
-      information: types.optional(z.lazy(() => Information$inboundSchema)),
-      features: types.optional(z.lazy(() => Features$inboundSchema)),
-      platforms: types.optional(z.array(z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationPlatform$inboundSchema
-      ))),
-      authentication: types.optional(z.lazy(() =>
-        Authentication$inboundSchema
-      )),
-      public_key: types.optional(types.string()),
-      creatives: types.optional(z.array(z.lazy(() =>
-        ComCrmApplicationSelfServiceResourceGetApplicationCreative$inboundSchema
-      ))),
-      firebase_config: types.optional(z.lazy(() =>
-        FirebaseConfig$inboundSchema
-      )),
-      customization_config: types.optional(
-        z.lazy(() => CustomizationConfig$inboundSchema),
-      ),
-      show_recommendations: types.optional(types.boolean()),
-      show_best_selling: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "brand_name": "brandName",
-        "public_key": "publicKey",
-        "firebase_config": "firebaseConfig",
-        "customization_config": "customizationConfig",
-        "show_recommendations": "showRecommendations",
-        "show_best_selling": "showBestSelling",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        description: types.optional(types.string()),
+        brand_name: types.optional(types.string()),
+        type: types.optional(
+          ComCrmApplicationSelfServiceResourceGetApplicationType$inboundSchema,
+        ),
+        appearance: types.optional(z.lazy(() => Appearance$inboundSchema)),
+        information: types.optional(z.lazy(() => Information$inboundSchema)),
+        features: types.optional(z.lazy(() => Features$inboundSchema)),
+        platforms: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationPlatform$inboundSchema
+          )),
+        ),
+        authentication: types.optional(
+          z.lazy(() => Authentication$inboundSchema),
+        ),
+        public_key: types.optional(types.string()),
+        creatives: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmApplicationSelfServiceResourceGetApplicationCreative$inboundSchema
+          )),
+        ),
+        firebase_config: types.optional(
+          z.lazy(() => FirebaseConfig$inboundSchema),
+        ),
+        customization_config: types.optional(
+          z.lazy(() => CustomizationConfig$inboundSchema),
+        ),
+        show_recommendations: types.optional(types.boolean()),
+        show_best_selling: types.optional(types.boolean()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "brand_name": "brandName",
+          "public_key": "publicKey",
+          "firebase_config": "firebaseConfig",
+          "customization_config": "customizationConfig",
+          "show_recommendations": "showRecommendations",
+          "show_best_selling": "showBestSelling",
+        });
+      }),
+    )
   );
 
 export function comCrmApplicationSelfServiceResourceGetApplicationResponseFromJSON(

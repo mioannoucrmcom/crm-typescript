@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -358,12 +358,12 @@ export type AddContactIdentitySSResponse = {
 /** @internal */
 export const AddContactIdentitySSProvider$outboundSchema: z.ZodMiniEnum<
   typeof AddContactIdentitySSProvider
-> = z.enum(AddContactIdentitySSProvider);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(AddContactIdentitySSProvider));
 
 /** @internal */
 export const AddContactIdentitySSCountryCode$outboundSchema: z.ZodMiniEnum<
   typeof AddContactIdentitySSCountryCode
-> = z.enum(AddContactIdentitySSCountryCode);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(AddContactIdentitySSCountryCode));
 
 /** @internal */
 export type AddContactIdentitySSPhone$Outbound = {
@@ -375,16 +375,18 @@ export type AddContactIdentitySSPhone$Outbound = {
 export const AddContactIdentitySSPhone$outboundSchema: z.ZodMiniType<
   AddContactIdentitySSPhone$Outbound,
   AddContactIdentitySSPhone
-> = z.pipe(
-  z.object({
-    number: z.string(),
-    countryCode: AddContactIdentitySSCountryCode$outboundSchema,
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      countryCode: "country_code",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      number: z.string(),
+      countryCode: AddContactIdentitySSCountryCode$outboundSchema,
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        countryCode: "country_code",
+      });
+    }),
+  )
 );
 
 export function addContactIdentitySSPhoneToJSON(
@@ -410,23 +412,25 @@ export type AddContactIdentitySSRequestBody$Outbound = {
 export const AddContactIdentitySSRequestBody$outboundSchema: z.ZodMiniType<
   AddContactIdentitySSRequestBody$Outbound,
   AddContactIdentitySSRequestBody
-> = z.pipe(
-  z.object({
-    provider: z.optional(AddContactIdentitySSProvider$outboundSchema),
-    email: z.nullable(z.string()),
-    password: z.optional(z.nullable(z.string())),
-    phone: z.optional(
-      z.nullable(z.lazy(() => AddContactIdentitySSPhone$outboundSchema)),
-    ),
-    applicationId: z.optional(z.nullable(z.string())),
-    token: z.optional(z.nullable(z.string())),
-    sub: z.optional(z.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      applicationId: "application_id",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      provider: z.optional(AddContactIdentitySSProvider$outboundSchema),
+      email: z.nullable(z.string()),
+      password: z.optional(z.nullable(z.string())),
+      phone: z.optional(
+        z.nullable(z.lazy(() => AddContactIdentitySSPhone$outboundSchema)),
+      ),
+      applicationId: z.optional(z.nullable(z.string())),
+      token: z.optional(z.nullable(z.string())),
+      sub: z.optional(z.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        applicationId: "application_id",
+      });
+    }),
+  )
 );
 
 export function addContactIdentitySSRequestBodyToJSON(
@@ -449,12 +453,14 @@ export type AddContactIdentitySSRequest$Outbound = {
 export const AddContactIdentitySSRequest$outboundSchema: z.ZodMiniType<
   AddContactIdentitySSRequest$Outbound,
   AddContactIdentitySSRequest
-> = z.object({
-  id: z.string(),
-  body: z.optional(
-    z.lazy(() => AddContactIdentitySSRequestBody$outboundSchema),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    body: z.optional(
+      z.lazy(() => AddContactIdentitySSRequestBody$outboundSchema),
+    ),
+  })
+);
 
 export function addContactIdentitySSRequestToJSON(
   addContactIdentitySSRequest: AddContactIdentitySSRequest,
@@ -470,9 +476,11 @@ export function addContactIdentitySSRequestToJSON(
 export const AddContactIdentitySSResponse$inboundSchema: z.ZodMiniType<
   AddContactIdentitySSResponse,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+  })
+);
 
 export function addContactIdentitySSResponseFromJSON(
   jsonString: string,

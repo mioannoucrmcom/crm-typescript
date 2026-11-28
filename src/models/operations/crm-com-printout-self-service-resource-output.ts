@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 
 /**
@@ -84,9 +85,10 @@ export type CrmComPrintoutSelfServiceResourceOutputRequest = {
 
 /** @internal */
 export const CrmComPrintoutSelfServiceResourceOutputType$outboundSchema:
-  z.ZodMiniEnum<typeof CrmComPrintoutSelfServiceResourceOutputType> = z.enum(
-    CrmComPrintoutSelfServiceResourceOutputType,
-  );
+  z.ZodMiniEnum<typeof CrmComPrintoutSelfServiceResourceOutputType> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(CrmComPrintoutSelfServiceResourceOutputType)
+    );
 
 /** @internal */
 export type CrmComPrintoutSelfServiceResourceOutputEntity$Outbound = {
@@ -99,10 +101,12 @@ export const CrmComPrintoutSelfServiceResourceOutputEntity$outboundSchema:
   z.ZodMiniType<
     CrmComPrintoutSelfServiceResourceOutputEntity$Outbound,
     CrmComPrintoutSelfServiceResourceOutputEntity
-  > = z.object({
-    type: CrmComPrintoutSelfServiceResourceOutputType$outboundSchema,
-    id: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      type: CrmComPrintoutSelfServiceResourceOutputType$outboundSchema,
+      id: z.optional(z.string()),
+    })
+  );
 
 export function crmComPrintoutSelfServiceResourceOutputEntityToJSON(
   crmComPrintoutSelfServiceResourceOutputEntity:
@@ -117,9 +121,10 @@ export function crmComPrintoutSelfServiceResourceOutputEntityToJSON(
 
 /** @internal */
 export const CrmComPrintoutSelfServiceResourceOutputFormat$outboundSchema:
-  z.ZodMiniEnum<typeof CrmComPrintoutSelfServiceResourceOutputFormat> = z.enum(
-    CrmComPrintoutSelfServiceResourceOutputFormat,
-  );
+  z.ZodMiniEnum<typeof CrmComPrintoutSelfServiceResourceOutputFormat> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(CrmComPrintoutSelfServiceResourceOutputFormat)
+    );
 
 /** @internal */
 export type CrmComPrintoutSelfServiceResourceOutputRequest$Outbound = {
@@ -132,12 +137,14 @@ export const CrmComPrintoutSelfServiceResourceOutputRequest$outboundSchema:
   z.ZodMiniType<
     CrmComPrintoutSelfServiceResourceOutputRequest$Outbound,
     CrmComPrintoutSelfServiceResourceOutputRequest
-  > = z.object({
-    entity: z.lazy(() =>
-      CrmComPrintoutSelfServiceResourceOutputEntity$outboundSchema
-    ),
-    format: CrmComPrintoutSelfServiceResourceOutputFormat$outboundSchema,
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      entity: z.lazy(() =>
+        CrmComPrintoutSelfServiceResourceOutputEntity$outboundSchema
+      ),
+      format: CrmComPrintoutSelfServiceResourceOutputFormat$outboundSchema,
+    })
+  );
 
 export function crmComPrintoutSelfServiceResourceOutputRequestToJSON(
   crmComPrintoutSelfServiceResourceOutputRequest:

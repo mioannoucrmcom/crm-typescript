@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -776,8 +776,10 @@ export type ComCrmPassPlanSelfServiceResourceListPassTypesResponse = {
 
 /** @internal */
 export const ComCrmPassPlanSelfServiceResourceListPassTypesOrder$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmPassPlanSelfServiceResourceListPassTypesOrder> = z
-    .enum(ComCrmPassPlanSelfServiceResourceListPassTypesOrder);
+  z.ZodMiniEnum<typeof ComCrmPassPlanSelfServiceResourceListPassTypesOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmPassPlanSelfServiceResourceListPassTypesOrder)
+    );
 
 /** @internal */
 export type ComCrmPassPlanSelfServiceResourceListPassTypesRequest$Outbound = {
@@ -796,28 +798,30 @@ export const ComCrmPassPlanSelfServiceResourceListPassTypesRequest$outboundSchem
   z.ZodMiniType<
     ComCrmPassPlanSelfServiceResourceListPassTypesRequest$Outbound,
     ComCrmPassPlanSelfServiceResourceListPassTypesRequest
-  > = z.pipe(
-    z.object({
-      currencyCode: z.optional(z.string()),
-      productId: z.optional(z.string()),
-      searchValue: z.optional(z.string()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmPassPlanSelfServiceResourceListPassTypesOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        currencyCode: "currency_code",
-        productId: "product_id",
-        searchValue: "search_value",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        currencyCode: z.optional(z.string()),
+        productId: z.optional(z.string()),
+        searchValue: z.optional(z.string()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmPassPlanSelfServiceResourceListPassTypesOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          currencyCode: "currency_code",
+          productId: "product_id",
+          searchValue: "search_value",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmPassPlanSelfServiceResourceListPassTypesRequestToJSON(
@@ -834,18 +838,20 @@ export function comCrmPassPlanSelfServiceResourceListPassTypesRequestToJSON(
 /** @internal */
 export const ComCrmPassPlanSelfServiceResourceListPassTypesPaging$inboundSchema:
   z.ZodMiniType<ComCrmPassPlanSelfServiceResourceListPassTypesPaging, unknown> =
-    z.pipe(
-      z.object({
-        page: types.optional(types.number()),
-        size: types.optional(types.number()),
-        total: types.optional(types.number()),
-        has_more: types.optional(types.boolean()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "has_more": "hasMore",
-        });
-      }),
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
     );
 
 export function comCrmPassPlanSelfServiceResourceListPassTypesPagingFromJSON(
@@ -867,8 +873,10 @@ export function comCrmPassPlanSelfServiceResourceListPassTypesPagingFromJSON(
 /** @internal */
 export const ComCrmPassPlanSelfServiceResourceListPassTypesState$inboundSchema:
   z.ZodMiniType<ComCrmPassPlanSelfServiceResourceListPassTypesState, unknown> =
-    openEnums.inboundSchema(
-      ComCrmPassPlanSelfServiceResourceListPassTypesState,
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmPassPlanSelfServiceResourceListPassTypesState,
+      )
     );
 
 /** @internal */
@@ -876,34 +884,38 @@ export const ComCrmPassPlanSelfServiceResourceListPassTypesClassification$inboun
   z.ZodMiniType<
     ComCrmPassPlanSelfServiceResourceListPassTypesClassification,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPassPlanSelfServiceResourceListPassTypesClassification,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPassPlanSelfServiceResourceListPassTypesClassification,
+    )
   );
 
 /** @internal */
 export const PassCodeType$inboundSchema: z.ZodMiniType<PassCodeType, unknown> =
-  openEnums.inboundSchema(PassCodeType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PassCodeType));
 
 /** @internal */
 export const PromotionPasses$inboundSchema: z.ZodMiniType<
   PromotionPasses,
   unknown
-> = z.pipe(
-  z.object({
-    promotion_id: types.string(),
-    reward_offer_id: types.string(),
-    name: types.optional(types.string()),
-    pass_code_type: types.optional(PassCodeType$inboundSchema),
-    maximum_usage: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "promotion_id": "promotionId",
-      "reward_offer_id": "rewardOfferId",
-      "pass_code_type": "passCodeType",
-      "maximum_usage": "maximumUsage",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      promotion_id: types.string(),
+      reward_offer_id: types.string(),
+      name: types.optional(types.string()),
+      pass_code_type: types.optional(PassCodeType$inboundSchema),
+      maximum_usage: types.optional(types.number()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "promotion_id": "promotionId",
+        "reward_offer_id": "rewardOfferId",
+        "pass_code_type": "passCodeType",
+        "maximum_usage": "maximumUsage",
+      });
+    }),
+  )
 );
 
 export function promotionPassesFromJSON(
@@ -918,29 +930,34 @@ export function promotionPassesFromJSON(
 
 /** @internal */
 export const ValidityType$inboundSchema: z.ZodMiniType<ValidityType, unknown> =
-  openEnums.inboundSchema(ValidityType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ValidityType));
 
 /** @internal */
 export const ComCrmPassPlanSelfServiceResourceListPassTypesUot$inboundSchema:
   z.ZodMiniType<ComCrmPassPlanSelfServiceResourceListPassTypesUot, unknown> =
-    openEnums.inboundSchema(ComCrmPassPlanSelfServiceResourceListPassTypesUot);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmPassPlanSelfServiceResourceListPassTypesUot)
+    );
 
 /** @internal */
-export const Validity$inboundSchema: z.ZodMiniType<Validity, unknown> = z.pipe(
-  z.object({
-    type: types.optional(ValidityType$inboundSchema),
-    period: types.optional(types.number()),
-    uot: types.optional(
-      ComCrmPassPlanSelfServiceResourceListPassTypesUot$inboundSchema,
-    ),
-    fixed_date: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "fixed_date": "fixedDate",
-    });
-  }),
-);
+export const Validity$inboundSchema: z.ZodMiniType<Validity, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: types.optional(ValidityType$inboundSchema),
+        period: types.optional(types.number()),
+        uot: types.optional(
+          ComCrmPassPlanSelfServiceResourceListPassTypesUot$inboundSchema,
+        ),
+        fixed_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "fixed_date": "fixedDate",
+        });
+      }),
+    )
+  );
 
 export function validityFromJSON(
   jsonString: string,
@@ -954,30 +971,35 @@ export function validityFromJSON(
 
 /** @internal */
 export const ValueType$inboundSchema: z.ZodMiniType<ValueType, unknown> =
-  openEnums.inboundSchema(ValueType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(ValueType));
 
 /** @internal */
 export const ValueCurrencyCode$inboundSchema: z.ZodMiniType<
   ValueCurrencyCode,
   unknown
-> = openEnums.inboundSchema(ValueCurrencyCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ValueCurrencyCode)
+);
 
 /** @internal */
-export const Value$inboundSchema: z.ZodMiniType<Value, unknown> = z.pipe(
-  z.object({
-    type: types.optional(ValueType$inboundSchema),
-    fixed_amount: types.optional(types.number()),
-    minimum: types.optional(types.number()),
-    maximum: types.optional(types.number()),
-    currency_code: types.optional(ValueCurrencyCode$inboundSchema),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "fixed_amount": "fixedAmount",
-      "currency_code": "currencyCode",
-    });
-  }),
-);
+export const Value$inboundSchema: z.ZodMiniType<Value, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: types.optional(ValueType$inboundSchema),
+        fixed_amount: types.optional(types.number()),
+        minimum: types.optional(types.number()),
+        maximum: types.optional(types.number()),
+        currency_code: types.optional(ValueCurrencyCode$inboundSchema),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "fixed_amount": "fixedAmount",
+          "currency_code": "currencyCode",
+        });
+      }),
+    )
+  );
 
 export function valueFromJSON(
   jsonString: string,
@@ -993,28 +1015,30 @@ export function valueFromJSON(
 export const CodeFormatType$inboundSchema: z.ZodMiniType<
   CodeFormatType,
   unknown
-> = openEnums.inboundSchema(CodeFormatType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(CodeFormatType));
 
 /** @internal */
 export const ComCrmPassPlanSelfServiceResourceListPassTypesCodeFormat$inboundSchema:
   z.ZodMiniType<
     ComCrmPassPlanSelfServiceResourceListPassTypesCodeFormat,
     unknown
-  > = z.pipe(
-    z.object({
-      type: CodeFormatType$inboundSchema,
-      prefix: types.optional(types.string()),
-      suffix: types.optional(types.string()),
-      length: types.optional(types.number()),
-      pin_required: z._default(types.boolean(), false),
-      single_code: types.optional(types.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "pin_required": "pinRequired",
-        "single_code": "singleCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: CodeFormatType$inboundSchema,
+        prefix: types.optional(types.string()),
+        suffix: types.optional(types.string()),
+        length: types.optional(types.number()),
+        pin_required: z._default(types.boolean(), false),
+        single_code: types.optional(types.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "pin_required": "pinRequired",
+          "single_code": "singleCode",
+        });
+      }),
+    )
   );
 
 export function comCrmPassPlanSelfServiceResourceListPassTypesCodeFormatFromJSON(
@@ -1036,18 +1060,22 @@ export function comCrmPassPlanSelfServiceResourceListPassTypesCodeFormatFromJSON
 export const CreditWalletBalance$inboundSchema: z.ZodMiniType<
   CreditWalletBalance,
   unknown
-> = openEnums.inboundSchema(CreditWalletBalance);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CreditWalletBalance)
+);
 
 /** @internal */
 export const ComCrmPassPlanSelfServiceResourceListPassTypesCommercePool$inboundSchema:
   z.ZodMiniType<
     ComCrmPassPlanSelfServiceResourceListPassTypesCommercePool,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    description: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      description: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPassPlanSelfServiceResourceListPassTypesCommercePoolFromJSON(
   jsonString: string,
@@ -1069,10 +1097,12 @@ export const ComCrmPassPlanSelfServiceResourceListPassTypesCustomField$inboundSc
   z.ZodMiniType<
     ComCrmPassPlanSelfServiceResourceListPassTypesCustomField,
     unknown
-  > = z.object({
-    key: types.optional(types.string()),
-    value: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: types.optional(types.string()),
+      value: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPassPlanSelfServiceResourceListPassTypesCustomFieldFromJSON(
   jsonString: string,
@@ -1094,8 +1124,10 @@ export const ComCrmPassPlanSelfServiceResourceListPassTypesCurrencyCode$inboundS
   z.ZodMiniType<
     ComCrmPassPlanSelfServiceResourceListPassTypesCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPassPlanSelfServiceResourceListPassTypesCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPassPlanSelfServiceResourceListPassTypesCurrencyCode,
+    )
   );
 
 /** @internal */
@@ -1103,11 +1135,13 @@ export const ComCrmPassPlanSelfServiceResourceListPassTypesProduct$inboundSchema
   z.ZodMiniType<
     ComCrmPassPlanSelfServiceResourceListPassTypesProduct,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    })
+  );
 
 export function comCrmPassPlanSelfServiceResourceListPassTypesProductFromJSON(
   jsonString: string,
@@ -1130,53 +1164,65 @@ export const ComCrmPassPlanSelfServiceResourceListPassTypesContent$inboundSchema
   z.ZodMiniType<
     ComCrmPassPlanSelfServiceResourceListPassTypesContent,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      state: types.optional(
-        ComCrmPassPlanSelfServiceResourceListPassTypesState$inboundSchema,
-      ),
-      name: types.optional(types.string()),
-      description: types.optional(types.string()),
-      classification: types.optional(
-        ComCrmPassPlanSelfServiceResourceListPassTypesClassification$inboundSchema,
-      ),
-      promotion_passes: types.optional(
-        z.lazy(() => PromotionPasses$inboundSchema),
-      ),
-      validity: types.optional(z.lazy(() => Validity$inboundSchema)),
-      value: types.optional(z.lazy(() => Value$inboundSchema)),
-      printed: types.optional(types.boolean()),
-      code_format: types.optional(z.lazy(() =>
-        ComCrmPassPlanSelfServiceResourceListPassTypesCodeFormat$inboundSchema
-      )),
-      credit_wallet_balance: types.optional(CreditWalletBalance$inboundSchema),
-      commerce_pool: types.optional(z.lazy(() =>
-        ComCrmPassPlanSelfServiceResourceListPassTypesCommercePool$inboundSchema
-      )),
-      number_of_passes: types.optional(types.number()),
-      passes_generated: types.optional(types.number()),
-      custom_fields: types.optional(z.array(z.lazy(() =>
-        ComCrmPassPlanSelfServiceResourceListPassTypesCustomField$inboundSchema
-      ))),
-      currency_code:
-        ComCrmPassPlanSelfServiceResourceListPassTypesCurrencyCode$inboundSchema,
-      product: types.optional(z.lazy(() =>
-        ComCrmPassPlanSelfServiceResourceListPassTypesProduct$inboundSchema
-      )),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "promotion_passes": "promotionPasses",
-        "code_format": "codeFormat",
-        "credit_wallet_balance": "creditWalletBalance",
-        "commerce_pool": "commercePool",
-        "number_of_passes": "numberOfPasses",
-        "passes_generated": "passesGenerated",
-        "custom_fields": "customFields",
-        "currency_code": "currencyCode",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        state: types.optional(
+          ComCrmPassPlanSelfServiceResourceListPassTypesState$inboundSchema,
+        ),
+        name: types.optional(types.string()),
+        description: types.optional(types.string()),
+        classification: types.optional(
+          ComCrmPassPlanSelfServiceResourceListPassTypesClassification$inboundSchema,
+        ),
+        promotion_passes: types.optional(
+          z.lazy(() => PromotionPasses$inboundSchema),
+        ),
+        validity: types.optional(z.lazy(() => Validity$inboundSchema)),
+        value: types.optional(z.lazy(() => Value$inboundSchema)),
+        printed: types.optional(types.boolean()),
+        code_format: types.optional(
+          z.lazy(() =>
+            ComCrmPassPlanSelfServiceResourceListPassTypesCodeFormat$inboundSchema
+          ),
+        ),
+        credit_wallet_balance: types.optional(
+          CreditWalletBalance$inboundSchema,
+        ),
+        commerce_pool: types.optional(
+          z.lazy(() =>
+            ComCrmPassPlanSelfServiceResourceListPassTypesCommercePool$inboundSchema
+          ),
+        ),
+        number_of_passes: types.optional(types.number()),
+        passes_generated: types.optional(types.number()),
+        custom_fields: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmPassPlanSelfServiceResourceListPassTypesCustomField$inboundSchema
+          )),
+        ),
+        currency_code:
+          ComCrmPassPlanSelfServiceResourceListPassTypesCurrencyCode$inboundSchema,
+        product: types.optional(
+          z.lazy(() =>
+            ComCrmPassPlanSelfServiceResourceListPassTypesProduct$inboundSchema
+          ),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "promotion_passes": "promotionPasses",
+          "code_format": "codeFormat",
+          "credit_wallet_balance": "creditWalletBalance",
+          "commerce_pool": "commercePool",
+          "number_of_passes": "numberOfPasses",
+          "passes_generated": "passesGenerated",
+          "custom_fields": "customFields",
+          "currency_code": "currencyCode",
+        });
+      }),
+    )
   );
 
 export function comCrmPassPlanSelfServiceResourceListPassTypesContentFromJSON(
@@ -1200,18 +1246,16 @@ export const ComCrmPassPlanSelfServiceResourceListPassTypesResponse$inboundSchem
   z.ZodMiniType<
     ComCrmPassPlanSelfServiceResourceListPassTypesResponse,
     unknown
-  > = z.object({
-    paging: types.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      paging: types.optional(z.lazy(() =>
         ComCrmPassPlanSelfServiceResourceListPassTypesPaging$inboundSchema
-      ),
-    ),
-    content: types.optional(
-      z.array(z.lazy(() =>
-        ComCrmPassPlanSelfServiceResourceListPassTypesContent$inboundSchema
       )),
-    ),
-  });
+      content: types.optional(z.array(z.lazy(() =>
+        ComCrmPassPlanSelfServiceResourceListPassTypesContent$inboundSchema
+      ))),
+    })
+  );
 
 export function comCrmPassPlanSelfServiceResourceListPassTypesResponseFromJSON(
   jsonString: string,

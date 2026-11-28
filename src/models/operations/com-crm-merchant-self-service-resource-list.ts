@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -98,21 +98,23 @@ export const ComCrmMerchantSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmMerchantSelfServiceResourceListRequest$Outbound,
     ComCrmMerchantSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      includeTotal: z.optional(z.boolean()),
-      name: z.optional(z.string()),
-      order: z.optional(z.string()),
-      organisations: z.optional(z.string()),
-      page: z.optional(z.int()),
-      size: z.optional(z.int()),
-      sort: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        includeTotal: z.optional(z.boolean()),
+        name: z.optional(z.string()),
+        order: z.optional(z.string()),
+        organisations: z.optional(z.string()),
+        page: z.optional(z.int()),
+        size: z.optional(z.int()),
+        sort: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmMerchantSelfServiceResourceListRequestToJSON(
@@ -128,19 +130,22 @@ export function comCrmMerchantSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const ComCrmMerchantSelfServiceResourceListPaging$inboundSchema:
-  z.ZodMiniType<ComCrmMerchantSelfServiceResourceListPaging, unknown> = z.pipe(
-    z.object({
-      page: types.optional(types.number()),
-      size: types.optional(types.number()),
-      total: types.optional(types.number()),
-      has_more: types.optional(types.boolean()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "has_more": "hasMore",
-      });
-    }),
-  );
+  z.ZodMiniType<ComCrmMerchantSelfServiceResourceListPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
+    );
 
 export function comCrmMerchantSelfServiceResourceListPagingFromJSON(
   jsonString: string,
@@ -160,12 +165,14 @@ export function comCrmMerchantSelfServiceResourceListPagingFromJSON(
 
 /** @internal */
 export const ComCrmMerchantSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<ComCrmMerchantSelfServiceResourceListContent, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-      description: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmMerchantSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+        description: types.optional(types.string()),
+      })
+    );
 
 export function comCrmMerchantSelfServiceResourceListContentFromJSON(
   jsonString: string,
@@ -185,17 +192,21 @@ export function comCrmMerchantSelfServiceResourceListContentFromJSON(
 
 /** @internal */
 export const ComCrmMerchantSelfServiceResourceListResponse$inboundSchema:
-  z.ZodMiniType<ComCrmMerchantSelfServiceResourceListResponse, unknown> = z
-    .object({
-      paging: types.optional(
-        z.lazy(() => ComCrmMerchantSelfServiceResourceListPaging$inboundSchema),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmMerchantSelfServiceResourceListContent$inboundSchema
-        )),
-      ),
-    });
+  z.ZodMiniType<ComCrmMerchantSelfServiceResourceListResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(
+          z.lazy(() =>
+            ComCrmMerchantSelfServiceResourceListPaging$inboundSchema
+          ),
+        ),
+        content: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmMerchantSelfServiceResourceListContent$inboundSchema
+          )),
+        ),
+      })
+    );
 
 export function comCrmMerchantSelfServiceResourceListResponseFromJSON(
   jsonString: string,

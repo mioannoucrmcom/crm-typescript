@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -57,11 +57,13 @@ export const CrmComCommunicationSelfServiceResourceCommunicationActionsRequestBo
   z.ZodMiniType<
     CrmComCommunicationSelfServiceResourceCommunicationActionsRequestBody$Outbound,
     CrmComCommunicationSelfServiceResourceCommunicationActionsRequestBody
-  > = z.object({
-    id: z.optional(z.string()),
-    viewed: z.nullable(z.boolean()),
-    archived: z.nullable(z.boolean()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+      viewed: z.nullable(z.boolean()),
+      archived: z.nullable(z.boolean()),
+    })
+  );
 
 export function crmComCommunicationSelfServiceResourceCommunicationActionsRequestBodyToJSON(
   crmComCommunicationSelfServiceResourceCommunicationActionsRequestBody:
@@ -88,12 +90,14 @@ export const CrmComCommunicationSelfServiceResourceCommunicationActionsRequest$o
   z.ZodMiniType<
     CrmComCommunicationSelfServiceResourceCommunicationActionsRequest$Outbound,
     CrmComCommunicationSelfServiceResourceCommunicationActionsRequest
-  > = z.object({
-    id: z.string(),
-    body: z.lazy(() =>
-      CrmComCommunicationSelfServiceResourceCommunicationActionsRequestBody$outboundSchema
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.lazy(() =>
+        CrmComCommunicationSelfServiceResourceCommunicationActionsRequestBody$outboundSchema
+      ),
+    })
+  );
 
 export function crmComCommunicationSelfServiceResourceCommunicationActionsRequestToJSON(
   crmComCommunicationSelfServiceResourceCommunicationActionsRequest:
@@ -110,9 +114,11 @@ export const CrmComCommunicationSelfServiceResourceCommunicationActionsResponse$
   z.ZodMiniType<
     CrmComCommunicationSelfServiceResourceCommunicationActionsResponse,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+    })
+  );
 
 export function crmComCommunicationSelfServiceResourceCommunicationActionsResponseFromJSON(
   jsonString: string,

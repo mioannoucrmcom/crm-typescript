@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -815,9 +815,11 @@ export const ComCrmPromotionSelfServiceResourceGetSingleRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmPromotionSelfServiceResourceGetSingleRequest$Outbound,
     ComCrmPromotionSelfServiceResourceGetSingleRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmPromotionSelfServiceResourceGetSingleRequestToJSON(
   comCrmPromotionSelfServiceResourceGetSingleRequest:
@@ -833,24 +835,28 @@ export function comCrmPromotionSelfServiceResourceGetSingleRequestToJSON(
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSingleState$inboundSchema:
   z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleState, unknown> =
-    openEnums.inboundSchema(ComCrmPromotionSelfServiceResourceGetSingleState);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmPromotionSelfServiceResourceGetSingleState)
+    );
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSingleAvailability$inboundSchema:
   z.ZodMiniType<
     ComCrmPromotionSelfServiceResourceGetSingleAvailability,
     unknown
-  > = z.pipe(
-    z.object({
-      from_date: types.optional(types.number()),
-      to_date: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "from_date": "fromDate",
-        "to_date": "toDate",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        from_date: types.optional(types.number()),
+        to_date: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "from_date": "fromDate",
+          "to_date": "toDate",
+        });
+      }),
+    )
   );
 
 export function comCrmPromotionSelfServiceResourceGetSingleAvailabilityFromJSON(
@@ -870,11 +876,13 @@ export function comCrmPromotionSelfServiceResourceGetSingleAvailabilityFromJSON(
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSingleContact$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleContact, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleContact, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+      })
+    );
 
 export function comCrmPromotionSelfServiceResourceGetSingleContactFromJSON(
   jsonString: string,
@@ -893,12 +901,15 @@ export function comCrmPromotionSelfServiceResourceGetSingleContactFromJSON(
 }
 
 /** @internal */
-export const Segment$inboundSchema: z.ZodMiniType<Segment, unknown> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-  description: types.optional(types.string()),
-  size: types.optional(types.number()),
-});
+export const Segment$inboundSchema: z.ZodMiniType<Segment, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      description: types.optional(types.string()),
+      size: types.optional(types.number()),
+    })
+  );
 
 export function segmentFromJSON(
   jsonString: string,
@@ -915,8 +926,10 @@ export const ComCrmPromotionSelfServiceResourceGetSingleTargetsType$inboundSchem
   z.ZodMiniType<
     ComCrmPromotionSelfServiceResourceGetSingleTargetsType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPromotionSelfServiceResourceGetSingleTargetsType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPromotionSelfServiceResourceGetSingleTargetsType,
+    )
   );
 
 /** @internal */
@@ -924,13 +937,15 @@ export const ComCrmPromotionSelfServiceResourceGetSingleOrganisation$inboundSche
   z.ZodMiniType<
     ComCrmPromotionSelfServiceResourceGetSingleOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    type: types.optional(
-      ComCrmPromotionSelfServiceResourceGetSingleTargetsType$inboundSchema,
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      type: types.optional(
+        ComCrmPromotionSelfServiceResourceGetSingleTargetsType$inboundSchema,
+      ),
+    })
+  );
 
 export function comCrmPromotionSelfServiceResourceGetSingleOrganisationFromJSON(
   jsonString: string,
@@ -948,18 +963,20 @@ export function comCrmPromotionSelfServiceResourceGetSingleOrganisationFromJSON(
 }
 
 /** @internal */
-export const FixedPeriod$inboundSchema: z.ZodMiniType<FixedPeriod, unknown> = z
-  .pipe(
-    z.object({
-      start_date: types.number(),
-      end_date: z.optional(z.nullable(types.number())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "start_date": "startDate",
-        "end_date": "endDate",
-      });
-    }),
+export const FixedPeriod$inboundSchema: z.ZodMiniType<FixedPeriod, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        start_date: types.number(),
+        end_date: z.optional(z.nullable(types.number())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "start_date": "startDate",
+          "end_date": "endDate",
+        });
+      }),
+    )
   );
 
 export function fixedPeriodFromJSON(
@@ -976,19 +993,21 @@ export function fixedPeriodFromJSON(
 export const TimingsAvailability$inboundSchema: z.ZodMiniType<
   TimingsAvailability,
   unknown
-> = z.pipe(
-  z.object({
-    day: types.optional(types.number()),
-    month: types.optional(types.number()),
-    start_time: types.optional(types.string()),
-    end_time: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "start_time": "startTime",
-      "end_time": "endTime",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      day: types.optional(types.number()),
+      month: types.optional(types.number()),
+      start_time: types.optional(types.string()),
+      end_time: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "start_time": "startTime",
+        "end_time": "endTime",
+      });
+    }),
+  )
 );
 
 export function timingsAvailabilityFromJSON(
@@ -1002,19 +1021,22 @@ export function timingsAvailabilityFromJSON(
 }
 
 /** @internal */
-export const Timings$inboundSchema: z.ZodMiniType<Timings, unknown> = z.pipe(
-  z.object({
-    fixed_period: types.nullable(z.lazy(() => FixedPeriod$inboundSchema)),
-    availability: types.nullable(z.array(z.lazy(() =>
-      TimingsAvailability$inboundSchema
-    ))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "fixed_period": "fixedPeriod",
-    });
-  }),
-);
+export const Timings$inboundSchema: z.ZodMiniType<Timings, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        fixed_period: types.nullable(z.lazy(() => FixedPeriod$inboundSchema)),
+        availability: types.nullable(
+          z.array(z.lazy(() => TimingsAvailability$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "fixed_period": "fixedPeriod",
+        });
+      }),
+    )
+  );
 
 export function timingsFromJSON(
   jsonString: string,
@@ -1028,21 +1050,23 @@ export function timingsFromJSON(
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSingleTargets$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleTargets, unknown> = z
-    .object({
-      contact: types.optional(
-        z.lazy(() =>
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleTargets, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        contact: types.optional(z.lazy(() =>
           ComCrmPromotionSelfServiceResourceGetSingleContact$inboundSchema
-        ),
-      ),
-      segments: types.optional(z.array(z.lazy(() => Segment$inboundSchema))),
-      organisations: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmPromotionSelfServiceResourceGetSingleOrganisation$inboundSchema
         )),
-      ),
-      timings: types.optional(z.lazy(() => Timings$inboundSchema)),
-    });
+        segments: types.optional(z.array(z.lazy(() =>
+          Segment$inboundSchema
+        ))),
+        organisations: types.optional(z.array(z.lazy(() =>
+          ComCrmPromotionSelfServiceResourceGetSingleOrganisation$inboundSchema
+        ))),
+        timings: types.optional(z.lazy(() =>
+          Timings$inboundSchema
+        )),
+      })
+    );
 
 export function comCrmPromotionSelfServiceResourceGetSingleTargetsFromJSON(
   jsonString: string,
@@ -1062,37 +1086,43 @@ export function comCrmPromotionSelfServiceResourceGetSingleTargetsFromJSON(
 
 /** @internal */
 export const Operator$inboundSchema: z.ZodMiniType<Operator, unknown> =
-  openEnums.inboundSchema(Operator);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Operator));
 
 /** @internal */
 export const ConditionOperator$inboundSchema: z.ZodMiniType<
   ConditionOperator,
   unknown
-> = openEnums.inboundSchema(ConditionOperator);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ConditionOperator)
+);
 
 /** @internal */
 export const ConditionItemType$inboundSchema: z.ZodMiniType<
   ConditionItemType,
   unknown
-> = openEnums.inboundSchema(ConditionItemType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ConditionItemType)
+);
 
 /** @internal */
 export const ConditionProduct$inboundSchema: z.ZodMiniType<
   ConditionProduct,
   unknown
-> = z.pipe(
-  z.object({
-    item_type: ConditionItemType$inboundSchema,
-    item_id: types.string(),
-    sku: types.optional(types.string()),
-    name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "item_type": "itemType",
-      "item_id": "itemId",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      item_type: ConditionItemType$inboundSchema,
+      item_id: types.string(),
+      sku: types.optional(types.string()),
+      name: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "item_type": "itemType",
+        "item_id": "itemId",
+      });
+    }),
+  )
 );
 
 export function conditionProductFromJSON(
@@ -1109,14 +1139,16 @@ export function conditionProductFromJSON(
 export const BillingCycleUot$inboundSchema: z.ZodMiniType<
   BillingCycleUot,
   unknown
-> = openEnums.inboundSchema(BillingCycleUot);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(BillingCycleUot));
 
 /** @internal */
 export const BillingCycle$inboundSchema: z.ZodMiniType<BillingCycle, unknown> =
-  z.object({
-    duration: types.number(),
-    uot: BillingCycleUot$inboundSchema,
-  });
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      duration: types.number(),
+      uot: BillingCycleUot$inboundSchema,
+    })
+  );
 
 export function billingCycleFromJSON(
   jsonString: string,
@@ -1132,17 +1164,21 @@ export function billingCycleFromJSON(
 export const ConditionContractPeriodUot$inboundSchema: z.ZodMiniType<
   ConditionContractPeriodUot,
   unknown
-> = openEnums.inboundSchema(ConditionContractPeriodUot);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ConditionContractPeriodUot)
+);
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSingleContractPeriod$inboundSchema:
   z.ZodMiniType<
     ComCrmPromotionSelfServiceResourceGetSingleContractPeriod,
     unknown
-  > = z.object({
-    duration: types.optional(types.number()),
-    uot: types.optional(ConditionContractPeriodUot$inboundSchema),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      duration: types.optional(types.number()),
+      uot: types.optional(ConditionContractPeriodUot$inboundSchema),
+    })
+  );
 
 export function comCrmPromotionSelfServiceResourceGetSingleContractPeriodFromJSON(
   jsonString: string,
@@ -1161,13 +1197,15 @@ export function comCrmPromotionSelfServiceResourceGetSingleContractPeriodFromJSO
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSingleService$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleService, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      sku: types.optional(types.string()),
-      name: types.optional(types.string()),
-      quantity: types.optional(types.number()),
-    });
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleService, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        sku: types.optional(types.string()),
+        name: types.optional(types.string()),
+        quantity: types.optional(types.number()),
+      })
+    );
 
 export function comCrmPromotionSelfServiceResourceGetSingleServiceFromJSON(
   jsonString: string,
@@ -1186,28 +1224,34 @@ export function comCrmPromotionSelfServiceResourceGetSingleServiceFromJSON(
 }
 
 /** @internal */
-export const Condition$inboundSchema: z.ZodMiniType<Condition, unknown> = z
-  .pipe(
-    z.object({
-      condition: types.optional(types.string()),
-      operator: types.optional(ConditionOperator$inboundSchema),
-      product: types.optional(z.lazy(() => ConditionProduct$inboundSchema)),
-      quantity: types.optional(types.number()),
-      value: types.optional(types.number()),
-      billing_cycle: types.optional(z.lazy(() => BillingCycle$inboundSchema)),
-      contract_period: types.optional(z.lazy(() =>
-        ComCrmPromotionSelfServiceResourceGetSingleContractPeriod$inboundSchema
-      )),
-      services: types.optional(z.array(z.lazy(() =>
-        ComCrmPromotionSelfServiceResourceGetSingleService$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "billing_cycle": "billingCycle",
-        "contract_period": "contractPeriod",
-      });
-    }),
+export const Condition$inboundSchema: z.ZodMiniType<Condition, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        condition: types.optional(types.string()),
+        operator: types.optional(ConditionOperator$inboundSchema),
+        product: types.optional(z.lazy(() => ConditionProduct$inboundSchema)),
+        quantity: types.optional(types.number()),
+        value: types.optional(types.number()),
+        billing_cycle: types.optional(z.lazy(() => BillingCycle$inboundSchema)),
+        contract_period: types.optional(
+          z.lazy(() =>
+            ComCrmPromotionSelfServiceResourceGetSingleContractPeriod$inboundSchema
+          ),
+        ),
+        services: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmPromotionSelfServiceResourceGetSingleService$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "billing_cycle": "billingCycle",
+          "contract_period": "contractPeriod",
+        });
+      }),
+    )
   );
 
 export function conditionFromJSON(
@@ -1221,11 +1265,16 @@ export function conditionFromJSON(
 }
 
 /** @internal */
-export const Group$inboundSchema: z.ZodMiniType<Group, unknown> = z.object({
-  group: types.optional(types.string()),
-  operator: types.optional(Operator$inboundSchema),
-  conditions: types.optional(z.array(z.lazy(() => Condition$inboundSchema))),
-});
+export const Group$inboundSchema: z.ZodMiniType<Group, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      group: types.optional(types.string()),
+      operator: types.optional(Operator$inboundSchema),
+      conditions: types.optional(
+        z.array(z.lazy(() => Condition$inboundSchema)),
+      ),
+    })
+  );
 
 export function groupFromJSON(
   jsonString: string,
@@ -1238,10 +1287,12 @@ export function groupFromJSON(
 }
 
 /** @internal */
-export const Products$inboundSchema: z.ZodMiniType<Products, unknown> = z
-  .object({
-    groups: types.optional(z.array(z.lazy(() => Group$inboundSchema))),
-  });
+export const Products$inboundSchema: z.ZodMiniType<Products, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      groups: types.optional(z.array(z.lazy(() => Group$inboundSchema))),
+    })
+  );
 
 export function productsFromJSON(
   jsonString: string,
@@ -1258,8 +1309,10 @@ export const ComCrmPromotionSelfServiceResourceGetSinglePaymentMethodType$inboun
   z.ZodMiniType<
     ComCrmPromotionSelfServiceResourceGetSinglePaymentMethodType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPromotionSelfServiceResourceGetSinglePaymentMethodType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPromotionSelfServiceResourceGetSinglePaymentMethodType,
+    )
   );
 
 /** @internal */
@@ -1267,33 +1320,38 @@ export const ComCrmPromotionSelfServiceResourceGetSingleSupplyMethod$inboundSche
   z.ZodMiniType<
     ComCrmPromotionSelfServiceResourceGetSingleSupplyMethod,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmPromotionSelfServiceResourceGetSingleSupplyMethod,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmPromotionSelfServiceResourceGetSingleSupplyMethod,
+    )
   );
 
 /** @internal */
-export const Rule$inboundSchema: z.ZodMiniType<Rule, unknown> = z.pipe(
-  z.object({
-    payment_method_types: types.optional(
-      z.array(
-        ComCrmPromotionSelfServiceResourceGetSinglePaymentMethodType$inboundSchema,
-      ),
-    ),
-    supply_methods: types.optional(
-      z.array(
-        ComCrmPromotionSelfServiceResourceGetSingleSupplyMethod$inboundSchema,
-      ),
-    ),
-    value: types.optional(types.number()),
-    quantity: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "payment_method_types": "paymentMethodTypes",
-      "supply_methods": "supplyMethods",
-    });
-  }),
-);
+export const Rule$inboundSchema: z.ZodMiniType<Rule, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        payment_method_types: types.optional(
+          z.array(
+            ComCrmPromotionSelfServiceResourceGetSinglePaymentMethodType$inboundSchema,
+          ),
+        ),
+        supply_methods: types.optional(
+          z.array(
+            ComCrmPromotionSelfServiceResourceGetSingleSupplyMethod$inboundSchema,
+          ),
+        ),
+        value: types.optional(types.number()),
+        quantity: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "payment_method_types": "paymentMethodTypes",
+          "supply_methods": "supplyMethods",
+        });
+      }),
+    )
+  );
 
 export function ruleFromJSON(
   jsonString: string,
@@ -1306,10 +1364,13 @@ export function ruleFromJSON(
 }
 
 /** @internal */
-export const Basket$inboundSchema: z.ZodMiniType<Basket, unknown> = z.object({
-  products: types.optional(z.lazy(() => Products$inboundSchema)),
-  rules: types.optional(z.array(z.lazy(() => Rule$inboundSchema))),
-});
+export const Basket$inboundSchema: z.ZodMiniType<Basket, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      products: types.optional(z.lazy(() => Products$inboundSchema)),
+      rules: types.optional(z.array(z.lazy(() => Rule$inboundSchema))),
+    })
+  );
 
 export function basketFromJSON(
   jsonString: string,
@@ -1324,18 +1385,22 @@ export function basketFromJSON(
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSingleUsageType$inboundSchema:
   z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleUsageType, unknown> =
-    openEnums.inboundSchema(
-      ComCrmPromotionSelfServiceResourceGetSingleUsageType,
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmPromotionSelfServiceResourceGetSingleUsageType,
+      )
     );
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSingleMedia$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleMedia, unknown> = z
-    .object({
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      url: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleMedia, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        url: types.optional(types.string()),
+      })
+    );
 
 export function comCrmPromotionSelfServiceResourceGetSingleMediaFromJSON(
   jsonString: string,
@@ -1356,34 +1421,38 @@ export function comCrmPromotionSelfServiceResourceGetSingleMediaFromJSON(
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSingleCreative$inboundSchema:
   z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleCreative, unknown> =
-    z.pipe(
-      z.object({
-        id: types.optional(types.string()),
-        media_group_id: types.optional(types.string()),
-        usage_type: types.optional(
-          ComCrmPromotionSelfServiceResourceGetSingleUsageType$inboundSchema,
-        ),
-        width: types.optional(types.number()),
-        height: types.optional(types.number()),
-        format: types.optional(types.string()),
-        url: types.optional(types.string()),
-        public_id: types.optional(types.string()),
-        media_id: types.optional(types.string()),
-        caption: types.optional(types.string()),
-        sort_order: types.optional(types.number()),
-        media: types.optional(z.array(z.lazy(() =>
-          ComCrmPromotionSelfServiceResourceGetSingleMedia$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "media_group_id": "mediaGroupId",
-          "usage_type": "usageType",
-          "public_id": "publicId",
-          "media_id": "mediaId",
-          "sort_order": "sortOrder",
-        });
-      }),
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          media_group_id: types.optional(types.string()),
+          usage_type: types.optional(
+            ComCrmPromotionSelfServiceResourceGetSingleUsageType$inboundSchema,
+          ),
+          width: types.optional(types.number()),
+          height: types.optional(types.number()),
+          format: types.optional(types.string()),
+          url: types.optional(types.string()),
+          public_id: types.optional(types.string()),
+          media_id: types.optional(types.string()),
+          caption: types.optional(types.string()),
+          sort_order: types.optional(types.number()),
+          media: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmPromotionSelfServiceResourceGetSingleMedia$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "media_group_id": "mediaGroupId",
+            "usage_type": "usageType",
+            "public_id": "publicId",
+            "media_id": "mediaId",
+            "sort_order": "sortOrder",
+          });
+        }),
+      )
     );
 
 export function comCrmPromotionSelfServiceResourceGetSingleCreativeFromJSON(
@@ -1406,25 +1475,29 @@ export function comCrmPromotionSelfServiceResourceGetSingleCreativeFromJSON(
 export const OfferingItemType$inboundSchema: z.ZodMiniType<
   OfferingItemType,
   unknown
-> = openEnums.inboundSchema(OfferingItemType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(OfferingItemType)
+);
 
 /** @internal */
 export const OfferingProduct$inboundSchema: z.ZodMiniType<
   OfferingProduct,
   unknown
-> = z.pipe(
-  z.object({
-    item_id: types.optional(types.string()),
-    item_type: types.optional(OfferingItemType$inboundSchema),
-    name: types.optional(types.string()),
-    sku: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "item_id": "itemId",
-      "item_type": "itemType",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      item_id: types.optional(types.string()),
+      item_type: types.optional(OfferingItemType$inboundSchema),
+      name: types.optional(types.string()),
+      sku: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "item_id": "itemId",
+        "item_type": "itemType",
+      });
+    }),
+  )
 );
 
 export function offeringProductFromJSON(
@@ -1439,23 +1512,25 @@ export function offeringProductFromJSON(
 
 /** @internal */
 export const OfferingType$inboundSchema: z.ZodMiniType<OfferingType, unknown> =
-  openEnums.inboundSchema(OfferingType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(OfferingType));
 
 /** @internal */
 export const DurationType$inboundSchema: z.ZodMiniType<DurationType, unknown> =
-  openEnums.inboundSchema(DurationType);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(DurationType));
 
 /** @internal */
 export const PeriodUot$inboundSchema: z.ZodMiniType<PeriodUot, unknown> =
-  openEnums.inboundSchema(PeriodUot);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(PeriodUot));
 
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSinglePeriod$inboundSchema:
-  z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSinglePeriod, unknown> = z
-    .object({
-      duration: types.number(),
-      uot: PeriodUot$inboundSchema,
-    });
+  z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSinglePeriod, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        duration: types.number(),
+        uot: PeriodUot$inboundSchema,
+      })
+    );
 
 export function comCrmPromotionSelfServiceResourceGetSinglePeriodFromJSON(
   jsonString: string,
@@ -1477,22 +1552,28 @@ export function comCrmPromotionSelfServiceResourceGetSinglePeriodFromJSON(
 export const VariableDiscountType$inboundSchema: z.ZodMiniType<
   VariableDiscountType,
   unknown
-> = openEnums.inboundSchema(VariableDiscountType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VariableDiscountType)
+);
 
 /** @internal */
 export const VariableDiscountUot$inboundSchema: z.ZodMiniType<
   VariableDiscountUot,
   unknown
-> = openEnums.inboundSchema(VariableDiscountUot);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(VariableDiscountUot)
+);
 
 /** @internal */
 export const VariableDiscountPeriod$inboundSchema: z.ZodMiniType<
   VariableDiscountPeriod,
   unknown
-> = z.object({
-  duration: types.number(),
-  uot: VariableDiscountUot$inboundSchema,
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    duration: types.number(),
+    uot: VariableDiscountUot$inboundSchema,
+  })
+);
 
 export function variableDiscountPeriodFromJSON(
   jsonString: string,
@@ -1508,18 +1589,20 @@ export function variableDiscountPeriodFromJSON(
 export const VariableDiscount$inboundSchema: z.ZodMiniType<
   VariableDiscount,
   unknown
-> = z.pipe(
-  z.object({
-    type: VariableDiscountType$inboundSchema,
-    amount: types.number(),
-    period: z.lazy(() => VariableDiscountPeriod$inboundSchema),
-    period_order: types.number(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "period_order": "periodOrder",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      type: VariableDiscountType$inboundSchema,
+      amount: types.number(),
+      period: z.lazy(() => VariableDiscountPeriod$inboundSchema),
+      period_order: types.number(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "period_order": "periodOrder",
+      });
+    }),
+  )
 );
 
 export function variableDiscountFromJSON(
@@ -1533,22 +1616,27 @@ export function variableDiscountFromJSON(
 }
 
 /** @internal */
-export const Duration$inboundSchema: z.ZodMiniType<Duration, unknown> = z.pipe(
-  z.object({
-    type: DurationType$inboundSchema,
-    period: types.nullable(z.lazy(() =>
-      ComCrmPromotionSelfServiceResourceGetSinglePeriod$inboundSchema
-    )),
-    variable_discounts: z.optional(z.nullable(z.array(z.lazy(() =>
-      VariableDiscount$inboundSchema
-    )))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "variable_discounts": "variableDiscounts",
-    });
-  }),
-);
+export const Duration$inboundSchema: z.ZodMiniType<Duration, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: DurationType$inboundSchema,
+        period: types.nullable(
+          z.lazy(() =>
+            ComCrmPromotionSelfServiceResourceGetSinglePeriod$inboundSchema
+          ),
+        ),
+        variable_discounts: z.optional(
+          z.nullable(z.array(z.lazy(() => VariableDiscount$inboundSchema))),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "variable_discounts": "variableDiscounts",
+        });
+      }),
+    )
+  );
 
 export function durationFromJSON(
   jsonString: string,
@@ -1561,13 +1649,15 @@ export function durationFromJSON(
 }
 
 /** @internal */
-export const Offering$inboundSchema: z.ZodMiniType<Offering, unknown> = z
-  .object({
-    product: types.optional(z.lazy(() => OfferingProduct$inboundSchema)),
-    type: types.optional(OfferingType$inboundSchema),
-    amount: types.optional(types.number()),
-    duration: types.optional(z.lazy(() => Duration$inboundSchema)),
-  });
+export const Offering$inboundSchema: z.ZodMiniType<Offering, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      product: types.optional(z.lazy(() => OfferingProduct$inboundSchema)),
+      type: types.optional(OfferingType$inboundSchema),
+      amount: types.optional(types.number()),
+      duration: types.optional(z.lazy(() => Duration$inboundSchema)),
+    })
+  );
 
 export function offeringFromJSON(
   jsonString: string,
@@ -1582,37 +1672,43 @@ export function offeringFromJSON(
 /** @internal */
 export const ComCrmPromotionSelfServiceResourceGetSingleResponse$inboundSchema:
   z.ZodMiniType<ComCrmPromotionSelfServiceResourceGetSingleResponse, unknown> =
-    z.pipe(
-      z.object({
-        id: types.optional(types.string()),
-        name: types.optional(types.string()),
-        state: types.optional(
-          ComCrmPromotionSelfServiceResourceGetSingleState$inboundSchema,
-        ),
-        short_description: types.optional(types.string()),
-        long_description: types.optional(types.string()),
-        availability: types.optional(z.lazy(() =>
-          ComCrmPromotionSelfServiceResourceGetSingleAvailability$inboundSchema
-        )),
-        targets: types.optional(z.lazy(() =>
-          ComCrmPromotionSelfServiceResourceGetSingleTargets$inboundSchema
-        )),
-        basket: types.optional(z.lazy(() =>
-          Basket$inboundSchema
-        )),
-        creatives: types.optional(z.array(z.lazy(() =>
-          ComCrmPromotionSelfServiceResourceGetSingleCreative$inboundSchema
-        ))),
-        offerings: types.optional(z.array(z.lazy(() =>
-          Offering$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "short_description": "shortDescription",
-          "long_description": "longDescription",
-        });
-      }),
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          state: types.optional(
+            ComCrmPromotionSelfServiceResourceGetSingleState$inboundSchema,
+          ),
+          short_description: types.optional(types.string()),
+          long_description: types.optional(types.string()),
+          availability: types.optional(
+            z.lazy(() =>
+              ComCrmPromotionSelfServiceResourceGetSingleAvailability$inboundSchema
+            ),
+          ),
+          targets: types.optional(
+            z.lazy(() =>
+              ComCrmPromotionSelfServiceResourceGetSingleTargets$inboundSchema
+            ),
+          ),
+          basket: types.optional(z.lazy(() => Basket$inboundSchema)),
+          creatives: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmPromotionSelfServiceResourceGetSingleCreative$inboundSchema
+            )),
+          ),
+          offerings: types.optional(
+            z.array(z.lazy(() => Offering$inboundSchema)),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "short_description": "shortDescription",
+            "long_description": "longDescription",
+          });
+        }),
+      )
     );
 
 export function comCrmPromotionSelfServiceResourceGetSingleResponseFromJSON(

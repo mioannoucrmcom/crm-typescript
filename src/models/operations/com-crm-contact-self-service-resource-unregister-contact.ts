@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceUnregisterContactSecurity = {
   secretAPIKey?: string | undefined;
@@ -29,16 +30,18 @@ export const ComCrmContactSelfServiceResourceUnregisterContactSecurity$outboundS
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUnregisterContactSecurity$Outbound,
     ComCrmContactSelfServiceResourceUnregisterContactSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceUnregisterContactSecurityToJSON(
@@ -62,9 +65,11 @@ export const ComCrmContactSelfServiceResourceUnregisterContactRequest$outboundSc
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUnregisterContactRequest$Outbound,
     ComCrmContactSelfServiceResourceUnregisterContactRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceUnregisterContactRequestToJSON(
   comCrmContactSelfServiceResourceUnregisterContactRequest:

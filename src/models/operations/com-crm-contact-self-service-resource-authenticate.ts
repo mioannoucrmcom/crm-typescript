@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -504,15 +504,17 @@ export const ComCrmContactSelfServiceResourceAuthenticateSecurity$outboundSchema
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceAuthenticateSecurity$Outbound,
     ComCrmContactSelfServiceResourceAuthenticateSecurity
-  > = z.pipe(
-    z.object({
-      publicAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        publicAPIKey: "Public_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        publicAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          publicAPIKey: "Public_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceAuthenticateSecurityToJSON(
@@ -528,14 +530,18 @@ export function comCrmContactSelfServiceResourceAuthenticateSecurityToJSON(
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceAuthenticateProvider$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmContactSelfServiceResourceAuthenticateProvider> = z
-    .enum(ComCrmContactSelfServiceResourceAuthenticateProvider);
+  z.ZodMiniEnum<typeof ComCrmContactSelfServiceResourceAuthenticateProvider> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmContactSelfServiceResourceAuthenticateProvider)
+    );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceAuthenticateCountryCode$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmContactSelfServiceResourceAuthenticateCountryCode
-  > = z.enum(ComCrmContactSelfServiceResourceAuthenticateCountryCode);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmContactSelfServiceResourceAuthenticateCountryCode)
+  );
 
 /** @internal */
 export type ComCrmContactSelfServiceResourceAuthenticatePhone$Outbound = {
@@ -548,17 +554,19 @@ export const ComCrmContactSelfServiceResourceAuthenticatePhone$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceAuthenticatePhone$Outbound,
     ComCrmContactSelfServiceResourceAuthenticatePhone
-  > = z.pipe(
-    z.object({
-      number: z.string(),
-      countryCode:
-        ComCrmContactSelfServiceResourceAuthenticateCountryCode$outboundSchema,
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        countryCode: "country_code",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        number: z.string(),
+        countryCode:
+          ComCrmContactSelfServiceResourceAuthenticateCountryCode$outboundSchema,
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          countryCode: "country_code",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceAuthenticatePhoneToJSON(
@@ -591,29 +599,33 @@ export const ComCrmContactSelfServiceResourceAuthenticateRequestBody$outboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceAuthenticateRequestBody$Outbound,
     ComCrmContactSelfServiceResourceAuthenticateRequestBody
-  > = z.pipe(
-    z.object({
-      provider:
-        ComCrmContactSelfServiceResourceAuthenticateProvider$outboundSchema,
-      username: z.nullable(z.string()),
-      password: z.nullable(z.string()),
-      token: z.nullable(z.string()),
-      applicationId: z.optional(z.nullable(z.string())),
-      phone: z.nullable(z.lazy(() =>
-        ComCrmContactSelfServiceResourceAuthenticatePhone$outboundSchema
-      )),
-      macAddress: z.nullable(z.string()),
-      loginAsGuest: z.optional(z.nullable(z.boolean())),
-      code: z.optional(z.string()),
-      state: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        applicationId: "application_id",
-        macAddress: "mac_address",
-        loginAsGuest: "login_as_guest",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        provider:
+          ComCrmContactSelfServiceResourceAuthenticateProvider$outboundSchema,
+        username: z.nullable(z.string()),
+        password: z.nullable(z.string()),
+        token: z.nullable(z.string()),
+        applicationId: z.optional(z.nullable(z.string())),
+        phone: z.nullable(
+          z.lazy(() =>
+            ComCrmContactSelfServiceResourceAuthenticatePhone$outboundSchema
+          ),
+        ),
+        macAddress: z.nullable(z.string()),
+        loginAsGuest: z.optional(z.nullable(z.boolean())),
+        code: z.optional(z.string()),
+        state: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          applicationId: "application_id",
+          macAddress: "mac_address",
+          loginAsGuest: "login_as_guest",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceAuthenticateRequestBodyToJSON(
@@ -637,18 +649,20 @@ export const ComCrmContactSelfServiceResourceAuthenticateRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceAuthenticateRequest$Outbound,
     ComCrmContactSelfServiceResourceAuthenticateRequest
-  > = z.pipe(
-    z.object({
-      apiKey: z.optional(z.string()),
-      body: z.lazy(() =>
-        ComCrmContactSelfServiceResourceAuthenticateRequestBody$outboundSchema
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        apiKey: "api_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        apiKey: z.optional(z.string()),
+        body: z.lazy(() =>
+          ComCrmContactSelfServiceResourceAuthenticateRequestBody$outboundSchema
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          apiKey: "api_key",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceResourceAuthenticateRequestToJSON(
@@ -667,32 +681,36 @@ export const ComCrmContactSelfServiceResourceAuthenticateContactType$inboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceAuthenticateContactType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceAuthenticateContactType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceAuthenticateContactType,
+    )
   );
 
 /** @internal */
 export const ComCrmContactSelfServiceResourceAuthenticateContact$inboundSchema:
   z.ZodMiniType<ComCrmContactSelfServiceResourceAuthenticateContact, unknown> =
-    z.pipe(
-      z.object({
-        id: types.optional(types.string()),
-        type: types.optional(
-          ComCrmContactSelfServiceResourceAuthenticateContactType$inboundSchema,
-        ),
-        first_name: types.optional(types.string()),
-        last_name: types.optional(types.string()),
-        is_verified: types.optional(types.boolean()),
-        company_name: types.optional(types.string()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "first_name": "firstName",
-          "last_name": "lastName",
-          "is_verified": "isVerified",
-          "company_name": "companyName",
-        });
-      }),
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          type: types.optional(
+            ComCrmContactSelfServiceResourceAuthenticateContactType$inboundSchema,
+          ),
+          first_name: types.optional(types.string()),
+          last_name: types.optional(types.string()),
+          is_verified: types.optional(types.boolean()),
+          company_name: types.optional(types.string()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "first_name": "firstName",
+            "last_name": "lastName",
+            "is_verified": "isVerified",
+            "company_name": "companyName",
+          });
+        }),
+      )
     );
 
 export function comCrmContactSelfServiceResourceAuthenticateContactFromJSON(
@@ -716,8 +734,10 @@ export const ComCrmContactSelfServiceResourceAuthenticateOrganisationType$inboun
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceAuthenticateOrganisationType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmContactSelfServiceResourceAuthenticateOrganisationType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmContactSelfServiceResourceAuthenticateOrganisationType,
+    )
   );
 
 /** @internal */
@@ -725,13 +745,15 @@ export const ComCrmContactSelfServiceResourceAuthenticateOrganisation$inboundSch
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceAuthenticateOrganisation,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    type: types.optional(
-      ComCrmContactSelfServiceResourceAuthenticateOrganisationType$inboundSchema,
-    ),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(
+        ComCrmContactSelfServiceResourceAuthenticateOrganisationType$inboundSchema,
+      ),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceAuthenticateOrganisationFromJSON(
   jsonString: string,
@@ -753,10 +775,12 @@ export const ComCrmContactSelfServiceResourceAuthenticateCommunity$inboundSchema
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceAuthenticateCommunity,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceAuthenticateCommunityFromJSON(
   jsonString: string,
@@ -777,34 +801,42 @@ export function comCrmContactSelfServiceResourceAuthenticateCommunityFromJSON(
 /** @internal */
 export const ComCrmContactSelfServiceResourceAuthenticateResponse$inboundSchema:
   z.ZodMiniType<ComCrmContactSelfServiceResourceAuthenticateResponse, unknown> =
-    z.pipe(
-      z.object({
-        access_token: types.optional(types.string()),
-        refresh_token: types.optional(types.string()),
-        expiration_date: types.optional(types.number()),
-        contact: types.optional(z.lazy(() =>
-          ComCrmContactSelfServiceResourceAuthenticateContact$inboundSchema
-        )),
-        organisations: types.optional(z.array(z.lazy(() =>
-          ComCrmContactSelfServiceResourceAuthenticateOrganisation$inboundSchema
-        ))),
-        communities: types.optional(z.array(z.lazy(() =>
-          ComCrmContactSelfServiceResourceAuthenticateCommunity$inboundSchema
-        ))),
-        obfuscated_value: types.optional(types.string()),
-        auth_otp: types.optional(types.string()),
-        existing_contact: types.optional(types.boolean()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "access_token": "accessToken",
-          "refresh_token": "refreshToken",
-          "expiration_date": "expirationDate",
-          "obfuscated_value": "obfuscatedValue",
-          "auth_otp": "authOtp",
-          "existing_contact": "existingContact",
-        });
-      }),
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          access_token: types.optional(types.string()),
+          refresh_token: types.optional(types.string()),
+          expiration_date: types.optional(types.number()),
+          contact: types.optional(
+            z.lazy(() =>
+              ComCrmContactSelfServiceResourceAuthenticateContact$inboundSchema
+            ),
+          ),
+          organisations: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmContactSelfServiceResourceAuthenticateOrganisation$inboundSchema
+            )),
+          ),
+          communities: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmContactSelfServiceResourceAuthenticateCommunity$inboundSchema
+            )),
+          ),
+          obfuscated_value: types.optional(types.string()),
+          auth_otp: types.optional(types.string()),
+          existing_contact: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "access_token": "accessToken",
+            "refresh_token": "refreshToken",
+            "expiration_date": "expirationDate",
+            "obfuscated_value": "obfuscatedValue",
+            "auth_otp": "authOtp",
+            "existing_contact": "existingContact",
+          });
+        }),
+      )
     );
 
 export function comCrmContactSelfServiceResourceAuthenticateResponseFromJSON(

@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmFileSelfServiceResourceDeleteFileRequest = {
   /**
@@ -21,9 +22,11 @@ export const ComCrmFileSelfServiceResourceDeleteFileRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmFileSelfServiceResourceDeleteFileRequest$Outbound,
     ComCrmFileSelfServiceResourceDeleteFileRequest
-  > = z.object({
-    id: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+    })
+  );
 
 export function comCrmFileSelfServiceResourceDeleteFileRequestToJSON(
   comCrmFileSelfServiceResourceDeleteFileRequest:

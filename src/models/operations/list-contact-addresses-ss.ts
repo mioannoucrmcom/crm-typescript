@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -384,9 +384,11 @@ export type ListContactAddressesSSRequest$Outbound = {
 export const ListContactAddressesSSRequest$outboundSchema: z.ZodMiniType<
   ListContactAddressesSSRequest$Outbound,
   ListContactAddressesSSRequest
-> = z.object({
-  id: z.string(),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+  })
+);
 
 export function listContactAddressesSSRequestToJSON(
   listContactAddressesSSRequest: ListContactAddressesSSRequest,
@@ -402,18 +404,20 @@ export function listContactAddressesSSRequestToJSON(
 export const ListContactAddressesSSPaging$inboundSchema: z.ZodMiniType<
   ListContactAddressesSSPaging,
   unknown
-> = z.pipe(
-  z.object({
-    page: types.optional(types.number()),
-    size: types.optional(types.number()),
-    total: types.optional(types.number()),
-    has_more: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "has_more": "hasMore",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      page: types.optional(types.number()),
+      size: types.optional(types.number()),
+      total: types.optional(types.number()),
+      has_more: types.optional(types.boolean()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "has_more": "hasMore",
+      });
+    }),
+  )
 );
 
 export function listContactAddressesSSPagingFromJSON(
@@ -430,48 +434,54 @@ export function listContactAddressesSSPagingFromJSON(
 export const ListContactAddressesSSType$inboundSchema: z.ZodMiniType<
   ListContactAddressesSSType,
   unknown
-> = openEnums.inboundSchema(ListContactAddressesSSType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ListContactAddressesSSType)
+);
 
 /** @internal */
 export const ListContactAddressesSSCountryCode$inboundSchema: z.ZodMiniType<
   ListContactAddressesSSCountryCode,
   unknown
-> = openEnums.inboundSchema(ListContactAddressesSSCountryCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(ListContactAddressesSSCountryCode)
+);
 
 /** @internal */
 export const ListContactAddressesSSContent$inboundSchema: z.ZodMiniType<
   ListContactAddressesSSContent,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    type: types.optional(ListContactAddressesSSType$inboundSchema),
-    name: types.optional(types.string()),
-    is_primary: types.optional(types.boolean()),
-    address_line_1: types.optional(types.string()),
-    address_line_2: types.optional(types.string()),
-    state_province_county: types.optional(types.string()),
-    town_city: types.optional(types.string()),
-    postal_code: types.optional(types.string()),
-    country_code: types.optional(
-      ListContactAddressesSSCountryCode$inboundSchema,
-    ),
-    lat: types.optional(types.number()),
-    lon: types.optional(types.number()),
-    google_place_id: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "is_primary": "isPrimary",
-      "address_line_1": "addressLine1",
-      "address_line_2": "addressLine2",
-      "state_province_county": "stateProvinceCounty",
-      "town_city": "townCity",
-      "postal_code": "postalCode",
-      "country_code": "countryCode",
-      "google_place_id": "googlePlaceId",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(ListContactAddressesSSType$inboundSchema),
+      name: types.optional(types.string()),
+      is_primary: types.optional(types.boolean()),
+      address_line_1: types.optional(types.string()),
+      address_line_2: types.optional(types.string()),
+      state_province_county: types.optional(types.string()),
+      town_city: types.optional(types.string()),
+      postal_code: types.optional(types.string()),
+      country_code: types.optional(
+        ListContactAddressesSSCountryCode$inboundSchema,
+      ),
+      lat: types.optional(types.number()),
+      lon: types.optional(types.number()),
+      google_place_id: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "is_primary": "isPrimary",
+        "address_line_1": "addressLine1",
+        "address_line_2": "addressLine2",
+        "state_province_county": "stateProvinceCounty",
+        "town_city": "townCity",
+        "postal_code": "postalCode",
+        "country_code": "countryCode",
+        "google_place_id": "googlePlaceId",
+      });
+    }),
+  )
 );
 
 export function listContactAddressesSSContentFromJSON(
@@ -488,14 +498,16 @@ export function listContactAddressesSSContentFromJSON(
 export const ListContactAddressesSSResponse$inboundSchema: z.ZodMiniType<
   ListContactAddressesSSResponse,
   unknown
-> = z.object({
-  paging: types.optional(
-    z.lazy(() => ListContactAddressesSSPaging$inboundSchema),
-  ),
-  content: types.optional(
-    z.array(z.lazy(() => ListContactAddressesSSContent$inboundSchema)),
-  ),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    paging: types.optional(
+      z.lazy(() => ListContactAddressesSSPaging$inboundSchema),
+    ),
+    content: types.optional(
+      z.array(z.lazy(() => ListContactAddressesSSContent$inboundSchema)),
+    ),
+  })
+);
 
 export function listContactAddressesSSResponseFromJSON(
   jsonString: string,

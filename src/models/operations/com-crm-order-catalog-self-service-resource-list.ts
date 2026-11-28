@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -335,17 +335,19 @@ export const ComCrmOrderCatalogSelfServiceResourceListSecurity$outboundSchema:
   z.ZodMiniType<
     ComCrmOrderCatalogSelfServiceResourceListSecurity$Outbound,
     ComCrmOrderCatalogSelfServiceResourceListSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorizationSelfService: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-        authorizationSelfService: "authorization_self_service",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorizationSelfService: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+          authorizationSelfService: "authorization_self_service",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderCatalogSelfServiceResourceListSecurityToJSON(
@@ -363,13 +365,16 @@ export function comCrmOrderCatalogSelfServiceResourceListSecurityToJSON(
 export const ComCrmOrderCatalogSelfServiceResourceListQueryParamSupplyMethod$outboundSchema:
   z.ZodMiniEnum<
     typeof ComCrmOrderCatalogSelfServiceResourceListQueryParamSupplyMethod
-  > = z.enum(ComCrmOrderCatalogSelfServiceResourceListQueryParamSupplyMethod);
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.enum(ComCrmOrderCatalogSelfServiceResourceListQueryParamSupplyMethod)
+  );
 
 /** @internal */
 export const ComCrmOrderCatalogSelfServiceResourceListOrder$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmOrderCatalogSelfServiceResourceListOrder> = z.enum(
-    ComCrmOrderCatalogSelfServiceResourceListOrder,
-  );
+  z.ZodMiniEnum<typeof ComCrmOrderCatalogSelfServiceResourceListOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmOrderCatalogSelfServiceResourceListOrder)
+    );
 
 /** @internal */
 export type ComCrmOrderCatalogSelfServiceResourceListRequest$Outbound = {
@@ -389,32 +394,34 @@ export const ComCrmOrderCatalogSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmOrderCatalogSelfServiceResourceListRequest$Outbound,
     ComCrmOrderCatalogSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      fulfilledBy: z.optional(z.string()),
-      orderCatalogIds: z.optional(z.string()),
-      orderingTime: z.optional(z.int()),
-      searchValue: z.optional(z.string()),
-      supplyMethod: z.optional(
-        ComCrmOrderCatalogSelfServiceResourceListQueryParamSupplyMethod$outboundSchema,
-      ),
-      order: z._default(
-        ComCrmOrderCatalogSelfServiceResourceListOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-      sort: z._default(z.string(), "CREATED_DATE"),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        fulfilledBy: "fulfilled_by",
-        orderCatalogIds: "order_catalog_ids",
-        orderingTime: "ordering_time",
-        searchValue: "search_value",
-        supplyMethod: "supply_method",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        fulfilledBy: z.optional(z.string()),
+        orderCatalogIds: z.optional(z.string()),
+        orderingTime: z.optional(z.int()),
+        searchValue: z.optional(z.string()),
+        supplyMethod: z.optional(
+          ComCrmOrderCatalogSelfServiceResourceListQueryParamSupplyMethod$outboundSchema,
+        ),
+        order: z._default(
+          ComCrmOrderCatalogSelfServiceResourceListOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+        sort: z._default(z.string(), "CREATED_DATE"),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          fulfilledBy: "fulfilled_by",
+          orderCatalogIds: "order_catalog_ids",
+          orderingTime: "ordering_time",
+          searchValue: "search_value",
+          supplyMethod: "supply_method",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderCatalogSelfServiceResourceListRequestToJSON(
@@ -430,19 +437,21 @@ export function comCrmOrderCatalogSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const ComCrmOrderCatalogSelfServiceResourceListPaging$inboundSchema:
-  z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListPaging, unknown> = z
-    .pipe(
-      z.object({
-        page: types.optional(types.number()),
-        size: types.optional(types.number()),
-        total: types.optional(types.number()),
-        has_more: types.optional(types.boolean()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "has_more": "hasMore",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderCatalogSelfServiceResourceListPagingFromJSON(
@@ -464,16 +473,22 @@ export function comCrmOrderCatalogSelfServiceResourceListPagingFromJSON(
 /** @internal */
 export const ComCrmOrderCatalogSelfServiceResourceListUsageType$inboundSchema:
   z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListUsageType, unknown> =
-    openEnums.inboundSchema(ComCrmOrderCatalogSelfServiceResourceListUsageType);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(
+        ComCrmOrderCatalogSelfServiceResourceListUsageType,
+      )
+    );
 
 /** @internal */
 export const ComCrmOrderCatalogSelfServiceResourceListMedia$inboundSchema:
-  z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListMedia, unknown> = z
-    .object({
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      url: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListMedia, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        url: types.optional(types.string()),
+      })
+    );
 
 export function comCrmOrderCatalogSelfServiceResourceListMediaFromJSON(
   jsonString: string,
@@ -493,35 +508,39 @@ export function comCrmOrderCatalogSelfServiceResourceListMediaFromJSON(
 
 /** @internal */
 export const ComCrmOrderCatalogSelfServiceResourceListCreative$inboundSchema:
-  z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListCreative, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        media_group_id: types.optional(types.string()),
-        usage_type: types.optional(
-          ComCrmOrderCatalogSelfServiceResourceListUsageType$inboundSchema,
-        ),
-        width: types.optional(types.number()),
-        height: types.optional(types.number()),
-        format: types.optional(types.string()),
-        url: types.optional(types.string()),
-        public_id: types.optional(types.string()),
-        media_id: types.optional(types.string()),
-        caption: types.optional(types.string()),
-        sort_order: types.optional(types.number()),
-        media: types.optional(z.array(z.lazy(() =>
-          ComCrmOrderCatalogSelfServiceResourceListMedia$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "media_group_id": "mediaGroupId",
-          "usage_type": "usageType",
-          "public_id": "publicId",
-          "media_id": "mediaId",
-          "sort_order": "sortOrder",
-        });
-      }),
+  z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListCreative, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          media_group_id: types.optional(types.string()),
+          usage_type: types.optional(
+            ComCrmOrderCatalogSelfServiceResourceListUsageType$inboundSchema,
+          ),
+          width: types.optional(types.number()),
+          height: types.optional(types.number()),
+          format: types.optional(types.string()),
+          url: types.optional(types.string()),
+          public_id: types.optional(types.string()),
+          media_id: types.optional(types.string()),
+          caption: types.optional(types.string()),
+          sort_order: types.optional(types.number()),
+          media: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmOrderCatalogSelfServiceResourceListMedia$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "media_group_id": "mediaGroupId",
+            "usage_type": "usageType",
+            "public_id": "publicId",
+            "media_id": "mediaId",
+            "sort_order": "sortOrder",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderCatalogSelfServiceResourceListCreativeFromJSON(
@@ -545,35 +564,41 @@ export const ComCrmOrderCatalogSelfServiceResourceListContentSupplyMethod$inboun
   z.ZodMiniType<
     ComCrmOrderCatalogSelfServiceResourceListContentSupplyMethod,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmOrderCatalogSelfServiceResourceListContentSupplyMethod,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmOrderCatalogSelfServiceResourceListContentSupplyMethod,
+    )
   );
 
 /** @internal */
 export const ComCrmOrderCatalogSelfServiceResourceListDayOfWeek$inboundSchema:
-  z.ZodMiniEnum<typeof ComCrmOrderCatalogSelfServiceResourceListDayOfWeek> = z
-    .enum(ComCrmOrderCatalogSelfServiceResourceListDayOfWeek);
+  z.ZodMiniEnum<typeof ComCrmOrderCatalogSelfServiceResourceListDayOfWeek> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmOrderCatalogSelfServiceResourceListDayOfWeek)
+    );
 
 /** @internal */
 export const ComCrmOrderCatalogSelfServiceResourceListTimeAvailability$inboundSchema:
   z.ZodMiniType<
     ComCrmOrderCatalogSelfServiceResourceListTimeAvailability,
     unknown
-  > = z.pipe(
-    z.object({
-      day_of_week: types.optional(
-        ComCrmOrderCatalogSelfServiceResourceListDayOfWeek$inboundSchema,
-      ),
-      start_time: z.optional(z.nullable(types.string())),
-      end_time: z.optional(z.nullable(types.string())),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "day_of_week": "dayOfWeek",
-        "start_time": "startTime",
-        "end_time": "endTime",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        day_of_week: types.optional(
+          ComCrmOrderCatalogSelfServiceResourceListDayOfWeek$inboundSchema,
+        ),
+        start_time: z.optional(z.nullable(types.string())),
+        end_time: z.optional(z.nullable(types.string())),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "day_of_week": "dayOfWeek",
+          "start_time": "startTime",
+          "end_time": "endTime",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderCatalogSelfServiceResourceListTimeAvailabilityFromJSON(
@@ -593,34 +618,40 @@ export function comCrmOrderCatalogSelfServiceResourceListTimeAvailabilityFromJSO
 
 /** @internal */
 export const ComCrmOrderCatalogSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListContent, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        name: types.optional(types.string()),
-        description: types.optional(types.string()),
-        display_name: types.optional(types.string()),
-        creatives: types.optional(z.array(z.lazy(() =>
-          ComCrmOrderCatalogSelfServiceResourceListCreative$inboundSchema
-        ))),
-        supply_methods: types.optional(
-          z.array(
-            ComCrmOrderCatalogSelfServiceResourceListContentSupplyMethod$inboundSchema,
+  z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          description: types.optional(types.string()),
+          display_name: types.optional(types.string()),
+          creatives: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmOrderCatalogSelfServiceResourceListCreative$inboundSchema
+            )),
           ),
-        ),
-        time_availability: types.optional(z.array(z.lazy(() =>
-          ComCrmOrderCatalogSelfServiceResourceListTimeAvailability$inboundSchema
-        ))),
-        is_pricing_table: types.optional(types.boolean()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "display_name": "displayName",
-          "supply_methods": "supplyMethods",
-          "time_availability": "timeAvailability",
-          "is_pricing_table": "isPricingTable",
-        });
-      }),
+          supply_methods: types.optional(
+            z.array(
+              ComCrmOrderCatalogSelfServiceResourceListContentSupplyMethod$inboundSchema,
+            ),
+          ),
+          time_availability: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmOrderCatalogSelfServiceResourceListTimeAvailability$inboundSchema
+            )),
+          ),
+          is_pricing_table: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "display_name": "displayName",
+            "supply_methods": "supplyMethods",
+            "time_availability": "timeAvailability",
+            "is_pricing_table": "isPricingTable",
+          });
+        }),
+      )
     );
 
 export function comCrmOrderCatalogSelfServiceResourceListContentFromJSON(
@@ -641,19 +672,17 @@ export function comCrmOrderCatalogSelfServiceResourceListContentFromJSON(
 
 /** @internal */
 export const ComCrmOrderCatalogSelfServiceResourceListResponse$inboundSchema:
-  z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListResponse, unknown> = z
-    .object({
-      paging: types.optional(
-        z.lazy(() =>
+  z.ZodMiniType<ComCrmOrderCatalogSelfServiceResourceListResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(z.lazy(() =>
           ComCrmOrderCatalogSelfServiceResourceListPaging$inboundSchema
-        ),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmOrderCatalogSelfServiceResourceListContent$inboundSchema
         )),
-      ),
-    });
+        content: types.optional(z.array(z.lazy(() =>
+          ComCrmOrderCatalogSelfServiceResourceListContent$inboundSchema
+        ))),
+      })
+    );
 
 export function comCrmOrderCatalogSelfServiceResourceListResponseFromJSON(
   jsonString: string,

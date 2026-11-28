@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -275,17 +275,19 @@ export const ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsSecurity$ou
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsSecurity$Outbound,
     ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorizationSelfService: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-        authorizationSelfService: "authorization_self_service",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorizationSelfService: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+          authorizationSelfService: "authorization_self_service",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceGetWalletSummarisedTotalsSecurityToJSON(
@@ -299,9 +301,8 @@ export function comCrmWalletSelfServiceResourceGetWalletSummarisedTotalsSecurity
 }
 
 /** @internal */
-export const PostedOn$outboundSchema: z.ZodMiniEnum<typeof PostedOn> = z.enum(
-  PostedOn,
-);
+export const PostedOn$outboundSchema: z.ZodMiniEnum<typeof PostedOn> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(PostedOn));
 
 /** @internal */
 export type ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsRequest$Outbound =
@@ -315,16 +316,18 @@ export const ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsRequest$out
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsRequest$Outbound,
     ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsRequest
-  > = z.pipe(
-    z.object({
-      id: z.string(),
-      postedOn: z.optional(PostedOn$outboundSchema),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        postedOn: "posted_on",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.string(),
+        postedOn: z.optional(PostedOn$outboundSchema),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          postedOn: "posted_on",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceGetWalletSummarisedTotalsRequestToJSON(
@@ -342,8 +345,10 @@ export const ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsType$inboun
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsType,
+    )
   );
 
 /** @internal */
@@ -351,27 +356,31 @@ export const ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsCurrencyCod
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsCurrencyCode,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsCurrencyCode,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsCurrencyCode,
+    )
   );
 
 /** @internal */
-export const WalletTotal$inboundSchema: z.ZodMiniType<WalletTotal, unknown> = z
-  .pipe(
-    z.object({
-      type: types.optional(
-        ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsType$inboundSchema,
-      ),
-      total: types.optional(types.number()),
-      currency_code: types.optional(
-        ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsCurrencyCode$inboundSchema,
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "currency_code": "currencyCode",
-      });
-    }),
+export const WalletTotal$inboundSchema: z.ZodMiniType<WalletTotal, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        type: types.optional(
+          ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsType$inboundSchema,
+        ),
+        total: types.optional(types.number()),
+        currency_code: types.optional(
+          ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsCurrencyCode$inboundSchema,
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "currency_code": "currencyCode",
+        });
+      }),
+    )
   );
 
 export function walletTotalFromJSON(
@@ -389,17 +398,19 @@ export const ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsResponse$in
   z.ZodMiniType<
     ComCrmWalletSelfServiceResourceGetWalletSummarisedTotalsResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      wallet_totals: types.optional(
-        z.array(z.lazy(() => WalletTotal$inboundSchema)),
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "wallet_totals": "walletTotals",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        wallet_totals: types.optional(
+          z.array(z.lazy(() => WalletTotal$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "wallet_totals": "walletTotals",
+        });
+      }),
+    )
   );
 
 export function comCrmWalletSelfServiceResourceGetWalletSummarisedTotalsResponseFromJSON(

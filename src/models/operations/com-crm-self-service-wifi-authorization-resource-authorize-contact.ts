@@ -4,6 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactSecurity =
   {
@@ -48,15 +49,17 @@ export const ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactSecurity$
   z.ZodMiniType<
     ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactSecurity$Outbound,
     ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmSelfServiceWifiAuthorizationResourceAuthorizeContactSecurityToJSON(
@@ -84,19 +87,21 @@ export const ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactRequestBo
   z.ZodMiniType<
     ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactRequestBody$Outbound,
     ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactRequestBody
-  > = z.pipe(
-    z.object({
-      macAddress: z.string(),
-      estimationId: z.string(),
-      siteId: z.string(),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        macAddress: "mac_address",
-        estimationId: "estimation_id",
-        siteId: "site_id",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        macAddress: z.string(),
+        estimationId: z.string(),
+        siteId: z.string(),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          macAddress: "mac_address",
+          estimationId: "estimation_id",
+          siteId: "site_id",
+        });
+      }),
+    )
   );
 
 export function comCrmSelfServiceWifiAuthorizationResourceAuthorizeContactRequestBodyToJSON(
@@ -125,14 +130,14 @@ export const ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactRequest$o
   z.ZodMiniType<
     ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactRequest$Outbound,
     ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmSelfServiceWifiAuthorizationResourceAuthorizeContactRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmSelfServiceWifiAuthorizationResourceAuthorizeContactRequestToJSON(
   comCrmSelfServiceWifiAuthorizationResourceAuthorizeContactRequest:

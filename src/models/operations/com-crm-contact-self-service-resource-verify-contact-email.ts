@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
+import { lazySchema as lazySchema$ } from "../../lib/schemas.js";
 
 export type ComCrmContactSelfServiceResourceVerifyContactEmailRequest = {
   /**
@@ -22,9 +23,11 @@ export const ComCrmContactSelfServiceResourceVerifyContactEmailRequest$outboundS
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceVerifyContactEmailRequest$Outbound,
     ComCrmContactSelfServiceResourceVerifyContactEmailRequest
-  > = z.object({
-    token: z.string(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      token: z.string(),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceVerifyContactEmailRequestToJSON(
   comCrmContactSelfServiceResourceVerifyContactEmailRequest:

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -103,11 +103,13 @@ export const ComCrmContactSelfServiceAnalyticsResourceGetAnalyticsRequest$outbou
   z.ZodMiniType<
     ComCrmContactSelfServiceAnalyticsResourceGetAnalyticsRequest$Outbound,
     ComCrmContactSelfServiceAnalyticsResourceGetAnalyticsRequest
-  > = z.object({
-    id: z.string(),
-    frequency: z.string(),
-    metrics: z.any(),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      frequency: z.string(),
+      metrics: z.any(),
+    })
+  );
 
 export function comCrmContactSelfServiceAnalyticsResourceGetAnalyticsRequestToJSON(
   comCrmContactSelfServiceAnalyticsResourceGetAnalyticsRequest:
@@ -121,21 +123,23 @@ export function comCrmContactSelfServiceAnalyticsResourceGetAnalyticsRequestToJS
 
 /** @internal */
 export const WalletTotals$inboundSchema: z.ZodMiniType<WalletTotals, unknown> =
-  z.pipe(
-    z.object({
-      total_top_ups: types.optional(types.number()),
-      total_spent: types.optional(types.number()),
-      total_sent: types.optional(types.number()),
-      total_received: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "total_top_ups": "totalTopUps",
-        "total_spent": "totalSpent",
-        "total_sent": "totalSent",
-        "total_received": "totalReceived",
-      });
-    }),
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        total_top_ups: types.optional(types.number()),
+        total_spent: types.optional(types.number()),
+        total_sent: types.optional(types.number()),
+        total_received: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "total_top_ups": "totalTopUps",
+          "total_spent": "totalSpent",
+          "total_sent": "totalSent",
+          "total_received": "totalReceived",
+        });
+      }),
+    )
   );
 
 export function walletTotalsFromJSON(
@@ -152,10 +156,12 @@ export function walletTotalsFromJSON(
 export const AwardsPerMonth$inboundSchema: z.ZodMiniType<
   AwardsPerMonth,
   unknown
-> = z.object({
-  amount: types.optional(types.number()),
-  timestamp: types.optional(types.number()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: types.optional(types.number()),
+    timestamp: types.optional(types.number()),
+  })
+);
 
 export function awardsPerMonthFromJSON(
   jsonString: string,
@@ -171,10 +177,12 @@ export function awardsPerMonthFromJSON(
 export const RedeemsPerMonth$inboundSchema: z.ZodMiniType<
   RedeemsPerMonth,
   unknown
-> = z.object({
-  amount: types.optional(types.number()),
-  timestamp: types.optional(types.number()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    amount: types.optional(types.number()),
+    timestamp: types.optional(types.number()),
+  })
+);
 
 export function redeemsPerMonthFromJSON(
   jsonString: string,
@@ -191,25 +199,27 @@ export const ComCrmContactSelfServiceAnalyticsResourceGetAnalyticsResponse$inbou
   z.ZodMiniType<
     ComCrmContactSelfServiceAnalyticsResourceGetAnalyticsResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      total_orders: types.optional(types.number()),
-      wallet_totals: types.optional(z.lazy(() => WalletTotals$inboundSchema)),
-      awards_per_month: types.optional(
-        z.array(z.lazy(() => AwardsPerMonth$inboundSchema)),
-      ),
-      redeems_per_month: types.optional(
-        z.array(z.lazy(() => RedeemsPerMonth$inboundSchema)),
-      ),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "total_orders": "totalOrders",
-        "wallet_totals": "walletTotals",
-        "awards_per_month": "awardsPerMonth",
-        "redeems_per_month": "redeemsPerMonth",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        total_orders: types.optional(types.number()),
+        wallet_totals: types.optional(z.lazy(() => WalletTotals$inboundSchema)),
+        awards_per_month: types.optional(
+          z.array(z.lazy(() => AwardsPerMonth$inboundSchema)),
+        ),
+        redeems_per_month: types.optional(
+          z.array(z.lazy(() => RedeemsPerMonth$inboundSchema)),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "total_orders": "totalOrders",
+          "wallet_totals": "walletTotals",
+          "awards_per_month": "awardsPerMonth",
+          "redeems_per_month": "redeemsPerMonth",
+        });
+      }),
+    )
   );
 
 export function comCrmContactSelfServiceAnalyticsResourceGetAnalyticsResponseFromJSON(

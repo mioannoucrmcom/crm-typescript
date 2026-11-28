@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -91,7 +91,7 @@ export type AddContactTokenSSResponse = {
 /** @internal */
 export const AddContactTokenSSIntent$outboundSchema: z.ZodMiniEnum<
   typeof AddContactTokenSSIntent
-> = z.enum(AddContactTokenSSIntent);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(AddContactTokenSSIntent));
 
 /** @internal */
 export type AddContactTokenSSPurchase$Outbound = {
@@ -102,15 +102,17 @@ export type AddContactTokenSSPurchase$Outbound = {
 export const AddContactTokenSSPurchase$outboundSchema: z.ZodMiniType<
   AddContactTokenSSPurchase$Outbound,
   AddContactTokenSSPurchase
-> = z.pipe(
-  z.object({
-    estimateId: z.string(),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      estimateId: "estimate_id",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      estimateId: z.string(),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        estimateId: "estimate_id",
+      });
+    }),
+  )
 );
 
 export function addContactTokenSSPurchaseToJSON(
@@ -133,21 +135,23 @@ export type AddContactTokenSSRequestBody$Outbound = {
 export const AddContactTokenSSRequestBody$outboundSchema: z.ZodMiniType<
   AddContactTokenSSRequestBody$Outbound,
   AddContactTokenSSRequestBody
-> = z.pipe(
-  z.object({
-    intent: AddContactTokenSSIntent$outboundSchema,
-    spendAmount: z.optional(z.nullable(z.number())),
-    purchase: z.optional(
-      z.lazy(() => AddContactTokenSSPurchase$outboundSchema),
-    ),
-    communityId: z.optional(z.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      spendAmount: "spend_amount",
-      communityId: "community_id",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      intent: AddContactTokenSSIntent$outboundSchema,
+      spendAmount: z.optional(z.nullable(z.number())),
+      purchase: z.optional(
+        z.lazy(() => AddContactTokenSSPurchase$outboundSchema),
+      ),
+      communityId: z.optional(z.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        spendAmount: "spend_amount",
+        communityId: "community_id",
+      });
+    }),
+  )
 );
 
 export function addContactTokenSSRequestBodyToJSON(
@@ -170,10 +174,12 @@ export type AddContactTokenSSRequest$Outbound = {
 export const AddContactTokenSSRequest$outboundSchema: z.ZodMiniType<
   AddContactTokenSSRequest$Outbound,
   AddContactTokenSSRequest
-> = z.object({
-  id: z.string(),
-  body: z.optional(z.lazy(() => AddContactTokenSSRequestBody$outboundSchema)),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: z.string(),
+    body: z.optional(z.lazy(() => AddContactTokenSSRequestBody$outboundSchema)),
+  })
+);
 
 export function addContactTokenSSRequestToJSON(
   addContactTokenSSRequest: AddContactTokenSSRequest,
@@ -187,20 +193,22 @@ export function addContactTokenSSRequestToJSON(
 export const AddContactTokenSSResponse$inboundSchema: z.ZodMiniType<
   AddContactTokenSSResponse,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    value: types.optional(types.string()),
-    alternative_token: types.optional(types.string()),
-    expiration: types.optional(types.number()),
-    spend_amount: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "alternative_token": "alternativeToken",
-      "spend_amount": "spendAmount",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      value: types.optional(types.string()),
+      alternative_token: types.optional(types.string()),
+      expiration: types.optional(types.number()),
+      spend_amount: types.optional(types.number()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "alternative_token": "alternativeToken",
+        "spend_amount": "spendAmount",
+      });
+    }),
+  )
 );
 
 export function addContactTokenSSResponseFromJSON(

@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -489,13 +489,15 @@ export type ComCrmRewardOfferSelfServiceResourceListResponse = {
 };
 
 /** @internal */
-export const Sort$outboundSchema: z.ZodMiniEnum<typeof Sort> = z.enum(Sort);
+export const Sort$outboundSchema: z.ZodMiniEnum<typeof Sort> =
+  /* @__PURE__ */ lazySchema$(() => z.enum(Sort));
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListOrder$outboundSchema:
-  z.ZodMiniEnum<typeof ComCrmRewardOfferSelfServiceResourceListOrder> = z.enum(
-    ComCrmRewardOfferSelfServiceResourceListOrder,
-  );
+  z.ZodMiniEnum<typeof ComCrmRewardOfferSelfServiceResourceListOrder> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.enum(ComCrmRewardOfferSelfServiceResourceListOrder)
+    );
 
 /** @internal */
 export type ComCrmRewardOfferSelfServiceResourceListRequest$Outbound = {
@@ -526,43 +528,45 @@ export const ComCrmRewardOfferSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceListRequest$Outbound,
     ComCrmRewardOfferSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      countries: z.optional(z.string()),
-      goals: z.optional(z.string()),
-      industries: z.optional(z.string()),
-      industrySectors: z.optional(z.string()),
-      isFeatured: z.optional(z.boolean()),
-      lat: z.optional(z.string()),
-      lon: z.optional(z.string()),
-      organisations: z.optional(z.string()),
-      owner: z.optional(z.string()),
-      performanceEnabled: z.optional(z.boolean()),
-      rewardOfferTags: z.optional(z.string()),
-      searchValue: z.optional(z.string()),
-      sort: z.optional(Sort$outboundSchema),
-      tags: z.optional(z.string()),
-      townsCities: z.optional(z.string()),
-      types: z.optional(z.string()),
-      includeTotal: z._default(z.boolean(), false),
-      order: z._default(
-        ComCrmRewardOfferSelfServiceResourceListOrder$outboundSchema,
-        "DESC",
-      ),
-      page: z._default(z.int(), 1),
-      size: z._default(z.int(), 10),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        industrySectors: "industry_sectors",
-        isFeatured: "is_featured",
-        performanceEnabled: "performance_enabled",
-        rewardOfferTags: "reward_offer_tags",
-        searchValue: "search_value",
-        townsCities: "towns_cities",
-        includeTotal: "include_total",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        countries: z.optional(z.string()),
+        goals: z.optional(z.string()),
+        industries: z.optional(z.string()),
+        industrySectors: z.optional(z.string()),
+        isFeatured: z.optional(z.boolean()),
+        lat: z.optional(z.string()),
+        lon: z.optional(z.string()),
+        organisations: z.optional(z.string()),
+        owner: z.optional(z.string()),
+        performanceEnabled: z.optional(z.boolean()),
+        rewardOfferTags: z.optional(z.string()),
+        searchValue: z.optional(z.string()),
+        sort: z.optional(Sort$outboundSchema),
+        tags: z.optional(z.string()),
+        townsCities: z.optional(z.string()),
+        types: z.optional(z.string()),
+        includeTotal: z._default(z.boolean(), false),
+        order: z._default(
+          ComCrmRewardOfferSelfServiceResourceListOrder$outboundSchema,
+          "DESC",
+        ),
+        page: z._default(z.int(), 1),
+        size: z._default(z.int(), 10),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          industrySectors: "industry_sectors",
+          isFeatured: "is_featured",
+          performanceEnabled: "performance_enabled",
+          rewardOfferTags: "reward_offer_tags",
+          searchValue: "search_value",
+          townsCities: "towns_cities",
+          includeTotal: "include_total",
+        });
+      }),
+    )
   );
 
 export function comCrmRewardOfferSelfServiceResourceListRequestToJSON(
@@ -578,19 +582,21 @@ export function comCrmRewardOfferSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListPaging$inboundSchema:
-  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListPaging, unknown> = z
-    .pipe(
-      z.object({
-        page: types.optional(types.number()),
-        size: types.optional(types.number()),
-        total: types.optional(types.number()),
-        has_more: types.optional(types.boolean()),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "has_more": "hasMore",
-        });
-      }),
+  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListPaging, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          page: types.optional(types.number()),
+          size: types.optional(types.number()),
+          total: types.optional(types.number()),
+          has_more: types.optional(types.boolean()),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "has_more": "hasMore",
+          });
+        }),
+      )
     );
 
 export function comCrmRewardOfferSelfServiceResourceListPagingFromJSON(
@@ -611,11 +617,13 @@ export function comCrmRewardOfferSelfServiceResourceListPagingFromJSON(
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListScheme$inboundSchema:
-  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListScheme, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-      name: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListScheme, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+        name: types.optional(types.string()),
+      })
+    );
 
 export function comCrmRewardOfferSelfServiceResourceListSchemeFromJSON(
   jsonString: string,
@@ -634,31 +642,37 @@ export function comCrmRewardOfferSelfServiceResourceListSchemeFromJSON(
 }
 
 /** @internal */
-export const Goal$inboundSchema: z.ZodMiniType<Goal, unknown> = openEnums
-  .inboundSchema(Goal);
+export const Goal$inboundSchema: z.ZodMiniType<Goal, unknown> =
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(Goal));
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListType$inboundSchema:
   z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListType, unknown> =
-    openEnums.inboundSchema(ComCrmRewardOfferSelfServiceResourceListType);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmRewardOfferSelfServiceResourceListType)
+    );
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListOwnerUsageType$inboundSchema:
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceListOwnerUsageType,
     unknown
-  > = openEnums.inboundSchema(
-    ComCrmRewardOfferSelfServiceResourceListOwnerUsageType,
+  > = /* @__PURE__ */ lazySchema$(() =>
+    openEnums.inboundSchema(
+      ComCrmRewardOfferSelfServiceResourceListOwnerUsageType,
+    )
   );
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListOwnerMedia$inboundSchema:
-  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListOwnerMedia, unknown> = z
-    .object({
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      url: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListOwnerMedia, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        url: types.optional(types.string()),
+      })
+    );
 
 export function comCrmRewardOfferSelfServiceResourceListOwnerMediaFromJSON(
   jsonString: string,
@@ -681,34 +695,38 @@ export const ComCrmRewardOfferSelfServiceResourceListOwnerCreative$inboundSchema
   z.ZodMiniType<
     ComCrmRewardOfferSelfServiceResourceListOwnerCreative,
     unknown
-  > = z.pipe(
-    z.object({
-      id: types.optional(types.string()),
-      media_group_id: types.optional(types.string()),
-      usage_type: types.optional(
-        ComCrmRewardOfferSelfServiceResourceListOwnerUsageType$inboundSchema,
-      ),
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      format: types.optional(types.string()),
-      url: types.optional(types.string()),
-      public_id: types.optional(types.string()),
-      media_id: types.optional(types.string()),
-      caption: types.optional(types.string()),
-      sort_order: types.optional(types.number()),
-      media: types.optional(z.array(z.lazy(() =>
-        ComCrmRewardOfferSelfServiceResourceListOwnerMedia$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "media_group_id": "mediaGroupId",
-        "usage_type": "usageType",
-        "public_id": "publicId",
-        "media_id": "mediaId",
-        "sort_order": "sortOrder",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: types.optional(types.string()),
+        media_group_id: types.optional(types.string()),
+        usage_type: types.optional(
+          ComCrmRewardOfferSelfServiceResourceListOwnerUsageType$inboundSchema,
+        ),
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        format: types.optional(types.string()),
+        url: types.optional(types.string()),
+        public_id: types.optional(types.string()),
+        media_id: types.optional(types.string()),
+        caption: types.optional(types.string()),
+        sort_order: types.optional(types.number()),
+        media: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmRewardOfferSelfServiceResourceListOwnerMedia$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "media_group_id": "mediaGroupId",
+          "usage_type": "usageType",
+          "public_id": "publicId",
+          "media_id": "mediaId",
+          "sort_order": "sortOrder",
+        });
+      }),
+    )
   );
 
 export function comCrmRewardOfferSelfServiceResourceListOwnerCreativeFromJSON(
@@ -729,16 +747,16 @@ export function comCrmRewardOfferSelfServiceResourceListOwnerCreativeFromJSON(
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListOwner$inboundSchema:
-  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListOwner, unknown> = z
-    .object({
-      id: types.optional(z.any()),
-      name: types.optional(types.string()),
-      creatives: types.optional(
-        z.array(z.lazy(() =>
+  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListOwner, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(z.any()),
+        name: types.optional(types.string()),
+        creatives: types.optional(z.array(z.lazy(() =>
           ComCrmRewardOfferSelfServiceResourceListOwnerCreative$inboundSchema
-        )),
-      ),
-    });
+        ))),
+      })
+    );
 
 export function comCrmRewardOfferSelfServiceResourceListOwnerFromJSON(
   jsonString: string,
@@ -759,16 +777,20 @@ export function comCrmRewardOfferSelfServiceResourceListOwnerFromJSON(
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListUsageType$inboundSchema:
   z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListUsageType, unknown> =
-    openEnums.inboundSchema(ComCrmRewardOfferSelfServiceResourceListUsageType);
+    /* @__PURE__ */ lazySchema$(() =>
+      openEnums.inboundSchema(ComCrmRewardOfferSelfServiceResourceListUsageType)
+    );
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListMedia$inboundSchema:
-  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListMedia, unknown> = z
-    .object({
-      width: types.optional(types.number()),
-      height: types.optional(types.number()),
-      url: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListMedia, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        width: types.optional(types.number()),
+        height: types.optional(types.number()),
+        url: types.optional(types.string()),
+      })
+    );
 
 export function comCrmRewardOfferSelfServiceResourceListMediaFromJSON(
   jsonString: string,
@@ -788,35 +810,39 @@ export function comCrmRewardOfferSelfServiceResourceListMediaFromJSON(
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListCreative$inboundSchema:
-  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListCreative, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        media_group_id: types.optional(types.string()),
-        usage_type: types.optional(
-          ComCrmRewardOfferSelfServiceResourceListUsageType$inboundSchema,
-        ),
-        width: types.optional(types.number()),
-        height: types.optional(types.number()),
-        format: types.optional(types.string()),
-        url: types.optional(types.string()),
-        public_id: types.optional(types.string()),
-        media_id: types.optional(types.string()),
-        caption: types.optional(types.string()),
-        sort_order: types.optional(types.number()),
-        media: types.optional(z.array(z.lazy(() =>
-          ComCrmRewardOfferSelfServiceResourceListMedia$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "media_group_id": "mediaGroupId",
-          "usage_type": "usageType",
-          "public_id": "publicId",
-          "media_id": "mediaId",
-          "sort_order": "sortOrder",
-        });
-      }),
+  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListCreative, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          media_group_id: types.optional(types.string()),
+          usage_type: types.optional(
+            ComCrmRewardOfferSelfServiceResourceListUsageType$inboundSchema,
+          ),
+          width: types.optional(types.number()),
+          height: types.optional(types.number()),
+          format: types.optional(types.string()),
+          url: types.optional(types.string()),
+          public_id: types.optional(types.string()),
+          media_id: types.optional(types.string()),
+          caption: types.optional(types.string()),
+          sort_order: types.optional(types.number()),
+          media: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmRewardOfferSelfServiceResourceListMedia$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "media_group_id": "mediaGroupId",
+            "usage_type": "usageType",
+            "public_id": "publicId",
+            "media_id": "mediaId",
+            "sort_order": "sortOrder",
+          });
+        }),
+      )
     );
 
 export function comCrmRewardOfferSelfServiceResourceListCreativeFromJSON(
@@ -837,39 +863,47 @@ export function comCrmRewardOfferSelfServiceResourceListCreativeFromJSON(
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListContent, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        name: types.optional(types.string()),
-        scheme: types.optional(z.lazy(() =>
-          ComCrmRewardOfferSelfServiceResourceListScheme$inboundSchema
-        )),
-        short_description: types.optional(types.string()),
-        long_description: types.optional(types.string()),
-        terms_and_conditions: types.optional(types.string()),
-        goal: types.optional(Goal$inboundSchema),
-        type: types.optional(
-          ComCrmRewardOfferSelfServiceResourceListType$inboundSchema,
-        ),
-        owner: types.optional(z.lazy(() =>
-          ComCrmRewardOfferSelfServiceResourceListOwner$inboundSchema
-        )),
-        is_featured: types.optional(types.boolean()),
-        performance_enabled: types.optional(types.boolean()),
-        creatives: types.optional(z.array(z.lazy(() =>
-          ComCrmRewardOfferSelfServiceResourceListCreative$inboundSchema
-        ))),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "short_description": "shortDescription",
-          "long_description": "longDescription",
-          "terms_and_conditions": "termsAndConditions",
-          "is_featured": "isFeatured",
-          "performance_enabled": "performanceEnabled",
-        });
-      }),
+  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          scheme: types.optional(
+            z.lazy(() =>
+              ComCrmRewardOfferSelfServiceResourceListScheme$inboundSchema
+            ),
+          ),
+          short_description: types.optional(types.string()),
+          long_description: types.optional(types.string()),
+          terms_and_conditions: types.optional(types.string()),
+          goal: types.optional(Goal$inboundSchema),
+          type: types.optional(
+            ComCrmRewardOfferSelfServiceResourceListType$inboundSchema,
+          ),
+          owner: types.optional(
+            z.lazy(() =>
+              ComCrmRewardOfferSelfServiceResourceListOwner$inboundSchema
+            ),
+          ),
+          is_featured: types.optional(types.boolean()),
+          performance_enabled: types.optional(types.boolean()),
+          creatives: types.optional(
+            z.array(z.lazy(() =>
+              ComCrmRewardOfferSelfServiceResourceListCreative$inboundSchema
+            )),
+          ),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "short_description": "shortDescription",
+            "long_description": "longDescription",
+            "terms_and_conditions": "termsAndConditions",
+            "is_featured": "isFeatured",
+            "performance_enabled": "performanceEnabled",
+          });
+        }),
+      )
     );
 
 export function comCrmRewardOfferSelfServiceResourceListContentFromJSON(
@@ -890,19 +924,17 @@ export function comCrmRewardOfferSelfServiceResourceListContentFromJSON(
 
 /** @internal */
 export const ComCrmRewardOfferSelfServiceResourceListResponse$inboundSchema:
-  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListResponse, unknown> = z
-    .object({
-      paging: types.optional(
-        z.lazy(() =>
+  z.ZodMiniType<ComCrmRewardOfferSelfServiceResourceListResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        paging: types.optional(z.lazy(() =>
           ComCrmRewardOfferSelfServiceResourceListPaging$inboundSchema
-        ),
-      ),
-      content: types.optional(
-        z.array(z.lazy(() =>
-          ComCrmRewardOfferSelfServiceResourceListContent$inboundSchema
         )),
-      ),
-    });
+        content: types.optional(z.array(z.lazy(() =>
+          ComCrmRewardOfferSelfServiceResourceListContent$inboundSchema
+        ))),
+      })
+    );
 
 export function comCrmRewardOfferSelfServiceResourceListResponseFromJSON(
   jsonString: string,

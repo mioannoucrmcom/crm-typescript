@@ -3,7 +3,7 @@
  */
 
 import * as z from "zod/v4-mini";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { blobLikeSchema } from "../../types/blobs.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
@@ -47,15 +47,17 @@ export const ComCrmContactSelfServiceResourceUploadImageImage$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUploadImageImage$Outbound,
     ComCrmContactSelfServiceResourceUploadImageImage
-  > = z.object({
-    fileName: z.string(),
-    content: z.union([
-      z.custom<ReadableStream<Uint8Array>>(x => x instanceof ReadableStream),
-      z.custom<Blob>(x => x instanceof Blob),
-      z.custom<ArrayBuffer>(x => x instanceof ArrayBuffer),
-      z.custom<Uint8Array>(x => x instanceof Uint8Array),
-    ]),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      fileName: z.string(),
+      content: z.union([
+        z.custom<ReadableStream<Uint8Array>>(x => x instanceof ReadableStream),
+        z.custom<Blob>(x => x instanceof Blob),
+        z.custom<ArrayBuffer>(x => x instanceof ArrayBuffer),
+        z.custom<Uint8Array>(x => x instanceof Uint8Array),
+      ]),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceUploadImageImageToJSON(
   comCrmContactSelfServiceResourceUploadImageImage:
@@ -78,14 +80,16 @@ export const ComCrmContactSelfServiceResourceUploadImageRequestBody$outboundSche
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUploadImageRequestBody$Outbound,
     ComCrmContactSelfServiceResourceUploadImageRequestBody
-  > = z.object({
-    image: z.union([
-      z.lazy(() =>
-        ComCrmContactSelfServiceResourceUploadImageImage$outboundSchema
-      ),
-      blobLikeSchema,
-    ]),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      image: z.union([
+        z.lazy(() =>
+          ComCrmContactSelfServiceResourceUploadImageImage$outboundSchema
+        ),
+        blobLikeSchema,
+      ]),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceUploadImageRequestBodyToJSON(
   comCrmContactSelfServiceResourceUploadImageRequestBody:
@@ -111,14 +115,14 @@ export const ComCrmContactSelfServiceResourceUploadImageRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmContactSelfServiceResourceUploadImageRequest$Outbound,
     ComCrmContactSelfServiceResourceUploadImageRequest
-  > = z.object({
-    id: z.string(),
-    body: z.optional(
-      z.lazy(() =>
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.string(),
+      body: z.optional(z.lazy(() =>
         ComCrmContactSelfServiceResourceUploadImageRequestBody$outboundSchema
-      ),
-    ),
-  });
+      )),
+    })
+  );
 
 export function comCrmContactSelfServiceResourceUploadImageRequestToJSON(
   comCrmContactSelfServiceResourceUploadImageRequest:
@@ -134,9 +138,11 @@ export function comCrmContactSelfServiceResourceUploadImageRequestToJSON(
 /** @internal */
 export const ComCrmContactSelfServiceResourceUploadImageResponse$inboundSchema:
   z.ZodMiniType<ComCrmContactSelfServiceResourceUploadImageResponse, unknown> =
-    z.object({
-      id: types.optional(types.string()),
-    });
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function comCrmContactSelfServiceResourceUploadImageResponseFromJSON(
   jsonString: string,

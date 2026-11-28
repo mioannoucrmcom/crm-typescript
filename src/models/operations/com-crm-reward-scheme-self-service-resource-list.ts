@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -97,16 +97,18 @@ export const ComCrmRewardSchemeSelfServiceResourceListRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmRewardSchemeSelfServiceResourceListRequest$Outbound,
     ComCrmRewardSchemeSelfServiceResourceListRequest
-  > = z.pipe(
-    z.object({
-      isSigned: z.optional(z.boolean()),
-      name: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        isSigned: "is_signed",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        isSigned: z.optional(z.boolean()),
+        name: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          isSigned: "is_signed",
+        });
+      }),
+    )
   );
 
 export function comCrmRewardSchemeSelfServiceResourceListRequestToJSON(
@@ -122,35 +124,37 @@ export function comCrmRewardSchemeSelfServiceResourceListRequestToJSON(
 
 /** @internal */
 export const SignUpOption$inboundSchema: z.ZodMiniType<SignUpOption, unknown> =
-  openEnums.inboundSchema(SignUpOption);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(SignUpOption));
 
 /** @internal */
 export const SignUpMethod$inboundSchema: z.ZodMiniType<SignUpMethod, unknown> =
-  openEnums.inboundSchema(SignUpMethod);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(SignUpMethod));
 
 /** @internal */
 export const ComCrmRewardSchemeSelfServiceResourceListContent$inboundSchema:
-  z.ZodMiniType<ComCrmRewardSchemeSelfServiceResourceListContent, unknown> = z
-    .pipe(
-      z.object({
-        id: types.optional(types.string()),
-        name: types.optional(types.string()),
-        description: types.optional(types.string()),
-        sign_up_option: types.optional(SignUpOption$inboundSchema),
-        sign_up_method: types.optional(SignUpMethod$inboundSchema),
-        terms_and_conditions: types.optional(types.string()),
-        is_signed: types.optional(types.boolean()),
-        email_domains: types.optional(z.array(types.string())),
-      }),
-      z.transform((v) => {
-        return remap$(v, {
-          "sign_up_option": "signUpOption",
-          "sign_up_method": "signUpMethod",
-          "terms_and_conditions": "termsAndConditions",
-          "is_signed": "isSigned",
-          "email_domains": "emailDomains",
-        });
-      }),
+  z.ZodMiniType<ComCrmRewardSchemeSelfServiceResourceListContent, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.pipe(
+        z.object({
+          id: types.optional(types.string()),
+          name: types.optional(types.string()),
+          description: types.optional(types.string()),
+          sign_up_option: types.optional(SignUpOption$inboundSchema),
+          sign_up_method: types.optional(SignUpMethod$inboundSchema),
+          terms_and_conditions: types.optional(types.string()),
+          is_signed: types.optional(types.boolean()),
+          email_domains: types.optional(z.array(types.string())),
+        }),
+        z.transform((v) => {
+          return remap$(v, {
+            "sign_up_option": "signUpOption",
+            "sign_up_method": "signUpMethod",
+            "terms_and_conditions": "termsAndConditions",
+            "is_signed": "isSigned",
+            "email_domains": "emailDomains",
+          });
+        }),
+      )
     );
 
 export function comCrmRewardSchemeSelfServiceResourceListContentFromJSON(
@@ -171,14 +175,14 @@ export function comCrmRewardSchemeSelfServiceResourceListContentFromJSON(
 
 /** @internal */
 export const ComCrmRewardSchemeSelfServiceResourceListResponse$inboundSchema:
-  z.ZodMiniType<ComCrmRewardSchemeSelfServiceResourceListResponse, unknown> = z
-    .object({
-      content: types.optional(
-        z.array(z.lazy(() =>
+  z.ZodMiniType<ComCrmRewardSchemeSelfServiceResourceListResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        content: types.optional(z.array(z.lazy(() =>
           ComCrmRewardSchemeSelfServiceResourceListContent$inboundSchema
-        )),
-      ),
-    });
+        ))),
+      })
+    );
 
 export function comCrmRewardSchemeSelfServiceResourceListResponseFromJSON(
   jsonString: string,

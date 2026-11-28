@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { ClosedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -809,12 +809,12 @@ export type RegisterContactSSResponse = {
 /** @internal */
 export const RegisterContactSSProvider$outboundSchema: z.ZodMiniEnum<
   typeof RegisterContactSSProvider
-> = z.enum(RegisterContactSSProvider);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(RegisterContactSSProvider));
 
 /** @internal */
 export const RegisterContactSSCountryCode$outboundSchema: z.ZodMiniEnum<
   typeof RegisterContactSSCountryCode
-> = z.enum(RegisterContactSSCountryCode);
+> = /* @__PURE__ */ lazySchema$(() => z.enum(RegisterContactSSCountryCode));
 
 /** @internal */
 export type RegisterContactSSPhone$Outbound = {
@@ -826,16 +826,18 @@ export type RegisterContactSSPhone$Outbound = {
 export const RegisterContactSSPhone$outboundSchema: z.ZodMiniType<
   RegisterContactSSPhone$Outbound,
   RegisterContactSSPhone
-> = z.pipe(
-  z.object({
-    number: z.string(),
-    countryCode: RegisterContactSSCountryCode$outboundSchema,
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      countryCode: "country_code",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      number: z.string(),
+      countryCode: RegisterContactSSCountryCode$outboundSchema,
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        countryCode: "country_code",
+      });
+    }),
+  )
 );
 
 export function registerContactSSPhoneToJSON(
@@ -861,23 +863,25 @@ export type Identification$Outbound = {
 export const Identification$outboundSchema: z.ZodMiniType<
   Identification$Outbound,
   Identification
-> = z.pipe(
-  z.object({
-    provider: z.optional(RegisterContactSSProvider$outboundSchema),
-    email: z.nullable(z.string()),
-    password: z.optional(z.nullable(z.string())),
-    phone: z.optional(
-      z.nullable(z.lazy(() => RegisterContactSSPhone$outboundSchema)),
-    ),
-    applicationId: z.optional(z.nullable(z.string())),
-    token: z.optional(z.nullable(z.string())),
-    sub: z.optional(z.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      applicationId: "application_id",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      provider: z.optional(RegisterContactSSProvider$outboundSchema),
+      email: z.nullable(z.string()),
+      password: z.optional(z.nullable(z.string())),
+      phone: z.optional(
+        z.nullable(z.lazy(() => RegisterContactSSPhone$outboundSchema)),
+      ),
+      applicationId: z.optional(z.nullable(z.string())),
+      token: z.optional(z.nullable(z.string())),
+      sub: z.optional(z.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        applicationId: "application_id",
+      });
+    }),
+  )
 );
 
 export function identificationToJSON(identification: Identification): string {
@@ -887,7 +891,9 @@ export function identificationToJSON(identification: Identification): string {
 /** @internal */
 export const RegisterContactSSCountryOfAgreement$outboundSchema: z.ZodMiniEnum<
   typeof RegisterContactSSCountryOfAgreement
-> = z.enum(RegisterContactSSCountryOfAgreement);
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.enum(RegisterContactSSCountryOfAgreement)
+);
 
 /** @internal */
 export type RegisterContactSSCustomField$Outbound = {
@@ -899,10 +905,12 @@ export type RegisterContactSSCustomField$Outbound = {
 export const RegisterContactSSCustomField$outboundSchema: z.ZodMiniType<
   RegisterContactSSCustomField$Outbound,
   RegisterContactSSCustomField
-> = z.object({
-  key: z.optional(z.string()),
-  value: z.optional(z.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    key: z.optional(z.string()),
+    value: z.optional(z.string()),
+  })
+);
 
 export function registerContactSSCustomFieldToJSON(
   registerContactSSCustomField: RegisterContactSSCustomField,
@@ -937,40 +945,44 @@ export type RegisterContactSSRequestBody$Outbound = {
 export const RegisterContactSSRequestBody$outboundSchema: z.ZodMiniType<
   RegisterContactSSRequestBody$Outbound,
   RegisterContactSSRequestBody
-> = z.pipe(
-  z.object({
-    firstName: z.nullable(z.string()),
-    lastName: z.nullable(z.string()),
-    identification: z.lazy(() => Identification$outboundSchema),
-    acceptTermsAndConditions: z._default(z.boolean(), true),
-    emailOptOut: z._default(z.boolean(), false),
-    smsOptOut: z._default(z.boolean(), false),
-    referralCode: z.optional(z.string()),
-    passCode: z.optional(z.nullable(z.string())),
-    passPin: z.optional(z.nullable(z.string())),
-    countryOfAgreement: z.optional(
-      RegisterContactSSCountryOfAgreement$outboundSchema,
-    ),
-    customFields: z.optional(z.nullable(z.array(z.lazy(() =>
-      RegisterContactSSCustomField$outboundSchema
-    )))),
-    languageCode: z._default(z.string(), "EN"),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      firstName: "first_name",
-      lastName: "last_name",
-      acceptTermsAndConditions: "accept_terms_&_conditions",
-      emailOptOut: "email_opt_out",
-      smsOptOut: "sms_opt_out",
-      referralCode: "referral_code",
-      passCode: "pass_code",
-      passPin: "pass_pin ",
-      countryOfAgreement: "country_of_agreement",
-      customFields: "custom_fields",
-      languageCode: "language_code",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      firstName: z.nullable(z.string()),
+      lastName: z.nullable(z.string()),
+      identification: z.lazy(() => Identification$outboundSchema),
+      acceptTermsAndConditions: z._default(z.boolean(), true),
+      emailOptOut: z._default(z.boolean(), false),
+      smsOptOut: z._default(z.boolean(), false),
+      referralCode: z.optional(z.string()),
+      passCode: z.optional(z.nullable(z.string())),
+      passPin: z.optional(z.nullable(z.string())),
+      countryOfAgreement: z.optional(
+        RegisterContactSSCountryOfAgreement$outboundSchema,
+      ),
+      customFields: z.optional(
+        z.nullable(z.array(z.lazy(() =>
+          RegisterContactSSCustomField$outboundSchema
+        ))),
+      ),
+      languageCode: z._default(z.string(), "EN"),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        firstName: "first_name",
+        lastName: "last_name",
+        acceptTermsAndConditions: "accept_terms_&_conditions",
+        emailOptOut: "email_opt_out",
+        smsOptOut: "sms_opt_out",
+        referralCode: "referral_code",
+        passCode: "pass_code",
+        passPin: "pass_pin ",
+        countryOfAgreement: "country_of_agreement",
+        customFields: "custom_fields",
+        languageCode: "language_code",
+      });
+    }),
+  )
 );
 
 export function registerContactSSRequestBodyToJSON(
@@ -993,16 +1005,20 @@ export type RegisterContactSSRequest$Outbound = {
 export const RegisterContactSSRequest$outboundSchema: z.ZodMiniType<
   RegisterContactSSRequest$Outbound,
   RegisterContactSSRequest
-> = z.pipe(
-  z.object({
-    apiKey: z.string(),
-    body: z.optional(z.lazy(() => RegisterContactSSRequestBody$outboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      apiKey: "api_key",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      apiKey: z.string(),
+      body: z.optional(
+        z.lazy(() => RegisterContactSSRequestBody$outboundSchema),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        apiKey: "api_key",
+      });
+    }),
+  )
 );
 
 export function registerContactSSRequestToJSON(
@@ -1017,29 +1033,33 @@ export function registerContactSSRequestToJSON(
 export const RegisterContactSSType$inboundSchema: z.ZodMiniType<
   RegisterContactSSType,
   unknown
-> = openEnums.inboundSchema(RegisterContactSSType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(RegisterContactSSType)
+);
 
 /** @internal */
 export const RegisterContactSSContact$inboundSchema: z.ZodMiniType<
   RegisterContactSSContact,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    type: types.optional(RegisterContactSSType$inboundSchema),
-    first_name: types.optional(types.string()),
-    last_name: types.optional(types.string()),
-    is_verified: types.optional(types.boolean()),
-    company_name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "first_name": "firstName",
-      "last_name": "lastName",
-      "is_verified": "isVerified",
-      "company_name": "companyName",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      type: types.optional(RegisterContactSSType$inboundSchema),
+      first_name: types.optional(types.string()),
+      last_name: types.optional(types.string()),
+      is_verified: types.optional(types.boolean()),
+      company_name: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "first_name": "firstName",
+        "last_name": "lastName",
+        "is_verified": "isVerified",
+        "company_name": "companyName",
+      });
+    }),
+  )
 );
 
 export function registerContactSSContactFromJSON(
@@ -1056,17 +1076,21 @@ export function registerContactSSContactFromJSON(
 export const RegisterContactSSOrganisationType$inboundSchema: z.ZodMiniType<
   RegisterContactSSOrganisationType,
   unknown
-> = openEnums.inboundSchema(RegisterContactSSOrganisationType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(RegisterContactSSOrganisationType)
+);
 
 /** @internal */
 export const RegisterContactSSOrganisation$inboundSchema: z.ZodMiniType<
   RegisterContactSSOrganisation,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  type: types.optional(RegisterContactSSOrganisationType$inboundSchema),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    type: types.optional(RegisterContactSSOrganisationType$inboundSchema),
+    name: types.optional(types.string()),
+  })
+);
 
 export function registerContactSSOrganisationFromJSON(
   jsonString: string,
@@ -1082,10 +1106,12 @@ export function registerContactSSOrganisationFromJSON(
 export const RegisterContactSSCommunity$inboundSchema: z.ZodMiniType<
   RegisterContactSSCommunity,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function registerContactSSCommunityFromJSON(
   jsonString: string,
@@ -1101,34 +1127,36 @@ export function registerContactSSCommunityFromJSON(
 export const RegisterContactSSResponse$inboundSchema: z.ZodMiniType<
   RegisterContactSSResponse,
   unknown
-> = z.pipe(
-  z.object({
-    access_token: types.optional(types.string()),
-    refresh_token: types.optional(types.string()),
-    expiration_date: types.optional(types.number()),
-    contact: types.optional(
-      z.lazy(() => RegisterContactSSContact$inboundSchema),
-    ),
-    organisations: types.optional(
-      z.array(z.lazy(() => RegisterContactSSOrganisation$inboundSchema)),
-    ),
-    communities: types.optional(
-      z.array(z.lazy(() => RegisterContactSSCommunity$inboundSchema)),
-    ),
-    obfuscated_value: types.optional(types.string()),
-    auth_otp: types.optional(types.string()),
-    existing_contact: types.optional(types.boolean()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "access_token": "accessToken",
-      "refresh_token": "refreshToken",
-      "expiration_date": "expirationDate",
-      "obfuscated_value": "obfuscatedValue",
-      "auth_otp": "authOtp",
-      "existing_contact": "existingContact",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      access_token: types.optional(types.string()),
+      refresh_token: types.optional(types.string()),
+      expiration_date: types.optional(types.number()),
+      contact: types.optional(
+        z.lazy(() => RegisterContactSSContact$inboundSchema),
+      ),
+      organisations: types.optional(
+        z.array(z.lazy(() => RegisterContactSSOrganisation$inboundSchema)),
+      ),
+      communities: types.optional(
+        z.array(z.lazy(() => RegisterContactSSCommunity$inboundSchema)),
+      ),
+      obfuscated_value: types.optional(types.string()),
+      auth_otp: types.optional(types.string()),
+      existing_contact: types.optional(types.boolean()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "access_token": "accessToken",
+        "refresh_token": "refreshToken",
+        "expiration_date": "expirationDate",
+        "obfuscated_value": "obfuscatedValue",
+        "auth_otp": "authOtp",
+        "existing_contact": "existingContact",
+      });
+    }),
+  )
 );
 
 export function registerContactSSResponseFromJSON(

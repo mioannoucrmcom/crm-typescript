@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import * as openEnums from "../../types/enums.js";
 import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
@@ -1252,16 +1252,18 @@ export const ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductR
   z.ZodMiniType<
     ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationSecurity$Outbound,
     ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationSecurity
-  > = z.pipe(
-    z.object({
-      secretAPIKey: z.optional(z.string()),
-      authorization: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        secretAPIKey: "Secret_API_key",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        secretAPIKey: z.optional(z.string()),
+        authorization: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          secretAPIKey: "Secret_API_key",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationSecurityToJSON(
@@ -1293,27 +1295,29 @@ export const ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductR
   z.ZodMiniType<
     ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationRequest$Outbound,
     ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationRequest
-  > = z.pipe(
-    z.object({
-      estimationId: z.string(),
-      includeCreatives: z.optional(z.boolean()),
-      includeCrossSells: z.optional(z.boolean()),
-      includePromotions: z.optional(z.boolean()),
-      includeRewardOffers: z.optional(z.boolean()),
-      includeUpsells: z.optional(z.boolean()),
-      orderCatalogueIds: z.optional(z.string()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        estimationId: "estimation_id",
-        includeCreatives: "include_creatives",
-        includeCrossSells: "include_cross_sells",
-        includePromotions: "include_promotions",
-        includeRewardOffers: "include_reward_offers",
-        includeUpsells: "include_upsells",
-        orderCatalogueIds: "order_catalogue_ids",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        estimationId: z.string(),
+        includeCreatives: z.optional(z.boolean()),
+        includeCrossSells: z.optional(z.boolean()),
+        includePromotions: z.optional(z.boolean()),
+        includeRewardOffers: z.optional(z.boolean()),
+        includeUpsells: z.optional(z.boolean()),
+        orderCatalogueIds: z.optional(z.string()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          estimationId: "estimation_id",
+          includeCreatives: "include_creatives",
+          includeCrossSells: "include_cross_sells",
+          includePromotions: "include_promotions",
+          includeRewardOffers: "include_reward_offers",
+          includeUpsells: "include_upsells",
+          orderCatalogueIds: "order_catalogue_ids",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationRequestToJSON(
@@ -1332,35 +1336,43 @@ export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProdu
 export const CrossSellPriceModel$inboundSchema: z.ZodMiniType<
   CrossSellPriceModel,
   unknown
-> = openEnums.inboundSchema(CrossSellPriceModel);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CrossSellPriceModel)
+);
 
 /** @internal */
 export const CrossSellCurrencyCode$inboundSchema: z.ZodMiniType<
   CrossSellCurrencyCode,
   unknown
-> = openEnums.inboundSchema(CrossSellCurrencyCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CrossSellCurrencyCode)
+);
 
 /** @internal */
 export const CrossSellTaxModel$inboundSchema: z.ZodMiniType<
   CrossSellTaxModel,
   unknown
-> = openEnums.inboundSchema(CrossSellTaxModel);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CrossSellTaxModel)
+);
 
 /** @internal */
 export const CrossSellTiers$inboundSchema: z.ZodMiniType<
   CrossSellTiers,
   unknown
-> = z.pipe(
-  z.object({
-    upper_tier: types.optional(types.number()),
-    number_of_tiers: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "upper_tier": "upperTier",
-      "number_of_tiers": "numberOfTiers",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      upper_tier: types.optional(types.number()),
+      number_of_tiers: types.optional(types.number()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "upper_tier": "upperTier",
+        "number_of_tiers": "numberOfTiers",
+      });
+    }),
+  )
 );
 
 export function crossSellTiersFromJSON(
@@ -1375,16 +1387,18 @@ export function crossSellTiersFromJSON(
 
 /** @internal */
 export const CrossSellUot$inboundSchema: z.ZodMiniType<CrossSellUot, unknown> =
-  openEnums.inboundSchema(CrossSellUot);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(CrossSellUot));
 
 /** @internal */
 export const CrossSellBillingPeriod$inboundSchema: z.ZodMiniType<
   CrossSellBillingPeriod,
   unknown
-> = z.object({
-  duration: types.optional(types.number()),
-  uot: types.optional(CrossSellUot$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    duration: types.optional(types.number()),
+    uot: types.optional(CrossSellUot$inboundSchema),
+  })
+);
 
 export function crossSellBillingPeriodFromJSON(
   jsonString: string,
@@ -1400,17 +1414,19 @@ export function crossSellBillingPeriodFromJSON(
 export const CrossSellMeasurementUnit$inboundSchema: z.ZodMiniType<
   CrossSellMeasurementUnit,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    display_name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "display_name": "displayName",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      display_name: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "display_name": "displayName",
+      });
+    }),
+  )
 );
 
 export function crossSellMeasurementUnitFromJSON(
@@ -1427,17 +1443,19 @@ export function crossSellMeasurementUnitFromJSON(
 export const CrossSellAccessPeriod$inboundSchema: z.ZodMiniType<
   CrossSellAccessPeriod,
   unknown
-> = z.pipe(
-  z.object({
-    start_date: types.optional(types.number()),
-    end_date: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "start_date": "startDate",
-      "end_date": "endDate",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      start_date: types.optional(types.number()),
+      end_date: types.optional(types.number()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "start_date": "startDate",
+        "end_date": "endDate",
+      });
+    }),
+  )
 );
 
 export function crossSellAccessPeriodFromJSON(
@@ -1454,10 +1472,12 @@ export function crossSellAccessPeriodFromJSON(
 export const CrossSellOrderQueue$inboundSchema: z.ZodMiniType<
   CrossSellOrderQueue,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function crossSellOrderQueueFromJSON(
   jsonString: string,
@@ -1473,38 +1493,40 @@ export function crossSellOrderQueueFromJSON(
 export const CrossSellPricing$inboundSchema: z.ZodMiniType<
   CrossSellPricing,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    price_model: types.optional(CrossSellPriceModel$inboundSchema),
-    currency_code: types.optional(CrossSellCurrencyCode$inboundSchema),
-    tax_model: types.optional(CrossSellTaxModel$inboundSchema),
-    price: types.optional(types.number()),
-    tiers: types.optional(z.lazy(() => CrossSellTiers$inboundSchema)),
-    billing_period: types.optional(
-      z.lazy(() => CrossSellBillingPeriod$inboundSchema),
-    ),
-    measurement_unit: types.optional(
-      z.lazy(() => CrossSellMeasurementUnit$inboundSchema),
-    ),
-    access_period: types.optional(
-      z.lazy(() => CrossSellAccessPeriod$inboundSchema),
-    ),
-    order_queue: types.optional(
-      z.lazy(() => CrossSellOrderQueue$inboundSchema),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "price_model": "priceModel",
-      "currency_code": "currencyCode",
-      "tax_model": "taxModel",
-      "billing_period": "billingPeriod",
-      "measurement_unit": "measurementUnit",
-      "access_period": "accessPeriod",
-      "order_queue": "orderQueue",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      price_model: types.optional(CrossSellPriceModel$inboundSchema),
+      currency_code: types.optional(CrossSellCurrencyCode$inboundSchema),
+      tax_model: types.optional(CrossSellTaxModel$inboundSchema),
+      price: types.optional(types.number()),
+      tiers: types.optional(z.lazy(() => CrossSellTiers$inboundSchema)),
+      billing_period: types.optional(
+        z.lazy(() => CrossSellBillingPeriod$inboundSchema),
+      ),
+      measurement_unit: types.optional(
+        z.lazy(() => CrossSellMeasurementUnit$inboundSchema),
+      ),
+      access_period: types.optional(
+        z.lazy(() => CrossSellAccessPeriod$inboundSchema),
+      ),
+      order_queue: types.optional(
+        z.lazy(() => CrossSellOrderQueue$inboundSchema),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "price_model": "priceModel",
+        "currency_code": "currencyCode",
+        "tax_model": "taxModel",
+        "billing_period": "billingPeriod",
+        "measurement_unit": "measurementUnit",
+        "access_period": "accessPeriod",
+        "order_queue": "orderQueue",
+      });
+    }),
+  )
 );
 
 export function crossSellPricingFromJSON(
@@ -1521,17 +1543,21 @@ export function crossSellPricingFromJSON(
 export const CrossSellUsageType$inboundSchema: z.ZodMiniType<
   CrossSellUsageType,
   unknown
-> = openEnums.inboundSchema(CrossSellUsageType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(CrossSellUsageType)
+);
 
 /** @internal */
 export const CrossSellMedia$inboundSchema: z.ZodMiniType<
   CrossSellMedia,
   unknown
-> = z.object({
-  width: types.optional(types.number()),
-  height: types.optional(types.number()),
-  url: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    width: types.optional(types.number()),
+    height: types.optional(types.number()),
+    url: types.optional(types.string()),
+  })
+);
 
 export function crossSellMediaFromJSON(
   jsonString: string,
@@ -1547,30 +1573,34 @@ export function crossSellMediaFromJSON(
 export const CrossSellCreative$inboundSchema: z.ZodMiniType<
   CrossSellCreative,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    media_group_id: types.optional(types.string()),
-    usage_type: types.optional(CrossSellUsageType$inboundSchema),
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    format: types.optional(types.string()),
-    url: types.optional(types.string()),
-    public_id: types.optional(types.string()),
-    media_id: types.optional(types.string()),
-    caption: types.optional(types.string()),
-    sort_order: types.optional(types.number()),
-    media: types.optional(z.array(z.lazy(() => CrossSellMedia$inboundSchema))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "media_group_id": "mediaGroupId",
-      "usage_type": "usageType",
-      "public_id": "publicId",
-      "media_id": "mediaId",
-      "sort_order": "sortOrder",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      media_group_id: types.optional(types.string()),
+      usage_type: types.optional(CrossSellUsageType$inboundSchema),
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      format: types.optional(types.string()),
+      url: types.optional(types.string()),
+      public_id: types.optional(types.string()),
+      media_id: types.optional(types.string()),
+      caption: types.optional(types.string()),
+      sort_order: types.optional(types.number()),
+      media: types.optional(
+        z.array(z.lazy(() => CrossSellMedia$inboundSchema)),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "media_group_id": "mediaGroupId",
+        "usage_type": "usageType",
+        "public_id": "publicId",
+        "media_id": "mediaId",
+        "sort_order": "sortOrder",
+      });
+    }),
+  )
 );
 
 export function crossSellCreativeFromJSON(
@@ -1588,16 +1618,18 @@ export const ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductR
   z.ZodMiniType<
     ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationCrossSell,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    sku: types.optional(types.string()),
-    name: types.optional(types.string()),
-    description: types.optional(types.string()),
-    pricing: types.optional(z.lazy(() => CrossSellPricing$inboundSchema)),
-    creatives: types.optional(
-      z.array(z.lazy(() => CrossSellCreative$inboundSchema)),
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      sku: types.optional(types.string()),
+      name: types.optional(types.string()),
+      description: types.optional(types.string()),
+      pricing: types.optional(z.lazy(() => CrossSellPricing$inboundSchema)),
+      creatives: types.optional(
+        z.array(z.lazy(() => CrossSellCreative$inboundSchema)),
+      ),
+    })
+  );
 
 export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationCrossSellFromJSON(
   jsonString: string,
@@ -1618,33 +1650,39 @@ export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProdu
 export const UpsellPriceModel$inboundSchema: z.ZodMiniType<
   UpsellPriceModel,
   unknown
-> = openEnums.inboundSchema(UpsellPriceModel);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(UpsellPriceModel)
+);
 
 /** @internal */
 export const UpsellCurrencyCode$inboundSchema: z.ZodMiniType<
   UpsellCurrencyCode,
   unknown
-> = openEnums.inboundSchema(UpsellCurrencyCode);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(UpsellCurrencyCode)
+);
 
 /** @internal */
 export const UpsellTaxModel$inboundSchema: z.ZodMiniType<
   UpsellTaxModel,
   unknown
-> = openEnums.inboundSchema(UpsellTaxModel);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(UpsellTaxModel));
 
 /** @internal */
-export const UpsellTiers$inboundSchema: z.ZodMiniType<UpsellTiers, unknown> = z
-  .pipe(
-    z.object({
-      upper_tier: types.optional(types.number()),
-      number_of_tiers: types.optional(types.number()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "upper_tier": "upperTier",
-        "number_of_tiers": "numberOfTiers",
-      });
-    }),
+export const UpsellTiers$inboundSchema: z.ZodMiniType<UpsellTiers, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        upper_tier: types.optional(types.number()),
+        number_of_tiers: types.optional(types.number()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "upper_tier": "upperTier",
+          "number_of_tiers": "numberOfTiers",
+        });
+      }),
+    )
   );
 
 export function upsellTiersFromJSON(
@@ -1659,16 +1697,18 @@ export function upsellTiersFromJSON(
 
 /** @internal */
 export const UpsellUot$inboundSchema: z.ZodMiniType<UpsellUot, unknown> =
-  openEnums.inboundSchema(UpsellUot);
+  /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(UpsellUot));
 
 /** @internal */
 export const UpsellBillingPeriod$inboundSchema: z.ZodMiniType<
   UpsellBillingPeriod,
   unknown
-> = z.object({
-  duration: types.optional(types.number()),
-  uot: types.optional(UpsellUot$inboundSchema),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    duration: types.optional(types.number()),
+    uot: types.optional(UpsellUot$inboundSchema),
+  })
+);
 
 export function upsellBillingPeriodFromJSON(
   jsonString: string,
@@ -1684,17 +1724,19 @@ export function upsellBillingPeriodFromJSON(
 export const UpsellMeasurementUnit$inboundSchema: z.ZodMiniType<
   UpsellMeasurementUnit,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    display_name: types.optional(types.string()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "display_name": "displayName",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      display_name: types.optional(types.string()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "display_name": "displayName",
+      });
+    }),
+  )
 );
 
 export function upsellMeasurementUnitFromJSON(
@@ -1711,17 +1753,19 @@ export function upsellMeasurementUnitFromJSON(
 export const UpsellAccessPeriod$inboundSchema: z.ZodMiniType<
   UpsellAccessPeriod,
   unknown
-> = z.pipe(
-  z.object({
-    start_date: types.optional(types.number()),
-    end_date: types.optional(types.number()),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "start_date": "startDate",
-      "end_date": "endDate",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      start_date: types.optional(types.number()),
+      end_date: types.optional(types.number()),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "start_date": "startDate",
+        "end_date": "endDate",
+      });
+    }),
+  )
 );
 
 export function upsellAccessPeriodFromJSON(
@@ -1738,10 +1782,12 @@ export function upsellAccessPeriodFromJSON(
 export const UpsellOrderQueue$inboundSchema: z.ZodMiniType<
   UpsellOrderQueue,
   unknown
-> = z.object({
-  id: types.optional(types.string()),
-  name: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    id: types.optional(types.string()),
+    name: types.optional(types.string()),
+  })
+);
 
 export function upsellOrderQueueFromJSON(
   jsonString: string,
@@ -1757,36 +1803,38 @@ export function upsellOrderQueueFromJSON(
 export const UpsellPricing$inboundSchema: z.ZodMiniType<
   UpsellPricing,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    price_model: types.optional(UpsellPriceModel$inboundSchema),
-    currency_code: types.optional(UpsellCurrencyCode$inboundSchema),
-    tax_model: types.optional(UpsellTaxModel$inboundSchema),
-    price: types.optional(types.number()),
-    tiers: types.optional(z.lazy(() => UpsellTiers$inboundSchema)),
-    billing_period: types.optional(
-      z.lazy(() => UpsellBillingPeriod$inboundSchema),
-    ),
-    measurement_unit: types.optional(
-      z.lazy(() => UpsellMeasurementUnit$inboundSchema),
-    ),
-    access_period: types.optional(
-      z.lazy(() => UpsellAccessPeriod$inboundSchema),
-    ),
-    order_queue: types.optional(z.lazy(() => UpsellOrderQueue$inboundSchema)),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "price_model": "priceModel",
-      "currency_code": "currencyCode",
-      "tax_model": "taxModel",
-      "billing_period": "billingPeriod",
-      "measurement_unit": "measurementUnit",
-      "access_period": "accessPeriod",
-      "order_queue": "orderQueue",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      price_model: types.optional(UpsellPriceModel$inboundSchema),
+      currency_code: types.optional(UpsellCurrencyCode$inboundSchema),
+      tax_model: types.optional(UpsellTaxModel$inboundSchema),
+      price: types.optional(types.number()),
+      tiers: types.optional(z.lazy(() => UpsellTiers$inboundSchema)),
+      billing_period: types.optional(
+        z.lazy(() => UpsellBillingPeriod$inboundSchema),
+      ),
+      measurement_unit: types.optional(
+        z.lazy(() => UpsellMeasurementUnit$inboundSchema),
+      ),
+      access_period: types.optional(
+        z.lazy(() => UpsellAccessPeriod$inboundSchema),
+      ),
+      order_queue: types.optional(z.lazy(() => UpsellOrderQueue$inboundSchema)),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "price_model": "priceModel",
+        "currency_code": "currencyCode",
+        "tax_model": "taxModel",
+        "billing_period": "billingPeriod",
+        "measurement_unit": "measurementUnit",
+        "access_period": "accessPeriod",
+        "order_queue": "orderQueue",
+      });
+    }),
+  )
 );
 
 export function upsellPricingFromJSON(
@@ -1803,15 +1851,17 @@ export function upsellPricingFromJSON(
 export const UpsellUsageType$inboundSchema: z.ZodMiniType<
   UpsellUsageType,
   unknown
-> = openEnums.inboundSchema(UpsellUsageType);
+> = /* @__PURE__ */ lazySchema$(() => openEnums.inboundSchema(UpsellUsageType));
 
 /** @internal */
-export const UpsellMedia$inboundSchema: z.ZodMiniType<UpsellMedia, unknown> = z
-  .object({
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    url: types.optional(types.string()),
-  });
+export const UpsellMedia$inboundSchema: z.ZodMiniType<UpsellMedia, unknown> =
+  /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      url: types.optional(types.string()),
+    })
+  );
 
 export function upsellMediaFromJSON(
   jsonString: string,
@@ -1827,30 +1877,32 @@ export function upsellMediaFromJSON(
 export const UpsellCreative$inboundSchema: z.ZodMiniType<
   UpsellCreative,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    media_group_id: types.optional(types.string()),
-    usage_type: types.optional(UpsellUsageType$inboundSchema),
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    format: types.optional(types.string()),
-    url: types.optional(types.string()),
-    public_id: types.optional(types.string()),
-    media_id: types.optional(types.string()),
-    caption: types.optional(types.string()),
-    sort_order: types.optional(types.number()),
-    media: types.optional(z.array(z.lazy(() => UpsellMedia$inboundSchema))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "media_group_id": "mediaGroupId",
-      "usage_type": "usageType",
-      "public_id": "publicId",
-      "media_id": "mediaId",
-      "sort_order": "sortOrder",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      media_group_id: types.optional(types.string()),
+      usage_type: types.optional(UpsellUsageType$inboundSchema),
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      format: types.optional(types.string()),
+      url: types.optional(types.string()),
+      public_id: types.optional(types.string()),
+      media_id: types.optional(types.string()),
+      caption: types.optional(types.string()),
+      sort_order: types.optional(types.number()),
+      media: types.optional(z.array(z.lazy(() => UpsellMedia$inboundSchema))),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "media_group_id": "mediaGroupId",
+        "usage_type": "usageType",
+        "public_id": "publicId",
+        "media_id": "mediaId",
+        "sort_order": "sortOrder",
+      });
+    }),
+  )
 );
 
 export function upsellCreativeFromJSON(
@@ -1868,16 +1920,18 @@ export const ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductR
   z.ZodMiniType<
     ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationUpsell,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    sku: types.optional(types.string()),
-    name: types.optional(types.string()),
-    description: types.optional(types.string()),
-    pricing: types.optional(z.lazy(() => UpsellPricing$inboundSchema)),
-    creatives: types.optional(
-      z.array(z.lazy(() => UpsellCreative$inboundSchema)),
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      sku: types.optional(types.string()),
+      name: types.optional(types.string()),
+      description: types.optional(types.string()),
+      pricing: types.optional(z.lazy(() => UpsellPricing$inboundSchema)),
+      creatives: types.optional(
+        z.array(z.lazy(() => UpsellCreative$inboundSchema)),
+      ),
+    })
+  );
 
 export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationUpsellFromJSON(
   jsonString: string,
@@ -1898,17 +1952,21 @@ export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProdu
 export const RewardOfferUsageType$inboundSchema: z.ZodMiniType<
   RewardOfferUsageType,
   unknown
-> = openEnums.inboundSchema(RewardOfferUsageType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(RewardOfferUsageType)
+);
 
 /** @internal */
 export const RewardOfferMedia$inboundSchema: z.ZodMiniType<
   RewardOfferMedia,
   unknown
-> = z.object({
-  width: types.optional(types.number()),
-  height: types.optional(types.number()),
-  url: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    width: types.optional(types.number()),
+    height: types.optional(types.number()),
+    url: types.optional(types.string()),
+  })
+);
 
 export function rewardOfferMediaFromJSON(
   jsonString: string,
@@ -1924,32 +1982,34 @@ export function rewardOfferMediaFromJSON(
 export const RewardOfferCreative$inboundSchema: z.ZodMiniType<
   RewardOfferCreative,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    media_group_id: types.optional(types.string()),
-    usage_type: types.optional(RewardOfferUsageType$inboundSchema),
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    format: types.optional(types.string()),
-    url: types.optional(types.string()),
-    public_id: types.optional(types.string()),
-    media_id: types.optional(types.string()),
-    caption: types.optional(types.string()),
-    sort_order: types.optional(types.number()),
-    media: types.optional(
-      z.array(z.lazy(() => RewardOfferMedia$inboundSchema)),
-    ),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "media_group_id": "mediaGroupId",
-      "usage_type": "usageType",
-      "public_id": "publicId",
-      "media_id": "mediaId",
-      "sort_order": "sortOrder",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      media_group_id: types.optional(types.string()),
+      usage_type: types.optional(RewardOfferUsageType$inboundSchema),
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      format: types.optional(types.string()),
+      url: types.optional(types.string()),
+      public_id: types.optional(types.string()),
+      media_id: types.optional(types.string()),
+      caption: types.optional(types.string()),
+      sort_order: types.optional(types.number()),
+      media: types.optional(
+        z.array(z.lazy(() => RewardOfferMedia$inboundSchema)),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "media_group_id": "mediaGroupId",
+        "usage_type": "usageType",
+        "public_id": "publicId",
+        "media_id": "mediaId",
+        "sort_order": "sortOrder",
+      });
+    }),
+  )
 );
 
 export function rewardOfferCreativeFromJSON(
@@ -1967,13 +2027,15 @@ export const ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductR
   z.ZodMiniType<
     ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationRewardOffer,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    creatives: types.optional(
-      z.array(z.lazy(() => RewardOfferCreative$inboundSchema)),
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      creatives: types.optional(
+        z.array(z.lazy(() => RewardOfferCreative$inboundSchema)),
+      ),
+    })
+  );
 
 export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationRewardOfferFromJSON(
   jsonString: string,
@@ -1994,17 +2056,21 @@ export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProdu
 export const PromotionUsageType$inboundSchema: z.ZodMiniType<
   PromotionUsageType,
   unknown
-> = openEnums.inboundSchema(PromotionUsageType);
+> = /* @__PURE__ */ lazySchema$(() =>
+  openEnums.inboundSchema(PromotionUsageType)
+);
 
 /** @internal */
 export const PromotionMedia$inboundSchema: z.ZodMiniType<
   PromotionMedia,
   unknown
-> = z.object({
-  width: types.optional(types.number()),
-  height: types.optional(types.number()),
-  url: types.optional(types.string()),
-});
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.object({
+    width: types.optional(types.number()),
+    height: types.optional(types.number()),
+    url: types.optional(types.string()),
+  })
+);
 
 export function promotionMediaFromJSON(
   jsonString: string,
@@ -2020,30 +2086,34 @@ export function promotionMediaFromJSON(
 export const PromotionCreative$inboundSchema: z.ZodMiniType<
   PromotionCreative,
   unknown
-> = z.pipe(
-  z.object({
-    id: types.optional(types.string()),
-    media_group_id: types.optional(types.string()),
-    usage_type: types.optional(PromotionUsageType$inboundSchema),
-    width: types.optional(types.number()),
-    height: types.optional(types.number()),
-    format: types.optional(types.string()),
-    url: types.optional(types.string()),
-    public_id: types.optional(types.string()),
-    media_id: types.optional(types.string()),
-    caption: types.optional(types.string()),
-    sort_order: types.optional(types.number()),
-    media: types.optional(z.array(z.lazy(() => PromotionMedia$inboundSchema))),
-  }),
-  z.transform((v) => {
-    return remap$(v, {
-      "media_group_id": "mediaGroupId",
-      "usage_type": "usageType",
-      "public_id": "publicId",
-      "media_id": "mediaId",
-      "sort_order": "sortOrder",
-    });
-  }),
+> = /* @__PURE__ */ lazySchema$(() =>
+  z.pipe(
+    z.object({
+      id: types.optional(types.string()),
+      media_group_id: types.optional(types.string()),
+      usage_type: types.optional(PromotionUsageType$inboundSchema),
+      width: types.optional(types.number()),
+      height: types.optional(types.number()),
+      format: types.optional(types.string()),
+      url: types.optional(types.string()),
+      public_id: types.optional(types.string()),
+      media_id: types.optional(types.string()),
+      caption: types.optional(types.string()),
+      sort_order: types.optional(types.number()),
+      media: types.optional(
+        z.array(z.lazy(() => PromotionMedia$inboundSchema)),
+      ),
+    }),
+    z.transform((v) => {
+      return remap$(v, {
+        "media_group_id": "mediaGroupId",
+        "usage_type": "usageType",
+        "public_id": "publicId",
+        "media_id": "mediaId",
+        "sort_order": "sortOrder",
+      });
+    }),
+  )
 );
 
 export function promotionCreativeFromJSON(
@@ -2061,13 +2131,15 @@ export const ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductR
   z.ZodMiniType<
     ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationPromotion,
     unknown
-  > = z.object({
-    id: types.optional(types.string()),
-    name: types.optional(types.string()),
-    creatives: types.optional(
-      z.array(z.lazy(() => PromotionCreative$inboundSchema)),
-    ),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: types.optional(types.string()),
+      name: types.optional(types.string()),
+      creatives: types.optional(
+        z.array(z.lazy(() => PromotionCreative$inboundSchema)),
+      ),
+    })
+  );
 
 export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationPromotionFromJSON(
   jsonString: string,
@@ -2089,27 +2161,37 @@ export const ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductR
   z.ZodMiniType<
     ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationResponse,
     unknown
-  > = z.pipe(
-    z.object({
-      cross_sells: types.optional(z.array(z.lazy(() =>
-        ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationCrossSell$inboundSchema
-      ))),
-      upsells: types.optional(z.array(z.lazy(() =>
-        ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationUpsell$inboundSchema
-      ))),
-      reward_offers: types.optional(z.array(z.lazy(() =>
-        ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationRewardOffer$inboundSchema
-      ))),
-      promotions: types.optional(z.array(z.lazy(() =>
-        ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationPromotion$inboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        "cross_sells": "crossSells",
-        "reward_offers": "rewardOffers",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        cross_sells: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationCrossSell$inboundSchema
+          )),
+        ),
+        upsells: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationUpsell$inboundSchema
+          )),
+        ),
+        reward_offers: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationRewardOffer$inboundSchema
+          )),
+        ),
+        promotions: types.optional(
+          z.array(z.lazy(() =>
+            ComCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationPromotion$inboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          "cross_sells": "crossSells",
+          "reward_offers": "rewardOffers",
+        });
+      }),
+    )
   );
 
 export function comCrmOrderProductRecommendationSelfServiceResourceGetOrderProductRecommendationResponseFromJSON(

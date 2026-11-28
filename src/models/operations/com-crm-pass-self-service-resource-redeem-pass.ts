@@ -4,7 +4,7 @@
 
 import * as z from "zod/v4-mini";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { safeParse } from "../../lib/schemas.js";
+import { lazySchema as lazySchema$, safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import * as types from "../../types/primitives.js";
 import { SDKValidationError } from "../errors/sdk-validation-error.js";
@@ -126,10 +126,12 @@ export const ComCrmPassSelfServiceResourceRedeemPassCustomField$outboundSchema:
   z.ZodMiniType<
     ComCrmPassSelfServiceResourceRedeemPassCustomField$Outbound,
     ComCrmPassSelfServiceResourceRedeemPassCustomField
-  > = z.object({
-    key: z.optional(z.string()),
-    value: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      key: z.optional(z.string()),
+      value: z.optional(z.string()),
+    })
+  );
 
 export function comCrmPassSelfServiceResourceRedeemPassCustomFieldToJSON(
   comCrmPassSelfServiceResourceRedeemPassCustomField:
@@ -153,10 +155,12 @@ export const ComCrmPassSelfServiceResourceRedeemPassMerchantTap$outboundSchema:
   z.ZodMiniType<
     ComCrmPassSelfServiceResourceRedeemPassMerchantTap$Outbound,
     ComCrmPassSelfServiceResourceRedeemPassMerchantTap
-  > = z.object({
-    id: z.optional(z.string()),
-    code: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+      code: z.optional(z.string()),
+    })
+  );
 
 export function comCrmPassSelfServiceResourceRedeemPassMerchantTapToJSON(
   comCrmPassSelfServiceResourceRedeemPassMerchantTap:
@@ -180,10 +184,12 @@ export const ComCrmPassSelfServiceResourceRedeemPassVenueTap$outboundSchema:
   z.ZodMiniType<
     ComCrmPassSelfServiceResourceRedeemPassVenueTap$Outbound,
     ComCrmPassSelfServiceResourceRedeemPassVenueTap
-  > = z.object({
-    id: z.optional(z.string()),
-    code: z.optional(z.string()),
-  });
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.object({
+      id: z.optional(z.string()),
+      code: z.optional(z.string()),
+    })
+  );
 
 export function comCrmPassSelfServiceResourceRedeemPassVenueTapToJSON(
   comCrmPassSelfServiceResourceRedeemPassVenueTap:
@@ -214,22 +220,28 @@ export const ComCrmPassSelfServiceResourceRedeemPassOrganisation$outboundSchema:
   z.ZodMiniType<
     ComCrmPassSelfServiceResourceRedeemPassOrganisation$Outbound,
     ComCrmPassSelfServiceResourceRedeemPassOrganisation
-  > = z.pipe(
-    z.object({
-      id: z.optional(z.string()),
-      merchantTap: z.optional(z.nullable(z.lazy(() =>
-        ComCrmPassSelfServiceResourceRedeemPassMerchantTap$outboundSchema
-      ))),
-      venueTap: z.optional(z.nullable(z.lazy(() =>
-        ComCrmPassSelfServiceResourceRedeemPassVenueTap$outboundSchema
-      ))),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        merchantTap: "merchant_tap",
-        venueTap: "venue_tap",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        id: z.optional(z.string()),
+        merchantTap: z.optional(
+          z.nullable(z.lazy(() =>
+            ComCrmPassSelfServiceResourceRedeemPassMerchantTap$outboundSchema
+          )),
+        ),
+        venueTap: z.optional(
+          z.nullable(z.lazy(() =>
+            ComCrmPassSelfServiceResourceRedeemPassVenueTap$outboundSchema
+          )),
+        ),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          merchantTap: "merchant_tap",
+          venueTap: "venue_tap",
+        });
+      }),
+    )
   );
 
 export function comCrmPassSelfServiceResourceRedeemPassOrganisationToJSON(
@@ -261,27 +273,31 @@ export const ComCrmPassSelfServiceResourceRedeemPassRequest$outboundSchema:
   z.ZodMiniType<
     ComCrmPassSelfServiceResourceRedeemPassRequest$Outbound,
     ComCrmPassSelfServiceResourceRedeemPassRequest
-  > = z.pipe(
-    z.object({
-      code: z.string(),
-      contactId: z.optional(z.string()),
-      walletId: z.optional(z.string()),
-      pin: z.optional(z.string()),
-      customFields: z.optional(z.array(z.lazy(() =>
-        ComCrmPassSelfServiceResourceRedeemPassCustomField$outboundSchema
-      ))),
-      organisation: z.lazy(() =>
-        ComCrmPassSelfServiceResourceRedeemPassOrganisation$outboundSchema
-      ),
-      date: z.optional(z.int()),
-    }),
-    z.transform((v) => {
-      return remap$(v, {
-        contactId: "contact_id",
-        walletId: "wallet_id",
-        customFields: "custom_fields",
-      });
-    }),
+  > = /* @__PURE__ */ lazySchema$(() =>
+    z.pipe(
+      z.object({
+        code: z.string(),
+        contactId: z.optional(z.string()),
+        walletId: z.optional(z.string()),
+        pin: z.optional(z.string()),
+        customFields: z.optional(
+          z.array(z.lazy(() =>
+            ComCrmPassSelfServiceResourceRedeemPassCustomField$outboundSchema
+          )),
+        ),
+        organisation: z.lazy(() =>
+          ComCrmPassSelfServiceResourceRedeemPassOrganisation$outboundSchema
+        ),
+        date: z.optional(z.int()),
+      }),
+      z.transform((v) => {
+        return remap$(v, {
+          contactId: "contact_id",
+          walletId: "wallet_id",
+          customFields: "custom_fields",
+        });
+      }),
+    )
   );
 
 export function comCrmPassSelfServiceResourceRedeemPassRequestToJSON(
@@ -297,10 +313,12 @@ export function comCrmPassSelfServiceResourceRedeemPassRequestToJSON(
 
 /** @internal */
 export const ComCrmPassSelfServiceResourceRedeemPassResponse$inboundSchema:
-  z.ZodMiniType<ComCrmPassSelfServiceResourceRedeemPassResponse, unknown> = z
-    .object({
-      id: types.optional(types.string()),
-    });
+  z.ZodMiniType<ComCrmPassSelfServiceResourceRedeemPassResponse, unknown> =
+    /* @__PURE__ */ lazySchema$(() =>
+      z.object({
+        id: types.optional(types.string()),
+      })
+    );
 
 export function comCrmPassSelfServiceResourceRedeemPassResponseFromJSON(
   jsonString: string,
